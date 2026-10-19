@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 import node from '@astrojs/node';
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
@@ -36,7 +37,6 @@ export default defineConfig({
 		plugins: [tailwindcss()],
 	},
 
-	adapter: node({
-		mode: 'standalone',
-	}),
+	// Production runs the standalone Node server; on Vercel (preview deployments) use its serverless adapter.
+	adapter: process.env.VERCEL ? vercel() : node({ mode: 'standalone' }),
 });
