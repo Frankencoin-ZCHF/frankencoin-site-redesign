@@ -1,7 +1,12 @@
 import { defineMiddleware } from "astro:middleware";
 import { getLanguageFromURL } from "./utils/i18n";
+import { previewGate } from "./utils/previewGate";
 
 export const onRequest = defineMiddleware(async (context, next) => {
+  // Preview deployments only (PREVIEW_PASSWORD unset in production).
+  const gate = await previewGate(context.request, process.env.PREVIEW_PASSWORD);
+  if (gate) return gate;
+
   // Get the current language from the URL
   const lang = getLanguageFromURL(context.url.pathname);
 
@@ -11,13 +16,19 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const response = await next();
 
   // Security headers
-  response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
-  response.headers.set('X-Content-Type-Options', 'nosniff');
-  response.headers.set('X-Frame-Options', 'DENY');
-  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-  response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
   response.headers.set(
-    'Content-Security-Policy',
+    "Strict-Transport-Security",
+    "max-age=31536000; includeSubDomains",
+  );
+  response.headers.set("X-Content-Type-Options", "nosniff");
+  response.headers.set("X-Frame-Options", "DENY");
+  response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  response.headers.set(
+    "Permissions-Policy",
+    "camera=(), microphone=(), geolocation=()",
+  );
+  response.headers.set(
+    "Content-Security-Policy",
     [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://www.googletagmanager.com https://www.google-analytics.com",
@@ -27,7 +38,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
       "connect-src 'self' https://api.frankencoin.com https://www.google-analytics.com https://www.googletagmanager.com https://*.google-analytics.com",
       "frame-src https://www.youtube.com https://youtube.com",
       "media-src 'self'",
-    ].join('; ')
+    ].join("; "),
   );
 
   return response;

@@ -8,6 +8,9 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
+	// With a preview password every page must be rendered on request so the middleware can gate it.
+	output: process.env.PREVIEW_PASSWORD ? 'server' : 'static',
+
 	site: process.env.SITE ?? 'https://frankencoin.com',
 
 	server: {
