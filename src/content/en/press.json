@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Frankencoin press kit",
+    "description": "Logos, brand guidelines, a short description and press contact for Frankencoin (ZCHF)."
+  },
+  "hero": {
+    "eyebrow": "Press kit",
+    "title": "Everything you need to write about Frankencoin.",
+    "subtitle": "Logos, brand guidelines, a description you can quote, and who to contact."
+  },
+  "boiler": {
+    "title": "About Frankencoin",
+    "text": "Frankencoin (ZCHF) is a decentralized stablecoin that tracks the Swiss franc. It is issued by smart contracts against on-chain collateral rather than by a company, has been live since 2023 and runs on eight blockchains. Holders can earn a savings rate set by governance, and Frankencoin Shares (FCS) represent the protocol's equity. The Frankencoin Association in Switzerland supports its development."
+  },
+  "assets": {
+    "title": "Logos and guidelines",
+    "items": [
+      {
+        "label": "Frankencoin logo",
+        "file": "/press/frankencoin_logo.svg",
+        "bg": "light"
+      },
+      {
+        "label": "Logo, white",
+        "file": "/press/frankencoin_logo_white.svg",
+        "bg": "dark"
+      },
+      {
+        "label": "Logo, mono white",
+        "file": "/press/frankencoin_logo_mono_white.svg",
+        "bg": "dark"
+      },
+      {
+        "label": "ZCHF coin",
+        "file": "/press/coin_logo_frankencoin.svg",
+        "bg": "light"
+      },
+      {
+        "label": "FPS coin",
+        "file": "/press/coin_logo_fps.svg",
+        "bg": "light"
+      },
+      {
+        "label": "FCS coin",
+        "file": "/press/coin_logo_fcs_trans.svg",
+        "bg": "light"
+      }
+    ],
+    "guidelines": {
+      "label": "Brand guidelines (PDF)",
+      "file": "/press/frankencoin_brand_guidelines.pdf"
+    }
+  },
+  "contact": {
+    "title": "Press contact",
+    "email": "info@frankencoin.com"
+  }
+}

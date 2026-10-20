@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "ZCHF compared: decentralized vs issuer-backed CHF stablecoins and USDC",
+    "description": "How Frankencoin (ZCHF) differs from issuer-backed Swiss franc stablecoins and from USDC: backing, issuer, savings rate and control."
+  },
+  "hero": {
+    "eyebrow": "Compare",
+    "title": "How ZCHF differs.",
+    "subtitle": "Not every Swiss franc stablecoin works the same way. The main difference is whether a company issues it against bank deposits, or a protocol issues it against on-chain collateral."
+  },
+  "head": [
+    "",
+    "ZCHF (Frankencoin)",
+    "Issuer-backed CHF stablecoins",
+    "USDC"
+  ],
+  "rows": [
+    [
+      "Currency",
+      "Swiss franc",
+      "Swiss franc",
+      "US dollar"
+    ],
+    [
+      "Who stands behind it",
+      "Smart contracts, no company",
+      "An issuing company",
+      "Circle, an issuing company"
+    ],
+    [
+      "Backing",
+      "Over-collateralised crypto, gold and shares, visible on-chain",
+      "Deposits and securities held by the issuer",
+      "Deposits and treasuries held by Circle"
+    ],
+    [
+      "How you check the backing",
+      "Live, on-chain, any time",
+      "Issuer reports and attestations",
+      "Issuer reports and attestations"
+    ],
+    [
+      "Built-in savings rate",
+      "Yes, set by governance",
+      "No",
+      "No"
+    ],
+    [
+      "Can an issuer freeze balances",
+      "No issuer",
+      "Depends on the issuer",
+      "Yes"
+    ],
+    [
+      "Redeem 1:1 with the issuer",
+      "No, the peg is held by the market",
+      "Yes, for eligible customers",
+      "Yes, for eligible customers"
+    ]
+  ],
+  "note": "Issuer-backed CHF stablecoins differ from each other; check each issuer's terms. Under MiCA, e-money tokens may not pay interest to holders.",
+  "cta": {
+    "title": "Want the franc without an issuer?",
+    "primary": {
+      "label": "Start now",
+      "href": "/start"
+    },
+    "secondary": {
+      "label": "How it works",
+      "href": "/how-it-works"
+    }
+  }
+}

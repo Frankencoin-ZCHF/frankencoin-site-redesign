@@ -36,6 +36,6 @@
     "title": "Building something?",
     "body": "The association funds integrations, tooling and research through grants. Bug bounties are run by Compass Security.",
     "primary": { "label": "Grant proposals", "href": "https://github.com/Frankencoin-ZCHF/grants" },
-    "secondary": { "label": "Bug bounty", "href": "/compliance#bounty" }
+    "secondary": { "label": "Bug bounty", "href": "/security" }
   }
 }

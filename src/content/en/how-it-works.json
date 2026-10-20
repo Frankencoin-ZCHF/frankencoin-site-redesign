@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "title": "How Frankencoin works",
+    "description": "How ZCHF is minted against collateral, how the peg holds, how savers are paid and how FCS holders govern."
+  },
+  "hero": {
+    "eyebrow": "How it works",
+    "title": "Three moving parts, no issuer.",
+    "subtitle": "Frankencoin is a set of smart contracts. Borrowers mint francs against collateral, the market keeps the peg, and the income pays savers and shareholders."
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "title": "Borrow Swiss francs against crypto, gold or shares | Frankencoin",
+    "description": "Mint ZCHF against BTC, ETH, tokenized gold or Swiss shares and keep your exposure. Live loan-to-value and rates for every collateral."
+  },
+  "hero": {
+    "eyebrow": "Borrow",
+    "title": "Borrow francs. Keep your BTC, ETH, gold or shares.",
+    "subtitle": "Deposit collateral, mint Swiss francs, repay when you want your collateral back. No credit check, no counterparty: the terms are on-chain and fixed when you open the position.",
+    "primary": {
+      "label": "See collateral and rates",
+      "href": "#rates"
+    },
+    "secondary": {
+      "label": "Open the app",
+      "href": "https://app.frankencoin.com/mint"
+    }
+  },
+  "rates": {
+    "title": "Live terms per collateral",
+    "subtitle": "Best open terms right now. Loan-to-value is the liquidation price divided by today's market price.",
+    "cols": {
+      "asset": "Collateral",
+      "ltv": "Loan-to-value",
+      "rate": "Interest",
+      "available": "Available",
+      "maturity": "Until"
+    },
+    "cta": "Borrow",
+    "empty": "Live terms are unavailable right now. See them in the app.",
+    "note": "Interest is the effective yearly rate on what you receive, paid upfront for the whole term. Part of the minted amount is held as a reserve and returned when you repay."
+  },
+  "how": {
+    "title": "How a position works",
+    "cards": [
+      {
+        "title": "1 · Deposit",
+        "description": "Pick a collateral and lock it in your own position contract. It stays there, visible on-chain."
+      },
+      {
+        "title": "2 · Mint",
+        "description": "Choose amount and term. You receive ZCHF minus upfront interest and a retained reserve that comes back when you repay."
+      },
+      {
+        "title": "3 · Repay",
+        "description": "Return the ZCHF any time before maturity to unlock your collateral. Roll over to extend."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms in plain words",
+    "items": [
+      {
+        "title": "Liquidation price",
+        "description": "If the collateral's market price falls below it, anyone can challenge the position and part of the collateral is auctioned."
+      },
+      {
+        "title": "Loan-to-value",
+        "description": "How much you borrow relative to the collateral's market value. Lower is safer."
+      },
+      {
+        "title": "Upfront interest",
+        "description": "Paid once when you mint, for the whole term. No variable rate surprises."
+      },
+      {
+        "title": "Retained reserve",
+        "description": "A share of what you mint stays in the reserve. You get it back when you repay."
+      }
+    ]
+  },
+  "collateral": {
+    "title": "What you can borrow against",
+    "items": [
+      {
+        "eyebrow": "Crypto",
+        "title": "BTC and ETH",
+        "description": "Wrapped and staked versions such as WBTC, cbBTC, WETH and wstETH."
+      },
+      {
+        "eyebrow": "Gold",
+        "title": "Tokenized gold",
+        "description": "Gold tokens such as XAUt and PAXG."
+      },
+      {
+        "eyebrow": "Shares",
+        "title": "Tokenized equities",
+        "description": "Swiss company shares issued on-chain, and tokenized index funds."
+      }
+    ]
+  },
+  "risks": {
+    "title": "Before you borrow",
+    "items": [
+      {
+        "title": "Liquidation",
+        "description": "If prices fall through your liquidation price, part of your collateral can be sold at auction. Keep a buffer."
+      },
+      {
+        "title": "Maturity",
+        "description": "Each position has an end date. Repay or roll over before it, or the position can be liquidated."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "Who sets the terms?",
+      "a": "Whoever opened the original position proposed them, and FCS holders could veto. You clone those terms when you borrow."
+    },
+    {
+      "q": "Is there a credit check?",
+      "a": "No. The collateral is the only security."
+    },
+    {
+      "q": "Can I add collateral later?",
+      "a": "Yes. Adding collateral or repaying part of the loan lowers your risk of liquidation."
+    },
+    {
+      "q": "My token is not listed. Can it be?",
+      "a": "Token issuers can [propose a new collateral](/integrate/collateral)."
+    }
+  ],
+  "sticky": {
+    "label": "See rates",
+    "sub": "Live terms per collateral"
+  }
+}

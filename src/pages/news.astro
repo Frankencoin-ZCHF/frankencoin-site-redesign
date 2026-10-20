@@ -1,0 +1,24 @@
+---
+/* /news — media coverage (content/shared/media.json). */
+import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import MediaCarousel from "../components/MediaCarousel/MediaCarousel.astro";
+import { getLanguageFromURL, loadContent, loadGlobalSharedContent } from "../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const c = await loadContent<any>("news", lang);
+const media = await loadGlobalSharedContent<any>("media");
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
+  <section class="py-14 bg-[var(--color-white)]">
+    <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
+      <div class="flex flex-wrap gap-3 mb-8">
+        {c.follow.map((f: any) => (<a href={f.href} target="_blank" rel="noopener noreferrer" class="rounded-full border border-[var(--color-brand-deep-blue)] px-5 py-2 ty-body-3 font-bold text-[var(--color-brand-deep-blue)] hover:bg-[var(--color-gray-10)]">{f.label} ↗</a>))}
+      </div>
+      <MediaCarousel articles={media.articles} videos={media.videos} />
+    </div>
+  </section>
+</Base>

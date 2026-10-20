@@ -27,6 +27,7 @@ import TrustStrip from "../components/TrustStrip/TrustStrip.astro";
 import StickyCTA from "../components/StickyCTA/StickyCTA.astro";
 import { getCalcData } from "../utils/calcStats";
 import { formatPct } from "../utils/fcsStats";
+import FeatureGrid from "../components/LP/FeatureGrid.astro";
 
 export const prerender = false;
 
@@ -78,7 +79,7 @@ const stats: Option[] = frankencoinInfo
         label: s0.label ?? "Savings rate",
         value: rateLabel,
         unit: s0.unit,
-        href: localizeHref(s0.href, "/save-invest"),
+        href: localizeHref(s0.href, "/use-cases/save-in-chf"),
       },
       {
         label: s1.label ?? "Money circulating",
@@ -100,7 +101,8 @@ const stats: Option[] = frankencoinInfo
     ]
   : [];
 
-const doors = index.doors.items.map((d: any) => ({ ...d, stat: d.stat && { ...d.stat, value: d.stat.value.replace("{rate}", rateLabel) } }));
+const ratioLabel = frankencoinInfo?.token?.supply && frankencoinInfo?.tvl?.chf ? (frankencoinInfo.tvl.chf / frankencoinInfo.token.supply).toFixed(2) : "—";
+const doors = index.doors.items.map((d: any) => ({ ...d, stat: d.stat && { ...d.stat, value: d.stat.value.replace("{rate}", rateLabel).replace("{ratio}", ratioLabel) } }));
 
 Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=300');
 ---
@@ -176,10 +178,14 @@ Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=300')
   >
     <div class="text-left"><ExplanationCardsContainer cards={index.how_simple.cards} /></div>
     <div class="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 ty-body-2 font-bold">
-      <a href={getLocalizedPath('/what-is-frankencoin', currentLang)} class="text-[var(--color-blue-39)] hover:text-[var(--color-brand-swiss)]">{index.what_is.title} →</a>
-      <a href={getLocalizedPath('/use-cases', currentLang)} class="text-[var(--color-blue-39)] hover:text-[var(--color-brand-swiss)]">{index.core_features.more_link.label} →</a>
-      <a href={getLocalizedPath('/frontends', currentLang)} class="text-[var(--color-blue-39)] hover:text-[var(--color-brand-swiss)]">{index.core_features.frontendsCallout.ctaLabel} →</a>
+      {index.use_cases_links.map((l: any) => (
+        <a href={getLocalizedPath(l.href, currentLang)} class="text-[var(--color-blue-39)] hover:text-[var(--color-brand-swiss)]">{l.label} →</a>
+      ))}
     </div>
+  </Section>
+
+  <Section id="pay" eyebrow={index.pay.eyebrow} title={index.pay.title} subtitle={index.pay.subtitle} pad="xs" align="center" variant="accent">
+    <div class="text-left"><FeatureGrid items={index.pay.items} /></div>
   </Section>
 
   <FCSLaunch content={index.fcs_launch} lang={currentLang} />

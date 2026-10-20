@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "Frankencoin transparency: live supply, collateral and reserve",
+    "description": "Every ZCHF is backed by on-chain collateral. Live supply per chain, collateral per asset and the protocol reserve, straight from the Frankencoin API."
+  },
+  "hero": {
+    "eyebrow": "Transparency",
+    "title": "Every franc, accounted for on-chain.",
+    "subtitle": "ZCHF is backed by collateral locked in public contracts. These figures come live from the Frankencoin API and can be checked on any block explorer."
+  },
+  "figures": {
+    "supply": {
+      "label": "ZCHF in circulation",
+      "unit": "all chains"
+    },
+    "collateral": {
+      "label": "Collateral value",
+      "unit": "CHF"
+    },
+    "ratio": {
+      "label": "Collateral per ZCHF",
+      "unit": "CHF of collateral"
+    },
+    "equity": {
+      "label": "Protocol equity",
+      "unit": "ZCHF, absorbs losses first"
+    }
+  },
+  "chains": {
+    "title": "Supply per chain",
+    "col": "Chain",
+    "val": "ZCHF"
+  },
+  "collateral": {
+    "title": "Collateral per asset",
+    "cols": {
+      "asset": "Asset",
+      "value": "Value (CHF)",
+      "minted": "ZCHF minted",
+      "positions": "Positions"
+    }
+  },
+  "sources": {
+    "title": "Check it yourself",
+    "items": [
+      {
+        "title": "Positions in the app",
+        "description": "Every position, its collateral and its liquidation price.",
+        "href": "https://app.frankencoin.com/monitoring",
+        "cta": "Monitoring"
+      },
+      {
+        "title": "DefiLlama",
+        "description": "Independent tracking of supply and collateral.",
+        "href": "https://defillama.com/protocol/frankencoin",
+        "cta": "DefiLlama"
+      },
+      {
+        "title": "Dune",
+        "description": "Holders, flows and history.",
+        "href": "https://dune.com/frankencoin",
+        "cta": "Dune"
+      },
+      {
+        "title": "Raw API",
+        "description": "The JSON behind this page.",
+        "href": "https://api.frankencoin.com/ecosystem/frankencoin/info",
+        "cta": "API"
+      }
+    ]
+  },
+  "stamp": "Live from api.frankencoin.com · {time} UTC · refreshed every 5 minutes"
+}

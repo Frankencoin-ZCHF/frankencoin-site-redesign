@@ -1,0 +1,30 @@
+---
+/* /integrate — integration hub with four tracks. Copy: content/en/integrate.json */
+import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import FeatureGrid from "../components/LP/FeatureGrid.astro";
+import CtaBand from "../components/LP/CtaBand.astro";
+import { getLanguageFromURL, loadContent } from "../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const c = await loadContent<any>("integrate", lang);
+const eco = await loadContent<any>("ecosystem", lang);
+const logos = (eco.tabs ?? []).filter((t: any) => t.image).slice(0, 12);
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} />
+  <LPSection title={c.tracks.title}><FeatureGrid items={c.tracks.items} cols={4} /></LPSection>
+  <LPSection title={c.logos.title} accent>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+      {logos.map((t: any) => (
+        <a href={t.href} target="_blank" rel="noopener noreferrer" title={t.name} class="flex items-center justify-center rounded-xl bg-[var(--color-white)] border border-[var(--color-gray-20)] p-4 h-20 hover:border-[var(--color-brand-swiss)] transition-colors">
+          <img src={t.image} alt={t.imageAlt ?? t.name} loading="lazy" class="max-h-10 max-w-full object-contain" />
+        </a>
+      ))}
+    </div>
+  </LPSection>
+  <CtaBand {...c.cta} />
+</Base>

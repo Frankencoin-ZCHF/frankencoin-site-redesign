@@ -33,7 +33,7 @@
 			"id": "savingsRate",
 			"label": "Savings rate",
 			"unit": "per year",
-			"href": "/save-invest"
+			"href": "/use-cases/save-in-chf"
 		},
 		{
 			"id": "totalSupply",
@@ -439,37 +439,48 @@
 		"title": "Pick your door",
 		"items": [
 			{
-				"eyebrow": "Savers & investors",
+				"eyebrow": "Savers",
 				"title": "Grow Swiss francs",
 				"stat": {
 					"value": "{rate}",
 					"label": "savings rate"
 				},
-				"body": "Earn the protocol rate on ZCHF or own a share of the reserve with FCS. Withdraw any time.",
-				"cta": "Save or invest",
-				"href": "/save-invest"
+				"body": "Earn the protocol rate on ZCHF from a bank account or a crypto wallet. Withdraw any time.",
+				"cta": "For savers",
+				"href": "/for/savers"
 			},
 			{
-				"eyebrow": "Partners & businesses",
-				"title": "Plug in ZCHF",
+				"eyebrow": "Treasuries",
+				"title": "Hold reserves in CHF",
 				"stat": {
-					"value": "8",
-					"label": "chains"
+					"value": "{ratio}",
+					"label": "CHF collateral per ZCHF"
 				},
-				"body": "Accept, offer or hold a Swiss franc with a public legal classification and no issuer.",
-				"cta": "For partners",
-				"href": "/partners"
+				"body": "Companies, funds and DAOs: diversify out of USD and earn on idle reserves.",
+				"cta": "For treasuries",
+				"href": "/for/treasuries"
+			},
+			{
+				"eyebrow": "Exchanges & wallets",
+				"title": "List and earn",
+				"stat": {
+					"value": "25%",
+					"label": "max referral share"
+				},
+				"body": "Offer a Swiss-franc balance with yield and earn a share of your users' interest.",
+				"cta": "For exchanges & wallets",
+				"href": "/for/exchanges-wallets"
 			},
 			{
 				"eyebrow": "Developers",
 				"title": "Build on it",
 				"stat": {
-					"value": "MIT",
-					"label": "open source"
+					"value": "8",
+					"label": "chains"
 				},
 				"body": "Verified contracts, REST API, indexer, MCP server and grants.",
 				"cta": "For developers",
-				"href": "/developers"
+				"href": "/for/developers"
 			}
 		]
 	},
@@ -498,8 +509,8 @@
 		"items": [
 			{
 				"label": "Audits",
-				"value": "4 independent audits",
-				"href": "/compliance#audits"
+				"value": "7 audits by 4 firms",
+				"href": "/security"
 			},
 			{
 				"label": "Legal",
@@ -509,7 +520,7 @@
 			{
 				"label": "Ratings",
 				"value": "Xerberus 77 · Pharos A-",
-				"href": "/compliance#ratings"
+				"href": "/security#ratings"
 			},
 			{
 				"label": "Cover",
@@ -526,5 +537,40 @@
 		"label": "Start now",
 		"sub": "Save or invest in three steps",
 		"href": "/start"
-	}
+	},
+	"pay": {
+		"eyebrow": "Pay in CHF",
+		"title": "Spend it like francs",
+		"subtitle": "ZCHF already works for everyday payments.",
+		"items": [
+			{
+				"title": "In stores",
+				"description": "Pay with ZCHF at Spar shops in Switzerland."
+			},
+			{
+				"title": "By card",
+				"description": "Spend ZCHF anywhere Visa works with a GnosisPay card."
+			},
+			{
+				"title": "By bank transfer",
+				"description": "Get a personal IBAN for your wallet with Mt Pelerin and send or receive francs.",
+				"href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
+				"cta": "Mt Pelerin"
+			}
+		]
+	},
+	"use_cases_links": [
+		{
+			"label": "Save in CHF",
+			"href": "/use-cases/save-in-chf"
+		},
+		{
+			"label": "Borrow against crypto, gold or shares",
+			"href": "/use-cases/borrow"
+		},
+		{
+			"label": "How it works in detail",
+			"href": "/how-it-works"
+		}
+	]
 }

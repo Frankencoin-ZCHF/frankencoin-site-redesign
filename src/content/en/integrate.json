@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "Integrate Frankencoin: payments, wallets, DeFi and token issuers",
+    "description": "Four ways to plug into the decentralized Swiss franc: accept payments, list and offer savings, use ZCHF in DeFi, or list your token as collateral."
+  },
+  "hero": {
+    "eyebrow": "Integrate",
+    "title": "Plug into the Swiss franc that has no issuer.",
+    "subtitle": "ZCHF is permissionless: you do not need anyone's approval to use it. These are the four integrations we see most, with what you get and where to start.",
+    "primary": {
+      "label": "Talk to the association",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Developer docs",
+      "href": "/for/developers"
+    }
+  },
+  "tracks": {
+    "title": "Pick your track",
+    "items": [
+      {
+        "eyebrow": "Payments",
+        "title": "Accept or pay out ZCHF",
+        "description": "Shops, card programmes and payroll. Spar accepts ZCHF in stores; GnosisPay cards spend it; Mt Pelerin gives wallets an IBAN.",
+        "href": "/ecosystem",
+        "cta": "See payment partners"
+      },
+      {
+        "eyebrow": "Wallets & exchanges",
+        "title": "List ZCHF, add savings",
+        "description": "Offer a Swiss-franc balance with yield, and earn up to 25% of your users' interest.",
+        "href": "/for/exchanges-wallets",
+        "cta": "For exchanges & wallets"
+      },
+      {
+        "eyebrow": "DeFi protocols",
+        "title": "Use ZCHF as liquidity or collateral",
+        "description": "Pools, lending markets and vaults. ZCHF is a standard ERC-20 with public price and supply data.",
+        "href": "/for/developers",
+        "cta": "Contracts and API"
+      },
+      {
+        "eyebrow": "Token issuers",
+        "title": "List your token as collateral",
+        "description": "Let your holders borrow francs against your token. Anyone can propose; FCS holders can veto.",
+        "href": "/integrate/collateral",
+        "cta": "Propose a collateral"
+      }
+    ]
+  },
+  "logos": {
+    "title": "Already integrated"
+  },
+  "cta": {
+    "title": "Not sure where you fit?",
+    "body": "Write to the association. One email is enough; grants are available for integrations.",
+    "primary": {
+      "label": "info@frankencoin.com",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Apply for a grant",
+      "href": "https://github.com/Frankencoin-ZCHF/grants"
+    }
+  }
+}

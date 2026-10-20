@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Frankencoin for treasuries: companies, funds and DAOs",
+    "description": "Hold part of your treasury in on-chain Swiss francs and earn the protocol rate. Multisig-ready, accounting reports, public legal opinions."
+  },
+  "hero": {
+    "eyebrow": "For treasuries",
+    "title": "Diversify your treasury into Swiss francs.",
+    "subtitle": "Companies, funds and DAOs keep most on-chain reserves in US dollars. ZCHF adds the franc, earns the protocol rate, and never depends on an issuer's bank.",
+    "primary": {
+      "label": "Talk to the association",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "See live reserves",
+      "href": "/transparency"
+    }
+  },
+  "why": {
+    "title": "Why treasuries add ZCHF",
+    "items": [
+      {
+        "title": "Currency diversification",
+        "description": "Hold the franc next to USD stablecoins without leaving the chain."
+      },
+      {
+        "title": "Yield on idle reserves",
+        "description": "The savings module pays the protocol rate. The Savings Vault (svZCHF) gives you the same as one tradable token."
+      },
+      {
+        "title": "No issuer, no bank",
+        "description": "No company can freeze or redeem your balance. Backing is over-collateralised and visible on-chain."
+      },
+      {
+        "title": "Governance voice",
+        "description": "Holding FCS gives you a say in which collateral the system accepts, and a share of its income."
+      }
+    ]
+  },
+  "ops": {
+    "title": "Built for how treasuries work",
+    "items": [
+      {
+        "title": "Multisig ready",
+        "description": "Works from a Safe multisig. The app runs inside Safe's interface."
+      },
+      {
+        "title": "Accounting reports",
+        "description": "Yearly reports of interest and FCS holdings per address, ready for your accountant.",
+        "href": "https://app.frankencoin.com/report",
+        "cta": "Open reports"
+      },
+      {
+        "title": "Institutional custody",
+        "description": "Supported by institutional custodians in the ecosystem.",
+        "href": "/ecosystem",
+        "cta": "See ecosystem"
+      },
+      {
+        "title": "Legal opinions",
+        "description": "Public Swiss and EU (MiCA) legal opinions on how ZCHF is classified.",
+        "href": "/compliance",
+        "cta": "Read opinions"
+      }
+    ]
+  },
+  "dao": {
+    "title": "For DAOs",
+    "subtitle": "Most DAO treasuries sit in their own token and US dollars. A ZCHF allocation in savings earns the protocol rate in a second currency. Adding FCS gives the DAO a vote on new collateral and a share of protocol income, alongside the price risk that comes with equity."
+  },
+  "trust": [
+    {
+      "label": "Audits",
+      "value": "7 audits by 4 firms",
+      "href": "/security"
+    },
+    {
+      "label": "Legal",
+      "value": "Swiss law & MiCA opinions",
+      "href": "/compliance"
+    },
+    {
+      "label": "Reserves",
+      "value": "Live on-chain",
+      "href": "/transparency"
+    },
+    {
+      "label": "Cover",
+      "value": "Optional depeg insurance",
+      "href": "/insurance"
+    }
+  ],
+  "cta": {
+    "title": "Planning an allocation?",
+    "body": "The Frankencoin Association can walk your team through custody, accounting and liquidity for larger amounts.",
+    "primary": {
+      "label": "info@frankencoin.com",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "See live reserves",
+      "href": "/transparency"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+---
+/* /faq — all questions (content/en/faq.json, also used on the home page). */
+import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import FAQContainer from "../components/FAQContainer/FAQContainer.astro";
+import { getLanguageFromURL, loadContent } from "../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const c = await loadContent<any>("faq-page", lang);
+const faq = await loadContent<any>("faq", lang);
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
+  <LPSection narrow><FAQContainer faqs={faq} /></LPSection>
+</Base>

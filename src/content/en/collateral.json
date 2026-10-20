@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "Propose your token as Frankencoin collateral",
+    "description": "How token issuers list a new collateral on Frankencoin: proposal fee, initialization period, FCS veto and what makes a good collateral."
+  },
+  "hero": {
+    "eyebrow": "For token issuers",
+    "title": "Let your holders borrow francs against your token.",
+    "subtitle": "Frankencoin is permissionless: anyone can propose a new collateral type. If FCS holders do not veto it during the initialization period, it goes live.",
+    "primary": {
+      "label": "Propose in the app",
+      "href": "https://app.frankencoin.com/mint/create"
+    },
+    "secondary": {
+      "label": "Read existing assessments",
+      "href": "https://collateral.frankencoin.com/"
+    }
+  },
+  "steps": {
+    "title": "How a proposal works",
+    "items": [
+      {
+        "title": "Discuss first",
+        "body": "Share your token and the terms you have in mind with the community. Proposals that were discussed are far more likely to pass.",
+        "cta": {
+          "label": "Join Telegram",
+          "href": "https://t.me/frankencoinzchf",
+          "external": true
+        }
+      },
+      {
+        "title": "Propose",
+        "body": "Open the position with your terms: liquidation price, limit, interest, maturity and reserve. A 1'000 ZCHF fee goes to the reserve.",
+        "cta": {
+          "label": "Open the form",
+          "href": "https://app.frankencoin.com/mint/create",
+          "external": true
+        }
+      },
+      {
+        "title": "Initialization",
+        "body": "For at least five days, FCS holders can veto. If no one does, the collateral is live and others can borrow against it.",
+        "cta": {
+          "label": "See open proposals",
+          "href": "https://app.frankencoin.com/governance",
+          "external": true
+        }
+      }
+    ]
+  },
+  "good": {
+    "title": "What makes a good collateral",
+    "items": [
+      {
+        "title": "Liquid market",
+        "description": "Auctions must be able to sell the token quickly if a position is challenged."
+      },
+      {
+        "title": "Conservative terms",
+        "description": "A liquidation price well below the market price gives the system room in a crash."
+      },
+      {
+        "title": "Transparent issuer",
+        "description": "Clear legal structure and public information about the asset behind the token."
+      },
+      {
+        "title": "Sensible limit",
+        "description": "Start small. The limit can be raised later with a new proposal."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "Who can propose?",
+      "a": "Anyone with 1'000 ZCHF for the fee and enough of the token for the initial position."
+    },
+    {
+      "q": "Is there an oracle?",
+      "a": "No. Frankencoin does not use price oracles. The liquidation price is set in the proposal and defended by challenges and auctions."
+    },
+    {
+      "q": "What if it is vetoed?",
+      "a": "The proposal is denied and the fee stays in the reserve. You can try again with different terms."
+    }
+  ]
+}

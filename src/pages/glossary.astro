@@ -1,0 +1,26 @@
+---
+/* /glossary — one-line definitions. Copy: content/en/glossary.json */
+import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import { getLanguageFromURL, loadContent } from "../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const c = await loadContent<any>("glossary", lang);
+const terms = [...c.terms].sort((a: any, b: any) => a.term.localeCompare(b.term));
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
+  <LPSection narrow>
+    <dl class="divide-y divide-[var(--color-gray-20)] m-0">
+      {terms.map((t: any) => (
+        <div id={t.term.toLowerCase().replace(/[^a-z0-9]+/g, "-")} class="py-4 grid sm:grid-cols-[200px_1fr] gap-1 sm:gap-6 scroll-mt-20">
+          <dt class="ty-body-2 font-black text-[var(--color-brand-deep-blue)]">{t.term}</dt>
+          <dd class="m-0 ty-body-3 text-[var(--color-neutral-650)]">{t.def}</dd>
+        </div>
+      ))}
+    </dl>
+  </LPSection>
+</Base>

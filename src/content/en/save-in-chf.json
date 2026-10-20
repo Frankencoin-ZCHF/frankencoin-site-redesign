@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "title": "Save in Swiss francs and earn the protocol rate | Frankencoin",
+    "description": "Hold ZCHF, the decentralized Swiss franc stablecoin, in the savings module and earn the protocol rate. Withdraw any time. Live rate, calculator and three steps to start."
+  },
+  "hero": {
+    "eyebrow": "Save in CHF",
+    "title": "Swiss francs that earn {rate} a year.",
+    "subtitle": "Swiss bank accounts pay close to nothing on francs. ZCHF in the Frankencoin savings module earns the protocol rate, paid every block, and you can withdraw at any time.",
+    "primary": {
+      "label": "Start saving",
+      "href": "/start"
+    },
+    "secondary": {
+      "label": "See the numbers",
+      "href": "#calculator"
+    }
+  },
+  "figures": {
+    "rate": {
+      "label": "Savings rate",
+      "unit": "per year, set by governance"
+    },
+    "saved": {
+      "label": "Already saved",
+      "unit": "ZCHF"
+    }
+  },
+  "why": {
+    "eyebrow": "Why francs",
+    "title": "Get out of the dollar, keep the yield.",
+    "subtitle": "Most stablecoin savings are in US dollars. ZCHF lets you hold the franc instead, one of the world's most stable currencies, and still earn on-chain interest."
+  },
+  "how": {
+    "title": "Where the interest comes from",
+    "cards": [
+      {
+        "title": "Borrowers pay",
+        "description": "People mint ZCHF against collateral and pay interest upfront into the protocol's reserve."
+      },
+      {
+        "title": "Savers are paid first",
+        "description": "The savings module pays the governance-set rate out of that income, before anything goes to shareholders."
+      },
+      {
+        "title": "No lock-up",
+        "description": "Interest accrues every block. Withdraw part or all of your balance whenever you want."
+      }
+    ]
+  },
+  "steps": {
+    "title": "Start in three steps",
+    "items": [
+      {
+        "title": "Get ZCHF",
+        "body": "Bank transfer from a Swiss or SEPA account via Mt Pelerin (0% fees), or swap from USDC, USDT or ETH.",
+        "cta": {
+          "label": "Buy by bank transfer",
+          "href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
+          "external": true
+        }
+      },
+      {
+        "title": "Connect a wallet",
+        "body": "Any Ethereum wallet works. Savings run on Ethereum and seven other chains.",
+        "cta": {
+          "label": "Open the app",
+          "href": "https://app.frankencoin.com/savings",
+          "external": true
+        }
+      },
+      {
+        "title": "Deposit",
+        "body": "One transaction. Prefer a token you can trade or use as collateral? Use the Savings Vault (svZCHF) instead.",
+        "cta": {
+          "label": "Save ZCHF",
+          "href": "https://app.frankencoin.com/savings",
+          "external": true
+        }
+      }
+    ]
+  },
+  "risks": {
+    "title": "What can go wrong",
+    "items": [
+      {
+        "title": "The rate can change",
+        "description": "Governance sets the savings rate and can lower it. Your balance never goes down, but future interest may."
+      },
+      {
+        "title": "Smart-contract risk",
+        "description": "The contracts are audited many times, but no audit removes all risk. Optional depeg cover is available."
+      },
+      {
+        "title": "Peg risk",
+        "description": "ZCHF is backed by over-collateralised positions, not by a bank. A sharp crash in collateral could stress the peg."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "Is this a bank account?",
+      "a": "No. ZCHF is a token on public blockchains and you hold it in your own wallet. Nobody can freeze it, and nobody insures it the way a Swiss bank deposit is insured."
+    },
+    {
+      "q": "Can I withdraw any time?",
+      "a": "Yes. Your ZCHF and the interest it earned can be withdrawn from the savings module whenever you want."
+    },
+    {
+      "q": "Do I pay tax on the interest?",
+      "a": "Probably, depending on where you live. The app's [accounting report](https://app.frankencoin.com/report) lists the interest you collected per year."
+    },
+    {
+      "q": "How is this different from holding USDC?",
+      "a": "You hold Swiss francs instead of US dollars, and the protocol pays a savings rate. See the [comparison](/compare)."
+    }
+  ],
+  "trust": [
+    {
+      "label": "Audits",
+      "value": "7 audits by 4 firms",
+      "href": "/security"
+    },
+    {
+      "label": "Legal",
+      "value": "Swiss law & MiCA opinions",
+      "href": "/compliance"
+    },
+    {
+      "label": "Reserves",
+      "value": "Live on-chain",
+      "href": "/transparency"
+    },
+    {
+      "label": "Cover",
+      "value": "Optional depeg insurance",
+      "href": "/insurance"
+    }
+  ],
+  "sticky": {
+    "label": "Start saving",
+    "sub": "Withdraw any time"
+  }
+}

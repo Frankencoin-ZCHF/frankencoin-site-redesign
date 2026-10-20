@@ -1,0 +1,32 @@
+---
+/* /press — press kit: boilerplate, logos (public/press), guidelines, contact. Copy: content/en/press.json */
+import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import { getLanguageFromURL, loadContent } from "../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const c = await loadContent<any>("press", lang);
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
+  <LPSection title={c.boiler.title} narrow>
+    <blockquote class="m-0 rounded-2xl border-l-4 border-[var(--color-brand-swiss)] bg-[var(--color-gray-10)] p-6 ty-body-2 text-[var(--color-neutral-700)]">{c.boiler.text}</blockquote>
+  </LPSection>
+  <LPSection title={c.assets.title} accent>
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+      {c.assets.items.map((a: any) => (
+        <a href={a.file} download class="group rounded-2xl border border-[var(--color-gray-20)] overflow-hidden bg-[var(--color-white)] hover:border-[var(--color-brand-swiss)]">
+          <span class={`flex items-center justify-center h-32 p-6 ${a.bg === "dark" ? "bg-[var(--color-brand-deep-blue)]" : "bg-[var(--color-white)]"}`}><img src={a.file} alt={a.label} class="max-h-16 max-w-full object-contain" loading="lazy" /></span>
+          <span class="flex justify-between px-4 py-3 ty-body-3 font-bold text-[var(--color-brand-deep-blue)] border-t border-[var(--color-gray-20)]"><span>{a.label}</span><span class="text-[var(--color-blue-39)]">SVG ↓</span></span>
+        </a>
+      ))}
+    </div>
+    <a href={c.assets.guidelines.file} download class="inline-flex mt-6 rounded-full bg-[var(--color-brand-deep-blue)] text-white font-bold ty-body-2 px-6 py-3.5 hover:bg-[var(--color-blue-39)]">{c.assets.guidelines.label} ↓</a>
+  </LPSection>
+  <LPSection title={c.contact.title} narrow>
+    <a href={`mailto:${c.contact.email}`} class="ty-title-2 font-black text-[var(--color-brand-swiss)]">{c.contact.email}</a>
+  </LPSection>
+</Base>

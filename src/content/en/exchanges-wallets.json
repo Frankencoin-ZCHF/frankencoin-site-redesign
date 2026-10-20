@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Frankencoin for exchanges and wallets: list ZCHF, earn on savings",
+    "description": "List the decentralized Swiss franc, add one-tap savings and earn up to 25% of your users' interest through the referral contract."
+  },
+  "hero": {
+    "eyebrow": "For exchanges & wallets",
+    "title": "Give your users the Swiss franc. Earn on it.",
+    "subtitle": "ZCHF is a standard token on eight chains with deep on-chain liquidity. Add savings to your wallet and earn up to 25% of the interest your users collect.",
+    "primary": {
+      "label": "Get in touch",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Referral program",
+      "href": "/referral"
+    }
+  },
+  "why": {
+    "title": "What you get",
+    "items": [
+      {
+        "title": "A non-USD stablecoin",
+        "description": "The largest decentralized Swiss franc stablecoin, live since 2023 without a significant depeg."
+      },
+      {
+        "title": "Revenue share",
+        "description": "Set your address as referrer when users save and receive up to 25% of their interest, paid by the contract.",
+        "href": "/referral",
+        "cta": "How referral works"
+      },
+      {
+        "title": "Liquidity",
+        "description": "Curve and Uniswap pools, DEX aggregators and regulated fiat ramps for size."
+      },
+      {
+        "title": "Eight chains",
+        "description": "Ethereum, Base, Arbitrum, Optimism, Polygon, Gnosis, Avalanche and Sonic, bridged with Chainlink CCIP."
+      }
+    ]
+  },
+  "steps": {
+    "title": "Integrate in three steps",
+    "items": [
+      {
+        "title": "List the token",
+        "body": "Standard ERC-20 with 18 decimals. Addresses per chain, logos and supply endpoints are public.",
+        "cta": {
+          "label": "Addresses and API",
+          "href": "/for/developers"
+        }
+      },
+      {
+        "title": "Add savings",
+        "body": "Call the savings contract with your referrer address and fee. Users keep full control and can remove the referrer.",
+        "cta": {
+          "label": "Read the docs",
+          "href": "https://docs.frankencoin.com/",
+          "external": true
+        }
+      },
+      {
+        "title": "Tell your users",
+        "body": "Use the press kit and live figures. We are happy to co-announce.",
+        "cta": {
+          "label": "Press kit",
+          "href": "/press"
+        }
+      }
+    ]
+  },
+  "data": {
+    "title": "Data for listings",
+    "items": [
+      {
+        "title": "Circulating supply",
+        "description": "api.frankencoin.com/ecosystem/coinmarketcap/totalsupply",
+        "href": "https://api.frankencoin.com/ecosystem/coinmarketcap/totalsupply",
+        "cta": "Open"
+      },
+      {
+        "title": "Protocol figures",
+        "description": "Supply per chain, collateral and reserve as JSON.",
+        "href": "https://api.frankencoin.com/ecosystem/frankencoin/info",
+        "cta": "Open"
+      },
+      {
+        "title": "Logos and brand",
+        "description": "Logos in SVG, brand guidelines.",
+        "href": "/press",
+        "cta": "Press kit"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Listing ZCHF?",
+    "body": "The association supports listings with liquidity introductions, co-marketing and technical help.",
+    "primary": {
+      "label": "info@frankencoin.com",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Referral program",
+      "href": "/referral"
+    }
+  }
+}

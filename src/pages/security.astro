@@ -1,0 +1,22 @@
+---
+/* /security — audits, bug bounty, ratings. Reuses TrustSecurityContainer (moved here from the home page). */
+import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import FeatureGrid from "../components/LP/FeatureGrid.astro";
+import TrustSecurityContainer from "../components/TrustSecurityContainer/TrustSecurityContainer.astro";
+import { getLanguageFromURL, loadContent } from "../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const c = await loadContent<any>("security", lang);
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
+  <LPSection><FeatureGrid items={c.summary} cols={4} /></LPSection>
+  <section id="audits" class="scroll-mt-20 bg-[var(--color-gray-10)] py-14">
+    <div id="ratings" class="scroll-mt-20"></div>
+    <TrustSecurityContainer />
+  </section>
+</Base>

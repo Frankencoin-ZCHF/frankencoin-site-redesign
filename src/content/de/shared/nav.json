@@ -5,28 +5,112 @@
   },
   "links": [
     {
-      "label": "Sparen & Investieren",
-      "href": "/save-invest"
+      "label": "Sparen",
+      "href": "/use-cases/save-in-chf"
     },
     {
       "label": "Leihen",
-      "href": "https://app.frankencoin.com/mint"
+      "href": "/use-cases/borrow"
     },
     {
-      "label": "Partner",
-      "href": "/partners"
+      "label": "Für",
+      "children": [
+        {
+          "label": "Sparer",
+          "href": "/for/savers"
+        },
+        {
+          "label": "Treasuries",
+          "href": "/for/treasuries"
+        },
+        {
+          "label": "Börsen & Wallets",
+          "href": "/for/exchanges-wallets"
+        },
+        {
+          "label": "Entwickler",
+          "href": "/for/developers"
+        }
+      ]
     },
     {
-      "label": "Entwickler",
-      "href": "/developers"
+      "label": "Integrieren",
+      "children": [
+        {
+          "label": "Integration",
+          "href": "/integrate"
+        },
+        {
+          "label": "Sicherheit vorschlagen",
+          "href": "/integrate/collateral"
+        },
+        {
+          "label": "Empfehlungsprogramm",
+          "href": "/referral"
+        }
+      ]
     },
     {
       "label": "FCS",
       "href": "/fcs"
     },
     {
-      "label": "Über",
-      "href": "/what-is-frankencoin"
+      "label": "Vertrauen",
+      "children": [
+        {
+          "label": "Transparenz",
+          "href": "/transparency"
+        },
+        {
+          "label": "Sicherheit",
+          "href": "/security"
+        },
+        {
+          "label": "Compliance",
+          "href": "/compliance"
+        },
+        {
+          "label": "Versicherung",
+          "href": "/insurance"
+        }
+      ]
+    },
+    {
+      "label": "Lernen",
+      "children": [
+        {
+          "label": "Was ist Frankencoin",
+          "href": "/what-is-frankencoin"
+        },
+        {
+          "label": "So funktioniert es",
+          "href": "/how-it-works"
+        },
+        {
+          "label": "Vergleich",
+          "href": "/compare"
+        },
+        {
+          "label": "FAQ",
+          "href": "/faq"
+        },
+        {
+          "label": "Glossar",
+          "href": "/glossary"
+        },
+        {
+          "label": "Anwendungsfälle",
+          "href": "/use-cases"
+        },
+        {
+          "label": "News",
+          "href": "/news"
+        },
+        {
+          "label": "Pressekit",
+          "href": "/press"
+        }
+      ]
     }
   ],
   "cta": {

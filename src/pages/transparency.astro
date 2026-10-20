@@ -1,0 +1,56 @@
+---
+/* /transparency — live supply, collateral and reserve. Data: utils/liveStats.ts getTransparency() */
+import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import Figures from "../components/LP/Figures.astro";
+import FeatureGrid from "../components/LP/FeatureGrid.astro";
+import { getLanguageFromURL, loadContent } from "../utils/i18n";
+import { getTransparency } from "../utils/liveStats";
+import { formatAmount, formatStamp } from "../utils/fcsStats";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const c = await loadContent<any>("transparency", lang);
+const t = await getTransparency();
+const ratio = t.supply && t.collateralChf ? (t.collateralChf / t.supply).toFixed(2) : "—";
+const maxChain = Math.max(1, ...t.supplyByChain.map((x) => x.supply));
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
+  <LPSection>
+    <Figures cols={4} items={[
+      { ...c.figures.supply, value: formatAmount(t.supply) },
+      { ...c.figures.collateral, value: formatAmount(t.collateralChf) },
+      { ...c.figures.ratio, value: ratio },
+      { ...c.figures.equity, value: formatAmount(t.equity) },
+    ]} />
+    <p class="ty-2xs text-[var(--color-neutral-550)] mt-3">{formatStamp(c.stamp, t.updated)}</p>
+  </LPSection>
+  <LPSection title={c.chains.title} accent>
+    <div class="flex flex-col gap-2">
+      {t.supplyByChain.map((x) => (
+        <div class="grid grid-cols-[110px_1fr_auto] items-center gap-3 ty-body-3">
+          <span class="font-bold text-[var(--color-brand-deep-blue)]">{x.chain}</span>
+          <span class="h-3 rounded-full bg-[var(--color-gray-20)] overflow-hidden"><span class="block h-full bg-[var(--color-brand-swiss)]" style={`width:${Math.max(0.5, (x.supply / maxChain) * 100)}%`}></span></span>
+          <span class="tabular-nums">{formatAmount(x.supply)}</span>
+        </div>
+      ))}
+    </div>
+  </LPSection>
+  <LPSection title={c.collateral.title}>
+    <div class="overflow-x-auto rounded-2xl border border-[var(--color-gray-20)]">
+      <table class="w-full ty-body-3">
+        <thead class="bg-[var(--color-gray-15)] text-left"><tr><th class="p-3">{c.collateral.cols.asset}</th><th class="p-3 text-right">{c.collateral.cols.value}</th><th class="p-3 text-right">{c.collateral.cols.minted}</th><th class="p-3 text-right">{c.collateral.cols.positions}</th></tr></thead>
+        <tbody>
+          {t.collateral.map((x) => (
+            <tr class="border-t border-[var(--color-gray-20)]"><td class="p-3"><b class="text-[var(--color-brand-deep-blue)]">{x.symbol}</b> <span class="text-[var(--color-neutral-550)] hidden sm:inline">{x.name}</span></td><td class="p-3 text-right tabular-nums">{formatAmount(x.chf)}</td><td class="p-3 text-right tabular-nums">{formatAmount(x.minted)}</td><td class="p-3 text-right">{x.positions}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </LPSection>
+  <LPSection title={c.sources.title} accent><FeatureGrid items={c.sources.items} cols={4} /></LPSection>
+</Base>

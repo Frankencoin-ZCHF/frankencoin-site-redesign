@@ -370,7 +370,7 @@ const allItems = [...articlesWithMetadata, ...normalizedVideos].sort((a, b) => {
   </div>
 
   <!-- Navigation Controls -->
-  <div class="flex justify-center items-center gap-2 mt-1">
+  <div class="flex justify-center items-center gap-2 mt-1 max-w-full">
     <button
       @click="prev()"
       class="p-3 rounded-full bg-[var(--color-brand-deep-blue)] text-white hover:bg-[var(--color-brand-swiss)] transition-colors"
@@ -382,11 +382,11 @@ const allItems = [...articlesWithMetadata, ...normalizedVideos].sort((a, b) => {
     </button>
 
     <!-- Pagination Dots -->
-    <div class="flex gap-2">
+    <div class="flex flex-wrap justify-center gap-2 min-w-0">
       <template x-for="page in totalPages" :key="page">
         <button
           @click="currentIndex = page - 1"
-          class="w-5 h-5 rounded-full transition-colors"
+          class="w-3 h-3 sm:w-5 sm:h-5 rounded-full transition-colors shrink-0"
           :class="currentIndex === page - 1 ? 'bg-[var(--color-brand-deep-blue)]' : 'bg-gray-300'"
           :aria-label="`Go to page ${page}`"
         ></button>

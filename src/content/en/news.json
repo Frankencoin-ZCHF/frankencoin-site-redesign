@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "title": "Frankencoin news and media coverage",
+    "description": "Articles, interviews and videos about Frankencoin and ZCHF."
+  },
+  "hero": {
+    "eyebrow": "News",
+    "title": "Frankencoin in the media.",
+    "subtitle": "Coverage, interviews and talks. Follow X or Telegram for announcements."
+  },
+  "follow": [
+    {
+      "label": "X",
+      "href": "https://x.com/frankencoinzchf"
+    },
+    {
+      "label": "Telegram",
+      "href": "https://t.me/frankencoinzchf"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/company/frankencoin/"
+    }
+  ]
+}

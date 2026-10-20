@@ -1,0 +1,45 @@
+---
+/* /use-cases/save-in-chf — save in Swiss francs at the protocol rate. Copy: content/en/save-in-chf.json */
+import Base from "../../layouts/Base.astro";
+import LPHero from "../../components/LP/LPHero.astro";
+import LPSection from "../../components/LP/LPSection.astro";
+import Figures from "../../components/LP/Figures.astro";
+import FeatureGrid from "../../components/LP/FeatureGrid.astro";
+import FaqList from "../../components/LP/FaqList.astro";
+import UsdChfChart from "../../components/LP/UsdChfChart.astro";
+import Calculator from "../../components/Calculator/Calculator.astro";
+import Steps from "../../components/Steps/Steps.astro";
+import TrustStrip from "../../components/TrustStrip/TrustStrip.astro";
+import StickyCTA from "../../components/StickyCTA/StickyCTA.astro";
+import { getLanguageFromURL, loadContent } from "../../utils/i18n";
+import { getCalcData } from "../../utils/calcStats";
+import { formatAmount, formatPct } from "../../utils/fcsStats";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const c = await loadContent<any>("save-in-chf", lang);
+const d = await getCalcData();
+const rate = formatPct(d.current.rate, 2);
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title.replace("{rate}", rate)} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary}>
+    <Figures slot="aside" items={[{ ...c.figures.rate, value: rate }, { ...c.figures.saved, value: formatAmount(d.current.totalSavings) }]} />
+  </LPHero>
+
+  <LPSection eyebrow={c.why.eyebrow} title={c.why.title} subtitle={c.why.subtitle}>
+    <UsdChfChart />
+  </LPSection>
+
+  <LPSection id="calculator" accent>
+    <Calculator defaultGoal="save" />
+  </LPSection>
+
+  <LPSection title={c.how.title}><FeatureGrid items={c.how.cards} /></LPSection>
+  <LPSection title={c.steps.title} accent><Steps steps={c.steps.items} /></LPSection>
+  <LPSection title={c.risks.title}><FeatureGrid items={c.risks.items} /></LPSection>
+  <LPSection accent><TrustStrip items={c.trust} /></LPSection>
+  <LPSection title="FAQ" narrow><FaqList items={c.faq} /></LPSection>
+  <StickyCTA label={c.sticky.label} sub={c.sticky.sub} href="/start" />
+</Base>

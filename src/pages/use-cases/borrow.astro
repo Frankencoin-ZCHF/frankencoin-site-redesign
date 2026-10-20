@@ -1,0 +1,75 @@
+---
+/* /use-cases/borrow — borrow ZCHF against crypto, gold or shares. Live terms from utils/liveStats.ts. */
+import Base from "../../layouts/Base.astro";
+import LPHero from "../../components/LP/LPHero.astro";
+import LPSection from "../../components/LP/LPSection.astro";
+import FeatureGrid from "../../components/LP/FeatureGrid.astro";
+import FaqList from "../../components/LP/FaqList.astro";
+import StickyCTA from "../../components/StickyCTA/StickyCTA.astro";
+import { getLanguageFromURL, loadContent } from "../../utils/i18n";
+import { getBorrowOptions } from "../../utils/liveStats";
+import { formatAmount, formatPct } from "../../utils/fcsStats";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const c = await loadContent<any>("borrow", lang);
+const options = (await getBorrowOptions()).slice(0, 12);
+const date = (s: number) => new Date(s * 1000).toLocaleDateString(lang === "de" ? "de-CH" : "en-GB", { month: "short", year: "numeric" });
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary}>
+    <div slot="aside"><FeatureGrid items={c.collateral.items} cols={2} /></div>
+  </LPHero>
+
+  <LPSection id="rates" title={c.rates.title} subtitle={c.rates.subtitle}>
+    {options.length === 0 ? (
+      <p class="ty-body-2 text-[var(--color-neutral-550)]">{c.rates.empty} <a class="font-bold text-[var(--color-blue-39)]" href="https://app.frankencoin.com/mint" target="_blank" rel="noopener noreferrer">app.frankencoin.com</a></p>
+    ) : (
+      <>
+        <div class="hidden md:block overflow-hidden rounded-2xl border border-[var(--color-gray-20)]">
+          <table class="w-full ty-body-3">
+            <thead class="bg-[var(--color-gray-15)] text-left">
+              <tr>
+                <th class="p-4">{c.rates.cols.asset}</th><th class="p-4 text-right">{c.rates.cols.ltv}</th><th class="p-4 text-right">{c.rates.cols.rate}</th>
+                <th class="p-4 text-right">{c.rates.cols.available}</th><th class="p-4 text-right">{c.rates.cols.maturity}</th><th class="p-4"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {options.map((o) => (
+                <tr class="border-t border-[var(--color-gray-20)]">
+                  <td class="p-4"><span class="font-bold text-[var(--color-brand-deep-blue)]">{o.symbol}</span> <span class="text-[var(--color-neutral-550)]">{o.name}</span></td>
+                  <td class="p-4 text-right font-bold">{formatPct(o.ltv, 0)}</td>
+                  <td class="p-4 text-right">{formatPct(o.interest, 2)}</td>
+                  <td class="p-4 text-right">{formatAmount(o.available)} ZCHF</td>
+                  <td class="p-4 text-right">{date(o.maturity)}</td>
+                  <td class="p-4 text-right"><a href={o.href} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-full bg-[var(--color-brand-deep-blue)] hover:bg-[var(--color-blue-39)] text-white font-bold px-4 py-2">{c.rates.cta}</a></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div class="md:hidden grid gap-3">
+          {options.map((o) => (
+            <a href={o.href} target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-[var(--color-gray-20)] p-4 flex flex-col gap-2">
+              <span class="flex justify-between"><span class="font-black text-[var(--color-brand-deep-blue)]">{o.symbol}</span><span class="ty-xs text-[var(--color-neutral-550)]">{date(o.maturity)}</span></span>
+              <span class="grid grid-cols-3 ty-body-3">
+                <span><span class="block ty-2xs text-[var(--color-neutral-550)]">{c.rates.cols.ltv}</span><b>{formatPct(o.ltv, 0)}</b></span>
+                <span><span class="block ty-2xs text-[var(--color-neutral-550)]">{c.rates.cols.rate}</span><b>{formatPct(o.interest, 2)}</b></span>
+                <span><span class="block ty-2xs text-[var(--color-neutral-550)]">{c.rates.cols.available}</span><b>{formatAmount(o.available)}</b></span>
+              </span>
+            </a>
+          ))}
+        </div>
+        <p class="ty-xs text-[var(--color-neutral-550)] mt-3">{c.rates.note}</p>
+      </>
+    )}
+  </LPSection>
+
+  <LPSection title={c.how.title} accent><FeatureGrid items={c.how.cards} /></LPSection>
+  <LPSection title={c.terms.title}><FeatureGrid items={c.terms.items} cols={4} /></LPSection>
+  <LPSection title={c.risks.title} accent><FeatureGrid items={c.risks.items} cols={2} /></LPSection>
+  <LPSection title="FAQ" narrow><FaqList items={c.faq} /></LPSection>
+  <StickyCTA label={c.sticky.label} sub={c.sticky.sub} href="/use-cases/borrow#rates" />
+</Base>

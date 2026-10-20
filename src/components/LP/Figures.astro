@@ -1,0 +1,15 @@
+---
+/** Small grid of live figures. */
+interface Fig { label: string; value: string; unit?: string }
+const { items, cols = 2 } = Astro.props as { items: Fig[]; cols?: 2 | 4 };
+---
+
+<dl class={`grid grid-cols-2 ${cols === 4 ? "lg:grid-cols-4" : ""} gap-3 m-0`}>
+  {items.map((f) => (
+    <div class="rounded-2xl bg-[var(--color-white)] border border-[var(--color-gray-20)] p-5 min-w-0">
+      <dt class="ty-xs tracking-wider font-bold text-[var(--color-neutral-550)]">{f.label.toUpperCase()}</dt>
+      <dd class="m-0 mt-1 text-[26px] sm:text-[30px] font-black text-[var(--color-brand-deep-blue)] leading-none break-words">{f.value}</dd>
+      {f.unit && <dd class="m-0 mt-1 ty-xs text-[var(--color-neutral-550)]">{f.unit}</dd>}
+    </div>
+  ))}
+</dl>

@@ -1,0 +1,38 @@
+---
+/**
+ * Landing-page hero. Left: eyebrow, h1, subtitle, CTAs. Right: optional `aside` slot (figures, code, chart).
+ * Marks itself as the hero for the mobile sticky CTA.
+ */
+import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
+
+interface Cta { label: string; href: string }
+interface Props { eyebrow: string; title: string; subtitle: string; primary?: Cta; secondary?: Cta }
+const { eyebrow, title, subtitle, primary, secondary } = Astro.props as Props;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+const ext = (h: string) => (h.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
+const hasAside = Astro.slots.has("aside");
+---
+
+<section class="bg-[var(--color-gray-10)] pt-24 md:pt-32 pb-12 md:pb-20">
+  <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
+    <div data-hero class={`grid gap-10 items-center ${hasAside ? "lg:grid-cols-[1.1fr_1fr]" : "max-w-3xl"}`}>
+      <div class="flex flex-col gap-5">
+        <p class="ty-subtitle">{eyebrow.toUpperCase()}</p>
+        <h1 class="ty-large-title text-[var(--color-brand-deep-blue)] m-0">{title}</h1>
+        <p class="ty-body-1 text-[var(--color-neutral-650)]">{subtitle}</p>
+        {(primary || secondary) && (
+          <div class="flex flex-wrap gap-3 mt-1">
+            {primary && (
+              <a href={href(primary.href)} {...ext(primary.href)} class="inline-flex items-center rounded-full bg-[var(--color-brand-swiss)] hover:bg-[var(--color-blue-39)] text-white font-bold ty-body-2 px-6 py-3.5 transition-colors">{primary.label}</a>
+            )}
+            {secondary && (
+              <a href={href(secondary.href)} {...ext(secondary.href)} class="inline-flex items-center rounded-full border border-[var(--color-brand-deep-blue)] text-[var(--color-brand-deep-blue)] font-bold ty-body-2 px-6 py-3.5 hover:bg-[var(--color-white)]">{secondary.label}</a>
+            )}
+          </div>
+        )}
+      </div>
+      {hasAside && <div class="min-w-0"><slot name="aside" /></div>}
+    </div>
+  </div>
+</section>

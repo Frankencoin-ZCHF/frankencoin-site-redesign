@@ -1,5 +1,5 @@
 /**
- * Data for the "What if" calculator (home, /start, /save-invest).
+ * Data for the "What if" calculator (home, /start, savings pages).
  *
  * Everything is read on the server from api.frankencoin.com (no CSP change needed) and cached
  * for 5 minutes. The page injects the compact result as JSON; the Alpine component in

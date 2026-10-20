@@ -1,0 +1,30 @@
+---
+/* /compare — ZCHF vs issuer-backed CHF stablecoins vs USDC. Copy: content/en/compare.json */
+import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import CtaBand from "../components/LP/CtaBand.astro";
+import { getLanguageFromURL, loadContent } from "../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const c = await loadContent<any>("compare", lang);
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
+  <LPSection>
+    <div class="overflow-x-auto">
+      <table class="w-full min-w-[640px] border-separate border-spacing-0 rounded-2xl overflow-hidden border border-[var(--color-gray-20)] ty-body-3">
+        <thead><tr class="bg-[var(--color-gray-15)]">{c.head.map((h: string, i: number) => (<th class={`text-left p-4 ty-body-2 font-black ${i === 1 ? "text-[var(--color-brand-swiss)]" : "text-[var(--color-brand-deep-blue)]"}`}>{h}</th>))}</tr></thead>
+        <tbody>
+          {c.rows.map((r: string[]) => (
+            <tr>{r.map((cell, i) => i === 0 ? <th scope="row" class="text-left p-4 font-bold text-[var(--color-neutral-600)] border-t border-[var(--color-gray-20)]">{cell}</th> : <td class={`p-4 border-t border-[var(--color-gray-20)] ${i === 1 ? "bg-[color-mix(in_oklab,var(--color-brand-swiss)_5%,white)] font-semibold" : ""}`}>{cell}</td>)}</tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="ty-xs text-[var(--color-neutral-550)] mt-3">{c.note}</p>
+  </LPSection>
+  <CtaBand {...c.cta} />
+</Base>

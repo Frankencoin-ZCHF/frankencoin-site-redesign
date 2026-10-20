@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "Frankencoin referral program: earn up to 25% of savers' interest",
+    "description": "Wallets, communities and creators can set themselves as referrer when people save ZCHF and earn up to 25% of the interest, paid by the contract."
+  },
+  "hero": {
+    "eyebrow": "Referral program",
+    "title": "Earn a share of the interest your savers collect.",
+    "subtitle": "The Frankencoin savings contract has referrals built in. Send people to save ZCHF with your link and receive up to 25% of the interest they earn, paid automatically on-chain.",
+    "primary": {
+      "label": "Create your link",
+      "href": "#link"
+    },
+    "secondary": {
+      "label": "See the leaderboard",
+      "href": "https://app.frankencoin.com/savings/referrer"
+    }
+  },
+  "how": {
+    "title": "How it works",
+    "cards": [
+      {
+        "title": "1 · Share your link",
+        "description": "Your link opens the app's Earn page with your address and fee filled in."
+      },
+      {
+        "title": "2 · They save",
+        "description": "When the saver deposits, the contract records you as their referrer."
+      },
+      {
+        "title": "3 · You earn",
+        "description": "Each time their interest is collected, your share goes to your address. No invoices, no payouts to chase."
+      }
+    ]
+  },
+  "builder": {
+    "title": "Create your referral link",
+    "address": "Your payout address",
+    "fee": "Your share of their interest",
+    "feeHint": "Up to 25%. A lower share is a better deal for your savers.",
+    "link": "Your link",
+    "copy": "Copy",
+    "copied": "Copied",
+    "invalid": "Enter a valid 0x address.",
+    "earnTitle": "What you could earn",
+    "referred": "If your savers hold",
+    "perYear": "you would receive per year"
+  },
+  "fair": {
+    "title": "Fair by design",
+    "items": [
+      {
+        "title": "Savers stay in control",
+        "description": "A saver can remove or change the referrer at any time."
+      },
+      {
+        "title": "Capped by the contract",
+        "description": "The contract rejects any share above 25% of interest."
+      },
+      {
+        "title": "Public",
+        "description": "Referrer balances are visible to everyone in the app's leaderboard."
+      }
+    ]
+  },
+  "who": {
+    "title": "Who it is for",
+    "items": [
+      {
+        "title": "Wallets and apps",
+        "description": "Add savings in your interface and earn on every user who saves.",
+        "href": "/for/exchanges-wallets",
+        "cta": "For wallets"
+      },
+      {
+        "title": "Communities",
+        "description": "Groups and newsletters that help members save in francs."
+      },
+      {
+        "title": "Creators",
+        "description": "Educators who explain on-chain savings to their audience."
+      }
+    ]
+  },
+  "note": "Earnings depend on the savings rate, which governance can change, and on how long your savers keep their balance."
+}

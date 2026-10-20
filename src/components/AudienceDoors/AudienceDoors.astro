@@ -11,7 +11,7 @@ const lang = getLanguageFromURL(Astro.url.pathname);
 const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
 ---
 
-<div class="grid md:grid-cols-3 gap-4 lg:gap-6">
+<div class={`grid sm:grid-cols-2 ${doors.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"} gap-4 lg:gap-6`}>
   {doors.map((d) => (
     <a
       href={href(d.href)}

@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Frankencoin for savers: retail and crypto-native",
+    "description": "Save in Swiss francs at the protocol rate, by bank transfer or from crypto. Calculator, live figures and three steps."
+  },
+  "hero": {
+    "eyebrow": "For savers",
+    "title": "A Swiss-franc account that lives on-chain.",
+    "subtitle": "Whether you start from a bank account or a crypto wallet, ZCHF earns the protocol rate and stays yours.",
+    "primary": {
+      "label": "Start now",
+      "href": "/start"
+    },
+    "secondary": {
+      "label": "Compare save and invest",
+      "href": "#compare"
+    }
+  },
+  "figures": {
+    "rate": {
+      "label": "Savings rate",
+      "unit": "per year"
+    },
+    "saved": {
+      "label": "Already saved",
+      "unit": "ZCHF"
+    },
+    "roe": {
+      "label": "FCS return",
+      "unit": "last 12 months"
+    },
+    "price": {
+      "label": "FCS price",
+      "unit": "ZCHF"
+    }
+  },
+  "paths": {
+    "title": "Two ways in",
+    "items": [
+      {
+        "eyebrow": "Retail savers",
+        "title": "From your bank account",
+        "description": "Send francs or euros by bank transfer to Mt Pelerin and receive ZCHF in your wallet with 0% fees. Then deposit in the savings module.",
+        "href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
+        "cta": "Buy by bank transfer"
+      },
+      {
+        "eyebrow": "Crypto-natives",
+        "title": "From USDC, USDT or ETH",
+        "description": "Swap into ZCHF on CoW Swap, Curve or Uniswap. Save at the protocol rate, or hold FCS for exposure to protocol income.",
+        "href": "https://swap.cow.fi/#/1/swap/USDC/ZCHF",
+        "cta": "Swap on CoW"
+      }
+    ]
+  },
+  "compare": {
+    "title": "Save or invest?",
+    "subtitle": "Both start with ZCHF. They differ in risk and in what you own.",
+    "head": {
+      "save": "ZCHF savings",
+      "invest": "FCS"
+    },
+    "rows": [
+      {
+        "label": "What you hold",
+        "save": "ZCHF, 1:1 Swiss franc",
+        "invest": "FCS, a share of the reserve"
+      },
+      {
+        "label": "Return",
+        "save": "Protocol rate, paid continuously",
+        "invest": "Share price follows the reserve"
+      },
+      {
+        "label": "Can it fall?",
+        "save": "Not unless the system fails",
+        "invest": "Yes, when the reserve absorbs losses"
+      },
+      {
+        "label": "Exit",
+        "save": "Any time",
+        "invest": "Sell on the market, or redeem through the protocol"
+      },
+      {
+        "label": "Vote",
+        "save": "No",
+        "invest": "Yes, veto rights"
+      }
+    ]
+  },
+  "trust": [
+    {
+      "label": "Audits",
+      "value": "7 audits by 4 firms",
+      "href": "/security"
+    },
+    {
+      "label": "Legal",
+      "value": "Swiss law & MiCA opinions",
+      "href": "/compliance"
+    },
+    {
+      "label": "Reserves",
+      "value": "Live on-chain",
+      "href": "/transparency"
+    },
+    {
+      "label": "Cover",
+      "value": "Optional depeg insurance",
+      "href": "/insurance"
+    }
+  ],
+  "sticky": {
+    "label": "Start now",
+    "sub": "Save or invest in three steps"
+  }
+}

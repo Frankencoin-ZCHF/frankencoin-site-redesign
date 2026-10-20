@@ -1,7 +1,6 @@
 ---
 import Section from "../components/Layout/Section.astro";
 import Base from "../layouts/Base.astro";
-import TrustSecurityContainer from "../components/TrustSecurityContainer/TrustSecurityContainer.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 
 const currentLang = getLanguageFromURL(Astro.url.pathname);
@@ -192,9 +191,5 @@ const compliance = await loadContent("compliance", currentLang);
         <p class="ty-small text-[var(--color-brand-titan-gray)]">{compliance.disclaimer.text}</p>
       </div>
     </div>
-  </Section>
-  <Section id="audits" pad="xs" width="full">
-    <div id="ratings"></div>
-    <TrustSecurityContainer />
   </Section>
 </Base>

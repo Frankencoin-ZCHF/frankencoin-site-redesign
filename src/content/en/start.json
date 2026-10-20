@@ -53,7 +53,7 @@
   "trust": {
     "title": "Why people trust it",
     "items": [
-      { "label": "Audits", "value": "4 independent audits", "href": "/compliance#audits" },
+      { "label": "Audits", "value": "7 audits by 4 firms", "href": "/security" },
       { "label": "Legal", "value": "Swiss law & MiCAR opinions", "href": "/compliance" },
       { "label": "Live since", "value": "2023, no de-peg", "href": "https://defillama.com/stablecoin/frankencoin" },
       { "label": "Insurance", "value": "Optional de-peg cover", "href": "/insurance" }

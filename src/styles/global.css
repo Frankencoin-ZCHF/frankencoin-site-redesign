@@ -41,3 +41,7 @@
     cursor: pointer;
   }
 }
+
+[x-cloak] {
+  display: none !important;
+}

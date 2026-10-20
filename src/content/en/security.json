@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Frankencoin security: audits, bug bounty and independent ratings",
+    "description": "Seven audits by four firms, a bug bounty run by Compass Security, and independent risk ratings from Xerberus and Pharos."
+  },
+  "hero": {
+    "eyebrow": "Security",
+    "title": "Audited, rated, and open to anyone who finds a bug.",
+    "subtitle": "Every Frankencoin component is audited before launch. A bug bounty pays for responsible disclosure, and independent protocols rate the system from public data."
+  },
+  "summary": [
+    {
+      "title": "7 audits, 4 firms",
+      "description": "ChainSecurity, Code4rena, Decurity and BlockBite."
+    },
+    {
+      "title": "Bug bounty",
+      "description": "Run by Compass Security for bugs that affect the system's stability.",
+      "href": "https://bugbounty.compass-security.com/service-details.html?id=18",
+      "cta": "Bounty details"
+    },
+    {
+      "title": "Independent ratings",
+      "description": "Xerberus and Pharos score the protocol from on-chain data."
+    },
+    {
+      "title": "Open source",
+      "description": "All contracts are public and verified on every chain.",
+      "href": "https://github.com/Frankencoin-ZCHF/Frankencoin",
+      "cta": "GitHub"
+    }
+  ]
+}
