@@ -2,7 +2,7 @@
   "header": {
     "image": "/images/fcs.png",
     "imageAlt": "Frankencoin Share Token (FCS)",
-    "title": "Frankencoin Governance",
+    "title": "Frankencoin|governance",
     "subtitle": "A decentralized, community-driven approach to managing the Swiss franc stablecoin",
     "cta": [
       {
@@ -15,7 +15,8 @@
         "href": "https://app.frankencoin.com/governance",
         "external": true
       }
-    ]
+    ],
+    "eyebrow": "Governance · FCS"
   },
   "caps": [
     {

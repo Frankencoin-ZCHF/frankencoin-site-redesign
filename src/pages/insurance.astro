@@ -2,6 +2,10 @@
 import Section from "../components/Layout/Section.astro";
 import SectionHeader from "../components/Layout/SectionHeader.astro";
 import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import CtaBand from "../components/LP/CtaBand.astro";
+import Figures from "../components/LP/Figures.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 
 const currentLang = getLanguageFromURL(Astro.url.pathname);
@@ -9,25 +13,12 @@ const insurance = await loadContent("insurance", currentLang);
 ---
 
 <Base title={insurance.seo.title} description={insurance.seo.description}>
-  <Section variant="accent" align="left" pad="xs" id="insurance-header">
-    <div class="max-w-4xl mx-auto">
-      <SectionHeader
-        eyebrow={insurance.header.eyebrow}
-        title={insurance.header.title}
-        subtitle={insurance.header.subtitle}
-        maxWidth="2xl"
-        size="display"
-        align="center"
-        margin="none"
-        padding="md"
-      />
-    </div>
-  </Section>
+  <LPHero eyebrow={insurance.header.eyebrow} title={insurance.header.title} subtitle={insurance.header.subtitle} />
 
   {insurance.products.map((product: any) => (
     <Section variant="plain" align="left" pad="xs" id="depeg-cover">
       <div class="max-w-5xl mx-auto">
-        <div class="rounded-2xl border border-[var(--color-neutral-200)] bg-white p-[var(--spacing-xl)] md:p-[var(--spacing-xxl)] shadow-sm">
+        <div class="rounded-3xl border border-[var(--color-gray-20)] bg-white p-[var(--spacing-xl)] md:p-[var(--spacing-xxl)] shadow-[0_10px_40px_-20px_rgba(9,47,98,0.35)]">
           <!-- Product header -->
           <span class="inline-block rounded-full bg-[var(--color-brand-deep-blue)] text-white ty-small font-bold px-3 py-1 mb-4">
             {product.badge}
@@ -127,4 +118,5 @@ const insurance = await loadContent("insurance", currentLang);
       </div>
     </div>
   </Section>
+  <CtaBand title="Put your money in Swiss francs." body="Three steps, about ten minutes. You keep your own keys." primary={{ label: "Start now", href: "/start" }} secondary={{ label: "Security and audits", href: "/security" }} />
 </Base>

@@ -2,6 +2,10 @@
 import Section from "../components/Layout/Section.astro";
 import SectionHeader from "../components/Layout/SectionHeader.astro";
 import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import CtaBand from "../components/LP/CtaBand.astro";
+import Figures from "../components/LP/Figures.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 import FlexStack from "../components/Layout/FlexStack.astro";
 import BadgeContainer, {
@@ -105,32 +109,16 @@ Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=300')
 ---
 
 <Base>
-  <Section variant="accent" align="center" pad="lg" id="governance-header">
-    <SectionHeader
-      title={governance.header.title}
-      subtitle={governance.header.subtitle}
-      image={governance.header.image}
-      imageAlt={governance.header.imageAlt}
-      cta={governance.header.cta}
-      padding="xl"
-      maxWidth="6xl"
-      size="display"
-      align="center"
-    />
-    <FlexStack direction="col" align="center" slot="bottom">
-      <div class="md:max-w-[900px] flex flex-col gap-4">
-        <BadgeContainer options={caps} />
-        <StatsContainer options={stats} />
-      </div>
-    </FlexStack>
-  </Section>
-  <Section id="governance-content" className="md:mt-100 mt-160 mb-10" pad="xxs">
+  <LPHero eyebrow={governance.header.eyebrow ?? "Governance · FCS"} title={governance.header.title} subtitle={governance.header.subtitle} primary={Array.isArray(governance.header.cta) ? governance.header.cta[0] : governance.header.cta} secondary={{ label: "About FCS", href: "/fcs" }}>
+    {[...caps, ...stats].length > 0 && <Figures slot="aside" items={[...caps, ...stats].slice(0, 6).map((x: any) => ({ label: x.label, value: String(x.value).replace(/\.\d+$/, ""), unit: x.unit }))} />}
+  </LPHero>
+  <Section id="governance-content" pad="sm">
     <FlexStack direction="col" gap="40px" align="center">
       {
         governance.sections.map((section) => (
-          <div class="flex flex-col md:flex-row justify-between">
+          <div class="flex flex-col md:flex-row justify-between gap-4 w-full border-t border-[var(--color-gray-20)] pt-8">
             <div class="w-full md:w-1/2">
-              <h1 class="ty-title-1 ty-black">{section.title}</h1>
+              <h2 class="text-[28px] sm:text-[34px] leading-[1.05] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0 pr-6">{section.title}</h2>
             </div>
             <div class="w-full md:w-1/2">
               <p
@@ -143,4 +131,5 @@ Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=300')
       }
     </FlexStack>
   </Section>
+  <CtaBand title="Put your money in Swiss francs." body="Three steps, about ten minutes. You keep your own keys." primary={{ label: "Start now", href: "/start" }} secondary={{ label: "About FCS", href: "/fcs" }} />
 </Base>

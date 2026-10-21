@@ -3,6 +3,10 @@ import Section from "../components/Layout/Section.astro";
 import SectionHeader from "../components/Layout/SectionHeader.astro";
 import FlexStack from "../components/Layout/FlexStack.astro";
 import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import CtaBand from "../components/LP/CtaBand.astro";
+import Figures from "../components/LP/Figures.astro";
 import FrontendCard from "../components/Frontends/FrontendCard.astro";
 import FrontendsWarning from "../components/Frontends/FrontendsWarning.astro";
 import {
@@ -27,29 +31,12 @@ for (let i = frontends.length - 1; i > 0; i--) {
   title={content.seo.title}
   description={content.seo.description}
 >
-  <Section
-    variant="accent"
-    align="left"
-    pad="xs"
-    id="frontends-header"
-  >
-    <div class="flex flex-col gap-[var(--spacing-l)] max-w-4xl mx-auto">
-      <SectionHeader
-        title={content.header.title}
-        subtitle={content.header.subtitle}
-        maxWidth="2xl"
-        size="display"
-        align="center"
-        margin="none"
-        padding="md"
-      />
-      <FrontendsWarning
-        eyebrow={content.warning.eyebrow}
-        title={content.warning.title}
-        body={content.warning.body}
-      />
+  <LPHero eyebrow={content.header.eyebrow ?? "Open protocol"} title={content.header.title} subtitle={content.header.subtitle} />
+  <section class="bg-[var(--color-white)] pt-4">
+    <div class="mx-auto max-w-4xl px-[var(--spacing-l)]">
+      <FrontendsWarning eyebrow={content.warning.eyebrow} title={content.warning.title} body={content.warning.body} />
     </div>
-  </Section>
+  </section>
 
   <Section
     variant="plain"
@@ -85,4 +72,5 @@ for (let i = frontends.length - 1; i > 0; i--) {
       </FlexStack>
     </div>
   </Section>
+  <CtaBand title="Put your money in Swiss francs." body="Three steps, about ten minutes. You keep your own keys." primary={{ label: "Start now", href: "/start" }} secondary={{ label: "Read the docs", href: "https://docs.frankencoin.com/" }} />
 </Base>

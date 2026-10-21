@@ -2,58 +2,33 @@
 import Section from "../components/Layout/Section.astro";
 import SectionHeader from "../components/Layout/SectionHeader.astro";
 import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import CtaBand from "../components/LP/CtaBand.astro";
+import Figures from "../components/LP/Figures.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 import FlexStack from "../components/Layout/FlexStack.astro";
 
 const currentLang = getLanguageFromURL(Astro.url.pathname);
 const whatIsFrankencoin = await loadContent("what-is-frankencoin", currentLang);
+const featureCols = (whatIsFrankencoin as any).features.length === 3 ? "grid-cols-1 sm:grid-cols-3" : "grid-cols-1 sm:grid-cols-2";
 ---
 
 <Base>
-  <Section
-    variant="accent"
-    align="center"
-    pad="lg"
-    id="what-is-frankencoin-header"
-  >
-    <SectionHeader
-      title={whatIsFrankencoin.header.title}
-      subtitle={whatIsFrankencoin.header.subtitle}
-      cta={whatIsFrankencoin.header.cta}
-      image={whatIsFrankencoin.header.image}
-      imageAlt={whatIsFrankencoin.header.imageAlt}
-      maxWidth="6xl"
-      size="display"
-      align="center"
-      padding="xl"
-    />
-    <FlexStack
-      direction="col"
-      align="center"
-      className="max-w-4xl mx-auto h-64"
-      slot="bottom"
-    >
-      <div class="flex md:flex-row justify-center items-center flex-col gap-20">
-        {
-          whatIsFrankencoin.features.map((feature) => (
-            <div class="flex flex-col items-center gap-5">
-              <img
-                src={feature.image}
-                alt={feature.title}
-                width="100"
-                height="100"
-              />
-              <h3 class="ty-title-3 ty-black">{feature.title.toUpperCase()}</h3>
-            </div>
-          ))
-        }
-      </div>
-    </FlexStack>
-  </Section>
+  <LPHero eyebrow={whatIsFrankencoin.header.eyebrow ?? "About Frankencoin"} title={whatIsFrankencoin.header.title} subtitle={whatIsFrankencoin.header.subtitle} primary={Array.isArray(whatIsFrankencoin.header.cta) ? whatIsFrankencoin.header.cta[0] : whatIsFrankencoin.header.cta} secondary={{ label: "How it works", href: "/how-it-works" }}>
+    <div slot="aside" class:list={["grid gap-px overflow-hidden", featureCols, "rounded-3xl border border-white/70 bg-[var(--color-gray-20)]/60 backdrop-blur-md shadow-[0_10px_40px_-15px_rgba(9,47,98,0.35)]"]}>
+      {whatIsFrankencoin.features.map((feature: any) => (
+        <div class="bg-white/80 p-4 sm:p-5 flex flex-row sm:flex-col items-center sm:items-start gap-3">
+          <img src={feature.image} alt="" width="44" height="44" class="h-11 w-11" />
+          <span class="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--color-brand-deep-blue)]">{feature.title}</span>
+        </div>
+      ))}
+    </div>
+  </LPHero>
 
   <Section
     id="what-is-frankencoin-introduction"
-    margin="md:mt-35 mt-150 mb-30"
+    margin=""
     pad="none"
   >
     <FlexStack direction="col" gap="40px" align="center">
@@ -61,7 +36,7 @@ const whatIsFrankencoin = await loadContent("what-is-frankencoin", currentLang);
         whatIsFrankencoin.introduction.map((feature) => (
           <div class="flex flex-col gap-4  md:flex-row justify-between">
             <div class="w-full md:w-1/2">
-              <h1 class="ty-title-1 ty-black">{feature.title}</h1>
+              <h2 class="text-[26px] sm:text-[32px] leading-[1.05] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0">{feature.title}</h2>
             </div>
             <div class="w-full md:w-1/2">
               <p
@@ -74,4 +49,5 @@ const whatIsFrankencoin = await loadContent("what-is-frankencoin", currentLang);
       }
     </FlexStack>
   </Section>
+  <CtaBand title="Put your money in Swiss francs." body="Three steps, about ten minutes. You keep your own keys." primary={{ label: "Start now", href: "/start" }} secondary={{ label: "How it works", href: "/how-it-works" }} />
 </Base>

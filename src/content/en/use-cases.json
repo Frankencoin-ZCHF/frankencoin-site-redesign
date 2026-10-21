@@ -1,151 +1,152 @@
 {
-	"eyebrow": "Already in Use Today",
-	"title": "Real Applications for Digital Swiss Francs",
-	"intro": "Frankencoin is already being used by businesses and individuals across Switzerland for everyday payments, financial operations, and decentralized finance. Explore how ZCHF bridges traditional Swiss francs with the digital economy.",
-	"cases": [
-		{
-			"title": "Retail Payments",
-			"partner": "Spar Switzerland",
-			"description": "Pay directly with Frankencoin at Spar stores across Switzerland",
-			"longDescription": "Pay with Frankencoin at over 100 Spar stores across Switzerland. Transaction fees are two-thirds lower than Twint or card payments, making it one of the most cost-effective payment methods available to Swiss retailers and consumers.",
-			"category": "Payments",
-			"image": "/images/spar.png",
-			"link": "https://presse.spar.ch/de/spar-schweiz/allgemein/neu%3A-jetzt-bei-spar-mit-krypto-waehrung-bezahlen/"
-		},
-		{
-			"title": "Crypto Checkout",
-			"partner": "PrivCart",
-			"description": "Accept ZCHF alongside other digital assets at online checkout with a lightweight integration and a flat 1% fee",
-			"longDescription": "PrivCart enables merchants to add crypto checkout to Shopify, WooCommerce, BigCommerce, or a custom storefront. Customers can pay with ZCHF and other supported assets; merchants can withdraw their settlement balance to a wallet they control. Merchants remain responsible for complying with applicable law and their own compliance obligations.",
-			"category": "Payments",
-			"image": "/images/privcart-logo.webp",
-			"link": "https://privcart.com/"
-		},
-		{
-			"title": "Banking Integration",
-			"partner": "Mt Pelerin",
-			"description": "Link Frankencoin to a personal IBAN — connect traditional bank transfers with digital payments",
-			"longDescription": "Link ZCHF to a personal IBAN through Mt Pelerin, a FINMA-regulated Swiss financial intermediary. Send and receive Swiss franc bank transfers directly from your Frankencoin wallet. Buy ZCHF with bank transfer at 0% fees or pay QR bills using your digital Swiss francs.",
-			"category": "Payments",
-			"image": "/images/mt-pelerin-logo.png",
-			"link": "https://www.mtpelerin.com/buy-zchf-frankencoin"
-		},
-		{
-			"title": "Earn Interest on Savings",
-			"partner": "Frankencoin Protocol",
-			"description": "Deposit ZCHF into the protocol's savings vault and earn market-based yield on your Swiss franc holdings",
-			"longDescription": "Deposit ZCHF into the protocol's savings module and earn a market-based yield on Swiss franc holdings. Yield opportunities also exist through DeFi protocols like Morpho (lending) and Curve (liquidity provision).",
-			"category": "DeFi",
-			"image": "/images/Icon-Invest.svg",
-			"link": "https://app.frankencoin.com/savings"
-		},
-		{
-			"title": "Automated Savings",
-			"partner": "urble",
-			"description": "Save ZCHF automatically with flexible savings plans and earn yield through Frankencoin.",
-			"longDescription": "urble is a self-custodial savings app that helps users build long-term savings in ZCHF and BTC — whether for their own goals or for someone they care about. Create flexible savings plans, contribute regularly, and earn interest on your ZCHF savings while staying in control of your money.",
-			"category": "DeFi",
-			"image": "/images/urble-logo.png",
-			"link": "https://urble.io/"
-		},
-		{
-			"title": "Internet-Native Savings",
-			"partner": "Rebind",
-			"description": "Earn yield on ZCHF alongside EUR and USD through a simple savings app, with a personal IBAN and instant withdrawals",
-			"longDescription": "Rebind gives users simple access to internet-native money markets, including a full ZCHF integration alongside EUR and USD strategies. Fund a personal IBAN or deposit digital assets, track auto-compounding returns and withdraw whenever needed.",
-			"category": "Payments",
-			"image": "/images/rebind-logo.png",
-			"link": "https://rebind.co/"
-		},
-		{
-			"title": "Payroll & HR Administration",
-			"partner": "Quitt",
-			"description": "Complete employee administration including payroll, social security, and pension processing — fully settled in ZCHF",
-			"longDescription": "Quitt provides complete employee administration including payroll, social security, and pension processing — fully settled in ZCHF. Employers can pay wages in digital Swiss francs with full regulatory compliance, covering all mandatory Swiss social insurance contributions.",
-			"category": "Business",
-			"image": "/images/quitt-logo.svg",
-			"link": "https://www.quitt.ch/"
-		},
-		{
-			"title": "Treasury Management",
-			"partner": "Plusplus",
-			"description": "Professional treasury solutions including rental deposit management in ZCHF",
-			"longDescription": "Plusplus offers professional treasury solutions for businesses, including rental deposit management settled in ZCHF. Companies can hold and manage Swiss franc liquidity on-chain with full transparency and programmability.",
-			"category": "Business",
-			"image": "/images/logo_plusplus.avif",
-			"link": "https://www.plusplus.swiss/"
-		},
-		{
-			"title": "Digital Securities",
-			"partner": "Aktionariat",
-			"description": "Trade tokenized shares and participate in capital raises using ZCHF as the settlement currency",
-			"longDescription": "Trade tokenized shares on Aktionariat's platform using ZCHF as the settlement currency. Participate in capital raises and secondary trading of Swiss company equity, all settled in digital Swiss francs.",
-			"category": "Business",
-			"image": "/images/aktionariat-Compressify.io.webp",
-			"link": "https://www.aktionariat.com/"
-		},
-		{
-			"title": "Card Payments",
-			"partner": "GnosisPay",
-			"description": "Use Frankencoin for everyday card payments — transactions settled in ZCHF",
-			"longDescription": "Spend ZCHF globally using a GnosisPay Visa debit card. The card converts ZCHF for merchant payments at the point of sale while keeping your balance in Swiss francs until you spend it.",
-			"category": "Payments",
-			"image": "/images/gnosispay.png",
-			"link": "https://zeal.app/"
-		},
-		{
-			"title": "Crypto Wallet & Card Payments",
-			"partner": "Zeal",
-			"description": "Digital wallet for spending ZCHF globally with Gnosis Pay card — earn yield and cashback on everyday purchases",
-			"longDescription": "Zeal provides a digital wallet that connects your ZCHF balance to a Visa debit card. Spend anywhere Visa is accepted, earn cashback on everyday purchases, and manage your Swiss franc stablecoin holdings from a single app.",
-			"category": "Payments",
-			"image": "/images/zeal.png",
-			"link": "https://www.zeal.app/"
-		},
-		{
-			"title": "Decentralized Lending",
-			"partner": "Morpho",
-			"description": "Lend and borrow ZCHF through customizable, overcollateralized lending markets on Ethereum and Base",
-			"longDescription": "Lend and borrow ZCHF through Morpho's customizable lending markets on Ethereum and Base. Earn yield by supplying ZCHF or borrow against your crypto assets with competitive, market-driven rates.",
-			"category": "DeFi",
-			"image": "/images/morpho.png",
-			"link": "https://morpho.org/"
-		},
-		{
-			"title": "Borrow crvUSD against svZCHF",
-			"partner": "Curve LlamaLend",
-			"description": "Use svZCHF as collateral to borrow crvUSD through Curve's isolated lending market on Ethereum",
-			"longDescription": "Deposit svZCHF as collateral and borrow crvUSD through Curve LlamaLend's isolated Ethereum market. Borrowing terms, interest rates and liquidation risk are determined by the market and can change over time.",
-			"category": "DeFi",
-			"image": "/images/full-curve-dao-logo.jpg",
-			"link": "https://www.curve.finance/lend/ethereum/markets/0xFd85e847cDd2549f213E276e4B57B0690169F043"
-		},
-		{
-			"title": "Crypto Custody",
-			"partner": "Bitcoin Suisse",
-			"description": "Custody ZCHF through Switzerland's pioneering crypto financial services provider",
-			"longDescription": "Custody ZCHF through Bitcoin Suisse, Switzerland's pioneering crypto financial services provider, with institutional-grade security and full regulatory compliance.",
-			"category": "Business",
-			"image": "/images/bitcoin-suisse.png",
-			"link": "https://www.bitcoinsuisse.com/"
-		},
-		{
-			"title": "Institutional Custody & Collateral Management",
-			"partner": "Copper",
-			"description": "ZCHF supported by Copper's institutional custody and collateral management infrastructure",
-			"longDescription": "Copper's institutional custody enables secure holding and DeFi-ready deployment of Swiss franc liquidity. Institutions can manage ZCHF as part of their broader digital asset portfolio with enterprise-grade infrastructure.",
-			"category": "Business",
-			"image": "/images/CopperLogoDark.png",
-			"link": "https://copper.co/"
-		},
-		{
-			"title": "Decentralized Index Funds",
-			"partner": "Sagix Club Edelweiss",
-			"description": "ZCHF as a core component of the ixEDEL DTF — a risk-parity on-chain fund on Reserve Protocol",
-			"longDescription": "ZCHF is a core component of the ixEDEL DTF on Reserve Protocol — a risk-parity on-chain fund combining gold, Bitcoin, ZCHF, and yield-bearing stablecoins to preserve purchasing power across all economic regimes.",
-			"category": "DeFi",
-			"image": "/images/sagix-ixedel.jpg",
-			"link": "https://app.reserve.org/ethereum/index-dtf/0xe4a10951f962e6cb93cb843a4ef05d2f99db1f94/overview"
-		}
-	]
+  "eyebrow": "Already in Use Today",
+  "title": "Real Applications for Digital Swiss Francs",
+  "intro": "Frankencoin is already being used by businesses and individuals across Switzerland for everyday payments, financial operations, and decentralized finance. Explore how ZCHF bridges traditional Swiss francs with the digital economy.",
+  "cases": [
+    {
+      "title": "Retail Payments",
+      "partner": "Spar Switzerland",
+      "description": "Pay directly with Frankencoin at Spar stores across Switzerland",
+      "longDescription": "Pay with Frankencoin at over 100 Spar stores across Switzerland. Transaction fees are two-thirds lower than Twint or card payments, making it one of the most cost-effective payment methods available to Swiss retailers and consumers.",
+      "category": "Payments",
+      "image": "/images/spar.png",
+      "link": "https://presse.spar.ch/de/spar-schweiz/allgemein/neu%3A-jetzt-bei-spar-mit-krypto-waehrung-bezahlen/"
+    },
+    {
+      "title": "Crypto Checkout",
+      "partner": "PrivCart",
+      "description": "Accept ZCHF alongside other digital assets at online checkout with a lightweight integration and a flat 1% fee",
+      "longDescription": "PrivCart enables merchants to add crypto checkout to Shopify, WooCommerce, BigCommerce, or a custom storefront. Customers can pay with ZCHF and other supported assets; merchants can withdraw their settlement balance to a wallet they control. Merchants remain responsible for complying with applicable law and their own compliance obligations.",
+      "category": "Payments",
+      "image": "/images/privcart-logo.webp",
+      "link": "https://privcart.com/"
+    },
+    {
+      "title": "Banking Integration",
+      "partner": "Mt Pelerin",
+      "description": "Link Frankencoin to a personal IBAN — connect traditional bank transfers with digital payments",
+      "longDescription": "Link ZCHF to a personal IBAN through Mt Pelerin, a FINMA-regulated Swiss financial intermediary. Send and receive Swiss franc bank transfers directly from your Frankencoin wallet. Buy ZCHF with bank transfer at 0% fees or pay QR bills using your digital Swiss francs.",
+      "category": "Payments",
+      "image": "/images/mt-pelerin-logo.png",
+      "link": "https://www.mtpelerin.com/buy-zchf-frankencoin"
+    },
+    {
+      "title": "Earn Interest on Savings",
+      "partner": "Frankencoin Protocol",
+      "description": "Deposit ZCHF into the protocol's savings vault and earn market-based yield on your Swiss franc holdings",
+      "longDescription": "Deposit ZCHF into the protocol's savings module and earn a market-based yield on Swiss franc holdings. Yield opportunities also exist through DeFi protocols like Morpho (lending) and Curve (liquidity provision).",
+      "category": "DeFi",
+      "image": "/images/Icon-Invest.svg",
+      "link": "https://app.frankencoin.com/savings"
+    },
+    {
+      "title": "Automated Savings",
+      "partner": "urble",
+      "description": "Save ZCHF automatically with flexible savings plans and earn yield through Frankencoin.",
+      "longDescription": "urble is a self-custodial savings app that helps users build long-term savings in ZCHF and BTC — whether for their own goals or for someone they care about. Create flexible savings plans, contribute regularly, and earn interest on your ZCHF savings while staying in control of your money.",
+      "category": "DeFi",
+      "image": "/images/urble-logo.png",
+      "link": "https://urble.io/"
+    },
+    {
+      "title": "Internet-Native Savings",
+      "partner": "Rebind",
+      "description": "Earn yield on ZCHF alongside EUR and USD through a simple savings app, with a personal IBAN and instant withdrawals",
+      "longDescription": "Rebind gives users simple access to internet-native money markets, including a full ZCHF integration alongside EUR and USD strategies. Fund a personal IBAN or deposit digital assets, track auto-compounding returns and withdraw whenever needed.",
+      "category": "Payments",
+      "image": "/images/rebind-logo.png",
+      "link": "https://rebind.co/"
+    },
+    {
+      "title": "Payroll & HR Administration",
+      "partner": "Quitt",
+      "description": "Complete employee administration including payroll, social security, and pension processing — fully settled in ZCHF",
+      "longDescription": "Quitt provides complete employee administration including payroll, social security, and pension processing — fully settled in ZCHF. Employers can pay wages in digital Swiss francs with full regulatory compliance, covering all mandatory Swiss social insurance contributions.",
+      "category": "Business",
+      "image": "/images/quitt-logo.svg",
+      "link": "https://www.quitt.ch/"
+    },
+    {
+      "title": "Treasury Management",
+      "partner": "Plusplus",
+      "description": "Professional treasury solutions including rental deposit management in ZCHF",
+      "longDescription": "Plusplus offers professional treasury solutions for businesses, including rental deposit management settled in ZCHF. Companies can hold and manage Swiss franc liquidity on-chain with full transparency and programmability.",
+      "category": "Business",
+      "image": "/images/logo_plusplus.avif",
+      "link": "https://www.plusplus.swiss/"
+    },
+    {
+      "title": "Digital Securities",
+      "partner": "Aktionariat",
+      "description": "Trade tokenized shares and participate in capital raises using ZCHF as the settlement currency",
+      "longDescription": "Trade tokenized shares on Aktionariat's platform using ZCHF as the settlement currency. Participate in capital raises and secondary trading of Swiss company equity, all settled in digital Swiss francs.",
+      "category": "Business",
+      "image": "/images/aktionariat-Compressify.io.webp",
+      "link": "https://www.aktionariat.com/"
+    },
+    {
+      "title": "Card Payments",
+      "partner": "GnosisPay",
+      "description": "Use Frankencoin for everyday card payments — transactions settled in ZCHF",
+      "longDescription": "Spend ZCHF globally using a GnosisPay Visa debit card. The card converts ZCHF for merchant payments at the point of sale while keeping your balance in Swiss francs until you spend it.",
+      "category": "Payments",
+      "image": "/images/gnosispay.png",
+      "link": "https://zeal.app/"
+    },
+    {
+      "title": "Crypto Wallet & Card Payments",
+      "partner": "Zeal",
+      "description": "Digital wallet for spending ZCHF globally with Gnosis Pay card — earn yield and cashback on everyday purchases",
+      "longDescription": "Zeal provides a digital wallet that connects your ZCHF balance to a Visa debit card. Spend anywhere Visa is accepted, earn cashback on everyday purchases, and manage your Swiss franc stablecoin holdings from a single app.",
+      "category": "Payments",
+      "image": "/images/zeal.png",
+      "link": "https://www.zeal.app/"
+    },
+    {
+      "title": "Decentralized Lending",
+      "partner": "Morpho",
+      "description": "Lend and borrow ZCHF through customizable, overcollateralized lending markets on Ethereum and Base",
+      "longDescription": "Lend and borrow ZCHF through Morpho's customizable lending markets on Ethereum and Base. Earn yield by supplying ZCHF or borrow against your crypto assets with competitive, market-driven rates.",
+      "category": "DeFi",
+      "image": "/images/morpho.png",
+      "link": "https://morpho.org/"
+    },
+    {
+      "title": "Borrow crvUSD against svZCHF",
+      "partner": "Curve LlamaLend",
+      "description": "Use svZCHF as collateral to borrow crvUSD through Curve's isolated lending market on Ethereum",
+      "longDescription": "Deposit svZCHF as collateral and borrow crvUSD through Curve LlamaLend's isolated Ethereum market. Borrowing terms, interest rates and liquidation risk are determined by the market and can change over time.",
+      "category": "DeFi",
+      "image": "/images/full-curve-dao-logo.jpg",
+      "link": "https://www.curve.finance/lend/ethereum/markets/0xFd85e847cDd2549f213E276e4B57B0690169F043"
+    },
+    {
+      "title": "Crypto Custody",
+      "partner": "Bitcoin Suisse",
+      "description": "Custody ZCHF through Switzerland's pioneering crypto financial services provider",
+      "longDescription": "Custody ZCHF through Bitcoin Suisse, Switzerland's pioneering crypto financial services provider, with institutional-grade security and full regulatory compliance.",
+      "category": "Business",
+      "image": "/images/bitcoin-suisse.png",
+      "link": "https://www.bitcoinsuisse.com/"
+    },
+    {
+      "title": "Institutional Custody & Collateral Management",
+      "partner": "Copper",
+      "description": "ZCHF supported by Copper's institutional custody and collateral management infrastructure",
+      "longDescription": "Copper's institutional custody enables secure holding and DeFi-ready deployment of Swiss franc liquidity. Institutions can manage ZCHF as part of their broader digital asset portfolio with enterprise-grade infrastructure.",
+      "category": "Business",
+      "image": "/images/CopperLogoDark.png",
+      "link": "https://copper.co/"
+    },
+    {
+      "title": "Decentralized Index Funds",
+      "partner": "Sagix Club Edelweiss",
+      "description": "ZCHF as a core component of the ixEDEL DTF — a risk-parity on-chain fund on Reserve Protocol",
+      "longDescription": "ZCHF is a core component of the ixEDEL DTF on Reserve Protocol — a risk-parity on-chain fund combining gold, Bitcoin, ZCHF, and yield-bearing stablecoins to preserve purchasing power across all economic regimes.",
+      "category": "DeFi",
+      "image": "/images/sagix-ixedel.jpg",
+      "link": "https://app.reserve.org/ethereum/index-dtf/0xe4a10951f962e6cb93cb843a4ef05d2f99db1f94/overview"
+    }
+  ],
+  "heroTitle": "Real applications for|digital Swiss francs"
 }

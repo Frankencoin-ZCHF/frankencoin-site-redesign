@@ -1,6 +1,10 @@
 ---
 import Section from "../components/Layout/Section.astro";
 import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import CtaBand from "../components/LP/CtaBand.astro";
+import Figures from "../components/LP/Figures.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 
 const currentLang = getLanguageFromURL(Astro.url.pathname);
@@ -8,20 +12,17 @@ const compliance = await loadContent("compliance", currentLang);
 ---
 
 <Base>
+  <LPHero eyebrow={compliance.eyebrow} title={compliance.heroTitle ?? compliance.title} subtitle={compliance.intro} />
   <Section
     id="compliance-header"
-    eyebrow={compliance.eyebrow}
-    title={compliance.title}
     variant="plain"
+    pad="xs"
   >
     <div class="max-w-4xl mx-auto mb-16 text-center">
-      <p class="ty-body-1 text-[var(--color-brand-titan-gray)] leading-relaxed mb-8">
-        {compliance.intro}
-      </p>
 
       <!-- Table of Contents -->
-      <div class="w-full flex flex-col items-start bg-[var(--color-gray-10)] rounded-xl p-6">
-        <h3 class="ty-regular font-bold text-[var(--color-brand-deep-blue)] mb-4">{compliance.toc.title}</h3>
+      <div class="w-full flex flex-col items-start bg-[var(--color-gray-10)] border border-[var(--color-gray-20)] rounded-3xl p-6 md:p-8 text-left">
+        <h3 class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#1a9cc8] mb-4">{compliance.toc.title}</h3>
         <nav class="flex flex-col gap-3">
           {compliance.toc.items.map((item: any) => (
             <a
@@ -192,4 +193,5 @@ const compliance = await loadContent("compliance", currentLang);
       </div>
     </div>
   </Section>
+  <CtaBand title="Put your money in Swiss francs." body="Three steps, about ten minutes. You keep your own keys." primary={{ label: "Start now", href: "/start" }} secondary={{ label: "Security and audits", href: "/security" }} />
 </Base>

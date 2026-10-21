@@ -1,6 +1,10 @@
 ---
 import Section from "../components/Layout/Section.astro";
 import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import CtaBand from "../components/LP/CtaBand.astro";
+import Figures from "../components/LP/Figures.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 import ChainContainer from "../components/ChainContainer/ChainContainer.astro";
 
@@ -9,20 +13,7 @@ const token = await loadContent("token", currentLang);
 ---
 
 <Base>
-  <Section
-    id="token-header"
-    pad="xs"
-    margin="mt-12"
-  >
-    <div class="text-center mb-8">
-      <h1 class="ty-display" style="color: var(--color-black);">
-        {token.hero.title}
-      </h1>
-      <p class="ty-subtitle mt-4" style="color: var(--color-neutral-600);">
-        {token.hero.subtitle}
-      </p>
-    </div>
-  </Section>
+  <LPHero eyebrow={token.hero.eyebrow ?? "Tokens & addresses"} title={token.hero.title} subtitle={token.hero.subtitle} />
 
   <Section
     id="tokens"
@@ -53,4 +44,5 @@ const token = await loadContent("token", currentLang);
   >
     <ChainContainer tokens={token.svzchf.chains} />
   </Section>
+  <CtaBand title="Put your money in Swiss francs." body="Three steps, about ten minutes. You keep your own keys." primary={{ label: "Start now", href: "/start" }} secondary={{ label: "For developers", href: "/for/developers" }} />
 </Base>

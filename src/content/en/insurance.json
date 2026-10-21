@@ -1,64 +1,82 @@
 {
-	"seo": {
-		"title": "Insurance & Cover — Protect your ZCHF | Frankencoin",
-		"description": "Optional third-party cover for Frankencoin (ZCHF) holders. Depeg Cover, underwritten by Nexus Mutual and available through OpenCover, pays out if ZCHF trades 10% or more below 1 CHF for seven consecutive days."
-	},
-	"header": {
-		"eyebrow": "Optional third-party protection",
-		"title": "Insurance & Cover",
-		"subtitle": "Independent providers now offer onchain cover for Frankencoin holders. These products are provided by third parties — not by the Frankencoin Association — and are entirely optional."
-	},
-	"products": [
-		{
-			"badge": "Depeg Cover",
-			"title": "ZCHF Depeg Cover",
-			"provider": "Underwritten by Nexus Mutual · Available through OpenCover",
-			"description": "Depeg Cover protects ZCHF holders against a sustained loss of the peg. If Frankencoin trades at least 10% below its 1 CHF reference value for seven consecutive days, covered holders can file a claim.",
-			"highlights": [
-				{ "label": "Underwriter", "value": "Nexus Mutual" },
-				{ "label": "Marketplace", "value": "OpenCover" },
-				{ "label": "Depeg trigger", "value": "10% below 1 CHF" },
-				{ "label": "Waiting period", "value": "7 consecutive days" },
-				{ "label": "Claim value", "value": "0.975 CHF per ZCHF" },
-				{ "label": "Cover duration", "value": "30–180 days" }
-			],
-			"covered": {
-				"title": "What's covered",
-				"items": [
-					"A sustained ZCHF depeg — a drop of 10% or more below the 1 CHF reference value that lasts at least seven consecutive days.",
-					"Losses on ZCHF held in a covered wallet for the full duration of the policy."
-				]
-			},
-			"excluded": {
-				"title": "What's not covered",
-				"items": [
-					"Assets other than ZCHF, the covered token.",
-					"Technical issues that do not themselves cause the depeg.",
-					"Bugs or events already known or disclosed before cover began.",
-					"“Rug pull” scenarios where protocol controllers seize funds.",
-					"ZCHF held for less than 72 hours before the depeg event."
-				]
-			},
-			"howItWorks": {
-				"title": "How to get covered",
-				"steps": [
-					"Open the ZCHF cover page on OpenCover and connect your wallet.",
-					"Choose how much ZCHF to protect and for how long (30 to 180 days).",
-					"Pay the premium in USDC, ETH or cbBTC and receive an onchain proof-of-cover NFT."
-				]
-			},
-			"cta": {
-				"label": "Get covered on OpenCover",
-				"href": "https://opencover.com/frankencoin"
-			},
-			"learnMore": {
-				"label": "Covered risks & exclusions",
-				"href": "https://opencover.com/depeg-cover-covered-risks-and-exclusions/"
-			}
-		}
-	],
-	"disclaimer": {
-		"title": "Disclaimer",
-		"text": "Cover products are offered by independent third parties and are not issued, guaranteed or endorsed by the Frankencoin Association. Terms, availability, pricing and payouts are determined solely by the respective provider and underwriter. Always read the full cover wording before purchasing. This page is informational only and does not constitute insurance, financial or legal advice."
-	}
+  "seo": {
+    "title": "Insurance & Cover — Protect your ZCHF | Frankencoin",
+    "description": "Optional third-party cover for Frankencoin (ZCHF) holders. Depeg Cover, underwritten by Nexus Mutual and available through OpenCover, pays out if ZCHF trades 10% or more below 1 CHF for seven consecutive days."
+  },
+  "header": {
+    "eyebrow": "Optional third-party protection",
+    "title": "Insurance|& cover",
+    "subtitle": "Independent providers now offer onchain cover for Frankencoin holders. These products are provided by third parties — not by the Frankencoin Association — and are entirely optional."
+  },
+  "products": [
+    {
+      "badge": "Depeg Cover",
+      "title": "ZCHF Depeg Cover",
+      "provider": "Underwritten by Nexus Mutual · Available through OpenCover",
+      "description": "Depeg Cover protects ZCHF holders against a sustained loss of the peg. If Frankencoin trades at least 10% below its 1 CHF reference value for seven consecutive days, covered holders can file a claim.",
+      "highlights": [
+        {
+          "label": "Underwriter",
+          "value": "Nexus Mutual"
+        },
+        {
+          "label": "Marketplace",
+          "value": "OpenCover"
+        },
+        {
+          "label": "Depeg trigger",
+          "value": "10% below 1 CHF"
+        },
+        {
+          "label": "Waiting period",
+          "value": "7 consecutive days"
+        },
+        {
+          "label": "Claim value",
+          "value": "0.975 CHF per ZCHF"
+        },
+        {
+          "label": "Cover duration",
+          "value": "30–180 days"
+        }
+      ],
+      "covered": {
+        "title": "What's covered",
+        "items": [
+          "A sustained ZCHF depeg — a drop of 10% or more below the 1 CHF reference value that lasts at least seven consecutive days.",
+          "Losses on ZCHF held in a covered wallet for the full duration of the policy."
+        ]
+      },
+      "excluded": {
+        "title": "What's not covered",
+        "items": [
+          "Assets other than ZCHF, the covered token.",
+          "Technical issues that do not themselves cause the depeg.",
+          "Bugs or events already known or disclosed before cover began.",
+          "“Rug pull” scenarios where protocol controllers seize funds.",
+          "ZCHF held for less than 72 hours before the depeg event."
+        ]
+      },
+      "howItWorks": {
+        "title": "How to get covered",
+        "steps": [
+          "Open the ZCHF cover page on OpenCover and connect your wallet.",
+          "Choose how much ZCHF to protect and for how long (30 to 180 days).",
+          "Pay the premium in USDC, ETH or cbBTC and receive an onchain proof-of-cover NFT."
+        ]
+      },
+      "cta": {
+        "label": "Get covered on OpenCover",
+        "href": "https://opencover.com/frankencoin"
+      },
+      "learnMore": {
+        "label": "Covered risks & exclusions",
+        "href": "https://opencover.com/depeg-cover-covered-risks-and-exclusions/"
+      }
+    }
+  ],
+  "disclaimer": {
+    "title": "Disclaimer",
+    "text": "Cover products are offered by independent third parties and are not issued, guaranteed or endorsed by the Frankencoin Association. Terms, availability, pricing and payouts are determined solely by the respective provider and underwriter. Always read the full cover wording before purchasing. This page is informational only and does not constitute insurance, financial or legal advice."
+  }
 }

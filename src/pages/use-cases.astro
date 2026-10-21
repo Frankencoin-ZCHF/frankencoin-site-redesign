@@ -1,6 +1,10 @@
 ---
 import Section from "../components/Layout/Section.astro";
 import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import CtaBand from "../components/LP/CtaBand.astro";
+import Figures from "../components/LP/Figures.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 
 const currentLang = getLanguageFromURL(Astro.url.pathname);
@@ -12,17 +16,12 @@ const categories = ["All", ...new Set(useCases.cases.map(c => c.category))];
 ---
 
 <Base>
+  <LPHero eyebrow={useCases.eyebrow} title={useCases.heroTitle ?? useCases.title} subtitle={useCases.intro} primary={{ label: "Start now", href: "/start" }} secondary={{ label: "Explore the ecosystem", href: "/ecosystem" }} />
   <Section
     id="use-cases"
-    eyebrow={useCases.eyebrow}
-    title={useCases.title}
     variant="plain"
+    pad="xs"
   >
-    <div class="max-w-4xl mx-auto mb-12 text-center">
-      <p class="ty-body-1 text-[var(--color-brand-titan-gray)] leading-relaxed">
-        {useCases.intro}
-      </p>
-    </div>
 
     <!-- Filter Buttons -->
     <div
@@ -182,4 +181,5 @@ const categories = ["All", ...new Set(useCases.cases.map(c => c.category))];
       ))}
     </div>
   </Section>
+  <CtaBand title="Put your money in Swiss francs." body="Three steps, about ten minutes. You keep your own keys." primary={{ label: "Start now", href: "/start" }} secondary={{ label: "Explore the ecosystem", href: "/ecosystem" }} />
 </Base>

@@ -2,12 +2,13 @@
   "header": {
     "image": "/images/Frankencoin-Logo-Compressify.io_1.webp",
     "imageAlt": "Frankencoin logo",
-    "title": "What’s that, Frankencoin?",
+    "title": "What’s that,|Frankencoin?",
     "subtitle": "And why is it the only stablecoin that does not require an oracle.",
     "cta": {
       "label": "Get some Frankencoin",
       "href": "https://app.frankencoin.com/mint"
-    }
+    },
+    "eyebrow": "About Frankencoin"
   },
   "features": [
     {

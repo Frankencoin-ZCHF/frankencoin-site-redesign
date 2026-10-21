@@ -5,7 +5,7 @@
   },
   "hero": {
     "eyebrow": "Participate",
-    "title": "Put your money in Swiss francs. On-chain.",
+    "title": "Put your money in Swiss francs.|On-chain.",
     "subtitle": "Two ways to take part: save ZCHF and earn the protocol rate, or hold FCS and own a share of the reserve. See the numbers first, then do it in three steps."
   },
   "paths": {
@@ -14,7 +14,11 @@
       "eyebrow": "Lower risk",
       "title": "Save",
       "body": "Deposit ZCHF in the savings module. Interest accrues every block. Withdraw whenever you want, no lock-up.",
-      "bullets": ["Protocol rate, set by governance", "Withdraw any time", "Backed by over-collateralised positions"],
+      "bullets": [
+        "Protocol rate, set by governance",
+        "Withdraw any time",
+        "Backed by over-collateralised positions"
+      ],
       "cta": "Start saving",
       "href": "https://app.frankencoin.com/savings"
     },
@@ -22,7 +26,11 @@
       "eyebrow": "Higher risk, higher upside",
       "title": "Invest",
       "body": "Buy Frankencoin Shares (FCS). You own part of the reserve pool that collects every minter's fees and interest, and you can vote.",
-      "bullets": ["Share of protocol income", "Price can go down as well as up", "Veto power over new collateral"],
+      "bullets": [
+        "Share of protocol income",
+        "Price can go down as well as up",
+        "Veto power over new collateral"
+      ],
       "cta": "Get FCS",
       "href": "/fcs"
     }
@@ -34,39 +42,88 @@
       {
         "title": "Get ZCHF",
         "body": "Bank transfer from any Swiss or SEPA account (Mt Pelerin, 0% fees), or swap from USDC, USDT or ETH.",
-        "cta": { "label": "Buy with bank transfer", "href": "https://www.mtpelerin.com/buy-zchf-frankencoin", "external": true },
-        "alt": { "label": "Swap crypto instead", "href": "https://swap.cow.fi/#/1/swap/USDC/ZCHF" }
+        "cta": {
+          "label": "Buy with bank transfer",
+          "href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
+          "external": true
+        },
+        "alt": {
+          "label": "Swap crypto instead",
+          "href": "https://swap.cow.fi/#/1/swap/USDC/ZCHF"
+        }
       },
       {
         "title": "Connect a wallet",
         "body": "Any Ethereum wallet works: MetaMask, Rabby, Ledger, Coinbase Wallet. ZCHF lives on Ethereum and seven other chains.",
-        "cta": { "label": "Open the app", "href": "https://app.frankencoin.com/", "external": true }
+        "cta": {
+          "label": "Open the app",
+          "href": "https://app.frankencoin.com/",
+          "external": true
+        }
       },
       {
         "title": "Save or buy FCS",
         "body": "One transaction. Savings show up on the Earn page; FCS lands in your wallet.",
-        "cta": { "label": "Save ZCHF", "href": "https://app.frankencoin.com/savings", "external": true },
-        "alt": { "label": "Buy FCS", "href": "https://app.frankencoin.com/equity" }
+        "cta": {
+          "label": "Save ZCHF",
+          "href": "https://app.frankencoin.com/savings",
+          "external": true
+        },
+        "alt": {
+          "label": "Buy FCS",
+          "href": "https://app.frankencoin.com/equity"
+        }
       }
     ]
   },
   "trust": {
     "title": "Why people trust it",
     "items": [
-      { "label": "Audits", "value": "7 audits by 4 firms", "href": "/security" },
-      { "label": "Legal", "value": "Swiss law & MiCAR opinions", "href": "/compliance" },
-      { "label": "Live since", "value": "2023, no de-peg", "href": "https://defillama.com/stablecoin/frankencoin" },
-      { "label": "Insurance", "value": "Optional de-peg cover", "href": "/insurance" }
+      {
+        "label": "Audits",
+        "value": "7 audits by 4 firms",
+        "href": "/security"
+      },
+      {
+        "label": "Legal",
+        "value": "Swiss law & MiCAR opinions",
+        "href": "/compliance"
+      },
+      {
+        "label": "Live since",
+        "value": "2023, no de-peg",
+        "href": "https://defillama.com/stablecoin/frankencoin"
+      },
+      {
+        "label": "Insurance",
+        "value": "Optional de-peg cover",
+        "href": "/insurance"
+      }
     ]
   },
   "faq": {
     "title": "Quick answers",
     "items": [
-      { "q": "Is my money locked?", "a": "No. Savings can be withdrawn at any time. FCS can be sold on the open market or redeemed through the protocol after the holding period." },
-      { "q": "Where does the savings interest come from?", "a": "From people who borrow ZCHF against collateral. They pay interest into the reserve; savers are paid from it first." },
-      { "q": "What can go wrong?", "a": "Smart-contract risk, collateral falling faster than auctions can sell it, and for FCS, the share price falling when the reserve shrinks. Read the risks before you start." },
-      { "q": "Do I need to know DeFi?", "a": "You need a wallet and some ZCHF. Everything else is one page and one button." }
+      {
+        "q": "Is my money locked?",
+        "a": "No. Savings can be withdrawn at any time. FCS can be sold on the open market or redeemed through the protocol after the holding period."
+      },
+      {
+        "q": "Where does the savings interest come from?",
+        "a": "From people who borrow ZCHF against collateral. They pay interest into the reserve; savers are paid from it first."
+      },
+      {
+        "q": "What can go wrong?",
+        "a": "Smart-contract risk, collateral falling faster than auctions can sell it, and for FCS, the share price falling when the reserve shrinks. Read the risks before you start."
+      },
+      {
+        "q": "Do I need to know DeFi?",
+        "a": "You need a wallet and some ZCHF. Everything else is one page and one button."
+      }
     ]
   },
-  "sticky": { "label": "Start saving", "sub": "Withdraw any time" }
+  "sticky": {
+    "label": "Start saving",
+    "sub": "Withdraw any time"
+  }
 }
