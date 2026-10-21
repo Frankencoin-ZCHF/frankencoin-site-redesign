@@ -1,0 +1,70 @@
+---
+/**
+ * Home hero: white sky, halftone mist, the halftone Alps at the bottom, headline and live ticker.
+ * Props are already-formatted strings so the page decides what is live.
+ */
+import HalftoneMist from "./HalftoneMist.astro";
+import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
+
+interface Cta { label: string; href: string }
+interface Props {
+  eyebrow: string;
+  title: string; // "|" marks the line break
+  subtitle: string;
+  primary: Cta;
+  secondary: Cta;
+  buy: Cta;
+  ticker: { label: string; value: string }[];
+  coords: string;
+}
+const p = Astro.props as Props;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+const [l1, l2] = p.title.split("|");
+---
+
+<section class="relative isolate overflow-hidden bg-[var(--color-white)] min-h-[92svh] md:min-h-[max(100svh,760px)] flex flex-col">
+  <img
+    src="/images/home/alps-halftone.webp"
+    alt=""
+    width="2000"
+    height="1121"
+    fetchpriority="high"
+    class="absolute inset-x-0 bottom-0 w-full h-[52%] md:h-[54%] object-cover object-bottom -z-10 select-none"
+  />
+  <div class="absolute inset-x-0 bottom-0 h-[52%] md:h-[54%] -z-10 bg-gradient-to-b from-white via-white/20 to-transparent"></div>
+  <HalftoneMist />
+
+  <div class="relative mx-auto w-full max-w-7xl px-[var(--spacing-l)] pt-28 md:pt-36 flex-1 flex flex-col" data-hero>
+    <div class="flex items-center justify-between font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-[var(--color-neutral-550)]">
+      <span class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#1a9cc8] animate-pulse"></span>{p.eyebrow}</span>
+      <span class="hidden sm:inline">{p.coords}</span>
+    </div>
+
+    <h1 class="mt-6 md:mt-8 text-[44px] leading-[0.98] sm:text-[64px] lg:text-[88px] font-black tracking-[-0.035em] text-[var(--color-brand-deep-blue)] max-w-4xl">
+      {l1}<br /><span class="text-[#1a9cc8]">{l2}</span>
+    </h1>
+    <p class="mt-6 max-w-[36rem] ty-body-1 text-[var(--color-neutral-650)]">{p.subtitle}</p>
+
+    <div class="mt-8 flex flex-wrap items-center gap-3">
+      <a href={href(p.primary.href)} class="group inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-deep-blue)] hover:bg-[var(--color-brand-swiss)] text-white font-bold ty-body-2 pl-6 pr-5 py-4 shadow-[0_8px_30px_-8px_rgba(9,47,98,0.55)] transition-colors">
+        {p.primary.label}
+        <span class="inline-block transition-transform group-hover:translate-x-0.5">→</span>
+      </a>
+      <a href={href(p.secondary.href)} class="inline-flex items-center rounded-full border border-[var(--color-gray-30)] bg-white/70 backdrop-blur hover:border-[var(--color-brand-deep-blue)] text-[var(--color-brand-deep-blue)] font-bold ty-body-2 px-6 py-4 transition-colors">
+        {p.secondary.label}
+      </a>
+    </div>
+    <a href={p.buy.href} target="_blank" rel="noopener noreferrer" class="mt-4 w-fit rounded-full bg-white/80 backdrop-blur px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-neutral-650)] hover:text-[var(--color-brand-swiss)]">↗ {p.buy.label}</a>
+
+    <div class="h-10 shrink-0" aria-hidden="true"></div>
+    <dl class="mt-auto mb-4 md:mb-10 grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-[0_10px_40px_-15px_rgba(9,47,98,0.35)]">
+      {p.ticker.map((t) => (
+        <div class="bg-white/70 px-3 py-2 md:px-5 md:py-4">
+          <dt class="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.18em] md:tracking-[0.22em] text-[var(--color-neutral-550)] truncate">{t.label}</dt>
+          <dd class="m-0 mt-0.5 md:mt-1 text-[19px] md:text-[28px] font-black tracking-tight text-[var(--color-brand-deep-blue)] tabular-nums">{t.value}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
