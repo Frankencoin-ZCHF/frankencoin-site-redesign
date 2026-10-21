@@ -5,7 +5,7 @@
   },
   "hero": {
     "eyebrow": "Save in CHF",
-    "title": "Swiss francs that earn {rate} a year.",
+    "title": "Swiss francs that|earn {rate} a year.",
     "subtitle": "Swiss bank accounts pay close to nothing on francs. ZCHF in the Frankencoin savings module earns the protocol rate, paid every block, and you can withdraw at any time.",
     "primary": {
       "label": "Start saving",
@@ -27,7 +27,7 @@
     }
   },
   "why": {
-    "eyebrow": "Why francs",
+    "eyebrow": "01 — Why francs",
     "title": "Get out of the dollar, keep the yield.",
     "subtitle": "Most stablecoin savings are in US dollars. ZCHF lets you hold the franc instead, one of the world's most stable currencies, and still earn on-chain interest."
   },
@@ -46,7 +46,8 @@
         "title": "No lock-up",
         "description": "Interest accrues every block. Withdraw part or all of your balance whenever you want."
       }
-    ]
+    ],
+    "eyebrow": "02 — Where the interest comes from"
   },
   "steps": {
     "title": "Start in three steps",
@@ -78,7 +79,8 @@
           "external": true
         }
       }
-    ]
+    ],
+    "eyebrow": "03 — Start"
   },
   "risks": {
     "title": "What can go wrong",
@@ -95,7 +97,8 @@
         "title": "Peg risk",
         "description": "ZCHF is backed by over-collateralised positions, not by a bank. A sharp crash in collateral could stress the peg."
       }
-    ]
+    ],
+    "eyebrow": "04 — Be informed"
   },
   "faq": [
     {
@@ -140,5 +143,24 @@
   "sticky": {
     "label": "Start saving",
     "sub": "Withdraw any time"
+  },
+  "calc": {
+    "eyebrow": "What if"
+  },
+  "faqHead": {
+    "eyebrow": "05 — Questions",
+    "title": "Short answers."
+  },
+  "cta": {
+    "title": "Start saving in Swiss francs.",
+    "body": "Three steps, about ten minutes. You keep your own keys.",
+    "primary": {
+      "label": "Start now",
+      "href": "/start"
+    },
+    "secondary": {
+      "label": "Compare save and invest",
+      "href": "/for/savers#compare"
+    }
   }
 }

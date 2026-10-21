@@ -5,7 +5,7 @@
   },
   "hero": {
     "eyebrow": "For savers",
-    "title": "A Swiss-franc account that lives on-chain.",
+    "title": "A Swiss-franc account|that lives on-chain.",
     "subtitle": "Whether you start from a bank account or a crypto wallet, ZCHF earns the protocol rate and stays yours.",
     "primary": {
       "label": "Start now",
@@ -51,7 +51,8 @@
         "href": "https://swap.cow.fi/#/1/swap/USDC/ZCHF",
         "cta": "Swap on CoW"
       }
-    ]
+    ],
+    "eyebrow": "01 — Two ways in"
   },
   "compare": {
     "title": "Save or invest?",
@@ -86,7 +87,8 @@
         "save": "No",
         "invest": "Yes, veto rights"
       }
-    ]
+    ],
+    "eyebrow": "03 — Save or invest"
   },
   "trust": [
     {
@@ -113,5 +115,24 @@
   "sticky": {
     "label": "Start now",
     "sub": "Save or invest in three steps"
+  },
+  "calc": {
+    "eyebrow": "02 — What if"
+  },
+  "trustHead": {
+    "eyebrow": "04 — Before you put money in",
+    "title": "Checked, audited, in public."
+  },
+  "cta": {
+    "title": "Put your money in Swiss francs.",
+    "body": "Three steps, about ten minutes. You keep your own keys.",
+    "primary": {
+      "label": "Start now",
+      "href": "/start"
+    },
+    "secondary": {
+      "label": "Buy ZCHF by bank transfer",
+      "href": "https://www.mtpelerin.com/buy-zchf-frankencoin"
+    }
   }
 }

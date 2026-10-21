@@ -5,7 +5,7 @@
   },
   "hero": {
     "eyebrow": "For exchanges & wallets",
-    "title": "Give your users the Swiss franc. Earn on it.",
+    "title": "Give your users the Swiss franc.|Earn on it.",
     "subtitle": "ZCHF is a standard token on eight chains with deep on-chain liquidity. Add savings to your wallet and earn up to 25% of the interest your users collect.",
     "primary": {
       "label": "Get in touch",
@@ -37,7 +37,8 @@
         "title": "Eight chains",
         "description": "Ethereum, Base, Arbitrum, Optimism, Polygon, Gnosis, Avalanche and Sonic, bridged with Chainlink CCIP."
       }
-    ]
+    ],
+    "eyebrow": "01 — What you get"
   },
   "steps": {
     "title": "Integrate in three steps",
@@ -67,7 +68,8 @@
           "href": "/press"
         }
       }
-    ]
+    ],
+    "eyebrow": "02 — Integrate"
   },
   "data": {
     "title": "Data for listings",
@@ -90,7 +92,8 @@
         "href": "/press",
         "cta": "Press kit"
       }
-    ]
+    ],
+    "eyebrow": "03 — Listing data"
   },
   "cta": {
     "title": "Listing ZCHF?",

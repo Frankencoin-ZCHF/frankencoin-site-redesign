@@ -1,33 +1,51 @@
 ---
 /**
- * Landing-page hero. Left: eyebrow, h1, subtitle, CTAs. Right: optional `aside` slot (figures, code, chart).
- * Marks itself as the hero for the mobile sticky CTA.
+ * Landing-page hero in the home style: white sky, halftone mist, the halftone Alps along the bottom,
+ * mono eyebrow, display headline, pill CTAs. Optional `aside` slot (figures, cards) on the right.
+ * `title` may contain "|" to start a second, teal line.
  */
+import HalftoneMist from "../Home/HalftoneMist.astro";
 import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
 
 interface Cta { label: string; href: string }
-interface Props { eyebrow: string; title: string; subtitle: string; primary?: Cta; secondary?: Cta }
-const { eyebrow, title, subtitle, primary, secondary } = Astro.props as Props;
+interface Props { eyebrow: string; title: string; subtitle: string; primary?: Cta; secondary?: Cta; compact?: boolean }
+const { eyebrow, title, subtitle, primary, secondary, compact = false } = Astro.props as Props;
 const lang = getLanguageFromURL(Astro.url.pathname);
-const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
-const ext = (h: string) => (h.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
+const href = (h: string) => (h.startsWith("/") || h.startsWith("#") ? (h.startsWith("#") ? h : getLocalizedPath(h, lang)) : h);
+const ext = (h: string) => (h.startsWith("http") || h.startsWith("mailto:") ? { target: h.startsWith("http") ? "_blank" : undefined, rel: "noopener noreferrer" } : {});
 const hasAside = Astro.slots.has("aside");
+const [l1, l2] = title.split("|");
 ---
 
-<section class="bg-[var(--color-gray-10)] pt-24 md:pt-32 pb-12 md:pb-20">
-  <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
-    <div data-hero class={`grid gap-10 items-center ${hasAside ? "lg:grid-cols-[1.1fr_1fr]" : "max-w-3xl"}`}>
-      <div class="flex flex-col gap-5">
-        <p class="ty-subtitle">{eyebrow.toUpperCase()}</p>
-        <h1 class="ty-large-title text-[var(--color-brand-deep-blue)] m-0">{title}</h1>
-        <p class="ty-body-1 text-[var(--color-neutral-650)]">{subtitle}</p>
+<section class={`relative isolate overflow-hidden bg-[var(--color-white)] ${compact ? "pt-28 md:pt-36 pb-16 md:pb-20" : "pt-28 md:pt-36 pb-24 md:pb-32"}`}>
+  {!compact && (
+    <>
+      <img src="/images/home/alps-halftone.webp" alt="" width="2000" height="1121" fetchpriority="high" class="absolute inset-x-0 bottom-0 w-full h-[34%] md:h-[46%] object-cover object-bottom -z-10 select-none opacity-90" />
+      <div class="absolute inset-x-0 bottom-0 h-[calc(34%+3px)] md:h-[calc(46%+3px)] -z-10 bg-gradient-to-b from-white via-white/40 to-transparent"></div>
+      <HalftoneMist />
+    </>
+  )}
+  {compact && <span class="halftone-dots absolute inset-0 -z-10 text-[#5bb8dc]/30 pointer-events-none"></span>}
+
+  <div class="relative mx-auto max-w-7xl px-[var(--spacing-l)]">
+    <div data-hero class={`grid gap-10 lg:gap-14 items-center ${hasAside ? "lg:grid-cols-[1.15fr_1fr]" : ""}`}>
+      <div class="flex flex-col max-w-3xl">
+        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[var(--color-neutral-550)] inline-flex items-center gap-2">
+          <span class="h-1.5 w-1.5 rounded-full bg-[#1a9cc8]"></span>{eyebrow}
+        </p>
+        <h1 class="mt-5 text-[40px] sm:text-[54px] lg:text-[66px] leading-[1] font-black tracking-[-0.035em] text-[var(--color-brand-deep-blue)] m-0">
+          {l1}{l2 && <><br /><span class="text-[#1a9cc8]">{l2}</span></>}
+        </h1>
+        <p class="mt-6 max-w-[38rem] ty-body-1 text-[var(--color-neutral-650)]">{subtitle}</p>
         {(primary || secondary) && (
-          <div class="flex flex-wrap gap-3 mt-1">
+          <div class="mt-8 flex flex-wrap gap-3">
             {primary && (
-              <a href={href(primary.href)} {...ext(primary.href)} class="inline-flex items-center rounded-full bg-[var(--color-brand-swiss)] hover:bg-[var(--color-blue-39)] text-white font-bold ty-body-2 px-6 py-3.5 transition-colors">{primary.label}</a>
+              <a href={href(primary.href)} {...ext(primary.href)} class="group inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-deep-blue)] hover:bg-[var(--color-brand-swiss)] text-white font-bold ty-body-2 pl-6 pr-5 py-4 shadow-[0_8px_30px_-8px_rgba(9,47,98,0.55)] transition-colors">
+                {primary.label}<span class="transition-transform group-hover:translate-x-0.5">→</span>
+              </a>
             )}
             {secondary && (
-              <a href={href(secondary.href)} {...ext(secondary.href)} class="inline-flex items-center rounded-full border border-[var(--color-brand-deep-blue)] text-[var(--color-brand-deep-blue)] font-bold ty-body-2 px-6 py-3.5 hover:bg-[var(--color-white)]">{secondary.label}</a>
+              <a href={href(secondary.href)} {...ext(secondary.href)} class="inline-flex items-center rounded-full border border-[var(--color-gray-30)] bg-white/70 backdrop-blur hover:border-[var(--color-brand-deep-blue)] text-[var(--color-brand-deep-blue)] font-bold ty-body-2 px-6 py-4 transition-colors">{secondary.label}</a>
             )}
           </div>
         )}

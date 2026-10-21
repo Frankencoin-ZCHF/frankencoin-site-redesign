@@ -1,5 +1,5 @@
 ---
-/** Closing call to action on a dark band. */
+/** Closing call to action on the dark part of the halftone Alps (same as the home page). */
 import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
 interface Cta { label: string; href: string }
 const { title, body, primary, secondary } = Astro.props as { title: string; body?: string; primary: Cta; secondary?: Cta };
@@ -8,15 +8,15 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
 const ext = (h: string) => (h.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
 ---
 
-<section class="py-14 md:py-20 bg-[var(--color-white)]">
-  <div class="mx-auto max-w-3xl px-[var(--spacing-l)]">
-    <div class="rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-8 md:p-12 flex flex-col gap-4 items-center text-center">
-      <h2 class="ty-title-1 font-black m-0">{title}</h2>
-      {body && <p class="ty-body-2 opacity-90">{body}</p>}
-      <div class="flex flex-wrap justify-center gap-3 mt-2">
-        <a href={href(primary.href)} {...ext(primary.href)} class="inline-flex items-center rounded-full bg-[var(--color-brand-swiss)] hover:bg-white hover:text-[var(--color-brand-deep-blue)] text-white font-bold ty-body-2 px-6 py-3.5 transition-colors">{primary.label}</a>
-        {secondary && <a href={href(secondary.href)} {...ext(secondary.href)} class="inline-flex items-center rounded-full border border-white/60 text-white font-bold ty-body-2 px-6 py-3.5 hover:bg-white/10">{secondary.label}</a>}
-      </div>
+<section class="relative isolate overflow-hidden bg-[#0b4a64] text-white">
+  <img src="/images/home/alps-halftone.webp" alt="" loading="lazy" width="2000" height="1121" class="absolute inset-0 -z-10 h-full w-full object-cover object-[50%_85%] opacity-90" />
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#062a3d]/95 via-[#0b4a64]/75 to-[#0b4a64]/20"></div>
+  <div class="mx-auto max-w-7xl px-[var(--spacing-l)] py-20 md:py-28">
+    <h2 class="text-[34px] sm:text-[50px] leading-[1.02] font-black tracking-[-0.035em] max-w-2xl m-0">{title}</h2>
+    {body && <p class="mt-4 ty-body-1 text-white/85 max-w-[34rem]">{body}</p>}
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href={href(primary.href)} {...ext(primary.href)} class="inline-flex items-center rounded-full bg-white text-[var(--color-brand-deep-blue)] hover:bg-[#5bb8dc] font-bold ty-body-2 px-7 py-4 transition-colors">{primary.label} →</a>
+      {secondary && <a href={href(secondary.href)} {...ext(secondary.href)} class="inline-flex items-center rounded-full border border-white/50 hover:bg-white/10 font-bold ty-body-2 px-7 py-4">{secondary.label}</a>}
     </div>
   </div>
 </section>

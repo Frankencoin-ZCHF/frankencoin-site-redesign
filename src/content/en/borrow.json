@@ -5,7 +5,7 @@
   },
   "hero": {
     "eyebrow": "Borrow",
-    "title": "Borrow francs. Keep your BTC, ETH, gold or shares.",
+    "title": "Borrow francs.|Keep your BTC, ETH, gold or shares.",
     "subtitle": "Deposit collateral, mint Swiss francs, repay when you want your collateral back. No credit check, no counterparty: the terms are on-chain and fixed when you open the position.",
     "primary": {
       "label": "See collateral and rates",
@@ -28,7 +28,9 @@
     },
     "cta": "Borrow",
     "empty": "Live terms are unavailable right now. See them in the app.",
-    "note": "Interest is the effective yearly rate on what you receive, paid upfront for the whole term. Part of the minted amount is held as a reserve and returned when you repay."
+    "note": "Interest is the effective yearly rate on what you receive, paid upfront for the whole term. Part of the minted amount is held as a reserve and returned when you repay.",
+    "eyebrow": "01 — Live terms",
+    "all": "All {n} collaterals in the app"
   },
   "how": {
     "title": "How a position works",
@@ -45,7 +47,8 @@
         "title": "3 · Repay",
         "description": "Return the ZCHF any time before maturity to unlock your collateral. Roll over to extend."
       }
-    ]
+    ],
+    "eyebrow": "02 — How a position works"
   },
   "terms": {
     "title": "Terms in plain words",
@@ -66,7 +69,8 @@
         "title": "Retained reserve",
         "description": "A share of what you mint stays in the reserve. You get it back when you repay."
       }
-    ]
+    ],
+    "eyebrow": "03 — Plain words"
   },
   "collateral": {
     "title": "What you can borrow against",
@@ -99,7 +103,8 @@
         "title": "Maturity",
         "description": "Each position has an end date. Repay or roll over before it, or the position can be liquidated."
       }
-    ]
+    ],
+    "eyebrow": "04 — Be informed"
   },
   "faq": [
     {
@@ -122,5 +127,21 @@
   "sticky": {
     "label": "See rates",
     "sub": "Live terms per collateral"
+  },
+  "faqHead": {
+    "eyebrow": "05 — Questions",
+    "title": "Short answers."
+  },
+  "cta": {
+    "title": "Borrow against what you already hold.",
+    "body": "Pick a collateral, choose your terms, receive francs. Repay when you want it back.",
+    "primary": {
+      "label": "Open the app",
+      "href": "https://app.frankencoin.com/mint"
+    },
+    "secondary": {
+      "label": "Propose a new collateral",
+      "href": "/integrate/collateral"
+    }
   }
 }

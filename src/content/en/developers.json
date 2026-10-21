@@ -5,10 +5,16 @@
   },
   "hero": {
     "eyebrow": "For developers",
-    "title": "A programmable Swiss franc.",
+    "title": "A programmable|Swiss franc.",
     "subtitle": "Open source, audited, permissionless. Read balances with one call, mint against collateral with one transaction, index everything with one repo.",
-    "primary": { "label": "Read the docs", "href": "https://docs.frankencoin.com/" },
-    "secondary": { "label": "GitHub", "href": "https://github.com/Frankencoin-ZCHF" }
+    "primary": {
+      "label": "Read the docs",
+      "href": "https://docs.frankencoin.com/"
+    },
+    "secondary": {
+      "label": "GitHub",
+      "href": "https://github.com/Frankencoin-ZCHF"
+    }
   },
   "snippet": {
     "title": "Hello, ZCHF",
@@ -16,26 +22,82 @@
     "code": "# Live protocol figures, no key needed\ncurl https://api.frankencoin.com/ecosystem/frankencoin/info\n\n# ZCHF on Ethereum mainnet\n0xB58E61C3098d85632Df34EecfB899A1Ed80921cB"
   },
   "tools": [
-    { "title": "Smart contracts", "description": "Frankencoin, MintingHub, Savings, Equity (FPS) and FCS. Solidity, audited, verified on every chain.", "cta": "Contracts repo", "href": "https://github.com/Frankencoin-ZCHF/Frankencoin" },
-    { "title": "REST API", "description": "Positions, prices, challenges, savings and analytics as JSON. Swagger included.", "cta": "api.frankencoin.com", "href": "https://api.frankencoin.com/" },
-    { "title": "Indexer (Ponder)", "description": "Self-host the full event index behind the API and the app.", "cta": "ponder repo", "href": "https://github.com/Frankencoin-ZCHF/ponder" },
-    { "title": "MCP server", "description": "Let an AI agent read protocol state and explain positions.", "cta": "frankencoin-mcp", "href": "https://github.com/Frankencoin-ZCHF/frankencoin-mcp" },
-    { "title": "npm packages", "description": "@frankencoin/zchf (ABIs and addresses) and @frankencoin/api (typed client).", "cta": "On npm", "href": "https://www.npmjs.com/org/frankencoin" },
-    { "title": "Reference frontend", "description": "The official dapp, MIT licensed. Fork it or lift components.", "cta": "frankencoin-dapp", "href": "https://github.com/Frankencoin-ZCHF/frankencoin-dapp" }
+    {
+      "title": "Smart contracts",
+      "description": "Frankencoin, MintingHub, Savings, Equity (FPS) and FCS. Solidity, audited, verified on every chain.",
+      "cta": "Contracts repo",
+      "href": "https://github.com/Frankencoin-ZCHF/Frankencoin",
+      "eyebrow": "Contracts"
+    },
+    {
+      "title": "REST API",
+      "description": "Positions, prices, challenges, savings and analytics as JSON. Swagger included.",
+      "cta": "api.frankencoin.com",
+      "href": "https://api.frankencoin.com/",
+      "eyebrow": "API"
+    },
+    {
+      "title": "Indexer (Ponder)",
+      "description": "Self-host the full event index behind the API and the app.",
+      "cta": "ponder repo",
+      "href": "https://github.com/Frankencoin-ZCHF/ponder",
+      "eyebrow": "Indexer"
+    },
+    {
+      "title": "MCP server",
+      "description": "Let an AI agent read protocol state and explain positions.",
+      "cta": "frankencoin-mcp",
+      "href": "https://github.com/Frankencoin-ZCHF/frankencoin-mcp",
+      "eyebrow": "AI agents"
+    },
+    {
+      "title": "npm packages",
+      "description": "@frankencoin/zchf (ABIs and addresses) and @frankencoin/api (typed client).",
+      "cta": "On npm",
+      "href": "https://www.npmjs.com/org/frankencoin",
+      "eyebrow": "Packages"
+    },
+    {
+      "title": "Reference frontend",
+      "description": "The official dapp, MIT licensed. Fork it or lift components.",
+      "cta": "frankencoin-dapp",
+      "href": "https://github.com/Frankencoin-ZCHF/frankencoin-dapp",
+      "eyebrow": "Frontend"
+    }
   ],
   "addresses": {
     "title": "Addresses",
     "note": "Mainnet. Other chains in the contracts repo.",
     "items": [
-      { "label": "ZCHF", "value": "0xB58E61C3098d85632Df34EecfB899A1Ed80921cB" },
-      { "label": "FCS", "value": "0xDb861830D9Ae2d1fCF99fA0cfd3973de382B0B5b" },
-      { "label": "FPS", "value": "0x1bA26788dfDe592fec8bcB0Eaff472a42BE341B2" }
-    ]
+      {
+        "label": "ZCHF",
+        "value": "0xB58E61C3098d85632Df34EecfB899A1Ed80921cB"
+      },
+      {
+        "label": "FCS",
+        "value": "0xDb861830D9Ae2d1fCF99fA0cfd3973de382B0B5b"
+      },
+      {
+        "label": "FPS",
+        "value": "0x1bA26788dfDe592fec8bcB0Eaff472a42BE341B2"
+      }
+    ],
+    "eyebrow": "02 — Addresses"
   },
   "cta": {
     "title": "Building something?",
     "body": "The association funds integrations, tooling and research through grants. Bug bounties are run by Compass Security.",
-    "primary": { "label": "Grant proposals", "href": "https://github.com/Frankencoin-ZCHF/grants" },
-    "secondary": { "label": "Bug bounty", "href": "/security" }
+    "primary": {
+      "label": "Grant proposals",
+      "href": "https://github.com/Frankencoin-ZCHF/grants"
+    },
+    "secondary": {
+      "label": "Bug bounty",
+      "href": "/security"
+    }
+  },
+  "toolsHead": {
+    "eyebrow": "01 — Building blocks",
+    "title": "Everything is open."
   }
 }

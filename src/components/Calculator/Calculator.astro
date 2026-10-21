@@ -27,7 +27,7 @@ const payload = JSON.stringify({ data, copy: c, locale, defaultGoal, investHref 
 ---
 
 <div
-  class="calc rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-white)] shadow-sm p-5 sm:p-8 overflow-hidden min-w-0"
+  class="calc rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-white)] shadow-sm p-5 sm:p-8 overflow-hidden min-w-0"
   x-data="frankCalc()"
   x-init="init($el.dataset.calc)"
   data-calc={payload}
@@ -35,8 +35,8 @@ const payload = JSON.stringify({ data, copy: c, locale, defaultGoal, investHref 
 
   {!compact && (
     <div class="mb-6 text-center">
-      <p class="ty-subtitle">{c.eyebrow.toUpperCase()}</p>
-      <h2 class="ty-title-1 text-[var(--color-brand-deep-blue)] mt-1">{c.title}</h2>
+      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#1a9cc8]">{c.eyebrow}</p>
+      <h2 class="mt-3 text-[30px] sm:text-[40px] leading-[1.04] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)]">{c.title}</h2>
       <p class="ty-body-2 text-[var(--color-neutral-650)] mt-2">{c.subtitle}</p>
     </div>
   )}
@@ -126,7 +126,7 @@ const payload = JSON.stringify({ data, copy: c, locale, defaultGoal, investHref 
         </div>
 
         <a :href="goal === 'save' ? copy.cta.save.href : investHref" :target="goal === 'save' ? '_blank' : null" rel="noopener"
-          class="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-brand-swiss)] hover:bg-[var(--color-blue-39)] text-white font-bold ty-body-2 px-6 py-4 transition-colors">
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-brand-deep-blue)] hover:bg-[var(--color-brand-swiss)] text-white font-bold ty-body-2 px-6 py-4 transition-colors shadow-[0_8px_30px_-8px_rgba(9,47,98,0.55)]">
           <span x-text="goal === 'save' ? copy.cta.save.label : copy.cta.invest.label"></span>
           <img src="/images/Arrow.svg" alt="" class="w-3 h-3 invert" />
         </a>

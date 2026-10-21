@@ -1,72 +1,42 @@
 ---
-/*
- * /developers — audience page for builders. Copy: src/content/en/developers.json.
- */
+/* /for/developers — contracts, API, indexer, MCP, grants. Copy: content/en/developers.json */
 import Base from "../../layouts/Base.astro";
-import Section from "../../components/Layout/Section.astro";
-import { getLanguageFromURL, loadContent, getLocalizedPath } from "../../utils/i18n";
+import LPHero from "../../components/LP/LPHero.astro";
+import LPSection from "../../components/LP/LPSection.astro";
+import FeatureGrid from "../../components/LP/FeatureGrid.astro";
+import CtaBand from "../../components/LP/CtaBand.astro";
+import { getLanguageFromURL, loadContent } from "../../utils/i18n";
 
 export const prerender = false;
-
 const lang = getLanguageFromURL(Astro.url.pathname);
 const c = await loadContent<any>("developers", lang);
-const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+const tools = c.tools.map((t: any) => ({ eyebrow: t.eyebrow, title: t.title, description: t.description, href: t.href, cta: t.cta }));
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <Section id="dev-hero" variant="accent" pad="xs" margin="mt-16">
-    <div class="pt-8 md:pt-12 grid lg:grid-cols-2 gap-10 items-center">
-      <div class="flex flex-col gap-5">
-        <p class="ty-subtitle">{c.hero.eyebrow.toUpperCase()}</p>
-        <h1 class="ty-large-title text-[var(--color-brand-deep-blue)] m-0">{c.hero.title}</h1>
-        <p class="ty-body-1 text-[var(--color-neutral-650)]">{c.hero.subtitle}</p>
-        <div class="flex flex-wrap gap-3">
-          <a href={c.hero.primary.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full bg-[var(--color-brand-swiss)] hover:bg-[var(--color-blue-39)] text-white font-bold ty-body-2 px-6 py-3.5 transition-colors">{c.hero.primary.label}</a>
-          <a href={c.hero.secondary.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full border border-[var(--color-brand-deep-blue)] text-[var(--color-brand-deep-blue)] font-bold ty-body-2 px-6 py-3.5 hover:bg-[var(--color-white)]">{c.hero.secondary.label}</a>
-        </div>
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary}>
+    <div slot="aside" class="rounded-3xl bg-[var(--color-neutral-800)]/95 backdrop-blur text-[var(--color-neutral-200)] shadow-[0_20px_60px_-20px_rgba(9,47,98,0.6)] overflow-hidden">
+      <div class="flex items-center gap-2 px-5 py-3 border-b border-white/10 font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-neutral-400)]">
+        <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
+        <span class="ml-2">{c.snippet.title}</span>
       </div>
-      <div class="rounded-2xl bg-[var(--color-neutral-800)] text-[var(--color-neutral-200)] shadow-lg overflow-hidden">
-        <div class="flex items-center gap-2 px-4 py-3 border-b border-white/10 ty-xs font-bold tracking-wider text-[var(--color-neutral-400)]">
-          <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
-          <span class="ml-2">{c.snippet.title.toUpperCase()}</span>
-        </div>
-        <pre class="m-0 p-5 overflow-x-auto text-[13px] leading-relaxed font-mono"><code>{c.snippet.code}</code></pre>
-      </div>
+      <pre class="m-0 p-5 overflow-x-auto text-[13px] leading-relaxed font-mono"><code>{c.snippet.code}</code></pre>
     </div>
-  </Section>
+  </LPHero>
 
-  <Section id="tools" pad="xs" align="center">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 text-left">
-      {c.tools.map((t: any) => (
-        <a href={t.href} target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-[var(--color-gray-20)] p-6 flex flex-col gap-2 hover:border-[var(--color-brand-swiss)] hover:shadow-md transition-all">
-          <h3 class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{t.title}</h3>
-          <p class="ty-body-3 text-[var(--color-neutral-650)] flex-1">{t.description}</p>
-          <span class="ty-body-3 font-bold text-[var(--color-blue-39)] group-hover:text-[var(--color-brand-swiss)] font-mono">{t.cta} →</span>
-        </a>
-      ))}
-    </div>
-  </Section>
+  <LPSection eyebrow={c.toolsHead.eyebrow} title={c.toolsHead.title}><FeatureGrid items={tools} /></LPSection>
 
-  <Section id="addresses" variant="accent" title={c.addresses.title} subtitle={c.addresses.note} pad="xs" align="center">
-    <div class="max-w-3xl mx-auto flex flex-col gap-2 text-left">
+  <LPSection eyebrow={c.addresses.eyebrow} title={c.addresses.title} subtitle={c.addresses.note} accent>
+    <div class="flex flex-col gap-2 max-w-4xl">
       {c.addresses.items.map((a: any) => (
-        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 rounded-xl bg-[var(--color-white)] border border-[var(--color-gray-20)] px-5 py-3">
-          <span class="ty-body-2 font-black text-[var(--color-brand-deep-blue)] w-16">{a.label}</span>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 rounded-2xl bg-white border border-[var(--color-gray-20)] px-5 py-4">
+          <span class="font-mono text-[11px] uppercase tracking-[0.22em] text-[#1a9cc8] w-14">{a.label}</span>
           <code class="ty-body-3 font-mono text-[var(--color-neutral-700)] break-all">{a.value}</code>
-          <a href={`https://etherscan.io/address/${a.value}`} target="_blank" rel="noopener noreferrer" class="sm:ml-auto ty-xs font-bold text-[var(--color-blue-39)] hover:text-[var(--color-brand-swiss)]">Etherscan →</a>
+          <a href={`https://etherscan.io/address/${a.value}`} target="_blank" rel="noopener noreferrer" class="sm:ml-auto ty-body-3 font-bold text-[var(--color-brand-swiss)]">Etherscan →</a>
         </div>
       ))}
     </div>
-  </Section>
+  </LPSection>
 
-  <Section id="grants" pad="xs" align="center">
-    <div class="max-w-2xl mx-auto rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-8 md:p-12 flex flex-col gap-4 items-center">
-      <h2 class="ty-title-1 font-black m-0">{c.cta.title}</h2>
-      <p class="ty-body-2 opacity-90">{c.cta.body}</p>
-      <div class="flex flex-wrap justify-center gap-3 mt-2">
-        <a href={c.cta.primary.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full bg-[var(--color-brand-swiss)] hover:bg-white hover:text-[var(--color-brand-deep-blue)] text-white font-bold ty-body-2 px-6 py-3.5 transition-colors">{c.cta.primary.label}</a>
-        <a href={href(c.cta.secondary.href)} class="inline-flex items-center rounded-full border border-white/60 text-white font-bold ty-body-2 px-6 py-3.5 hover:bg-white/10">{c.cta.secondary.label}</a>
-      </div>
-    </div>
-  </Section>
+  <CtaBand title={c.cta.title} body={c.cta.body} primary={c.cta.primary} secondary={c.cta.secondary} />
 </Base>

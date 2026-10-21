@@ -6,6 +6,7 @@ import LPSection from "../../components/LP/LPSection.astro";
 import FeatureGrid from "../../components/LP/FeatureGrid.astro";
 import FaqList from "../../components/LP/FaqList.astro";
 import StickyCTA from "../../components/StickyCTA/StickyCTA.astro";
+import CtaBand from "../../components/LP/CtaBand.astro";
 import { getLanguageFromURL, loadContent } from "../../utils/i18n";
 import { getBorrowOptions } from "../../utils/liveStats";
 import { formatAmount, formatPct } from "../../utils/fcsStats";
@@ -13,7 +14,8 @@ import { formatAmount, formatPct } from "../../utils/fcsStats";
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
 const c = await loadContent<any>("borrow", lang);
-const options = (await getBorrowOptions()).slice(0, 12);
+const all = await getBorrowOptions();
+const options = all.slice(0, 8);
 const date = (s: number) => new Date(s * 1000).toLocaleDateString(lang === "de" ? "de-CH" : "en-GB", { month: "short", year: "numeric" });
 Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
 ---
@@ -23,14 +25,14 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     <div slot="aside"><FeatureGrid items={c.collateral.items} cols={2} /></div>
   </LPHero>
 
-  <LPSection id="rates" title={c.rates.title} subtitle={c.rates.subtitle}>
+  <LPSection id="rates" eyebrow={c.rates.eyebrow} title={c.rates.title} subtitle={c.rates.subtitle}>
     {options.length === 0 ? (
       <p class="ty-body-2 text-[var(--color-neutral-550)]">{c.rates.empty} <a class="font-bold text-[var(--color-blue-39)]" href="https://app.frankencoin.com/mint" target="_blank" rel="noopener noreferrer">app.frankencoin.com</a></p>
     ) : (
       <>
-        <div class="hidden md:block overflow-hidden rounded-2xl border border-[var(--color-gray-20)]">
+        <div class="hidden md:block overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white shadow-[0_10px_40px_-20px_rgba(9,47,98,0.35)]">
           <table class="w-full ty-body-3">
-            <thead class="bg-[var(--color-gray-15)] text-left">
+            <thead class="bg-[var(--color-gray-10)] text-left font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-neutral-550)]">
               <tr>
                 <th class="p-4">{c.rates.cols.asset}</th><th class="p-4 text-right">{c.rates.cols.ltv}</th><th class="p-4 text-right">{c.rates.cols.rate}</th>
                 <th class="p-4 text-right">{c.rates.cols.available}</th><th class="p-4 text-right">{c.rates.cols.maturity}</th><th class="p-4"></th>
@@ -40,11 +42,11 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
               {options.map((o) => (
                 <tr class="border-t border-[var(--color-gray-20)]">
                   <td class="p-4"><span class="font-bold text-[var(--color-brand-deep-blue)]">{o.symbol}</span> <span class="text-[var(--color-neutral-550)]">{o.name}</span></td>
-                  <td class="p-4 text-right font-bold">{formatPct(o.ltv, 0)}</td>
+                  <td class="p-4 text-right font-black text-[var(--color-brand-deep-blue)] tabular-nums">{formatPct(o.ltv, 0)}</td>
                   <td class="p-4 text-right">{formatPct(o.interest, 2)}</td>
                   <td class="p-4 text-right">{formatAmount(o.available)} ZCHF</td>
                   <td class="p-4 text-right">{date(o.maturity)}</td>
-                  <td class="p-4 text-right"><a href={o.href} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-full bg-[var(--color-brand-deep-blue)] hover:bg-[var(--color-blue-39)] text-white font-bold px-4 py-2">{c.rates.cta}</a></td>
+                  <td class="p-4 text-right"><a href={o.href} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-full bg-[var(--color-brand-deep-blue)] hover:bg-[var(--color-brand-swiss)] text-white font-bold px-5 py-2.5 transition-colors">{c.rates.cta}</a></td>
                 </tr>
               ))}
             </tbody>
@@ -52,7 +54,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
         </div>
         <div class="md:hidden grid gap-3">
           {options.map((o) => (
-            <a href={o.href} target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-[var(--color-gray-20)] p-4 flex flex-col gap-2">
+            <a href={o.href} target="_blank" rel="noopener noreferrer" class="rounded-3xl border border-[var(--color-gray-20)] bg-white p-5 flex flex-col gap-2">
               <span class="flex justify-between"><span class="font-black text-[var(--color-brand-deep-blue)]">{o.symbol}</span><span class="ty-xs text-[var(--color-neutral-550)]">{date(o.maturity)}</span></span>
               <span class="grid grid-cols-3 ty-body-3">
                 <span><span class="block ty-2xs text-[var(--color-neutral-550)]">{c.rates.cols.ltv}</span><b>{formatPct(o.ltv, 0)}</b></span>
@@ -62,14 +64,18 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
             </a>
           ))}
         </div>
-        <p class="ty-xs text-[var(--color-neutral-550)] mt-3">{c.rates.note}</p>
+        <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+          <p class="ty-xs text-[var(--color-neutral-550)] max-w-[40rem] m-0">{c.rates.note}</p>
+          {all.length > options.length && <a href="https://app.frankencoin.com/mint" target="_blank" rel="noopener noreferrer" class="font-bold ty-body-3 text-[var(--color-brand-swiss)]">{c.rates.all.replace("{n}", String(all.length))} →</a>}
+        </div>
       </>
     )}
   </LPSection>
 
-  <LPSection title={c.how.title} accent><FeatureGrid items={c.how.cards} /></LPSection>
-  <LPSection title={c.terms.title}><FeatureGrid items={c.terms.items} cols={4} /></LPSection>
-  <LPSection title={c.risks.title} accent><FeatureGrid items={c.risks.items} cols={2} /></LPSection>
-  <LPSection title="FAQ" narrow><FaqList items={c.faq} /></LPSection>
+  <LPSection eyebrow={c.how.eyebrow} title={c.how.title} accent><FeatureGrid items={c.how.cards} /></LPSection>
+  <LPSection eyebrow={c.terms.eyebrow} title={c.terms.title}><FeatureGrid items={c.terms.items} cols={4} /></LPSection>
+  <LPSection eyebrow={c.risks.eyebrow} title={c.risks.title} accent><FeatureGrid items={c.risks.items} cols={2} /></LPSection>
+  <LPSection eyebrow={c.faqHead.eyebrow} title={c.faqHead.title} narrow><FaqList items={c.faq} /></LPSection>
+  <CtaBand {...c.cta} />
   <StickyCTA label={c.sticky.label} sub={c.sticky.sub} href="/use-cases/borrow#rates" />
 </Base>

@@ -1,27 +1,28 @@
 ---
-/** Grid of short cards. Items with `href` become links. */
+/** Bento-style cards. Items with `href` become links with a hover lift and halftone texture. */
 import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
 interface Item { title: string; description: string; href?: string; cta?: string; eyebrow?: string }
-interface Props { items: Item[]; cols?: 2 | 3 | 4 }
+interface Props { items: Item[]; cols?: 2 | 3 | 4; dark?: number }
 const { items, cols = 3 } = Astro.props as Props;
 const lang = getLanguageFromURL(Astro.url.pathname);
 const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
 const grid = { 2: "sm:grid-cols-2", 3: "sm:grid-cols-2 lg:grid-cols-3", 4: "sm:grid-cols-2 lg:grid-cols-4" }[cols];
-const base = "min-w-0 flex flex-col gap-2 rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-white)] p-6";
+const base = "relative overflow-hidden min-w-0 flex flex-col rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-white)] p-6 md:p-7";
 ---
 
-<div class={`grid ${grid} gap-4 lg:gap-5`}>
+<div class={`grid ${grid} gap-4`}>
   {items.map((it) => {
     const body = (
       <>
-        {it.eyebrow && <span class="ty-xs tracking-wider font-bold text-[var(--color-brand-swiss)]">{it.eyebrow.toUpperCase()}</span>}
-        <h3 class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</h3>
-        <p class="ty-body-3 text-[var(--color-neutral-650)] flex-1 [overflow-wrap:anywhere]">{it.description}</p>
-        {it.href && <span class="ty-body-3 font-bold text-[var(--color-blue-39)] group-hover:text-[var(--color-brand-swiss)]">{it.cta ?? "Learn more"} →</span>}
+        {it.href && <span class="halftone-dots absolute inset-0 text-[#5bb8dc]/40 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></span>}
+        {it.eyebrow && <span class="relative font-mono text-[11px] uppercase tracking-[0.24em] text-[#1a9cc8]">{it.eyebrow}</span>}
+        <h3 class={`relative ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0 ${it.eyebrow ? "mt-3" : ""}`}>{it.title}</h3>
+        <p class="relative mt-2 ty-body-3 text-[var(--color-neutral-650)] flex-1 [overflow-wrap:anywhere]">{it.description}</p>
+        {it.href && <span class="relative mt-5 ty-body-3 font-bold text-[var(--color-brand-swiss)]">{it.cta ?? "Learn more"} →</span>}
       </>
     );
     return it.href ? (
-      <a href={href(it.href)} target={it.href.startsWith("http") ? "_blank" : undefined} rel={it.href.startsWith("http") ? "noopener noreferrer" : undefined} class={`group ${base} hover:border-[var(--color-brand-swiss)] hover:shadow-md transition-all`}>{body}</a>
+      <a href={href(it.href)} target={it.href.startsWith("http") ? "_blank" : undefined} rel={it.href.startsWith("http") ? "noopener noreferrer" : undefined} class={`group ${base} hover:-translate-y-0.5 hover:shadow-xl transition-all`}>{body}</a>
     ) : (
       <div class={base}>{body}</div>
     );

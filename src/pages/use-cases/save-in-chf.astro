@@ -8,6 +8,7 @@ import FeatureGrid from "../../components/LP/FeatureGrid.astro";
 import FaqList from "../../components/LP/FaqList.astro";
 import UsdChfChart from "../../components/LP/UsdChfChart.astro";
 import Calculator from "../../components/Calculator/Calculator.astro";
+import CtaBand from "../../components/LP/CtaBand.astro";
 import Steps from "../../components/Steps/Steps.astro";
 import TrustStrip from "../../components/TrustStrip/TrustStrip.astro";
 import StickyCTA from "../../components/StickyCTA/StickyCTA.astro";
@@ -32,14 +33,15 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     <UsdChfChart />
   </LPSection>
 
-  <LPSection id="calculator" accent>
+  <LPSection id="calculator">
     <Calculator defaultGoal="save" />
   </LPSection>
 
-  <LPSection title={c.how.title}><FeatureGrid items={c.how.cards} /></LPSection>
-  <LPSection title={c.steps.title} accent><Steps steps={c.steps.items} /></LPSection>
-  <LPSection title={c.risks.title}><FeatureGrid items={c.risks.items} /></LPSection>
-  <LPSection accent><TrustStrip items={c.trust} /></LPSection>
-  <LPSection title="FAQ" narrow><FaqList items={c.faq} /></LPSection>
+  <LPSection eyebrow={c.how.eyebrow} title={c.how.title} accent><FeatureGrid items={c.how.cards} /></LPSection>
+  <LPSection eyebrow={c.steps.eyebrow} title={c.steps.title}><Steps steps={c.steps.items} /></LPSection>
+  <LPSection eyebrow={c.risks.eyebrow} title={c.risks.title} accent><FeatureGrid items={c.risks.items} /></LPSection>
+  <LPSection><TrustStrip items={c.trust} /></LPSection>
+  <LPSection eyebrow={c.faqHead.eyebrow} title={c.faqHead.title} narrow accent><FaqList items={c.faq} /></LPSection>
+  <CtaBand {...c.cta} />
   <StickyCTA label={c.sticky.label} sub={c.sticky.sub} href="/start" />
 </Base>

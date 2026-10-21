@@ -5,7 +5,7 @@
   },
   "hero": {
     "eyebrow": "For treasuries",
-    "title": "Diversify your treasury into Swiss francs.",
+    "title": "Diversify your treasury|into Swiss francs.",
     "subtitle": "Companies, funds and DAOs keep most on-chain reserves in US dollars. ZCHF adds the franc, earns the protocol rate, and never depends on an issuer's bank.",
     "primary": {
       "label": "Talk to the association",
@@ -35,7 +35,8 @@
         "title": "Governance voice",
         "description": "Holding FCS gives you a say in which collateral the system accepts, and a share of its income."
       }
-    ]
+    ],
+    "eyebrow": "01 — Why ZCHF"
   },
   "ops": {
     "title": "Built for how treasuries work",
@@ -62,11 +63,13 @@
         "href": "/compliance",
         "cta": "Read opinions"
       }
-    ]
+    ],
+    "eyebrow": "03 — Operations"
   },
   "dao": {
     "title": "For DAOs",
-    "subtitle": "Most DAO treasuries sit in their own token and US dollars. A ZCHF allocation in savings earns the protocol rate in a second currency. Adding FCS gives the DAO a vote on new collateral and a share of protocol income, alongside the price risk that comes with equity."
+    "subtitle": "Most DAO treasuries sit in their own token and US dollars. A ZCHF allocation in savings earns the protocol rate in a second currency. Adding FCS gives the DAO a vote on new collateral and a share of protocol income, alongside the price risk that comes with equity.",
+    "eyebrow": "04 — DAOs"
   },
   "trust": [
     {
@@ -101,5 +104,13 @@
       "label": "See live reserves",
       "href": "/transparency"
     }
+  },
+  "chart": {
+    "eyebrow": "02 — The franc vs the dollar",
+    "title": "A second currency for your reserves."
+  },
+  "trustHead": {
+    "eyebrow": "05 — Due diligence",
+    "title": "Everything your risk team will ask for."
   }
 }
