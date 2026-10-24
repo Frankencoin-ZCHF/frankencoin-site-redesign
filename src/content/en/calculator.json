@@ -35,7 +35,8 @@
     "invest": "Based on the FCS share price (FPS valuation) recorded on-chain each day. Past performance is no guarantee.",
     "fx": "Fiat shown at ECB reference rates, approximately.",
     "noHistory": "Savings started in {date}; earlier years are shown without interest.",
-    "projectedNote": "Projection only repeats today's figure. Nothing here is investment advice."
+    "projectedNote": "Projection only repeats today's figure. Nothing here is investment advice.",
+    "noFcsHistory": "FCS has a price history since {date}, after its launch phase; the result counts from then."
   },
   "cta": {
     "save": {

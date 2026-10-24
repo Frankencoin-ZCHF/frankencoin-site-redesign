@@ -34,6 +34,8 @@ const API_BASE = process.env.FRANKENCOIN_API_URL ?? "https://api.frankencoin.com
 const TIMEOUT_MS = 8000;
 const TTL_MS = 5 * 60 * 1000;
 const WEEK_S = 7 * 86400;
+/** FCS price history starts after the launch phase (Oct 2023 – Apr 2024), when the price was set by the first capital coming in. */
+const FPS_HISTORY_FROM_S = Date.UTC(2024, 4, 1) / 1000;
 const FX_FALLBACK = { CHF: 1, USD: 1.25, EUR: 1.07 };
 
 const num = (v: string | number | undefined) => (v === undefined ? NaN : Number(BigInt(String(v))) / 1e18);
@@ -58,7 +60,7 @@ async function readDailyLog(): Promise<Pick<CalcData, "fps"> & { totalSavings: n
   for (const l of logs) {
     const ts = Number(l.timestamp);
     const price = num(l.fpsPrice);
-    if (!Number.isFinite(ts) || !Number.isFinite(price)) continue;
+    if (!Number.isFinite(ts) || !Number.isFinite(price) || ts < FPS_HISTORY_FROM_S) continue;
     if (ts - lastKept >= WEEK_S) {
       fps.push([ts, Math.round(price * 100) / 100]);
       lastKept = ts;

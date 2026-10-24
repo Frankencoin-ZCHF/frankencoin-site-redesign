@@ -179,10 +179,10 @@ const payload = JSON.stringify({ data, copy: c, locale, defaultGoal, investHref 
         return tpl.replace("{n}", this.years).replace("{what}", what);
       },
       partialNote() {
-        const first = this.data.rates[0]?.[0];
+        const first = this.goal === "save" ? this.data.rates[0]?.[0] : this.data.fps[0]?.[0];
         if (!first) return "";
         const d = new Date(first * 1000).toLocaleDateString(this.locale, { month: "long", year: "numeric" });
-        return this.copy.sources.noHistory.replace("{date}", d);
+        return (this.goal === "save" ? this.copy.sources.noHistory : this.copy.sources.noFcsHistory).replace("{date}", d);
       },
       // ---- maths (all in CHF; fiat only at display time)
       rateAt(ts) {
@@ -221,11 +221,13 @@ const payload = JSON.stringify({ data, copy: c, locale, defaultGoal, investHref 
           const cur = this.data.current.rate ?? 0;
           this.finish(amtChf, v, pts, amtChf * Math.pow(1 + cur, this.years), partial);
         } else {
-          const p0 = this.priceAt(from);
-          const shares = amtChf / p0;
-          for (let i = 0; i <= N; i++) pts.push(shares * this.priceAt(from + ((now - from) * i) / N));
-          const v = shares * (this.data.current.fpsPrice ?? this.priceAt(now));
+          // FCS history starts after the launch phase; an earlier start is shown from the first real price.
           partial = this.data.fps[0][0] > from;
+          const f0 = Math.max(from, this.data.fps[0][0]);
+          const p0 = this.priceAt(f0);
+          const shares = amtChf / p0;
+          for (let i = 0; i <= N; i++) pts.push(shares * this.priceAt(f0 + ((now - f0) * i) / N));
+          const v = shares * (this.data.current.fpsPrice ?? this.priceAt(now));
           const roe = this.data.current.roe12m ?? 0;
           this.finish(amtChf, v, pts, amtChf * Math.pow(1 + roe, this.years), partial);
         }
