@@ -75,7 +75,8 @@
     "ratio": "Collateral per ZCHF",
     "equity": "Protocol equity",
     "cta": "Open the transparency page",
-    "href": "/transparency"
+    "href": "/transparency",
+    "coins": "Backed by {n} collateral types, every one on-chain"
   },
   "how": {
     "eyebrow": "04 — How it works",

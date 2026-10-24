@@ -7,6 +7,7 @@ import Base from "../layouts/Base.astro";
 import HomeHero from "../components/Home/HomeHero.astro";
 import SectionHead from "../components/Home/SectionHead.astro";
 import DollarTruth from "../components/Home/DollarTruth.astro";
+import CoinStack from "../components/Home/CoinStack.astro";
 import AudienceDoors from "../components/AudienceDoors/AudienceDoors.astro";
 import MediaCarousel from "../components/MediaCarousel/MediaCarousel.astro";
 import FaqList from "../components/LP/FaqList.astro";
@@ -133,9 +134,12 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
   <DollarTruth />
 
   <!-- 02 Proof -->
-  <section class="bg-[var(--color-white)] pb-20 md:pb-28">
+  <section class="bg-[var(--color-white)] py-20 md:py-28">
     <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
-      <SectionHead eyebrow={c.proof.eyebrow} title={c.proof.title} subtitle={c.proof.subtitle} />
+      <div class="grid lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-end mb-10 md:mb-14">
+        <div class="[&>div]:mb-0"><SectionHead eyebrow={c.proof.eyebrow} title={c.proof.title} subtitle={c.proof.subtitle} /></div>
+        <div class="lg:justify-self-end"><CoinStack label={c.proof.coins} /></div>
+      </div>
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-20)]">
         {[
           { l: c.proof.supply, v: formatAmount(t.supply) },

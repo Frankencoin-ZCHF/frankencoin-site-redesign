@@ -4,6 +4,7 @@ import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
 import Figures from "../components/LP/Figures.astro";
+import CoinStack from "../components/Home/CoinStack.astro";
 import FeatureGrid from "../components/LP/FeatureGrid.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 import { getTransparency } from "../utils/liveStats";
@@ -19,7 +20,9 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle}>
+    <div slot="aside" class="rounded-3xl bg-white/80 backdrop-blur border border-white/70 p-6 md:p-8 shadow-[0_10px_40px_-15px_rgba(9,47,98,0.35)]"><CoinStack max={11} label="Backed by {n} collateral types" /></div>
+  </LPHero>
   <LPSection>
     <Figures cols={4} items={[
       { ...c.figures.supply, value: formatAmount(t.supply) },
