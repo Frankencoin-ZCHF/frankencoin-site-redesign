@@ -1,36 +1,31 @@
 {
   "eyebrow": "The dollar problem",
   "title": "Your dollars are melting.|Francs are not.",
-  "subtitle": "Since 1971 the dollar has lost {usdLoss} of its buying power and {fxLoss} of its value against the Swiss franc. Type an amount, pick a year, and see what each choice would have done to your money.",
+  "subtitle": "Since 1971 the dollar has lost {usdLoss} of its buying power. Type an amount, pick a year, and compare three places you could have kept it. Every number is in today’s dollars, so they can be compared directly.",
   "amount": "Amount in US dollars",
   "since": "If you had it in",
   "today": "Today",
   "tiles": {
     "cash": {
-      "label": "Kept as dollars",
-      "sub": "Buys what {then} bought in {year}",
-      "tag": "buying power"
+      "label": "Kept as cash dollars",
+      "how": "No interest. The note just sits there.",
+      "power": "Buys what {then} bought in {year}"
     },
     "tbill": {
-      "label": "Rolled in US T-bills",
-      "sub": "After US inflation, worth {real} of {year} dollars",
-      "tag": "the “safe” choice"
+      "label": "US Treasury bills",
+      "how": "The classic “safe” dollar: 3-month T-bills, interest reinvested every quarter.",
+      "power": "Buys what {then} bought in {year}"
     },
     "chf": {
-      "label": "Switched to Swiss francs",
-      "sub": "{chf} at the time, converted back today",
-      "tag": "no interest at all"
-    },
-    "chfRate": {
-      "label": "Francs earning Swiss cash rates",
-      "sub": "Same francs, parked at 3-month CHF rates",
-      "tag": "what a franc account did"
+      "label": "Swiss franc savings",
+      "how": "Changed into francs in {year} ({chf}), kept at the Swiss cash rate, changed back to dollars today.",
+      "power": "Buys what {then} bought in {year}"
     }
   },
   "legend": {
     "tbill": "US T-bills",
-    "chf": "Swiss francs",
-    "cash": "Dollar buying power"
+    "chf": "Swiss franc savings",
+    "cash": "Needed just to keep up with US inflation"
   },
   "zchf": {
     "label": "And today",
@@ -45,7 +40,7 @@
     "items": [
       {
         "q": "“T-bills pay {tbillNow}. Why would I hold francs?”",
-        "a": "Because the yield is in a currency that keeps shrinking. From {year}, {amount} rolled in T-bills became {tbillVal} in dollars, but only {tbillReal} in {year} buying power. The same money switched to francs is {chfVal} today, with no interest at all. Francs that earned Swiss cash rates reached {chfRateVal}. Today ZCHF adds {rate} on top of the franc."
+        "a": "Because the yield is paid in a currency that keeps shrinking. From {year}, {amount} in T-bills became {tbillVal} in today’s dollars, which buys what {tbillReal} bought back then. The same money in Swiss franc savings became {chfVal}, which buys what {chfReal} bought. Today ZCHF pays {rate} on top of the franc."
       },
       {
         "q": "“The dollar is the world’s reserve currency. It is safe.”",
@@ -69,5 +64,7 @@
     "eyebrow": "How to switch",
     "title": "Ten minutes. Three steps."
   },
-  "note": "Annual averages from FRED (Federal Reserve H.10 exchange rates, 3-month Treasury bill TB3MS, BLS CPI-U), the Swiss National Bank (overnight call money to 1998, SARON from 1999) and the OECD Swiss CPI; today's rate from ECB reference rates. T-bill returns ignore taxes and fees. Past moves do not predict future ones. Nothing here is investment advice."
+  "note": "Annual averages from FRED (Federal Reserve H.10 exchange rates, 3-month Treasury bill TB3MS, BLS CPI-U), the Swiss National Bank (overnight call money to 1998, SARON from 1999) and the OECD Swiss CPI; today's rate from ECB reference rates. T-bill returns ignore taxes and fees. Past moves do not predict future ones. Nothing here is investment advice.",
+  "explain": "All three start with the same dollars in {year}. The big number is what they are worth today. The line below says how much of {year}’s buying power is left, after US inflation.",
+  "powerTag": "buying power"
 }
