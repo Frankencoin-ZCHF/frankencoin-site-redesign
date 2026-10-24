@@ -5,7 +5,6 @@ import LPHero from "../../components/LP/LPHero.astro";
 import LPSection from "../../components/LP/LPSection.astro";
 import Figures from "../../components/LP/Figures.astro";
 import FeatureGrid from "../../components/LP/FeatureGrid.astro";
-import Calculator from "../../components/Calculator/Calculator.astro";
 import TrustStrip from "../../components/TrustStrip/TrustStrip.astro";
 import StickyCTA from "../../components/StickyCTA/StickyCTA.astro";
 import CtaBand from "../../components/LP/CtaBand.astro";
@@ -31,7 +30,6 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     <Figures slot="aside" items={figures} />
   </LPHero>
   <LPSection eyebrow={c.paths.eyebrow} title={c.paths.title}><FeatureGrid items={c.paths.items} cols={2} /></LPSection>
-  <LPSection accent><Calculator /></LPSection>
   <LPSection id="compare" eyebrow={c.compare.eyebrow} title={c.compare.title} subtitle={c.compare.subtitle}>
     <div class="overflow-x-auto">
       <table class="w-full border-separate border-spacing-0 rounded-3xl overflow-hidden border border-[var(--color-gray-20)] bg-white ty-body-3">

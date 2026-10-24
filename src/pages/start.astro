@@ -8,7 +8,7 @@ import Section from "../components/Layout/Section.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
 import FaqList from "../components/LP/FaqList.astro";
-import Calculator from "../components/Calculator/Calculator.astro";
+import DollarTruth from "../components/Home/DollarTruth.astro";
 import Steps from "../components/Steps/Steps.astro";
 import TrustStrip from "../components/TrustStrip/TrustStrip.astro";
 import StickyCTA from "../components/StickyCTA/StickyCTA.astro";
@@ -23,10 +23,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} primary={{ label: c.paths.save.cta, href: c.paths.save.href }} secondary={{ label: "See the numbers", href: "#calculator" }} />
-  <LPSection id="calculator" accent>
-    <div class="max-w-5xl mx-auto"><Calculator compact defaultGoal="save" /></div>
-  </LPSection>
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} primary={{ label: c.paths.save.cta, href: c.paths.save.href }} secondary={{ label: "See the numbers", href: "#dollar" }} />
 
   <Section id="paths" title={c.paths.title} pad="xs" align="center">
     <div class="grid md:grid-cols-2 gap-4 lg:gap-6 text-left max-w-5xl mx-auto">
@@ -52,6 +49,8 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
       })}
     </div>
   </Section>
+
+  <DollarTruth />
 
   <Section id="steps" variant="accent" title={c.steps.title} subtitle={c.steps.subtitle} pad="xs" align="center">
     <div class="text-left max-w-5xl mx-auto">

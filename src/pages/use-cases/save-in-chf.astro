@@ -7,7 +7,6 @@ import Figures from "../../components/LP/Figures.astro";
 import FeatureGrid from "../../components/LP/FeatureGrid.astro";
 import FaqList from "../../components/LP/FaqList.astro";
 import DollarTruth from "../../components/Home/DollarTruth.astro";
-import Calculator from "../../components/Calculator/Calculator.astro";
 import CtaBand from "../../components/LP/CtaBand.astro";
 import TrustStrip from "../../components/TrustStrip/TrustStrip.astro";
 import StickyCTA from "../../components/StickyCTA/StickyCTA.astro";
@@ -30,9 +29,6 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
 
   <DollarTruth steps={c.steps.items} />
 
-  <LPSection id="calculator">
-    <Calculator defaultGoal="save" />
-  </LPSection>
 
   <LPSection eyebrow={c.how.eyebrow} title={c.how.title} accent><FeatureGrid items={c.how.cards} /></LPSection>
   <LPSection eyebrow={c.risks.eyebrow} title={c.risks.title} accent><FeatureGrid items={c.risks.items} /></LPSection>
