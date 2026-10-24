@@ -1,0 +1,73 @@
+{
+  "eyebrow": "The dollar problem",
+  "title": "Your dollars are melting.|Francs are not.",
+  "subtitle": "Since 1971 the dollar has lost {usdLoss} of its buying power and {fxLoss} of its value against the Swiss franc. Type an amount, pick a year, and see what each choice would have done to your money.",
+  "amount": "Amount in US dollars",
+  "since": "If you had it in",
+  "today": "Today",
+  "tiles": {
+    "cash": {
+      "label": "Kept as dollars",
+      "sub": "Buys what {then} bought in {year}",
+      "tag": "buying power"
+    },
+    "tbill": {
+      "label": "Rolled in US T-bills",
+      "sub": "After US inflation, worth {real} of {year} dollars",
+      "tag": "the “safe” choice"
+    },
+    "chf": {
+      "label": "Switched to Swiss francs",
+      "sub": "{chf} at the time, converted back today",
+      "tag": "no interest at all"
+    },
+    "chfRate": {
+      "label": "Francs earning Swiss cash rates",
+      "sub": "Same francs, parked at 3-month CHF rates",
+      "tag": "what a franc account did"
+    }
+  },
+  "legend": {
+    "tbill": "US T-bills",
+    "chf": "Swiss francs",
+    "cash": "Dollar buying power"
+  },
+  "zchf": {
+    "label": "And today",
+    "title": "Francs now pay {rate} a year in ZCHF savings.",
+    "body": "For most of this history, francs paid little or nothing and still held their value. The Frankencoin savings module adds the protocol rate on top, set by governance and paid every block.",
+    "cta": "Start saving",
+    "href": "/start"
+  },
+  "objections": {
+    "eyebrow": "The objections",
+    "title": "What savers ask before they switch.",
+    "items": [
+      {
+        "q": "“T-bills pay {tbillNow}. Why would I hold francs?”",
+        "a": "Because the yield is in a currency that keeps shrinking. From {year}, {amount} rolled in T-bills became {tbillVal} in dollars, but only {tbillReal} in {year} buying power. The same money switched to francs is {chfVal} today, with no interest at all. Francs that earned Swiss cash rates reached {chfRateVal}. Today ZCHF adds {rate} on top of the franc."
+      },
+      {
+        "q": "“The dollar is the world’s reserve currency. It is safe.”",
+        "a": "Reserve status did not stop the dollar losing {fxLoss} against the franc since 1971, or {usdLoss} of its buying power. The franc is not the reserve currency. It is simply the currency that gets debased least."
+      },
+      {
+        "q": "“{rate} is low. I can get more elsewhere.”",
+        "a": "Compare real rates, not headline rates. ZCHF pays {rate} while Swiss inflation runs at {chInfl}: about {chReal} real. A T-bill pays {tbillNow} while US inflation runs at {usInfl}: about {usReal} real. And that is before the franc’s long trend against the dollar."
+      },
+      {
+        "q": "“Why not a Swiss bank account?”",
+        "a": "Try opening one from abroad. Swiss banks pay around zero on franc deposits, screen non-residents hard and charge for the privilege. ZCHF needs a wallet, a bank transfer and ten minutes, and pays {rate}."
+      },
+      {
+        "q": "“Is a stablecoin safe?”",
+        "a": "ZCHF is backed by over-collateralised positions you can inspect on-chain at any time, audited seven times by four firms, with public Swiss and MiCA legal opinions. It has held its peg since 2023. Risks remain: smart contracts, collateral crashes and the fact that no bank guarantees it. Optional depeg cover exists."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "How to switch",
+    "title": "Ten minutes. Three steps."
+  },
+  "note": "Annual averages from the Federal Reserve, the US Bureau of Labor Statistics, the Swiss National Bank and the Swiss Federal Statistical Office; today’s rate from ECB reference rates. T-bill returns ignore taxes and fees. Past moves do not predict future ones. Nothing here is investment advice."
+}

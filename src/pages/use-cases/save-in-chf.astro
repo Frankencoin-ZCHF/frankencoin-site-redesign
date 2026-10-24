@@ -6,10 +6,9 @@ import LPSection from "../../components/LP/LPSection.astro";
 import Figures from "../../components/LP/Figures.astro";
 import FeatureGrid from "../../components/LP/FeatureGrid.astro";
 import FaqList from "../../components/LP/FaqList.astro";
-import UsdChfChart from "../../components/LP/UsdChfChart.astro";
+import DollarTruth from "../../components/Home/DollarTruth.astro";
 import Calculator from "../../components/Calculator/Calculator.astro";
 import CtaBand from "../../components/LP/CtaBand.astro";
-import Steps from "../../components/Steps/Steps.astro";
 import TrustStrip from "../../components/TrustStrip/TrustStrip.astro";
 import StickyCTA from "../../components/StickyCTA/StickyCTA.astro";
 import { getLanguageFromURL, loadContent } from "../../utils/i18n";
@@ -29,16 +28,13 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     <Figures slot="aside" items={[{ ...c.figures.rate, value: rate }, { ...c.figures.saved, value: formatAmount(d.current.totalSavings) }]} />
   </LPHero>
 
-  <LPSection eyebrow={c.why.eyebrow} title={c.why.title} subtitle={c.why.subtitle}>
-    <UsdChfChart />
-  </LPSection>
+  <DollarTruth steps={c.steps.items} />
 
   <LPSection id="calculator">
     <Calculator defaultGoal="save" />
   </LPSection>
 
   <LPSection eyebrow={c.how.eyebrow} title={c.how.title} accent><FeatureGrid items={c.how.cards} /></LPSection>
-  <LPSection eyebrow={c.steps.eyebrow} title={c.steps.title}><Steps steps={c.steps.items} /></LPSection>
   <LPSection eyebrow={c.risks.eyebrow} title={c.risks.title} accent><FeatureGrid items={c.risks.items} /></LPSection>
   <LPSection><TrustStrip items={c.trust} /></LPSection>
   <LPSection eyebrow={c.faqHead.eyebrow} title={c.faqHead.title} narrow accent><FaqList items={c.faq} /></LPSection>

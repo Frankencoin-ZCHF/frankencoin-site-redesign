@@ -7,6 +7,7 @@ import Base from "../layouts/Base.astro";
 import HomeHero from "../components/Home/HomeHero.astro";
 import SectionHead from "../components/Home/SectionHead.astro";
 import Calculator from "../components/Calculator/Calculator.astro";
+import DollarTruth from "../components/Home/DollarTruth.astro";
 import AudienceDoors from "../components/AudienceDoors/AudienceDoors.astro";
 import MediaCarousel from "../components/MediaCarousel/MediaCarousel.astro";
 import FaqList from "../components/LP/FaqList.astro";
@@ -128,6 +129,9 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
       </div>
     </div>
   </section>
+
+  <!-- 02 Dollar truth -->
+  <DollarTruth />
 
   <!-- Calculator -->
   <section id="calculator" class="bg-[var(--color-white)] py-20 md:py-24">

@@ -1,0 +1,202 @@
+---
+/**
+ * "Your dollars are melting": amount + start year → what cash dollars, T-bills and Swiss francs did,
+ * from 1971 to today, with the usual objections answered by the same numbers.
+ * Data: src/data/dollar-history.json (annual averages) + live USD/CHF (utils/liveStats). Alpine does the maths.
+ */
+import history from "../../data/dollar-history.json";
+import Steps from "../Steps/Steps.astro";
+import { getLanguageFromURL, loadContent, getLocalizedPath } from "../../utils/i18n";
+import { getUsdChfHistory } from "../../utils/liveStats";
+import { getCalcData } from "../../utils/calcStats";
+import { formatPct } from "../../utils/fcsStats";
+
+interface Props { steps?: any[]; id?: string }
+const { steps, id = "dollar" } = Astro.props as Props;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const c = await loadContent<any>("dollar", lang);
+const [fx, calc] = await Promise.all([getUsdChfHistory(), getCalcData()]);
+const rows = history.rows;
+const last = rows[rows.length - 1];
+const liveRate = fx.points.length ? fx.points[fx.points.length - 1][1] : last.usdchf;
+const nowYear = new Date().getFullYear();
+const first = rows[0];
+const usdLoss = 1 - first.usCpi / last.usCpi;
+const fxLoss = 1 - liveRate / first.usdchf;
+const rate = calc.current.rate ?? 0.035;
+const rateLabel = formatPct(rate, 2).replace(/\.00%$/, "%");
+const pct = (n: number, d = 0) => `${(n * 100).toFixed(d)}%`;
+const payload = JSON.stringify({ rows, liveRate, nowYear, rate, copy: c, locale: lang === "de" ? "de-CH" : "en-US" });
+const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+---
+
+<section id={id} class="relative isolate overflow-hidden bg-[var(--color-brand-deep-blue)] text-white py-20 md:py-28 scroll-mt-20" x-data="dollarTruth()" x-init="init($el.dataset.cfg)" data-cfg={payload}>
+  <span class="halftone-dots absolute inset-0 text-[#1a9cc8]/50 pointer-events-none" aria-hidden="true"></span>
+  <div class="relative mx-auto max-w-7xl px-[var(--spacing-l)]">
+    <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#5bb8dc]">{c.eyebrow}</p>
+    <h2 class="mt-3 text-[40px] sm:text-[56px] lg:text-[72px] leading-[0.98] font-black tracking-[-0.035em] m-0 max-w-4xl">
+      {c.title.split("|")[0]}<br /><span class="text-[#5bb8dc]">{c.title.split("|")[1]}</span>
+    </h2>
+    <p class="mt-6 ty-body-1 text-white/85 max-w-[40rem]">{c.subtitle.replace("{usdLoss}", pct(usdLoss)).replace("{fxLoss}", pct(fxLoss))}</p>
+
+    <!-- Controls -->
+    <div class="mt-10 grid md:grid-cols-[1fr_1.4fr] gap-6 items-end">
+      <label class="flex flex-col gap-2">
+        <span class="font-mono text-[10px] uppercase tracking-[0.24em] text-white/70">{c.amount}</span>
+        <span class="flex rounded-2xl bg-white/10 border border-white/20 overflow-hidden focus-within:border-[#5bb8dc]">
+          <span class="px-4 flex items-center font-black text-[28px] text-white/70">$</span>
+          <input type="text" inputmode="decimal" size="6" class="w-full min-w-0 flex-1 py-3 pr-4 text-[32px] font-black bg-transparent outline-none text-white" :value="fmtInput(amount)" @input="amount = parse($event.target.value)" @blur="$event.target.value = fmtInput(amount)" />
+        </span>
+      </label>
+      <div class="flex flex-col gap-2">
+        <span class="flex justify-between font-mono text-[10px] uppercase tracking-[0.24em] text-white/70"><span>{c.since}</span><span x-text="year"></span></span>
+        <input type="range" :min="rows[0].year" :max="rows[rows.length-1].year" step="1" x-model.number="year" class="w-full accent-[#5bb8dc]" />
+        <div class="flex justify-between font-mono text-[10px] text-white/50"><span x-text="rows[0].year"></span><span>1990</span><span>2010</span><span x-text="nowYear"></span></div>
+      </div>
+    </div>
+
+    <!-- Tiles -->
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div class="rounded-3xl bg-white/[0.07] border border-white/15 p-5 min-w-0">
+        <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-white/60">{c.tiles.cash.label}</p>
+        <p class="mt-3 text-[34px] md:text-[40px] font-black leading-none tabular-nums break-words" x-text="money(r.cashReal)"></p>
+        <p class="mt-2 ty-xs text-[#ff9a9a] font-bold" x-text="signed(r.cashReal / amount - 1)"></p>
+        <p class="mt-2 ty-xs text-white/60" x-text="tpl(copy.tiles.cash.sub, { then: money(r.cashReal), year })"></p>
+      </div>
+      <div class="rounded-3xl bg-white/[0.07] border border-white/15 p-5 min-w-0">
+        <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-white/60">{c.tiles.tbill.label}</p>
+        <p class="mt-3 text-[34px] md:text-[40px] font-black leading-none tabular-nums break-words" x-text="money(r.tbill)"></p>
+        <p class="mt-2 ty-xs font-bold" :class="r.tbill >= amount ? 'text-[#7ee2a8]' : 'text-[#ff9a9a]'" x-text="signed(r.tbill / amount - 1)"></p>
+        <p class="mt-2 ty-xs text-white/60" x-text="tpl(copy.tiles.tbill.sub, { real: money(r.tbillReal), year })"></p>
+      </div>
+      <div class="rounded-3xl bg-white border border-white p-5 text-[var(--color-brand-deep-blue)] min-w-0">
+        <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-[#1a9cc8]">{c.tiles.chf.label}</p>
+        <p class="mt-3 text-[34px] md:text-[40px] font-black leading-none tabular-nums break-words" x-text="money(r.chf)"></p>
+        <p class="mt-2 ty-xs font-bold" :class="r.chf >= amount ? 'text-[#15803d]' : 'text-[#e02523]'" x-text="signed(r.chf / amount - 1)"></p>
+        <p class="mt-2 ty-xs text-[var(--color-neutral-600)]" x-text="tpl(copy.tiles.chf.sub, { chf: chfFmt(r.chfAmount) })"></p>
+      </div>
+      <div class="rounded-3xl bg-[#5bb8dc] border border-[#5bb8dc] p-5 text-[var(--color-brand-deep-blue)] min-w-0">
+        <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-brand-deep-blue)]/70">{c.tiles.chfRate.label}</p>
+        <p class="mt-3 text-[34px] md:text-[40px] font-black leading-none tabular-nums break-words" x-text="money(r.chfRate)"></p>
+        <p class="mt-2 ty-xs font-bold" :class="r.chfRate >= amount ? 'text-[#0b4a64]' : 'text-[#7f1d1d]'" x-text="signed(r.chfRate / amount - 1)"></p>
+        <p class="mt-2 ty-xs text-[var(--color-brand-deep-blue)]/75">{c.tiles.chfRate.sub}</p>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="mt-6 rounded-3xl bg-white/[0.07] border border-white/15 p-5 md:p-6">
+      <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase tracking-[0.2em]">
+        <span class="inline-flex items-center gap-2"><span class="h-2 w-6 rounded bg-[#ffd166]"></span>{c.legend.tbill}</span>
+        <span class="inline-flex items-center gap-2"><span class="h-2 w-6 rounded bg-white"></span>{c.legend.chf}</span>
+        <span class="inline-flex items-center gap-2"><span class="h-2 w-6 rounded bg-[#ff9a9a]"></span>{c.legend.cash}</span>
+      </div>
+      <svg viewBox="0 0 100 40" preserveAspectRatio="none" class="w-full h-44 md:h-56 mt-4" aria-hidden="true">
+        <path :d="paths.chfArea" fill="rgba(255,255,255,0.08)"></path>
+        <path :d="paths.tbill" fill="none" stroke="#ffd166" stroke-width="1.4" vector-effect="non-scaling-stroke"></path>
+        <path :d="paths.chf" fill="none" stroke="#ffffff" stroke-width="1.6" vector-effect="non-scaling-stroke"></path>
+        <path :d="paths.cash" fill="none" stroke="#ff9a9a" stroke-width="1.4" stroke-dasharray="2 1.5" vector-effect="non-scaling-stroke"></path>
+      </svg>
+      <div class="flex justify-between font-mono text-[10px] text-white/50 mt-1"><span x-text="year"></span><span>{c.today}</span></div>
+    </div>
+
+    <!-- ZCHF today -->
+    <div class="mt-10 grid lg:grid-cols-[1.3fr_1fr] gap-6 items-center rounded-3xl bg-white text-[var(--color-brand-deep-blue)] p-7 md:p-10">
+      <div>
+        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#1a9cc8]">{c.zchf.label}</p>
+        <h3 class="mt-3 text-[30px] sm:text-[40px] leading-[1.02] font-black tracking-[-0.03em] m-0">{c.zchf.title.replace("{rate}", rateLabel)}</h3>
+        <p class="mt-4 ty-body-2 text-[var(--color-neutral-650)]">{c.zchf.body}</p>
+      </div>
+      <div class="flex lg:justify-end">
+        <a href={href(c.zchf.href)} class="inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-deep-blue)] hover:bg-[var(--color-brand-swiss)] text-white font-bold ty-body-1 px-8 py-5 transition-colors shadow-[0_8px_30px_-8px_rgba(9,47,98,0.55)]">{c.zchf.cta} →</a>
+      </div>
+    </div>
+
+    <!-- Objections -->
+    <div class="mt-16 grid lg:grid-cols-[1fr_1.6fr] gap-8">
+      <div>
+        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#5bb8dc]">{c.objections.eyebrow}</p>
+        <h3 class="mt-3 text-[30px] sm:text-[40px] leading-[1.02] font-black tracking-[-0.03em] m-0">{c.objections.title}</h3>
+      </div>
+      <div class="divide-y divide-white/15 border border-white/15 rounded-3xl bg-white/[0.05] px-6 md:px-8 py-2">
+        {c.objections.items.map((o: any, i: number) => (
+          <div x-data={`{ open: ${i === 0} }`} class="py-4">
+            <button class="w-full flex justify-between items-center gap-4 text-left" x-on:click="open = !open" :aria-expanded="open.toString()">
+              <span class="ty-body-2 font-bold" x-text={`fill(copy.objections.items[${i}].q)`}></span>
+              <span aria-hidden="true" class="text-2xl leading-none transition-transform text-[#5bb8dc]" :class="open ? 'rotate-45' : ''">+</span>
+            </button>
+            <p x-show="open" x-transition class="mt-3 ty-body-3 text-white/80" x-text={`fill(copy.objections.items[${i}].a)`}></p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {steps && (
+      <div class="mt-16">
+        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#5bb8dc]">{c.how.eyebrow}</p>
+        <h3 class="mt-3 mb-8 text-[30px] sm:text-[40px] leading-[1.02] font-black tracking-[-0.03em] m-0">{c.how.title}</h3>
+        <div class="text-[var(--color-brand-deep-blue)]"><Steps steps={steps} /></div>
+      </div>
+    )}
+
+    <p class="mt-8 ty-2xs text-white/50 max-w-3xl">{c.note}</p>
+  </div>
+</section>
+
+<script is:inline>
+  function dollarTruth() {
+    return {
+      rows: [], liveRate: 1, nowYear: 2026, rate: 0.035, copy: {}, locale: "en-US",
+      amount: 10000, year: 2000,
+      r: { cashReal: 0, tbill: 0, tbillReal: 0, chf: 0, chfAmount: 0, chfRate: 0 },
+      paths: { tbill: "", chf: "", chfArea: "", cash: "" },
+      init(json) {
+        if (!json || this.rows.length) return;
+        const p = JSON.parse(json);
+        Object.assign(this, { rows: p.rows, liveRate: p.liveRate, nowYear: p.nowYear, rate: p.rate, copy: p.copy, locale: p.locale });
+        this.$watch("amount", () => this.compute());
+        this.$watch("year", () => this.compute());
+        this.compute();
+      },
+      fmtInput(n) { return new Intl.NumberFormat(this.locale, { maximumFractionDigits: 0 }).format(n); },
+      parse(s) { const n = Number(String(s).replace(/[^\d.]/g, "")); return Number.isFinite(n) && n > 0 ? Math.min(n, 1e9) : 0; },
+      money(v) { return "$" + new Intl.NumberFormat(this.locale, { maximumFractionDigits: 0 }).format(Math.round(v)); },
+      chfFmt(v) { return new Intl.NumberFormat("de-CH", { maximumFractionDigits: 0 }).format(Math.round(v)) + " CHF"; },
+      signed(p) { return (p >= 0 ? "+" : "−") + Math.abs(p * 100).toFixed(0) + "%"; },
+      pct(p, d = 1) { return (p * 100).toFixed(d).replace(/\.0$/, "") + "%"; },
+      tpl(s, vars) { return String(s).replace(/\{(\w+)\}/g, (_, k) => (vars[k] ?? "")); },
+      fill(s) {
+        const last = this.rows[this.rows.length - 1], first = this.rows[0];
+        const chInfl = last.chCpi / this.rows[this.rows.length - 2].chCpi - 1;
+        const usInfl = last.usCpi / this.rows[this.rows.length - 2].usCpi - 1;
+        return this.tpl(s, {
+          year: this.year, amount: this.money(this.amount), tbillVal: this.money(this.r.tbill), tbillReal: this.money(this.r.tbillReal),
+          chfVal: this.money(this.r.chf), chfRateVal: this.money(this.r.chfRate), rate: this.pct(this.rate, 2).replace(/\.00%$/, "%"),
+          tbillNow: this.pct(last.tbill / 100, 1), chInfl: this.pct(chInfl, 1), usInfl: this.pct(usInfl, 1),
+          chReal: this.pct(this.rate - chInfl, 1), usReal: this.pct(last.tbill / 100 - usInfl, 1),
+          fxLoss: this.pct(1 - this.liveRate / first.usdchf, 0), usdLoss: this.pct(1 - first.usCpi / last.usCpi, 0),
+        });
+      },
+      compute() {
+        const rows = this.rows; if (!rows.length) return;
+        const i = Math.max(0, rows.findIndex((x) => x.year === this.year));
+        const start = rows[i], last = rows[rows.length - 1];
+        let tb = this.amount, chfR = this.amount * start.usdchf;
+        const chfCash = this.amount * start.usdchf;
+        const tbS = [tb], chfS = [chfCash / start.usdchf], cashS = [this.amount];
+        for (let k = i; k < rows.length; k++) {
+          tb *= 1 + rows[k].tbill / 100; chfR *= 1 + rows[k].chf3m / 100;
+          const nxt = rows[k + 1] ?? { usdchf: this.liveRate, usCpi: last.usCpi };
+          tbS.push(tb); chfS.push(chfCash / nxt.usdchf); cashS.push(this.amount * start.usCpi / nxt.usCpi);
+        }
+        this.r = {
+          cashReal: this.amount * start.usCpi / last.usCpi,
+          tbill: tb, tbillReal: tb * start.usCpi / last.usCpi,
+          chf: chfCash / this.liveRate, chfAmount: chfCash, chfRate: chfR / this.liveRate,
+        };
+        const all = [...tbS, ...chfS, ...cashS], max = Math.max(...all), min = 0;
+        const line = (s) => s.map((v, k) => `${k ? "L" : "M"}${((k / (s.length - 1)) * 100).toFixed(2)} ${(38 - ((v - min) / (max - min || 1)) * 36).toFixed(2)}`).join(" ");
+        this.paths = { tbill: line(tbS), chf: line(chfS), chfArea: `${line(chfS)} L100 40 L0 40 Z`, cash: line(cashS) };
+      },
+    };
+  }
+</script>
