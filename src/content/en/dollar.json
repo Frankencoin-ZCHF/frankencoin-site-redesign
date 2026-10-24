@@ -69,5 +69,5 @@
     "eyebrow": "How to switch",
     "title": "Ten minutes. Three steps."
   },
-  "note": "Annual averages from the Federal Reserve, the US Bureau of Labor Statistics, the Swiss National Bank and the Swiss Federal Statistical Office; today’s rate from ECB reference rates. T-bill returns ignore taxes and fees. Past moves do not predict future ones. Nothing here is investment advice."
+  "note": "Annual averages from FRED (Federal Reserve H.10 exchange rates, 3-month Treasury bill TB3MS, BLS CPI-U), the Swiss National Bank (overnight call money to 1998, SARON from 1999) and the OECD Swiss CPI; today's rate from ECB reference rates. T-bill returns ignore taxes and fees. Past moves do not predict future ones. Nothing here is investment advice."
 }

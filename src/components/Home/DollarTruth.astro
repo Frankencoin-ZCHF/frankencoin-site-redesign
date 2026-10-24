@@ -50,8 +50,8 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
       </label>
       <div class="flex flex-col gap-2">
         <span class="flex justify-between font-mono text-[10px] uppercase tracking-[0.24em] text-white/70"><span>{c.since}</span><span x-text="year"></span></span>
-        <input type="range" :min="rows[0].year" :max="rows[rows.length-1].year" step="1" x-model.number="year" class="w-full accent-[#5bb8dc]" />
-        <div class="flex justify-between font-mono text-[10px] text-white/50"><span x-text="rows[0].year"></span><span>1990</span><span>2010</span><span x-text="nowYear"></span></div>
+        <input type="range" :min="rows[0].year" :max="nowYear - 1" step="1" x-model.number="year" class="w-full accent-[#5bb8dc]" />
+        <div class="flex justify-between font-mono text-[10px] text-white/50"><span x-text="rows[0].year"></span><span>1990</span><span>2010</span><span x-text="nowYear - 1"></span></div>
       </div>
     </div>
 
@@ -166,7 +166,9 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
       tpl(s, vars) { return String(s).replace(/\{(\w+)\}/g, (_, k) => (vars[k] ?? "")); },
       fill(s) {
         const last = this.rows[this.rows.length - 1], first = this.rows[0];
-        const chInfl = last.chCpi / this.rows[this.rows.length - 2].chCpi - 1;
+        // Latest full year of change for each index (the current-year row may be partial or carried forward).
+        let k = this.rows.length - 1; while (k > 1 && this.rows[k].chCpi === this.rows[k - 1].chCpi) k--;
+        const chInfl = this.rows[k].chCpi / this.rows[k - 1].chCpi - 1;
         const usInfl = last.usCpi / this.rows[this.rows.length - 2].usCpi - 1;
         return this.tpl(s, {
           year: this.year, amount: this.money(this.amount), tbillVal: this.money(this.r.tbill), tbillReal: this.money(this.r.tbillReal),
