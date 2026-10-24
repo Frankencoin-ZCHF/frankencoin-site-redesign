@@ -15,22 +15,22 @@ const logo = (symbol: string) => ["svg", "png"].map((e) => `${symbol.toLowerCase
 const coins = t.collateral.map((c) => ({ symbol: c.symbol, name: c.name, file: logo(c.symbol) }));
 const shown = coins.slice(0, max);
 const more = coins.length - shown.length;
-const dim = size === "lg" ? "h-12 w-12 md:h-14 md:w-14" : "h-9 w-9";
-const overlap = size === "lg" ? "-ml-3 md:-ml-4" : "-ml-2.5";
+const dim = size === "lg" ? "h-8 w-8 sm:h-11 sm:w-11 md:h-14 md:w-14" : "h-8 w-8 sm:h-9 sm:w-9";
+const overlap = size === "lg" ? "-ml-2 sm:-ml-3 md:-ml-4" : "-ml-2 sm:-ml-2.5";
 ---
 
 <div class="flex flex-col gap-3">
   <div class="flex items-center">
-    <span class={`relative z-20 ${dim} rounded-full ring-4 ring-white bg-white shadow-[0_8px_24px_-8px_rgba(9,47,98,0.5)] overflow-hidden`} title="ZCHF">
+    <span class={`relative z-20 ${dim} rounded-full ring-2 sm:ring-4 ring-white bg-white shadow-[0_8px_24px_-8px_rgba(9,47,98,0.5)] overflow-hidden`} title="ZCHF">
       <img src="/images/coins/zchf.svg" alt="ZCHF" class="h-full w-full object-cover" />
     </span>
     {shown.map((c, i) => (
-      <span class={`relative ${overlap} ${dim} rounded-full ring-4 ring-white bg-[var(--color-gray-10)] shadow-[0_6px_18px_-8px_rgba(9,47,98,0.45)] overflow-hidden grid place-items-center`} style={`z-index:${19 - i}`} title={`${c.name} (${c.symbol})`}>
+      <span class={`relative ${overlap} ${dim} rounded-full ring-2 sm:ring-4 ring-white bg-[var(--color-gray-10)] shadow-[0_6px_18px_-8px_rgba(9,47,98,0.45)] overflow-hidden grid place-items-center`} style={`z-index:${19 - i}`} title={`${c.name} (${c.symbol})`}>
         {c.file ? <img src={`/images/coins/${c.file}`} alt={c.symbol} loading="lazy" class="h-full w-full object-cover" /> : <span class="font-mono text-[10px] font-bold text-[var(--color-brand-deep-blue)]">{c.symbol.slice(0, 3)}</span>}
       </span>
     ))}
     {more > 0 && (
-      <span class={`relative ${overlap} ${dim} rounded-full ring-4 ring-white bg-[var(--color-brand-deep-blue)] text-white grid place-items-center font-mono text-[11px] font-bold`} style="z-index:1">+{more}</span>
+      <span class={`relative ${overlap} ${dim} rounded-full ring-2 sm:ring-4 ring-white bg-[var(--color-brand-deep-blue)] text-white grid place-items-center font-mono text-[11px] font-bold`} style="z-index:1">+{more}</span>
     )}
   </div>
   {label && <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-neutral-550)]">{label.replace("{n}", String(coins.length))}</p>}
