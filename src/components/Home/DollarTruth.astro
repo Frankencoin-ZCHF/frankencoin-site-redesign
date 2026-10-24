@@ -37,10 +37,14 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
     <h2 class="mt-3 text-[40px] sm:text-[56px] lg:text-[72px] leading-[0.98] font-black tracking-[-0.035em] m-0 max-w-4xl">
       {c.title.split("|")[0]}<br /><span class="text-[#5bb8dc]">{c.title.split("|")[1]}</span>
     </h2>
-    <p class="mt-6 ty-body-1 text-white/85 max-w-[40rem]">{c.subtitle.replace("{usdLoss}", pct(usdLoss)).replace("{fxLoss}", pct(fxLoss))}</p>
+    <p class="mt-6 ty-body-1 text-white/85 max-w-[40rem]" x-text="tpl(copy.subtitle, { amount: money(amount) })">{c.subtitle.replace("{amount}", "$10,000")}</p>
+    <p class="mt-5 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl bg-white/10 border border-white/15 px-5 py-3 ty-body-2 font-bold" x-show="!custom">
+      <span class="font-mono text-[10px] uppercase tracking-[0.24em] text-[#5bb8dc]" x-text="copy.headline.kicker"></span>
+      <span x-text="tpl(copy.headline.claim, { cashLoss: signed(r.cashReal / amount - 1).replace('−', ''), chfGain: signed(r.chfReal / amount - 1) })"></span>
+    </p>
 
-    <!-- Controls -->
-    <div class="mt-10 grid md:grid-cols-[1fr_1.4fr] gap-6 items-end">
+    <!-- Controls (hidden until "try your own numbers") -->
+    <div class="mt-10 grid md:grid-cols-[1fr_1.4fr] gap-6 items-end" x-show="custom" x-transition x-cloak>
       <label class="flex flex-col gap-2">
         <span class="font-mono text-[10px] uppercase tracking-[0.24em] text-white/70">{c.amount}</span>
         <span class="flex rounded-2xl bg-white/10 border border-white/20 overflow-hidden focus-within:border-[#5bb8dc]">
@@ -88,6 +92,13 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
           <p class="mt-1 font-bold ty-body-2" :class="r.chfReal >= amount ? 'text-[#15803d]' : 'text-[#e02523]'"><span x-text="signed(r.chfReal / amount - 1)"></span> <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-neutral-550)]">{c.powerTag}</span></p>
         </div>
       </div>
+    </div>
+
+    <div class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2">
+      <button type="button" @click="custom = !custom; if (!custom) { amount = 10000; year = 2000; }" class="inline-flex items-center gap-2 rounded-full border border-[#5bb8dc]/60 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-[#5bb8dc] hover:bg-[#5bb8dc]/10">
+        <span x-text="custom ? copy.tryClose : copy.tryTitle"></span><span aria-hidden="true" x-text="custom ? '×' : '→'"></span>
+      </button>
+      <span class="ty-xs text-white/50" x-show="!custom" x-text="copy.tryHint"></span>
     </div>
 
     <!-- Chart -->
@@ -153,7 +164,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
   function dollarTruth() {
     return {
       rows: [], liveRate: 1, nowYear: 2026, rate: 0.035, copy: {}, locale: "en-US",
-      amount: 10000, year: 2000,
+      amount: 10000, year: 2000, custom: false,
       r: { cashReal: 0, tbill: 0, tbillReal: 0, chfAmount: 0, chfRate: 0, chfReal: 0 },
       paths: { tbill: "", chf: "", chfArea: "", cash: "" },
       init(json) {

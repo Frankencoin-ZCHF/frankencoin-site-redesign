@@ -1,7 +1,7 @@
 {
   "eyebrow": "The dollar problem",
   "title": "Your dollars are melting.|Francs are not.",
-  "subtitle": "Since 1971 the dollar has lost {usdLoss} of its buying power. Type an amount, pick a year, and compare three places you could have kept it. Every number is in today’s dollars, so they can be compared directly.",
+  "subtitle": "Take {amount} in the year 2000 and leave it alone. Here is what it is worth today, in today’s dollars, and what it still buys.",
   "amount": "Amount in US dollars",
   "since": "If you had it in",
   "today": "Today",
@@ -66,5 +66,12 @@
   },
   "note": "Annual averages from FRED (Federal Reserve H.10 exchange rates, 3-month Treasury bill TB3MS, BLS CPI-U), the Swiss National Bank (overnight call money to 1998, SARON from 1999) and the OECD Swiss CPI; today's rate from ECB reference rates. T-bill returns ignore taxes and fees. Past moves do not predict future ones. Nothing here is investment advice.",
   "explain": "All three start with the same dollars in {year}. The big number is what they are worth today. The line below says how much of {year}’s buying power is left, after US inflation.",
-  "powerTag": "buying power"
+  "powerTag": "buying power",
+  "headline": {
+    "kicker": "Since 2000",
+    "claim": "Dollars in a drawer lost {cashLoss} of their buying power. Swiss franc savings gained {chfGain}."
+  },
+  "tryTitle": "Try your own numbers",
+  "tryHint": "Any amount, any year since 1971.",
+  "tryClose": "Back to the 2000 example"
 }
