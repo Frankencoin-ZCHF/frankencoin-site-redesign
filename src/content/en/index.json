@@ -7,7 +7,7 @@
 		"imageAlt": "Frankencoin logo",
 		"eyebrow": "Frankencoin: The Swiss franc stablecoin",
 		"title": "Swiss francs. On-chain. Yours.",
-		"subtitle": "Frankencoin (ZCHF) is the largest decentralized Swiss franc stablecoin. Save at the protocol rate, invest in the system, or build on it.",
+		"subtitle": "Frankencoin (ZCHF) is the largest decentralized Swiss franc stablecoin. Save at the protocol rate, invest in the system, or build with it.",
 		"cta": {
 			"label": "Start now",
 			"href": "/start"
@@ -473,7 +473,7 @@
 			},
 			{
 				"eyebrow": "Developers",
-				"title": "Build on it",
+				"title": "Build with ZCHF",
 				"stat": {
 					"value": "8",
 					"label": "chains"

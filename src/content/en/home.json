@@ -2,7 +2,7 @@
   "hero": {
     "eyebrow": "ZCHF · Swiss franc stablecoin",
     "title": "The Swiss franc,|on-chain.",
-    "subtitle": "Frankencoin is the largest decentralized Swiss franc stablecoin. Save at the protocol rate, borrow against your assets, or build on it. No issuer, no bank: every franc is backed by collateral you can see.",
+    "subtitle": "Frankencoin is the largest decentralized Swiss franc stablecoin. Save at the protocol rate, borrow against your assets, or build with it. No issuer, no bank: every franc is backed by collateral you can see.",
     "primary": {
       "label": "Start saving at {rate}",
       "href": "/start"
