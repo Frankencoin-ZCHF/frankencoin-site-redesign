@@ -31,7 +31,10 @@ const line = pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(2)} ${y.toFixed
 const [l1, l2] = t(c.title).split("|");
 ---
 
-<section class="bg-[var(--color-white)] py-20 md:py-28">
+<section id="fifty" class="relative isolate overflow-hidden scroll-mt-24 bg-[var(--color-white)] py-20 md:py-28">
+  <!-- Halftone field along the left edge, fading out before the text column, so wide screens are not blank. -->
+  <span class="halftone-dots absolute inset-y-0 left-0 w-[38%] -z-10 text-[#1a9cc8] pointer-events-none" style="-webkit-mask-image:linear-gradient(to right,#000,transparent);mask-image:linear-gradient(to right,#000,transparent)" aria-hidden="true"></span>
+  <span class="absolute left-[8%] top-10 h-72 w-72 rounded-full bg-[#5bb8dc]/30 blur-3xl -z-10 pointer-events-none" aria-hidden="true"></span>
   <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
     <h2 class="text-[34px] sm:text-[46px] lg:text-[56px] leading-[1.04] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0">
       <span class="md:whitespace-nowrap">{l1}</span><br /><span class="text-[#1a9cc8]">{l2}</span>
