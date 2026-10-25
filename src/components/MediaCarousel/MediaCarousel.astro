@@ -149,9 +149,10 @@ const allItems = [...articlesWithMetadata, ...normalizedVideos].sort((a, b) => {
   class="relative"
 >
   <!-- Carousel Container -->
-  <div class="relative pt-2 pb-20">
+  <div class="relative pt-2 pb-20 overflow-hidden">
+    <!-- The clipping box stays put; only the track inside it moves. -->
     <div
-      class="flex overflow-x-hidden"
+      class="flex"
       :class="{ 'transition-transform duration-700 ease-in-out': enableTransition }"
       :style="`transform: translateX(${translateX}%)`"
     >
