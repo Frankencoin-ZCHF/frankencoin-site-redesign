@@ -4,6 +4,6 @@ const { eyebrow, title, subtitle, center = false } = Astro.props as { eyebrow?: 
 ---
 
 <div class={`mb-10 md:mb-14 ${center ? "text-center mx-auto" : ""} max-w-3xl`}>
-  <h2 class={`text-[34px] sm:text-[44px] lg:text-[52px] leading-[1.02] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0`}>{title}</h2>
+  <h2 class={`text-balance text-[34px] sm:text-[44px] lg:text-[52px] leading-[1.02] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0`}>{title}</h2>
   {subtitle && <p class="mt-4 ty-body-1 text-[var(--color-neutral-650)]">{subtitle}</p>}
 </div>
