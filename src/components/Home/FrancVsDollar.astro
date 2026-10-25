@@ -31,9 +31,7 @@ const line = pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(2)} ${y.toFixed
 const [l1, l2] = t(c.title).split("|");
 ---
 
-<section id="fifty" class="relative isolate overflow-hidden scroll-mt-24 bg-[var(--color-white)] py-20 md:py-28">
-  <!-- Soft teal mist in the left margin so wide screens are not blank; no hard edges. -->
-  <span class="absolute -left-[6%] top-1/2 -translate-y-1/2 h-[120%] w-[42%] -z-10 pointer-events-none" style="background:radial-gradient(closest-side, rgba(91,184,220,0.22), rgba(91,184,220,0.08) 55%, transparent 100%)" aria-hidden="true"></span>
+<section id="fifty" class="scroll-mt-24 bg-[var(--color-white)] py-20 md:py-28">
   <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
     <h2 class="text-[34px] sm:text-[46px] lg:text-[56px] leading-[1.04] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0">
       <span class="md:whitespace-nowrap">{l1}</span><br /><span class="text-[#1a9cc8]">{l2}</span>
