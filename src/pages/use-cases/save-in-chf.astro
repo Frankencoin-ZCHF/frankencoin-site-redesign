@@ -27,19 +27,19 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title.replace("{rate}", rate)} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} image="/images/home/zurich-lake-halftone.webp" imageHeight="h-[44%] md:h-[60%]" imagePosition="object-[50%_62%]">
+  <LPHero title={c.hero.title.replace("{rate}", rate)} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} image="/images/home/zurich-lake-halftone.webp" imageHeight="h-[44%] md:h-[60%]" imagePosition="object-[50%_62%]">
     <Figures slot="aside" items={[{ ...c.figures.rate, value: rate }, { ...c.figures.saved, value: formatAmount(d.current.totalSavings) }]} />
   </LPHero>
 
   <FrancVsDollar />
   <WhyNotTbills rate={rate} />
-  <LPSection eyebrow={c.problems.eyebrow} title={c.problems.title} subtitle={c.problems.subtitle}>
+  <LPSection title={c.problems.title} subtitle={c.problems.subtitle}>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {c.problems.items.map((it: any) => (
         <div class="relative overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white p-6 flex flex-col">
           <p class="text-[34px] font-black tracking-tight text-[var(--color-brand-deep-blue)] leading-none">{it.stat.replace("{rate}", rate).replace("{negYears}", String(negYears))}</p>
           <p class="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-neutral-550)]">{it.statLabel}</p>
-          <h3 class="mt-5 ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</h3>
+          <h3 class="mt-5 text-balance ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</h3>
           <p class="mt-2 ty-body-3 text-[var(--color-neutral-650)] flex-1">{it.description.replace("{rate}", rate)}</p>
         </div>
       ))}
@@ -48,10 +48,10 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
   </LPSection>
 
 
-  <LPSection eyebrow={c.how.eyebrow} title={c.how.title}><FeatureGrid items={c.how.cards} /></LPSection>
-  <LPSection eyebrow={c.steps.eyebrow} title={c.steps.title} accent><Steps steps={c.steps.items} /></LPSection>
+  <LPSection title={c.how.title}><FeatureGrid items={c.how.cards} /></LPSection>
+  <LPSection title={c.steps.title} accent><Steps steps={c.steps.items} /></LPSection>
   <LPSection><TrustStrip items={c.trust} /></LPSection>
-  <LPSection eyebrow={c.faqHead.eyebrow} title={c.faqHead.title} narrow accent><FaqList items={c.faq} /></LPSection>
+  <LPSection title={c.faqHead.title} narrow accent><FaqList items={c.faq} /></LPSection>
   <CtaBand {...c.cta} />
   <StickyCTA label={c.sticky.label} sub={c.sticky.sub} href="/start" />
 </Base>

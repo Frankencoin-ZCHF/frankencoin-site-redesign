@@ -8,7 +8,7 @@ import HalftoneMist from "../Home/HalftoneMist.astro";
 import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
 
 interface Cta { label: string; href: string }
-interface Props { eyebrow: string; title: string; subtitle: string; primary?: Cta; secondary?: Cta; compact?: boolean; image?: string; imageHeight?: string; imagePosition?: string }
+interface Props { eyebrow?: string; title: string; subtitle: string; primary?: Cta; secondary?: Cta; compact?: boolean; image?: string; imageHeight?: string; imagePosition?: string }
 const { eyebrow, title, subtitle, primary, secondary, compact = false, image = "/images/home/alps-halftone.webp", imageHeight = "h-[34%] md:h-[46%]", imagePosition = "object-bottom" } = Astro.props as Props;
 const lang = getLanguageFromURL(Astro.url.pathname);
 const href = (h: string) => (h.startsWith("/") || h.startsWith("#") ? (h.startsWith("#") ? h : getLocalizedPath(h, lang)) : h);
@@ -30,13 +30,15 @@ const [l1, l2] = title.split("|");
   <div class="relative mx-auto max-w-7xl px-[var(--spacing-l)]">
     <div data-hero class={`grid gap-10 lg:gap-14 items-center ${hasAside ? "lg:grid-cols-[1.15fr_1fr]" : ""}`}>
       <div class="flex flex-col max-w-3xl">
-        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[var(--color-neutral-550)] inline-flex items-center gap-2">
-          <span class="h-1.5 w-1.5 rounded-full bg-[#1a9cc8]"></span>{eyebrow}
-        </p>
-        <h1 class="mt-5 text-[40px] sm:text-[54px] lg:text-[66px] leading-[1] font-black tracking-[-0.035em] text-[var(--color-brand-deep-blue)] m-0">
+        {eyebrow && (
+          <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[var(--color-neutral-550)] inline-flex items-center gap-2 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-[#1a9cc8]"></span>{eyebrow}
+          </p>
+        )}
+        <h1 class="text-balance text-[40px] sm:text-[54px] lg:text-[66px] leading-[1] font-black tracking-[-0.035em] text-[var(--color-brand-deep-blue)] m-0">
           {l1}{l2 && <><br /><span class="text-[#1a9cc8]">{l2}</span></>}
         </h1>
-        <p class="mt-6 max-w-[38rem] ty-body-1 text-[var(--color-neutral-650)]">{subtitle}</p>
+        <p class="mt-6 max-w-[38rem] text-pretty ty-body-1 text-[var(--color-neutral-650)]">{subtitle}</p>
         {(primary || secondary) && (
           <div class="mt-8 flex flex-wrap gap-3">
             {primary && (
