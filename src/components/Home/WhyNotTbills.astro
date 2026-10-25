@@ -53,7 +53,7 @@ const bars = [
     </h2>
     <p class="mt-5 text-pretty ty-body-1 text-white/75 max-w-[40rem]">{t(c.subtitle)}</p>
 
-    <div class="mt-10 rounded-3xl border border-white/15 bg-white/[0.06] p-6 md:p-8 grid gap-6">
+    <div class="mt-10 rounded-3xl border border-white/15 bg-[#0e3a72] p-6 md:p-8 grid gap-6">
       {bars.map((b) => (
         <div class="grid md:grid-cols-[minmax(0,1fr)_auto] gap-x-8 gap-y-2 items-end">
           <div class="min-w-0">
@@ -74,7 +74,7 @@ const bars = [
 
     <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {c.reasons.map((r: any, n: number) => (
-        <div class="rounded-3xl border border-white/15 bg-white/[0.04] p-6 flex flex-col">
+        <div class="rounded-3xl border border-white/15 bg-[#0e3a72] p-6 flex flex-col">
           <p class="font-mono text-[11px] text-[#5bb8dc]">0{n + 1}</p>
           <h3 class="mt-3 text-balance ty-title-3 font-black m-0">{r.title}</h3>
           <p class="mt-2 ty-body-3 text-white/70 flex-1">{t(r.body)}</p>

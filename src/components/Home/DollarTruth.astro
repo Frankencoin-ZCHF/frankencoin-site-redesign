@@ -61,7 +61,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
     <!-- Tiles -->
     <p class="mt-8 ty-body-3 text-white/70 max-w-[44rem]" x-text="tpl(copy.explain, { year })"></p>
     <div class="mt-4 grid md:grid-cols-3 gap-3">
-      <div class="rounded-3xl bg-white/[0.07] border border-white/15 p-6 min-w-0 flex flex-col">
+      <div class="rounded-3xl bg-[#0e3a72] border border-white/15 p-6 min-w-0 flex flex-col">
         <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-white/60">{c.tiles.cash.label}</p>
         <p class="mt-1 ty-xs text-white/55">{c.tiles.cash.how}</p>
         <p class="mt-5 text-[36px] md:text-[44px] font-black leading-none tabular-nums break-words" x-text="money(amount)"></p>
@@ -71,7 +71,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
           <p class="mt-1 font-bold ty-body-2 text-[#ff9a9a]"><span x-text="signed(r.cashReal / amount - 1)"></span> <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-white/50">{c.powerTag}</span></p>
         </div>
       </div>
-      <div class="rounded-3xl bg-white/[0.07] border border-white/15 p-6 min-w-0 flex flex-col">
+      <div class="rounded-3xl bg-[#0e3a72] border border-white/15 p-6 min-w-0 flex flex-col">
         <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-white/60">{c.tiles.tbill.label}</p>
         <p class="mt-1 ty-xs text-white/55">{c.tiles.tbill.how}</p>
         <p class="mt-5 text-[36px] md:text-[44px] font-black leading-none tabular-nums break-words" x-text="money(r.tbill)"></p>
@@ -101,7 +101,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
     </div>
 
     <!-- Chart -->
-    <div class="mt-6 rounded-3xl bg-white/[0.07] border border-white/15 p-5 md:p-6">
+    <div class="mt-6 rounded-3xl bg-[#0e3a72] border border-white/15 p-5 md:p-6">
       <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase tracking-[0.2em]">
         <span class="inline-flex items-center gap-2"><span class="h-2 w-6 rounded bg-[#ffd166]"></span>{c.legend.tbill}</span>
         <span class="inline-flex items-center gap-2"><span class="h-2 w-6 rounded bg-white"></span>{c.legend.chf}</span>
@@ -119,8 +119,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
     <!-- ZCHF today -->
     <div class="mt-10 grid lg:grid-cols-[1.3fr_1fr] gap-6 items-center rounded-3xl bg-white text-[var(--color-brand-deep-blue)] p-7 md:p-10">
       <div>
-        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#1a9cc8]">{c.zchf.label}</p>
-        <h3 class="mt-3 text-[30px] sm:text-[40px] leading-[1.02] font-black tracking-[-0.03em] m-0">{c.zchf.title.replace("{rate}", rateLabel)}</h3>
+        <h3 class="text-balance text-[30px] sm:text-[40px] leading-[1.02] font-black tracking-[-0.03em] m-0">{c.zchf.title.replace("{rate}", rateLabel)}</h3>
         <p class="mt-4 ty-body-2 text-[var(--color-neutral-650)]">{c.zchf.body}</p>
       </div>
       <div class="flex lg:justify-end">
@@ -134,7 +133,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
       <div>
         <h3 class="text-balance text-[30px] sm:text-[40px] leading-[1.02] font-black tracking-[-0.03em] m-0">{c.objections.title}</h3>
       </div>
-      <div class="divide-y divide-white/15 border border-white/15 rounded-3xl bg-white/[0.05] px-6 md:px-8 py-2">
+      <div class="divide-y divide-white/15 border border-white/15 rounded-3xl bg-[#0e3a72] px-6 md:px-8 py-2">
         {c.objections.items.map((o: any, i: number) => (
           <div x-data={`{ open: ${i === 0} }`} class="py-4">
             <button class="w-full flex justify-between items-center gap-4 text-left" x-on:click="open = !open" :aria-expanded="open.toString()">
