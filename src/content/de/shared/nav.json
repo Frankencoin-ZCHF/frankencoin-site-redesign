@@ -114,8 +114,8 @@
     }
   ],
   "cta": {
-    "label": "Jetzt starten",
-    "href": "/start"
+    "label": "Sparen starten",
+    "href": "https://app.frankencoin.com/savings"
   },
   "socials": [
     {

@@ -63,7 +63,7 @@
     "title": "Want the franc without an issuer?",
     "primary": {
       "label": "Start now",
-      "href": "/start"
+      "href": "https://app.frankencoin.com/savings"
     },
     "secondary": {
       "label": "How it works",

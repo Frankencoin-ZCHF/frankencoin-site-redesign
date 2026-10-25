@@ -10,7 +10,7 @@
 		"subtitle": "Frankencoin (ZCHF) is the largest decentralized Swiss franc stablecoin. Save at the protocol rate, invest in the system, or build with it.",
 		"cta": {
 			"label": "Start now",
-			"href": "/start"
+			"href": "https://app.frankencoin.com/savings"
 		},
 		"cta_buttons": [
 			{
@@ -535,8 +535,8 @@
 	},
 	"sticky": {
 		"label": "Start now",
-		"sub": "Save or invest in three steps",
-		"href": "/start"
+		"sub": "Deposit ZCHF, withdraw any time",
+		"href": "https://app.frankencoin.com/savings"
 	},
 	"pay": {
 		"eyebrow": "Pay in CHF",

@@ -4,15 +4,11 @@
     "subtitle": "Frankencoin is the largest decentralized Swiss franc stablecoin. Save at the protocol rate, borrow against your assets, or build with it. No issuer, no bank: every franc is backed by collateral you can see.",
     "primary": {
       "label": "Start saving at {rate}",
-      "href": "/start"
+      "href": "https://app.frankencoin.com/savings"
     },
     "secondary": {
       "label": "Borrow francs",
       "href": "/use-cases/borrow"
-    },
-    "buy": {
-      "label": "Buy ZCHF by bank transfer, 0% fees",
-      "href": "https://www.mtpelerin.com/buy-zchf-frankencoin"
     },
     "ticker": {
       "rate": "Savings rate",
@@ -30,6 +26,19 @@
       "supply": "https://defillama.com/stablecoin/frankencoin",
       "collateral": "/transparency",
       "rate": "/use-cases/save-in-chf"
+    },
+    "routes": {
+      "label": "No ZCHF yet?",
+      "items": [
+        {
+          "label": "Buy by bank transfer, 0% fees",
+          "href": "https://www.mtpelerin.com/buy-zchf-frankencoin"
+        },
+        {
+          "label": "Swap from USDC or ETH",
+          "href": "https://swap.cow.fi/#/1/swap/USDC/ZCHF"
+        }
+      ]
     }
   },
   "trust": [
@@ -123,7 +132,7 @@
     "subtitle": "Start with any amount. No account with Frankencoin, no lock-up, your own keys.",
     "primary": {
       "label": "Start now",
-      "href": "/start"
+      "href": "https://app.frankencoin.com/savings"
     },
     "secondary": {
       "label": "Talk to us",

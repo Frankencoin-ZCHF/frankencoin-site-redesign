@@ -32,7 +32,7 @@
     "title": "Francs now pay {rate} a year in ZCHF savings.",
     "body": "For most of this history, francs paid little or nothing and still held their value. The Frankencoin savings module adds the protocol rate on top, set by governance and paid every block.",
     "cta": "Start saving",
-    "href": "/start"
+    "href": "https://app.frankencoin.com/savings"
   },
   "objections": {
     "eyebrow": "The objections",

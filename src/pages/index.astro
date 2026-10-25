@@ -54,7 +54,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     subtitle={c.hero.subtitle}
     primary={{ ...c.hero.primary, label: c.hero.primary.label.replace("{rate}", rate) }}
     secondary={c.hero.secondary}
-    buy={c.hero.buy}
+    routes={c.hero.routes}
     coords={c.hero.coords}
     ticker={[
       { label: c.hero.ticker.rate, value: rate, href: c.hero.tickerLinks.rate },

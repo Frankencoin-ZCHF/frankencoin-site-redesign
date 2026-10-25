@@ -9,7 +9,7 @@
     "subtitle": "The franc has held its value for fifty years while the dollar melted. Saving in francs used to mean a Swiss bank and almost no interest. ZCHF changes both.",
     "primary": {
       "label": "Start saving",
-      "href": "/start"
+      "href": "https://app.frankencoin.com/savings"
     },
     "secondary": {
       "label": "See the numbers",
@@ -132,7 +132,7 @@
     "body": "Buy ZCHF by bank transfer or swap, deposit once, withdraw whenever you like.",
     "primary": {
       "label": "Start saving",
-      "href": "/start"
+      "href": "https://app.frankencoin.com/savings"
     },
     "secondary": {
       "label": "Compare save and invest",

@@ -16,7 +16,7 @@ const categories = ["All", ...new Set(useCases.cases.map(c => c.category))];
 ---
 
 <Base>
-  <LPHero eyebrow={useCases.eyebrow} title={useCases.heroTitle ?? useCases.title} subtitle={useCases.intro} primary={{ label: "Start now", href: "/start" }} secondary={{ label: "Explore the ecosystem", href: "/ecosystem" }} />
+  <LPHero eyebrow={useCases.eyebrow} title={useCases.heroTitle ?? useCases.title} subtitle={useCases.intro} primary={{ label: "Start now", href: "https://app.frankencoin.com/savings" }} secondary={{ label: "Explore the ecosystem", href: "/ecosystem" }} />
   <Section
     id="use-cases"
     variant="plain"
@@ -181,5 +181,5 @@ const categories = ["All", ...new Set(useCases.cases.map(c => c.category))];
       ))}
     </div>
   </Section>
-  <CtaBand title="Put your money in Swiss francs." body="Three steps, about ten minutes. You keep your own keys." primary={{ label: "Start now", href: "/start" }} secondary={{ label: "Explore the ecosystem", href: "/ecosystem" }} />
+  <CtaBand title="Put your money in Swiss francs." body="Three steps, about ten minutes. You keep your own keys." primary={{ label: "Start now", href: "https://app.frankencoin.com/savings" }} secondary={{ label: "Explore the ecosystem", href: "/ecosystem" }} />
 </Base>

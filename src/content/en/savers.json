@@ -9,7 +9,7 @@
     "subtitle": "Whether you start from a bank account or a crypto wallet, ZCHF earns the protocol rate and stays yours.",
     "primary": {
       "label": "Start now",
-      "href": "/start"
+      "href": "https://app.frankencoin.com/savings"
     },
     "secondary": {
       "label": "Compare save and invest",
@@ -123,7 +123,7 @@
     "body": "From a bank transfer or a crypto wallet, you are earning the protocol rate within the hour.",
     "primary": {
       "label": "Start now",
-      "href": "/start"
+      "href": "https://app.frankencoin.com/savings"
     },
     "secondary": {
       "label": "Buy ZCHF by bank transfer",
