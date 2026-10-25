@@ -11,8 +11,8 @@ import { getUsdChfHistory } from "../../utils/liveStats";
 import { getCalcData } from "../../utils/calcStats";
 import { formatPct } from "../../utils/fcsStats";
 
-interface Props { steps?: any[]; id?: string }
-const { steps, id = "dollar" } = Astro.props as Props;
+interface Props { steps?: any[]; id?: string; objections?: boolean }
+const { steps, id = "dollar", objections = true } = Astro.props as Props;
 const lang = getLanguageFromURL(Astro.url.pathname);
 const c = await loadContent<any>("dollar", lang);
 const [fx, calc] = await Promise.all([getUsdChfHistory(), getCalcData()]);
@@ -130,6 +130,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
     </div>
 
     <!-- Objections -->
+    {objections && (
     <div class="mt-16 grid lg:grid-cols-[1fr_1.6fr] gap-8">
       <div>
         <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#5bb8dc]">{c.objections.eyebrow}</p>
@@ -147,6 +148,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
         ))}
       </div>
     </div>
+    )}
 
     {steps && (
       <div class="mt-16">

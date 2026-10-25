@@ -6,7 +6,7 @@
   "hero": {
     "eyebrow": "Save in CHF",
     "title": "Swiss francs that|earn {rate} a year.",
-    "subtitle": "Swiss bank accounts pay close to nothing on francs. ZCHF in the Frankencoin savings module earns the protocol rate, paid every block, and you can withdraw at any time.",
+    "subtitle": "The franc has held its value for fifty years while the dollar melted. Saving in francs used to mean a Swiss bank and almost no interest. ZCHF changes both.",
     "primary": {
       "label": "Start saving",
       "href": "/start"
@@ -26,10 +26,6 @@
       "unit": "ZCHF"
     }
   },
-  "why": {
-    "title": "Get out of the dollar, keep the yield.",
-    "subtitle": "Most stablecoin savings are in US dollars. ZCHF lets you hold the franc instead, one of the world's most stable currencies, and still earn on-chain interest."
-  },
   "how": {
     "title": "Where the interest comes from",
     "cards": [
@@ -45,7 +41,8 @@
         "title": "No lock-up",
         "description": "Withdraw part or all of your balance whenever you want, interest included."
       }
-    ]
+    ],
+    "eyebrow": "The mechanics"
   },
   "steps": {
     "title": "Start in three steps",
@@ -77,24 +74,8 @@
           "external": true
         }
       }
-    ]
-  },
-  "risks": {
-    "title": "What can go wrong",
-    "items": [
-      {
-        "title": "The rate can change",
-        "description": "Governance sets the savings rate and can lower it. Your balance never goes down, but future interest may."
-      },
-      {
-        "title": "Smart-contract risk",
-        "description": "The contracts are audited many times, but no audit removes all risk. Optional depeg cover is available."
-      },
-      {
-        "title": "Peg risk",
-        "description": "ZCHF is backed by over-collateralized positions, not by a bank. A sharp crash in collateral could stress the peg."
-      }
-    ]
+    ],
+    "eyebrow": "Start"
   },
   "faq": [
     {
@@ -157,5 +138,54 @@
       "label": "Compare save and invest",
       "href": "/for/savers#compare"
     }
+  },
+  "fifty": {
+    "eyebrow": "Fifty years, two currencies",
+    "title": "One dollar bought {then} francs in 1971.|Today it buys {now}.",
+    "subtitle": "That is a {loss} fall against the franc. Anyone who saved in dollars for the long run paid for it in buying power; anyone who saved in francs kept it.",
+    "cash": {
+      "label": "{amount} kept in dollars",
+      "value": "{amount}",
+      "note": "Still {amount} on paper. Buys what {real} bought in 1971."
+    },
+    "chf": {
+      "label": "{amount} changed into francs in 1971",
+      "value": "{chfUsd}",
+      "note": "{chf} then, worth {chfUsd} in dollars today, before any interest."
+    },
+    "chartLabel": "Swiss francs per 1 US dollar, 1971 to today",
+    "source": "Federal Reserve H.10 annual averages via FRED; today's rate from ECB reference rates."
+  },
+  "problems": {
+    "eyebrow": "The catch",
+    "title": "Saving in francs was great. Doing it was not.",
+    "subtitle": "The franc kept its value, but the places you could keep francs did not reward you for it.",
+    "items": [
+      {
+        "title": "Banks paid nothing, then charged you",
+        "description": "Swiss cash rates sat near zero after 2008 and went negative from 2015 to 2022, when the SNB policy rate was −0.75%. Banks passed it on: large franc deposits cost money to hold.",
+        "stat": "{negYears}",
+        "statLabel": "years of negative Swiss rates"
+      },
+      {
+        "title": "Hard to open from abroad",
+        "description": "For non-residents, a Swiss bank account means compliance hurdles, minimum balances and account fees that make small and medium savings impractical.",
+        "stat": "CHF 0",
+        "statLabel": "minimum for a wallet"
+      },
+      {
+        "title": "The yield comparison most people get wrong",
+        "description": "A 6% dollar yield is worth roughly 3% or less in francs once the currency trend is priced in, which is what the forward market does. A lower franc rate can be the better savings outcome.",
+        "stat": "6% ≈ 3%",
+        "statLabel": "USD yield in franc terms"
+      },
+      {
+        "title": "A Swiss bank in your pocket",
+        "description": "ZCHF puts francs in a wallet you control, on eight chains, usable in DeFi or spendable by card, and the savings module pays {rate} in francs, set by governance.",
+        "stat": "{rate}",
+        "statLabel": "ZCHF savings rate today"
+      }
+    ],
+    "attribution": "Points from conversations with the Frankencoin Association."
   }
 }
