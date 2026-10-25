@@ -156,6 +156,43 @@
     "chartLabel": "Swiss francs per 1 US dollar, 1971 to today",
     "source": "Federal Reserve H.10 annual averages via FRED; today's rate from ECB reference rates."
   },
+  "tbills": {
+    "eyebrow": "The obvious alternative",
+    "title": "Why not just buy T-bills?|Because the yield is in dollars.",
+    "subtitle": "Treasury bills are the classic safe dollar. Here is what {amount} did since {year}: rolled into 3-month T-bills every quarter, against the same money changed into francs and left at Swiss cash rates.",
+    "tbill": {
+      "label": "{amount} in T-bills since {year}",
+      "note": "Every T-bill coupon reinvested. Still a loser after US inflation.",
+      "tag": "buying power"
+    },
+    "chf": {
+      "label": "{amount} changed into francs in {year}",
+      "note": "{chf} then, earning Swiss cash rates, changed back to dollars today.",
+      "tag": "buying power"
+    },
+    "need": "Needed just to keep up with US inflation: {need}",
+    "reasons": [
+      {
+        "title": "The yield was real. The dollar was not.",
+        "body": "T-bills paid {tbillAvg} a year on average since {year}. The dollar lost {fxLoss} against the franc over the same stretch, and that ate the whole advantage and more."
+      },
+      {
+        "title": "A 6% dollar is roughly a 3% franc",
+        "body": "The forward market prices the expected currency drift into the rate gap, so a high dollar yield and a lower franc yield tend to land in the same place. With ZCHF the {rate} is in francs: no currency to get wrong."
+      },
+      {
+        "title": "No broker, no US account, no settlement days",
+        "body": "T-bills need a brokerage or TreasuryDirect and, for non-Americans, tax paperwork. ZCHF needs a wallet: deposit in one transaction, interest accrues daily, withdraw any time."
+      },
+      {
+        "title": "Backed by collateral you can inspect",
+        "body": "A T-bill is a government's promise. ZCHF is backed by over-collateralized loans visible on-chain, with a reserve that absorbs losses before savers do. Check the live figures on the Transparency page.",
+        "href": "/transparency",
+        "cta": "See the reserves"
+      }
+    ],
+    "source": "Annual averages from FRED: 3-month Treasury bill TB3MS, H.10 exchange rates, BLS CPI-U; Swiss cash rates from the SNB (call money to 1998, SARON from 1999). Returns ignore taxes and fees. Past moves do not predict future ones; ZCHF carries smart-contract and collateral risk."
+  },
   "problems": {
     "eyebrow": "The catch",
     "title": "Saving in francs was great. Doing it was not.",
@@ -172,12 +209,6 @@
         "description": "For non-residents, a Swiss bank account means compliance hurdles, minimum balances and account fees that make small and medium savings impractical.",
         "stat": "CHF 0",
         "statLabel": "minimum for a wallet"
-      },
-      {
-        "title": "The yield comparison most people get wrong",
-        "description": "A 6% dollar yield is worth roughly 3% or less in francs once the currency trend is priced in, which is what the forward market does. A lower franc rate can be the better savings outcome.",
-        "stat": "6% ≈ 3%",
-        "statLabel": "USD yield in franc terms"
       },
       {
         "title": "A Swiss bank in your pocket",
