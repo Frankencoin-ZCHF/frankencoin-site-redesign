@@ -29,7 +29,7 @@
       },
       {
         "title": "No issuer, no bank",
-        "description": "No company can freeze or redeem your balance. Backing is over-collateralised and visible on-chain."
+        "description": "No company can freeze or redeem your balance. Backing is over-collateralized and visible on-chain."
       },
       {
         "title": "Governance voice",
@@ -89,7 +89,7 @@
     },
     {
       "label": "Cover",
-      "value": "Optional depeg insurance",
+      "value": "Optional depeg cover",
       "href": "/insurance"
     }
   ],

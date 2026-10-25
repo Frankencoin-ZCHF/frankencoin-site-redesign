@@ -13,11 +13,11 @@
     "save": {
       "eyebrow": "Lower risk",
       "title": "Save",
-      "body": "Deposit ZCHF in the savings module. Interest accrues every block. Withdraw whenever you want, no lock-up.",
+      "body": "Deposit ZCHF in the savings module and earn the protocol rate. No lock-up: withdraw whenever you want.",
       "bullets": [
         "Protocol rate, set by governance",
         "Withdraw any time",
-        "Backed by over-collateralised positions"
+        "Backed by over-collateralized positions"
       ],
       "cta": "Start saving",
       "href": "https://app.frankencoin.com/savings"
@@ -91,12 +91,12 @@
       },
       {
         "label": "Live since",
-        "value": "2023, no de-peg",
+        "value": "2023, no depeg",
         "href": "https://defillama.com/stablecoin/frankencoin"
       },
       {
         "label": "Insurance",
-        "value": "Optional de-peg cover",
+        "value": "Optional depeg cover",
         "href": "/insurance"
       }
     ]

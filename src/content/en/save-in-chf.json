@@ -44,7 +44,7 @@
       },
       {
         "title": "No lock-up",
-        "description": "Interest accrues every block. Withdraw part or all of your balance whenever you want."
+        "description": "Withdraw part or all of your balance whenever you want, interest included."
       }
     ],
     "eyebrow": "02 — Where the interest comes from"
@@ -95,7 +95,7 @@
       },
       {
         "title": "Peg risk",
-        "description": "ZCHF is backed by over-collateralised positions, not by a bank. A sharp crash in collateral could stress the peg."
+        "description": "ZCHF is backed by over-collateralized positions, not by a bank. A sharp crash in collateral could stress the peg."
       }
     ],
     "eyebrow": "04 — Be informed"
@@ -103,7 +103,7 @@
   "faq": [
     {
       "q": "Is this a bank account?",
-      "a": "No. ZCHF is a token on public blockchains and you hold it in your own wallet. Nobody can freeze it, and nobody insures it the way a Swiss bank deposit is insured."
+      "a": "No. ZCHF is a token on public blockchains and you hold it in your own wallet. No issuer can freeze it, and nobody insures it the way a Swiss bank deposit is insured."
     },
     {
       "q": "Can I withdraw any time?",
@@ -136,7 +136,7 @@
     },
     {
       "label": "Cover",
-      "value": "Optional depeg insurance",
+      "value": "Optional depeg cover",
       "href": "/insurance"
     }
   ],
@@ -152,10 +152,10 @@
     "title": "Short answers."
   },
   "cta": {
-    "title": "Start saving in Swiss francs.",
-    "body": "Three steps, about ten minutes. You keep your own keys.",
+    "title": "Francs that pay you to hold them.",
+    "body": "Buy ZCHF by bank transfer or swap, deposit once, withdraw whenever you like.",
     "primary": {
-      "label": "Start now",
+      "label": "Start saving",
       "href": "/start"
     },
     "secondary": {

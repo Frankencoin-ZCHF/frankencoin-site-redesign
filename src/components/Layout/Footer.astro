@@ -136,6 +136,11 @@ const localizedColumns = footer.columns.map((column: Column) => ({
       >
         {copyrightText}
       </p>
+      {footer.disclaimer && (
+        <p style="color: var(--color-neutral-400);" class="max-w-3xl text-center text-[var(--font-size-xs)] leading-relaxed">
+          {footer.disclaimer}
+        </p>
+      )}
       {
         note && (
           <p style="color: var(--color-neutral-400);" class="max-w-3xl text-center text-[var(--font-size-xs)] leading-relaxed">

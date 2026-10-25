@@ -44,7 +44,7 @@
       },
       {
         "q": "“The dollar is the world’s reserve currency. It is safe.”",
-        "a": "Reserve status did not stop the dollar losing {fxLoss} against the franc since 1971, or {usdLoss} of its buying power. The franc is not the reserve currency. It is simply the currency that gets debased least."
+        "a": "Reserve status did not stop the dollar losing {fxLoss} against the franc since 1971, or {usdLoss} of its buying power. The franc is not the reserve currency. It is simply the currency that has lost the least value."
       },
       {
         "q": "“{rate} is low. I can get more elsewhere.”",
@@ -56,7 +56,7 @@
       },
       {
         "q": "“Is a stablecoin safe?”",
-        "a": "ZCHF is backed by over-collateralised positions you can inspect on-chain at any time, audited seven times by four firms, with public Swiss and MiCA legal opinions. It has held its peg since 2023. Risks remain: smart contracts, collateral crashes and the fact that no bank guarantees it. Optional depeg cover exists."
+        "a": "ZCHF is backed by over-collateralized positions you can inspect on-chain at any time, audited seven times by four firms, with public Swiss and MiCA legal opinions. It has held its peg since 2023. Risks remain: smart contracts, collateral crashes and the fact that no bank guarantees it. Optional depeg cover exists."
       }
     ]
   },

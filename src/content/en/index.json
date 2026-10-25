@@ -61,7 +61,7 @@
 		"explanation": [
 			{
 				"title": "Swiss Franc Stablecoin",
-				"description": "Frankencoin (ZCHF) is a digital currency that maintains a stable 1:1 value with the Swiss franc. It combines the stability of Switzerland's trusted currency with the transparency and openness of the blockchain."
+				"description": "Frankencoin (ZCHF) is a digital currency that tracks the Swiss franc one to one. It combines the stability of Switzerland's currency with the transparency and openness of the blockchain."
 			},
 			{
 				"title": "Fully Decentralized",
@@ -69,7 +69,7 @@
 			},
 			{
 				"title": "Live and Established",
-				"description": "Frankencoin has been deployed on 8 different blockchains. It is the largest and most popular Swiss franc stablecoin, enabling on-chain transactions in Swiss francs since 2023 with no significant deviations from its peg."
+				"description": "Frankencoin has been deployed on 8 blockchains. It is the largest decentralized Swiss franc stablecoin, enabling on-chain transactions in Swiss francs since 2023 with no significant deviations from its peg."
 			}
 		]
 	},
@@ -284,7 +284,7 @@
 			},
 			{
 				"title": "Why 1 ZCHF equals 1 CHF",
-				"description": "Frankencoins are over-collateralized, such that each Frankencoin is always backed by at least one Swiss franc worth of assets. The assets backing the Frankencoins are publicly visible on-chain.",
+				"description": "Frankencoins are over-collateralized, so each Frankencoin is backed by more than one Swiss franc worth of assets. The assets backing the Frankencoins are publicly visible on-chain.",
 				"link": "https://app.frankencoin.com/monitoring/collateral",
 				"linkLabel": "Inspect the reserves"
 			},
@@ -524,7 +524,7 @@
 			},
 			{
 				"label": "Cover",
-				"value": "Optional de-peg insurance",
+				"value": "Optional depeg cover",
 				"href": "/insurance"
 			}
 		],

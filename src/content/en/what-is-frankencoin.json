@@ -27,7 +27,7 @@
   "introduction": [
     {
       "title": "What is Frankencoin?",
-      "description": "Frankencoin (ZCHF) is a decentralized stablecoin pegged to the Swiss franc. Unlike centralized stablecoins such as USDT or USDC, Frankencoin does not rely on a single issuer holding bank reserves. Instead, it uses an over-collateralized system where crypto assets are deposited on-chain to back every ZCHF in circulation. The protocol is fully transparent — all collateral, positions, and system parameters are publicly verifiable on the blockchain."
+      "description": "Frankencoin (ZCHF) is a decentralized stablecoin that tracks the Swiss franc. Unlike centralized stablecoins such as USDT or USDC, Frankencoin does not rely on a single issuer holding bank reserves. Instead, it uses an over-collateralized system where crypto assets are deposited on-chain to back every ZCHF in circulation. The protocol is fully transparent — all collateral, positions, and system parameters are publicly verifiable on the blockchain."
     },
     {
       "title": "Why the Swiss Franc?",

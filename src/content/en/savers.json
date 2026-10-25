@@ -108,7 +108,7 @@
     },
     {
       "label": "Cover",
-      "value": "Optional depeg insurance",
+      "value": "Optional depeg cover",
       "href": "/insurance"
     }
   ],
@@ -124,8 +124,8 @@
     "title": "Checked, audited, in public."
   },
   "cta": {
-    "title": "Put your money in Swiss francs.",
-    "body": "Three steps, about ten minutes. You keep your own keys.",
+    "title": "Open your franc account today.",
+    "body": "From a bank transfer or a crypto wallet, you are earning the protocol rate within the hour.",
     "primary": {
       "label": "Start now",
       "href": "/start"

@@ -12,7 +12,7 @@
             "label": "Use Cases",
             "href": "/use-cases"
           },
-                    {
+          {
             "label": "Governance / FCS",
             "href": "/governance"
           }
@@ -50,7 +50,6 @@
             "label": "Insurance",
             "href": "/insurance"
           },
-
           {
             "label": "DeFiLlama",
             "href": "https://defillama.com/protocol/frankencoin",
@@ -61,7 +60,7 @@
             "href": "https://www.coingecko.com/en/coins/frankencoin",
             "external": true
           },
-           {
+          {
             "label": "Dune Dashboard",
             "href": "https://dune.com/frankencoin",
             "external": true
@@ -148,6 +147,7 @@
         ]
       }
     ],
-    "copyright": "© {year} Frankencoin Association. All rights reserved."
+    "copyright": "© {year} Frankencoin Association. All rights reserved.",
+    "disclaimer": "Figures on this site are live protocol data and past history. Nothing here is investment, legal or tax advice. Past performance does not predict future results."
   }
 }

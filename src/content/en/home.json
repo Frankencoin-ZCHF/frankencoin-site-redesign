@@ -69,7 +69,7 @@
   "proof": {
     "eyebrow": "03 — Backed, in public",
     "title": "Every franc accounted for, live.",
-    "subtitle": "ZCHF is over-collateralised by assets locked in public contracts. These numbers update every five minutes.",
+    "subtitle": "ZCHF is over-collateralized by assets locked in public contracts. These numbers update every five minutes.",
     "supply": "ZCHF in circulation",
     "collateral": "Collateral value (CHF)",
     "ratio": "Collateral per ZCHF",
@@ -116,8 +116,8 @@
     "href": "/faq"
   },
   "final": {
-    "title": "Put your money in Swiss francs.",
-    "subtitle": "Three steps, about ten minutes. You keep your own keys.",
+    "title": "Swiss francs. On-chain. Yours.",
+    "subtitle": "Start with any amount. No account with Frankencoin, no lock-up, your own keys.",
     "primary": {
       "label": "Start now",
       "href": "/start"
