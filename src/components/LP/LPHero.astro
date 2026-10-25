@@ -8,8 +8,8 @@ import HalftoneMist from "../Home/HalftoneMist.astro";
 import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
 
 interface Cta { label: string; href: string }
-interface Props { eyebrow: string; title: string; subtitle: string; primary?: Cta; secondary?: Cta; compact?: boolean }
-const { eyebrow, title, subtitle, primary, secondary, compact = false } = Astro.props as Props;
+interface Props { eyebrow: string; title: string; subtitle: string; primary?: Cta; secondary?: Cta; compact?: boolean; image?: string; imageHeight?: string }
+const { eyebrow, title, subtitle, primary, secondary, compact = false, image = "/images/home/alps-halftone.webp", imageHeight = "h-[34%] md:h-[46%]" } = Astro.props as Props;
 const lang = getLanguageFromURL(Astro.url.pathname);
 const href = (h: string) => (h.startsWith("/") || h.startsWith("#") ? (h.startsWith("#") ? h : getLocalizedPath(h, lang)) : h);
 const ext = (h: string) => (h.startsWith("http") || h.startsWith("mailto:") ? { target: h.startsWith("http") ? "_blank" : undefined, rel: "noopener noreferrer" } : {});
@@ -20,8 +20,8 @@ const [l1, l2] = title.split("|");
 <section class={`relative isolate overflow-hidden bg-[var(--color-white)] ${compact ? "pt-28 md:pt-36 pb-16 md:pb-20" : "pt-28 md:pt-36 pb-24 md:pb-32"}`}>
   {!compact && (
     <>
-      <img src="/images/home/alps-halftone.webp" alt="" width="2000" height="1121" fetchpriority="high" class="absolute inset-x-0 bottom-0 w-full h-[34%] md:h-[46%] object-cover object-bottom -z-10 select-none opacity-90" />
-      <div class="absolute inset-x-0 bottom-0 h-[calc(34%+3px)] md:h-[calc(46%+3px)] -z-10 bg-gradient-to-b from-white via-white/40 to-transparent"></div>
+      <img src={image} alt="" width="2000" height="1121" fetchpriority="high" class={`absolute inset-x-0 bottom-0 w-full ${imageHeight} object-cover object-bottom -z-10 select-none opacity-90`} />
+      <div class={`absolute inset-x-0 bottom-0 ${imageHeight} box-content pt-[3px] -z-10 bg-gradient-to-b from-white via-white/40 to-transparent`}></div>
       <HalftoneMist />
     </>
   )}

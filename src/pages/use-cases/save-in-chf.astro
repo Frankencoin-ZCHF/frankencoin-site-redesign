@@ -23,7 +23,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title.replace("{rate}", rate)} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary}>
+  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title.replace("{rate}", rate)} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} image="/images/home/zurich-halftone.webp" imageHeight="h-[38%] md:h-[50%]">
     <Figures slot="aside" items={[{ ...c.figures.rate, value: rate }, { ...c.figures.saved, value: formatAmount(d.current.totalSavings) }]} />
   </LPHero>
 
