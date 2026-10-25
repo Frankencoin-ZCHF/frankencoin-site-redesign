@@ -8,8 +8,8 @@ import HalftoneMist from "../Home/HalftoneMist.astro";
 import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
 
 interface Cta { label: string; href: string }
-interface Props { eyebrow?: string; title: string; subtitle: string; primary?: Cta; secondary?: Cta; compact?: boolean; image?: string; imageHeight?: string; imagePosition?: string }
-const { eyebrow, title, subtitle, primary, secondary, compact = false, image = "/images/home/alps-halftone.webp", imageHeight = "h-[34%] md:h-[46%]", imagePosition = "object-bottom" } = Astro.props as Props;
+interface Props { eyebrow?: string; title: string; subtitle: string; primary?: Cta; secondary?: Cta; compact?: boolean; image?: string; imageHeight?: string; imagePosition?: string; /** "band": halftone strip along the bottom (default). "side": the image fills the right half, fading into the white text column. */ imageLayout?: "band" | "side" }
+const { eyebrow, title, subtitle, primary, secondary, compact = false, image = "/images/home/alps-halftone.webp", imageHeight = "h-[34%] md:h-[46%]", imagePosition = "object-bottom", imageLayout = "band" } = Astro.props as Props;
 const lang = getLanguageFromURL(Astro.url.pathname);
 const href = (h: string) => (h.startsWith("/") || h.startsWith("#") ? (h.startsWith("#") ? h : getLocalizedPath(h, lang)) : h);
 const ext = (h: string) => (h.startsWith("http") || h.startsWith("mailto:") ? { target: h.startsWith("http") ? "_blank" : undefined, rel: "noopener noreferrer" } : {});
@@ -18,7 +18,16 @@ const [l1, l2] = title.split("|");
 ---
 
 <section class={`relative isolate overflow-hidden bg-[var(--color-white)] ${compact ? "pt-28 md:pt-36 pb-16 md:pb-20" : "pt-28 md:pt-36 pb-24 md:pb-32"}`}>
-  {!compact && (
+  {!compact && imageLayout === "side" && (
+    <>
+      <img src={image} alt="" width="2000" height="1121" fetchpriority="high" class={`absolute -z-10 select-none object-cover ${imagePosition} inset-x-0 bottom-0 h-[40%] w-full lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:w-[58%] opacity-90`} />
+      <div class="absolute inset-x-0 bottom-0 h-[40%] box-content pt-[3px] -z-10 bg-gradient-to-b from-white via-white/50 to-transparent lg:hidden"></div>
+      <div class="absolute inset-y-0 right-0 w-[58%] -z-10 hidden lg:block bg-gradient-to-r from-white via-white/70 to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 h-24 -z-10 hidden lg:block bg-gradient-to-t from-white to-transparent"></div>
+      <HalftoneMist />
+    </>
+  )}
+  {!compact && imageLayout === "band" && (
     <>
       <img src={image} alt="" width="2000" height="1121" fetchpriority="high" class={`absolute inset-x-0 bottom-0 w-full ${imageHeight} object-cover ${imagePosition} -z-10 select-none opacity-90`} />
       <div class={`absolute inset-x-0 bottom-0 ${imageHeight} box-content pt-[3px] -z-10 bg-gradient-to-b from-white via-white/40 to-transparent`}></div>

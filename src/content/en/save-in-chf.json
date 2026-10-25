@@ -142,7 +142,7 @@
   "fifty": {
     "eyebrow": "Fifty years, two currencies",
     "title": "One dollar bought {then} francs in 1971.|Today it buys {now}.",
-    "subtitle": "That is a {loss} fall against the franc. Anyone who saved in dollars for the long run paid for it in buying power; anyone who saved in francs kept it.",
+    "subtitle": "An {loss} fall against the franc. Whoever saved in dollars for the long run paid for it in buying power. Whoever saved in francs kept it.",
     "cash": {
       "label": "{amount} kept in dollars",
       "value": "{amount}",
