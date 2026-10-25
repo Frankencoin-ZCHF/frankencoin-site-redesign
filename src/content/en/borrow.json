@@ -138,5 +138,22 @@
       "label": "Propose a new collateral",
       "href": "/integrate/collateral"
     }
+  },
+  "rwa": {
+    "title": "Have a tokenized asset? Make it collateral.",
+    "body": "Frankencoin is permissionless: issuers and holders of tokenized shares, bonds, gold or real estate can propose their token as collateral. If FCS holders do not veto within the initialization period, holders can borrow francs against it.",
+    "points": [
+      "No listing committee: a 1'000 ZCHF proposal fee and an on-chain vote",
+      "Your holders get franc liquidity without selling",
+      "Terms (liquidation price, rate, limit) are yours to propose"
+    ],
+    "primary": {
+      "label": "How to onboard a collateral",
+      "href": "/integrate/collateral"
+    },
+    "secondary": {
+      "label": "Propose in the app",
+      "href": "https://app.frankencoin.com/mint/create"
+    }
   }
 }
