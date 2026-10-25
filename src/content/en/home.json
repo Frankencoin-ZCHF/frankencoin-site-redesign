@@ -1,6 +1,5 @@
 {
   "hero": {
-    "eyebrow": "ZCHF · Swiss franc stablecoin",
     "title": "The Swiss franc,|on-chain.",
     "subtitle": "Frankencoin is the largest decentralized Swiss franc stablecoin. Save at the protocol rate, borrow against your assets, or build with it. No issuer, no bank: every franc is backed by collateral you can see.",
     "primary": {
@@ -21,7 +20,17 @@
       "collateral": "Collateral per ZCHF",
       "since": "Live since"
     },
-    "coords": "47.17° N · 8.52° E"
+    "coords": "47.17° N · 8.52° E",
+    "announcement": {
+      "tag": "New",
+      "label": "Frankencoin Shares are live",
+      "href": "/fcs"
+    },
+    "tickerLinks": {
+      "supply": "https://defillama.com/stablecoin/frankencoin",
+      "collateral": "/transparency",
+      "rate": "/use-cases/save-in-chf"
+    }
   },
   "trust": [
     "Legal opinions under Swiss law and MiCA",

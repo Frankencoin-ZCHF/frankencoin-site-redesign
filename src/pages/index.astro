@@ -49,7 +49,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
 
 <Base>
   <HomeHero
-    eyebrow={c.hero.eyebrow}
+    announcement={c.hero.announcement}
     title={c.hero.title}
     subtitle={c.hero.subtitle}
     primary={{ ...c.hero.primary, label: c.hero.primary.label.replace("{rate}", rate) }}
@@ -57,9 +57,9 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     buy={c.hero.buy}
     coords={c.hero.coords}
     ticker={[
-      { label: c.hero.ticker.rate, value: rate },
-      { label: c.hero.ticker.supply, value: compact(t.supply) },
-      { label: c.hero.ticker.collateral, value: `${ratio}×` },
+      { label: c.hero.ticker.rate, value: rate, href: c.hero.tickerLinks.rate },
+      { label: c.hero.ticker.supply, value: compact(t.supply), href: c.hero.tickerLinks.supply },
+      { label: c.hero.ticker.collateral, value: `${ratio}×`, href: c.hero.tickerLinks.collateral },
       { label: c.hero.ticker.since, value: "2023" },
     ]}
   />

@@ -8,13 +8,13 @@ import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
 
 interface Cta { label: string; href: string }
 interface Props {
-  eyebrow: string;
+  announcement?: { tag: string; label: string; href: string };
   title: string; // "|" marks the line break
   subtitle: string;
   primary: Cta;
   secondary: Cta;
   buy: Cta;
-  ticker: { label: string; value: string }[];
+  ticker: { label: string; value: string; href?: string }[];
   coords: string;
 }
 const p = Astro.props as Props;
@@ -36,9 +36,15 @@ const [l1, l2] = p.title.split("|");
   <HalftoneMist />
 
   <div class="relative mx-auto w-full max-w-7xl px-[var(--spacing-l)] pt-28 md:pt-36 flex-1 flex flex-col" data-hero>
-    <div class="flex items-center justify-between font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-[var(--color-neutral-550)]">
-      <span class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#1a9cc8] animate-pulse"></span>{p.eyebrow}</span>
-      <span class="hidden sm:inline">{p.coords}</span>
+    <div class="flex items-center justify-between gap-4">
+      {p.announcement ? (
+        <a href={href(p.announcement.href)} class="group inline-flex max-w-full items-center gap-3 rounded-full border border-[var(--color-gray-20)] bg-white/80 backdrop-blur pl-1.5 pr-4 py-1.5 shadow-sm hover:border-[var(--color-brand-swiss)] transition-colors">
+          <span class="rounded-full bg-[var(--color-brand-swiss)] px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-white">{p.announcement.tag}</span>
+          <span class="ty-body-3 font-bold text-[var(--color-brand-deep-blue)] truncate">{p.announcement.label}</span>
+          <span class="text-[var(--color-brand-swiss)] transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
+        </a>
+      ) : <span></span>}
+      <span class="hidden sm:inline font-mono text-[11px] uppercase tracking-[0.28em] text-[var(--color-neutral-550)]">{p.coords}</span>
     </div>
 
     <h1 class="mt-6 md:mt-8 text-[44px] leading-[0.98] sm:text-[64px] lg:text-[88px] font-black tracking-[-0.035em] text-[var(--color-brand-deep-blue)] max-w-4xl">
@@ -59,12 +65,22 @@ const [l1, l2] = p.title.split("|");
 
     <div class="h-10 shrink-0" aria-hidden="true"></div>
     <dl class="mt-auto mb-4 md:mb-10 grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-[0_10px_40px_-15px_rgba(9,47,98,0.35)]">
-      {p.ticker.map((t) => (
-        <div class="bg-white/70 px-3 py-2 md:px-5 md:py-4">
-          <dt class="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.18em] md:tracking-[0.22em] text-[var(--color-neutral-550)] truncate">{t.label}</dt>
-          <dd class="m-0 mt-0.5 md:mt-1 text-[19px] md:text-[28px] font-black tracking-tight text-[var(--color-brand-deep-blue)] tabular-nums">{t.value}</dd>
-        </div>
-      ))}
+      {p.ticker.map((t) => {
+        const inner = (
+          <>
+            <dt class="flex items-center gap-1.5 font-mono text-[9px] md:text-[10px] uppercase tracking-[0.18em] md:tracking-[0.22em] text-[var(--color-neutral-550)] truncate">
+              {t.label}
+              {t.href && <span class="opacity-0 group-hover:opacity-100 transition-opacity text-[var(--color-brand-swiss)]" aria-hidden="true">↗</span>}
+            </dt>
+            <dd class="m-0 mt-0.5 md:mt-1 text-[19px] md:text-[28px] font-black tracking-tight text-[var(--color-brand-deep-blue)] tabular-nums">{t.value}</dd>
+          </>
+        );
+        return t.href ? (
+          <a href={href(t.href)} target={t.href.startsWith("http") ? "_blank" : undefined} rel={t.href.startsWith("http") ? "noopener noreferrer" : undefined} class="group block bg-white/70 hover:bg-white px-3 py-2 md:px-5 md:py-4 transition-colors">{inner}</a>
+        ) : (
+          <div class="bg-white/70 px-3 py-2 md:px-5 md:py-4">{inner}</div>
+        );
+      })}
     </dl>
   </div>
 </section>
