@@ -32,7 +32,6 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
         const ext = p.href.startsWith("http");
         return (
           <div class="flex flex-col gap-4 rounded-3xl border border-[var(--color-gray-20)] p-7 lg:p-9 bg-[var(--color-white)] hover:shadow-xl transition-shadow">
-            <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-[#1a9cc8]">{p.eyebrow}</p>
             <h3 class="text-[40px] leading-none font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0">{p.title}</h3>
             <p class="ty-body-2 text-[var(--color-neutral-650)]">{p.body}</p>
             <ul class="flex flex-col gap-2 ty-body-3 text-[var(--color-neutral-700)]">

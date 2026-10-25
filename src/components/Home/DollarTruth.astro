@@ -33,8 +33,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
 <section id={id} class="relative isolate overflow-hidden bg-[var(--color-brand-deep-blue)] text-white py-20 md:py-28 scroll-mt-20" x-data="dollarTruth()" x-init="init($el.dataset.cfg)" data-cfg={payload}>
   <span class="halftone-dots absolute inset-0 text-[#1a9cc8]/50 pointer-events-none" aria-hidden="true"></span>
   <div class="relative mx-auto max-w-7xl px-[var(--spacing-l)]">
-    <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#5bb8dc]">{c.eyebrow}</p>
-    <h2 class="mt-3 text-[40px] sm:text-[56px] lg:text-[72px] leading-[0.98] font-black tracking-[-0.035em] m-0 max-w-4xl">
+    <h2 class="text-balance text-[40px] sm:text-[56px] lg:text-[72px] leading-[0.98] font-black tracking-[-0.035em] m-0 max-w-4xl">
       {c.title.split("|")[0]}<br /><span class="text-[#5bb8dc]">{c.title.split("|")[1]}</span>
     </h2>
     <p class="mt-6 ty-body-1 text-white/85 max-w-[40rem]" x-text="tpl(copy.subtitle, { amount: money(amount) })">{c.subtitle.replace("{amount}", "$10,000")}</p>
@@ -133,8 +132,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
     {objections && (
     <div class="mt-16 grid lg:grid-cols-[1fr_1.6fr] gap-8">
       <div>
-        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#5bb8dc]">{c.objections.eyebrow}</p>
-        <h3 class="mt-3 text-[30px] sm:text-[40px] leading-[1.02] font-black tracking-[-0.03em] m-0">{c.objections.title}</h3>
+        <h3 class="text-balance text-[30px] sm:text-[40px] leading-[1.02] font-black tracking-[-0.03em] m-0">{c.objections.title}</h3>
       </div>
       <div class="divide-y divide-white/15 border border-white/15 rounded-3xl bg-white/[0.05] px-6 md:px-8 py-2">
         {c.objections.items.map((o: any, i: number) => (
@@ -152,8 +150,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
 
     {steps && (
       <div class="mt-16">
-        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#5bb8dc]">{c.how.eyebrow}</p>
-        <h3 class="mt-3 mb-8 text-[30px] sm:text-[40px] leading-[1.02] font-black tracking-[-0.03em] m-0">{c.how.title}</h3>
+        <h3 class="mb-8 text-[30px] sm:text-[40px] leading-[1.02] font-black tracking-[-0.03em] m-0">{c.how.title}</h3>
         <div class="text-[var(--color-brand-deep-blue)]"><Steps steps={steps} /></div>
       </div>
     )}

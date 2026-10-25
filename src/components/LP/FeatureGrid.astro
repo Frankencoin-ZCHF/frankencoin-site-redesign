@@ -15,8 +15,7 @@ const base = "relative overflow-hidden min-w-0 flex flex-col rounded-3xl border 
     const body = (
       <>
         {it.href && <span class="halftone-dots absolute inset-0 text-[#5bb8dc]/40 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></span>}
-        {it.eyebrow && <span class="relative font-mono text-[11px] uppercase tracking-[0.24em] text-[#1a9cc8]">{it.eyebrow}</span>}
-        <h3 class={`relative ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0 ${it.eyebrow ? "mt-3" : ""}`}>{it.title}</h3>
+        <h3 class="relative text-balance ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</h3>
         <p class="relative mt-2 ty-body-3 text-[var(--color-neutral-650)] flex-1 [overflow-wrap:anywhere]">{it.description}</p>
         {it.href && <span class="relative mt-5 ty-body-3 font-bold text-[var(--color-brand-swiss)]">{it.cta ?? "Learn more"} →</span>}
       </>

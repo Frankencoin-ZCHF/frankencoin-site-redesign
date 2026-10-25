@@ -8,8 +8,7 @@ const { id, eyebrow, title, subtitle, accent = false, narrow = false } = Astro.p
   <div class={`mx-auto px-[var(--spacing-l)] ${narrow ? "max-w-3xl" : "max-w-7xl"}`}>
     {(eyebrow || title || subtitle) && (
       <div class="mb-10 md:mb-12 max-w-3xl">
-        {eyebrow && <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#1a9cc8]">{eyebrow}</p>}
-        {title && <h2 class={`${eyebrow ? "mt-3 " : ""}text-balance text-[30px]`} sm:text-[40px] lg:text-[46px] leading-[1.04] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0">{title}</h2>}
+        {title && <h2 class="text-balance text-[30px] sm:text-[40px] lg:text-[46px] leading-[1.04] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0">{title}</h2>}
         {subtitle && <p class="mt-4 text-pretty ty-body-1 text-[var(--color-neutral-650)]">{subtitle}</p>}
       </div>
     )}

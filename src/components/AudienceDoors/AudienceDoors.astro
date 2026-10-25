@@ -17,7 +17,6 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
       href={href(d.href)}
       class="group flex flex-col gap-3 rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-white)] p-6 lg:p-8 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg hover:border-[var(--color-brand-swiss)]"
     >
-      <p class="ty-xs tracking-wider font-bold text-[var(--color-brand-swiss)]">{d.eyebrow.toUpperCase()}</p>
       <h3 class="ty-title-2 font-black text-[var(--color-brand-deep-blue)] m-0">{d.title}</h3>
       {d.stat && (
         <p class="flex items-baseline gap-2">
