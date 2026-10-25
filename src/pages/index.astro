@@ -65,21 +65,32 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
   />
 
   <!-- Trust + logos -->
+  <!-- Trust strip: one scrolling line of pills on phones, a centred row on larger screens. -->
   <section class="border-y border-[var(--color-gray-20)] bg-[var(--color-white)]">
-    <div class="mx-auto max-w-7xl px-[var(--spacing-l)] py-5 flex flex-wrap justify-center gap-x-8 gap-y-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-neutral-600)]">
-      {c.trust.map((x: string) => (<span class="inline-flex items-center gap-2"><span class="text-[#1a9cc8]">✓</span>{x}</span>))}
+    <div class="mx-auto max-w-7xl py-4 md:py-5 px-[var(--spacing-l)] flex md:flex-wrap md:justify-center gap-2 md:gap-x-8 md:gap-y-2 overflow-x-auto md:overflow-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-x">
+      {c.trust.map((x: string) => (
+        <span class="snap-start shrink-0 inline-flex items-center gap-2 rounded-full border border-[var(--color-gray-20)] md:border-0 px-3 py-1.5 md:p-0 ty-xs md:font-mono md:text-[11px] md:uppercase md:tracking-[0.18em] text-[var(--color-neutral-650)] whitespace-nowrap"><span class="text-[#1a9cc8]">✓</span>{x}</span>
+      ))}
     </div>
   </section>
-  <section class="bg-[var(--color-white)] py-10">
-    <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
-      <!-- Partner logos: one even grid so no logo wraps alone; sizes are normalised by a fixed box. -->
-      <div class="grid grid-cols-3 lg:grid-cols-9 gap-x-4 gap-y-8 items-center">
-        {logos.map((l: any) => (
-          <a href={l.href} target="_blank" rel="noopener noreferrer" title={l.name} class="flex h-9 items-center justify-center opacity-55 grayscale hover:opacity-100 hover:grayscale-0 transition">
-            <img src={l.image} alt={l.imageAlt ?? l.name} loading="lazy" class="max-h-7 w-auto max-w-[104px] object-contain" />
+
+  <!-- Partner logos: a slow marquee below lg (two copies for a seamless loop; still on reduced motion), one even row of nine on desktop. -->
+  <section class="bg-[var(--color-white)] py-8 md:py-10 overflow-hidden">
+    <div class="lg:hidden relative [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+      <div class="logo-marquee flex w-max items-center gap-10 pr-10">
+        {[0, 1].map((copy) => logos.map((l: any) => (
+          <a href={l.href} target="_blank" rel="noopener noreferrer" title={l.name} aria-hidden={copy === 1 ? "true" : undefined} tabindex={copy === 1 ? -1 : undefined} class="flex h-9 items-center shrink-0 opacity-60 grayscale">
+            <img src={l.image} alt={copy === 1 ? "" : (l.imageAlt ?? l.name)} loading="lazy" class="max-h-7 w-auto max-w-[110px] object-contain" />
           </a>
-        ))}
+        )))}
       </div>
+    </div>
+    <div class="hidden lg:grid mx-auto max-w-7xl px-[var(--spacing-l)] grid-cols-9 gap-x-4 items-center">
+      {logos.map((l: any) => (
+        <a href={l.href} target="_blank" rel="noopener noreferrer" title={l.name} class="flex h-9 items-center justify-center opacity-55 grayscale hover:opacity-100 hover:grayscale-0 transition">
+          <img src={l.image} alt={l.imageAlt ?? l.name} loading="lazy" class="max-h-7 w-auto max-w-[104px] object-contain" />
+        </a>
+      ))}
     </div>
   </section>
 
