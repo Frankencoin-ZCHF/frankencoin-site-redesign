@@ -37,8 +37,7 @@
         "title": "Eight chains",
         "description": "Ethereum, Base, Arbitrum, Optimism, Polygon, Gnosis, Avalanche and Sonic, bridged with Chainlink CCIP."
       }
-    ],
-    "eyebrow": "01 — What you get"
+    ]
   },
   "steps": {
     "title": "Integrate in three steps",
@@ -68,8 +67,7 @@
           "href": "/press"
         }
       }
-    ],
-    "eyebrow": "02 — Integrate"
+    ]
   },
   "data": {
     "title": "Data for listings",
@@ -92,8 +90,7 @@
         "href": "/press",
         "cta": "Press kit"
       }
-    ],
-    "eyebrow": "03 — Listing data"
+    ]
   },
   "cta": {
     "title": "Listing ZCHF?",

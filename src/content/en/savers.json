@@ -51,8 +51,7 @@
         "href": "https://swap.cow.fi/#/1/swap/USDC/ZCHF",
         "cta": "Swap on CoW"
       }
-    ],
-    "eyebrow": "01 — Two ways in"
+    ]
   },
   "compare": {
     "title": "Save or invest?",
@@ -87,8 +86,7 @@
         "save": "No",
         "invest": "Yes, veto rights"
       }
-    ],
-    "eyebrow": "03 — Save or invest"
+    ]
   },
   "trust": [
     {
@@ -116,11 +114,8 @@
     "label": "Start now",
     "sub": "Save or invest in three steps"
   },
-  "calc": {
-    "eyebrow": "02 — What if"
-  },
+  "calc": {},
   "trustHead": {
-    "eyebrow": "04 — Before you put money in",
     "title": "Checked, audited, in public."
   },
   "cta": {

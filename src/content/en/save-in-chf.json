@@ -27,7 +27,6 @@
     }
   },
   "why": {
-    "eyebrow": "01 — Why francs",
     "title": "Get out of the dollar, keep the yield.",
     "subtitle": "Most stablecoin savings are in US dollars. ZCHF lets you hold the franc instead, one of the world's most stable currencies, and still earn on-chain interest."
   },
@@ -46,8 +45,7 @@
         "title": "No lock-up",
         "description": "Withdraw part or all of your balance whenever you want, interest included."
       }
-    ],
-    "eyebrow": "02 — Where the interest comes from"
+    ]
   },
   "steps": {
     "title": "Start in three steps",
@@ -79,8 +77,7 @@
           "external": true
         }
       }
-    ],
-    "eyebrow": "03 — Start"
+    ]
   },
   "risks": {
     "title": "What can go wrong",
@@ -97,8 +94,7 @@
         "title": "Peg risk",
         "description": "ZCHF is backed by over-collateralized positions, not by a bank. A sharp crash in collateral could stress the peg."
       }
-    ],
-    "eyebrow": "04 — Be informed"
+    ]
   },
   "faq": [
     {
@@ -148,7 +144,6 @@
     "eyebrow": "What if"
   },
   "faqHead": {
-    "eyebrow": "05 — Questions",
     "title": "Short answers."
   },
   "cta": {

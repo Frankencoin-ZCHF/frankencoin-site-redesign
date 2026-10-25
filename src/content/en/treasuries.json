@@ -35,8 +35,7 @@
         "title": "Governance voice",
         "description": "Holding FCS gives you a say in which collateral the system accepts, and a share of its income."
       }
-    ],
-    "eyebrow": "01 — Why ZCHF"
+    ]
   },
   "ops": {
     "title": "Built for how treasuries work",
@@ -63,13 +62,11 @@
         "href": "/compliance",
         "cta": "Read opinions"
       }
-    ],
-    "eyebrow": "03 — Operations"
+    ]
   },
   "dao": {
     "title": "For DAOs",
-    "subtitle": "Most DAO treasuries sit in their own token and US dollars. A ZCHF allocation in savings earns the protocol rate in a second currency. Adding FCS gives the DAO a vote on new collateral and a share of protocol income, alongside the price risk that comes with equity.",
-    "eyebrow": "04 — DAOs"
+    "subtitle": "Most DAO treasuries sit in their own token and US dollars. A ZCHF allocation in savings earns the protocol rate in a second currency. Adding FCS gives the DAO a vote on new collateral and a share of protocol income, alongside the price risk that comes with equity."
   },
   "trust": [
     {
@@ -106,11 +103,9 @@
     }
   },
   "chart": {
-    "eyebrow": "02 — The franc vs the dollar",
     "title": "A second currency for your reserves."
   },
   "trustHead": {
-    "eyebrow": "05 — Due diligence",
     "title": "Everything your risk team will ask for."
   }
 }

@@ -1,10 +1,10 @@
 ---
-/** Section heading in the home style: mono eyebrow with index, tight display title. */
-const { eyebrow, title, subtitle, center = false } = Astro.props as { eyebrow: string; title: string; subtitle?: string; center?: boolean };
+/** Section heading in the home style: optional mono eyebrow, tight display title. */
+const { eyebrow, title, subtitle, center = false } = Astro.props as { eyebrow?: string; title: string; subtitle?: string; center?: boolean };
 ---
 
 <div class={`mb-10 md:mb-14 ${center ? "text-center mx-auto" : ""} max-w-3xl`}>
-  <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#1a9cc8]">{eyebrow}</p>
-  <h2 class="mt-3 text-[34px] sm:text-[44px] lg:text-[52px] leading-[1.02] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0">{title}</h2>
+  {eyebrow && <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#1a9cc8]">{eyebrow}</p>}
+  <h2 class={`${eyebrow ? "mt-3 " : ""}text-[34px] sm:text-[44px] lg:text-[52px] leading-[1.02] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0`}>{title}</h2>
   {subtitle && <p class="mt-4 ty-body-1 text-[var(--color-neutral-650)]">{subtitle}</p>}
 </div>

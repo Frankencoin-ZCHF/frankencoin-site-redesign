@@ -29,7 +29,6 @@
     "cta": "Borrow",
     "empty": "Live terms are unavailable right now. See them in the app.",
     "note": "Interest is the effective yearly rate on what you receive, paid upfront for the whole term. Part of the minted amount is held as a reserve and returned when you repay.",
-    "eyebrow": "01 — Live terms",
     "all": "All {n} collaterals in the app"
   },
   "how": {
@@ -47,8 +46,7 @@
         "title": "3 · Repay",
         "description": "Return the ZCHF any time before maturity to unlock your collateral. Roll over to extend."
       }
-    ],
-    "eyebrow": "02 — How a position works"
+    ]
   },
   "terms": {
     "title": "Terms in plain words",
@@ -69,8 +67,7 @@
         "title": "Retained reserve",
         "description": "A share of what you mint stays in the reserve. You get it back when you repay."
       }
-    ],
-    "eyebrow": "03 — Plain words"
+    ]
   },
   "collateral": {
     "title": "What you can borrow against",
@@ -103,8 +100,7 @@
         "title": "Maturity",
         "description": "Each position has an end date. Repay or roll over before it, or the position can be liquidated."
       }
-    ],
-    "eyebrow": "04 — Be informed"
+    ]
   },
   "faq": [
     {
@@ -129,7 +125,6 @@
     "sub": "Live terms per collateral"
   },
   "faqHead": {
-    "eyebrow": "05 — Questions",
     "title": "Short answers."
   },
   "cta": {
