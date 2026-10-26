@@ -195,7 +195,7 @@
   },
   "problems": {
     "eyebrow": "The catch",
-    "title": "Saving in francs was great. Doing it was not.",
+    "title": "Saving in francs is great.|Doing it was hard.",
     "subtitle": "The franc kept its value, but keeping francs never paid.",
     "items": [
       {
