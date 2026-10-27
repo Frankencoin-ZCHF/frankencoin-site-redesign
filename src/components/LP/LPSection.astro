@@ -1,17 +1,18 @@
 ---
 /** Landing-page section in the home style: mono eyebrow, display title, generous spacing. */
-interface Props { id?: string; eyebrow?: string; title?: string; subtitle?: string; accent?: boolean; narrow?: boolean }
-const { id, eyebrow, title, subtitle, accent = false, narrow = false } = Astro.props as Props;
+interface Props { id?: string; eyebrow?: string; title?: string; subtitle?: string; accent?: boolean; narrow?: boolean; /** Header on the left, content on the right (lg+). */ split?: boolean }
+const { id, eyebrow, title, subtitle, accent = false, split = false } = Astro.props as Props;
+const hasHead = Boolean(eyebrow || title || subtitle);
 ---
 
 <section id={id} class={`py-16 md:py-24 scroll-mt-20 ${accent ? "bg-[var(--color-gray-10)]" : "bg-[var(--color-white)]"}`}>
-  <div class={`mx-auto px-[var(--spacing-l)] ${narrow ? "max-w-3xl" : "max-w-7xl"}`}>
-    {(eyebrow || title || subtitle) && (
-      <div class="mb-10 md:mb-12 max-w-3xl">
+  <div class={`mx-auto px-[var(--spacing-l)] max-w-7xl ${split && hasHead ? "grid lg:grid-cols-[1fr_1.8fr] gap-8 lg:gap-14 items-start" : ""}`}>
+    {hasHead && (
+      <div class={split ? "lg:sticky lg:top-28" : "mb-10 md:mb-12 max-w-3xl"}>
         {title && <h2 class="text-balance text-[30px] sm:text-[40px] lg:text-[46px] leading-[1.04] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0">{title.split("|").map((part: string, i: number) => (<>{i > 0 && <br />}{part}</>))}</h2>}
         {subtitle && <p class="mt-4 text-pretty ty-body-1 text-[var(--color-neutral-650)]">{subtitle}</p>}
       </div>
     )}
-    <slot />
+    <div class="min-w-0"><slot /></div>
   </div>
 </section>

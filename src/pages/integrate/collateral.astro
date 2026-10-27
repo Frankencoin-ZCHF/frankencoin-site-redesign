@@ -17,5 +17,5 @@ const c = await loadContent<any>("collateral", lang);
   <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} />
   <LPSection title={c.steps.title}><Steps steps={c.steps.items} /></LPSection>
   <LPSection title={c.good.title} accent><FeatureGrid items={c.good.items} cols={4} /></LPSection>
-  <LPSection title="FAQ" narrow><FaqList items={c.faq} /></LPSection>
+  <LPSection title="FAQ" split><FaqList items={c.faq} /></LPSection>
 </Base>

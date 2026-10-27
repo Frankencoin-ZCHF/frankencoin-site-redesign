@@ -12,7 +12,7 @@ const c = await loadContent<any>("press", lang);
 
 <Base title={c.meta.title} description={c.meta.description}>
   <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
-  <LPSection title={c.boiler.title} narrow>
+  <LPSection title={c.boiler.title} split>
     <blockquote class="m-0 rounded-2xl border-l-4 border-[var(--color-brand-swiss)] bg-[var(--color-gray-10)] p-6 ty-body-2 text-[var(--color-neutral-700)]">{c.boiler.text}</blockquote>
   </LPSection>
   <LPSection title={c.assets.title} accent>
@@ -26,7 +26,7 @@ const c = await loadContent<any>("press", lang);
     </div>
     <a href={c.assets.guidelines.file} download class="inline-flex mt-6 rounded-full bg-[var(--color-brand-deep-blue)] text-white font-bold ty-body-2 px-6 py-3.5 hover:bg-[var(--color-blue-39)]">{c.assets.guidelines.label} ↓</a>
   </LPSection>
-  <LPSection title={c.contact.title} narrow>
+  <LPSection title={c.contact.title} split>
     <a href={`mailto:${c.contact.email}`} class="ty-title-2 font-black text-[var(--color-brand-swiss)]">{c.contact.email}</a>
   </LPSection>
 </Base>

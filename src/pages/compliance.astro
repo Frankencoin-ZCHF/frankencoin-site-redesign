@@ -34,8 +34,8 @@ const euDocs = c.eu.documents ?? (c.eu.documentHref ? [{ label: c.eu.documentLab
     {euDocs.length > 0 && <div class="mt-8"><DocLinks docs={euDocs} /></div>}
   </LPSection>
 
-  <LPSection id="compliance-summary" title={c.summary.title} narrow>
-    <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] -mt-4">{c.summary.description}</p>
+  <LPSection id="compliance-summary" title={c.summary.title} split>
+    <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] m-0">{c.summary.description}</p>
     <p class="mt-8 ty-xs text-[var(--color-neutral-550)] border-t border-[var(--color-gray-20)] pt-4"><b>{c.disclaimer.title}.</b> {c.disclaimer.text}</p>
   </LPSection>
 

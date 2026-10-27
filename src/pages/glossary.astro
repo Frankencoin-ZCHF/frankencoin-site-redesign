@@ -13,7 +13,7 @@ const terms = [...c.terms].sort((a: any, b: any) => a.term.localeCompare(b.term)
 
 <Base title={c.meta.title} description={c.meta.description}>
   <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
-  <LPSection narrow>
+  <LPSection>
     <dl class="divide-y divide-[var(--color-gray-20)] m-0">
       {terms.map((t: any) => (
         <div id={t.term.toLowerCase().replace(/[^a-z0-9]+/g, "-")} class="py-4 grid sm:grid-cols-[200px_1fr] gap-1 sm:gap-6 scroll-mt-20">
