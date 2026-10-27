@@ -143,18 +143,24 @@
     "eyebrow": "Fifty years, two currencies",
     "title": "One dollar bought {then} francs in 1971.|Today it buys {now}.",
     "subtitle": "An {loss} fall against the franc. Whoever saved in dollars for the long run paid for it in buying power. Whoever saved in francs kept it.",
-    "cash": {
-      "label": "{amount} kept in dollars",
-      "value": "{amount}",
-      "note": "Still {amount} on paper. Buys what {real} bought in 1971."
-    },
-    "chf": {
-      "label": "{amount} changed into francs in 1971",
-      "value": "{chfUsd}",
-      "note": "{chf} then, worth {chfUsd} in dollars today, before any interest."
-    },
     "chartLabel": "Swiss francs per 1 US dollar, 1971 to today",
-    "source": "Federal Reserve H.10 annual averages via FRED; today's rate from ECB reference rates."
+    "source": "Federal Reserve H.10 annual averages via FRED; today's rate from ECB reference rates.",
+    "tiles": {
+      "head": "Same {amount} in 1971. Two outcomes today.",
+      "today": "today",
+      "cash": {
+        "label": "Kept in dollars",
+        "note": "Buys what {real} bought in 1971",
+        "tag": "buying power"
+      },
+      "chf": {
+        "label": "Changed into francs",
+        "note": "{chf} then · buys what {chfReal} bought in 1971",
+        "tag": "buying power",
+        "badge": "{mult}× the dollars"
+      },
+      "why": "Why: one dollar bought {then} francs in 1971 and buys {now} today."
+    }
   },
   "tbills": {
     "eyebrow": "The obvious alternative",
