@@ -15,6 +15,13 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   const response = await next();
 
+  // While the password gate is on, never let the CDN cache a page: a public, s-maxage response
+  // would be served to the next visitor without the cookie.
+  if (process.env.PREVIEW_PASSWORD) {
+    response.headers.set("Cache-Control", "private, no-store");
+    response.headers.set("Vary", "Cookie");
+  }
+
   // Security headers
   response.headers.set(
     "Strict-Transport-Security",
