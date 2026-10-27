@@ -9,7 +9,9 @@ import CtaBand from "../components/LP/CtaBand.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("compliance", lang);
+const en = await loadContent<any>("compliance", "en");
+const local = await loadContent<any>("compliance", lang);
+const c = { ...en, ...local }; // German copy lacks heroTitle/cta; fall back per key
 const euDocs = c.eu.documents ?? (c.eu.documentHref ? [{ label: c.eu.documentLabel, href: c.eu.documentHref }] : []);
 ---
 

@@ -12,7 +12,10 @@ import { formatAmount } from "../utils/fcsStats";
 
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("what-is-frankencoin", lang);
+const en = await loadContent<any>("what-is-frankencoin", "en");
+const local = await loadContent<any>("what-is-frankencoin", lang);
+// German copy predates today's keys: fall back to English per key (and for the pillar descriptions).
+const c = { ...en, ...local, features: local.features?.[0]?.description ? local.features : en.features, header: { ...en.header, ...local.header } };
 const t = await getTransparency();
 const ratio = t.supply && t.collateralChf ? `${(t.collateralChf / t.supply).toFixed(2)}×` : "—";
 Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");

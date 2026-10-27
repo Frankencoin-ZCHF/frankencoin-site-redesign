@@ -8,7 +8,9 @@ import CtaBand from "../components/LP/CtaBand.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("insurance", lang);
+const en = await loadContent<any>("insurance", "en");
+const local = await loadContent<any>("insurance", lang);
+const c = { ...en, ...local }; // German copy lacks cta; fall back per key
 ---
 
 <Base title={c.seo.title} description={c.seo.description}>
