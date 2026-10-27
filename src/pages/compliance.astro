@@ -13,32 +13,7 @@ const compliance = await loadContent("compliance", currentLang);
 
 <Base>
   <LPHero eyebrow={compliance.eyebrow} title={compliance.heroTitle ?? compliance.title} subtitle={compliance.intro} />
-  <Section
-    id="compliance-header"
-    variant="plain"
-    pad="xs"
-  >
-    <div class="max-w-4xl mx-auto mb-16 text-center">
-
-      <!-- Table of Contents -->
-      <div class="w-full flex flex-col items-start bg-[var(--color-gray-10)] border border-[var(--color-gray-20)] rounded-3xl p-6 md:p-8 text-left">
-        <h3 class="font-mono text-[11px] uppercase tracking-[0.28em] text-[#1a9cc8] mb-4">{compliance.toc.title}</h3>
-        <nav class="flex flex-col gap-3">
-          {compliance.toc.items.map((item: any) => (
-            <a
-              href={item.href}
-              class="inline-flex items-center gap-2 text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)] ty-body-2 font-semibold transition-colors"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-              {item.label}
-            </a>
-          ))}
-        </nav>
-      </div>
-    </div>
-  </Section>
+  
 
   <!-- Swiss Regulatory Section -->
   <Section
