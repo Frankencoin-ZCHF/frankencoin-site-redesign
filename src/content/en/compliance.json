@@ -1,7 +1,7 @@
 {
   "eyebrow": "Legal & Regulatory",
   "title": "Frankencoin Compliance",
-  "intro": "Frankencoin operates in full compliance with Swiss and European Union regulations. Independent legal assessments confirm that ZCHF can be used without restrictions as a payment token, and the published ZCHF MiCA white paper provides additional EU documentation for trading-admission processes.",
+  "intro": "Independent legal opinions classify ZCHF as a payment token under Swiss law, and a published MiCA white paper covers EU trading admission. The documents are public; read them below.",
   "toc": {
     "title": "On this page",
     "items": [
@@ -111,5 +111,17 @@
     "title": "Disclaimer",
     "text": "The information on this page summarizes independent legal assessments and does not constitute legal advice. There remains regulatory uncertainty relating to decentralized financial applications. Please consult the original documents and seek professional legal advice for your specific situation."
   },
-  "heroTitle": "Frankencoin|compliance"
+  "heroTitle": "Compliant in Switzerland.|Documented for the EU.",
+  "cta": {
+    "title": "Questions from your compliance team?",
+    "body": "The Association works with regulated Swiss intermediaries on compliant ZCHF products.",
+    "primary": {
+      "label": "compliance@frankencoin.com",
+      "href": "mailto:compliance@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Security & audits",
+      "href": "/security"
+    }
+  }
 }

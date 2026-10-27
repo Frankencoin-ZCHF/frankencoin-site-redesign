@@ -1,122 +1,52 @@
 ---
-import Section from "../components/Layout/Section.astro";
-import SectionHeader from "../components/Layout/SectionHeader.astro";
+/* /insurance — third-party depeg cover for ZCHF holders. Copy: content/en/insurance.json */
 import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
+import Steps from "../components/Steps/Steps.astro";
 import CtaBand from "../components/LP/CtaBand.astro";
-import Figures from "../components/LP/Figures.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 
-const currentLang = getLanguageFromURL(Astro.url.pathname);
-const insurance = await loadContent("insurance", currentLang);
+const lang = getLanguageFromURL(Astro.url.pathname);
+const c = await loadContent<any>("insurance", lang);
 ---
 
-<Base title={insurance.seo.title} description={insurance.seo.description}>
-  <LPHero eyebrow={insurance.header.eyebrow} title={insurance.header.title} subtitle={insurance.header.subtitle} />
+<Base title={c.seo.title} description={c.seo.description}>
+  <LPHero title={c.header.title} subtitle={c.header.subtitle} primary={c.products[0].cta} secondary={c.products[0].learnMore} />
 
-  {insurance.products.map((product: any) => (
-    <Section variant="plain" align="left" pad="xs" id="depeg-cover">
-      <div class="max-w-5xl mx-auto">
-        <div class="rounded-3xl border border-[var(--color-gray-20)] bg-white p-[var(--spacing-xl)] md:p-[var(--spacing-xxl)] shadow-[0_10px_40px_-20px_rgba(9,47,98,0.35)]">
-          <!-- Product header -->
-          <span class="inline-block rounded-full bg-[var(--color-brand-deep-blue)] text-white ty-small font-bold px-3 py-1 mb-4">
-            {product.badge}
-          </span>
-          <h2 class="ty-big-1 text-[var(--color-brand-deep-blue)] mb-2">{product.title}</h2>
-          <p class="ty-body-1 text-[var(--color-brand-swiss)] font-semibold mb-6">{product.provider}</p>
-          <p class="ty-body-1 text-[var(--color-brand-titan-gray)] leading-relaxed mb-8 max-w-3xl">
-            {product.description}
-          </p>
-
-          <!-- Highlights -->
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
-            {product.highlights.map((h: any) => (
-              <div class="rounded-xl bg-[var(--color-gray-10)] p-5">
-                <p class="ty-small text-[var(--color-brand-titan-gray)] mb-1">{h.label}</p>
-                <p class="ty-regular font-bold text-[var(--color-brand-deep-blue)]">{h.value}</p>
-              </div>
-            ))}
-          </div>
-
-          <!-- Covered / Not covered -->
-          <div class="grid md:grid-cols-2 gap-6 mb-10">
-            <div class="rounded-xl border border-green-200 bg-green-50/60 p-6">
-              <h3 class="ty-big-2 text-[var(--color-brand-deep-blue)] mb-4">{product.covered.title}</h3>
-              <ul class="flex flex-col gap-3">
-                {product.covered.items.map((item: string) => (
-                  <li class="flex items-start gap-3 ty-body-2 text-[var(--color-brand-titan-gray)]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 text-green-600 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                    </svg>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+  {c.products.map((p: any) => (
+    <>
+      <LPSection id="depeg-cover" title={p.title} subtitle={p.provider}>
+        <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] max-w-3xl -mt-6 mb-8">{p.description}</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {p.highlights.map((h: any) => (
+            <div class="rounded-3xl border border-[var(--color-gray-20)] bg-white p-5 md:p-6 min-w-0">
+              <p class="ty-xs text-[var(--color-neutral-550)] m-0">{h.label}</p>
+              <p class="mt-1.5 text-[22px] sm:text-[26px] font-black tracking-tight text-[var(--color-brand-deep-blue)] leading-tight m-0 break-words">{h.value}</p>
             </div>
-            <div class="rounded-xl border border-[var(--color-neutral-200)] bg-[var(--color-gray-10)] p-6">
-              <h3 class="ty-big-2 text-[var(--color-brand-deep-blue)] mb-4">{product.excluded.title}</h3>
-              <ul class="flex flex-col gap-3">
-                {product.excluded.items.map((item: string) => (
-                  <li class="flex items-start gap-3 ty-body-2 text-[var(--color-brand-titan-gray)]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 text-[var(--color-brand-titan-gray)] mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM6.28 6.28a.75.75 0 011.06 0L10 8.94l2.66-2.66a.75.75 0 111.06 1.06L11.06 10l2.66 2.66a.75.75 0 11-1.06 1.06L10 11.06l-2.66 2.66a.75.75 0 01-1.06-1.06L8.94 10 6.28 7.34a.75.75 0 010-1.06z" clip-rule="evenodd" />
-                    </svg>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          ))}
+        </div>
+        <div class="mt-4 grid md:grid-cols-2 gap-4">
+          <div class="rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-6 md:p-7">
+            <h3 class="ty-title-3 font-black m-0">{p.covered.title}</h3>
+            <ul class="mt-4 m-0 p-0 list-none flex flex-col gap-3 ty-body-3 text-white/85">
+              {p.covered.items.map((it: string) => <li class="flex gap-3"><span class="text-[#7ee2a8] font-bold">✓</span>{it}</li>)}
+            </ul>
           </div>
-
-          <!-- How it works -->
-          <div class="mb-10">
-            <h3 class="ty-big-2 text-[var(--color-brand-deep-blue)] mb-4">{product.howItWorks.title}</h3>
-            <ol class="grid md:grid-cols-3 gap-4">
-              {product.howItWorks.steps.map((step: string, i: number) => (
-                <li class="rounded-xl border border-[var(--color-neutral-200)] p-5">
-                  <div class="w-8 h-8 rounded-full bg-[var(--color-brand-deep-blue)] text-white flex items-center justify-center font-bold ty-small mb-3">
-                    {i + 1}
-                  </div>
-                  <p class="ty-body-2 text-[var(--color-brand-titan-gray)]">{step}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-
-          <!-- CTAs -->
-          <div class="flex flex-col sm:flex-row sm:items-center gap-4">
-            <a
-              href={product.cta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 bg-[var(--color-brand-deep-blue)] text-white px-6 py-3 rounded-lg ty-regular font-bold hover:bg-[var(--color-brand-swiss)] transition-colors"
-            >
-              <span>{product.cta.label}</span>
-              <img src="/images/Arrow.svg" loading="lazy" alt="" class="w-3 h-3 invert" />
-            </a>
-            <a
-              href={product.learnMore.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 ty-regular font-semibold text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)] hover:underline"
-            >
-              <span>{product.learnMore.label}</span>
-            </a>
+          <div class="rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] p-6 md:p-7">
+            <h3 class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{p.excluded.title}</h3>
+            <ul class="mt-4 m-0 p-0 list-none flex flex-col gap-3 ty-body-3 text-[var(--color-neutral-650)]">
+              {p.excluded.items.map((it: string) => <li class="flex gap-3"><span class="text-[var(--color-neutral-500)] font-bold">–</span>{it}</li>)}
+            </ul>
           </div>
         </div>
-      </div>
-    </Section>
+      </LPSection>
+      <LPSection title={p.howItWorks.title} accent>
+        <Steps steps={p.howItWorks.steps.map((s: string, i: number) => ({ title: ["Open OpenCover", "Choose amount and term", "Pay and receive proof"][i] ?? `Step ${i + 1}`, body: s, cta: i === 0 ? { label: p.cta.label, href: p.cta.href, external: true } : i === 2 ? { label: p.learnMore.label, href: p.learnMore.href, external: true } : undefined }))} />
+        <p class="mt-8 ty-xs text-[var(--color-neutral-550)] border-t border-[var(--color-gray-20)] pt-4 max-w-4xl"><b>{c.disclaimer.title}.</b> {c.disclaimer.text}</p>
+      </LPSection>
+    </>
   ))}
 
-  <!-- Disclaimer -->
-  <Section id="insurance-disclaimer" variant="plain">
-    <div class="max-w-4xl mx-auto">
-      <div class="bg-[var(--color-gray-10)] rounded-xl p-6 border-l-4 border-[var(--color-brand-titan-gray)]">
-        <h3 class="ty-regular font-bold text-[var(--color-brand-titan-gray)] mb-2">{insurance.disclaimer.title}</h3>
-        <p class="ty-small text-[var(--color-brand-titan-gray)]">{insurance.disclaimer.text}</p>
-      </div>
-    </div>
-  </Section>
-  <CtaBand title="Put your money in Swiss francs." body="Three steps, about ten minutes. You keep your own keys." primary={{ label: "Start now", href: "https://app.frankencoin.com/savings" }} secondary={{ label: "Security and audits", href: "/security" }} />
+  <CtaBand {...c.cta} />
 </Base>

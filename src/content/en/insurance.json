@@ -5,8 +5,8 @@
   },
   "header": {
     "eyebrow": "Optional third-party protection",
-    "title": "Insurance|& cover",
-    "subtitle": "Independent providers now offer on-chain cover for Frankencoin holders. These products are provided by third parties — not by the Frankencoin Association — and are entirely optional."
+    "title": "Cover for your francs.|Optional, on-chain.",
+    "subtitle": "Independent providers insure ZCHF against a sustained loss of the peg. The cover is bought and paid out on-chain, and it is not issued by the Frankencoin Association."
   },
   "products": [
     {
@@ -78,5 +78,17 @@
   "disclaimer": {
     "title": "Disclaimer",
     "text": "Cover products are offered by independent third parties and are not issued, guaranteed or endorsed by the Frankencoin Association. Terms, availability, pricing and payouts are determined solely by the respective provider and underwriter. Always read the full cover wording before purchasing. This page is informational only and does not constitute insurance, financial or legal advice."
+  },
+  "cta": {
+    "title": "Most savers never need it. Some sleep better with it.",
+    "body": "Depeg cover is bought in minutes, for 30 to 180 days, paid in USDC, ETH or cbBTC.",
+    "primary": {
+      "label": "Get covered on OpenCover",
+      "href": "https://opencover.com/frankencoin"
+    },
+    "secondary": {
+      "label": "Why the peg holds",
+      "href": "/transparency"
+    }
   }
 }

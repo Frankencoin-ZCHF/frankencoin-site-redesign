@@ -3,25 +3,28 @@
     "image": "/images/Frankencoin-Logo-Compressify.io_1.webp",
     "imageAlt": "Frankencoin logo",
     "title": "What’s that,|Frankencoin?",
-    "subtitle": "And why is it the only stablecoin that does not require an oracle.",
+    "subtitle": "A Swiss franc that lives on-chain: backed by collateral you can see, with no bank, no issuer and no price oracle.",
     "cta": {
-      "label": "Get some Frankencoin",
-      "href": "https://app.frankencoin.com/mint"
+      "label": "Start saving",
+      "href": "https://app.frankencoin.com/savings"
     },
     "eyebrow": "About Frankencoin"
   },
   "features": [
     {
-      "title": "CHF Stablecoin",
-      "image": "/images/Icon-Stability-Compressify.io.webp"
+      "title": "A franc, not a dollar",
+      "image": "/images/Icon-Stability-Compressify.io.webp",
+      "description": "ZCHF tracks the Swiss franc, the currency that kept its value for fifty years while the dollar lost most of its buying power."
     },
     {
-      "title": "No Oracles",
-      "image": "/images/Icon-Oraclefree-Compressify.io.webp"
+      "title": "No oracles",
+      "image": "/images/Icon-Oraclefree-Compressify.io.webp",
+      "description": "Prices are set by open auctions between participants, not by a third-party data feed that can be manipulated or go down."
     },
     {
-      "title": "Fully decentralized",
-      "image": "/images/Icon-Decentralized-Compressify.io.webp"
+      "title": "No issuer, no bank",
+      "image": "/images/Icon-Decentralized-Compressify.io.webp",
+      "description": "Every franc is minted against over-collateralized positions in public smart contracts. Nobody holds your reserves for you."
     }
   ],
   "introduction": [
@@ -31,15 +34,63 @@
     },
     {
       "title": "Why the Swiss Franc?",
-      "description": "The Swiss franc is one of the world's most stable and trusted currencies. Over the past 50 years, it has appreciated more than 240% against the US dollar. By bringing the Swiss franc on-chain, Frankencoin provides a stable store of value for DeFi participants who want exposure to CHF rather than USD. This is particularly relevant for European users, Swiss businesses, and anyone seeking a stable non-USD alternative in decentralized finance."
+      "description": "The Swiss franc is one of the world's most stable and trusted currencies. Over the past 50 years, it has appreciated more than 240% against the US dollar. By bringing the Swiss franc on-chain, Frankencoin provides a stable store of value for DeFi participants who want exposure to CHF rather than USD. This is particularly relevant for European users, Swiss businesses, and anyone seeking a stable non-USD alternative in decentralized finance.",
+      "cta": {
+        "label": "See fifty years of franc vs dollar",
+        "href": "/use-cases/save-in-chf"
+      }
     },
     {
       "title": "Oracle-Free Design",
-      "description": "Most stablecoins and lending protocols depend on external price oracles — third-party services that feed market prices to smart contracts. These oracles introduce a point of failure: if manipulated, they can trigger cascading liquidations or enable exploits. Frankencoin eliminates this risk entirely. Instead of relying on oracles, the protocol uses an auction-based mechanism where market participants themselves determine collateral valuations. This design, described in detail in the founding PhD thesis at the University of Zurich, makes Frankencoin uniquely resilient to oracle manipulation attacks."
+      "description": "Most stablecoins and lending protocols depend on external price oracles — third-party services that feed market prices to smart contracts. These oracles introduce a point of failure: if manipulated, they can trigger cascading liquidations or enable exploits. Frankencoin eliminates this risk entirely. Instead of relying on oracles, the protocol uses an auction-based mechanism where market participants themselves determine collateral valuations. This design, described in detail in the founding PhD thesis at the University of Zurich, makes Frankencoin uniquely resilient to oracle manipulation attacks.",
+      "cta": {
+        "label": "How the auctions work",
+        "href": "/how-it-works"
+      }
     },
     {
       "title": "How It Works",
-      "description": "Anyone can mint ZCHF by depositing approved collateral (such as ETH, WBTC, or other ERC-20 tokens) into a position. The collateral must exceed the value of the minted ZCHF, creating an over-collateralization buffer. If collateral values drop below safe levels, the system's automated liquidation mechanism activates. A separate reserve pool, funded by Frankencoin Pool Share (FPS) holders, provides an additional safety layer. The entire system operates without intermediaries, central operators, or trusted third parties."
+      "description": "Anyone can mint ZCHF by depositing approved collateral (such as ETH, WBTC, or other ERC-20 tokens) into a position. The collateral must exceed the value of the minted ZCHF, creating an over-collateralization buffer. If collateral values drop below safe levels, the system's automated liquidation mechanism activates. A separate reserve pool, funded by Frankencoin Pool Share (FPS) holders, provides an additional safety layer. The entire system operates without intermediaries, central operators, or trusted third parties.",
+      "cta": {
+        "label": "Borrow against your assets",
+        "href": "/use-cases/borrow"
+      }
     }
-  ]
+  ],
+  "figures": {
+    "supply": {
+      "label": "In circulation",
+      "unit": "ZCHF"
+    },
+    "ratio": {
+      "label": "Collateral per ZCHF",
+      "unit": "over-collateralized"
+    },
+    "since": {
+      "label": "Live since",
+      "unit": "on Ethereum"
+    },
+    "types": {
+      "label": "Collateral types",
+      "unit": "on-chain"
+    }
+  },
+  "pillarsHead": {
+    "title": "Three things that make it different."
+  },
+  "introHead": {
+    "title": "The longer answer."
+  },
+  "cta": {
+    "title": "Now you know. Try it.",
+    "body": "Francs on-chain, earning the protocol rate from day one. No account with Frankencoin, no lock-up, your own keys.",
+    "primary": {
+      "label": "Start saving",
+      "href": "https://app.frankencoin.com/savings"
+    },
+    "secondary": {
+      "label": "How it works",
+      "href": "/how-it-works"
+    }
+  }
 }

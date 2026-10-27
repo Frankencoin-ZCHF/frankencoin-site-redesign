@@ -58,14 +58,14 @@ const pharosUpdatedAt = pharosRating?.updatedAt
 <div class="space-y-16 max-w-5xl mx-auto">
   <!-- Regulatory Section -->
   <div class="space-y-6">
-    <h3 class="ty-big-2">{index.trust_security.regulatory.title}</h3>
+    <h3 class="text-[26px] sm:text-[32px] leading-[1.05] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0 mb-4">{index.trust_security.regulatory.title}</h3>
     <p class="ty-body-1">{index.trust_security.regulatory.description}</p>
 
     <!-- Learn More Link -->
     <div class="mt-6">
       <a
         href={compliancePath}
-        class="inline-flex items-center gap-2 bg-[var(--color-brand-deep-blue)] text-white px-6 py-3 rounded-lg ty-regular font-bold hover:bg-[var(--color-brand-swiss)] transition-colors"
+        class="inline-flex items-center gap-2 bg-[var(--color-brand-deep-blue)] text-white px-6 py-3 rounded-full ty-regular font-bold hover:bg-[var(--color-brand-swiss)] transition-colors"
       >
         <span>{index.trust_security.regulatory.learnMoreLabel}</span>
         <img src="/images/Arrow.svg" loading="lazy" alt="" class="w-3 h-3 invert" />
@@ -98,14 +98,14 @@ const pharosUpdatedAt = pharosRating?.updatedAt
 
   <!-- Depeg Cover Section -->
   {index.trust_security.cover && (
-    <div class="space-y-4 rounded-xl border border-[var(--color-neutral-200)] bg-[var(--color-gray-10)] p-6 md:p-8">
+    <div class="space-y-4 rounded-2xl border border-[var(--color-neutral-200)] bg-[var(--color-gray-10)] p-6 md:p-8">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-full bg-[var(--color-brand-deep-blue)] flex items-center justify-center text-white shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
             <path fill-rule="evenodd" d="M11.484 2.17a.75.75 0 011.032 0 11.209 11.209 0 007.877 3.08.75.75 0 01.722.515 12.74 12.74 0 01.635 3.985c0 5.942-4.064 10.933-9.563 12.348a.749.749 0 01-.374 0C6.314 20.683 2.25 15.692 2.25 9.75c0-1.39.223-2.73.635-3.985a.75.75 0 01.722-.516l.143.001c2.996 0 5.717-1.17 7.734-3.08z" clip-rule="evenodd" />
           </svg>
         </div>
-        <h3 class="ty-big-2 m-0">{index.trust_security.cover.title}</h3>
+        <h3 class="text-[26px] sm:text-[32px] leading-[1.05] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0">{index.trust_security.cover.title}</h3>
       </div>
       <p class="ty-body-1">{index.trust_security.cover.description}</p>
       <a
@@ -120,7 +120,7 @@ const pharosUpdatedAt = pharosRating?.updatedAt
 
   <!-- Audits Section -->
   <div class="space-y-6">
-    <h3 class="ty-big-2">{index.trust_security.audits.title}</h3>
+    <h3 class="text-[26px] sm:text-[32px] leading-[1.05] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0 mb-4">{index.trust_security.audits.title}</h3>
     <p class="ty-body-1">{index.trust_security.audits.description}</p>
     <div class="flex flex-wrap justify-center md:justify-start gap-8 mt-8">
       {index.trust_security.audits.partners.map((partner) => (
@@ -170,7 +170,7 @@ const pharosUpdatedAt = pharosRating?.updatedAt
 
   <!-- Ratings Section -->
   <div class="space-y-8">
-    <h3 class="ty-big-2">{index.trust_security.ratings.title}</h3>
+    <h3 class="text-[26px] sm:text-[32px] leading-[1.05] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0 mb-4">{index.trust_security.ratings.title}</h3>
     <p class="ty-body-1">
       {index.trust_security.ratings.independentlyRatedBy}&nbsp;<img
         src="/images/xerberus-logo.svg"
@@ -188,7 +188,7 @@ const pharosUpdatedAt = pharosRating?.updatedAt
     <!-- Feature cards -->
     <div class="grid md:grid-cols-3 gap-4">
       {index.trust_security.ratings.features.map((feature: any, i: number) => (
-        <div class="bg-white rounded-xl p-6 border border-[var(--color-neutral-200)]">
+        <div class="bg-white rounded-3xl p-6 border border-[var(--color-gray-20)]">
           <div class="w-10 h-10 rounded-full bg-[var(--color-brand-deep-blue)] flex items-center justify-center mb-4 text-white">
             {i === 0 && <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.484 2.17a.75.75 0 011.032 0 11.209 11.209 0 007.877 3.08.75.75 0 01.722.515 12.74 12.74 0 01.635 3.985c0 5.942-4.064 10.933-9.563 12.348a.749.749 0 01-.374 0C6.314 20.683 2.25 15.692 2.25 9.75c0-1.39.223-2.73.635-3.985a.75.75 0 01.722-.516l.143.001c2.996 0 5.717-1.17 7.734-3.08z" clip-rule="evenodd" /></svg>}
             {i === 1 && <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z" /></svg>}
@@ -206,7 +206,7 @@ const pharosUpdatedAt = pharosRating?.updatedAt
         const rating = ratingsByKey.get(`${card.type}:${card.id}`);
         const score = rating?.score ?? null;
         return (
-          <div class="bg-white rounded-xl p-6 border border-[var(--color-neutral-200)] space-y-4">
+          <div class="bg-white rounded-3xl p-6 border border-[var(--color-gray-20)] space-y-4">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-full bg-[var(--color-neutral-100)] flex items-center justify-center overflow-hidden shrink-0">
                 <img src={card.logo} alt={card.name} class="w-7 h-7 object-contain" loading="lazy" />
@@ -241,7 +241,7 @@ const pharosUpdatedAt = pharosRating?.updatedAt
 
   <!-- Pharos Section -->
   <div class="space-y-6">
-    <h3 class="ty-big-2">{index.trust_security.pharos.title}</h3>
+    <h3 class="text-[26px] sm:text-[32px] leading-[1.05] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0 mb-4">{index.trust_security.pharos.title}</h3>
     <p class="ty-body-1">
       {index.trust_security.pharos.ratedBy}&nbsp;<img
         src="/images/pharos-logo.svg"
@@ -258,7 +258,7 @@ const pharosUpdatedAt = pharosRating?.updatedAt
 
     <div class="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] gap-4">
       <!-- Overall score card -->
-      <div class="bg-white rounded-xl p-6 border border-[var(--color-neutral-200)] space-y-4">
+      <div class="bg-white rounded-3xl p-6 border border-[var(--color-gray-20)] space-y-4">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-[var(--color-neutral-100)] flex items-center justify-center overflow-hidden shrink-0">
             <img src="/images/Frankencoin-Logo-Compressify.io_1.webp" alt="Frankencoin" class="w-7 h-7 object-contain" loading="lazy" />
@@ -301,7 +301,7 @@ const pharosUpdatedAt = pharosRating?.updatedAt
       </div>
 
       <!-- Dimensions + radar card -->
-      <div class="bg-white rounded-xl p-6 border border-[var(--color-neutral-200)] space-y-4">
+      <div class="bg-white rounded-3xl p-6 border border-[var(--color-gray-20)] space-y-4">
         <div>
           <p class="ty-regular font-bold text-[var(--color-brand-deep-blue)]">{index.trust_security.pharos.dimensionsTitle}</p>
           <p class="ty-small text-[var(--color-brand-titan-gray)]">{index.trust_security.pharos.dimensionsSubtitle}</p>
