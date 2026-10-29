@@ -1,14 +1,13 @@
 {
   "meta": {
-    "title": "Frankencoin for exchanges and wallets: list ZCHF, earn on savings",
-    "description": "List the decentralized Swiss franc, add one-tap savings and earn up to 25% of your users' interest through the referral contract."
+    "title": "Frankencoin for exchanges and wallets: list ZCHF, add savings, share the interest",
+    "description": "List the decentralized Swiss franc or add savings to your wallet and receive a share of the interest your users earn, paid by the contract."
   },
   "hero": {
-    "eyebrow": "For exchanges & wallets",
-    "title": "Give your users the Swiss franc.|Earn on it.",
-    "subtitle": "ZCHF is a standard token on eight chains with deep on-chain liquidity. Add savings to your wallet and earn up to 25% of the interest your users collect.",
+    "title": "Give your users the Swiss franc.|Earn on their savings.",
+    "subtitle": "List ZCHF as a standard token, or add savings to your wallet and receive a share of the interest your users earn.",
     "primary": {
-      "label": "Get in touch",
+      "label": "Discuss an integration",
       "href": "mailto:info@frankencoin.com"
     },
     "secondary": {
@@ -20,83 +19,69 @@
     "title": "What you get",
     "items": [
       {
-        "title": "A non-USD stablecoin",
-        "description": "The largest decentralized Swiss franc stablecoin, live since 2023 without a significant depeg."
+        "title": "Swiss franc access",
+        "description": "A decentralized Swiss franc stablecoin, live since 2023, backed by collateral your users can inspect on-chain."
       },
       {
-        "title": "Revenue share",
-        "description": "Set your address as referrer when users save and receive up to 25% of their interest, paid by the contract.",
+        "title": "Savings for your users",
+        "description": "Deposits in the savings module earn the protocol rate. Users keep custody and can withdraw any time."
+      },
+      {
+        "title": "Revenue sharing",
+        "description": "Set your address as referrer when users deposit and receive up to 25% of their interest, paid by the contract. Users see the deduction and can remove the referrer.",
         "href": "/referral",
         "cta": "How referral works"
+      }
+    ],
+    "chains": "ZCHF is a standard ERC-20 (18 decimals) on Ethereum, Base, Arbitrum, Optimism, Polygon, Gnosis, Avalanche and Sonic, bridged with Chainlink CCIP."
+  },
+  "options": {
+    "title": "Two ways to integrate",
+    "items": [
+      {
+        "title": "List ZCHF",
+        "description": "Add the token to your exchange or wallet. Addresses per chain, logos and supply endpoints are public.",
+        "href": "/token",
+        "cta": "Addresses per chain"
       },
       {
-        "title": "Liquidity",
-        "description": "Curve and Uniswap pools, DEX aggregators and regulated fiat ramps for size."
-      },
-      {
-        "title": "Eight chains",
-        "description": "Ethereum, Base, Arbitrum, Optimism, Polygon, Gnosis, Avalanche and Sonic, bridged with Chainlink CCIP."
+        "title": "Integrate savings",
+        "description": "Call the savings contract with your referrer address and share. One deposit transaction for the user; interest starts three days later.",
+        "href": "https://docs.frankencoin.com/",
+        "cta": "Read the docs"
       }
     ]
   },
-  "steps": {
-    "title": "Integrate in three steps",
+  "resources": {
+    "title": "Resources",
     "items": [
       {
-        "title": "List the token",
-        "body": "Standard ERC-20 with 18 decimals. Addresses per chain, logos and supply endpoints are public.",
-        "cta": {
-          "label": "Addresses and API",
-          "href": "/for/developers"
-        }
+        "label": "Token addresses",
+        "href": "/token"
       },
       {
-        "title": "Add savings",
-        "body": "Call the savings contract with your referrer address and fee. Users keep full control and can remove the referrer.",
-        "cta": {
-          "label": "Read the docs",
-          "href": "https://docs.frankencoin.com/",
-          "external": true
-        }
+        "label": "Circulating supply API",
+        "href": "https://api.frankencoin.com/ecosystem/coinmarketcap/totalsupply"
       },
       {
-        "title": "Tell your users",
-        "body": "Use the press kit and live figures. We are happy to co-announce.",
-        "cta": {
-          "label": "Press kit",
-          "href": "/press"
-        }
-      }
-    ]
-  },
-  "data": {
-    "title": "Data for listings",
-    "items": [
-      {
-        "title": "Circulating supply",
-        "description": "api.frankencoin.com/ecosystem/coinmarketcap/totalsupply",
-        "href": "https://api.frankencoin.com/ecosystem/coinmarketcap/totalsupply",
-        "cta": "Open"
+        "label": "Protocol figures API",
+        "href": "https://api.frankencoin.com/ecosystem/frankencoin/info"
       },
       {
-        "title": "Protocol figures",
-        "description": "Supply per chain, collateral and reserve as JSON.",
-        "href": "https://api.frankencoin.com/ecosystem/frankencoin/info",
-        "cta": "Open"
+        "label": "Logos and brand",
+        "href": "/press"
       },
       {
-        "title": "Logos and brand",
-        "description": "Logos in SVG, brand guidelines.",
-        "href": "/press",
-        "cta": "Press kit"
+        "label": "Developer docs",
+        "href": "https://docs.frankencoin.com/"
       }
     ]
   },
   "cta": {
-    "title": "Listing ZCHF?",
+    "title": "Listing or integrating ZCHF?",
     "body": "The association supports listings with liquidity introductions, co-marketing and technical help.",
     "primary": {
-      "label": "info@frankencoin.com",
+      "label": "Discuss an integration",
       "href": "mailto:info@frankencoin.com"
     },
     "secondary": {

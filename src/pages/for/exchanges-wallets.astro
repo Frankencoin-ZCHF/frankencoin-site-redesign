@@ -3,33 +3,38 @@
 import Base from "../../layouts/Base.astro";
 import LPHero from "../../components/LP/LPHero.astro";
 import LPSection from "../../components/LP/LPSection.astro";
-import Figures from "../../components/LP/Figures.astro";
 import FeatureGrid from "../../components/LP/FeatureGrid.astro";
-import Steps from "../../components/Steps/Steps.astro";
 import CtaBand from "../../components/LP/CtaBand.astro";
-import { getLanguageFromURL, loadContent } from "../../utils/i18n";
-import { getTransparency } from "../../utils/liveStats";
-import { getCalcData } from "../../utils/calcStats";
-import { formatAmount, formatPct } from "../../utils/fcsStats";
+import { getLanguageFromURL, getLocalizedPath, loadContent } from "../../utils/i18n";
 
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("exchanges-wallets", lang);
-const [t, d] = await Promise.all([getTransparency(), getCalcData()]);
+const en = await loadContent<any>("exchanges-wallets", "en");
+const local = await loadContent<any>("exchanges-wallets", lang);
+// German copy may lack today's keys: fall back to English per key.
+const c = { ...en, ...local };
+const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+const ext = (h: string) => (h.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
 Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary}>
-    <Figures slot="aside" items={[
-      { label: "ZCHF supply", value: formatAmount(t.supply), unit: "all chains" },
-      { label: "Chains", value: String(t.supplyByChain.length || 8), unit: "via Chainlink CCIP" },
-      { label: "Savings rate", value: formatPct(d.current.rate, 2), unit: "per year" },
-      { label: "Referral share", value: "≤25%", unit: "of savers' interest" },
-    ]} />
-  </LPHero>
-  <LPSection eyebrow={c.why.eyebrow} title={c.why.title}><FeatureGrid items={c.why.items} cols={4} /></LPSection>
-  <LPSection eyebrow={c.steps.eyebrow} title={c.steps.title} accent><Steps steps={c.steps.items} /></LPSection>
-  <LPSection eyebrow={c.data.eyebrow} title={c.data.title}><FeatureGrid items={c.data.items} /></LPSection>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} />
+
+  <LPSection title={c.why.title}>
+    <FeatureGrid items={c.why.items} cols={3} />
+    <p class="mt-6 ty-body-3 text-[var(--color-neutral-650)] m-0">{c.why.chains}</p>
+  </LPSection>
+
+  <LPSection title={c.options.title} accent><FeatureGrid items={c.options.items} cols={2} /></LPSection>
+
+  <LPSection title={c.resources.title} split>
+    <ul class="m-0 p-0 list-none flex flex-wrap gap-3">
+      {c.resources.items.map((r: any) => (
+        <li><a href={href(r.href)} {...ext(r.href)} class="inline-flex items-center gap-2 rounded-full border border-[var(--color-gray-30)] text-[var(--color-brand-deep-blue)] hover:border-[var(--color-brand-deep-blue)] font-bold ty-body-3 px-5 py-3 transition-colors">{r.label} <span aria-hidden="true">{r.href.startsWith("http") ? "↗" : "→"}</span></a></li>
+      ))}
+    </ul>
+  </LPSection>
+
   <CtaBand {...c.cta} />
 </Base>

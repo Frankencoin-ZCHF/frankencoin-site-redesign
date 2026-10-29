@@ -3,37 +3,23 @@
 import Base from "../../layouts/Base.astro";
 import LPHero from "../../components/LP/LPHero.astro";
 import LPSection from "../../components/LP/LPSection.astro";
-import Figures from "../../components/LP/Figures.astro";
 import FeatureGrid from "../../components/LP/FeatureGrid.astro";
-import UsdChfChart from "../../components/LP/UsdChfChart.astro";
-import TrustStrip from "../../components/TrustStrip/TrustStrip.astro";
 import CtaBand from "../../components/LP/CtaBand.astro";
 import { getLanguageFromURL, loadContent } from "../../utils/i18n";
-import { getCalcData } from "../../utils/calcStats";
-import { getTransparency } from "../../utils/liveStats";
-import { formatAmount, formatPct } from "../../utils/fcsStats";
 
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("treasuries", lang);
-const [d, t] = await Promise.all([getCalcData(), getTransparency()]);
-const ratio = t.supply && t.collateralChf ? (t.collateralChf / t.supply).toFixed(2) : "—";
+const en = await loadContent<any>("treasuries", "en");
+const local = await loadContent<any>("treasuries", lang);
+// German copy may lack today's keys: fall back to English per key.
+const c = { ...en, ...local };
 Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary}>
-    <Figures slot="aside" items={[
-      { label: "Savings rate", value: formatPct(d.current.rate, 2), unit: "per year" },
-      { label: "Collateral per ZCHF", value: ratio, unit: "CHF" },
-      { label: "ZCHF supply", value: formatAmount(t.supply), unit: "all chains" },
-      { label: "Live since", value: "2023", unit: "no significant depeg" },
-    ]} />
-  </LPHero>
-  <LPSection eyebrow={c.why.eyebrow} title={c.why.title}><FeatureGrid items={c.why.items} cols={4} /></LPSection>
-  <LPSection eyebrow={c.chart.eyebrow} title={c.chart.title} accent><UsdChfChart /></LPSection>
-  <LPSection eyebrow={c.ops.eyebrow} title={c.ops.title}><FeatureGrid items={c.ops.items} cols={4} /></LPSection>
-  <LPSection eyebrow={c.dao.eyebrow} title={c.dao.title} subtitle={c.dao.subtitle} accent />
-  <LPSection eyebrow={c.trustHead.eyebrow} title={c.trustHead.title}><TrustStrip items={c.trust} /></LPSection>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} />
+  <LPSection title={c.why.title}><FeatureGrid items={c.why.items} cols={3} /></LPSection>
+  <LPSection title={c.ops.title} accent><FeatureGrid items={c.ops.items} cols={4} /></LPSection>
+  <LPSection title={c.dao.title} subtitle={c.dao.subtitle} />
   <CtaBand {...c.cta} />
 </Base>

@@ -11,8 +11,8 @@ import { getUsdChfHistory } from "../../utils/liveStats";
 import { getCalcData } from "../../utils/calcStats";
 import { formatPct } from "../../utils/fcsStats";
 
-interface Props { steps?: any[]; id?: string; objections?: boolean }
-const { steps, id = "dollar", objections = true } = Astro.props as Props;
+interface Props { steps?: any[]; id?: string; objections?: boolean; /** Home: headline, claim, three tiles and a link to the full comparison. */ compact?: boolean; more?: { label: string; href: string } }
+const { steps, id = "dollar", objections = true, compact = false, more } = Astro.props as Props;
 const lang = getLanguageFromURL(Astro.url.pathname);
 const c = await loadContent<any>("dollar", lang);
 const [fx, calc] = await Promise.all([getUsdChfHistory(), getCalcData()]);
@@ -30,10 +30,10 @@ const payload = JSON.stringify({ rows, liveRate, nowYear, rate, copy: c, locale:
 const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
 ---
 
-<section id={id} class="relative isolate overflow-hidden bg-[var(--color-brand-deep-blue)] text-white py-20 md:py-28 scroll-mt-20" x-data="dollarTruth()" x-init="init($el.dataset.cfg)" data-cfg={payload}>
+<section id={id} class:list={["relative isolate overflow-hidden bg-[var(--color-brand-deep-blue)] text-white scroll-mt-20", compact ? "py-16 md:py-24" : "py-20 md:py-28"]} x-data="dollarTruth()" x-init="init($el.dataset.cfg)" data-cfg={payload}>
   <span class="halftone-dots absolute inset-0 text-[#1a9cc8]/50 pointer-events-none" aria-hidden="true"></span>
   <div class="relative mx-auto max-w-7xl px-[var(--spacing-l)]">
-    <h2 class="text-balance text-[40px] sm:text-[56px] lg:text-[72px] leading-[0.98] font-black tracking-[-0.035em] m-0 max-w-4xl">
+    <h2 class:list={["text-balance leading-[0.98] font-black tracking-[-0.035em] m-0 max-w-4xl", compact ? "text-[34px] sm:text-[44px] lg:text-[52px]" : "text-[40px] sm:text-[56px] lg:text-[72px]"]}>
       {c.title.split("|")[0]}<br /><span class="text-[#5bb8dc]">{c.title.split("|")[1]}</span>
     </h2>
     <p class="mt-6 ty-body-1 text-white/85 max-w-[40rem]" x-text="tpl(copy.subtitle, { amount: money(amount) })">{c.subtitle.replace("{amount}", "$10,000")}</p>
@@ -42,6 +42,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
       <span x-text="tpl(copy.headline.claim, { cashLoss: signed(r.cashReal / amount - 1).replace('−', ''), chfGain: signed(r.chfReal / amount - 1) })"></span>
     </p>
 
+    {!compact && (
     <!-- Controls (hidden until "try your own numbers") -->
     <div class="mt-10 grid md:grid-cols-[1fr_1.4fr] gap-6 items-end" x-show="custom" x-transition x-cloak>
       <label class="flex flex-col gap-2">
@@ -58,13 +59,14 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
       </div>
     </div>
 
+    )}
     <!-- Tiles -->
-    <p class="mt-8 ty-body-3 text-white/70 max-w-[44rem]" x-text="tpl(copy.explain, { year })"></p>
-    <div class="mt-4 grid md:grid-cols-3 gap-3">
+    {!compact && <p class="mt-8 ty-body-3 text-white/70 max-w-[44rem]" x-text="tpl(copy.explain, { year })"></p>}
+    <div class:list={["grid md:grid-cols-3 gap-3", compact ? "mt-8" : "mt-4"]}>
       <div class="rounded-3xl bg-[#0e3a72] border border-white/15 p-6 min-w-0 flex flex-col">
         <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-white/60">{c.tiles.cash.label}</p>
         <p class="mt-1 ty-xs text-white/55 md:min-h-[3.4rem]">{c.tiles.cash.how}</p>
-        <p class="mt-5 text-[36px] md:text-[44px] font-black leading-none tabular-nums break-words" x-text="money(amount)"></p>
+        <p class:list={["mt-5 font-black leading-none tabular-nums break-words", compact ? "text-[30px] md:text-[36px]" : "text-[36px] md:text-[44px]"]} x-text="money(amount)"></p>
         <p class="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-white/50 mb-5">{c.today}</p>
         <div class="mt-auto pt-4 border-t border-white/15">
           <p class="ty-body-3 text-white/80" x-text="tpl(copy.tiles.cash.power, { then: money(r.cashReal), year })"></p>
@@ -74,7 +76,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
       <div class="rounded-3xl bg-[#0e3a72] border border-white/15 p-6 min-w-0 flex flex-col">
         <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-white/60">{c.tiles.tbill.label}</p>
         <p class="mt-1 ty-xs text-white/55 md:min-h-[3.4rem]">{c.tiles.tbill.how}</p>
-        <p class="mt-5 text-[36px] md:text-[44px] font-black leading-none tabular-nums break-words" x-text="money(r.tbill)"></p>
+        <p class:list={["mt-5 font-black leading-none tabular-nums break-words", compact ? "text-[30px] md:text-[36px]" : "text-[36px] md:text-[44px]"]} x-text="money(r.tbill)"></p>
         <p class="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-white/50 mb-5">{c.today}</p>
         <div class="mt-auto pt-4 border-t border-white/15">
           <p class="ty-body-3 text-white/80" x-text="tpl(copy.tiles.tbill.power, { then: money(r.tbillReal), year })"></p>
@@ -84,7 +86,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
       <div class="rounded-3xl bg-white border border-white p-6 text-[var(--color-brand-deep-blue)] min-w-0 flex flex-col">
         <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-[#1a9cc8]">{c.tiles.chf.label}</p>
         <p class="mt-1 ty-xs text-[var(--color-neutral-600)] md:min-h-[3.4rem]" x-text="tpl(copy.tiles.chf.how, { year, chf: chfFmt(r.chfAmount) })"></p>
-        <p class="mt-5 text-[36px] md:text-[44px] font-black leading-none tabular-nums break-words" x-text="money(r.chfRate)"></p>
+        <p class:list={["mt-5 font-black leading-none tabular-nums break-words", compact ? "text-[30px] md:text-[36px]" : "text-[36px] md:text-[44px]"]} x-text="money(r.chfRate)"></p>
         <p class="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-neutral-550)] mb-5">{c.today}</p>
         <div class="mt-auto pt-4 border-t border-[var(--color-gray-20)]">
           <p class="ty-body-3 text-[var(--color-neutral-700)]" x-text="tpl(copy.tiles.chf.power, { then: money(r.chfReal), year })"></p>
@@ -93,6 +95,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
       </div>
     </div>
 
+    {!compact && (
     <div class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2">
       <button type="button" @click="custom = !custom; if (!custom) { amount = 10000; year = 2000; }" class="inline-flex items-center gap-2 rounded-full border border-[#5bb8dc]/60 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-[#5bb8dc] hover:bg-[#5bb8dc]/10">
         <span x-text="custom ? copy.tryClose : copy.tryTitle"></span><span aria-hidden="true" x-text="custom ? '×' : '→'"></span>
@@ -128,6 +131,10 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
     </div>
 
     <!-- Objections -->
+    )}
+    {compact && more && (
+      <a href={href(more.href)} class="mt-8 inline-flex items-center gap-2 rounded-full bg-white text-[var(--color-brand-deep-blue)] hover:bg-[#5bb8dc] font-bold ty-body-2 px-6 py-3.5 transition-colors">{more.label} →</a>
+    )}
     {objections && (
     <div class="mt-16 grid lg:grid-cols-[1fr_1.6fr] gap-8">
       <div>

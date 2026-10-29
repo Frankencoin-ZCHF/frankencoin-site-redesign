@@ -34,14 +34,10 @@ const compact = (n: number | null) =>
   n === null ? "—" : n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : formatAmount(n);
 const maxLtv = borrow.length ? Math.max(...borrow.map((b) => b.ltv)) : null;
 const minRate = borrow.length ? Math.min(...borrow.map((b) => b.interest)) : null;
-const roe = formatPct(calc.current.roe12m, 1);
 const logos = (eco.tabs ?? []).filter((x: any) => x.image).slice(0, 10);
 
-const doors = index.doors.items.map((d: any) => ({
-  ...d,
-  stat: d.stat && { ...d.stat, value: d.stat.value.replace("{rate}", rate).replace("{ratio}", ratio) },
-}));
-const faqItems = faq.categories.flatMap((cat: any) => cat.questions).slice(0, 6).map((q: any) => ({ q: q.question, a: q.answer }));
+const doors = index.doors.items.map(({ stat, ...d }: any) => d);
+const faqItems = faq.categories.flatMap((cat: any) => cat.questions).slice(0, 5).map((q: any) => ({ q: q.question, a: q.answer }));
 const P = c.products;
 
 Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
@@ -55,7 +51,6 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     primary={{ ...c.hero.primary, label: c.hero.primary.label.replace("{rate}", rate) }}
     secondary={c.hero.secondary}
     routes={c.hero.routes}
-    coords={c.hero.coords}
     ticker={[
       { label: c.hero.ticker.rate, value: rate, href: c.hero.tickerLinks.rate },
       { label: c.hero.ticker.supply, value: compact(t.supply), href: c.hero.tickerLinks.supply },
@@ -103,9 +98,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
         <a href={href(P.invest.href)} class="group relative overflow-hidden lg:col-span-2 rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-7 md:p-8 flex flex-col min-h-[300px] hover:shadow-xl hover:-translate-y-0.5 transition-all">
           <span class="halftone-dots absolute inset-0 text-[#1a9cc8]/60 pointer-events-none"></span>
           <span class="relative font-mono text-[11px] uppercase tracking-[0.24em] text-[#5bb8dc]">{P.invest.label}</span>
-          <span class="relative mt-4 text-[56px] font-black leading-none tracking-[-0.04em]">{roe}</span>
-          <span class="relative mt-1 ty-xs opacity-80">{P.invest.stat}</span>
-          <span class="relative mt-4 ty-title-3 font-black">{P.invest.title}</span>
+          <span class="relative mt-4 ty-title-2 font-black text-balance">{P.invest.title}</span>
           <span class="relative mt-2 ty-body-3 opacity-85">{P.invest.body}</span>
           <span class="relative mt-auto pt-6 font-bold ty-body-2 text-[#5bb8dc]">{P.invest.cta} →</span>
         </a>
@@ -132,47 +125,33 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     </div>
   </section>
 
-  <!-- 02 Dollar truth -->
-  <DollarTruth />
+  <!-- 02 Dollar truth, compact: the full comparison lives on the Save page -->
+  <DollarTruth compact objections={false} more={c.dollar} />
 
-  <!-- 02 Proof -->
+  <!-- 02 Backing: live proof and the mechanism in one block -->
   <section class="bg-[var(--color-white)] py-20 md:py-28">
     <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
       <div class="grid lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-end mb-10 md:mb-14">
-        <div class="[&>div]:mb-0"><SectionHead eyebrow={c.proof.eyebrow} title={c.proof.title} subtitle={c.proof.subtitle} /></div>
+        <div class="[&>div]:mb-0"><SectionHead title={c.proof.title} subtitle={c.proof.subtitle} /></div>
         <div class="lg:justify-self-end"><CoinStack label={c.proof.coins} /></div>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-20)]">
         {[
-          { l: c.proof.supply, v: formatAmount(t.supply) },
-          { l: c.proof.collateral, v: formatAmount(t.collateralChf) },
+          { l: c.proof.supply, v: compact(t.supply) },
+          { l: c.proof.collateral, v: compact(t.collateralChf) },
           { l: c.proof.ratio, v: `${ratio}×` },
-          { l: c.proof.equity, v: formatAmount(t.equity) },
+          { l: c.proof.equity, v: compact(t.equity) },
         ].map((x) => (
           <div class="bg-white p-5 md:p-7">
-            <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-neutral-550)]">{x.l}</p>
+            <p class="ty-xs text-[var(--color-neutral-550)]">{x.l}</p>
             <p class="mt-2 text-[24px] md:text-[34px] font-black tracking-tight text-[var(--color-brand-deep-blue)] tabular-nums break-words">{x.v}</p>
           </div>
         ))}
       </div>
-      <a href={href(c.proof.href)} class="inline-flex mt-6 font-bold ty-body-2 text-[var(--color-brand-swiss)] hover:text-[var(--color-blue-39)]">{c.proof.cta} →</a>
-    </div>
-  </section>
-
-  <!-- 03 How it works -->
-  <section class="bg-[var(--color-gray-10)] py-20 md:py-28">
-    <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
-      <SectionHead eyebrow={c.how.eyebrow} title={c.how.title} />
-      <ol class="grid md:grid-cols-3 gap-4 list-none m-0 p-0">
-        {c.how.steps.map((s: any) => (
-          <li class="relative overflow-hidden rounded-3xl bg-white border border-[var(--color-gray-20)] p-7">
-            <span class="font-mono text-[44px] font-bold leading-none text-[#5bb8dc]/70">{s.n}</span>
-            <h3 class="mt-5 ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{s.title}</h3>
-            <p class="mt-2 ty-body-3 text-[var(--color-neutral-650)]">{s.body}</p>
-          </li>
-        ))}
-      </ol>
-      <a href={href(c.how.href)} class="inline-flex mt-6 font-bold ty-body-2 text-[var(--color-brand-swiss)] hover:text-[var(--color-blue-39)]">{c.how.cta} →</a>
+      <div class="mt-6 flex flex-wrap gap-x-8 gap-y-2">
+        <a href={href(c.proof.href)} class="inline-flex font-bold ty-body-2 text-[var(--color-brand-swiss)] hover:text-[var(--color-blue-39)]">{c.proof.cta} →</a>
+        <a href={href(c.proof.howHref)} class="inline-flex font-bold ty-body-2 text-[var(--color-brand-swiss)] hover:text-[var(--color-blue-39)]">{c.proof.how} →</a>
+      </div>
     </div>
   </section>
 

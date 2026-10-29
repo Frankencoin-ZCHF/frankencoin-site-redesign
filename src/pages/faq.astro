@@ -3,16 +3,22 @@
 import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
+import FeatureGrid from "../components/LP/FeatureGrid.astro";
 import FAQContainer from "../components/FAQContainer/FAQContainer.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("faq-page", lang);
+const en = await loadContent<any>("faq-page", "en");
+const local = await loadContent<any>("faq-page", lang);
+const c = { ...en, ...local };
 const faq = await loadContent<any>("faq", lang);
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} />
   <LPSection><FAQContainer faqs={faq} /></LPSection>
+  <LPSection title={c.nextHead.title} accent>
+    <FeatureGrid items={c.next} cols={2} />
+  </LPSection>
 </Base>

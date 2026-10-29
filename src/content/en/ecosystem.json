@@ -1,112 +1,220 @@
 {
   "header": {
-    "title": "Explore the|Frankencoin ecosystem.",
-    "subtitle": "Pay, swap, borrow, buy tokenized stocks, exchange for fiat currency, and more with tools that are built on top of the Frankencoin protocol.",
+    "title": "Frankencoin|ecosystem",
+    "subtitle": "Services that let you buy, pay with, save or hold ZCHF, grouped by what you want to do.",
     "eyebrow": "Ecosystem"
   },
   "intro": {
-    "title": "Browse and search projects using Frankencoin.",
-    "subtitle": "Building something cool?",
+    "title": "Browse projects using Frankencoin.",
+    "subtitle": "Building something?",
     "cta": {
-      "label": "Submit your project.",
-      "href": "https://github.com/Frankencoin-ZCHF/www/issues"
+      "label": "Add your project",
+      "href": "https://github.com/Frankencoin-ZCHF/frankencoin-site"
     }
   },
+  "submit": {
+    "title": "Add a project",
+    "text": "This list is maintained in the public website repository. Add an entry to src/content/en/ecosystem.json and open a pull request.",
+    "cta": {
+      "label": "Open the repository on GitHub",
+      "href": "https://github.com/Frankencoin-ZCHF/frankencoin-site"
+    },
+    "fileHref": "https://github.com/Frankencoin-ZCHF/frankencoin-site/blob/main/src/content/en/ecosystem.json",
+    "fileLabel": "ecosystem.json"
+  },
+  "useCases": {
+    "text": "For the concrete route through each service, see",
+    "linkLabel": "Use cases",
+    "href": "/use-cases"
+  },
   "categories": [
-    "Tokenization",
-    "On-and Offramp",
-    "DEX",
-    "Wallet"
+    "Buy and sell ZCHF",
+    "Pay",
+    "Save and earn",
+    "Wallets",
+    "Trade on-chain",
+    "For businesses"
   ],
   "tabs": [
-    {
-      "href": "https://www.aktionariat.com/all-companies",
-      "name": "Aktionariat",
-      "image": "/images/aktionariat-Compressify.io_1.webp",
-      "imageAlt": "Aktionariat Logo",
-      "badge": "Tokenization",
-      "category": "Tokenization",
-      "description": "Aktionariat AG is a Swiss corporation based in Zurich. Its purpose is to enable Swiss companies to create a market for their shares.Since only a fraction of Swiss companies are publicly traded, Aktionariat's vision is to fundamentally change this by creating liquid markets for thousands of additional Swiss companies, potentially unlocking billions in dormant economic value. This strategy aims to provide companies with better access to capital and significantly broaden the investment spectrum for investors, fostering long-term value investing and establishing a culture of sustainable, transparent, and decentralized finance.",
-      "linkLabel": "aktionariat.com"
-    },
     {
       "href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
       "name": "Mt Pelerin",
       "image": "/images/mt-pelerin-logo.png",
-      "imageAlt": "Mt Pelerin Logo",
-      "badge": "Service Provider",
-      "category": "On-and Offramp",
-      "description": "With Mt Pelerin, you can easily buy ZCHF with zero fees directly on any of your self-custodial wallets, swap it for BTC, ETH, stablecoins and many more, and cash it out back on your bank account at any time, still without fees. You can also get a personal IBAN for your wallet and use it to receive bank transfers from anyone directly in ZCHF, and send bank transfers to anyone using ZCHF from your wallet.",
+      "imageAlt": "Mt Pelerin logo",
+      "category": "Buy and sell ZCHF",
+      "description": "Buy and sell ZCHF by bank transfer to your own wallet; optional personal IBAN for receiving transfers and paying QR bills.",
       "linkLabel": "mtpelerin.com"
     },
     {
       "href": "https://dfx.swiss/",
       "name": "DFX",
       "image": "/images/Vectors-Wrapper_3.svg",
-      "imageAlt": "DFX Logo",
-      "badge": "Service Provider",
-      "category": "On-and Offramp",
-      "description": "DFX is the bridge between the traditional banking world and the cryptocurrency space and enables private and corporate customers to buy and sell cryptocurrencies the most convenient way possible. With DFX Services, there are many ways to buy and sell cryptocurrencies via bank and credit card transactions. You can buy cryptocurrencies directly into popular wallets such as Metamask, Rabby Wallet or more than 300 Wallets using WalletConnect and hardware wallets such as BitBox, Ledger and Trezor.",
+      "imageAlt": "DFX logo",
+      "category": "Buy and sell ZCHF",
+      "description": "Buy and sell ZCHF by bank transfer or card, delivered to MetaMask, Rabby, hardware wallets or any WalletConnect wallet.",
       "linkLabel": "dfx.swiss"
-    },
-    {
-      "href": "https://www.stayliquid.co/",
-      "name": "Stay Liquid",
-      "image": "/images/stayliquid.svg",
-      "imageAlt": "Stay Liquid Logo",
-      "badge": "Service Provider",
-      "description": "Stay Liquid has built a novel business savings account powered by DeFi and enhanced by AI. Clients can access returns on their idle assets in Euros or British Pounds, which is generating over 10% annual returns, by using a stablecoin-only smart portfolio management solution. Stay Liquid has a familiar ‘neobank’-style interface to ensure assets are secure and onboarding is effortless.",
-      "linkLabel": "stayliquid.co"
-    },
-    {
-      "href": "https://ammer.cash/",
-      "name": "Ammer.cash",
-      "image": "/images/ammer_pay_logo-Compressify.io.webp",
-      "imageAlt": "Ammer Logo",
-      "badge": "Payment",
-      "category": "On-and Offramp",
-      "description": "Ammer.cash is a versatile platform designed to facilitate crypto payments seamlessly. It enables businesses to accept payments in various cryptocurrencies through the Ammer Pay app, which can be used as a point-of-sale terminal. The service supports payments via Ammer Cards, QR codes, and smartphones, significantly reducing transaction fees compared to traditional methods like Visa and Mastercard.",
-      "linkLabel": "ammer.cash"
-    },
-    {
-      "href": "https://operal.solutions/",
-      "name": "Operal",
-      "image": "/images/OperalLogo-1-Compressify.io.webp",
-      "imageAlt": "Operal Logo",
-      "badge": "Gaming",
-      "category": "On-and Offramp",
-      "description": "Operal AG is a Swiss Startup working on gameification of impact. The B2B clients include Pensionfunds,the Liechtenstein Bankers Association, and large SMEs in Switzerland. On the B2C side Operal is providing Hypercasual Mobile Games with impact to the entire world and has established a extremly high reputation for excellence and innovation.",
-      "linkLabel": "operal.solutions"
-    },
-    {
-      "href": "https://zippy.app/",
-      "name": "Zippy",
-      "image": "/images/zippy-1-Compressify.io.webp",
-      "imageAlt": "Operal Logo",
-      "badge": "Gaming",
-      "category": "Wallet",
-      "description": "Zippy is a user-friendly crypto wallet that emphasizes security and ease of use. It features social recovery, allowing you to restore your wallet using trusted contacts. You can send and request crypto through your phone contacts without needing public keys. The wallet also supports buying and selling crypto with credit cards or IBAN payments and converting it back to fiat.",
-      "linkLabel": "zippy.swiss"
-    },
-    {
-      "href": "https://uniswap.org/",
-      "name": "Uniswap",
-      "image": "/images/Uniswap_Logo_and_Wordmark-1-Compressify.io.webp",
-      "imageAlt": "Uniswap Logo",
-      "category": "DEX",
-      "badge": "DEX",
-      "description": "The Uniswap Protocol is an open-source protocol for providing liquidity and trading ERC20 tokens on Ethereum. It eliminates trusted intermediaries and unnecessary forms of rent extraction, allowing for safe, accessible, and efficient exchange activity. The protocol is non-upgradable and designed to be censorship resistant.",
-      "linkLabel": "uniswap.org"
     },
     {
       "href": "https://frankencoin.app/",
       "name": "Frankencoin App",
       "image": "/images/Frankencoin-App-Logo-Compressify.io.webp",
-      "imageAlt": "Frankencoin App Logo",
-      "badge": "Gaming",
-      "category": "Wallet",
-      "description": "Frankencoin App is a self-custody wallet powered by DFX.swiss. It allows users to easily buy FPS, ZCHF or other cryptocurrencies via bank transfer, send or receive payments and much more in upcoming updates.",
+      "imageAlt": "Frankencoin App logo",
+      "category": "Buy and sell ZCHF",
+      "description": "Self-custody mobile wallet run by DFX: buy ZCHF by bank transfer, send and receive payments.",
       "linkLabel": "frankencoin.app"
+    },
+    {
+      "href": "https://presse.spar.ch/de/spar-schweiz/allgemein/neu%3A-jetzt-bei-spar-mit-krypto-waehrung-bezahlen/",
+      "name": "Spar Switzerland",
+      "image": "/images/spar.png",
+      "imageAlt": "Spar logo",
+      "category": "Pay",
+      "description": "Pay with ZCHF at the checkout of over 100 Spar stores in Switzerland.",
+      "linkLabel": "spar.ch"
+    },
+    {
+      "href": "https://www.zeal.app/",
+      "name": "Zeal with Gnosis Pay",
+      "image": "/images/zeal.png",
+      "imageAlt": "Zeal logo",
+      "category": "Pay",
+      "description": "Wallet app (Zeal) with a Visa debit card (Gnosis Pay) that spends from your ZCHF balance.",
+      "linkLabel": "zeal.app"
+    },
+    {
+      "href": "https://privcart.com/",
+      "name": "PrivCart",
+      "image": "/images/privcart-logo.webp",
+      "imageAlt": "PrivCart logo",
+      "category": "Pay",
+      "description": "Crypto checkout for Shopify, WooCommerce, BigCommerce and custom shops; customers pay in ZCHF.",
+      "linkLabel": "privcart.com"
+    },
+    {
+      "href": "https://ammer.cash/",
+      "name": "Ammer.cash",
+      "image": "/images/ammer_pay_logo-Compressify.io.webp",
+      "imageAlt": "Ammer logo",
+      "category": "Pay",
+      "description": "Point-of-sale app and cards for merchants to accept crypto payments, including ZCHF, via QR code or card.",
+      "linkLabel": "ammer.cash"
+    },
+    {
+      "href": "https://urble.io/",
+      "name": "urble",
+      "image": "/images/urble-logo.png",
+      "imageAlt": "urble logo",
+      "category": "Save and earn",
+      "description": "Recurring savings plans in ZCHF or BTC from your own wallet; the ZCHF part earns the protocol savings rate.",
+      "linkLabel": "urble.io"
+    },
+    {
+      "href": "https://rebind.co/",
+      "name": "Rebind",
+      "image": "/images/rebind-logo.png",
+      "imageAlt": "Rebind logo",
+      "category": "Save and earn",
+      "description": "Savings app with a personal IBAN and ZCHF, EUR and USD strategies.",
+      "linkLabel": "rebind.co"
+    },
+    {
+      "href": "https://morpho.org/",
+      "name": "Morpho",
+      "image": "/images/morpho.png",
+      "imageAlt": "Morpho logo",
+      "category": "Save and earn",
+      "description": "Lend ZCHF for interest or borrow ZCHF against crypto collateral, on Ethereum and Base.",
+      "linkLabel": "morpho.org"
+    },
+    {
+      "href": "https://www.curve.finance/lend/ethereum/markets/0xFd85e847cDd2549f213E276e4B57B0690169F043",
+      "name": "Curve LlamaLend",
+      "image": "/images/full-curve-dao-logo.jpg",
+      "imageAlt": "Curve logo",
+      "category": "Save and earn",
+      "description": "Borrow crvUSD against savings-vault tokens (svZCHF) in an isolated Ethereum market.",
+      "linkLabel": "curve.finance"
+    },
+    {
+      "href": "https://app.reserve.org/ethereum/index-dtf/0xe4a10951f962e6cb93cb843a4ef05d2f99db1f94/overview",
+      "name": "ixEDEL (Sagix Club Edelweiss)",
+      "image": "/images/sagix-ixedel.jpg",
+      "imageAlt": "ixEDEL logo",
+      "category": "Save and earn",
+      "description": "Index fund on Reserve Protocol that holds ZCHF alongside gold, Bitcoin and yield-bearing stablecoins.",
+      "linkLabel": "app.reserve.org"
+    },
+    {
+      "href": "https://www.stayliquid.co/",
+      "name": "Stay Liquid",
+      "image": "/images/stayliquid.svg",
+      "imageAlt": "Stay Liquid logo",
+      "category": "Save and earn",
+      "description": "Business savings account built on stablecoins, with a neobank-style interface.",
+      "linkLabel": "stayliquid.co"
+    },
+    {
+      "href": "https://zippy.app/",
+      "name": "Zippy",
+      "image": "/images/zippy-1-Compressify.io.webp",
+      "imageAlt": "Zippy logo",
+      "category": "Wallets",
+      "description": "Mobile wallet with social recovery; send to phone contacts, buy and sell with card or IBAN.",
+      "linkLabel": "zippy.app"
+    },
+    {
+      "href": "https://uniswap.org/",
+      "name": "Uniswap",
+      "image": "/images/Uniswap_Logo_and_Wordmark-1-Compressify.io.webp",
+      "imageAlt": "Uniswap logo",
+      "category": "Trade on-chain",
+      "description": "Swap ZCHF against other tokens on Ethereum and the other chains where ZCHF is deployed.",
+      "linkLabel": "uniswap.org"
+    },
+    {
+      "href": "https://www.aktionariat.com/all-companies",
+      "name": "Aktionariat",
+      "image": "/images/aktionariat-Compressify.io_1.webp",
+      "imageAlt": "Aktionariat logo",
+      "category": "For businesses",
+      "description": "Tokenized shares of Swiss companies, bought, sold and issued with ZCHF as the settlement currency.",
+      "linkLabel": "aktionariat.com"
+    },
+    {
+      "href": "https://www.quitt.ch/",
+      "name": "Quitt",
+      "image": "/images/quitt-logo.svg",
+      "imageAlt": "Quitt logo",
+      "category": "For businesses",
+      "description": "Payroll, social insurance and pension administration with wages settled in ZCHF.",
+      "linkLabel": "quitt.ch"
+    },
+    {
+      "href": "https://www.plusplus.swiss/",
+      "name": "Plusplus",
+      "image": "/images/logo_plusplus.avif",
+      "imageAlt": "Plusplus logo",
+      "category": "For businesses",
+      "description": "Treasury products for companies built on ZCHF, including rental deposits.",
+      "linkLabel": "plusplus.swiss"
+    },
+    {
+      "href": "https://www.bitcoinsuisse.com/",
+      "name": "Bitcoin Suisse",
+      "image": "/images/bitcoin-suisse.png",
+      "imageAlt": "Bitcoin Suisse logo",
+      "category": "For businesses",
+      "description": "Custody of ZCHF with a Swiss crypto financial services provider.",
+      "linkLabel": "bitcoinsuisse.com"
+    },
+    {
+      "href": "https://copper.co/",
+      "name": "Copper",
+      "image": "/images/CopperLogoDark.png",
+      "imageAlt": "Copper logo",
+      "category": "For businesses",
+      "description": "Institutional custody for ZCHF with DeFi access from the custody account.",
+      "linkLabel": "copper.co"
     }
   ]
 }

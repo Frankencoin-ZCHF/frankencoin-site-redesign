@@ -1,17 +1,18 @@
 {
   "meta": {
     "title": "Frankencoin security: audits, bug bounty and independent ratings",
-    "description": "Seven audits by four firms, a bug bounty run by Compass Security, and independent risk ratings from Xerberus and Pharos."
+    "description": "Audits by ChainSecurity, Code4rena, Decurity and BlockBite, a bug bounty run by Compass Security, and independent risk ratings from Xerberus and Pharos."
   },
   "hero": {
-    "eyebrow": "Security",
-    "title": "Audited, rated, and open to anyone who finds a bug.",
-    "subtitle": "Every Frankencoin component is audited before launch. A bug bounty pays for responsible disclosure, and independent protocols rate the system from public data."
+    "title": "Audited, rated,|and open to anyone who finds a bug.",
+    "subtitle": "Each Frankencoin component is audited before launch, a bug bounty pays for responsible disclosure, and two independent providers rate the system from public data."
   },
   "summary": [
     {
-      "title": "7 audits, 4 firms",
-      "description": "ChainSecurity, Code4rena, Decurity and BlockBite."
+      "title": "{n} audits, 4 firms",
+      "description": "ChainSecurity, Code4rena, Decurity and BlockBite. Reports linked below.",
+      "href": "#audits",
+      "cta": "Audit list"
     },
     {
       "title": "Bug bounty",
@@ -21,7 +22,9 @@
     },
     {
       "title": "Independent ratings",
-      "description": "Xerberus and Pharos score the protocol from on-chain data."
+      "description": "Xerberus and Pharos, with their own scales and reports.",
+      "href": "#ratings",
+      "cta": "Ratings"
     },
     {
       "title": "Open source",
@@ -29,5 +32,50 @@
       "href": "https://github.com/Frankencoin-ZCHF/Frankencoin",
       "cta": "GitHub"
     }
-  ]
+  ],
+  "audits": {
+    "title": "Audits",
+    "cols": { "reviewer": "Reviewer", "component": "Component", "date": "Completed", "report": "Report" },
+    "reportLabel": "Report",
+    "items": [
+      { "reviewer": "ChainSecurity", "component": "Uniswap Liquidity Amplifier", "date": "2026-07-30", "href": "https://www.chainsecurity.com/security-audit/frankencoin-uniswap-liquidity-amplifier" },
+      { "reviewer": "ChainSecurity", "component": "FPS2 pool shares (FCS)", "date": "2026-07-14", "href": "https://reports.chainsecurity.com/Frankencoin/ChainSecurity_Frankencoin_FPS2_Audit.pdf" },
+      { "reviewer": "ChainSecurity", "component": "CCIP cross-chain bridge", "date": "2025-05-15", "href": "https://www.chainsecurity.com/security-audit/frankencoin-ccip-bridge" },
+      { "reviewer": "ChainSecurity", "component": "v2024: MintingHub, PositionRoller, Savings", "date": "2024-11-28", "href": "https://www.chainsecurity.com/security-audit/frankencoin-v2024" },
+      { "reviewer": "Decurity", "component": "Frankencoin contracts", "date": "2024", "href": "https://github.com/Decurity/audits/blob/master/Frankencoin/frankencoin-audit-report-2024-1.1.pdf" },
+      { "reviewer": "ChainSecurity", "component": "Frankencoin smart contracts (v1)", "date": "2023-10-30", "href": "https://www.chainsecurity.com/security-audit/frankencoin-smart-contracts" },
+      { "reviewer": "Code4rena", "component": "Frankencoin v1 audit contest", "date": "2023-04", "href": "https://code4rena.com/reports/2023-04-frankencoin" },
+      { "reviewer": "BlockBite", "component": "Frankencoin v1 contracts", "date": "2023-03", "href": "/AuditReport-Frankencoin.pdf" }
+    ],
+    "bounty": {
+      "body": "Found something the audits missed? The Frankencoin Association pays bounties for bugs that affect the stability of the system. The programme is run by Compass Security.",
+      "label": "Bug bounty programme",
+      "href": "https://bugbounty.compass-security.com/service-details.html?id=18"
+    }
+  },
+  "ratings": {
+    "title": "Independent ratings",
+    "subtitle": "Xerberus and Pharos are not affiliated with Frankencoin. Each row shows the provider's own scale and links to its report.",
+    "cols": { "provider": "Provider", "subject": "Rated", "score": "Score", "scale": "Scale", "source": "Source" },
+    "xerberus": {
+      "scale": "0 to 100, higher is better",
+      "report": "Xerberus report",
+      "subjects": { "protocol": "Frankencoin protocol", "dao": "Frankencoin DAO", "savings": "Savings vault (Ethereum)" }
+    },
+    "pharos": {
+      "subject": "ZCHF safety score",
+      "scale": "Grade F to A+, score 0 to 100",
+      "report": "Pharos report card",
+      "updated": "Updated"
+    },
+    "unavailable": "n/a"
+  },
+  "related": {
+    "title": "Legal classification and cover",
+    "items": [
+      { "title": "Compliance", "description": "Swiss and EU legal assessments of ZCHF and the pool shares.", "href": "/compliance", "cta": "Compliance" },
+      { "title": "Depeg cover", "description": "Optional third-party cover for ZCHF holders.", "href": "/insurance", "cta": "Insurance" },
+      { "title": "Transparency", "description": "Live supply, collateral and reserve.", "href": "/transparency", "cta": "Transparency" }
+    ]
+  }
 }

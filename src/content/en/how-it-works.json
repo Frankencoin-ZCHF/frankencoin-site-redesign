@@ -1,11 +1,101 @@
 {
   "meta": {
     "title": "How Frankencoin works",
-    "description": "How ZCHF is minted against collateral, how the peg holds, how savers are paid and how FCS holders govern."
+    "description": "How ZCHF is minted against collateral, how the peg holds without a price oracle, how savers are paid and what FCS holders govern."
   },
   "hero": {
-    "eyebrow": "How it works",
-    "title": "Three moving parts, no issuer.",
-    "subtitle": "Frankencoin is a set of smart contracts. Borrowers mint francs against collateral, the market keeps the peg, and the income pays savers and shareholders."
-  }
+    "title": "Three moving parts,|no issuer.",
+    "subtitle": "Frankencoin is a set of smart contracts. Borrowers mint francs against collateral, the market keeps the peg, and the interest they pay funds savers and the reserve."
+  },
+  "parts": {
+    "title": "The system in one pass.",
+    "steps": [
+      {
+        "title": "Mint",
+        "description": "Anyone locks collateral (BTC, ETH, tokenized gold or shares) in a position and mints ZCHF against it, up to a limit below the collateral's value. Interest for the term is paid upfront into the reserve."
+      },
+      {
+        "title": "Keep the peg",
+        "description": "Every ZCHF is backed by more than one franc of collateral. If a position looks under-collateralized, anyone can challenge it and the collateral is auctioned. No price oracle is involved."
+      },
+      {
+        "title": "Share the income",
+        "description": "The reserve pays the savings rate to ZCHF deposited in the savings module. What is left stays in the reserve, which FCS (Frankencoin Shares) holders own and govern."
+      }
+    ]
+  },
+  "detail": {
+    "title": "The parts, one at a time.",
+    "rows": [
+      {
+        "title": "Positions",
+        "description": "A position is a contract that holds one borrower's collateral and records the ZCHF minted against it. Its terms (liquidation price, interest, maturity) are fixed when it is opened and visible on-chain. Repay the ZCHF and the collateral is released.",
+        "cta": {
+          "label": "Borrow against your assets",
+          "href": "/use-cases/borrow"
+        }
+      },
+      {
+        "title": "Why 1 ZCHF is worth 1 franc",
+        "description": "Borrowers owe exactly one franc of debt per ZCHF, and their collateral is worth more than that. When ZCHF trades away from one franc, borrowers and traders profit from closing the gap, which pulls the price back. The peg is held by collateral and arbitrage, not by a redemption promise from an issuer."
+      },
+      {
+        "title": "Challenges and auctions",
+        "description": "Anyone who believes a position is under-collateralized posts a challenge. The position's collateral goes to a public auction; if the bids confirm the position is sound, the challenger loses a deposit, and if they do not, the collateral is sold to repay the debt. This replaces the price feed other protocols depend on.",
+        "cta": {
+          "label": "Auctions in the docs",
+          "href": "https://docs.frankencoin.com/positions/auctions"
+        }
+      },
+      {
+        "title": "Governance",
+        "description": "FCS holders vote on new collateral types, interest rates and protocol changes. Proposals pass unless holders with enough votes veto them, so the protocol has no operator who can change the rules on their own.",
+        "cta": {
+          "label": "Frankencoin Shares",
+          "href": "/fcs"
+        }
+      },
+      {
+        "title": "Research",
+        "description": "Frankencoin grew out of a PhD thesis at the University of Zurich, which analyses the game theory of the challenge mechanism, the risk of Bitcoin as collateral and the veto-based governance.",
+        "cta": {
+          "label": "Read the thesis",
+          "href": "https://www.zora.uzh.ch/entities/publication/b1bff836-6852-457d-93e6-496807db37fa"
+        }
+      }
+    ]
+  },
+  "nextHead": {
+    "title": "Take part."
+  },
+  "next": [
+    {
+      "title": "Save in CHF",
+      "description": "Deposit ZCHF in the savings module and receive the protocol rate.",
+      "href": "/use-cases/save-in-chf",
+      "cta": "Save"
+    },
+    {
+      "title": "Borrow",
+      "description": "Open a position against BTC, ETH, gold or shares and mint francs.",
+      "href": "/use-cases/borrow",
+      "cta": "Borrow"
+    },
+    {
+      "title": "Hold FCS",
+      "description": "Own a share of the reserve and a vote on the protocol.",
+      "href": "/fcs",
+      "cta": "About FCS"
+    }
+  ],
+  "docs": [
+    {
+      "label": "Documentation",
+      "href": "https://docs.frankencoin.com/"
+    },
+    {
+      "label": "Source code",
+      "href": "https://github.com/Frankencoin-ZCHF/"
+    }
+  ]
 }

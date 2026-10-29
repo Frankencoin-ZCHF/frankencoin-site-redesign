@@ -4,22 +4,30 @@
     "description": "Articles, interviews and videos about Frankencoin and ZCHF."
   },
   "hero": {
-    "eyebrow": "News",
-    "title": "Frankencoin in the media.",
-    "subtitle": "Coverage, interviews and talks. Follow X or Telegram for announcements."
+    "title": "Frankencoin|in the media",
+    "subtitle": "Coverage, interviews and talks. Announcements go out on X and Telegram first."
   },
   "follow": [
-    {
-      "label": "X",
-      "href": "https://x.com/frankencoinzchf"
-    },
-    {
-      "label": "Telegram",
-      "href": "https://t.me/frankencoinzchf"
-    },
-    {
-      "label": "LinkedIn",
-      "href": "https://www.linkedin.com/company/frankencoin/"
-    }
-  ]
+    { "label": "X", "href": "https://x.com/frankencoinzchf" },
+    { "label": "Telegram", "href": "https://t.me/frankencoinzchf" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/company/frankencoin/" }
+  ],
+  "filter": {
+    "type": "Type",
+    "all": "All",
+    "article": "Articles",
+    "video": "Videos",
+    "outlet": "Outlet",
+    "allOutlets": "All outlets",
+    "sort": "Sort",
+    "newest": "Newest first",
+    "oldest": "Oldest first",
+    "count": "items",
+    "empty": "Nothing matches this filter."
+  },
+  "press": {
+    "text": "Journalists: logos, a description to quote and the press contact are on the",
+    "linkLabel": "press page",
+    "href": "/press"
+  }
 }

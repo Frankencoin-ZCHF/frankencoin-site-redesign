@@ -1,58 +1,70 @@
 ---
-/* /use-cases/borrow — borrow ZCHF against crypto, gold or shares. Live terms from utils/liveStats.ts. */
+/* /use-cases/borrow — borrow ZCHF against crypto, gold or shares. Live terms from utils/liveStats.ts. Copy: content/en/borrow.json */
 import Base from "../../layouts/Base.astro";
 import LPHero from "../../components/LP/LPHero.astro";
 import LPSection from "../../components/LP/LPSection.astro";
-import FeatureGrid from "../../components/LP/FeatureGrid.astro";
 import FaqList from "../../components/LP/FaqList.astro";
 import StickyCTA from "../../components/StickyCTA/StickyCTA.astro";
 import CtaBand from "../../components/LP/CtaBand.astro";
-import { getLanguageFromURL, getLocalizedPath, loadContent } from "../../utils/i18n";
+import { getLanguageFromURL, loadContent } from "../../utils/i18n";
 import { getBorrowOptions } from "../../utils/liveStats";
-import { formatAmount, formatPct } from "../../utils/fcsStats";
+import { formatPct } from "../../utils/fcsStats";
 import fs from "node:fs";
 
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("borrow", lang);
+const en = await loadContent<any>("borrow", "en");
+const local = await loadContent<any>("borrow", lang);
+// German copy may lack today's keys: fall back to English per key.
+const c = { ...en, ...local };
 const all = await getBorrowOptions();
 const options = all.slice(0, 8);
 // Coin logos live in public/images/coins (copied from the dapp); missing ones fall back to initials.
 const coinFiles = new Set(fs.readdirSync(new URL("../../../public/images/coins/", import.meta.url)));
 const coin = (symbol: string) => ["svg", "png"].map((e) => `${symbol.toLowerCase()}.${e}`).find((f) => coinFiles.has(f));
-const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
 const date = (s: number) => new Date(s * 1000).toLocaleDateString(lang === "de" ? "de-CH" : "en-GB", { month: "short", year: "numeric" });
+const th = "p-4 ty-xs font-bold text-[var(--color-neutral-600)]";
+const def = "underline decoration-dotted decoration-[var(--color-gray-30)] underline-offset-4 cursor-help";
 Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
   <LPHero title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} image="/images/home/peak-teal-halftone.webp" imageLayout="side" imagePosition="object-[62%_12%]">
-    <div slot="aside"><FeatureGrid items={c.collateral.items} cols={2} /></div>
+    <ul slot="aside" class="m-0 p-0 list-none grid gap-3">
+      {c.collateral.items.map((it: any) => (
+        <li class="rounded-3xl border border-[var(--color-gray-20)] bg-white/85 backdrop-blur p-5 md:p-6 grid sm:grid-cols-[1fr_1.6fr] gap-1 sm:gap-6 items-baseline">
+          <h3 class="text-balance ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</h3>
+          <p class="ty-body-3 text-[var(--color-neutral-650)] m-0">{it.description}</p>
+        </li>
+      ))}
+    </ul>
   </LPHero>
 
-  <LPSection id="rates" eyebrow={c.rates.eyebrow} title={c.rates.title} subtitle={c.rates.subtitle}>
+  <LPSection id="rates" title={c.rates.title} subtitle={c.rates.subtitle}>
     {options.length === 0 ? (
       <p class="ty-body-2 text-[var(--color-neutral-550)]">{c.rates.empty} <a class="font-bold text-[var(--color-blue-39)]" href="https://app.frankencoin.com/mint" target="_blank" rel="noopener noreferrer">app.frankencoin.com</a></p>
     ) : (
       <>
-        <div class="hidden md:block overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white shadow-[0_10px_40px_-20px_rgba(9,47,98,0.35)]">
+        <div class="hidden md:block overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white">
           <table class="w-full ty-body-3">
-            <thead class="bg-[var(--color-gray-10)] text-left font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-neutral-550)]">
+            <thead class="bg-[var(--color-gray-10)] text-left">
               <tr>
-                <th class="p-4">{c.rates.cols.asset}</th><th class="p-4 text-right">{c.rates.cols.ltv}</th><th class="p-4 text-right">{c.rates.cols.rate}</th>
-                <th class="p-4 text-right">{c.rates.cols.available}</th><th class="p-4 text-right">{c.rates.cols.maturity}</th><th class="p-4"></th>
+                <th class={th}>{c.rates.cols.asset}</th>
+                <th class={`${th} text-right`}><abbr title={c.rates.defs.ltv} class={def}>{c.rates.cols.ltv}</abbr></th>
+                <th class={`${th} text-right`}><abbr title={c.rates.defs.rate} class={def}>{c.rates.cols.rate}</abbr></th>
+                <th class={`${th} text-right`}><abbr title={c.rates.defs.maturity} class={def}>{c.rates.cols.maturity}</abbr></th>
+                <th class={th}></th>
               </tr>
             </thead>
             <tbody>
               {options.map((o) => (
                 <tr class="border-t border-[var(--color-gray-20)]">
                   <td class="p-4"><span class="inline-flex items-center gap-3">
-                    <span class="h-8 w-8 shrink-0 rounded-full bg-[var(--color-gray-10)] ring-1 ring-[var(--color-gray-20)] overflow-hidden grid place-items-center">{coin(o.symbol) ? <img src={`/images/coins/${coin(o.symbol)}`} alt="" loading="lazy" class="h-full w-full object-cover" /> : <span class="font-mono text-[9px] font-bold text-[var(--color-brand-deep-blue)]">{o.symbol.slice(0, 3)}</span>}</span>
+                    <span class="h-8 w-8 shrink-0 rounded-full bg-[var(--color-gray-10)] ring-1 ring-[var(--color-gray-20)] overflow-hidden grid place-items-center">{coin(o.symbol) ? <img src={`/images/coins/${coin(o.symbol)}`} alt="" loading="lazy" class="h-full w-full object-cover" /> : <span class="text-[10px] font-bold text-[var(--color-brand-deep-blue)]">{o.symbol.slice(0, 3)}</span>}</span>
                     <span><span class="font-bold text-[var(--color-brand-deep-blue)]">{o.symbol}</span> <span class="text-[var(--color-neutral-550)]">{o.name}</span></span>
                   </span></td>
                   <td class="p-4 text-right font-black text-[var(--color-brand-deep-blue)] tabular-nums">{formatPct(o.ltv, 0)}</td>
-                  <td class="p-4 text-right">{formatPct(o.interest, 2)}</td>
-                  <td class="p-4 text-right">{formatAmount(o.available)} ZCHF</td>
+                  <td class="p-4 text-right tabular-nums">{formatPct(o.interest, 2)} <span class="text-[var(--color-neutral-550)]">a year</span></td>
                   <td class="p-4 text-right">{date(o.maturity)}</td>
                   <td class="p-4 text-right"><a href={o.href} target="_blank" rel="noopener noreferrer" class="inline-flex rounded-full bg-[var(--color-brand-deep-blue)] hover:bg-[var(--color-brand-swiss)] text-white font-bold px-5 py-2.5 transition-colors">{c.rates.cta}</a></td>
                 </tr>
@@ -63,48 +75,46 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
         <div class="md:hidden grid gap-3">
           {options.map((o) => (
             <a href={o.href} target="_blank" rel="noopener noreferrer" class="rounded-3xl border border-[var(--color-gray-20)] bg-white p-5 flex flex-col gap-2">
-              <span class="flex justify-between items-center"><span class="inline-flex items-center gap-2"><span class="h-7 w-7 shrink-0 rounded-full bg-[var(--color-gray-10)] ring-1 ring-[var(--color-gray-20)] overflow-hidden grid place-items-center">{coin(o.symbol) ? <img src={`/images/coins/${coin(o.symbol)}`} alt="" loading="lazy" class="h-full w-full object-cover" /> : <span class="font-mono text-[9px] font-bold">{o.symbol.slice(0, 3)}</span>}</span><span class="font-black text-[var(--color-brand-deep-blue)]">{o.symbol}</span></span><span class="ty-xs text-[var(--color-neutral-550)]">{date(o.maturity)}</span></span>
-              <span class="grid grid-cols-3 ty-body-3">
+              <span class="flex justify-between items-center"><span class="inline-flex items-center gap-2"><span class="h-7 w-7 shrink-0 rounded-full bg-[var(--color-gray-10)] ring-1 ring-[var(--color-gray-20)] overflow-hidden grid place-items-center">{coin(o.symbol) ? <img src={`/images/coins/${coin(o.symbol)}`} alt="" loading="lazy" class="h-full w-full object-cover" /> : <span class="text-[10px] font-bold">{o.symbol.slice(0, 3)}</span>}</span><span class="font-black text-[var(--color-brand-deep-blue)]">{o.symbol}</span></span><span class="ty-xs text-[var(--color-neutral-550)]">{c.rates.cols.maturity} {date(o.maturity)}</span></span>
+              <span class="grid grid-cols-2 ty-body-3">
                 <span><span class="block ty-2xs text-[var(--color-neutral-550)]">{c.rates.cols.ltv}</span><b>{formatPct(o.ltv, 0)}</b></span>
-                <span><span class="block ty-2xs text-[var(--color-neutral-550)]">{c.rates.cols.rate}</span><b>{formatPct(o.interest, 2)}</b></span>
-                <span><span class="block ty-2xs text-[var(--color-neutral-550)]">{c.rates.cols.available}</span><b>{formatAmount(o.available)}</b></span>
+                <span><span class="block ty-2xs text-[var(--color-neutral-550)]">{c.rates.cols.rate}</span><b>{formatPct(o.interest, 2)}</b> a year</span>
               </span>
             </a>
           ))}
         </div>
-        <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
-          <p class="ty-xs text-[var(--color-neutral-550)] max-w-[40rem] m-0">{c.rates.note}</p>
+        <div class="mt-4 flex flex-wrap items-start justify-between gap-3">
+          <dl class="m-0 ty-xs text-[var(--color-neutral-550)] max-w-[44rem] grid gap-1">
+            <div><dt class="inline font-bold text-[var(--color-neutral-600)]">{c.rates.cols.ltv}:</dt> <dd class="inline m-0">{c.rates.defs.ltv}</dd></div>
+            <div><dt class="inline font-bold text-[var(--color-neutral-600)]">{c.rates.cols.rate}:</dt> <dd class="inline m-0">{c.rates.defs.rate}</dd></div>
+            <div><dt class="inline font-bold text-[var(--color-neutral-600)]">{c.rates.cols.maturity}:</dt> <dd class="inline m-0">{c.rates.defs.maturity}</dd></div>
+          </dl>
           {all.length > options.length && <a href="https://app.frankencoin.com/mint" target="_blank" rel="noopener noreferrer" class="font-bold ty-body-3 text-[var(--color-brand-swiss)]">{c.rates.all.replace("{n}", String(all.length))} →</a>}
         </div>
       </>
     )}
   </LPSection>
 
-  <LPSection eyebrow={c.how.eyebrow} title={c.how.title} accent><FeatureGrid items={c.how.cards} /></LPSection>
-  <LPSection eyebrow={c.terms.eyebrow} title={c.terms.title}><FeatureGrid items={c.terms.items} cols={4} /></LPSection>
-  <LPSection eyebrow={c.risks.eyebrow} title={c.risks.title} accent><FeatureGrid items={c.risks.items} cols={2} /></LPSection>
-  <!-- RWA issuers and holders: the collateral onboarding teaser, linking to /integrate/collateral -->
-  <section class="bg-[var(--color-white)] py-20 md:py-28">
-    <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
-      <div class="relative overflow-hidden rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-8 md:p-12 grid lg:grid-cols-[1.2fr_1fr] gap-8 items-center">
-        <span class="halftone-dots absolute inset-0 text-[#5bb8dc]/40 pointer-events-none" aria-hidden="true"></span>
-        <div class="relative">
-          <h2 class="text-balance text-[30px] sm:text-[40px] lg:text-[46px] leading-[1.04] font-black tracking-[-0.03em] m-0">{c.rwa.title}</h2>
-          <p class="mt-4 text-pretty ty-body-1 text-white/80 max-w-[38rem]">{c.rwa.body}</p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href={href(c.rwa.primary.href)} class="inline-flex items-center gap-2 rounded-full bg-white text-[var(--color-brand-deep-blue)] font-bold ty-body-2 pl-6 pr-5 py-4 hover:bg-[#e6f4fa] transition-colors">{c.rwa.primary.label} →</a>
-            <a href={c.rwa.secondary.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full border border-white/40 font-bold ty-body-2 px-6 py-4 hover:bg-white/10 transition-colors">{c.rwa.secondary.label}</a>
-          </div>
-        </div>
-        <ul class="relative m-0 p-0 list-none grid gap-3">
-          {c.rwa.points.map((pt: string) => (
-            <li class="flex gap-3 rounded-2xl bg-[#0e3a72] border border-white/15 p-4 ty-body-3"><span class="text-[#5bb8dc] font-bold">✓</span>{pt}</li>
+  <LPSection id="example" title={c.example.title} subtitle={c.example.subtitle} accent>
+    <div class="overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white">
+      <table class="w-full ty-body-3">
+        <tbody>
+          {c.example.rows.map((r: any, i: number) => (
+            <tr class={i > 0 ? "border-t border-[var(--color-gray-20)]" : ""}>
+              <th scope="row" class="p-4 md:p-5 text-left align-top font-bold text-[var(--color-neutral-600)] w-[11rem] md:w-[14rem]">{r.label}</th>
+              <td class="p-4 md:p-5 align-top">
+                <span class="block ty-body-2 font-black text-[var(--color-brand-deep-blue)] tabular-nums">{r.value}</span>
+                <span class="block mt-1 text-[var(--color-neutral-650)]">{r.note}</span>
+              </td>
+            </tr>
           ))}
-        </ul>
-      </div>
+        </tbody>
+      </table>
     </div>
-  </section>
-  <LPSection eyebrow={c.faqHead.eyebrow} title={c.faqHead.title} split><FaqList items={c.faq} /></LPSection>
+    <p class="mt-4 ty-xs text-[var(--color-neutral-550)] m-0">{c.example.note}</p>
+  </LPSection>
+
+  <LPSection title={c.faqHead.title} split><FaqList items={c.faq} /></LPSection>
   <CtaBand {...c.cta} />
   <StickyCTA label={c.sticky.label} sub={c.sticky.sub} href="/use-cases/borrow#rates" />
 </Base>

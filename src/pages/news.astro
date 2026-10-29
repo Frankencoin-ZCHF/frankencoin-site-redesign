@@ -1,24 +1,121 @@
 ---
-/* /news — media coverage (content/shared/media.json). */
+/* /news — media coverage (content/shared/media.json) with a date/type/outlet filter. Copy: content/en/news.json */
 import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
-import MediaCarousel from "../components/MediaCarousel/MediaCarousel.astro";
-import { getLanguageFromURL, loadContent, loadGlobalSharedContent } from "../utils/i18n";
+import { getLanguageFromURL, getLocalizedPath, loadContent, loadGlobalSharedContent } from "../utils/i18n";
+import { fetchOgData } from "../utils/fetchOgData";
+import { fetchYouTubeData } from "../utils/fetchYouTubeData";
 
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("news", lang);
+const en = await loadContent<any>("news", "en");
+const local = await loadContent<any>("news", lang);
+const c = { ...en, ...local };
 const media = await loadGlobalSharedContent<any>("media");
+
+const clean = (o: Record<string, any> = {}) => Object.fromEntries(Object.entries(o).filter(([, v]) => v !== "" && v != null));
+
+const articles = await Promise.all(
+  (media.articles as string[]).map(async (url) => {
+    const og = (await fetchOgData(url)) ?? { title: "Article", description: "", image: "", siteName: new URL(url).hostname, url, publishedDate: "" };
+    const m = { ...og, ...clean(media.articleMetadata?.[url]) };
+    return { type: "article", url, title: m.title, description: m.description, image: m.image, outlet: m.siteName, date: m.publishedDate };
+  })
+);
+const videos = await Promise.all(
+  (media.videos as string[]).map(async (url) => {
+    const yt = (await fetchYouTubeData(url)) ?? { title: "Video", description: "", thumbnail: "", author: "", url, publishedDate: "" };
+    const m = { ...yt, ...clean(media.videoMetadata?.[url]) };
+    return { type: "video", url, title: m.title, description: m.description, image: m.thumbnail, outlet: m.author, date: m.publishedDate };
+  })
+);
+const items = [...articles, ...videos].map((it) => {
+  const ts = Date.parse(it.date);
+  return { ...it, ts: Number.isNaN(ts) ? 0 : ts };
+});
+const outlets = [...new Set(items.map((i) => i.outlet).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
-  <section class="py-14 bg-[var(--color-white)]">
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} />
+
+  <section class="py-12 md:py-16 bg-[var(--color-white)]">
     <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
-      <div class="flex flex-wrap gap-3 mb-8">
-        {c.follow.map((f: any) => (<a href={f.href} target="_blank" rel="noopener noreferrer" class="rounded-full border border-[var(--color-brand-deep-blue)] px-5 py-2 ty-body-3 font-bold text-[var(--color-brand-deep-blue)] hover:bg-[var(--color-gray-10)]">{f.label} ↗</a>))}
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mb-10">
+        <div class="flex flex-wrap gap-2">
+          {c.follow.map((f: any) => (<a href={f.href} target="_blank" rel="noopener noreferrer" class="rounded-full border border-[var(--color-gray-30)] px-5 py-2 ty-body-3 font-bold text-[var(--color-brand-deep-blue)] hover:border-[var(--color-brand-deep-blue)]">{f.label} ↗</a>))}
+        </div>
+        <p class="ty-body-3 text-[var(--color-neutral-650)] m-0">{c.press.text} <a href={getLocalizedPath(c.press.href, lang)} class="font-bold text-[var(--color-brand-swiss)] hover:underline">{c.press.linkLabel}</a>.</p>
       </div>
-      <MediaCarousel articles={media.articles} videos={media.videos} />
+
+      <div
+        x-data="{
+          items: [], type: 'all', outlet: 'all', sort: 'newest',
+          get list() {
+            return this.items
+              .filter(i => (this.type === 'all' || i.type === this.type) && (this.outlet === 'all' || i.outlet === this.outlet))
+              .sort((a, b) => this.sort === 'newest' ? b.ts - a.ts : a.ts - b.ts);
+          }
+        }"
+        x-init="items = JSON.parse($el.dataset.items)"
+        data-items={JSON.stringify(items)}
+      >
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-4 rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] px-5 py-4 mb-8">
+          <div class="flex flex-wrap items-center gap-2" role="group" aria-label={c.filter.type}>
+            {[["all", c.filter.all], ["article", c.filter.article], ["video", c.filter.video]].map(([v, label]) => (
+              <button type="button" data-v={v} @click="type = $el.dataset.v"
+                :class="type === $el.dataset.v ? 'bg-[var(--color-brand-deep-blue)] text-white border-[var(--color-brand-deep-blue)]' : 'bg-white text-[var(--color-brand-deep-blue)] border-[var(--color-gray-30)] hover:border-[var(--color-brand-deep-blue)]'"
+                class="rounded-full border px-4 py-1.5 ty-body-3 font-bold transition-colors">{label}</button>
+            ))}
+          </div>
+          <label class="flex items-center gap-2 ty-body-3 text-[var(--color-neutral-650)]">
+            <span class="font-bold text-[var(--color-brand-deep-blue)]">{c.filter.outlet}</span>
+            <select x-model="outlet" class="rounded-full border border-[var(--color-gray-30)] bg-white px-3 py-1.5 ty-body-3 text-[var(--color-brand-deep-blue)] max-w-[14rem]">
+              <option value="all">{c.filter.allOutlets}</option>
+              {outlets.map((o) => (<option value={o}>{o}</option>))}
+            </select>
+          </label>
+          <label class="flex items-center gap-2 ty-body-3 text-[var(--color-neutral-650)]">
+            <span class="font-bold text-[var(--color-brand-deep-blue)]">{c.filter.sort}</span>
+            <select x-model="sort" class="rounded-full border border-[var(--color-gray-30)] bg-white px-3 py-1.5 ty-body-3 text-[var(--color-brand-deep-blue)]">
+              <option value="newest">{c.filter.newest}</option>
+              <option value="oldest">{c.filter.oldest}</option>
+            </select>
+          </label>
+          <p class="ml-auto ty-body-3 text-[var(--color-neutral-550)] m-0 tabular-nums"><span x-text="list.length"></span> {c.filter.count}</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <template x-for="item in list" :key="item.url">
+            <a :href="item.url" target="_blank" rel="noopener noreferrer" class="group flex flex-col overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white hover:-translate-y-0.5 hover:shadow-xl transition-all">
+              <div class="relative aspect-video bg-[var(--color-gray-10)] overflow-hidden" x-data="{ broken: false }">
+                <template x-if="item.image && !broken">
+                  <img :src="item.image" :alt="item.title" class="h-full w-full object-cover" loading="lazy" @error="broken = true" />
+                </template>
+                <template x-if="!item.image || broken">
+                  <span class="halftone-dots absolute inset-0 text-[#5bb8dc]/40"></span>
+                </template>
+                <template x-if="item.type === 'video'">
+                  <span class="absolute inset-0 grid place-items-center">
+                    <span class="grid h-12 w-12 place-items-center rounded-full bg-[var(--color-brand-deep-blue)]/90 text-white shadow"><svg viewBox="0 0 24 24" class="h-5 w-5 translate-x-px" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                  </span>
+                </template>
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                <p class="ty-xs font-bold text-[var(--color-neutral-550)] m-0">
+                  <span x-text={`item.type === 'video' ? '${c.filter.video}' : '${c.filter.article}'`}></span>
+                  <span x-show="item.outlet"> · <span x-text="item.outlet"></span></span>
+                  <span x-show="item.date"> · <span x-text="item.date"></span></span>
+                </p>
+                <h3 class="mt-2 text-balance ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0 line-clamp-3" x-text="item.title"></h3>
+                <p class="mt-2 ty-body-3 text-[var(--color-neutral-650)] m-0 line-clamp-3" x-text="item.description"></p>
+              </div>
+            </a>
+          </template>
+        </div>
+        <p x-show="list.length === 0" x-cloak class="ty-body-2 text-[var(--color-neutral-650)]">{c.filter.empty}</p>
+      </div>
     </div>
   </section>
 </Base>

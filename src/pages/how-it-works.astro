@@ -1,34 +1,47 @@
 ---
-/* /how-it-works — the system explained; the detailed sections that used to sit on the home page. */
+/* /how-it-works — the system explained in three parts. Copy: content/en/how-it-works.json */
 import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
+import ProseRows from "../components/LP/ProseRows.astro";
 import FeatureGrid from "../components/LP/FeatureGrid.astro";
-import TabMenu from "../components/TabsMenu/TabMenu.astro";
-import ExplanationCardsContainer from "../components/ExplanationCardsContainer/ExplanationCardsContainer.astro";
-import FoundationContainer from "../components/FoundationContainer/FoundationContainer.astro";
-import CtaBand from "../components/LP/CtaBand.astro";
+import DocLinks from "../components/LP/DocLinks.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("how-it-works", lang);
-const index = await loadContent<any>("index", lang);
-const md = (t: string) => t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-[var(--color-blue-39)] underline">$1</a>');
+const en = await loadContent<any>("how-it-works", "en");
+const local = await loadContent<any>("how-it-works", lang);
+const c = { ...en, ...local };
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
-  <LPSection><FeatureGrid items={index.how_simple.cards} /></LPSection>
-  <LPSection title={index.how_it_works.title} subtitle={index.how_it_works.subtitle} accent>
-    <div class="flex md:flex-row flex-col items-stretch gap-8"><TabMenu tabs={index.how_it_works.steps} /></div>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={{ label: "Borrow", href: "/use-cases/borrow" }} secondary={{ label: "Save in CHF", href: "/use-cases/save-in-chf" }} />
+
+  <LPSection title={c.parts.title}>
+    <!-- One flow, three steps: the diagram is the explanation. -->
+    <ol class="grid gap-4 lg:grid-cols-[1fr_auto_1fr_auto_1fr] items-stretch m-0 p-0 list-none">
+      {c.parts.steps.map((s: any, i: number) => (
+        <>
+          {i > 0 && (
+            <li aria-hidden="true" class="hidden lg:flex items-center text-[#1a9cc8] text-3xl font-black px-1">→</li>
+          )}
+          <li class="rounded-3xl border border-[var(--color-gray-20)] bg-white p-6 md:p-7 flex flex-col gap-3">
+            <span class="grid place-items-center h-10 w-10 rounded-full bg-[var(--color-brand-deep-blue)] text-white font-black ty-body-2">{i + 1}</span>
+            <h3 class="text-balance ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{s.title}</h3>
+            <p class="ty-body-3 text-[var(--color-neutral-650)] m-0">{s.description}</p>
+          </li>
+        </>
+      ))}
+    </ol>
   </LPSection>
-  <LPSection title={index.how_does_it_work.title}>
-    <ExplanationCardsContainer cards={index.how_does_it_work.explanation} />
+
+  <LPSection title={c.detail.title} accent>
+    <ProseRows rows={c.detail.rows.map((r: any) => ({ title: r.title, body: r.description, cta: r.cta }))} />
   </LPSection>
-  <LPSection title={index.foundation.title} accent>
-    <p class="ty-body-2 text-[var(--color-neutral-650)] max-w-3xl mb-8" set:html={md(index.foundation.description)} />
-    <FoundationContainer />
+
+  <LPSection title={c.nextHead.title}>
+    <FeatureGrid items={c.next} cols={3} />
+    <div class="mt-8"><DocLinks docs={c.docs} /></div>
   </LPSection>
-  <CtaBand title="Ready to take part?" primary={{ label: "Start now", href: "https://app.frankencoin.com/savings" }} secondary={{ label: "Read the docs", href: "https://docs.frankencoin.com/" }} />
 </Base>

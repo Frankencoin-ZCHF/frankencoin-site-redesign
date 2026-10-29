@@ -4,25 +4,25 @@ import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
 import Figures from "../components/LP/Figures.astro";
-import CoinStack from "../components/Home/CoinStack.astro";
-import FeatureGrid from "../components/LP/FeatureGrid.astro";
+import DocLinks from "../components/LP/DocLinks.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 import { getTransparency } from "../utils/liveStats";
 import { formatAmount, formatStamp } from "../utils/fcsStats";
 
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("transparency", lang);
+const en = await loadContent<any>("transparency", "en");
+const local = await loadContent<any>("transparency", lang);
+const c = { ...en, ...local }; // no German copy yet; fall back per key
 const t = await getTransparency();
 const ratio = t.supply && t.collateralChf ? (t.collateralChf / t.supply).toFixed(2) : "—";
 const maxChain = Math.max(1, ...t.supplyByChain.map((x) => x.supply));
+const positionsHref = "https://app.frankencoin.com/monitoring";
 Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle}>
-    <div slot="aside" class="rounded-3xl bg-white/80 backdrop-blur border border-white/70 p-6 md:p-8 shadow-[0_10px_40px_-15px_rgba(9,47,98,0.35)]"><CoinStack max={11} label="Backed by {n} collateral types" /></div>
-  </LPHero>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} />
   <LPSection>
     <Figures cols={4} items={[
       { ...c.figures.supply, value: formatAmount(t.supply) },
@@ -33,27 +33,35 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     <p class="ty-2xs text-[var(--color-neutral-550)] mt-3">{formatStamp(c.stamp, t.updated)}</p>
   </LPSection>
   <LPSection title={c.chains.title} accent>
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2 max-w-3xl">
       {t.supplyByChain.map((x) => (
         <div class="grid grid-cols-[110px_1fr_auto] items-center gap-3 ty-body-3">
           <span class="font-bold text-[var(--color-brand-deep-blue)]">{x.chain}</span>
           <span class="h-3 rounded-full bg-[var(--color-gray-20)] overflow-hidden"><span class="block h-full bg-[var(--color-brand-swiss)]" style={`width:${Math.max(0.5, (x.supply / maxChain) * 100)}%`}></span></span>
-          <span class="tabular-nums">{formatAmount(x.supply)}</span>
+          <span class="tabular-nums">{formatAmount(x.supply)} <span class="text-[var(--color-neutral-550)]">{c.chains.val}</span></span>
         </div>
       ))}
     </div>
   </LPSection>
   <LPSection title={c.collateral.title}>
-    <div class="overflow-x-auto rounded-2xl border border-[var(--color-gray-20)]">
+    <div class="overflow-x-auto rounded-3xl border border-[var(--color-gray-20)]">
       <table class="w-full ty-body-3">
         <thead class="bg-[var(--color-gray-15)] text-left"><tr><th class="p-3">{c.collateral.cols.asset}</th><th class="p-3 text-right">{c.collateral.cols.value}</th><th class="p-3 text-right">{c.collateral.cols.minted}</th><th class="p-3 text-right">{c.collateral.cols.positions}</th></tr></thead>
         <tbody>
           {t.collateral.map((x) => (
-            <tr class="border-t border-[var(--color-gray-20)]"><td class="p-3"><b class="text-[var(--color-brand-deep-blue)]">{x.symbol}</b> <span class="text-[var(--color-neutral-550)] hidden sm:inline">{x.name}</span></td><td class="p-3 text-right tabular-nums">{formatAmount(x.chf)}</td><td class="p-3 text-right tabular-nums">{formatAmount(x.minted)}</td><td class="p-3 text-right">{x.positions}</td></tr>
+            <tr class="border-t border-[var(--color-gray-20)]">
+              <td class="p-3"><b class="text-[var(--color-brand-deep-blue)]">{x.symbol}</b> <span class="text-[var(--color-neutral-550)] hidden sm:inline">{x.name}</span></td>
+              <td class="p-3 text-right tabular-nums">{formatAmount(x.chf)}</td>
+              <td class="p-3 text-right tabular-nums">{formatAmount(x.minted)}</td>
+              <td class="p-3 text-right tabular-nums"><a href={positionsHref} target="_blank" rel="noopener noreferrer" class="font-bold text-[var(--color-brand-swiss)] hover:underline" title={c.collateral.positionsLink}>{x.positions}</a></td>
+            </tr>
           ))}
         </tbody>
       </table>
     </div>
   </LPSection>
-  <LPSection title={c.sources.title} accent><FeatureGrid items={c.sources.items} cols={4} /></LPSection>
+  <LPSection title={c.sources.title} accent split>
+    <DocLinks docs={c.sources.items} />
+    <p class="mt-6 m-0"><a href={c.sources.methodology.href} target="_blank" rel="noopener noreferrer" class="font-bold text-[var(--color-brand-swiss)] hover:underline">{c.sources.methodology.label} ↗</a></p>
+  </LPSection>
 </Base>

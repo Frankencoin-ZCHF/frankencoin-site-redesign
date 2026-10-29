@@ -3,42 +3,45 @@
 import Base from "../../layouts/Base.astro";
 import LPHero from "../../components/LP/LPHero.astro";
 import LPSection from "../../components/LP/LPSection.astro";
-import Figures from "../../components/LP/Figures.astro";
 import FeatureGrid from "../../components/LP/FeatureGrid.astro";
-import TrustStrip from "../../components/TrustStrip/TrustStrip.astro";
 import StickyCTA from "../../components/StickyCTA/StickyCTA.astro";
 import CtaBand from "../../components/LP/CtaBand.astro";
-import { getLanguageFromURL, loadContent } from "../../utils/i18n";
-import { getCalcData } from "../../utils/calcStats";
-import { formatAmount, formatPct } from "../../utils/fcsStats";
+import { getLanguageFromURL, getLocalizedPath, loadContent } from "../../utils/i18n";
 
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("savers", lang);
-const d = await getCalcData();
-const figures = [
-  { ...c.figures.rate, value: formatPct(d.current.rate, 2) },
-  { ...c.figures.saved, value: formatAmount(d.current.totalSavings) },
-  { ...c.figures.roe, value: formatPct(d.current.roe12m, 1) },
-  { ...c.figures.price, value: formatAmount(d.current.fpsPrice) },
-];
+const en = await loadContent<any>("savers", "en");
+const local = await loadContent<any>("savers", lang);
+// German copy may lack today's keys: fall back to English per key.
+const c = { ...en, ...local };
+const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+const ext = (h: string) => (h.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
+const cell = "p-4 md:p-5 border-t border-[var(--color-gray-20)] align-top";
 Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary}>
-    <Figures slot="aside" items={figures} />
-  </LPHero>
-  <LPSection eyebrow={c.paths.eyebrow} title={c.paths.title}><FeatureGrid items={c.paths.items} cols={2} /></LPSection>
-  <LPSection id="compare" eyebrow={c.compare.eyebrow} title={c.compare.title} subtitle={c.compare.subtitle}>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} />
+
+  <LPSection title={c.paths.title} subtitle={c.paths.subtitle}><FeatureGrid items={c.paths.items} cols={2} /></LPSection>
+
+  <LPSection id="compare" title={c.compare.title} subtitle={c.compare.subtitle} accent>
     <div class="overflow-x-auto">
       <table class="w-full border-separate border-spacing-0 rounded-3xl overflow-hidden border border-[var(--color-gray-20)] bg-white ty-body-3">
-        <thead><tr class="bg-[var(--color-gray-10)]"><th class="p-4"></th><th class="text-left p-4 ty-body-2 font-black text-[var(--color-brand-deep-blue)]">{c.compare.head.save}</th><th class="text-left p-4 ty-body-2 font-black text-[var(--color-brand-deep-blue)]">{c.compare.head.invest}</th></tr></thead>
-        <tbody>{c.compare.rows.map((r: any) => (<tr><th scope="row" class="text-left p-4 font-bold text-[var(--color-neutral-600)] border-t border-[var(--color-gray-20)]">{r.label}</th><td class="p-4 border-t border-[var(--color-gray-20)]">{r.save}</td><td class="p-4 border-t border-[var(--color-gray-20)]">{r.invest}</td></tr>))}</tbody>
+        <thead><tr class="bg-[var(--color-gray-10)]"><th class="p-4 md:p-5"></th><th class="text-left p-4 md:p-5 ty-body-2 font-black text-[var(--color-brand-deep-blue)]">{c.compare.head.save}</th><th class="text-left p-4 md:p-5 ty-body-2 font-black text-[var(--color-brand-deep-blue)]">{c.compare.head.invest}</th></tr></thead>
+        <tbody>
+          {c.compare.rows.map((r: any) => (
+            <tr>
+              <th scope="row" class={`${cell} text-left font-bold text-[var(--color-neutral-600)]`}>{r.label}</th>
+              <td class={cell}>{r.saveHref ? <a href={href(r.saveHref)} {...ext(r.saveHref)} class="font-bold text-[var(--color-brand-swiss)] hover:underline">{r.save} →</a> : r.save}</td>
+              <td class={cell}>{r.investHref ? <a href={href(r.investHref)} {...ext(r.investHref)} class="font-bold text-[var(--color-brand-swiss)] hover:underline">{r.invest} →</a> : r.invest}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   </LPSection>
-  <LPSection eyebrow={c.trustHead.eyebrow} title={c.trustHead.title} accent><TrustStrip items={c.trust} /></LPSection>
+
   <CtaBand {...c.cta} />
   <StickyCTA label={c.sticky.label} sub={c.sticky.sub} href="https://app.frankencoin.com/savings" />
 </Base>

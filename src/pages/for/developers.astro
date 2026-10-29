@@ -4,39 +4,37 @@ import Base from "../../layouts/Base.astro";
 import LPHero from "../../components/LP/LPHero.astro";
 import LPSection from "../../components/LP/LPSection.astro";
 import FeatureGrid from "../../components/LP/FeatureGrid.astro";
-import CtaBand from "../../components/LP/CtaBand.astro";
-import { getLanguageFromURL, loadContent } from "../../utils/i18n";
+import { getLanguageFromURL, getLocalizedPath, loadContent } from "../../utils/i18n";
 
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("developers", lang);
-const tools = c.tools.map((t: any) => ({ eyebrow: t.eyebrow, title: t.title, description: t.description, href: t.href, cta: t.cta }));
+const en = await loadContent<any>("developers", "en");
+const local = await loadContent<any>("developers", lang);
+// German copy may lack today's keys: fall back to English per key.
+const c = { ...en, ...local };
+const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+const ext = (h: string) => (h.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary}>
-    <div slot="aside" class="rounded-3xl bg-[var(--color-neutral-800)]/95 backdrop-blur text-[var(--color-neutral-200)] shadow-[0_20px_60px_-20px_rgba(9,47,98,0.6)] overflow-hidden">
-      <div class="flex items-center gap-2 px-5 py-3 border-b border-white/10 font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-neutral-400)]">
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary}>
+    <div slot="aside" class="rounded-3xl bg-[var(--color-neutral-800)]/95 text-[var(--color-neutral-200)] shadow-[0_20px_60px_-20px_rgba(9,47,98,0.6)] overflow-hidden">
+      <div class="flex items-center gap-2 px-5 py-3 border-b border-white/10 ty-xs font-bold text-[var(--color-neutral-400)]">
         <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
         <span class="ml-2">{c.snippet.title}</span>
       </div>
       <pre class="m-0 p-5 overflow-x-auto text-[13px] leading-relaxed font-mono"><code>{c.snippet.code}</code></pre>
+      <p class="m-0 px-5 pb-5 ty-body-3 text-[var(--color-neutral-400)]">{c.snippet.note}</p>
     </div>
   </LPHero>
 
-  <LPSection eyebrow={c.toolsHead.eyebrow} title={c.toolsHead.title}><FeatureGrid items={tools} /></LPSection>
+  <LPSection title={c.toolsHead.title}><FeatureGrid items={c.tools} /></LPSection>
 
-  <LPSection eyebrow={c.addresses.eyebrow} title={c.addresses.title} subtitle={c.addresses.note} accent>
-    <div class="flex flex-col gap-2 max-w-4xl">
-      {c.addresses.items.map((a: any) => (
-        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 rounded-2xl bg-white border border-[var(--color-gray-20)] px-5 py-4">
-          <span class="font-mono text-[11px] uppercase tracking-[0.22em] text-[#1a9cc8] w-14">{a.label}</span>
-          <code class="ty-body-3 font-mono text-[var(--color-neutral-700)] break-all">{a.value}</code>
-          <a href={`https://etherscan.io/address/${a.value}`} target="_blank" rel="noopener noreferrer" class="sm:ml-auto ty-body-3 font-bold text-[var(--color-brand-swiss)]">Etherscan →</a>
-        </div>
+  <LPSection title={c.more.title} split accent>
+    <ul class="m-0 p-0 list-none grid gap-4">
+      {c.more.items.map((m: any) => (
+        <li class="ty-body-2 text-[var(--color-neutral-650)]">{m.text} <a href={href(m.href)} {...ext(m.href)} class="font-bold text-[var(--color-brand-swiss)] hover:underline whitespace-nowrap">{m.label} →</a></li>
       ))}
-    </div>
+    </ul>
   </LPSection>
-
-  <CtaBand title={c.cta.title} body={c.cta.body} primary={c.cta.primary} secondary={c.cta.secondary} />
 </Base>

@@ -4,27 +4,32 @@ import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
 import Steps from "../components/Steps/Steps.astro";
-import CtaBand from "../components/LP/CtaBand.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 
 const lang = getLanguageFromURL(Astro.url.pathname);
 const en = await loadContent<any>("insurance", "en");
 const local = await loadContent<any>("insurance", lang);
-const c = { ...en, ...local }; // German copy lacks cta; fall back per key
+// German copy has the legacy shape; merge per product key so new keys (eligibility, step titles) fall back to English.
+const products = en.products.map((p: any, i: number) => {
+  const l = local.products?.[i] ?? {};
+  const steps = Array.isArray(l.howItWorks?.steps) && typeof l.howItWorks.steps[0] === "object" ? l.howItWorks.steps : p.howItWorks.steps;
+  return { ...p, ...l, highlights: p.highlights, eligibility: l.eligibility ?? p.eligibility, howItWorks: { ...p.howItWorks, ...(l.howItWorks ?? {}), steps } };
+});
+const c = { ...en, ...local, header: { ...en.header, ...(local.header ?? {}) }, products };
 ---
 
 <Base title={c.seo.title} description={c.seo.description}>
-  <LPHero title={c.header.title} subtitle={c.header.subtitle} primary={c.products[0].cta} secondary={c.products[0].learnMore} />
+  <LPHero compact title={c.header.title} subtitle={c.header.subtitle} primary={c.products[0].cta} secondary={c.products[0].learnMore} />
 
   {c.products.map((p: any) => (
     <>
       <LPSection id="depeg-cover" title={p.title} subtitle={p.provider}>
         <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] max-w-3xl -mt-6 mb-8">{p.description}</p>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="grid sm:grid-cols-3 gap-4">
           {p.highlights.map((h: any) => (
             <div class="rounded-3xl border border-[var(--color-gray-20)] bg-white p-5 md:p-6 min-w-0">
               <p class="ty-xs text-[var(--color-neutral-550)] m-0">{h.label}</p>
-              <p class="mt-1.5 text-[22px] sm:text-[26px] font-black tracking-tight text-[var(--color-brand-deep-blue)] leading-tight m-0 break-words">{h.value}</p>
+              <p class="mt-1.5 text-[20px] sm:text-[22px] font-black tracking-tight text-[var(--color-brand-deep-blue)] leading-tight m-0 text-balance">{h.value}</p>
             </div>
           ))}
         </div>
@@ -42,13 +47,16 @@ const c = { ...en, ...local }; // German copy lacks cta; fall back per key
             </ul>
           </div>
         </div>
+        {p.eligibility && (
+          <div class="mt-4 rounded-3xl border border-[var(--color-gray-20)] p-6 md:p-7">
+            <h3 class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{p.eligibility.title}</h3>
+            <p class="mt-2 ty-body-3 text-[var(--color-neutral-650)] m-0">{p.eligibility.body}</p>
+          </div>
+        )}
       </LPSection>
       <LPSection title={p.howItWorks.title} accent>
-        <Steps steps={p.howItWorks.steps.map((s: string, i: number) => ({ title: ["Open OpenCover", "Choose amount and term", "Pay and receive proof"][i] ?? `Step ${i + 1}`, body: s, cta: i === 0 ? { label: p.cta.label, href: p.cta.href, external: true } : i === 2 ? { label: p.learnMore.label, href: p.learnMore.href, external: true } : undefined }))} />
-        <p class="mt-8 ty-xs text-[var(--color-neutral-550)] border-t border-[var(--color-gray-20)] pt-4 max-w-4xl"><b>{c.disclaimer.title}.</b> {c.disclaimer.text}</p>
+        <Steps steps={p.howItWorks.steps.map((s: any, i: number) => ({ title: s.title, body: s.body, cta: i === 0 ? { label: p.cta.label, href: p.cta.href, external: true } : i === 2 ? { label: p.learnMore.label, href: p.learnMore.href, external: true } : undefined }))} />
       </LPSection>
     </>
   ))}
-
-  <CtaBand {...c.cta} />
 </Base>

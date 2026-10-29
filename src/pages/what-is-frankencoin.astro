@@ -5,7 +5,7 @@ import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
 import Figures from "../components/LP/Figures.astro";
 import ProseRows from "../components/LP/ProseRows.astro";
-import CtaBand from "../components/LP/CtaBand.astro";
+import FeatureGrid from "../components/LP/FeatureGrid.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 import { getTransparency } from "../utils/liveStats";
 import { formatAmount } from "../utils/fcsStats";
@@ -21,8 +21,8 @@ const ratio = t.supply && t.collateralChf ? `${(t.collateralChf / t.supply).toFi
 Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
 ---
 
-<Base>
-  <LPHero title={c.header.title} subtitle={c.header.subtitle} primary={c.header.cta} secondary={{ label: "How it works", href: "/how-it-works" }}>
+<Base title={c.meta?.title} description={c.meta?.description}>
+  <LPHero compact title={c.header.title} subtitle={c.header.subtitle} primary={c.header.cta} secondary={{ label: "How it works", href: "/how-it-works" }}>
     <Figures slot="aside" items={[
       { ...c.figures.supply, value: formatAmount(t.supply) },
       { ...c.figures.ratio, value: ratio },
@@ -47,5 +47,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     <ProseRows rows={c.introduction.map((i: any) => ({ title: i.title, body: i.description, cta: i.cta }))} />
   </LPSection>
 
-  <CtaBand {...c.cta} />
+  <LPSection title={c.nextHead.title}>
+    <FeatureGrid items={c.next} cols={2} />
+  </LPSection>
 </Base>

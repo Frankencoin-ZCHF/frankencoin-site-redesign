@@ -1,170 +1,69 @@
 ---
+/* /use-cases — where ZCHF is accepted, grouped by task. Copy: content/en/use-cases.json */
 import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
-import CtaBand from "../components/LP/CtaBand.astro";
-import Figures from "../components/LP/Figures.astro";
-import { getLanguageFromURL, loadContent } from "../utils/i18n";
+import { getLanguageFromURL, getLocalizedPath, loadContent } from "../utils/i18n";
 
-const currentLang = getLanguageFromURL(Astro.url.pathname);
-const useCases = await loadContent("use-cases", currentLang);
-const exchanges = await loadContent("exchanges", currentLang);
-
-// Extract unique categories from use cases
-const categories = ["All", ...new Set(useCases.cases.map(c => c.category))];
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("use-cases", "en");
+const local = await loadContent<any>("use-cases", lang);
+// German copy predates today's keys: fall back to English per key.
+const c = { ...en, ...local };
+const title = local.heroTitle ?? local.title ?? en.heroTitle;
+const categories: string[] = c.categories ?? [...new Set(c.cases.map((x: any) => x.category))];
+const localHref = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
 ---
 
 <Base>
-  <LPHero eyebrow={useCases.eyebrow} title={useCases.heroTitle ?? useCases.title} subtitle={useCases.intro} primary={{ label: "Start now", href: "https://app.frankencoin.com/savings" }} secondary={{ label: "Explore the ecosystem", href: "/ecosystem" }} />
+  <LPHero compact title={title} subtitle={c.intro} />
+
   <LPSection id="use-cases">
+    <div x-data="{ cat: 'All' }">
+      <div class="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter by category">
+        {[c.filterAll ?? "All", ...categories].map((category, i) => (
+          <button
+            type="button"
+            data-cat={i === 0 ? "All" : category}
+            @click="cat = $el.dataset.cat"
+            :class="cat === $el.dataset.cat ? 'bg-[var(--color-brand-deep-blue)] text-white border-[var(--color-brand-deep-blue)]' : 'bg-white text-[var(--color-brand-deep-blue)] border-[var(--color-gray-30)] hover:border-[var(--color-brand-deep-blue)]'"
+            class="rounded-full border px-5 py-2 ty-body-3 font-bold transition-colors"
+          >{category}</button>
+        ))}
+      </div>
 
-    <!-- Filter Buttons -->
-    <div
-      class="flex flex-wrap justify-center gap-3 mb-8"
-      x-data="{
-        selectedCategory: 'All',
-        allCases: [],
-        get filteredCases() {
-          if (this.selectedCategory === 'All') return this.allCases;
-          return this.allCases.filter(c => c.category === this.selectedCategory);
-        },
-        shuffle(array) {
-          const shuffled = [...array];
-          for (let i = shuffled.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-          }
-          return shuffled;
-        },
-        init() {
-          const cases = JSON.parse(this.$el.dataset.cases);
-          this.allCases = this.shuffle(cases);
-        }
-      }"
-      x-init="init()"
-      data-cases={JSON.stringify(useCases.cases)}
-    >
-      {categories.map((category) => (
-        <button
-          @click={`selectedCategory = '${category}'`}
-          :class={`selectedCategory === '${category}' ? 'bg-[var(--color-brand-deep-blue)] text-white' : 'bg-white text-[var(--color-brand-deep-blue)] border border-[var(--color-brand-deep-blue)]'`}
-          class="px-5 py-2 rounded-full ty-regular font-bold transition-all hover:shadow-md"
-        >
-          {category}
-        </button>
-      ))}
-
-      <!-- Use Cases Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto w-full mt-8">
-        <template x-for="useCase in filteredCases" :key="useCase.title">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {c.cases.map((u: any) => (
           <a
-            :href="useCase.link"
+            href={u.link}
             target="_blank"
             rel="noopener noreferrer"
-            class="group bg-white rounded-3xl hover:shadow-[0_18px_50px_-24px_rgba(9,47,98,0.35)] hover:-translate-y-0.5 transition-all duration-300 p-7 space-y-6 flex flex-col border border-[var(--color-gray-20)] hover:border-[var(--color-brand-deep-blue)] relative overflow-hidden"
-            x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0 scale-95"
-            x-transition:enter-end="opacity-100 scale-100"
+            data-cat={u.category}
+            x-show="cat === 'All' || cat === $el.dataset.cat"
+            class="group relative overflow-hidden flex flex-col rounded-3xl border border-[var(--color-gray-20)] bg-white p-6 md:p-7 hover:-translate-y-0.5 hover:shadow-xl transition-all"
           >
-            <!-- Background gradient on hover -->
-            <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-deep-blue)]/0 to-[var(--color-brand-swiss)]/0 group-hover:from-[var(--color-brand-deep-blue)]/5 group-hover:to-[var(--color-brand-swiss)]/5 transition-all duration-300"></div>
-
-            <!-- Content -->
-            <div class="relative flex flex-col h-full">
-              <!-- Logo container -->
-              <div class="flex-shrink-0 h-24 flex items-center justify-start mb-6">
-                <img
-                  :src="useCase.image"
-                  :alt="useCase.partner"
-                  class="max-h-20 max-w-[200px] object-contain filter brightness-100 group-hover:brightness-110 transition-all"
-                  loading="lazy"
-                />
-              </div>
-
-              <!-- Category badge -->
-              <div class="mb-3">
-                <span class="inline-block ty-xs font-semibold text-[var(--color-brand-deep-blue)] bg-[var(--color-gray-10)] border border-[var(--color-gray-20)] px-3 py-1 rounded-full" x-text="useCase.category"></span>
-              </div>
-
-              <!-- Text content -->
-              <div class="flex-grow space-y-3">
-                <h3 class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] group-hover:text-[var(--color-brand-swiss)] transition-colors m-0" x-text="useCase.title"></h3>
-                <p class="ty-body-3 text-[var(--color-neutral-650)] leading-relaxed m-0" x-text="useCase.longDescription || useCase.description"></p>
-              </div>
-
-              <!-- Partner & arrow -->
-              <div class="mt-6 pt-4 border-t border-[var(--color-gray-20)] flex items-center justify-between">
-                <p class="ty-regular font-bold text-[var(--color-brand-deep-blue)]" x-text="useCase.partner"></p>
-                <img
-                  src="/images/Arrow.svg"
-                  loading="lazy"
-                  alt=""
-                  class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                />
-              </div>
+            <span class="halftone-dots absolute inset-0 text-[#5bb8dc]/40 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></span>
+            <div class="relative h-14 flex items-center mb-5">
+              <img src={u.image} alt={u.partner} class="max-h-12 max-w-[180px] object-contain" loading="lazy" />
             </div>
+            <p class="relative ty-xs font-bold text-[var(--color-neutral-550)] m-0">{u.category}</p>
+            <h3 class="relative text-balance ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0 mt-1">{u.title}</h3>
+            <p class="relative mt-2 ty-body-3 text-[var(--color-neutral-650)] flex-1 m-0">{u.description}</p>
+            <p class="relative mt-5 pt-4 border-t border-[var(--color-gray-20)] flex items-center justify-between ty-body-3 font-bold text-[var(--color-brand-deep-blue)] m-0">
+              <span>{u.partner}</span><span class="text-[var(--color-brand-swiss)] transition-transform group-hover:translate-x-0.5">→</span>
+            </p>
           </a>
-        </template>
+        ))}
       </div>
     </div>
+
+    {c.more && (
+      <div class="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-[var(--color-gray-20)] pt-8">
+        <p class="ty-body-2 font-bold text-[var(--color-brand-deep-blue)] m-0">{c.more.title}</p>
+        {c.more.links.map((l: any) => (
+          <a href={localHref(l.href)} class="ty-body-2 font-bold text-[var(--color-brand-swiss)] hover:underline">{l.label} →</a>
+        ))}
+      </div>
+    )}
   </LPSection>
-
-  <LPSection id="exchanges" title={exchanges.title} subtitle={exchanges.intro} accent>
-
-    <!-- Exchanges Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto w-full">
-      {exchanges.exchanges.map((exchange: any) => (
-        <a
-          href={exchange.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group bg-white rounded-3xl hover:shadow-[0_18px_50px_-24px_rgba(9,47,98,0.35)] hover:-translate-y-0.5 transition-all duration-300 p-7 space-y-6 flex flex-col border border-[var(--color-gray-20)] hover:border-[var(--color-brand-deep-blue)] relative overflow-hidden"
-        >
-          <!-- Background gradient on hover -->
-          <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-deep-blue)]/0 to-[var(--color-brand-swiss)]/0 group-hover:from-[var(--color-brand-deep-blue)]/5 group-hover:to-[var(--color-brand-swiss)]/5 transition-all duration-300"></div>
-
-          <!-- Content -->
-          <div class="relative flex flex-col h-full">
-            <!-- Logo container -->
-            <div class="flex-shrink-0 h-24 flex items-center justify-start mb-6">
-              <img
-                src={exchange.image}
-                alt={exchange.name}
-                class="max-h-20 max-w-[200px] object-contain filter brightness-100 group-hover:brightness-110 transition-all"
-                loading="lazy"
-              />
-            </div>
-
-            <!-- Type badge -->
-            <div class="mb-3">
-              <span class="inline-block ty-xs font-semibold text-[var(--color-brand-deep-blue)] bg-[var(--color-gray-10)] border border-[var(--color-gray-20)] px-3 py-1 rounded-full">
-                {exchange.type}
-              </span>
-            </div>
-
-            <!-- Text content -->
-            <div class="flex-grow">
-              <p class="ty-body-3 text-[var(--color-neutral-650)] leading-relaxed m-0">
-                {exchange.description}
-              </p>
-            </div>
-
-            <!-- Link label & arrow -->
-            <div class="mt-6 pt-4 border-t border-[var(--color-gray-20)] flex items-center justify-between">
-              <span class="ty-regular font-bold text-[var(--color-brand-deep-blue)]">
-                {exchange.linkLabel}
-              </span>
-              <img
-                src="/images/Arrow.svg"
-                loading="lazy"
-                alt=""
-                class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-              />
-            </div>
-          </div>
-        </a>
-      ))}
-    </div>
-  </LPSection>
-  <CtaBand title="Put your money in Swiss francs." body="Three steps, about ten minutes. You keep your own keys." primary={{ label: "Start now", href: "https://app.frankencoin.com/savings" }} secondary={{ label: "Explore the ecosystem", href: "/ecosystem" }} />
 </Base>

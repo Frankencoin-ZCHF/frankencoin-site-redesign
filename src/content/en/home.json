@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "The Swiss franc,|on-chain.",
-    "subtitle": "Frankencoin is the largest decentralized Swiss franc stablecoin. Save at the protocol rate, borrow against your assets, or build with it. No issuer, no bank: every franc is backed by collateral you can see.",
+    "subtitle": "Digital Swiss francs, ZCHF. Save, borrow and pay with a decentralized currency backed by collateral you can see.",
     "primary": {
       "label": "Start saving at {rate}",
       "href": "https://app.frankencoin.com/savings"
@@ -16,7 +16,6 @@
       "collateral": "Collateral per ZCHF",
       "since": "Live since"
     },
-    "coords": "47.17° N · 8.52° E",
     "announcement": {
       "tag": "New",
       "label": "Frankencoin Shares are live",
@@ -43,7 +42,7 @@
   },
   "trust": [
     "Legal opinions under Swiss law and MiCA",
-    "7 audits by 4 firms",
+    "8 audits by 4 firms",
     "Live since 2023, no significant depeg",
     "8 chains via Chainlink CCIP"
   ],
@@ -70,10 +69,9 @@
     "invest": {
       "label": "Invest",
       "title": "Own a share of the system",
-      "body": "FCS is the protocol's equity: a claim on the reserve that collects every borrower's interest, and a vote.",
+      "body": "FCS, Frankencoin Shares, is the protocol's equity: a share of the reserve and a vote on how it is run. Its value can rise or fall.",
       "cta": "Explore FCS",
-      "href": "/fcs",
-      "stat": "return on equity, last 12 months"
+      "href": "/fcs"
     },
     "pay": {
       "label": "Pay",
@@ -84,37 +82,17 @@
     }
   },
   "proof": {
-    "title": "Every franc accounted for, live.",
-    "subtitle": "ZCHF is over-collateralized by assets locked in public contracts. These numbers update every five minutes.",
+    "title": "Backed by collateral|you can see.",
+    "subtitle": "Borrowers lock assets in public contracts to mint ZCHF, so every franc is backed by more than a franc of collateral. Weak positions are challenged and auctioned, and borrowers' interest pays savers first.",
     "supply": "ZCHF in circulation",
     "collateral": "Collateral value (CHF)",
     "ratio": "Collateral per ZCHF",
     "equity": "Protocol equity",
     "cta": "Open the transparency page",
     "href": "/transparency",
+    "how": "How it works",
+    "howHref": "/how-it-works",
     "coins": "Backed by {n} collateral types, every one on-chain"
-  },
-  "how": {
-    "title": "Three moving parts. No issuer.",
-    "steps": [
-      {
-        "n": "01",
-        "title": "Borrowers mint",
-        "body": "Anyone locks collateral and mints ZCHF against it, paying interest upfront into the reserve."
-      },
-      {
-        "n": "02",
-        "title": "The market holds the peg",
-        "body": "Every ZCHF is backed by more than a franc of collateral. Weak positions are challenged and auctioned."
-      },
-      {
-        "n": "03",
-        "title": "Income is shared",
-        "body": "Savers are paid the protocol rate first. What remains grows the reserve that FCS holders own."
-      }
-    ],
-    "cta": "How it works in detail",
-    "href": "/how-it-works"
   },
   "doors": {
     "title": "Pick your path."
@@ -138,5 +116,9 @@
       "label": "Talk to us",
       "href": "mailto:info@frankencoin.com"
     }
+  },
+  "dollar": {
+    "label": "See the full comparison, 1971 to today",
+    "href": "/use-cases/save-in-chf#fifty"
   }
 }

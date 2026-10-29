@@ -22,7 +22,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
         rel={ext ? "noopener noreferrer" : undefined}
         class="group flex flex-col gap-1 rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-white)] px-5 py-4 hover:border-[var(--color-brand-swiss)] transition-colors"
       >
-        <span class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-neutral-550)]"><span class="text-[#1a9cc8]">✓</span> {it.label}</span>
+        <span class="ty-xs font-bold text-[var(--color-neutral-600)]"><span class="text-[#1a9cc8]">✓</span> {it.label}</span>
         <span class="ty-body-2 font-bold text-[var(--color-brand-deep-blue)] group-hover:text-[var(--color-brand-swiss)]">{it.value}</span>
       </a>
     );

@@ -4,91 +4,56 @@
     "description": "Optional third-party cover for Frankencoin (ZCHF) holders. Depeg Cover, underwritten by Nexus Mutual and available through OpenCover, pays out if ZCHF trades 10% or more below 1 CHF for seven consecutive days."
   },
   "header": {
-    "eyebrow": "Optional third-party protection",
-    "title": "Cover for your francs.|Optional, on-chain.",
-    "subtitle": "Independent providers insure ZCHF against a sustained loss of the peg. The cover is bought and paid out on-chain, and it is not issued by the Frankencoin Association."
+    "title": "Cover against a ZCHF depeg.|Optional, from a third party.",
+    "subtitle": "Depeg Cover is underwritten by Nexus Mutual and sold through OpenCover. It pays if ZCHF trades at least 10% below 1 CHF for seven consecutive days. It is not issued by the Frankencoin Association."
   },
   "products": [
     {
-      "badge": "Depeg Cover",
       "title": "ZCHF Depeg Cover",
-      "provider": "Underwritten by Nexus Mutual · Available through OpenCover",
-      "description": "Depeg Cover protects ZCHF holders against a sustained loss of the peg. If Frankencoin trades at least 10% below its 1 CHF reference value for seven consecutive days, covered holders can file a claim.",
+      "provider": "Underwritten by Nexus Mutual · Sold through OpenCover",
+      "description": "The cover pays holders of ZCHF if the token trades at least 10% below its 1 CHF reference value for seven consecutive days. Cover amount, term and price are set when you buy; the exact terms are in OpenCover's cover wording.",
       "highlights": [
-        {
-          "label": "Underwriter",
-          "value": "Nexus Mutual"
-        },
-        {
-          "label": "Marketplace",
-          "value": "OpenCover"
-        },
-        {
-          "label": "Depeg trigger",
-          "value": "10% below 1 CHF"
-        },
-        {
-          "label": "Waiting period",
-          "value": "7 consecutive days"
-        },
-        {
-          "label": "Claim value",
-          "value": "0.975 CHF per ZCHF"
-        },
-        {
-          "label": "Cover duration",
-          "value": "30–180 days"
-        }
+        { "label": "Underwriter", "value": "Nexus Mutual" },
+        { "label": "Sold through", "value": "OpenCover" },
+        { "label": "Covered event", "value": "ZCHF at least 10% below 1 CHF for 7 consecutive days" }
       ],
       "covered": {
-        "title": "What's covered",
+        "title": "What is covered",
         "items": [
-          "A sustained ZCHF depeg — a drop of 10% or more below the 1 CHF reference value that lasts at least seven consecutive days.",
-          "Losses on ZCHF held in a covered wallet for the full duration of the policy."
+          "A sustained ZCHF depeg: at least 10% below the 1 CHF reference value for seven consecutive days.",
+          "ZCHF held in the covered wallet when the event begins."
         ]
       },
       "excluded": {
-        "title": "What's not covered",
+        "title": "What is not covered",
         "items": [
-          "Assets other than ZCHF, the covered token.",
+          "Assets other than ZCHF.",
           "Technical issues that do not themselves cause the depeg.",
-          "Bugs or events already known or disclosed before cover began.",
-          "“Rug pull” scenarios where protocol controllers seize funds.",
-          "ZCHF held for less than 72 hours before the depeg event."
+          "Bugs or events known or disclosed before the cover began.",
+          "\"Rug pull\" scenarios where protocol controllers take funds within their permissions.",
+          "ZCHF held for less than 72 hours before the covered event (OpenCover's wording)."
         ]
       },
+      "eligibility": {
+        "title": "Who can buy",
+        "body": "Anyone with a wallet that holds ZCHF. OpenCover applies its own eligibility rules and may exclude some jurisdictions; check them before paying."
+      },
       "howItWorks": {
-        "title": "How to get covered",
+        "title": "How to buy cover",
         "steps": [
-          "Open the ZCHF cover page on OpenCover and connect your wallet.",
-          "Choose how much ZCHF to protect and for how long (30 to 180 days).",
-          "Pay the premium in USDC, ETH or cbBTC and receive an on-chain proof-of-cover NFT."
+          { "title": "Open OpenCover", "body": "Open the ZCHF cover page on OpenCover and connect the wallet that holds your ZCHF." },
+          { "title": "Choose amount and term", "body": "Set how much ZCHF to cover and for how long. The price is quoted before you confirm." },
+          { "title": "Pay and keep the proof", "body": "Pay the premium and receive an on-chain proof of cover. Keep the ZCHF in the covered wallet." }
         ]
       },
       "cta": {
-        "label": "Get covered on OpenCover",
+        "label": "Check cover and eligibility",
         "href": "https://opencover.com/frankencoin"
       },
       "learnMore": {
-        "label": "Covered risks & exclusions",
+        "label": "Covered risks and exclusions",
         "href": "https://opencover.com/depeg-cover-covered-risks-and-exclusions/"
       }
     }
-  ],
-  "disclaimer": {
-    "title": "Disclaimer",
-    "text": "Cover products are offered by independent third parties and are not issued, guaranteed or endorsed by the Frankencoin Association. Terms, availability, pricing and payouts are determined solely by the respective provider and underwriter. Always read the full cover wording before purchasing. This page is informational only and does not constitute insurance, financial or legal advice."
-  },
-  "cta": {
-    "title": "Most savers never need it. Some sleep better with it.",
-    "body": "Depeg cover is bought in minutes, for 30 to 180 days, paid in USDC, ETH or cbBTC.",
-    "primary": {
-      "label": "Get covered on OpenCover",
-      "href": "https://opencover.com/frankencoin"
-    },
-    "secondary": {
-      "label": "Why the peg holds",
-      "href": "/transparency"
-    }
-  }
+  ]
 }

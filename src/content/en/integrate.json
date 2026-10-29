@@ -4,9 +4,8 @@
     "description": "Four ways to plug into the decentralized Swiss franc: accept payments, list and offer savings, use ZCHF in DeFi, or list your token as collateral."
   },
   "hero": {
-    "eyebrow": "Integrate",
-    "title": "Plug into the Swiss franc that has no issuer.",
-    "subtitle": "ZCHF is permissionless: you do not need anyone's approval to use it. These are the four integrations we see most, with what you get and where to start.",
+    "title": "Plug into the Swiss franc|that has no issuer.",
+    "subtitle": "ZCHF is a standard ERC-20 on Ethereum and several other chains. These are the four integrations we see most, each with one place to start.",
     "primary": {
       "label": "Talk to the association",
       "href": "mailto:info@frankencoin.com"
@@ -20,37 +19,75 @@
     "title": "Pick your track",
     "items": [
       {
-        "eyebrow": "Payments",
-        "title": "Accept or pay out ZCHF",
-        "description": "Shops, card programmes and payroll. Spar accepts ZCHF in stores; GnosisPay cards spend it; Mt Pelerin gives wallets an IBAN.",
+        "title": "Payments",
+        "description": "Accept ZCHF in a shop, card programme or payroll. This track leads to the partner list, not to developer resources.",
         "href": "/ecosystem",
         "cta": "See payment partners"
       },
       {
-        "eyebrow": "Wallets & exchanges",
-        "title": "List ZCHF, add savings",
-        "description": "Offer a Swiss-franc balance with yield, and earn up to 25% of your users' interest.",
+        "title": "Wallets and exchanges",
+        "description": "List ZCHF and offer your users a Swiss-franc balance that earns the savings rate.",
         "href": "/for/exchanges-wallets",
-        "cta": "For exchanges & wallets"
+        "cta": "For exchanges and wallets"
       },
       {
-        "eyebrow": "DeFi protocols",
-        "title": "Use ZCHF as liquidity or collateral",
-        "description": "Pools, lending markets and vaults. ZCHF is a standard ERC-20 with public price and supply data.",
+        "title": "DeFi protocols",
+        "description": "Use ZCHF in pools, lending markets and vaults, with public price and supply data.",
         "href": "/for/developers",
         "cta": "Contracts and API"
       },
       {
-        "eyebrow": "Token issuers",
-        "title": "List your token as collateral",
-        "description": "Let your holders borrow francs against your token. Anyone can propose; FCS holders can veto.",
+        "title": "Token issuers",
+        "description": "Let your holders borrow francs against your token by proposing it as collateral.",
         "href": "/integrate/collateral",
         "cta": "Propose a collateral"
       }
     ]
   },
-  "logos": {
-    "title": "Already integrated"
+  "projects": {
+    "title": "Already integrated",
+    "items": [
+      {
+        "title": "Mt Pelerin",
+        "description": "Buy ZCHF against bank transfer into a self-custodial wallet.",
+        "href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
+        "cta": "mtpelerin.com"
+      },
+      {
+        "title": "DFX",
+        "description": "Swiss on- and off-ramp between bank accounts and ZCHF.",
+        "href": "https://dfx.swiss/",
+        "cta": "dfx.swiss"
+      },
+      {
+        "title": "Ammer.cash",
+        "description": "Payment terminals and checkout that accept ZCHF.",
+        "href": "https://ammer.cash/",
+        "cta": "ammer.cash"
+      },
+      {
+        "title": "Zippy",
+        "description": "Consumer wallet with ZCHF balances and social recovery.",
+        "href": "https://zippy.app/",
+        "cta": "zippy.app"
+      },
+      {
+        "title": "Aktionariat",
+        "description": "Tokenized Swiss company shares traded against ZCHF.",
+        "href": "https://www.aktionariat.com/all-companies",
+        "cta": "aktionariat.com"
+      },
+      {
+        "title": "Uniswap",
+        "description": "ZCHF liquidity pools on Ethereum.",
+        "href": "https://uniswap.org/",
+        "cta": "uniswap.org"
+      }
+    ],
+    "more": {
+      "label": "All partners",
+      "href": "/ecosystem"
+    }
   },
   "cta": {
     "title": "Not sure where you fit?",

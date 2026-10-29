@@ -17,7 +17,7 @@ const hasAside = Astro.slots.has("aside");
 const [l1, l2] = title.split("|");
 ---
 
-<section class={`relative isolate overflow-hidden bg-[var(--color-white)] ${compact ? "pt-28 md:pt-36 pb-16 md:pb-20" : "pt-28 md:pt-36 pb-24 md:pb-32"}`}>
+<section class={`relative isolate overflow-hidden bg-[var(--color-white)] ${compact ? "pt-28 md:pt-32 pb-4 md:pb-6" : "pt-28 md:pt-36 pb-24 md:pb-32"}`}>
   {!compact && imageLayout === "side" && (
     <>
       <img src={image} alt="" width="2000" height="1121" fetchpriority="high" class={`absolute -z-10 select-none object-cover ${imagePosition} inset-x-0 bottom-0 h-[40%] w-full lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:w-[58%] opacity-90`} />

@@ -1,11 +1,10 @@
 {
   "meta": {
     "title": "ZCHF compared: decentralized vs issuer-backed CHF stablecoins and USDC",
-    "description": "How Frankencoin (ZCHF) differs from issuer-backed Swiss franc stablecoins and from USDC: backing, issuer, savings rate and control."
+    "description": "How Frankencoin (ZCHF) differs from issuer-backed Swiss franc stablecoins and from USDC: currency, backing, issuance and control, savings access, redemption."
   },
   "hero": {
-    "eyebrow": "Compare",
-    "title": "How ZCHF differs.",
+    "title": "How ZCHF|differs.",
     "subtitle": "Not every Swiss franc stablecoin works the same way. The main difference is whether a company issues it against bank deposits, or a protocol issues it against on-chain collateral."
   },
   "head": [
@@ -22,52 +21,56 @@
       "US dollar"
     ],
     [
-      "Who stands behind it",
-      "Smart contracts, no company",
-      "An issuing company",
-      "Circle, an issuing company"
-    ],
-    [
       "Backing",
-      "Over-collateralized crypto, gold and shares, visible on-chain",
-      "Deposits and securities held by the issuer",
-      "Deposits and treasuries held by Circle"
+      "Over-collateralized BTC, ETH, gold and shares, visible on-chain",
+      "Bank deposits and securities held by the issuer, per its reports",
+      "Cash and US treasuries held by Circle, per its attestations"
     ],
     [
-      "How you check the backing",
-      "Live, on-chain, any time",
-      "Issuer reports and attestations",
-      "Issuer reports and attestations"
+      "Issuance and control",
+      "Minted by anyone against collateral; rules set by FCS (Frankencoin Shares) holders; no freeze function",
+      "Issued by the company, which can block or freeze balances",
+      "Issued by Circle, which can freeze addresses"
     ],
     [
-      "Built-in savings rate",
-      "Yes, set by governance",
-      "No",
-      "No"
+      "Savings access",
+      "Protocol savings rate, set by governance",
+      "None built in",
+      "None built in"
     ],
     [
-      "Can an issuer freeze balances",
-      "No issuer",
-      "Depends on the issuer",
-      "Yes"
-    ],
-    [
-      "Redeem 1:1 with the issuer",
-      "No, the peg is held by the market",
-      "Yes, for eligible customers",
-      "Yes, for eligible customers"
+      "Redemption",
+      "No issuer to redeem with; peg held by collateral and arbitrage",
+      "With the issuer, for eligible customers",
+      "With Circle, for eligible customers"
     ]
   ],
-  "note": "Issuer-backed CHF stablecoins differ from each other; check each issuer's terms. Under MiCA, e-money tokens may not pay interest to holders.",
-  "cta": {
-    "title": "Want the franc without an issuer?",
-    "primary": {
-      "label": "Start now",
-      "href": "https://app.frankencoin.com/savings"
+  "note": "The middle column groups several issuer-backed Swiss franc tokens; their reserves, terms and eligibility differ from issuer to issuer.",
+  "tradeoff": {
+    "title": "The trade-off",
+    "body": "An issuer-backed token gives you a company to redeem with and a company that can freeze you. ZCHF gives you neither: nobody can block your balance, and its one-franc value rests on over-collateralization and the market rather than on a redemption promise."
+  },
+  "nextHead": {
+    "title": "See it in use."
+  },
+  "next": [
+    {
+      "title": "Save in CHF",
+      "description": "What the savings rate is, how deposits work and what to expect.",
+      "href": "/use-cases/save-in-chf",
+      "cta": "Save"
     },
-    "secondary": {
-      "label": "How it works",
-      "href": "/how-it-works"
+    {
+      "title": "Borrow",
+      "description": "Mint ZCHF against BTC, ETH, gold or shares.",
+      "href": "/use-cases/borrow",
+      "cta": "Borrow"
+    },
+    {
+      "title": "Transparency",
+      "description": "Live collateral, supply and reserve figures, straight from the chain.",
+      "href": "/transparency",
+      "cta": "Check the backing"
     }
-  }
+  ]
 }

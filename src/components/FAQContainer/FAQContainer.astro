@@ -15,12 +15,18 @@ interface Props {
   };
 }
 
+import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
 const { faqs } = Astro.props;
+const lang = getLanguageFromURL(Astro.url.pathname);
 
-// Convert markdown links to HTML
+// Convert markdown links to HTML. Internal links are localised and open in the same tab; external ones in a new tab.
 function convertMarkdownLinks(text: string): string {
-  // Replace [text](url) with <a href="url">text</a>
-  return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-[var(--color-brand-deep-blue)] hover:underline font-bold" target="_blank" rel="noopener noreferrer">$1</a>');
+  return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label, url) => {
+    const internal = url.startsWith("/");
+    const href = internal ? getLocalizedPath(url, lang) : url;
+    const ext = internal ? "" : ' target="_blank" rel="noopener noreferrer"';
+    return `<a href="${href}" class="text-[var(--color-brand-deep-blue)] hover:underline font-bold"${ext}>${label}</a>`;
+  });
 }
 ---
 

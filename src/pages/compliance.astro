@@ -3,7 +3,7 @@
 import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
-import FeatureGrid from "../components/LP/FeatureGrid.astro";
+import ProseRows from "../components/LP/ProseRows.astro";
 import DocLinks from "../components/LP/DocLinks.astro";
 import CtaBand from "../components/LP/CtaBand.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
@@ -11,33 +11,14 @@ import { getLanguageFromURL, loadContent } from "../utils/i18n";
 const lang = getLanguageFromURL(Astro.url.pathname);
 const en = await loadContent<any>("compliance", "en");
 const local = await loadContent<any>("compliance", lang);
-const c = { ...en, ...local }; // German copy lacks heroTitle/cta; fall back per key
-const euDocs = c.eu.documents ?? (c.eu.documentHref ? [{ label: c.eu.documentLabel, href: c.eu.documentHref }] : []);
+// German copy still has the legacy shape (swiss/eu/keyPoints); only keys present in both are overridden.
+const c = { ...en, intro: local.intro ?? en.intro, rows: local.rows ?? en.rows, documents: local.documents ?? en.documents, cta: local.cta ?? en.cta, heroTitle: local.heroTitle ?? en.heroTitle };
+const docs = c.documents.items;
 ---
 
 <Base>
-  <LPHero title={c.heroTitle} subtitle={c.intro} primary={{ label: c.swiss.documentLabel, href: c.swiss.documentHref }} secondary={euDocs[0]} />
-
-  <LPSection id="swiss-compliance" title={c.swiss.title} subtitle={c.swiss.subtitle}>
-    <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] max-w-3xl -mt-6 mb-8">{c.swiss.description}</p>
-    <FeatureGrid items={c.swiss.keyPoints} cols={2} />
-    <div class="mt-4 rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] p-6 md:p-7">
-      <h3 class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{c.swiss.fpsTitle}</h3>
-      <p class="mt-2 ty-body-3 text-[var(--color-neutral-650)] m-0">{c.swiss.fpsDescription}</p>
-    </div>
-    <div class="mt-8"><DocLinks docs={[{ label: c.swiss.documentLabel, href: c.swiss.documentHref }]} /></div>
-  </LPSection>
-
-  <LPSection id="eu-compliance" title={c.eu.title} subtitle={c.eu.subtitle} accent>
-    <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] max-w-3xl -mt-6 mb-8">{c.eu.description}</p>
-    <FeatureGrid items={c.eu.keyPoints} cols={2} />
-    {euDocs.length > 0 && <div class="mt-8"><DocLinks docs={euDocs} /></div>}
-  </LPSection>
-
-  <LPSection id="compliance-summary" title={c.summary.title} split>
-    <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] m-0">{c.summary.description}</p>
-    <p class="mt-8 ty-xs text-[var(--color-neutral-550)] border-t border-[var(--color-gray-20)] pt-4"><b>{c.disclaimer.title}.</b> {c.disclaimer.text}</p>
-  </LPSection>
-
+  <LPHero compact title={c.heroTitle} subtitle={c.intro} primary={docs[0]} secondary={docs[1]} />
+  <LPSection><ProseRows rows={c.rows} /></LPSection>
+  <LPSection id="documents" title={c.documents.title} accent split><DocLinks docs={docs} /></LPSection>
   <CtaBand {...c.cta} />
 </Base>

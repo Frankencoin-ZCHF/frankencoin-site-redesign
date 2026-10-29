@@ -4,25 +4,25 @@ import Base from "../../layouts/Base.astro";
 import LPHero from "../../components/LP/LPHero.astro";
 import LPSection from "../../components/LP/LPSection.astro";
 import Figures from "../../components/LP/Figures.astro";
-import FeatureGrid from "../../components/LP/FeatureGrid.astro";
 import FaqList from "../../components/LP/FaqList.astro";
 import WhyNotTbills from "../../components/Home/WhyNotTbills.astro";
 import FrancVsDollar from "../../components/Home/FrancVsDollar.astro";
 import CtaBand from "../../components/LP/CtaBand.astro";
 import TrustStrip from "../../components/TrustStrip/TrustStrip.astro";
 import StickyCTA from "../../components/StickyCTA/StickyCTA.astro";
-import { getLanguageFromURL, loadContent } from "../../utils/i18n";
 import Steps from "../../components/Steps/Steps.astro";
-import history from "../../data/dollar-history.json";
+import { getLanguageFromURL, getLocalizedPath, loadContent } from "../../utils/i18n";
 import { getCalcData } from "../../utils/calcStats";
 import { formatAmount, formatPct } from "../../utils/fcsStats";
 
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("save-in-chf", lang);
+const en = await loadContent<any>("save-in-chf", "en");
+const local = await loadContent<any>("save-in-chf", lang);
+// German copy may lack today's keys: fall back to English per key.
+const c = { ...en, ...local };
 const d = await getCalcData();
 const rate = formatPct(d.current.rate, 2).replace(/\.00%$/, "%");
-const negYears = history.rows.filter((r) => r.chf3m < 0).length;
 Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
 ---
 
@@ -31,25 +31,19 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     <Figures slot="aside" items={[{ ...c.figures.rate, value: rate }, { ...c.figures.saved, value: formatAmount(d.current.totalSavings) }]} />
   </LPHero>
 
-  <FrancVsDollar />
-  <WhyNotTbills rate={rate} />
-  <LPSection title={c.problems.title} subtitle={c.problems.subtitle}>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {c.problems.items.map((it: any) => (
-        <div class="relative overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white p-6 flex flex-col">
-          <p class="text-[34px] font-black tracking-tight text-[var(--color-brand-deep-blue)] leading-none">{it.stat.replace("{rate}", rate).replace("{negYears}", String(negYears))}</p>
-          <p class="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-neutral-550)]">{it.statLabel}</p>
-          <h3 class="mt-5 text-balance ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</h3>
-          <p class="mt-2 ty-body-3 text-[var(--color-neutral-650)] flex-1">{it.description.replace("{rate}", rate)}</p>
-        </div>
-      ))}
-    </div>
-    <p class="mt-4 ty-2xs text-[var(--color-neutral-550)]">{c.problems.attribution}</p>
+  <LPSection id="interest" title={c.how.title} split accent>
+    <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] m-0">{c.how.body}</p>
+    <a href={getLocalizedPath(c.how.cta.href, lang)} class="mt-5 inline-flex items-center gap-1 font-bold text-[var(--color-brand-swiss)] hover:underline">{c.how.cta.label} →</a>
   </LPSection>
 
+  <FrancVsDollar />
+  <WhyNotTbills rate={rate} />
 
-  <LPSection title={c.how.title}><FeatureGrid items={c.how.cards} /></LPSection>
-  <LPSection title={c.steps.title} accent><Steps steps={c.steps.items} /></LPSection>
+  <LPSection id="start" title={c.steps.title} subtitle={c.steps.subtitle} accent>
+    <Steps steps={c.steps.items} />
+    <p class="mt-6 ty-body-3 text-[var(--color-neutral-650)] m-0">{c.steps.alt.text} <a href={getLocalizedPath(c.steps.alt.href, lang)} class="font-bold text-[var(--color-brand-swiss)] hover:underline">{c.steps.alt.label} →</a></p>
+  </LPSection>
+
   <LPSection><TrustStrip items={c.trust} /></LPSection>
   <LPSection title={c.faqHead.title} split accent><FaqList items={c.faq} /></LPSection>
   <CtaBand {...c.cta} />

@@ -4,9 +4,8 @@
     "description": "Wallets, communities and creators can set themselves as referrer when people save ZCHF and earn up to 25% of the interest, paid by the contract."
   },
   "hero": {
-    "eyebrow": "Referral program",
-    "title": "Earn a share of the interest your savers collect.",
-    "subtitle": "The Frankencoin savings contract has referrals built in. Send people to save ZCHF with your link and receive up to 25% of the interest they earn, paid automatically on-chain.",
+    "title": "Earn a share of the interest|your savers collect.",
+    "subtitle": "Referrers receive a share of the interest their savers earn, up to 25%, paid automatically by the savings contract. The share is deducted from the saver's interest; the calculator below shows what the saver keeps.",
     "primary": {
       "label": "Create your link",
       "href": "#link"
@@ -21,7 +20,7 @@
     "cards": [
       {
         "title": "1 · Share your link",
-        "description": "Your link opens the app's Earn page with your address and fee filled in."
+        "description": "Your link opens the app's savings page with your address and share filled in."
       },
       {
         "title": "2 · They save",
@@ -43,44 +42,31 @@
     "copied": "Copied",
     "invalid": "Enter a valid 0x address.",
     "earnTitle": "What you could earn",
-    "referred": "If your savers hold",
-    "perYear": "you would receive per year"
+    "referred": "Savers' total balance",
+    "perYear": "Your share per year",
+    "saverRate": "Your savers' net rate",
+    "grossRate": "Savings rate before your share"
   },
   "fair": {
     "title": "Fair by design",
     "items": [
       {
-        "title": "Savers stay in control",
-        "description": "A saver can remove or change the referrer at any time."
-      },
-      {
         "title": "Capped by the contract",
         "description": "The contract rejects any share above 25% of interest."
       },
       {
-        "title": "Public",
-        "description": "Referrer balances are visible to everyone in the app's leaderboard."
+        "title": "Savers stay in control",
+        "description": "A saver can remove or change the referrer at any time, and referrer balances are public in the leaderboard."
       }
     ]
   },
   "who": {
     "title": "Who it is for",
-    "items": [
-      {
-        "title": "Wallets and apps",
-        "description": "Add savings in your interface and earn on every user who saves.",
-        "href": "/for/exchanges-wallets",
-        "cta": "For wallets"
-      },
-      {
-        "title": "Communities",
-        "description": "Groups and newsletters that help members save in francs."
-      },
-      {
-        "title": "Creators",
-        "description": "Educators who explain on-chain savings to their audience."
-      }
-    ]
+    "body": "Wallets and apps that add savings to their interface, communities that help members save in francs, and educators who explain on-chain savings.",
+    "cta": {
+      "label": "For wallets and exchanges",
+      "href": "/for/exchanges-wallets"
+    }
   },
   "note": "Earnings depend on the savings rate, which governance can change, and on how long your savers keep their balance."
 }

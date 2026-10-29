@@ -1,32 +1,63 @@
 ---
-/* /press — press kit: boilerplate, logos (public/press), guidelines, contact. Copy: content/en/press.json */
+/* /press — press kit: boilerplate, logos (public/press), guidelines, press releases, contact. Copy: content/en/press.json */
 import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
-import { getLanguageFromURL, loadContent } from "../utils/i18n";
+import DocLinks from "../components/LP/DocLinks.astro";
+import { getLanguageFromURL, getLocalizedPath, loadContent } from "../utils/i18n";
 
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
-const c = await loadContent<any>("press", lang);
+const en = await loadContent<any>("press", "en");
+const local = await loadContent<any>("press", lang);
+const c = { ...en, ...local };
+const releases: any[] = c.releases?.items ?? [];
+const fmt = (d: string) => { const t = Date.parse(d); return Number.isNaN(t) ? d : new Date(t).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }); };
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero eyebrow={c.hero.eyebrow} title={c.hero.title} subtitle={c.hero.subtitle} />
-  <LPSection title={c.boiler.title} split>
-    <blockquote class="m-0 rounded-2xl border-l-4 border-[var(--color-brand-swiss)] bg-[var(--color-gray-10)] p-6 ty-body-2 text-[var(--color-neutral-700)]">{c.boiler.text}</blockquote>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} />
+
+  <LPSection id="about" title={c.boiler.title} split>
+    <blockquote class="m-0 rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] p-6 md:p-7 ty-body-2 text-[var(--color-neutral-700)]">{c.boiler.text}</blockquote>
+    {c.boiler.note && <p class="mt-4 ty-body-3 text-[var(--color-neutral-550)] m-0">{c.boiler.note}</p>}
   </LPSection>
-  <LPSection title={c.assets.title} accent>
+
+  <LPSection id="logos" title={c.assets.title} subtitle={c.assets.subtitle} accent>
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
       {c.assets.items.map((a: any) => (
-        <a href={a.file} download class="group rounded-2xl border border-[var(--color-gray-20)] overflow-hidden bg-[var(--color-white)] hover:border-[var(--color-brand-swiss)]">
-          <span class={`flex items-center justify-center h-32 p-6 ${a.bg === "dark" ? "bg-[var(--color-brand-deep-blue)]" : "bg-[var(--color-white)]"}`}><img src={a.file} alt={a.label} class="max-h-16 max-w-full object-contain" loading="lazy" /></span>
-          <span class="flex justify-between px-4 py-3 ty-body-3 font-bold text-[var(--color-brand-deep-blue)] border-t border-[var(--color-gray-20)]"><span>{a.label}</span><span class="text-[var(--color-blue-39)]">SVG ↓</span></span>
+        <a href={a.file} download class="group flex flex-col overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white hover:border-[var(--color-brand-swiss)] transition-colors">
+          <span class={`flex items-center justify-center h-32 p-6 ${a.bg === "dark" ? "bg-[#0e3a72]" : "bg-white"}`}><img src={a.file} alt={a.label} class="max-h-16 max-w-full object-contain" loading="lazy" /></span>
+          <span class="flex items-start justify-between gap-3 px-5 py-4 border-t border-[var(--color-gray-20)]">
+            <span class="min-w-0">
+              <span class="block ty-body-3 font-bold text-[var(--color-brand-deep-blue)]">{a.label}</span>
+              {a.note && <span class="block mt-0.5 ty-xs text-[var(--color-neutral-550)]">{a.note}</span>}
+            </span>
+            <span class="shrink-0 ty-body-3 font-bold text-[var(--color-brand-swiss)]">SVG ↓</span>
+          </span>
         </a>
       ))}
     </div>
-    <a href={c.assets.guidelines.file} download class="inline-flex mt-6 rounded-full bg-[var(--color-brand-deep-blue)] text-white font-bold ty-body-2 px-6 py-3.5 hover:bg-[var(--color-blue-39)]">{c.assets.guidelines.label} ↓</a>
+    <div class="mt-8"><DocLinks docs={[{ label: c.assets.guidelines.label, href: c.assets.guidelines.file }]} /></div>
   </LPSection>
-  <LPSection title={c.contact.title} split>
-    <a href={`mailto:${c.contact.email}`} class="ty-title-2 font-black text-[var(--color-brand-swiss)]">{c.contact.email}</a>
+
+  <LPSection id="press-releases" title={c.releases.title} split>
+    {releases.length > 0 ? (
+      <ul class="m-0 p-0 list-none divide-y divide-[var(--color-gray-20)] rounded-3xl border border-[var(--color-gray-20)] bg-white">
+        {[...releases].sort((a, b) => Date.parse(b.date) - Date.parse(a.date)).map((r) => (
+          <li class="p-5 md:p-6">
+            <p class="ty-xs font-bold text-[var(--color-neutral-550)] m-0 tabular-nums">{fmt(r.date)}</p>
+            <a href={r.href} target={r.href?.startsWith("http") ? "_blank" : undefined} rel={r.href?.startsWith("http") ? "noopener noreferrer" : undefined} class="mt-1 block ty-title-3 font-black text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)]">{r.title}</a>
+            {r.summary && <p class="mt-1 ty-body-3 text-[var(--color-neutral-650)] m-0">{r.summary}</p>}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="ty-body-2 text-[var(--color-neutral-650)] m-0">{c.releases.empty} <a href={getLocalizedPath(c.releases.newsHref, lang)} class="font-bold text-[var(--color-brand-swiss)] hover:underline">{c.releases.newsLabel} →</a></p>
+    )}
+  </LPSection>
+
+  <LPSection id="contact" title={c.contact.title} subtitle={c.contact.text} split accent>
+    <a href={`mailto:${c.contact.email}`} class="ty-title-2 font-black text-[var(--color-brand-swiss)] break-all">{c.contact.email}</a>
   </LPSection>
 </Base>

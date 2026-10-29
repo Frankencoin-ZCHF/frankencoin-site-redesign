@@ -1,48 +1,83 @@
 ---
-import Section from "../components/Layout/Section.astro";
+/* /token — contract addresses of ZCHF, FCS and the savings vaults per network. Copy: content/en/token.json */
 import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
-import CtaBand from "../components/LP/CtaBand.astro";
-import Figures from "../components/LP/Figures.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
-import ChainContainer from "../components/ChainContainer/ChainContainer.astro";
 
-const currentLang = getLanguageFromURL(Astro.url.pathname);
-const token = await loadContent("token", currentLang);
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("token", "en");
+const local = await loadContent<any>("token", lang);
+// German copy predates today's keys: fall back to English per key, and for the labels inside `tokens`.
+const c = { ...en, ...local, tokens: { ...en.tokens, ...local.tokens, header: { ...en.tokens.header, ...local.tokens?.header }, actions: { ...en.tokens.actions, ...local.tokens?.actions } } };
+const L = { ...c.tokens.header, ...c.tokens.actions };
+const isAdvanced = (a: any) => Boolean(a.advanced) || /writeContract|write_contract/.test(a.href ?? "");
+const short = (addr: string) => `${addr.slice(0, 6)}…${addr.slice(-4)}`;
+
+const groups = [
+  { id: "zchf", title: c.tokens.title, subtitle: c.tokens.subtitle, chains: c.tokens.chains },
+  { id: "fcs", title: c.fcs.title, subtitle: c.fcs.subtitle, chains: [c.fcs.chain] },
+  { id: "svzchf", title: c.svzchf.title, subtitle: c.svzchf.subtitle, chains: c.svzchf.chains },
+];
 ---
 
 <Base>
-  <LPHero eyebrow={token.hero.eyebrow ?? "Tokens & addresses"} title={token.hero.title} subtitle={token.hero.subtitle} />
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} />
 
-  <Section
-    id="tokens"
-    title={token.tokens.title}
-    subtitle={token.tokens.subtitle}
-    pad="xxs"
-    margin="mt-8"
-  >
-    <ChainContainer tokens={token.tokens.chains} />
-  </Section>
-
-  <Section
-    id="fcs"
-    title={token.fcs.title}
-    subtitle={token.fcs.subtitle}
-    pad="xxs"
-    margin="mt-8"
-  >
-    <ChainContainer tokens={[token.fcs.chain]} />
-  </Section>
-
-  <Section
-    id="svzchf"
-    title={token.svzchf.title}
-    subtitle={token.svzchf.subtitle}
-    pad="xxs"
-    margin="mt-8 mb-8"
-  >
-    <ChainContainer tokens={token.svzchf.chains} />
-  </Section>
-  <CtaBand title="Put your money in Swiss francs." body="Three steps, about ten minutes. You keep your own keys." primary={{ label: "Start now", href: "https://app.frankencoin.com/savings" }} secondary={{ label: "For developers", href: "/for/developers" }} />
+  {groups.map((g, gi) => (
+    <LPSection id={g.id} title={g.title} subtitle={g.subtitle} accent={gi % 2 === 1}>
+      <div class="overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white" role="table">
+        <div role="row" class="hidden md:grid md:grid-cols-[9rem_minmax(0,1fr)_minmax(0,1.1fr)] gap-6 px-6 py-3 border-b border-[var(--color-gray-20)] bg-[var(--color-gray-10)] ty-xs font-bold text-[var(--color-neutral-550)]">
+          <span role="columnheader">{L.label}</span><span role="columnheader">{L.title}</span><span role="columnheader">{L.actions}</span>
+        </div>
+        {g.chains.map((ch: any) => {
+          const explorer = `${ch.explorerBaseUrl}/${ch.contract}`;
+          const normal = ch.actions.filter((a: any) => !isAdvanced(a));
+          const advanced = ch.actions.filter(isAdvanced);
+          return (
+            <div role="row" class="grid md:grid-cols-[9rem_minmax(0,1fr)_minmax(0,1.1fr)] gap-3 md:gap-6 px-6 py-5 border-b border-[var(--color-gray-20)] last:border-b-0 items-start">
+              <div role="cell" class="flex items-center gap-3 min-w-0">
+                <img src={ch.image} alt="" width="32" height="32" class="h-8 w-8 shrink-0 rounded-full object-contain" loading="lazy" />
+                <span class="ty-body-2 font-black text-[var(--color-brand-deep-blue)]">{ch.name}</span>
+              </div>
+              <div role="cell" class="min-w-0" x-data="{ copied: false }">
+                <div class="flex items-center gap-2 min-w-0">
+                  <code class="min-w-0 font-mono ty-body-3 text-[var(--color-neutral-700)] [overflow-wrap:anywhere]"><span class="hidden xl:inline">{ch.contract}</span><span class="xl:hidden">{short(ch.contract)}</span></code>
+                  <button type="button" data-addr={ch.contract} @click="navigator.clipboard.writeText($el.dataset.addr); copied = true; setTimeout(() => copied = false, 1500)" class="shrink-0 rounded-full border border-[var(--color-gray-30)] px-2.5 py-1 ty-xs font-bold text-[var(--color-brand-deep-blue)] hover:border-[var(--color-brand-deep-blue)] transition-colors" aria-label={L.copyTextTooltip}>
+                    <span x-show="!copied">{L.copyTextTooltip}</span><span x-show="copied" x-cloak>{L.copiedLabel}</span>
+                  </button>
+                  <a href={explorer} target="_blank" rel="noopener noreferrer" class="shrink-0 ty-xs font-bold text-[var(--color-brand-swiss)] hover:underline">{L.explorer} ↗</a>
+                </div>
+              </div>
+              <div role="cell" class="flex flex-col gap-2 min-w-0">
+                <div class="flex flex-wrap items-center gap-2">
+                  {normal.map((a: any) => (
+                    a.fiatProviders ? (
+                      <span class="flex flex-wrap items-center gap-2">
+                        <span class="ty-xs font-bold text-[var(--color-neutral-550)]">{a.label}:</span>
+                        {a.fiatProviders.map((p: any) => (
+                          <a href={p.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-gray-30)] bg-white px-3 py-1.5 ty-xs font-bold text-[var(--color-brand-deep-blue)] hover:border-[var(--color-brand-deep-blue)] transition-colors">
+                            <img src={p.image} alt="" class="h-4 w-auto" loading="lazy" />{p.name}
+                          </a>
+                        ))}
+                      </span>
+                    ) : (
+                      <a href={a.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-gray-30)] bg-white px-3 py-1.5 ty-xs font-bold text-[var(--color-brand-deep-blue)] hover:border-[var(--color-brand-deep-blue)] transition-colors">
+                        {a.label}{a.name && <span class="font-normal text-[var(--color-neutral-550)]">· {a.name}</span>} ↗
+                      </a>
+                    )
+                  ))}
+                </div>
+                {advanced.length > 0 && (
+                  <p class="ty-xs text-[var(--color-neutral-550)] m-0">
+                    {advanced.map((a: any, i: number) => (<>{i > 0 && " · "}<a href={a.href} target="_blank" rel="noopener noreferrer" class="hover:underline">{L.advanced} ↗</a></>))}
+                  </p>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </LPSection>
+  ))}
 </Base>

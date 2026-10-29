@@ -1,88 +1,52 @@
 {
-  "header": {
-    "image": "/images/fcs.png",
-    "imageAlt": "Frankencoin Share Token (FCS)",
+  "hero": {
     "title": "Frankencoin|governance",
-    "subtitle": "A decentralized, community-driven approach to managing the Swiss franc stablecoin",
-    "cta": [
+    "subtitle": "Anyone can propose a new collateral or minting module. Holders of Frankencoin Shares (FCS) review it and can veto. Nothing needs a majority vote to pass.",
+    "primary": { "label": "View proposals", "href": "https://app.frankencoin.com/governance" },
+    "secondary": { "label": "Participation guide", "href": "https://docs.frankencoin.com/governance" }
+  },
+  "process": {
+    "title": "One sequence: submit, review, veto",
+    "steps": [
       {
-        "label": "Trade on-chain",
-        "href": "https://swap.cow.fi/#/1/swap/ZCHF/0xDb861830D9Ae2d1fCF99fA0cfd3973de382B0B5b",
-        "external": true
+        "title": "Submit",
+        "body": "Anyone opens a proposal on-chain and pays a fee that goes to the reserve. A new collateral is proposed by opening the first position; a new minting module by a minter application.",
+        "cta": { "label": "Propose a collateral", "href": "/integrate/collateral" }
       },
       {
-        "label": "Participate in Governance",
-        "href": "https://app.frankencoin.com/governance",
-        "external": true
+        "title": "Review",
+        "body": "The proposal is public for a set period: at least five days for a collateral, longer for minting modules. The community discusses it and publishes assessments.",
+        "cta": { "label": "Open proposals", "href": "https://app.frankencoin.com/governance", "external": true }
+      },
+      {
+        "title": "Veto or go live",
+        "body": "Any FCS holder, or group, with more than 1% of voting power can veto. If no one does, the proposal is live. Exactly 1% is not enough.",
+        "cta": { "label": "How vetoes work", "href": "https://docs.frankencoin.com/governance", "external": true }
       }
-    ],
-    "eyebrow": "Governance · FCS"
+    ]
   },
-  "caps": [
-    {
-      "id": "fpsPrice",
-      "label": "FPS Price",
-      "value": "1'162.13",
-      "unit": "ZCHF",
-      "href": "https://app.frankencoin.com/equity"
-    },
-    {
-      "id": "fpsSupply",
-      "label": "FPS Supply",
-      "value": "8'887.69",
-      "unit": "FPS",
-      "href": "https://app.frankencoin.com/equity"
-    },
-    {
-      "id": "fpsMarketCap",
-      "label": "FPS Market Cap",
-      "value": "10'328'609.12",
-      "unit": "ZCHF",
-      "href": "https://app.frankencoin.com/equity"
-    }
-  ],
-  "stats_list": [
-    {
-      "id": "balance",
-      "label": "Total Reserve",
-      "value": "8'887.69",
-      "unit": "ZCHF"
-    },
-    {
-      "id": "equity",
-      "label": "Equity Capital",
-      "value": "8'887.69",
-      "unit": "ZCHF"
-    },
-    {
-      "id": "minter",
-      "label": "Minter Reserve",
-      "value": "8'887.69",
-      "unit": "ZCHF"
-    },
-    {
-      "id": "netIncome",
-      "label": "Net income since 2023",
-      "value": "8'887.69",
-      "unit": "ZCHF"
-    }
-  ],
-  "sections": [
-    {
-      "title": "How Governance Works",
-      "description": "Frankencoin uses veto-based governance. Anyone can propose new collateral types or methods to mint Frankencoin. FCS holders accumulate voting power over time, and a holder or group with more than 1% of internal FCS voting power, including valid delegation, can veto proposals if the wrapper also meets the underlying FPS quorum. This allows the community to block harmful changes without requiring a majority vote on every proposal."
-    },
-    {
-      "title": "Frankencoin Share Token (FCS)",
-      "description": "The Frankencoin Share Token (FCS) is the canonical governance and share token of Frankencoin. Each FCS wraps one underlying FPS, the Equity token. It gives holders economic exposure to the equity reserve and voting power that accumulates over time. Protocol income can strengthen the reserve, while expenses and losses reduce it. Minting new FCS with ZCHF supplies equity capital to the protocol; buying existing FCS on a secondary market transfers ownership without adding new capital.\n\n<strong>How Value Accrues to FCS Holders:</strong>\n\n• <strong>Interest Income:</strong> When users borrow ZCHF against their collateral through minting positions, they pay interest. This interest income flows into and supports the equity reserve.\n\n• <strong>Liquidation Profits:</strong> The protocol’s share of liquidation proceeds can strengthen the equity reserve. Losses can reduce it.\n\n• <strong>Governance Fees:</strong> Governance actions generate fees that flow to the equity reserve, rather than being paid directly to individual voters.\n\n<strong>Costs and Economics:</strong>\n\nThe savings yield paid to users of the savings module is a cost borne by the equity reserve. Borrowers pay interest and savers receive yield; the difference contributes to the protocol’s net income, while losses can reduce equity capital.\n\n<strong>Valuation and Pricing:</strong>\n\nFCS can be traded on secondary markets, where its price is determined by supply and demand, available liquidity and expectations about the protocol’s future performance. Minting new FCS with ZCHF follows the protocol’s equity pricing curve, with fees and price impact depending on the amount invested. The market price can differ from the protocol’s minting and redemption quotes. The reserve-based figures shown above are reference metrics, not an executable FCS market quote or a guaranteed valuation.\n\n<strong>Risk Profile:</strong>\n\nFCS holders bear the residual risk, similar to bank shareholders. If liquidations result in losses that exceed the minter's reserve contribution, these losses are absorbed by the equity pool. This gives FCS holders an incentive to govern the system responsibly and approve sound collateral types. Neither profits nor increases in token value are guaranteed."
-    },
-    {
-      "title": "How to Get FCS",
-      "description": "There are three main ways to acquire FCS:\n\n1. Buy on secondary markets: Trade FCS against ZCHF on <a href='https://swap.cow.fi/#/1/swap/ZCHF/0xDb861830D9Ae2d1fCF99fA0cfd3973de382B0B5b' target='_blank' rel='noopener noreferrer' style='color: var(--color-brand-deep-blue); text-decoration: underline;'>CoW Swap</a>. Check the available quote, liquidity and price impact before trading.\n\n2. Mint new FCS: Deposit ZCHF through the <a href='https://etherscan.io/address/0xdb861830d9ae2d1fcf99fa0cfd3973de382b0b5b#writeContract' target='_blank' rel='noopener noreferrer' style='color: var(--color-brand-deep-blue); text-decoration: underline;'>FCS contract</a> to add capital to the equity reserve and receive newly minted FCS. Review the current minting quote, fees and price impact before confirming.\n\n3. Wrap existing FPS: Wrap FPS 1:1 into FCS without adding new capital to the reserve. See the <a href='https://docs.frankencoin.com/pool-shares/fcs-migration' target='_blank' rel='noopener noreferrer' style='color: var(--color-brand-deep-blue); text-decoration: underline;'>FPS migration guide</a>."
-    },
-    {
-      "title": "Proposal Process",
-      "description": "The governance process is open and transparent. Proposals for new collateral types or minting mechanisms can be submitted by anyone. The community reviews proposals, and FCS holders exercise voting power that accumulates over time. A holder or group with more than 1% of internal FCS voting power, including valid delegation, can veto proposals if the wrapper also meets the underlying FPS quorum."
-    }
-  ]
+  "covers": {
+    "title": "What governance covers",
+    "items": [
+      { "title": "Collateral and minters", "description": "Which assets can back ZCHF and which modules may mint it; both can be vetoed." },
+      { "title": "Interest rates", "description": "The borrowing and savings rates, proposed by qualified FCS holders with a seven-day grace period." },
+      { "title": "Cross-chain settings", "description": "Which chains ZCHF bridges to and the rate limits of the bridge." }
+    ]
+  },
+  "power": {
+    "title": "Voting power comes from holding, not just balance",
+    "body": "Votes grow with the number of shares and how long they have been held; a transferred balance starts its holding time at zero. Votes can be delegated, and a holder may spend votes to cancel another holder's votes. The full rules, including how legacy FPS votes are credited, are in the documentation.",
+    "cta": { "label": "Voting power rules", "href": "https://docs.frankencoin.com/governance" }
+  },
+  "fcs": {
+    "title": "About Frankencoin Shares",
+    "body": "How FCS relates to the reserve, how to acquire shares and the risks of holding them are covered on the FCS page.",
+    "cta": { "label": "About FCS", "href": "/fcs" }
+  },
+  "end": {
+    "title": "Take part",
+    "body": "Review open proposals, publish an assessment, or hold FCS and build voting power.",
+    "primary": { "label": "View proposals", "href": "https://app.frankencoin.com/governance" },
+    "secondary": { "label": "Participation guide", "href": "https://docs.frankencoin.com/governance" }
+  }
 }

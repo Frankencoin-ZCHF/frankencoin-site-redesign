@@ -6,13 +6,14 @@
       "creator": "Frankencoin Association",
       "creatorUrl": "https://github.com/Frankencoin-ZCHF",
       "repo": "https://github.com/Frankencoin-ZCHF/frankencoin-dapp",
-      "notes": "Frontend built by the Frankencoin Association. Connect a wallet to mint and repay positions, access savings, and trade FPS. Source code and indexer are public.",
+      "notes": "Maintained by the Frankencoin Association. Mint and repay positions, use the savings module and trade Frankencoin Shares (FCS). Source code, API and indexer are public.",
       "features": {
         "openSource": true,
         "ownDomain": true,
         "selfHostedApi": true,
         "selfHostedIndexer": true
-      }
+      },
+      "association": true
     },
     {
       "name": "zchf.app",

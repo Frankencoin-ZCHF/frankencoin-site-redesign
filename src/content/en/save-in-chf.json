@@ -1,19 +1,18 @@
 {
   "meta": {
     "title": "Save in Swiss francs and earn the protocol rate | Frankencoin",
-    "description": "Hold ZCHF, the decentralized Swiss franc stablecoin, in the savings module and earn the protocol rate. Withdraw any time. Live rate, calculator and three steps to start."
+    "description": "Deposit ZCHF, the decentralized Swiss franc, in the savings module and earn the rate set by governance. Withdraw any time. Live rate and three steps to start."
   },
   "hero": {
-    "eyebrow": "Save in CHF",
     "title": "Swiss francs that|earn {rate} a year.",
-    "subtitle": "The franc has held its value for fifty years while the dollar melted. Saving in francs used to mean a Swiss bank and almost no interest. ZCHF changes both.",
+    "subtitle": "ZCHF is a Swiss franc on public blockchains. Deposit it in the savings module and it earns the protocol rate; withdraw whenever you like.",
     "primary": {
       "label": "Start saving",
       "href": "https://app.frankencoin.com/savings"
     },
     "secondary": {
-      "label": "See the numbers",
-      "href": "#fifty"
+      "label": "Where the interest comes from",
+      "href": "#interest"
     }
   },
   "figures": {
@@ -22,34 +21,25 @@
       "unit": "per year, set by governance"
     },
     "saved": {
-      "label": "Already saved",
+      "label": "Deposited in savings",
       "unit": "ZCHF"
     }
   },
   "how": {
     "title": "Where the interest comes from",
-    "cards": [
-      {
-        "title": "Borrowers pay",
-        "description": "People mint ZCHF against collateral and pay interest upfront into the protocol's reserve."
-      },
-      {
-        "title": "Savers are paid first",
-        "description": "The savings module pays the governance-set rate out of that income, before anything goes to shareholders."
-      },
-      {
-        "title": "No lock-up",
-        "description": "Withdraw part or all of your balance whenever you want, interest included."
-      }
-    ],
-    "eyebrow": "The mechanics"
+    "body": "Borrowers lock collateral, mint ZCHF and pay interest into the protocol. The savings module pays savers the rate set by Frankencoin governance out of that income. Interest accrues continuously once it starts and is withdrawn together with your deposit, in one transaction, whenever you want.",
+    "cta": {
+      "label": "How the mechanics work",
+      "href": "/how-it-works"
+    }
   },
   "steps": {
     "title": "Start in three steps",
+    "subtitle": "Already hold ZCHF? Go straight to step 3. Holding ZCHF in a wallet earns nothing; interest is paid only on what you deposit in the savings module.",
     "items": [
       {
         "title": "Get ZCHF",
-        "body": "Bank transfer from a Swiss or SEPA account via Mt Pelerin (0% fees), or swap from USDC, USDT or ETH.",
+        "body": "Bank transfer in CHF or EUR via Mt Pelerin (0% fees), or swap from USDC, USDT or ETH on any DEX.",
         "cta": {
           "label": "Buy by bank transfer",
           "href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
@@ -58,7 +48,7 @@
       },
       {
         "title": "Connect a wallet",
-        "body": "Any Ethereum wallet works. Savings run on Ethereum and seven other chains.",
+        "body": "Open the savings page in the app with any Ethereum wallet. Savings run on Ethereum and seven other chains.",
         "cta": {
           "label": "Open the app",
           "href": "https://app.frankencoin.com/savings",
@@ -66,8 +56,8 @@
         }
       },
       {
-        "title": "Deposit",
-        "body": "One transaction. Prefer a token you can trade or use as collateral? Use the Savings Vault (svZCHF) instead.",
+        "title": "Deposit into savings",
+        "body": "One transaction. Interest starts three days after the deposit and then accrues continuously. If a wallet or app set itself as referrer, its share (up to 25% of your interest) is deducted and shown in the app.",
         "cta": {
           "label": "Save ZCHF",
           "href": "https://app.frankencoin.com/savings",
@@ -75,69 +65,61 @@
         }
       }
     ],
-    "eyebrow": "Start"
-  },
-  "faq": [
-    {
-      "q": "Is this a bank account?",
-      "a": "No. ZCHF is a token on public blockchains and you hold it in your own wallet. No issuer can freeze it, and nobody insures it the way a Swiss bank deposit is insured."
-    },
-    {
-      "q": "Can I withdraw any time?",
-      "a": "Yes. Your ZCHF and the interest it earned can be withdrawn from the savings module whenever you want."
-    },
-    {
-      "q": "Do I pay tax on the interest?",
-      "a": "Probably, depending on where you live. The app's [accounting report](https://app.frankencoin.com/report) lists the interest you collected per year."
-    },
-    {
-      "q": "How is this different from holding USDC?",
-      "a": "You hold Swiss francs instead of US dollars, and the protocol pays a savings rate. See the [comparison](/compare)."
+    "alt": {
+      "text": "Prefer a token you can trade or use as collateral while it earns? The Savings Vault (svZCHF) is an alternative.",
+      "label": "About svZCHF",
+      "href": "/token#svzchf"
     }
-  ],
+  },
   "trust": [
     {
+      "label": "Reserves",
+      "value": "Collateral live on-chain",
+      "href": "/transparency"
+    },
+    {
       "label": "Audits",
-      "value": "7 audits by 4 firms",
+      "value": "8 audits by 4 firms",
       "href": "/security"
     },
     {
       "label": "Legal",
-      "value": "Swiss law & MiCA opinions",
+      "value": "Swiss law & MiCA assessments",
       "href": "/compliance"
-    },
-    {
-      "label": "Reserves",
-      "value": "Live on-chain",
-      "href": "/transparency"
-    },
-    {
-      "label": "Cover",
-      "value": "Optional depeg cover",
-      "href": "/insurance"
     }
   ],
-  "sticky": {
-    "label": "Start saving",
-    "sub": "Withdraw any time"
-  },
-  "calc": {
-    "eyebrow": "What if"
-  },
   "faqHead": {
     "title": "Short answers."
   },
+  "faq": [
+    {
+      "q": "I already hold ZCHF. Am I earning interest?",
+      "a": "Not yet. ZCHF in a wallet earns nothing. Deposit it in the [savings module](https://app.frankencoin.com/savings); interest starts three days later."
+    },
+    {
+      "q": "Can I withdraw any time?",
+      "a": "Yes. Your deposit and the interest it earned can be withdrawn whenever you want, with no notice period."
+    },
+    {
+      "q": "Who sets the rate, and can it change?",
+      "a": "Frankencoin governance (FCS holders) sets the rate and can change it. The current rate is shown at the top of this page and in the app."
+    },
+    {
+      "q": "Is anything deducted from the interest?",
+      "a": "The protocol charges no fee. If you deposited through a wallet or app that set itself as referrer, up to 25% of your interest goes to it. The app shows the referrer and the share, and you can remove it."
+    }
+  ],
   "cta": {
     "title": "Francs that pay you to hold them.",
-    "body": "Buy ZCHF by bank transfer or swap, deposit once, withdraw whenever you like.",
+    "body": "Deposit ZCHF once, withdraw whenever you like.",
     "primary": {
       "label": "Start saving",
       "href": "https://app.frankencoin.com/savings"
-    },
-    "secondary": {
-      "label": "Compare save and invest",
-      "href": "/for/savers#compare"
     }
+  },
+  "sticky": {
+    "label": "Start saving",
+    "sub": "Withdraw any time"
   },
   "fifty": {
     "eyebrow": "Fifty years, two currencies",
@@ -192,37 +174,11 @@
       },
       {
         "title": "Backed by collateral you can inspect",
-        "body": "A T-bill is a government's promise. ZCHF is backed by over-collateralized loans visible on-chain, with a reserve that absorbs losses before savers do. Check the live figures on the Transparency page.",
+        "body": "A T-bill is a government's promise. ZCHF is backed by over-collateralized loans you can inspect on-chain at any time. Check the live figures on the Transparency page.",
         "href": "/transparency",
         "cta": "See the reserves"
       }
     ],
     "source": "Annual averages from FRED: 3-month Treasury bill TB3MS, H.10 exchange rates, BLS CPI-U; Swiss cash rates from the SNB (call money to 1998, SARON from 1999). Returns ignore taxes and fees. Past moves do not predict future ones; ZCHF carries smart-contract and collateral risk."
-  },
-  "problems": {
-    "eyebrow": "The catch",
-    "title": "Saving in francs is great.|Doing it was hard.",
-    "subtitle": "The franc kept its value, but keeping francs never paid.",
-    "items": [
-      {
-        "title": "Banks paid nothing, then charged you",
-        "description": "Swiss cash rates sat near zero after 2008 and went negative from 2015 to 2022, when the SNB policy rate was −0.75%. Banks passed it on: large franc deposits cost money to hold.",
-        "stat": "{negYears}",
-        "statLabel": "years of negative Swiss rates"
-      },
-      {
-        "title": "Hard to open from abroad",
-        "description": "For non-residents, a Swiss bank account means compliance hurdles, minimum balances and account fees that make small and medium savings impractical.",
-        "stat": "CHF 0",
-        "statLabel": "minimum for a wallet"
-      },
-      {
-        "title": "A Swiss bank in your pocket",
-        "description": "ZCHF puts francs in a wallet you control, on eight chains, usable in DeFi or spendable by card, and the savings module pays {rate} in francs, set by governance.",
-        "stat": "{rate}",
-        "statLabel": "ZCHF savings rate today"
-      }
-    ],
-    "attribution": "Points from conversations with the Frankencoin Association."
   }
 }
