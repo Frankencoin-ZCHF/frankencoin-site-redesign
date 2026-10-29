@@ -6,20 +6,20 @@
 		},
 		"imageAlt": "Frankencoin Logo",
 		"eyebrow": "Frankencoin: Der Schweizer-Franken-Stablecoin",
-		"title": "Digital. Dezentral. Neutral.",
-		"subtitle": "Frankencoin ist der grösste und erfolgreichste Schweizer-Franken-Stablecoin.",
+		"title": "Schweizer Franken. On-Chain. Ihre.",
+		"subtitle": "Frankencoin (ZCHF) ist der grösste dezentrale Schweizer-Franken-Stablecoin. Sparen Sie zum Protokollzins, investieren Sie ins System oder bauen Sie damit.",
 		"cta": {
-			"label": "Web-App starten",
-			"href": "https://app.frankencoin.com/"
+			"label": "Jetzt starten",
+			"href": "https://app.frankencoin.com/savings"
 		},
 		"cta_buttons": [
 			{
-				"label": "Frankencoin kaufen (0% Gebühren)",
+				"label": "ZCHF per Banküberweisung kaufen (0% Gebühren)",
 				"href": "https://www.mtpelerin.com/buy-zchf-frankencoin"
 			},
 			{
-				"label": "Frankencoin mit Crypto tauschen",
-				"href": "https://happypath.enso.build/?tokenIn=0xa0b86991c6218b36c1d19d4e9eb0ce3606eb48&outChainId=1&chainId=1&tokenOut=0xb58e61c3098d85632df34eecfb899a1ed80921cb"
+				"label": "App öffnen",
+				"href": "https://app.frankencoin.com/"
 			}
 		],
 		"announcement": {
@@ -28,34 +28,32 @@
 			"href": "/fcs"
 		}
 	},
-
 	"stats": [
 		{
-			"id": "totalValueLocked",
-			"label": "Collateral Value",
-			"unit": "ZCHF",
-			"href": "https://defillama.com/protocol/frankencoin#information"
+			"id": "savingsRate",
+			"label": "Sparzins",
+			"unit": "pro Jahr",
+			"href": "/use-cases/save-in-chf"
 		},
 		{
 			"id": "totalSupply",
-			"label": "Im Umlauf",
+			"label": "Geldmenge",
 			"unit": "ZCHF",
 			"href": "https://defillama.com/stablecoin/frankencoin"
 		},
 		{
-			"id": "fpsMarketCap",
-			"label": "Frankencoin-Nutzer",
-			"unit": "Holder",
-			"href": "https://dune.com/mathewmeconry/zchf"
+			"id": "totalValueLocked",
+			"label": "Collateral-Wert",
+			"unit": "ZCHF",
+			"href": "https://defillama.com/protocol/frankencoin#information"
 		},
 		{
 			"id": "compliance",
-			"label": "Fully Compliant",
+			"label": "Vollständig konform",
 			"value": "CH-Recht & MiCAR",
 			"href": "/compliance"
 		}
 	],
-
 	"what_is": {
 		"eyebrow": "Einführung",
 		"title": "Was ist Frankencoin?",
@@ -63,7 +61,7 @@
 		"explanation": [
 			{
 				"title": "Schweizer-Franken-Stablecoin",
-				"description": "Frankencoin (ZCHF) ist eine digitale Währung mit einem stabilen Wert von 1:1 zum Schweizer Franken. Er verbindet die Stabilität der bewährten Schweizer Währung mit der Transparenz und Offenheit der Blockchain."
+				"description": "Frankencoin (ZCHF) ist eine digitale Währung, die den Schweizer Franken eins zu eins abbildet. Er verbindet die Stabilität der Schweizer Währung mit der Transparenz und Offenheit der Blockchain."
 			},
 			{
 				"title": "Vollständig dezentralisiert",
@@ -71,7 +69,7 @@
 			},
 			{
 				"title": "Live und etabliert",
-				"description": "Frankencoin ist auf 8 verschiedenen Blockchains verfügbar. Er ist der grösste und beliebteste Schweizer-Franken-Stablecoin und ermöglicht seit 2023 On-Chain-Transaktionen in Schweizer Franken ohne signifikante Abweichungen vom Peg."
+				"description": "Frankencoin ist auf 8 Blockchains verfügbar. Er ist der grösste dezentrale Schweizer-Franken-Stablecoin und ermöglicht seit 2023 On-Chain-Transaktionen in Schweizer Franken ohne signifikante Abweichungen vom Peg."
 			}
 		]
 	},
@@ -179,7 +177,7 @@
 				}
 			}
 		],
-		"use_cases_title": "Frankencoin Use-Cases",
+		"use_cases_title": "Bekannte Frankencoin Use-Cases",
 		"more_link": {
 			"label": "Mehr erfahren, wie Sie Frankencoin nutzen können",
 			"href": "/use-cases"
@@ -275,7 +273,7 @@
 		}
 	},
 	"how_does_it_work": {
-		"eyebrow": "Technical Deep Dive",
+		"eyebrow": "Technischer Deep Dive",
 		"title": "Wie funktioniert Frankencoin?",
 		"explanation": [
 			{
@@ -286,7 +284,7 @@
 			},
 			{
 				"title": "Warum 1 ZCHF = 1 CHF",
-				"description": "Frankencoin ist über-collateralisiert, sodass jeder Frankencoin stets durch Assets im Wert von mindestens einem Schweizer Franken gedeckt ist. Die hinterlegten Assets sind öffentlich On-Chain einsehbar.",
+				"description": "Frankencoin ist über-collateralisiert, sodass jeder Frankencoin durch Assets im Wert von mehr als einem Schweizer Franken gedeckt ist. Die hinterlegten Assets sind öffentlich On-Chain einsehbar.",
 				"link": "https://app.frankencoin.com/monitoring/collateral",
 				"linkLabel": "Reserven einsehen"
 			},
@@ -299,12 +297,12 @@
 		]
 	},
 	"trust_security": {
-		"eyebrow": "Compliant & Secure",
-		"title": "Rechtliche Klassifizierung und Security Audits",
+		"eyebrow": "Konform & sicher",
+		"title": "Rechtliche Klassifizierung und technische Audits",
 		"regulatory": {
 			"title": "Rechtliche Klassifizierung & MiCA-Compliance",
-			"description": "Frankencoin ist vollständig konform mit den Schweizer und EU-Regulierungen. Unabhängige Rechtsgutachten von LEXR bestätigen, dass ZCHF ohne Einschränkungen als Payment Token verwendet werden kann und dass die MiCA-Emittentenpflichten gemäss Titel II, III und IV aufgrund des dezentralen Designs von ZCHF und des fehlenden identifizierbaren Emittenten nicht gelten. Zusätzlich wurde ein MiCA-formatiges ZCHF White Paper veröffentlicht, das im ESMA Interim MiCA Register für Crypto-Assets ausser ARTs und EMTs erscheint.",
-			"learnMoreLabel": "Mehr über Frankencoin's Compliance erfahren",
+			"description": "Frankencoin ist vollständig konform mit den Schweizer und EU-Regulierungen. Unabhängige Rechtsgutachten von LEXR bestätigen, dass ZCHF ohne Einschränkungen als Payment Token verwendet werden kann und dass die MiCA-Emittentenpflichten gemäss Titel II, III und IV aufgrund des dezentralen Designs von ZCHF und des fehlenden identifizierbaren Emittenten nicht gelten. Zusätzlich wurde ein ZCHF White Paper im MiCA-Format veröffentlicht, das im ESMA Interim MiCA Register für Crypto-Assets ausser ARTs und EMTs erscheint.",
+			"learnMoreLabel": "Mehr über die Compliance von Frankencoin erfahren",
 			"learnMoreHref": "/compliance",
 			"documents": [
 				{
@@ -332,8 +330,8 @@
 			"ctaHref": "/insurance"
 		},
 		"audits": {
-			"title": "Technical Audits",
-			"description": "Frankencoin und alle hinzugefügten Komponenten wurden von führenden Blockchain Security Firms geprüft. Die Audits umfassen Smart-Contract-Sicherheit, ökonomisches Design und die Gesamtintegrität des Systems, um eine robuste und sichere Plattform für Nutzer zu gewährleisten.",
+			"title": "Technische Audits",
+			"description": "Frankencoin und alle hinzugefügten Komponenten wurden von führenden Blockchain-Security-Firmen geprüft. Die Audits umfassen Smart-Contract-Sicherheit, ökonomisches Design und die Gesamtintegrität des Systems, um eine robuste und sichere Plattform für Nutzer zu gewährleisten.",
 			"bugBounty": {
 				"label": "Bug-Bounty-Programm",
 				"description": "Zusätzlich zu den Audits bietet die Frankencoin Association Bounties für die Offenlegung von Bugs an, welche die Stabilität des Systems beeinträchtigen. Das Programm wird von Compass Security betreut; Details finden Sie hier:",
@@ -384,9 +382,18 @@
 			"independentlyRatedBy": "Unabhängig bewertet von",
 			"description": "einem Open-Source On-Chain-Risikobewertungsprotokoll ohne Verbindung zu Frankencoin. Jede Bewertung spiegelt eine transparente, automatisierte Analyse öffentlicher On-Chain-Daten wider.",
 			"features": [
-				{ "title": "Unabhängig", "description": "Bewertungen werden von Xerberus erstellt, einem externen Open-Source-Protokoll, nicht von der Frankencoin DAO." },
-				{ "title": "Offene Methodik", "description": "Jede Berechnung ist öffentlich und dokumentiert. Keine Black-Box-Algorithmen, keine versteckten Verzerrungen. Volle intellektuelle Transparenz." },
-				{ "title": "Überprüfbare Quellen", "description": "Weil die Mathematik offen ist, müssen es auch die Daten sein. Xerberus bezieht Daten direkt aus der On-Chain-Wahrheit für seine Modelle." }
+				{
+					"title": "Unabhängig",
+					"description": "Bewertungen werden von Xerberus erstellt, einem externen Open-Source-Protokoll, nicht von der Frankencoin DAO."
+				},
+				{
+					"title": "Offene Methodik",
+					"description": "Jede Berechnung ist öffentlich und dokumentiert. Keine Black-Box-Algorithmen, keine versteckten Verzerrungen. Volle intellektuelle Transparenz."
+				},
+				{
+					"title": "Überprüfbare Quellen",
+					"description": "Weil die Mathematik offen ist, müssen es auch die Daten sein. Xerberus bezieht Daten direkt aus der On-Chain-Wahrheit für seine Modelle."
+				}
 			],
 			"ratingLabel": "Xerberus-Bewertung",
 			"viewReportLabel": "Vollständigen Bericht auf Xerberus ansehen"
@@ -411,13 +418,13 @@
 	},
 	"foundation": {
 		"title": "Theoretische Grundlage",
-		"description": "Frankencoin wurde als Teil [einer Doktorarbeit](https://www.zora.uzh.ch/entities/publication/b1bff836-6852-457d-93e6-496807db37fa) am Lehrstuhl für Finanzwirtschaft der Universität Zürich konzipiert. Unter anderem behandelt sie die Game Theory hinter dem neuartigen Liquidation-Mechanismus des Systems, quantifiziert das Risiko von Bitcoin als Collateral und analysiert formal das Veto-basierte Governance-System. Das Frankencoin-System kann als Continuous Capital Corporation betrachtet werden – ein in Kapitel drei eingeführtes Konzept, das ein Unternehmen bezeichnet, welches Shares autonom gemäss festen Regeln emittiert und zurücknimmt, die unter einer Vielzahl theoretischer Annahmen optimal sind.",
+		"description": "Frankencoin wurde als Teil [einer Doktorarbeit](https://www.zora.uzh.ch/entities/publication/b1bff836-6852-457d-93e6-496807db37fa) am Lehrstuhl für Finanzwirtschaft der Universität Zürich konzipiert. Unter anderem behandelt sie die Spieltheorie hinter dem neuartigen Liquidationsmechanismus des Systems, quantifiziert das Risiko von Bitcoin als Collateral und analysiert formal das Veto-basierte Governance-System. Das Frankencoin-System kann als Continuous Capital Corporation betrachtet werden – ein in Kapitel drei eingeführtes Konzept, das ein Unternehmen bezeichnet, welches Anteile autonom gemäss festen Regeln emittiert und zurücknimmt, die unter einer Vielzahl theoretischer Annahmen optimal sind.",
 		"image": "/images/frankencoin-foundation.webp",
 		"imageAlt": "Frankencoin Foundation",
 		"href": "https://www.zora.uzh.ch/entities/publication/b1bff836-6852-457d-93e6-496807db37fa"
 	},
 	"in_the_media": {
-		"eyebrow": "Media Coverage",
+		"eyebrow": "Medienberichte",
 		"title": "In den Medien",
 		"subtitle": "Was die Medien über Frankencoin sagen",
 		"contact_text": "Möchten Sie über Frankencoin berichten? Kontaktieren Sie uns unter"
@@ -426,5 +433,144 @@
 		"eyebrow": "Videos",
 		"title": "Frankencoin erklärt",
 		"subtitle": "Schauen Sie unsere Videos, um mehr über Frankencoin zu erfahren"
-	}
+	},
+	"doors": {
+		"eyebrow": "Wer sind Sie?",
+		"title": "Wählen Sie Ihre Tür",
+		"items": [
+			{
+				"eyebrow": "Sparer",
+				"title": "Schweizer Franken vermehren",
+				"stat": {
+					"value": "{rate}",
+					"label": "Sparzins"
+				},
+				"body": "Verdienen Sie den Protokollzins auf ZCHF, ab Bankkonto oder Crypto-Wallet. Jederzeit abziehbar.",
+				"cta": "Für Sparer",
+				"href": "/for/savers"
+			},
+			{
+				"eyebrow": "Treasuries",
+				"title": "Reserven in CHF halten",
+				"stat": {
+					"value": "{ratio}",
+					"label": "CHF Collateral pro ZCHF"
+				},
+				"body": "Unternehmen, Fonds und DAOs: diversifizieren Sie aus dem US-Dollar und verdienen Sie auf ungenutzten Reserven.",
+				"cta": "Für Treasuries",
+				"href": "/for/treasuries"
+			},
+			{
+				"eyebrow": "Börsen & Wallets",
+				"title": "Listen und verdienen",
+				"stat": {
+					"value": "25%",
+					"label": "max. Referral-Anteil"
+				},
+				"body": "Bieten Sie ein Schweizer-Franken-Guthaben mit Zins an und verdienen Sie einen Anteil am Zins Ihrer Nutzer.",
+				"cta": "Für Börsen & Wallets",
+				"href": "/for/exchanges-wallets"
+			},
+			{
+				"eyebrow": "Entwickler",
+				"title": "Mit ZCHF bauen",
+				"stat": {
+					"value": "8",
+					"label": "Chains"
+				},
+				"body": "Verifizierte Contracts, REST API, Indexer, MCP-Server und Grants.",
+				"cta": "Für Entwickler",
+				"href": "/for/developers"
+			}
+		]
+	},
+	"how_simple": {
+		"eyebrow": "So funktioniert es",
+		"title": "Drei bewegliche Teile",
+		"subtitle": "Alles andere auf dieser Seite ist Detail. Das ist das System.",
+		"cards": [
+			{
+				"title": "1 · Minten",
+				"description": "Jemand hinterlegt Collateral (BTC, ETH, tokenisierte Aktien, Gold) und mintet ZCHF dagegen. Der Zins wird im Voraus in die Reserve bezahlt."
+			},
+			{
+				"title": "2 · Peg halten",
+				"description": "Jeder ZCHF ist durch mehr als einen Franken Collateral gedeckt. Jeder kann eine schwache Position anfechten; Auktionen entscheiden."
+			},
+			{
+				"title": "3 · Einnahmen teilen",
+				"description": "Sparer erhalten den Protokollzins aus der Reserve. Was übrig bleibt, erhöht den Wert von FCS, dem Anteil-Token."
+			}
+		]
+	},
+	"trust_strip": {
+		"eyebrow": "Konform & sicher",
+		"title": "Vertrauen, in einer Zeile",
+		"items": [
+			{
+				"label": "Audits",
+				"value": "8 Audits von 4 Firmen",
+				"href": "/security"
+			},
+			{
+				"label": "Recht",
+				"value": "Gutachten nach CH-Recht & MiCAR",
+				"href": "/compliance"
+			},
+			{
+				"label": "Ratings",
+				"value": "Xerberus 77 · Pharos A-",
+				"href": "/security#ratings"
+			},
+			{
+				"label": "Cover",
+				"value": "Optionales Depeg Cover",
+				"href": "/insurance"
+			}
+		],
+		"more": {
+			"label": "Alle Audits, Gutachten und Ratings",
+			"href": "/compliance"
+		}
+	},
+	"sticky": {
+		"label": "Jetzt starten",
+		"sub": "ZCHF einlegen, jederzeit abziehen",
+		"href": "https://app.frankencoin.com/savings"
+	},
+	"pay": {
+		"eyebrow": "In CHF zahlen",
+		"title": "Ausgeben wie Franken",
+		"subtitle": "ZCHF funktioniert bereits für alltägliche Zahlungen.",
+		"items": [
+			{
+				"title": "Im Laden",
+				"description": "Zahlen Sie mit ZCHF in Spar-Filialen in der Schweiz."
+			},
+			{
+				"title": "Mit Karte",
+				"description": "Geben Sie ZCHF überall aus, wo Visa akzeptiert wird, mit einer GnosisPay-Karte."
+			},
+			{
+				"title": "Per Banküberweisung",
+				"description": "Holen Sie sich mit Mt Pelerin eine persönliche IBAN für Ihre Wallet und senden oder empfangen Sie Franken.",
+				"href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
+				"cta": "Mt Pelerin"
+			}
+		]
+	},
+	"use_cases_links": [
+		{
+			"label": "In CHF sparen",
+			"href": "/use-cases/save-in-chf"
+		},
+		{
+			"label": "Gegen Crypto, Gold oder Aktien leihen",
+			"href": "/use-cases/borrow"
+		},
+		{
+			"label": "So funktioniert es im Detail",
+			"href": "/how-it-works"
+		}
+	]
 }

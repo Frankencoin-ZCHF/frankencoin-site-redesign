@@ -1,87 +1,52 @@
 {
-  "header": {
-    "image": "/images/fcs.png",
-    "imageAlt": "Frankencoin Share Token (FCS)",
-    "title": "Frankencoin Governance",
-    "subtitle": "Ein dezentraler, gemeinschaftsgetriebener Ansatz zur Verwaltung des Schweizer-Franken-Stablecoins",
-    "cta": [
+  "hero": {
+    "title": "Frankencoin-|Governance",
+    "subtitle": "Jede und jeder kann eine neue Sicherheit oder ein neues Prägemodul vorschlagen. Inhaber von Frankencoin Shares (FCS) prüfen den Vorschlag und können ein Veto einlegen. Nichts braucht eine Mehrheitsabstimmung, um durchzukommen.",
+    "primary": { "label": "Vorschläge ansehen", "href": "https://app.frankencoin.com/governance" },
+    "secondary": { "label": "Leitfaden zur Teilnahme", "href": "https://docs.frankencoin.com/governance" }
+  },
+  "process": {
+    "title": "Ein Ablauf: einreichen, prüfen, Veto",
+    "steps": [
       {
-        "label": "On-chain handeln",
-        "href": "https://swap.cow.fi/#/1/swap/ZCHF/0xDb861830D9Ae2d1fCF99fA0cfd3973de382B0B5b",
-        "external": true
+        "title": "Einreichen",
+        "body": "Jede und jeder eröffnet einen Vorschlag on-chain und zahlt eine Gebühr, die an die Reserve geht. Eine neue Sicherheit wird durch Eröffnen der ersten Position vorgeschlagen; ein neues Prägemodul durch eine Minter-Bewerbung.",
+        "cta": { "label": "Eine Sicherheit vorschlagen", "href": "/integrate/collateral" }
       },
       {
-        "label": "An Governance teilnehmen",
-        "href": "https://app.frankencoin.com/governance",
-        "external": true
+        "title": "Prüfen",
+        "body": "Der Vorschlag ist für eine festgelegte Frist öffentlich: mindestens fünf Tage für eine Sicherheit, länger für Prägemodule. Die Community diskutiert ihn und veröffentlicht Beurteilungen.",
+        "cta": { "label": "Offene Vorschläge", "href": "https://app.frankencoin.com/governance", "external": true }
+      },
+      {
+        "title": "Veto oder Start",
+        "body": "Jeder FCS-Inhaber oder jede Gruppe mit mehr als 1% der Stimmkraft kann ein Veto einlegen. Tut dies niemand, ist der Vorschlag live. Genau 1% reicht nicht.",
+        "cta": { "label": "So funktionieren Vetos", "href": "https://docs.frankencoin.com/governance", "external": true }
       }
     ]
   },
-  "caps": [
-    {
-      "id": "fpsPrice",
-      "label": "FPS-Preis",
-      "value": "1'162.13",
-      "unit": "ZCHF",
-      "href": "https://app.frankencoin.com/equity"
-    },
-    {
-      "id": "fpsSupply",
-      "label": "FPS-Angebot",
-      "value": "8'887.69",
-      "unit": "FPS",
-      "href": "https://app.frankencoin.com/equity"
-    },
-    {
-      "id": "fpsMarketCap",
-      "label": "FPS-Marktkapitalisierung",
-      "value": "10'328'609.12",
-      "unit": "ZCHF",
-      "href": "https://app.frankencoin.com/equity"
-    }
-  ],
-  "stats_list": [
-    {
-      "id": "balance",
-      "label": "Gesamtreserve",
-      "value": "8'887.69",
-      "unit": "ZCHF"
-    },
-    {
-      "id": "equity",
-      "label": "Eigenkapital",
-      "value": "8'887.69",
-      "unit": "ZCHF"
-    },
-    {
-      "id": "minter",
-      "label": "Präger-Reserve",
-      "value": "8'887.69",
-      "unit": "ZCHF"
-    },
-    {
-      "id": "netIncome",
-      "label": "Nettogewinn seit 2023",
-      "value": "8'887.69",
-      "unit": "ZCHF"
-    }
-  ],
-  "sections": [
-    {
-      "title": "Wie Governance funktioniert",
-      "description": "Frankencoin nutzt eine Veto-basierte Governance. Jeder kann neue Sicherheitenarten oder Methoden zur Prägung von Frankencoin vorschlagen. FCS-Inhaber sammeln im Laufe der Zeit Stimmrechte an, und ein Inhaber oder eine Gruppe mit mehr als 1% der internen FCS-Stimmrechte einschliesslich gültiger Delegationen kann Vorschläge mit einem Veto blockieren, sofern der Wrapper auch das zugrunde liegende FPS-Quorum erfüllt. So kann die Gemeinschaft schädliche Änderungen verhindern, ohne dass über jeden Vorschlag mit Mehrheit abgestimmt werden muss."
-    },
-    {
-      "title": "Frankencoin Share Token (FCS)",
-      "description": "Der Frankencoin Share Token (FCS) ist der massgebliche Governance- und Anteil-Token von Frankencoin. Jeder FCS umschliesst einen zugrunde liegenden FPS, den Equity-Token. Er ermöglicht Inhabern eine wirtschaftliche Beteiligung an der Eigenkapitalreserve und verleiht Stimmrechte, die sich im Laufe der Zeit aufbauen. Protokolleinnahmen können die Reserve stärken, während Ausgaben und Verluste sie verringern. Die Prägung neuer FCS mit ZCHF führt dem Protokoll Eigenkapital zu; der Kauf bestehender FCS auf einem Sekundärmarkt überträgt das Eigentum, ohne neues Kapital hinzuzufügen.\n\n<strong>Wie Wert für FCS-Inhaber entsteht:</strong>\n\n• <strong>Zinserträge:</strong> Wenn Benutzer ZCHF gegen ihre Sicherheiten durch Präge-Positionen leihen, zahlen sie Zinsen. Diese Zinserträge fliessen in die Eigenkapitalreserve und stärken sie.\n\n• <strong>Liquidationsgewinne:</strong> Der Anteil des Protokolls an den Liquidationserlösen kann die Eigenkapitalreserve stärken. Verluste können sie verringern.\n\n• <strong>Governance-Gebühren:</strong> Governance-Aktionen generieren Gebühren, die in die Eigenkapitalreserve fliessen, statt direkt an einzelne Abstimmende ausgezahlt zu werden.\n\n<strong>Kosten und Ökonomie:</strong>\n\nDie Sparrendite für Benutzer des Sparmoduls ist ein Kostenfaktor, den die Eigenkapitalreserve trägt. Kreditnehmer zahlen Zinsen und Sparer erhalten Rendite; die Differenz trägt zum Nettoertrag des Protokolls bei, während Verluste das Eigenkapital verringern können.\n\n<strong>Bewertung und Preisgestaltung:</strong>\n\nFCS können auf Sekundärmärkten gehandelt werden. Dort wird der Preis durch Angebot und Nachfrage, die verfügbare Liquidität und die Erwartungen an die zukünftige Entwicklung des Protokolls bestimmt. Die Prägung neuer FCS mit ZCHF folgt der Eigenkapital-Preiskurve des Protokolls, wobei Gebühren und Preisauswirkungen vom investierten Betrag abhängen. Der Marktpreis kann von den Präge- und Rücknahmekursen des Protokolls abweichen. Die oben gezeigten reservebasierten Kennzahlen sind Referenzwerte, kein ausführbares FCS-Marktangebot und keine garantierte Bewertung.\n\n<strong>Risikoprofil:</strong>\n\nFCS-Inhaber tragen das Restrisiko – ähnlich wie Bankaktionäre. Wenn Liquidationen zu Verlusten führen, die den Reservebeitrag des Prägers übersteigen, werden diese Verluste vom Eigenkapitalpool absorbiert. Dies gibt FCS-Inhabern einen Anreiz, das System verantwortungsvoll zu führen und solide Sicherheitenarten zu genehmigen. Weder Gewinne noch ein steigender Tokenwert sind garantiert."
-    },
-    {
-      "title": "Wie man FCS erhält",
-      "description": "Es gibt drei Hauptwege, FCS zu erwerben:\n\n1. Auf Sekundärmärkten kaufen: Handeln Sie FCS gegen ZCHF auf <a href='https://swap.cow.fi/#/1/swap/ZCHF/0xDb861830D9Ae2d1fCF99fA0cfd3973de382B0B5b' target='_blank' rel='noopener noreferrer' style='color: var(--color-brand-deep-blue); text-decoration: underline;'>CoW Swap</a>. Prüfen Sie vor dem Handel den verfügbaren Kurs, die Liquidität und die Preisauswirkungen.\n\n2. Neue FCS prägen: Zahlen Sie ZCHF über den <a href='https://etherscan.io/address/0xdb861830d9ae2d1fcf99fa0cfd3973de382b0b5b#writeContract' target='_blank' rel='noopener noreferrer' style='color: var(--color-brand-deep-blue); text-decoration: underline;'>FCS-Vertrag</a> ein, um der Eigenkapitalreserve Kapital zuzuführen und neu geprägte FCS zu erhalten. Prüfen Sie vor der Bestätigung den aktuellen Prägekurs, die Gebühren und die Preisauswirkungen.\n\n3. Bestehende FPS wrappen: Wrappen Sie FPS im Verhältnis 1:1 in FCS, ohne der Reserve neues Kapital hinzuzufügen. Lesen Sie dazu die <a href='https://docs.frankencoin.com/pool-shares/fcs-migration' target='_blank' rel='noopener noreferrer' style='color: var(--color-brand-deep-blue); text-decoration: underline;'>FPS-Migrationsanleitung</a>."
-    },
-    {
-      "title": "Vorschlagsprozess",
-      "description": "Der Governance-Prozess ist offen und transparent. Vorschläge für neue Sicherheitenarten oder Prägemechanismen können von jedem eingereicht werden. Die Gemeinschaft prüft Vorschläge, und FCS-Inhaber üben Stimmrechte aus, die sich im Laufe der Zeit aufbauen. Ein Inhaber oder eine Gruppe mit mehr als 1% der internen FCS-Stimmrechte einschliesslich gültiger Delegationen kann Vorschläge mit einem Veto blockieren, sofern der Wrapper auch das zugrunde liegende FPS-Quorum erfüllt."
-    }
-  ]
+  "covers": {
+    "title": "Was die Governance umfasst",
+    "items": [
+      { "title": "Sicherheiten und Minter", "description": "Welche Vermögenswerte ZCHF decken dürfen und welche Module ihn prägen dürfen; gegen beides kann ein Veto eingelegt werden." },
+      { "title": "Zinssätze", "description": "Der Kredit- und der Sparzins, vorgeschlagen von qualifizierten FCS-Inhabern mit einer Frist von sieben Tagen." },
+      { "title": "Cross-Chain-Einstellungen", "description": "Auf welche Chains ZCHF gebrückt wird und die Rate-Limits der Bridge." }
+    ]
+  },
+  "power": {
+    "title": "Stimmkraft entsteht durch Halten, nicht nur durch den Bestand",
+    "body": "Die Stimmen wachsen mit der Anzahl Anteile und der Haltedauer; ein übertragener Bestand beginnt seine Haltedauer bei null. Stimmen können delegiert werden, und ein Inhaber kann Stimmen aufwenden, um die Stimmen eines anderen Inhabers zu löschen. Die vollständigen Regeln, einschliesslich der Anrechnung von Legacy-FPS-Stimmen, stehen in der Dokumentation.",
+    "cta": { "label": "Regeln zur Stimmkraft", "href": "https://docs.frankencoin.com/governance" }
+  },
+  "fcs": {
+    "title": "Über Frankencoin Shares",
+    "body": "Wie FCS mit der Reserve zusammenhängen, wie man Anteile erwirbt und welche Risiken das Halten birgt, erklärt die FCS-Seite.",
+    "cta": { "label": "Über FCS", "href": "/fcs" }
+  },
+  "end": {
+    "title": "Nehmen Sie teil",
+    "body": "Prüfen Sie offene Vorschläge, veröffentlichen Sie eine Beurteilung oder halten Sie FCS und bauen Sie Stimmkraft auf.",
+    "primary": { "label": "Vorschläge ansehen", "href": "https://app.frankencoin.com/governance" },
+    "secondary": { "label": "Leitfaden zur Teilnahme", "href": "https://docs.frankencoin.com/governance" }
+  }
 }

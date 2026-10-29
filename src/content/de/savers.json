@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "title": "Frankencoin für Sparer: vom Bankkonto oder aus der Krypto-Wallet",
+    "description": "Sparen Sie in Schweizer Franken zum Protokollzins. Starten Sie per Banküberweisung oder mit USDC, USDT oder ETH, und sehen Sie, wie sich Sparen in ZCHF von Investieren in FCS unterscheidet."
+  },
+  "hero": {
+    "title": "Ein Frankenkonto,|das on-chain lebt.",
+    "subtitle": "Ob Sie vom Bankkonto oder aus einer Krypto-Wallet starten: Im Sparmodul hinterlegte ZCHF verdienen den Protokollzins und bleiben in Ihrer eigenen Wallet.",
+    "primary": {
+      "label": "Sparen beginnen",
+      "href": "https://app.frankencoin.com/savings"
+    },
+    "secondary": {
+      "label": "Sparen oder investieren?",
+      "href": "#compare"
+    }
+  },
+  "paths": {
+    "title": "Zwei Wege hinein",
+    "subtitle": "In beiden Fällen gibt es Zinsen nur auf ZCHF, die Sie im Sparmodul hinterlegen, beginnend drei Tage nach der Einzahlung. ZCHF in einer Wallet verdienen nichts.",
+    "items": [
+      {
+        "title": "Vom Bankkonto",
+        "description": "Überweisen Sie Franken oder Euro an Mt Pelerin und erhalten Sie ZCHF in Ihrer Wallet, zu 0% Gebühren. Dann im Sparmodul hinterlegen.",
+        "href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
+        "cta": "Per Banküberweisung kaufen"
+      },
+      {
+        "title": "Aus der Krypto-Wallet",
+        "description": "Tauschen Sie USDC, USDT oder ETH auf CoW Swap, Curve oder Uniswap in ZCHF. Dann im Sparmodul hinterlegen.",
+        "href": "https://swap.cow.fi/#/1/swap/USDC/ZCHF",
+        "cta": "Auf CoW tauschen"
+      }
+    ]
+  },
+  "compare": {
+    "title": "Sparen oder investieren?",
+    "subtitle": "Beides beginnt mit ZCHF. Das eine hält Sie in Franken; das andere macht Sie zum Miteigentümer des Protokolls.",
+    "head": {
+      "save": "In ZCHF sparen",
+      "invest": "In FCS (Frankencoin Shares) investieren"
+    },
+    "rows": [
+      {
+        "label": "Zweck",
+        "save": "Schweizer Franken halten und darauf den Sparzins verdienen.",
+        "invest": "Eine Beteiligung am Eigenkapital und an der Governance des Protokolls eingehen."
+      },
+      {
+        "label": "Wie Erträge entstehen",
+        "save": "Der von der Governance festgelegte Zins, bezahlt aus den Zinsen der Kreditnehmer. Er läuft kontinuierlich auf und kann sich ändern.",
+        "invest": "Der Referenzwert folgt der Eigenkapitalreserve, die mit Protokolleinnahmen wächst und mit Verlusten schrumpft. Der Marktpreis kann davon abweichen und kann fallen."
+      },
+      {
+        "label": "Wo starten",
+        "save": "Sparmodul in der App",
+        "saveHref": "https://app.frankencoin.com/savings",
+        "invest": "Über FCS",
+        "investHref": "/fcs"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Eröffnen Sie Ihr Frankenkonto.",
+    "body": "ZCHF per Banküberweisung oder Tausch kaufen, im Sparmodul hinterlegen, abheben, wann Sie wollen.",
+    "primary": {
+      "label": "Sparen beginnen",
+      "href": "https://app.frankencoin.com/savings"
+    },
+    "secondary": {
+      "label": "Wie ZCHF gedeckt ist",
+      "href": "/transparency"
+    }
+  },
+  "sticky": {
+    "label": "Sparen beginnen",
+    "sub": "Jederzeit abheben"
+  }
+}

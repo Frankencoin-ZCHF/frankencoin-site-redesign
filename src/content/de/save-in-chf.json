@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "title": "In Schweizer Franken sparen und den Protokollzins erhalten | Frankencoin",
+    "description": "Hinterlegen Sie ZCHF, den dezentralen Schweizer Franken, im Sparmodul und erhalten Sie den von der Governance festgelegten Zins. Jederzeit abhebbar. Aktueller Zinssatz und drei Schritte zum Start."
+  },
+  "hero": {
+    "title": "Schweizer Franken,|die {rate} pro Jahr verdienen.",
+    "subtitle": "ZCHF ist ein Schweizer Franken auf öffentlichen Blockchains. Hinterlegen Sie ihn im Sparmodul, und er verdient den Protokollzins; abheben können Sie jederzeit.",
+    "primary": {
+      "label": "Sparen beginnen",
+      "href": "https://app.frankencoin.com/savings"
+    },
+    "secondary": {
+      "label": "Woher die Zinsen kommen",
+      "href": "#interest"
+    }
+  },
+  "figures": {
+    "rate": {
+      "label": "Sparzins",
+      "unit": "pro Jahr, festgelegt von der Governance"
+    },
+    "saved": {
+      "label": "Im Sparmodul hinterlegt",
+      "unit": "ZCHF"
+    }
+  },
+  "how": {
+    "title": "Woher die Zinsen kommen",
+    "body": "Kreditnehmer hinterlegen Sicherheiten, prägen ZCHF und zahlen Zinsen ins Protokoll. Aus diesen Einnahmen zahlt das Sparmodul den Sparern den von der Frankencoin-Governance festgelegten Zins. Die Zinsen laufen ab Beginn kontinuierlich auf und werden zusammen mit Ihrer Einlage in einer Transaktion abgehoben, wann immer Sie wollen.",
+    "cta": {
+      "label": "So funktioniert der Mechanismus",
+      "href": "/how-it-works"
+    }
+  },
+  "steps": {
+    "title": "In drei Schritten starten",
+    "subtitle": "Sie halten bereits ZCHF? Dann direkt zu Schritt 3. ZCHF in einer Wallet verdienen nichts; Zinsen gibt es nur auf das, was Sie im Sparmodul hinterlegen.",
+    "items": [
+      {
+        "title": "ZCHF beziehen",
+        "body": "Banküberweisung in CHF oder EUR über Mt Pelerin (0% Gebühren) oder Tausch von USDC, USDT oder ETH auf einer beliebigen DEX.",
+        "cta": {
+          "label": "Per Banküberweisung kaufen",
+          "href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
+          "external": true
+        }
+      },
+      {
+        "title": "Wallet verbinden",
+        "body": "Öffnen Sie die Sparseite in der App mit einer beliebigen Ethereum-Wallet. Das Sparen läuft auf Ethereum und sieben weiteren Chains.",
+        "cta": {
+          "label": "App öffnen",
+          "href": "https://app.frankencoin.com/savings",
+          "external": true
+        }
+      },
+      {
+        "title": "Ins Sparmodul einzahlen",
+        "body": "Eine Transaktion. Die Zinsen beginnen drei Tage nach der Einzahlung und laufen danach kontinuierlich auf. Hat sich eine Wallet oder App als Empfehlungsgeber eingetragen, wird ihr Anteil (bis zu 25% Ihrer Zinsen) abgezogen und in der App angezeigt.",
+        "cta": {
+          "label": "ZCHF sparen",
+          "href": "https://app.frankencoin.com/savings",
+          "external": true
+        }
+      }
+    ],
+    "alt": {
+      "text": "Lieber ein Token, das Sie handeln oder als Sicherheit nutzen können, während es Zinsen verdient? Der Savings Vault (svZCHF) ist eine Alternative.",
+      "label": "Über svZCHF",
+      "href": "/token#svzchf"
+    }
+  },
+  "trust": [
+    {
+      "label": "Reserven",
+      "value": "Sicherheiten live on-chain",
+      "href": "/transparency"
+    },
+    {
+      "label": "Audits",
+      "value": "8 Audits von 4 Firmen",
+      "href": "/security"
+    },
+    {
+      "label": "Rechtliches",
+      "value": "Schweizer Recht & MiCA-Gutachten",
+      "href": "/compliance"
+    }
+  ],
+  "faqHead": {
+    "title": "Kurze Antworten."
+  },
+  "faq": [
+    {
+      "q": "Ich halte bereits ZCHF. Verdiene ich Zinsen?",
+      "a": "Noch nicht. ZCHF in einer Wallet verdienen nichts. Hinterlegen Sie sie im [Sparmodul](https://app.frankencoin.com/savings); die Zinsen beginnen drei Tage später."
+    },
+    {
+      "q": "Kann ich jederzeit abheben?",
+      "a": "Ja. Ihre Einlage und die verdienten Zinsen können Sie jederzeit abheben, ohne Kündigungsfrist."
+    },
+    {
+      "q": "Wer legt den Zins fest, und kann er sich ändern?",
+      "a": "Die Frankencoin-Governance (FCS-Inhaber) legt den Zins fest und kann ihn ändern. Der aktuelle Satz steht oben auf dieser Seite und in der App."
+    },
+    {
+      "q": "Wird etwas von den Zinsen abgezogen?",
+      "a": "Das Protokoll erhebt keine Gebühr. Haben Sie über eine Wallet oder App eingezahlt, die sich als Empfehlungsgeber eingetragen hat, gehen bis zu 25% Ihrer Zinsen an sie. Die App zeigt den Empfehlungsgeber und den Anteil, und Sie können ihn entfernen."
+    }
+  ],
+  "cta": {
+    "title": "Franken, die Sie fürs Halten bezahlen.",
+    "body": "ZCHF einmal hinterlegen, abheben, wann Sie wollen.",
+    "primary": {
+      "label": "Sparen beginnen",
+      "href": "https://app.frankencoin.com/savings"
+    }
+  },
+  "sticky": {
+    "label": "Sparen beginnen",
+    "sub": "Jederzeit abheben"
+  },
+  "fifty": {
+    "eyebrow": "Fünfzig Jahre, zwei Währungen",
+    "title": "Ein Dollar kaufte 1971 {then} Franken.|Heute kauft er {now}.",
+    "subtitle": "Ein Rückgang von {loss} gegenüber dem Franken. Wer langfristig in Dollar sparte, zahlte mit Kaufkraft. Wer in Franken sparte, behielt sie.",
+    "chartLabel": "Schweizer Franken pro 1 US-Dollar, 1971 bis heute",
+    "source": "Jahresdurchschnitte der Federal Reserve H.10 via FRED; heutiger Kurs aus den EZB-Referenzkursen.",
+    "tiles": {
+      "head": "Dieselben {amount} im Jahr 1971. Zwei Ergebnisse heute.",
+      "today": "heute",
+      "cash": {
+        "label": "In Dollar behalten",
+        "note": "Kauft, was 1971 {real} kauften",
+        "tag": "Kaufkraft"
+      },
+      "chf": {
+        "label": "In Franken getauscht",
+        "note": "{chf} damals · kauft, was 1971 {chfReal} kauften",
+        "tag": "Kaufkraft",
+        "badge": "{mult}× die Dollar"
+      },
+      "why": "Grund: Ein Dollar kaufte 1971 {then} Franken und heute {now}."
+    }
+  },
+  "tbills": {
+    "eyebrow": "Die naheliegende Alternative",
+    "title": "Warum nicht einfach T-Bills kaufen?|Weil die Rendite in Dollar ist.",
+    "subtitle": "Treasury Bills sind der klassische sichere Dollar. So entwickelten sich {amount} seit {year}: jedes Quartal in 3-Monats-T-Bills gerollt, gegenüber demselben Geld, in Franken getauscht und zu Schweizer Geldmarktsätzen angelegt.",
+    "tbill": {
+      "label": "{amount} in T-Bills seit {year}",
+      "note": "Jeder T-Bill-Coupon reinvestiert. Nach US-Inflation trotzdem ein Verlust.",
+      "tag": "Kaufkraft"
+    },
+    "chf": {
+      "label": "{amount} im Jahr {year} in Franken getauscht",
+      "note": "{chf} damals, zu Schweizer Geldmarktsätzen angelegt, heute zurück in Dollar getauscht.",
+      "tag": "Kaufkraft"
+    },
+    "need": "Nur um mit der US-Inflation Schritt zu halten, wären nötig: {need}",
+    "reasons": [
+      {
+        "title": "Die Rendite war real. Der Dollar nicht.",
+        "body": "T-Bills zahlten seit {year} im Schnitt {tbillAvg} pro Jahr. Der Dollar verlor im selben Zeitraum {fxLoss} gegenüber dem Franken, und das frass den ganzen Vorteil auf und mehr."
+      },
+      {
+        "title": "6% in Dollar sind etwa 3% in Franken",
+        "body": "Der Terminmarkt preist die erwartete Währungsbewegung in die Zinsdifferenz ein, deshalb landen eine hohe Dollarrendite und eine tiefere Frankenrendite meist am selben Ort. Bei ZCHF sind die {rate} in Franken: keine Währung, mit der man sich irren kann."
+      },
+      {
+        "title": "Kein Broker, kein US-Konto, keine Abwicklungstage",
+        "body": "T-Bills brauchen einen Broker oder TreasuryDirect und, für Nicht-Amerikaner, Steuerformulare. ZCHF braucht eine Wallet: in einer Transaktion einzahlen, Zinsen laufen täglich auf, jederzeit abheben."
+      },
+      {
+        "title": "Gedeckt durch Sicherheiten, die Sie prüfen können",
+        "body": "Ein T-Bill ist das Versprechen eines Staates. ZCHF ist durch überbesicherte Kredite gedeckt, die Sie jederzeit on-chain prüfen können. Die aktuellen Zahlen finden Sie auf der Transparenz-Seite.",
+        "href": "/transparency",
+        "cta": "Reserven ansehen"
+      }
+    ],
+    "source": "Jahresdurchschnitte von FRED: 3-Monats-Treasury-Bill TB3MS, H.10-Wechselkurse, BLS CPI-U; Schweizer Geldmarktsätze von der SNB (Tagesgeld bis 1998, SARON ab 1999). Renditen ohne Steuern und Gebühren. Vergangene Entwicklungen sagen nichts über künftige aus; ZCHF trägt Smart-Contract- und Sicherheitenrisiko."
+  }
+}

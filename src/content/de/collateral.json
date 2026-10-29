@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "Schlagen Sie Ihren Token als Frankencoin-Sicherheit vor",
+    "description": "So listen Token-Emittenten eine neue Sicherheit auf Frankencoin: Vorschlagsgebühr, Initialisierungsfrist, FCS-Veto und was eine gute Sicherheit ausmacht."
+  },
+  "hero": {
+    "title": "Lassen Sie Ihre Inhaber Franken|gegen Ihren Token leihen.",
+    "subtitle": "Jede und jeder kann eine neue Sicherheit vorschlagen. Ein Vorschlag kostet 1'000 ZCHF und kann von Inhabern von Frankencoin Shares (FCS) während mindestens fünf Tagen mit einem Veto blockiert werden; legt niemand ein Veto ein, geht er live. Sprechen Sie mit uns, bevor Sie vorschlagen.",
+    "primary": {
+      "label": "Mit uns auf Telegram sprechen",
+      "href": "https://t.me/frankencoinzchf"
+    },
+    "secondary": {
+      "label": "In der App vorschlagen",
+      "href": "https://app.frankencoin.com/mint/create"
+    }
+  },
+  "steps": {
+    "title": "So funktioniert ein Vorschlag",
+    "items": [
+      {
+        "title": "Zuerst diskutieren",
+        "body": "Stellen Sie Ihren Token und die geplanten Konditionen der Community vor. Vorschläge, die vorher diskutiert wurden, kommen deutlich häufiger durch.",
+        "cta": {
+          "label": "Telegram beitreten",
+          "href": "https://t.me/frankencoinzchf",
+          "external": true
+        }
+      },
+      {
+        "title": "Vorschlagen",
+        "body": "Eröffnen Sie in der App die erste Position mit Ihren Konditionen. Die Vorschlagsgebühr von 1'000 ZCHF geht an die Reserve und wird nicht zurückerstattet.",
+        "cta": {
+          "label": "Formular öffnen",
+          "href": "https://app.frankencoin.com/mint/create",
+          "external": true
+        }
+      },
+      {
+        "title": "Prüfungs- und Vetofrist",
+        "body": "Während mindestens fünf Tagen prüfen FCS-Inhaber den Vorschlag und können ein Veto einlegen. Tut dies niemand, ist die Sicherheit live und andere können dagegen leihen.",
+        "cta": {
+          "label": "Offene Vorschläge ansehen",
+          "href": "https://app.frankencoin.com/governance",
+          "external": true
+        }
+      }
+    ]
+  },
+  "criteria": {
+    "title": "Worauf Prüfer achten",
+    "intro": "Vier Fragen entscheiden die meisten Vorschläge.",
+    "items": [
+      "Ein liquider Markt: Auktionen müssen den Token schnell verkaufen können, wenn eine Position angefochten wird.",
+      "Konservative Konditionen: Ein Liquidationspreis deutlich unter dem Marktpreis gibt dem System Spielraum in einem Crash.",
+      "Ein transparenter Emittent: klare rechtliche Struktur und öffentliche Informationen zum Vermögenswert hinter dem Token.",
+      "Ein vernünftiges Limit: Fangen Sie klein an; das Limit kann später mit einem neuen Vorschlag erhöht werden."
+    ],
+    "guidance": {
+      "title": "Hinweise zur Beurteilung",
+      "body": "Ein Vorschlag legt Liquidationspreis, Prägelimit, Zins, Laufzeit und Reserveanteil fest. Bestehende Beurteilungen zeigen, wie die Community diese Parameter und die mit einem Token verbundenen Rechte gewichtet; lesen Sie einige, bevor Sie Ihre wählen.",
+      "cta": {
+        "label": "Bestehende Beurteilungen lesen",
+        "href": "https://collateral.frankencoin.com/"
+      }
+    }
+  },
+  "faq": [
+    {
+      "q": "Wer kann vorschlagen?",
+      "a": "Jede und jeder mit 1'000 ZCHF für die Gebühr und genug des Tokens für die erste Position. Eine Registrierung oder Bewilligung ist nicht nötig."
+    },
+    {
+      "q": "Wer prüft einen Vorschlag?",
+      "a": "Die Community, öffentlich. Die Diskussion findet auf [Telegram](https://t.me/frankencoinzchf) und in schriftlichen Beurteilungen auf [collateral.frankencoin.com](https://collateral.frankencoin.com/) statt."
+    },
+    {
+      "q": "Wer kann ein Veto einlegen, und was passiert dann?",
+      "a": "FCS-Inhaber mit mehr als 1% der Stimmkraft, einschliesslich delegierter Stimmen. Ein Vorschlag mit Veto wird abgelehnt und die Gebühr bleibt in der Reserve; Sie können mit anderen Konditionen erneut vorschlagen."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "Frankencoin für Treasuries: Unternehmen, Fonds und DAOs",
+    "description": "Halten Sie einen Teil Ihrer On-Chain-Reserven in Schweizer Franken und lassen Sie ungenutzte Bestände den Protokollzins verdienen. Safe-Multisig, Buchhaltungsberichte, Verwahrung und öffentliche Rechtsgutachten."
+  },
+  "hero": {
+    "title": "Diversifizieren Sie Ihre Treasury|in Schweizer Franken.",
+    "subtitle": "Halten Sie einen Teil Ihrer On-Chain-Reserven in Franken statt nur in Dollar, und lassen Sie ungenutzte Bestände im Sparmodul den Protokollzins verdienen.",
+    "primary": {
+      "label": "Treasury-Bedarf besprechen",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Aktuelle Reserven ansehen",
+      "href": "/transparency"
+    }
+  },
+  "why": {
+    "title": "Warum Treasuries ZCHF aufnehmen",
+    "items": [
+      {
+        "title": "Währungsdiversifikation",
+        "description": "Halten Sie den Franken neben USD-Stablecoins, ohne die Chain zu verlassen.",
+        "href": "/use-cases/save-in-chf#fifty",
+        "cta": "Franken vs. Dollar seit 1971"
+      },
+      {
+        "title": "Produktive Bestände",
+        "description": "Im Sparmodul hinterlegte ZCHF verdienen den Protokollzins und können jederzeit abgehoben werden. Der Savings Vault (svZCHF) bietet dasselbe als ein handelbares Token.",
+        "href": "/token#svzchf",
+        "cta": "Über svZCHF"
+      },
+      {
+        "title": "Kein Emittent, keine Bank",
+        "description": "Kein Unternehmen kann Ihr Guthaben einfrieren oder zurücknehmen. ZCHF ist durch überbesicherte Positionen gedeckt, die Sie on-chain prüfen können.",
+        "href": "/transparency",
+        "cta": "Aktuelle Reserven"
+      }
+    ]
+  },
+  "ops": {
+    "title": "Was Ihr Team verlangen wird",
+    "items": [
+      {
+        "title": "Safe-Multisig",
+        "description": "Die App läuft in der Oberfläche von Safe, sodass Ein- und Auszahlungen Ihrer Signaturrichtlinie folgen."
+      },
+      {
+        "title": "Buchhaltungsberichte",
+        "description": "Jahresberichte über Zinsen und Bestände pro Adresse, bereit für Ihre Buchhaltung.",
+        "href": "https://app.frankencoin.com/report",
+        "cta": "Berichte öffnen"
+      },
+      {
+        "title": "Institutionelle Verwahrung",
+        "description": "Unterstützt von institutionellen Verwahrern im Ökosystem.",
+        "href": "/ecosystem",
+        "cta": "Verwahrer ansehen"
+      },
+      {
+        "title": "Recht und Audits",
+        "description": "Öffentliche Rechtsgutachten aus der Schweiz und der EU (MiCA) zur Einordnung von ZCHF, und acht Audits von vier Firmen.",
+        "href": "/compliance",
+        "cta": "Gutachten lesen"
+      }
+    ]
+  },
+  "dao": {
+    "title": "Für DAOs",
+    "subtitle": "Eine ZCHF-Allokation im Sparmodul verdient den Protokollzins in einer zweiten Währung. Wer FCS (Frankencoin Shares) hält, erhält zusätzlich eine Stimme bei neuen Sicherheiten und eine Beteiligung an der Eigenkapitalreserve, mit dem Preisrisiko, das Eigenkapital mit sich bringt."
+  },
+  "cta": {
+    "title": "Planen Sie eine Allokation?",
+    "body": "Die Frankencoin Association begleitet Treasury-Teams bei Verwahrung, Buchhaltung und Liquidität für grössere Beträge.",
+    "primary": {
+      "label": "Treasury-Bedarf besprechen",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Aktuelle Reserven ansehen",
+      "href": "/transparency"
+    }
+  }
+}

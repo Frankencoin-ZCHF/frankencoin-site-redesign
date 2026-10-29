@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "So funktioniert Frankencoin",
+    "description": "Wie ZCHF gegen Sicherheiten geprägt wird, wie die Bindung an den Franken ohne Preisorakel hält, wie Sparer vergütet werden und was FCS-Inhaber bestimmen."
+  },
+  "hero": {
+    "title": "Drei bewegliche Teile,|kein Emittent.",
+    "subtitle": "Frankencoin ist eine Sammlung von Smart Contracts. Kreditnehmer prägen Franken gegen Sicherheiten, der Markt hält die Bindung, und die Zinsen, die sie zahlen, finanzieren Sparer und die Reserve."
+  },
+  "parts": {
+    "title": "Das System in einem Durchgang.",
+    "steps": [
+      {
+        "title": "Prägen",
+        "description": "Jeder kann Sicherheiten (BTC, ETH, tokenisiertes Gold oder Aktien) in einer Position hinterlegen und dagegen ZCHF prägen, bis zu einer Grenze unterhalb des Werts der Sicherheiten. Die Zinsen für die Laufzeit werden im Voraus in die Reserve gezahlt."
+      },
+      {
+        "title": "Die Bindung halten",
+        "description": "Jeder ZCHF ist mit mehr als einem Franken an Sicherheiten gedeckt. Sieht eine Position unterbesichert aus, kann sie jeder anfechten, und die Sicherheiten werden versteigert. Ein Preisorakel ist nicht beteiligt."
+      },
+      {
+        "title": "Die Erträge teilen",
+        "description": "Die Reserve zahlt den Sparzins auf ZCHF, die im Sparmodul hinterlegt sind. Was übrig bleibt, verbleibt in der Reserve, die den Inhabern von FCS (Frankencoin Shares) gehört und von ihnen verwaltet wird."
+      }
+    ]
+  },
+  "detail": {
+    "title": "Die Teile, eines nach dem anderen.",
+    "rows": [
+      {
+        "title": "Positionen",
+        "description": "Eine Position ist ein Vertrag, der die Sicherheiten eines Kreditnehmers hält und die dagegen geprägten ZCHF festhält. Ihre Bedingungen (Liquidationspreis, Zins, Laufzeit) werden bei der Eröffnung festgelegt und sind on-chain sichtbar. Zahlen Sie die ZCHF zurück, werden die Sicherheiten freigegeben.",
+        "cta": {
+          "label": "Gegen Ihre Vermögenswerte leihen",
+          "href": "/use-cases/borrow"
+        }
+      },
+      {
+        "title": "Warum 1 ZCHF einen Franken wert ist",
+        "description": "Kreditnehmer schulden pro ZCHF genau einen Franken, und ihre Sicherheiten sind mehr wert als das. Weicht der ZCHF-Kurs von einem Franken ab, profitieren Kreditnehmer und Händler davon, die Lücke zu schliessen, was den Preis zurückzieht. Die Bindung wird durch Sicherheiten und Arbitrage gehalten, nicht durch ein Rücknahmeversprechen eines Emittenten."
+      },
+      {
+        "title": "Anfechtungen und Auktionen",
+        "description": "Wer eine Position für unterbesichert hält, reicht eine Anfechtung ein. Die Sicherheiten der Position kommen in eine öffentliche Auktion. Bestätigen die Gebote, dass die Position solide ist, verliert der Anfechter eine Einlage; wenn nicht, werden die Sicherheiten verkauft, um die Schuld zu tilgen. Das ersetzt den Preisfeed, von dem andere Protokolle abhängen.",
+        "cta": {
+          "label": "Auktionen in der Dokumentation",
+          "href": "https://docs.frankencoin.com/positions/auctions"
+        }
+      },
+      {
+        "title": "Governance",
+        "description": "FCS-Inhaber stimmen über neue Arten von Sicherheiten, Zinssätze und Protokolländerungen ab. Vorschläge werden angenommen, sofern nicht Inhaber mit genügend Stimmen ihr Veto einlegen. Das Protokoll hat also keinen Betreiber, der die Regeln im Alleingang ändern kann.",
+        "cta": {
+          "label": "Frankencoin Shares",
+          "href": "/fcs"
+        }
+      },
+      {
+        "title": "Forschung",
+        "description": "Frankencoin ist aus einer Doktorarbeit an der Universität Zürich hervorgegangen, die die Spieltheorie des Anfechtungsmechanismus, das Risiko von Bitcoin als Sicherheit und die vetobasierte Governance analysiert.",
+        "cta": {
+          "label": "Dissertation lesen",
+          "href": "https://www.zora.uzh.ch/entities/publication/b1bff836-6852-457d-93e6-496807db37fa"
+        }
+      }
+    ]
+  },
+  "nextHead": {
+    "title": "Machen Sie mit."
+  },
+  "next": [
+    {
+      "title": "In CHF sparen",
+      "description": "Hinterlegen Sie ZCHF im Sparmodul und erhalten Sie den Protokollzins.",
+      "href": "/use-cases/save-in-chf",
+      "cta": "Sparen"
+    },
+    {
+      "title": "Leihen",
+      "description": "Eröffnen Sie eine Position gegen BTC, ETH, Gold oder Aktien und prägen Sie Franken.",
+      "href": "/use-cases/borrow",
+      "cta": "Leihen"
+    },
+    {
+      "title": "FCS halten",
+      "description": "Besitzen Sie einen Anteil an der Reserve und eine Stimme im Protokoll.",
+      "href": "/fcs",
+      "cta": "Über FCS"
+    }
+  ],
+  "docs": [
+    {
+      "label": "Dokumentation",
+      "href": "https://docs.frankencoin.com/"
+    },
+    {
+      "label": "Quellcode",
+      "href": "https://github.com/Frankencoin-ZCHF/"
+    }
+  ]
+}

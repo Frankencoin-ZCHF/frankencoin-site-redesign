@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "title": "Frankencoin-Empfehlungsprogramm: bis zu 25% der Zinsen Ihrer Sparer verdienen",
+    "description": "Wallets, Communities und Creator können sich als Empfehlende eintragen, wenn Menschen ZCHF sparen, und bis zu 25% der Zinsen verdienen, bezahlt vom Vertrag."
+  },
+  "hero": {
+    "title": "Verdienen Sie einen Anteil der Zinsen,|die Ihre Sparer erhalten.",
+    "subtitle": "Empfehlende erhalten einen Anteil der Zinsen, die ihre Sparer verdienen, bis zu 25%, automatisch bezahlt vom Sparvertrag. Der Anteil wird vom Zins des Sparers abgezogen; der Rechner unten zeigt, was dem Sparer bleibt.",
+    "primary": {
+      "label": "Link erstellen",
+      "href": "#link"
+    },
+    "secondary": {
+      "label": "Rangliste ansehen",
+      "href": "https://app.frankencoin.com/savings/referrer"
+    }
+  },
+  "how": {
+    "title": "So funktioniert es",
+    "cards": [
+      {
+        "title": "1 · Link teilen",
+        "description": "Ihr Link öffnet die Sparseite der App mit Ihrer Adresse und Ihrem Anteil bereits ausgefüllt."
+      },
+      {
+        "title": "2 · Sie sparen",
+        "description": "Wenn der Sparer einzahlt, hält der Vertrag Sie als Empfehlende fest."
+      },
+      {
+        "title": "3 · Sie verdienen",
+        "description": "Jedes Mal, wenn ihre Zinsen eingesammelt werden, geht Ihr Anteil an Ihre Adresse. Keine Rechnungen, keine Auszahlungen, denen Sie nachrennen müssen."
+      }
+    ]
+  },
+  "builder": {
+    "title": "Erstellen Sie Ihren Empfehlungslink",
+    "address": "Ihre Auszahlungsadresse",
+    "fee": "Ihr Anteil an deren Zinsen",
+    "feeHint": "Bis zu 25%. Ein tieferer Anteil ist ein besseres Angebot für Ihre Sparer.",
+    "link": "Ihr Link",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "invalid": "Geben Sie eine gültige 0x-Adresse ein.",
+    "earnTitle": "Was Sie verdienen könnten",
+    "referred": "Gesamtguthaben der Sparer",
+    "perYear": "Ihr Anteil pro Jahr",
+    "saverRate": "Nettozins Ihrer Sparer",
+    "grossRate": "Sparzins vor Ihrem Anteil"
+  },
+  "fair": {
+    "title": "Fair von Grund auf",
+    "items": [
+      {
+        "title": "Vom Vertrag begrenzt",
+        "description": "Der Vertrag lehnt jeden Anteil über 25% der Zinsen ab."
+      },
+      {
+        "title": "Sparer behalten die Kontrolle",
+        "description": "Ein Sparer kann den Empfehlenden jederzeit entfernen oder ändern, und die Guthaben der Empfehlenden sind in der Rangliste öffentlich."
+      }
+    ]
+  },
+  "who": {
+    "title": "Für wen es gedacht ist",
+    "body": "Wallets und Apps, die Sparen in ihre Oberfläche einbauen, Communities, die ihren Mitgliedern beim Sparen in Franken helfen, und Bildungsanbieter, die On-Chain-Sparen erklären.",
+    "cta": {
+      "label": "Für Wallets und Börsen",
+      "href": "/for/exchanges-wallets"
+    }
+  },
+  "note": "Die Erträge hängen vom Sparzins ab, den die Governance ändern kann, und davon, wie lange Ihre Sparer ihr Guthaben halten."
+}

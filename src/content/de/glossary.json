@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Frankencoin Glossar",
+    "description": "Kurze Definitionen von ZCHF, FCS, svZCHF, Positionen, Anfechtungen, dem Sparzins und anderen Frankencoin-Begriffen."
+  },
+  "hero": {
+    "title": "Die Begriffe,|je eine Zeile.",
+    "subtitle": "Begriffe, die Ihnen auf dieser Website und in der App begegnen."
+  },
+  "terms": [
+    {
+      "term": "ZCHF",
+      "def": "Der Frankencoin-Token: ein digitaler Schweizer Franken, gedeckt durch On-Chain-Collateral im Wert von mehr als einem Franken."
+    },
+    {
+      "term": "FCS",
+      "def": "Frankencoin Shares, der Anteil- und Governance-Token: ein Anspruch auf die Reserve und eine Stimme mit Vetorecht."
+    },
+    {
+      "term": "FPS",
+      "def": "Frankencoin Pool Shares, der frühere Equity-Token. FCS wrappt FPS eins zu eins; neue Teilnehmer nutzen FCS."
+    },
+    {
+      "term": "svZCHF",
+      "def": "Savings-Vault-Token: ins Savings-Modul eingelegte ZCHF, gehalten als ein Token, dessen Wert mit dem Sparzins wächst."
+    },
+    {
+      "term": "Savings-Modul",
+      "def": "Der Contract, der den Sparzins auf eingelegte ZCHF zahlt. ZCHF in einer Wallet bringen für sich allein nichts."
+    },
+    {
+      "term": "Sparzins",
+      "def": "Der Jahreszins auf ZCHF im Savings-Modul. Wird durch die Governance festgelegt und geändert; auch Leitzins genannt."
+    },
+    {
+      "term": "Position",
+      "def": "Ihr Kreditvertrag: Er hält Ihr Collateral und erfasst die ZCHF, die Sie gemintet haben, mit Konditionen, die bei der Eröffnung fixiert werden."
+    },
+    {
+      "term": "Collateral",
+      "def": "Was Sie in einer Position sperren, um dagegen zu leihen: BTC, ETH, tokenisiertes Gold oder Aktien."
+    },
+    {
+      "term": "Liquidationspreis",
+      "def": "Der Collateral-Preis, unter dem Ihre Position angefochten und das Collateral versteigert werden kann. Halten Sie einen Puffer darüber."
+    },
+    {
+      "term": "Loan-to-Value",
+      "def": "Wie viel Sie im Verhältnis zum Marktwert Ihres Collaterals leihen. Tiefer ist sicherer."
+    },
+    {
+      "term": "Vorauszins",
+      "def": "Zins für die ganze Laufzeit, abgezogen von den ZCHF, die Sie beim Minten erhalten."
+    },
+    {
+      "term": "Zurückbehaltene Reserve",
+      "def": "Ein Anteil dessen, was Sie minten, der in der Reserve bleibt und bei der Rückzahlung zurückkommt."
+    },
+    {
+      "term": "Anfechtung",
+      "def": "Eine öffentliche Behauptung, dass das Collateral einer Position weniger wert ist als ihr Liquidationspreis. Sie startet eine Auktion, die die Frage klärt."
+    },
+    {
+      "term": "Reserve",
+      "def": "ZCHF, die das Protokoll hält, finanziert durch Zinsen und FCS-Käufe. Sie zahlt den Sparzins und deckt Fehlbeträge, wenn eine Auktion eine Schuld nicht tilgt; FCS ist ein Anspruch darauf."
+    },
+    {
+      "term": "Veto",
+      "def": "Das Recht von FCS-Inhabern mit genügend Stimmen, eine vorgeschlagene Collateral- oder Protokolländerung zu blockieren."
+    },
+    {
+      "term": "CCIP",
+      "def": "Das Cross-Chain-Protokoll von Chainlink, genutzt, um ZCHF zwischen den Chains zu bewegen, auf denen er lebt. Siehe [Börsen und Wallets](/for/exchanges-wallets)."
+    },
+    {
+      "term": "Peg",
+      "def": "ZCHF handelt zu einem Schweizer Franken. Gehalten durch Überbesicherung und Arbitrage, nicht durch Rücknahme eines Emittenten."
+    }
+  ],
+  "nextHead": {
+    "title": "Weiterlesen."
+  },
+  "next": [
+    {
+      "title": "So funktioniert es",
+      "description": "Minten, der Peg, Anfechtungen und Auktionen, und wohin die Einnahmen fliessen.",
+      "href": "/how-it-works",
+      "cta": "Lesen"
+    },
+    {
+      "title": "FAQ",
+      "description": "Kurze Antworten zu Grundlagen, Mechanik, ZCHF-Nutzung, Compliance und Risiko.",
+      "href": "/faq",
+      "cta": "Öffnen"
+    }
+  ]
+}

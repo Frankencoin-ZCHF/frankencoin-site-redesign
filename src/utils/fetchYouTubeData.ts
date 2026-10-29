@@ -41,7 +41,7 @@ function decodeHtmlEntities(text: string): string {
   return text.replace(/&[#\w]+;/g, (entity) => entities[entity] || entity);
 }
 
-export async function fetchYouTubeData(url: string): Promise<YouTubeData | null> {
+async function fetchYouTubeDataUncached(url: string): Promise<YouTubeData | null> {
   try {
     const videoId = extractVideoId(url);
     if (!videoId) {
@@ -107,4 +107,20 @@ export async function fetchYouTubeData(url: string): Promise<YouTubeData | null>
     console.error(`Error fetching YouTube data for ${url}:`, error);
     return null;
   }
+}
+
+/* One-hour in-memory cache per URL (the metadata of a published article does not change), so a page
+ * request does not refetch every source. A failed fetch is cached for five minutes to avoid hammering. */
+const TTL_OK = 60 * 60 * 1000;
+const TTL_FAIL = 5 * 60 * 1000;
+const cache = new Map<string, { at: number; data: YouTubeData | null }>();
+const inflight = new Map<string, Promise<YouTubeData | null>>();
+export async function fetchYouTubeData(url: string): Promise<YouTubeData | null> {
+  const hit = cache.get(url);
+  if (hit && Date.now() - hit.at < (hit.data ? TTL_OK : TTL_FAIL)) return hit.data;
+  const pending = inflight.get(url);
+  if (pending) return pending;
+  const run = fetchYouTubeDataUncached(url).then((data) => { cache.set(url, { at: Date.now(), data }); inflight.delete(url); return data; });
+  inflight.set(url, run);
+  return run;
 }

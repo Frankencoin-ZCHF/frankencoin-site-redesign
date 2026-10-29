@@ -1,151 +1,136 @@
 {
-	"eyebrow": "Bereits heute im Einsatz",
-	"title": "Echte Anwendungen für digitale Schweizer Franken",
-	"intro": "Frankencoin wird bereits von Unternehmen und Privatpersonen in der ganzen Schweiz für alltägliche Zahlungen, Finanzgeschäfte und dezentrale Finanzdienstleistungen eingesetzt. Entdecken Sie, wie ZCHF traditionelle Schweizer Franken mit der digitalen Wirtschaft verbindet.",
-	"cases": [
-		{
-			"title": "Zahlungen im Einzelhandel",
-			"partner": "Spar Schweiz",
-			"description": "Bezahlen Sie direkt mit Frankencoin in Spar-Filialen in der ganzen Schweiz",
-			"longDescription": "Bezahlen Sie mit Frankencoin in über 100 Spar-Filialen in der ganzen Schweiz. Die Transaktionsgebühren sind zwei Drittel tiefer als bei Twint oder Kartenzahlung — eine der kostengünstigsten Zahlungsmethoden für Schweizer Einzelhändler und Konsumenten.",
-			"category": "Payments",
-			"image": "/images/spar.png",
-			"link": "https://presse.spar.ch/de/spar-schweiz/allgemein/neu%3A-jetzt-bei-spar-mit-krypto-waehrung-bezahlen/"
-		},
-		{
-			"title": "Krypto-Checkout",
-			"partner": "PrivCart",
-			"description": "ZCHF und weitere digitale Assets mit einer schlanken Integration und einer Pauschalgebühr von 1% im Online-Checkout akzeptieren",
-			"longDescription": "PrivCart ermöglicht Händlern, Krypto-Checkout in Shopify, WooCommerce, BigCommerce oder einen individuellen Webshop einzubinden. Kunden können mit ZCHF und weiteren unterstützten Assets bezahlen; Händler können ihr Guthaben an eine selbst kontrollierte Wallet auszahlen lassen. Händler bleiben für die Einhaltung des anwendbaren Rechts und ihrer eigenen Compliance-Pflichten verantwortlich.",
-			"category": "Payments",
-			"image": "/images/privcart-logo.webp",
-			"link": "https://privcart.com/"
-		},
-		{
-			"title": "Banking-Integration",
-			"partner": "Mt Pelerin",
-			"description": "Verbinden Sie Frankencoin mit einer persönlichen IBAN — traditionelle Banküberweisungen mit digitalen Zahlungen verknüpfen",
-			"longDescription": "Verbinden Sie ZCHF mit einer persönlichen IBAN über Mt Pelerin, einen FINMA-regulierten Schweizer Finanzintermediär. Senden und empfangen Sie Schweizer Franken-Überweisungen direkt aus Ihrem Frankencoin-Wallet. Kaufen Sie ZCHF per Banküberweisung zu 0% Gebühren oder bezahlen Sie QR-Rechnungen mit Ihren digitalen Schweizer Franken.",
-			"category": "Payments",
-			"image": "/images/mt-pelerin-logo.png",
-			"link": "https://www.mtpelerin.com/buy-zchf-frankencoin"
-		},
-		{
-			"title": "Zinsen auf Spareinlagen verdienen",
-			"partner": "Frankencoin Protocol",
-			"description": "Legen Sie ZCHF im Spar-Tresor des Protokolls an und erzielen Sie marktbasierte Erträge auf Ihre CHF-Guthaben",
-			"longDescription": "Legen Sie ZCHF im Sparmodul des Protokolls an und erzielen Sie marktbasierte Erträge auf Ihre Schweizer Franken-Guthaben. Weitere Ertragsmöglichkeiten bestehen über DeFi-Protokolle wie Morpho (Lending) und Curve (Liquiditätsbereitstellung).",
-			"category": "DeFi",
-			"image": "/images/Icon-Invest.svg",
-			"link": "https://app.frankencoin.com/savings"
-		},
-		{
-			"title": "Automatisiertes Sparen",
-			"partner": "urble",
-			"description": "Spare ZCHF automatisch mit flexiblen Sparplänen und erziele eine Rendite über Frankencoin.",
-			"longDescription": "urble ist eine Self-Custody-Spar-App, mit der Nutzer langfristig in ZCHF oder BTC sparen können — für ihre eigenen Ziele oder für Menschen, die ihnen wichtig sind. Erstelle flexible Sparpläne, zahle regelmässig ein und erhalte Zinsen auf deine ZCHF-Ersparnisse, während du jederzeit die Kontrolle über dein Geld behältst.",
-			"category": "DeFi",
-			"image": "/images/urble-logo.png",
-			"link": "https://urble.io/"
-		},
-		{
-			"title": "Internet-native Sparstrategien",
-			"partner": "Rebind",
-			"description": "Erzielen Sie Erträge auf ZCHF neben EUR und USD in einer einfachen Spar-App, mit persönlicher IBAN und sofortiger Verfügbarkeit",
-			"longDescription": "Rebind ermöglicht einfachen Zugang zu internetnativen Geldmärkten und bietet eine vollständige ZCHF-Integration neben EUR- und USD-Strategien. Zahlen Sie über eine persönliche IBAN oder mit digitalen Assets ein, verfolgen Sie automatisch auflaufende Erträge und heben Sie Ihr Guthaben bei Bedarf ab.",
-			"category": "Payments",
-			"image": "/images/rebind-logo.png",
-			"link": "https://rebind.co/"
-		},
-		{
-			"title": "Lohnbuchhaltung & HR-Administration",
-			"partner": "Quitt",
-			"description": "Komplette Mitarbeiterverwaltung inklusive Lohnbuchhaltung, Sozialversicherungen und Pensionskassen — vollständig in ZCHF",
-			"longDescription": "Quitt bietet komplette Mitarbeiterverwaltung inklusive Lohnbuchhaltung, Sozialversicherungen und Pensionskassenabwicklung — vollständig in ZCHF. Arbeitgeber können Löhne in digitalen Schweizer Franken zahlen mit voller regulatorischer Compliance, einschliesslich aller obligatorischen Schweizer Sozialversicherungsbeiträge.",
-			"category": "Business",
-			"image": "/images/quitt-logo.svg",
-			"link": "https://www.quitt.ch/"
-		},
-		{
-			"title": "Treasury Management",
-			"partner": "Plusplus",
-			"description": "Professionelle Treasury-Lösungen inklusive Verwaltung von Mietsicherheitskautionen in ZCHF",
-			"longDescription": "Plusplus bietet professionelle Treasury-Lösungen für Unternehmen, einschliesslich Mietsicherheitskautionen in ZCHF. Unternehmen können Schweizer Franken-Liquidität on-chain mit voller Transparenz und Programmierbarkeit halten und verwalten.",
-			"category": "Business",
-			"image": "/images/logo_plusplus.avif",
-			"link": "https://www.plusplus.swiss/"
-		},
-		{
-			"title": "Digitale Wertpapiere",
-			"partner": "Aktionariat",
-			"description": "Handeln Sie tokenisierte Aktien und beteiligen Sie sich an Kapitalerhöhungen mit ZCHF als Abwicklungswährung",
-			"longDescription": "Handeln Sie tokenisierte Aktien auf Aktionariats Plattform mit ZCHF als Abwicklungswährung. Beteiligen Sie sich an Kapitalerhöhungen und dem Sekundärhandel von Schweizer Unternehmensaktien — alles abgewickelt in digitalen Schweizer Franken.",
-			"category": "Business",
-			"image": "/images/aktionariat-Compressify.io.webp",
-			"link": "https://www.aktionariat.com/"
-		},
-		{
-			"title": "Kartenzahlungen",
-			"partner": "GnosisPay",
-			"description": "Nutzen Sie Frankencoin für alltägliche Kartenzahlungen — Transaktionen werden in ZCHF abgewickelt",
-			"longDescription": "Geben Sie ZCHF weltweit mit einer GnosisPay Visa-Debitkarte aus. Die Karte konvertiert ZCHF für Händlerzahlungen am Point of Sale, während Ihr Guthaben bis zur Ausgabe in Schweizer Franken verbleibt.",
-			"category": "Payments",
-			"image": "/images/gnosispay.png",
-			"link": "https://zeal.app/"
-		},
-		{
-			"title": "Krypto-Wallet & Kartenzahlungen",
-			"partner": "Zeal",
-			"description": "Digitale Wallet für weltweite ZCHF-Ausgaben mit Gnosis Pay-Karte — Erträge und Cashback bei alltäglichen Einkäufen",
-			"longDescription": "Zeal bietet eine digitale Wallet, die Ihr ZCHF-Guthaben mit einer Visa-Debitkarte verbindet. Bezahlen Sie überall, wo Visa akzeptiert wird, erhalten Sie Cashback auf alltägliche Einkäufe und verwalten Sie Ihre Schweizer Franken-Stablecoin-Bestände in einer einzigen App.",
-			"category": "Payments",
-			"image": "/images/zeal.png",
-			"link": "https://www.zeal.app/"
-		},
-		{
-			"title": "Dezentrales Kreditwesen",
-			"partner": "Morpho",
-			"description": "Verleihen und leihen Sie ZCHF über anpassbare, überbesicherte Kreditmärkte auf Ethereum und Base",
-			"longDescription": "Verleihen und leihen Sie ZCHF über Morphos anpassbare Kreditmärkte auf Ethereum und Base. Erzielen Sie Erträge durch ZCHF-Bereitstellung oder leihen Sie gegen Ihre Krypto-Assets zu wettbewerbsfähigen, marktgesteuerten Zinssätzen.",
-			"category": "DeFi",
-			"image": "/images/morpho.png",
-			"link": "https://morpho.org/"
-		},
-		{
-			"title": "crvUSD gegen svZCHF leihen",
-			"partner": "Curve LlamaLend",
-			"description": "Nutzen Sie svZCHF als Sicherheit, um crvUSD über Curves isolierten Kreditmarkt auf Ethereum zu leihen",
-			"longDescription": "Hinterlegen Sie svZCHF als Sicherheit und leihen Sie crvUSD über den isolierten Ethereum-Markt von Curve LlamaLend. Konditionen, Zinssätze und Liquidationsrisiken werden vom Markt bestimmt und können sich ändern.",
-			"category": "DeFi",
-			"image": "/images/full-curve-dao-logo.jpg",
-			"link": "https://www.curve.finance/lend/ethereum/markets/0xFd85e847cDd2549f213E276e4B57B0690169F043"
-		},
-		{
-			"title": "Krypto Verwahrung",
-			"partner": "Bitcoin Suisse",
-			"description": "Verwahren Sie ZCHF mit dem Schweizer Pionier für Krypto-Finanzdienstleistungen",
-			"longDescription": "Verwahren Sie ZCHF bei Bitcoin Suisse, dem Schweizer Pionier für Krypto-Finanzdienstleistungen, mit institutioneller Sicherheit und voller regulatorischer Compliance.",
-			"category": "Business",
-			"image": "/images/bitcoin-suisse.png",
-			"link": "https://www.bitcoinsuisse.com/"
-		},
-		{
-			"title": "Institutionelle Verwahrung & Collateral Management",
-			"partner": "Copper",
-			"description": "ZCHF unterstützt durch Coppers institutionelle Custody- und Collateral-Management-Infrastruktur",
-			"longDescription": "Coppers institutionelle Custody ermöglicht sichere Verwahrung und DeFi-fähigen Einsatz von Schweizer-Franken-Liquidität. Institutionen können ZCHF als Teil ihres breiteren Digital-Asset-Portfolios mit Enterprise-Grade-Infrastruktur verwalten.",
-			"category": "Business",
-			"image": "/images/CopperLogoDark.png",
-			"link": "https://copper.co/"
-		},
-		{
-			"title": "Dezentrale Indexfonds",
-			"partner": "Sagix Club Edelweiss",
-			"description": "ZCHF als Kernkomponente des ixEDEL DTF — risikoparitatischer On-Chain-Fonds auf Reserve Protocol",
-			"longDescription": "ZCHF ist Kernkomponente des ixEDEL DTF auf Reserve Protocol — ein risikoparitatischer On-Chain-Fonds aus Gold, Bitcoin, ZCHF und Rendite-Stablecoins, der Kaufkraft über alle Marktregimes hinweg erhalten soll.",
-			"category": "DeFi",
-			"image": "/images/sagix-ixedel.jpg",
-			"link": "https://app.reserve.org/ethereum/index-dtf/0xe4a10951f962e6cb93cb843a4ef05d2f99db1f94/overview"
-		}
-	]
+  "heroTitle": "Wo ZCHF|heute genutzt wird",
+  "title": "Wo ZCHF heute genutzt wird",
+  "intro": "Dienste, die Frankencoin annehmen, halten oder auszahlen, gruppiert nach dem, was Sie tun möchten. Jede Karte nennt den konkreten Weg.",
+  "filterAll": "Alle",
+  "categories": ["Zahlungen", "DeFi", "Unternehmen"],
+  "cases": [
+    {
+      "title": "An der Kasse bezahlen",
+      "partner": "Spar Schweiz",
+      "description": "Bezahlen Sie an der Kasse von über 100 Spar-Filialen in der Schweiz: Die Kassiererin zeigt einen QR-Code, Sie bestätigen aus einer Wallet mit ZCHF.",
+      "category": "Zahlungen",
+      "image": "/images/spar.png",
+      "link": "https://presse.spar.ch/de/spar-schweiz/allgemein/neu%3A-jetzt-bei-spar-mit-krypto-waehrung-bezahlen/"
+    },
+    {
+      "title": "Online-Checkout",
+      "partner": "PrivCart",
+      "description": "Händler binden einen Krypto-Checkout in Shopify, WooCommerce, BigCommerce oder einen eigenen Shop ein. Kunden bezahlen in ZCHF; der Händler zahlt an eine selbst kontrollierte Wallet aus.",
+      "category": "Zahlungen",
+      "image": "/images/privcart-logo.webp",
+      "link": "https://privcart.com/"
+    },
+    {
+      "title": "Per Banküberweisung kaufen, Rechnungen bezahlen",
+      "partner": "Mt Pelerin",
+      "description": "Kaufen Sie ZCHF per Banküberweisung in Ihre eigene Wallet, oder verknüpfen Sie die Wallet mit einer persönlichen IBAN, um Überweisungen zu empfangen und Schweizer QR-Rechnungen in ZCHF zu bezahlen.",
+      "category": "Zahlungen",
+      "image": "/images/mt-pelerin-logo.png",
+      "link": "https://www.mtpelerin.com/buy-zchf-frankencoin"
+    },
+    {
+      "title": "Visa-Karte",
+      "partner": "Zeal mit Gnosis Pay",
+      "description": "Zeal ist die Wallet-App, Gnosis Pay gibt die Visa-Debitkarte aus. Halten Sie ZCHF in Zeal und bezahlen Sie überall, wo Visa akzeptiert wird; die Karte wird aus Ihrem ZCHF-Guthaben belastet.",
+      "category": "Zahlungen",
+      "image": "/images/zeal.png",
+      "link": "https://www.zeal.app/"
+    },
+    {
+      "title": "Sparen im Protokoll",
+      "partner": "Frankencoin-Protokoll",
+      "description": "Hinterlegen Sie ZCHF im Sparmodul des Protokolls und erhalten Sie den von der Governance festgelegten Zins. Die Verzinsung beginnt nach einer anfänglichen Wartefrist; Sie können jederzeit abheben.",
+      "category": "DeFi",
+      "image": "/images/Icon-Invest.svg",
+      "link": "https://app.frankencoin.com/savings"
+    },
+    {
+      "title": "Regelmässiger Sparplan",
+      "partner": "urble",
+      "description": "Richten Sie einen regelmässigen Sparplan in ZCHF oder BTC ein, für sich selbst oder für jemand anderen. Die Mittel bleiben in Ihrer eigenen Wallet, und der ZCHF-Anteil erhält den Sparzins des Protokolls.",
+      "category": "DeFi",
+      "image": "/images/urble-logo.png",
+      "link": "https://urble.io/"
+    },
+    {
+      "title": "Spar-App mit IBAN",
+      "partner": "Rebind",
+      "description": "Zahlen Sie per Banküberweisung auf eine persönliche IBAN ein oder hinterlegen Sie digitale Vermögenswerte, wählen Sie eine ZCHF-, EUR- oder USD-Strategie und heben Sie ab, wenn Sie das Geld brauchen.",
+      "category": "DeFi",
+      "image": "/images/rebind-logo.png",
+      "link": "https://rebind.co/"
+    },
+    {
+      "title": "ZCHF verleihen oder leihen",
+      "partner": "Morpho",
+      "description": "Stellen Sie ZCHF bereit und erhalten Sie Zinsen von Kreditnehmern, oder leihen Sie ZCHF gegen Krypto-Sicherheiten, in den Kreditmärkten von Morpho auf Ethereum und Base.",
+      "category": "DeFi",
+      "image": "/images/morpho.png",
+      "link": "https://morpho.org/"
+    },
+    {
+      "title": "crvUSD gegen svZCHF leihen",
+      "partner": "Curve LlamaLend",
+      "description": "Hinterlegen Sie Spartresor-Token (svZCHF) als Sicherheit und leihen Sie crvUSD im isolierten Ethereum-Markt von Curve. Zinsen und Liquidationsbedingungen legt dieser Markt fest.",
+      "category": "DeFi",
+      "image": "/images/full-curve-dao-logo.jpg",
+      "link": "https://www.curve.finance/lend/ethereum/markets/0xFd85e847cDd2549f213E276e4B57B0690169F043"
+    },
+    {
+      "title": "Bestandteil eines Indexfonds",
+      "partner": "Sagix Club Edelweiss",
+      "description": "ZCHF ist einer der Bestandteile des Indexfonds ixEDEL auf Reserve Protocol, neben Gold, Bitcoin und verzinslichen Stablecoins.",
+      "category": "DeFi",
+      "image": "/images/sagix-ixedel.jpg",
+      "link": "https://app.reserve.org/ethereum/index-dtf/0xe4a10951f962e6cb93cb843a4ef05d2f99db1f94/overview"
+    },
+    {
+      "title": "Tokenisierte Aktien",
+      "partner": "Aktionariat",
+      "description": "Kaufen und verkaufen Sie tokenisierte Aktien von Schweizer Unternehmen und beteiligen Sie sich an deren Kapitalerhöhungen, mit ZCHF als Abwicklungswährung.",
+      "category": "Unternehmen",
+      "image": "/images/aktionariat-Compressify.io.webp",
+      "link": "https://www.aktionariat.com/"
+    },
+    {
+      "title": "Lohnabrechnung",
+      "partner": "Quitt",
+      "description": "Führen Sie Lohnabrechnung, Sozialversicherungen und Pensionskassenbeiträge für Ihre Mitarbeitenden und zahlen Sie die Löhne in ZCHF aus.",
+      "category": "Unternehmen",
+      "image": "/images/quitt-logo.svg",
+      "link": "https://www.quitt.ch/"
+    },
+    {
+      "title": "Firmen-Treasury und Mietkautionen",
+      "partner": "Plusplus",
+      "description": "Treasury-Produkte für Unternehmen auf Basis von ZCHF, einschliesslich Mietkautionen, die in ZCHF gehalten werden.",
+      "category": "Unternehmen",
+      "image": "/images/logo_plusplus.avif",
+      "link": "https://www.plusplus.swiss/"
+    },
+    {
+      "title": "Verwahrung",
+      "partner": "Bitcoin Suisse",
+      "description": "Lassen Sie ZCHF bei Bitcoin Suisse, einem Schweizer Anbieter von Krypto-Finanzdienstleistungen, verwahren, statt in Ihrer eigenen Wallet.",
+      "category": "Unternehmen",
+      "image": "/images/bitcoin-suisse.png",
+      "link": "https://www.bitcoinsuisse.com/"
+    },
+    {
+      "title": "Institutionelle Verwahrung",
+      "partner": "Copper",
+      "description": "Institutionen halten ZCHF in der Verwahrung von Copper und können ihn von dort in DeFi einsetzen, neben ihren übrigen digitalen Vermögenswerten.",
+      "category": "Unternehmen",
+      "image": "/images/CopperLogoDark.png",
+      "link": "https://copper.co/"
+    }
+  ],
+  "more": {
+    "title": "Suchen Sie etwas anderes?",
+    "links": [
+      { "label": "Börsen und Wallets", "href": "/for/exchanges-wallets" },
+      { "label": "Vollständige Ökosystem-Liste", "href": "/ecosystem" }
+    ]
+  }
 }

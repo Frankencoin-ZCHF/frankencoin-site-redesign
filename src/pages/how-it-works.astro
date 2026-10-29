@@ -16,7 +16,7 @@ const c = { ...en, ...local };
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={{ label: "Borrow", href: "/use-cases/borrow" }} secondary={{ label: "Save in CHF", href: "/use-cases/save-in-chf" }} />
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={{ label: lang === "de" ? "Leihen" : "Borrow", href: "/use-cases/borrow" }} secondary={{ label: lang === "de" ? "In Franken sparen" : "Save in CHF", href: "/use-cases/save-in-chf" }} />
 
   <LPSection title={c.parts.title}>
     <!-- One flow, three steps: the diagram is the explanation. -->

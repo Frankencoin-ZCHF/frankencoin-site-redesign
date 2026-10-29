@@ -22,7 +22,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
 ---
 
 <Base title={c.meta?.title} description={c.meta?.description}>
-  <LPHero compact title={c.header.title} subtitle={c.header.subtitle} primary={c.header.cta} secondary={{ label: "How it works", href: "/how-it-works" }}>
+  <LPHero compact title={c.header.title} subtitle={c.header.subtitle} primary={c.header.cta} secondary={{ label: lang === "de" ? "So funktioniert es" : "How it works", href: "/how-it-works" }}>
     <Figures slot="aside" items={[
       { ...c.figures.supply, value: formatAmount(t.supply) },
       { ...c.figures.ratio, value: ratio },

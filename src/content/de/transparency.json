@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Frankencoin-Transparenz: Umlauf, Sicherheiten und Reserve live",
+    "description": "Jeder ZCHF ist durch On-Chain-Sicherheiten gedeckt. Umlauf pro Chain, Sicherheiten pro Vermögenswert und die Protokollreserve live, direkt aus der Frankencoin-API."
+  },
+  "hero": {
+    "title": "Jeder Franken,|on-chain nachgewiesen.",
+    "subtitle": "Live-Zahlen aus der Frankencoin-API. Jede Zahl lässt sich auf einem Block-Explorer prüfen."
+  },
+  "figures": {
+    "supply": {
+      "label": "ZCHF im Umlauf",
+      "unit": "alle Chains"
+    },
+    "collateral": {
+      "label": "Wert der Sicherheiten",
+      "unit": "CHF"
+    },
+    "ratio": {
+      "label": "Sicherheit pro ZCHF",
+      "unit": "CHF"
+    },
+    "equity": {
+      "label": "Eigenkapital des Protokolls",
+      "unit": "ZCHF"
+    }
+  },
+  "chains": {
+    "title": "Umlauf pro Chain",
+    "col": "Chain",
+    "val": "ZCHF"
+  },
+  "collateral": {
+    "title": "Sicherheiten pro Vermögenswert",
+    "cols": {
+      "asset": "Vermögenswert",
+      "value": "Wert (CHF)",
+      "minted": "ZCHF geprägt",
+      "positions": "Offene Positionen"
+    },
+    "positionsLink": "Positionen ansehen"
+  },
+  "sources": {
+    "title": "Prüfen Sie es selbst",
+    "items": [
+      { "label": "Positionen in der App", "href": "https://app.frankencoin.com/monitoring" },
+      { "label": "Dune", "href": "https://dune.com/frankencoin" },
+      { "label": "DefiLlama", "href": "https://defillama.com/protocol/frankencoin" },
+      { "label": "Rohdaten der API", "href": "https://api.frankencoin.com/ecosystem/frankencoin/info" }
+    ],
+    "methodology": {
+      "label": "So funktionieren die Reserve und diese Zahlen",
+      "href": "https://docs.frankencoin.com/reserve"
+    }
+  },
+  "stamp": "Live von api.frankencoin.com · {time} UTC · alle 5 Minuten aktualisiert"
+}
