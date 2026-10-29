@@ -34,7 +34,11 @@ const compact = (n: number | null) =>
   n === null ? "—" : n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : formatAmount(n);
 const maxLtv = borrow.length ? Math.max(...borrow.map((b) => b.ltv)) : null;
 const minRate = borrow.length ? Math.min(...borrow.map((b) => b.interest)) : null;
-const logos = (eco.tabs ?? []).filter((x: any) => x.image).slice(0, 10);
+// Nine partner wordmarks for the strip (one even desktop row), in this order; own products and icon-only marks are left out.
+const LOGO_PICK = ["Mt Pelerin", "DFX", "Spar", "Zeal", "PrivCart", "Ammer", "Morpho", "Uniswap", "Bitcoin Suisse"];
+// Optical sizing: wordmarks of very different proportions get their own height so they read as one row.
+const LOGO_SIZE: Record<string, string> = { "Mt Pelerin": "h-9", DFX: "h-7", Spar: "h-6", Zeal: "h-11", PrivCart: "h-6", Ammer: "h-[14px]", Morpho: "h-11", Uniswap: "h-6", "Bitcoin Suisse": "h-9" };
+const logos = LOGO_PICK.map((n) => { const t = (eco.tabs ?? []).find((x: any) => x.image && x.name.startsWith(n)); return t && { ...t, size: LOGO_SIZE[n] }; }).filter(Boolean);
 
 const doors = index.doors.items.map(({ stat, ...d }: any) => d);
 const faqItems = faq.categories.flatMap((cat: any) => cat.questions).slice(0, 5).map((q: any) => ({ q: q.question, a: q.answer }));
@@ -66,7 +70,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
       <div class="logo-marquee flex w-max items-center gap-10 pr-10">
         {[0, 1].map((copy) => logos.map((l: any) => (
           <a href={l.href} target="_blank" rel="noopener noreferrer" title={l.name} aria-hidden={copy === 1 ? "true" : undefined} tabindex={copy === 1 ? -1 : undefined} class="flex h-9 items-center shrink-0 opacity-60 grayscale">
-            <img src={l.image} alt={copy === 1 ? "" : (l.imageAlt ?? l.name)} loading="lazy" class="max-h-7 w-auto max-w-[110px] object-contain" />
+            <img src={l.image} alt={copy === 1 ? "" : (l.imageAlt ?? l.name)} loading="lazy" class:list={["w-auto max-w-[120px] object-contain", l.size]} />
           </a>
         )))}
       </div>
@@ -74,7 +78,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     <div class="hidden lg:grid mx-auto max-w-7xl px-[var(--spacing-l)] grid-cols-9 gap-x-4 items-center">
       {logos.map((l: any) => (
         <a href={l.href} target="_blank" rel="noopener noreferrer" title={l.name} class="flex h-9 items-center justify-center opacity-55 grayscale hover:opacity-100 hover:grayscale-0 transition">
-          <img src={l.image} alt={l.imageAlt ?? l.name} loading="lazy" class="max-h-7 w-auto max-w-[104px] object-contain" />
+          <img src={l.image} alt={l.imageAlt ?? l.name} loading="lazy" class:list={["w-auto max-w-[120px] object-contain", l.size]} />
         </a>
       ))}
     </div>
