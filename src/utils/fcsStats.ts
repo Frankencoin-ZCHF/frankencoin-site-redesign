@@ -21,10 +21,12 @@ export interface FcsStats {
   roe: Record<RoePeriod, number | null>;
 }
 
-export type RoePeriod = "all" | "1y" | "1q" | "1m" | "1w";
-export const ROE_PERIODS: RoePeriod[] = ["all", "1y", "1q", "1m", "1w"];
-const PERIOD_DAYS: Record<RoePeriod, number | null> = { all: null, "1y": 365, "1q": 90, "1m": 30, "1w": 7 };
-const NO_ROE: Record<RoePeriod, number | null> = { all: null, "1y": null, "1q": null, "1m": null, "1w": null };
+/** "all" (compound since launch), "1y" (trailing twelve months) and one entry per calendar year from 2024. */
+export type RoePeriod = "all" | "1y" | `${number}`;
+const FIRST_FULL_YEAR = 2024; // launch was late October 2023, so 2023 is not a meaningful year
+export const ROE_YEARS: RoePeriod[] = Array.from({ length: new Date().getUTCFullYear() - FIRST_FULL_YEAR + 1 }, (_, i) => String(FIRST_FULL_YEAR + i) as RoePeriod);
+export const ROE_PERIODS: RoePeriod[] = ["all", "1y", ...ROE_YEARS];
+const NO_ROE = Object.fromEntries(ROE_PERIODS.map((k) => [k, null])) as Record<RoePeriod, number | null>;
 
 const EMPTY: FcsStats = { timestamp: null, fcsPrice: null, reservePool: null, roe12m: null, roe: { ...NO_ROE } };
 
@@ -70,9 +72,10 @@ interface DailyLog {
 }
 
 /**
- * Protocol ROE per window, as the dapp computes it: logs from (now − days − 1 d) onwards, net income =
- * change in realised inflow − outflow, divided by the average of the first and last equity, scaled to a
- * year. For the whole history the cumulative return is converted to a compound annual rate.
+ * Protocol ROE per window, as the dapp computes it: net income (change in realised inflow − outflow)
+ * divided by the average of the first and last equity of the window, scaled to a year. "all" converts
+ * the cumulative return into a compound annual rate; "1y" is the trailing twelve months; a calendar year
+ * runs from its first daily log to its last (or to the latest log for the current year).
  */
 async function readRoe(): Promise<Partial<FcsStats>> {
   const { logs } = await getJson<{ logs?: DailyLog[] }>("/analytics/dailyLog/json");
@@ -85,14 +88,21 @@ async function readRoe(): Promise<Partial<FcsStats>> {
   const net = (l: DailyLog) => num(BigInt(l.totalInflow)) - num(BigInt(l.totalOutflow));
   const roe = { ...NO_ROE };
   for (const period of ROE_PERIODS) {
-    const days = PERIOD_DAYS[period];
-    const from = days === null ? 0 : nowS - (days + 1) * 86400;
-    const first = logs.find((l) => Number(l.timestamp) >= from);
-    if (!first || first === last) continue;
-    const avgEquity = (num(BigInt(first.totalEquity)) + num(BigInt(last.totalEquity))) / 2;
-    const years = (nowS - Number(first.timestamp)) / YEAR_S;
+    let from = 0, to = Infinity, end = nowS;
+    if (period === "1y") from = nowS - 366 * 86400;
+    else if (period !== "all") {
+      from = Date.UTC(Number(period), 0, 1) / 1000;
+      to = Date.UTC(Number(period) + 1, 0, 1) / 1000;
+    }
+    const slice = logs.filter((l) => Number(l.timestamp) >= from && Number(l.timestamp) < to);
+    if (slice.length < 2) continue;
+    const first = slice[0], final = slice[slice.length - 1];
+    if (to !== Infinity && Number(final.timestamp) < to - 86400 * MAX_LOG_AGE_DAYS) end = Number(final.timestamp); // closed year: ends at its last log
+    else if (to !== Infinity) end = Math.min(nowS, to); // current year
+    const avgEquity = (num(BigInt(first.totalEquity)) + num(BigInt(final.totalEquity))) / 2;
+    const years = (end - Number(first.timestamp)) / YEAR_S;
     if (avgEquity <= 0 || years <= 0) continue;
-    const cumulative = (net(last) - net(first)) / avgEquity;
+    const cumulative = (net(final) - net(first)) / avgEquity;
     roe[period] = period === "all" ? Math.pow(1 + cumulative, 1 / years) - 1 : cumulative / years;
   }
   return { roe, roe12m: roe["1y"] };

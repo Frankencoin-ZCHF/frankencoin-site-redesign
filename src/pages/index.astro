@@ -15,7 +15,7 @@ import StickyCTA from "../components/StickyCTA/StickyCTA.astro";
 import { getLanguageFromURL, loadContent, loadGlobalSharedContent, getLocalizedPath } from "../utils/i18n";
 import { getCalcData } from "../utils/calcStats";
 import { getBorrowOptions, getTransparency } from "../utils/liveStats";
-import { formatAmount, formatPct, getFcsStats, ROE_PERIODS } from "../utils/fcsStats";
+import { formatAmount, formatPct, getFcsStats, ROE_YEARS } from "../utils/fcsStats";
 
 export const prerender = false;
 
@@ -28,9 +28,12 @@ const eco = await loadContent<any>("ecosystem", lang);
 const [calc, borrow, t, fcs] = await Promise.all([getCalcData(), getBorrowOptions(), getTransparency(), getFcsStats()]);
 // Invest card: protocol ROE per window (same maths as the dapp's equity page), "All" shown first.
 const R = c.products.invest.roe;
+const thisYear = String(new Date().getUTCFullYear());
+const roePeriods = ["all", ...ROE_YEARS] as const;
 const roeCard = {
-  value: Object.fromEntries(ROE_PERIODS.map((k) => [k, fcs.roe[k] === null ? "—" : formatPct(fcs.roe[k], 1)])),
-  caption: Object.fromEntries(ROE_PERIODS.map((k) => [k, k === "all" ? R.since : R.window.replace("{period}", R.windows[k])])),
+  label: Object.fromEntries(roePeriods.map((k) => [k, k === "all" ? R.all : k])),
+  value: Object.fromEntries(roePeriods.map((k) => [k, fcs.roe[k] === null ? "—" : formatPct(fcs.roe[k], 1)])),
+  caption: Object.fromEntries(roePeriods.map((k) => [k, k === "all" ? R.since : (k === thisYear ? R.ytd : R.year).replace("{year}", k)])),
 };
 
 const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
@@ -111,8 +114,8 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
           <span class="relative mt-4 text-[56px] font-black leading-none tracking-[-0.04em] tabular-nums" x-text="roe.value[p]">{roeCard.value.all}</span>
           <span class="relative mt-2 ty-xs opacity-80">{R.stat}. <span x-text="roe.caption[p]">{roeCard.caption.all}</span></span>
           <div class="relative z-10 mt-4 inline-flex w-max gap-0.5 rounded-full bg-white/10 p-1" role="group" aria-label={R.stat}>
-            {ROE_PERIODS.map((k) => (
-              <button type="button" @click={`p = '${k}'`} :class={`p === '${k}' ? 'bg-white text-[var(--color-brand-deep-blue)]' : 'text-white/75 hover:text-white'`} class="rounded-full px-3 py-1 text-[12px] font-bold transition-colors">{R.periods[k]}</button>
+            {roePeriods.map((k) => (
+              <button type="button" @click={`p = '${k}'`} :class={`p === '${k}' ? 'bg-white text-[var(--color-brand-deep-blue)]' : 'text-white/75 hover:text-white'`} class="rounded-full px-3 py-1 text-[12px] font-bold transition-colors">{roeCard.label[k]}</button>
             ))}
           </div>
           <a href={href(P.invest.href)} class="relative mt-5 ty-title-3 font-black text-balance">{P.invest.title}</a>
