@@ -71,7 +71,25 @@
       "title": "Einen Anteil am System besitzen",
       "body": "FCS, Frankencoin Shares, ist das Eigenkapital des Protokolls: ein Anteil an der Reserve und eine Stimme darüber, wie es geführt wird. Sein Wert kann steigen oder fallen.",
       "cta": "FCS entdecken",
-      "href": "/fcs"
+      "href": "/fcs",
+      "roe": {
+        "stat": "Eigenkapitalrendite des Protokolls",
+        "periods": {
+          "all": "Alle",
+          "1y": "1J",
+          "1q": "1Q",
+          "1m": "1M",
+          "1w": "1W"
+        },
+        "since": "Seit dem Start, Zinseszins",
+        "window": "Letzte {period}, annualisiert",
+        "windows": {
+          "1y": "12 Monate",
+          "1q": "3 Monate",
+          "1m": "30 Tage",
+          "1w": "7 Tage"
+        }
+      }
     },
     "pay": {
       "label": "Zahlen",

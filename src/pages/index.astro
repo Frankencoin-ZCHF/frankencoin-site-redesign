@@ -15,7 +15,7 @@ import StickyCTA from "../components/StickyCTA/StickyCTA.astro";
 import { getLanguageFromURL, loadContent, loadGlobalSharedContent, getLocalizedPath } from "../utils/i18n";
 import { getCalcData } from "../utils/calcStats";
 import { getBorrowOptions, getTransparency } from "../utils/liveStats";
-import { formatAmount, formatPct } from "../utils/fcsStats";
+import { formatAmount, formatPct, getFcsStats, ROE_PERIODS } from "../utils/fcsStats";
 
 export const prerender = false;
 
@@ -25,7 +25,13 @@ const index = await loadContent<any>("index", lang);
 const faq = await loadContent<any>("faq", lang);
 const media = await loadGlobalSharedContent<any>("media");
 const eco = await loadContent<any>("ecosystem", lang);
-const [calc, borrow, t] = await Promise.all([getCalcData(), getBorrowOptions(), getTransparency()]);
+const [calc, borrow, t, fcs] = await Promise.all([getCalcData(), getBorrowOptions(), getTransparency(), getFcsStats()]);
+// Invest card: protocol ROE per window (same maths as the dapp's equity page), "All" shown first.
+const R = c.products.invest.roe;
+const roeCard = {
+  value: Object.fromEntries(ROE_PERIODS.map((k) => [k, fcs.roe[k] === null ? "—" : formatPct(fcs.roe[k], 1)])),
+  caption: Object.fromEntries(ROE_PERIODS.map((k) => [k, k === "all" ? R.since : R.window.replace("{period}", R.windows[k])])),
+};
 
 const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
 const rate = formatPct(calc.current.rate, 2).replace(/\.00%$/, "%");
@@ -98,14 +104,22 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
           <span class="relative mt-2 ty-body-2 text-[var(--color-neutral-650)] max-w-md">{P.save.body}</span>
           <span class="relative mt-auto pt-6 font-bold ty-body-2 text-[var(--color-brand-swiss)]">{P.save.cta} →</span>
         </a>
-        <!-- Invest (dark) -->
-        <a href={href(P.invest.href)} class="group relative overflow-hidden lg:col-span-2 rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-7 md:p-8 flex flex-col min-h-[300px] hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <!-- Invest (dark): the whole card links to /fcs (stretched link); the period switch sits above it. -->
+        <div x-data={JSON.stringify({ p: "all", roe: roeCard })} class="group relative overflow-hidden lg:col-span-2 rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-7 md:p-8 flex flex-col min-h-[300px] hover:shadow-xl hover:-translate-y-0.5 transition-all">
           <span class="halftone-dots absolute inset-0 text-[#1a9cc8]/60 pointer-events-none"></span>
           <span class="relative font-mono text-[11px] uppercase tracking-[0.24em] text-[#5bb8dc]">{P.invest.label}</span>
-          <span class="relative mt-4 ty-title-2 font-black text-balance">{P.invest.title}</span>
+          <span class="relative mt-4 text-[56px] font-black leading-none tracking-[-0.04em] tabular-nums" x-text="roe.value[p]">{roeCard.value.all}</span>
+          <span class="relative mt-2 ty-xs opacity-80">{R.stat}. <span x-text="roe.caption[p]">{roeCard.caption.all}</span></span>
+          <div class="relative z-10 mt-4 inline-flex w-max gap-0.5 rounded-full bg-white/10 p-1" role="group" aria-label={R.stat}>
+            {ROE_PERIODS.map((k) => (
+              <button type="button" @click={`p = '${k}'`} :class={`p === '${k}' ? 'bg-white text-[var(--color-brand-deep-blue)]' : 'text-white/75 hover:text-white'`} class="rounded-full px-3 py-1 text-[12px] font-bold transition-colors">{R.periods[k]}</button>
+            ))}
+          </div>
+          <a href={href(P.invest.href)} class="relative mt-5 ty-title-3 font-black text-balance">{P.invest.title}</a>
           <span class="relative mt-2 ty-body-3 opacity-85">{P.invest.body}</span>
           <span class="relative mt-auto pt-6 font-bold ty-body-2 text-[#5bb8dc]">{P.invest.cta} →</span>
-        </a>
+          <a href={href(P.invest.href)} aria-hidden="true" tabindex="-1" class="absolute inset-0 z-[1]"><span class="sr-only">{P.invest.cta}</span></a>
+        </div>
         <!-- Borrow -->
         <a href={href(P.borrow.href)} class="group relative overflow-hidden lg:col-span-3 rounded-3xl bg-white border border-[var(--color-gray-20)] p-7 md:p-8 flex flex-col min-h-[260px] hover:shadow-xl hover:-translate-y-0.5 transition-all">
           <span class="relative font-mono text-[11px] uppercase tracking-[0.24em] text-[#1a9cc8]">{P.borrow.label}</span>

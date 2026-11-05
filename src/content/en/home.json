@@ -71,7 +71,25 @@
       "title": "Own a share of the system",
       "body": "FCS, Frankencoin Shares, is the protocol's equity: a share of the reserve and a vote on how it is run. Its value can rise or fall.",
       "cta": "Explore FCS",
-      "href": "/fcs"
+      "href": "/fcs",
+      "roe": {
+        "stat": "Protocol return on equity",
+        "periods": {
+          "all": "All",
+          "1y": "1Y",
+          "1q": "1Q",
+          "1m": "1M",
+          "1w": "1W"
+        },
+        "since": "Since launch, compound",
+        "window": "Last {period}, annualized",
+        "windows": {
+          "1y": "12 months",
+          "1q": "3 months",
+          "1m": "30 days",
+          "1w": "7 days"
+        }
+      }
     },
     "pay": {
       "label": "Pay",
