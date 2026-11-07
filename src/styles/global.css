@@ -87,3 +87,31 @@
   .pxb:active .pxb_side--r .pxb_px:is(:first-child, :nth-child(5), :nth-child(8), :nth-child(9), :nth-child(10)) { opacity: 0; transition: opacity 0s; }
 }
 .pxb:focus-visible { outline: 2px solid var(--color-brand-swiss); outline-offset: 3px; }
+
+/* Liquid-glass button (components/LP/GlassButton.astro). */
+.glb { position: relative; isolation: isolate; display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 1.75rem; border-radius: 9999px; font-weight: 700; font-size: 15px; line-height: 1.2; white-space: nowrap; text-decoration: none; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); -webkit-tap-highlight-color: transparent; }
+.glb:hover, .glb:focus-visible { transform: scale(1.04); }
+.glb:active { transform: scale(0.98); }
+.glb_defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.glb_lens { position: absolute; inset: 0; z-index: -1; border-radius: inherit; overflow: hidden; backdrop-filter: blur(10px) saturate(1.6); -webkit-backdrop-filter: blur(10px) saturate(1.6); }
+@supports (backdrop-filter: url(#x)) { .glb_lens { backdrop-filter: url(#fc-glass) saturate(1.6); } }
+.glb_rim { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; transition: box-shadow 0.3s; }
+.glb_label { position: relative; display: inline-flex; align-items: center; gap: 0.5rem; }
+.glb_arrow { display: inline-block; transition: transform 0.3s; }
+.glb:hover .glb_arrow { transform: translateX(2px); }
+/* Light-page variants: dark rim highlights, as in the reference */
+.glb--tint { color: #fff; }
+.glb--tint .glb_lens { background: rgba(9, 47, 98, 0.78); }
+.glb--tint .glb_rim { box-shadow: 0 2px 8px rgba(9, 47, 98, 0.25), 0 0 0 0.5px rgba(255,255,255,0.35), inset 3px 3px 0.5px -3px rgba(255,255,255,0.9), inset -3px -3px 0.5px -3px rgba(255,255,255,0.75), inset 1px 1px 1px -0.5px rgba(255,255,255,0.6), inset -1px -1px 1px -0.5px rgba(255,255,255,0.5), inset 0 0 8px 6px rgba(255,255,255,0.08); }
+.glb--tint:hover .glb_lens { background: rgba(26, 156, 200, 0.82); }
+.glb--clear { color: var(--color-brand-deep-blue); }
+.glb--clear .glb_lens { background: rgba(255, 255, 255, 0.32); }
+.glb--clear .glb_rim { box-shadow: 0 0 6px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.08), inset 3px 3px 0.5px -3px rgba(0,0,0,0.9), inset -3px -3px 0.5px -3px rgba(0,0,0,0.85), inset 1px 1px 1px -0.5px rgba(0,0,0,0.6), inset -1px -1px 1px -0.5px rgba(0,0,0,0.6), inset 0 0 6px 6px rgba(0,0,0,0.12), inset 0 0 2px 2px rgba(0,0,0,0.06), 0 0 12px rgba(255,255,255,0.15); }
+.glb--clear:hover .glb_lens { background: rgba(255, 255, 255, 0.5); }
+/* Dark-band variant: white rim highlights */
+.glb--dark { color: #fff; }
+.glb--dark .glb_lens { background: rgba(255, 255, 255, 0.12); }
+.glb--dark .glb_rim { box-shadow: 0 0 8px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.08), inset 3px 3px 0.5px -3.5px rgba(255,255,255,0.09), inset -3px -3px 0.5px -3.5px rgba(255,255,255,0.85), inset 1px 1px 1px -0.5px rgba(255,255,255,0.6), inset -1px -1px 1px -0.5px rgba(255,255,255,0.6), inset 0 0 6px 6px rgba(255,255,255,0.12), inset 0 0 2px 2px rgba(255,255,255,0.06), 0 0 12px rgba(0,0,0,0.15); }
+.glb--dark:hover .glb_lens { background: rgba(255, 255, 255, 0.22); }
+.glb:focus-visible { outline: 2px solid var(--color-brand-swiss); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .glb, .glb_arrow { transition: none; } .glb:hover { transform: none; } }
