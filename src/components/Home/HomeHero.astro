@@ -4,7 +4,6 @@
  * Props are already-formatted strings so the page decides what is live.
  */
 import HalftoneMist from "./HalftoneMist.astro";
-import PixelButton from "../LP/PixelButton.astro";
 import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
 
 interface Cta { label: string; href: string }
@@ -53,8 +52,13 @@ const [l1, l2] = p.title.split("|");
     <p class="mt-6 max-w-[36rem] ty-body-1 text-[var(--color-neutral-650)]">{p.subtitle}</p>
 
     <div class="mt-8 flex flex-wrap items-center gap-3">
-      <PixelButton href={p.primary.href} label={p.primary.label} arrow />
-      <PixelButton href={p.secondary.href} label={p.secondary.label} variant="ghost" />
+      <a href={href(p.primary.href)} {...ext(p.primary.href)} class="group inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-deep-blue)] hover:bg-[var(--color-brand-swiss)] text-white font-bold ty-body-2 pl-6 pr-5 py-4 shadow-[0_8px_30px_-8px_rgba(9,47,98,0.55)] transition-colors">
+        {p.primary.label}
+        <span class="inline-block transition-transform group-hover:translate-x-0.5">→</span>
+      </a>
+      <a href={href(p.secondary.href)} {...ext(p.secondary.href)} class="inline-flex items-center rounded-full border border-[var(--color-gray-30)] bg-white/70 backdrop-blur hover:border-[var(--color-brand-deep-blue)] text-[var(--color-brand-deep-blue)] font-bold ty-body-2 px-6 py-4 transition-colors">
+        {p.secondary.label}
+      </a>
     </div>
     <!-- The two ways to get ZCHF, right under the main action: bank transfer or a crypto swap. -->
     <div class="mt-4 flex flex-wrap items-center gap-2 ty-xs text-[var(--color-neutral-600)]">
