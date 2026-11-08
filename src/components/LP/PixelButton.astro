@@ -1,7 +1,7 @@
 ---
 /**
  * "Pixel broke" button: a plain bar at rest. Its right end is a 3×4 grid of pixel squares; on hover some of them
- * flick off (staggered) so the end looks broken, while the label retypes. Pure CSS, after 21st.dev/@nextjsshop
+ * flick off (staggered) so the end looks broken. Pure CSS, after 21st.dev/@nextjsshop
  * pixel-broke-button, in the site's colours. Variants: "solid" (deep blue, white text), "light" (white on dark
  * bands), "ghost" (pale, deep-blue text).
  *
@@ -19,10 +19,10 @@ const right = [3, 0, 0, 0, 4, 0, 0, 2, 1, 3, 0, 0];
 const text = arrow ? `${label} →` : label;
 ---
 
-<a href={href} {...ext} {...rest} class:list={["pxb", `pxb--${variant}`, cls]} style={`--characters:${text.length}`}>
+<a href={href} {...ext} {...rest} class:list={["pxb", `pxb--${variant}`, cls]}>
   <span class="pxb_bg" aria-hidden="true">
     <span class="pxb_mid"></span>
     <span class="pxb_side pxb_side--r">{right.map((i) => <span class="pxb_px" style={`--i:${i}`}></span>)}</span>
   </span>
-  <span class="pxb_inner" data-text={text}><span class="pxb_text">{text}</span></span>
+  <span class="pxb_inner"><span class="pxb_text">{text}</span></span>
 </a>
