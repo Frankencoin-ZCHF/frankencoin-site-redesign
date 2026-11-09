@@ -69,8 +69,8 @@
 .pxb_side { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); }
 .pxb_px { aspect-ratio: 1 / 1; width: 100%; height: 100%; background: var(--pxb-bg); box-shadow: 0 0 0 0.5px var(--pxb-bg); transition: opacity 0s ease calc(var(--i) * 40ms), background-color 0.25s, box-shadow 0.25s; }
 .pxb_mid { background: var(--pxb-bg); transition: background-color 0.25s; }
-.pxb_inner { grid-area: 1 / 1; display: grid; padding: 18.5px 4rem 18.5px 1.75rem; font-size: 15px; } /* 15 + 37 = 52px tall, so each pixel square is a whole 13px and no seams show */
-@media (min-width: 768px) { .pxb_inner { padding: 18px 4.5rem 18px 2rem; font-size: 16px; } }
+.pxb_inner { grid-area: 1 / 1; display: grid; padding: 18.5px 2.75rem; font-size: 15px; text-align: center; } /* symmetric so the label is centred; 2.75rem still clears the 39px pixel grid */ /* 15 + 37 = 52px tall, so each pixel square is a whole 13px and no seams show */
+@media (min-width: 768px) { .pxb_inner { padding: 18px 3rem; font-size: 16px; } }
 .pxb_text { grid-area: 1 / 1; }
 @media (hover: hover) and (pointer: fine) {
   .pxb:is(:hover, :focus-visible) .pxb_px, .pxb:is(:hover, :focus-visible) .pxb_mid { background: var(--pxb-bg-hover); }
