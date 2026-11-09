@@ -22,8 +22,15 @@ const ext = raw.startsWith("http") ? { target: "_blank", rel: "noopener noreferr
 <script>
   const BAYER = [[16, 8, 14, 6], [5, 12, 2, 10], [13, 4, 15, 7], [1, 9, 3, 11]];
   const CELL = 2;
+  // Accepts "r g b", "rgb(r, g, b)" and "#rrggbb" / "#rgb" (the CSS minifier may rewrite colours to hex).
   const rgb = (s: string): [number, number, number] => {
-    const m = s.match(/\d+(?:\.\d+)?/g);
+    const v = s.trim();
+    const hex = v.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
+    if (hex) {
+      const h = hex[1].length === 3 ? hex[1].split("").map((c) => c + c).join("") : hex[1];
+      return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
+    }
+    const m = v.match(/\d+(?:\.\d+)?/g);
     return m && m.length >= 3 ? [Number(m[0]), Number(m[1]), Number(m[2])] : [0, 0, 0];
   };
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
