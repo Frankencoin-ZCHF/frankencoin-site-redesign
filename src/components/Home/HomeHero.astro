@@ -59,7 +59,7 @@ const [l1, l2] = p.title.split("|");
     <!-- Ways to get ZCHF: a light-teal "No ZCHF yet?" chip, then the three routes as divided links.
          One pill from sm up; on phones a rounded card with the chip on top and the links stacked. -->
     <div class="mt-6 inline-flex max-w-full flex-col items-start gap-1 self-start rounded-2xl border border-[var(--color-gray-20)] bg-white/90 backdrop-blur p-1.5 ty-xs sm:flex-row sm:flex-wrap sm:items-center sm:gap-0 sm:rounded-full sm:p-1 sm:pr-3">
-      <span class="rounded-full bg-[color-mix(in_oklab,var(--color-brand-swiss)_18%,white)] px-3.5 py-1.5 font-bold text-[var(--color-brand-deep-blue)] whitespace-nowrap">{p.routes.label}</span>
+      <span class="rounded-full bg-[color-mix(in_oklab,var(--color-brand-swiss)_18%,white)] px-3.5 py-1.5 font-black uppercase tracking-[0.06em] text-[var(--color-brand-deep-blue)] whitespace-nowrap">{p.routes.label}</span>
       <div class="flex w-full flex-col sm:contents">
         {p.routes.items.map((r, i) => (
           <>
