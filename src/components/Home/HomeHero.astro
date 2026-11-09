@@ -56,12 +56,14 @@ const [l1, l2] = p.title.split("|");
       <PixelButton href={p.primary.href} label={p.primary.label} variant="solid" arrow />
       <PixelButton href={p.secondary.href} label={p.secondary.label} variant="ghost" />
     </div>
-    <!-- The two ways to get ZCHF, right under the main action: bank transfer or a crypto swap. -->
-    <div class="mt-4 flex flex-wrap items-center gap-2 ty-xs text-[var(--color-neutral-600)]">
-      <span class="rounded-full bg-white/80 backdrop-blur px-3 py-1.5 font-semibold">{p.routes.label}</span>
-      {p.routes.items.map((r) => (
-        <a href={r.href} target="_blank" rel="noopener noreferrer" class="rounded-full bg-white/80 backdrop-blur border border-[var(--color-gray-20)] px-3 py-1.5 font-semibold text-[var(--color-brand-deep-blue)] hover:border-[var(--color-brand-swiss)] hover:text-[var(--color-brand-swiss)]">{r.label} ↗</a>
-      ))}
+    <!-- Ways to get ZCHF, right under the main action: a plain question, then bank transfer, crypto swap, Kraken. -->
+    <div class="mt-7">
+      <p class="m-0 ty-body-2 font-semibold text-[var(--color-neutral-650)]">{p.routes.label}</p>
+      <div class="mt-2.5 flex flex-wrap items-center gap-2 ty-xs">
+        {p.routes.items.map((r) => (
+          <a href={r.href} target="_blank" rel="noopener noreferrer" class="rounded-full bg-white/80 backdrop-blur border border-[var(--color-gray-20)] px-3 py-1.5 font-semibold text-[var(--color-brand-deep-blue)] hover:border-[var(--color-brand-swiss)] hover:text-[var(--color-brand-swiss)]">{r.label} ↗</a>
+        ))}
+      </div>
     </div>
 
     <div class="h-10 shrink-0" aria-hidden="true"></div>

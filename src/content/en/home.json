@@ -36,6 +36,10 @@
         {
           "label": "Swap from USDC or ETH",
           "href": "https://swap.cow.fi/#/1/swap/USDC/ZCHF"
+        },
+        {
+          "label": "Buy on Kraken",
+          "href": "https://www.kraken.com/prices/frankencoin"
         }
       ]
     }

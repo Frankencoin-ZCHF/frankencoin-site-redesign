@@ -11,6 +11,7 @@ import CoinStack from "../components/Home/CoinStack.astro";
 import AudienceDoors from "../components/AudienceDoors/AudienceDoors.astro";
 import MediaCarousel from "../components/MediaCarousel/MediaCarousel.astro";
 import FaqList from "../components/LP/FaqList.astro";
+import LPSection from "../components/LP/LPSection.astro";
 import StickyCTA from "../components/StickyCTA/StickyCTA.astro";
 import PixelButton from "../components/LP/PixelButton.astro";
 import { getLanguageFromURL, loadContent, loadGlobalSharedContent, getLocalizedPath } from "../utils/i18n";
@@ -193,14 +194,11 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     </div>
   </section>
 
-  <!-- 06 FAQ -->
-  <section class="bg-[var(--color-white)] py-20 md:py-24">
-    <div class="mx-auto max-w-3xl px-[var(--spacing-l)]">
-      <SectionHead eyebrow={c.faq.eyebrow} title={c.faq.title} />
-      <FaqList items={faqItems} />
-      <a href={href(c.faq.href)} class="inline-flex mt-6 font-bold ty-body-2 text-[var(--color-brand-swiss)] hover:text-[var(--color-blue-39)]">{c.faq.more} →</a>
-    </div>
-  </section>
+  <!-- 06 FAQ, same split layout as the landing pages -->
+  <LPSection title={c.faq.title} split accent>
+    <FaqList items={faqItems} />
+    <a href={href(c.faq.href)} class="inline-flex mt-6 font-bold ty-body-2 text-[var(--color-brand-swiss)] hover:text-[var(--color-blue-39)]">{c.faq.more} →</a>
+  </LPSection>
 
   <!-- Final CTA over the dark part of the image -->
   <section class="relative isolate overflow-hidden bg-[#0b4a64] text-white">

@@ -1,12 +1,15 @@
 ---
-/** Row of pill buttons for documents (PDFs, white papers). First one is solid, the rest outlined. */
+/** Row of buttons for documents (PDFs, white papers). First one is a solid pixel button, the rest outlined. */
+import PixelButton from "./PixelButton.astro";
 interface Doc { label: string; href: string }
 const { docs } = Astro.props as { docs: Doc[] };
 ---
 
 <div class="flex flex-wrap gap-3">
-  {docs.map((d, i) => (
-    <a href={d.href} target="_blank" rel="noopener noreferrer" class={`inline-flex items-center gap-2 rounded-full font-bold ty-body-2 px-6 py-3.5 transition-colors ${i === 0 ? "bg-[var(--color-brand-deep-blue)] text-white hover:bg-[var(--color-brand-swiss)]" : "border border-[var(--color-gray-30)] text-[var(--color-brand-deep-blue)] hover:border-[var(--color-brand-deep-blue)]"}`}>
+  {docs.map((d, i) => i === 0 ? (
+    <PixelButton href={d.href} label={`${d.label} ↗`} variant="solid" />
+  ) : (
+    <a href={d.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-[10px] h-[52px] font-bold ty-body-2 px-6 transition-colors border border-[var(--color-gray-30)] text-[var(--color-brand-deep-blue)] hover:border-[var(--color-brand-deep-blue)]">
       {d.label} <span aria-hidden="true">↗</span>
     </a>
   ))}

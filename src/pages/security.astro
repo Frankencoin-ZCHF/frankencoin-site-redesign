@@ -4,6 +4,7 @@ import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
 import FeatureGrid from "../components/LP/FeatureGrid.astro";
+import PixelButton from "../components/LP/PixelButton.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 import { fetchXerberusRatings } from "../utils/xerberus";
 import { fetchPharosRating } from "../utils/pharos";
@@ -70,7 +71,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
     </div>
     <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-4 rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-6 md:p-7">
       <p class="ty-body-3 text-white/85 m-0 flex-1">{c.audits.bounty.body}</p>
-      <a href={c.audits.bounty.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 ty-body-3 font-bold text-[var(--color-brand-deep-blue)] hover:bg-[#5bb8dc] transition-colors whitespace-nowrap">{c.audits.bounty.label} ↗</a>
+      <PixelButton href={c.audits.bounty.href} label={`${c.audits.bounty.label} ↗`} variant="light" size="sm" class="shrink-0" />
     </div>
   </LPSection>
 

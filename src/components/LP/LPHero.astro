@@ -1,10 +1,11 @@
 ---
 /**
  * Landing-page hero in the home style: white sky, halftone mist, the halftone Alps along the bottom,
- * mono eyebrow, display headline, pill CTAs. Optional `aside` slot (figures, cards) on the right.
+ * mono eyebrow, display headline, pixel CTAs. Optional `aside` slot (figures, cards) on the right.
  * `title` may contain "|" to start a second, teal line.
  */
 import HalftoneMist from "../Home/HalftoneMist.astro";
+import PixelButton from "./PixelButton.astro";
 import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
 
 interface Cta { label: string; href: string }
@@ -46,12 +47,10 @@ const [l1, l2] = title.split("|");
         {(primary || secondary) && (
           <div class="mt-8 flex flex-wrap gap-3">
             {primary && (
-              <a href={href(primary.href)} {...ext(primary.href)} class="group inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-deep-blue)] hover:bg-[var(--color-brand-swiss)] text-white font-bold ty-body-2 pl-6 pr-5 py-4 shadow-[0_8px_30px_-8px_rgba(9,47,98,0.55)] transition-colors">
-                {primary.label}<span class="transition-transform group-hover:translate-x-0.5">→</span>
-              </a>
+              <PixelButton href={primary.href} label={primary.label} variant="solid" arrow />
             )}
             {secondary && (
-              <a href={href(secondary.href)} {...ext(secondary.href)} class="inline-flex items-center rounded-full border border-[var(--color-gray-30)] bg-white/70 backdrop-blur hover:border-[var(--color-brand-deep-blue)] text-[var(--color-brand-deep-blue)] font-bold ty-body-2 px-6 py-4 transition-colors">{secondary.label}</a>
+              <PixelButton href={secondary.href} label={secondary.label} variant="ghost" />
             )}
           </div>
         )}

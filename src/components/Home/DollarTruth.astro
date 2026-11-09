@@ -6,6 +6,7 @@
  */
 import history from "../../data/dollar-history.json";
 import Steps from "../Steps/Steps.astro";
+import PixelButton from "../LP/PixelButton.astro";
 import { getLanguageFromURL, loadContent, getLocalizedPath } from "../../utils/i18n";
 import { getUsdChfHistory } from "../../utils/liveStats";
 import { getCalcData } from "../../utils/calcStats";
@@ -126,14 +127,14 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
         <p class="mt-4 ty-body-2 text-[var(--color-neutral-650)]">{c.zchf.body}</p>
       </div>
       <div class="flex lg:justify-end">
-        <a href={href(c.zchf.href)} class="inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-deep-blue)] hover:bg-[var(--color-brand-swiss)] text-white font-bold ty-body-1 px-8 py-5 transition-colors shadow-[0_8px_30px_-8px_rgba(9,47,98,0.55)]">{c.zchf.cta} →</a>
+        <PixelButton href={c.zchf.href} label={c.zchf.cta} variant="solid" arrow />
       </div>
     </div>
 
     <!-- Objections -->
     )}
     {compact && more && (
-      <a href={href(more.href)} class="mt-8 inline-flex items-center gap-2 rounded-full bg-white text-[var(--color-brand-deep-blue)] hover:bg-[#5bb8dc] font-bold ty-body-2 px-6 py-3.5 transition-colors">{more.label} →</a>
+      <PixelButton href={more.href} label={more.label} variant="light" arrow class="mt-8" />
     )}
     {objections && (
     <div class="mt-16 grid lg:grid-cols-[1fr_1.6fr] gap-8">

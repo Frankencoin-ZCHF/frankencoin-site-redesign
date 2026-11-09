@@ -1,5 +1,6 @@
 ---
 import Button from "../Button/Button.astro";
+import PixelButton from "../LP/PixelButton.astro";
 import NavLink from "../Button/NavLink.astro";
 import MobileMenu from "./MobileMenu.astro";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher.astro";
@@ -116,9 +117,7 @@ const localizedLinks: NavItem[] = links.map(localize);
             {nav.appCta.label} ↗
           </a>
         )}
-        <Button href={prefixLanguage(nav.cta.href)} variant="primary" rounded="full" size="md" external={nav.cta.href.startsWith("http")}>
-          {nav.cta.label}
-        </Button>
+        <PixelButton href={nav.cta.href} label={nav.cta.label} variant="solid" size="sm" />
       </div>
 
       <!-- Mobile menu (details/summary accesible) -->

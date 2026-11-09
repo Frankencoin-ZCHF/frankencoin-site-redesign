@@ -3,6 +3,7 @@
 import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
+import PixelButton from "../components/LP/PixelButton.astro";
 import { getLanguageFromURL, getLocalizedPath, loadContent } from "../utils/i18n";
 
 const lang = getLanguageFromURL(Astro.url.pathname);
@@ -45,7 +46,7 @@ const localHref = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) 
   <LPSection id="submit" title={c.submit.title} split accent={groups.length % 2 === 1}>
     <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] m-0">{c.submit.text}</p>
     <div class="mt-6 flex flex-wrap items-center gap-4">
-      <a href={c.submit.cta.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-deep-blue)] hover:bg-[var(--color-brand-swiss)] text-white font-bold ty-body-2 px-6 py-3.5 transition-colors">{c.submit.cta.label} ↗</a>
+      <PixelButton href={c.submit.cta.href} label={`${c.submit.cta.label} ↗`} variant="solid" />
       {c.submit.fileHref && <a href={c.submit.fileHref} target="_blank" rel="noopener noreferrer" class="ty-body-3 font-mono text-[var(--color-brand-deep-blue)] hover:underline">{c.submit.fileLabel}</a>}
     </div>
   </LPSection>

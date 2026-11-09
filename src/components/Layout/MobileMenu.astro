@@ -1,5 +1,6 @@
 ---
 import Button from "../Button/Button.astro";
+import PixelButton from "../LP/PixelButton.astro";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher.astro";
 import { getLanguageFromURL, loadSharedContent, loadContent } from "../../utils/i18n";
 
@@ -71,9 +72,7 @@ const localizedLinks: NavItem[] = (Astro.props.links ?? nav.links).map(localize)
     <hr class="text-[var(--color-neutral-300)]" />
     <div class="mt-4 flex flex-col gap-4">
       <LanguageSwitcher />
-      <Button href={prefixLanguage(nav.cta.href)} variant="primary" rounded="full" size="md" external={nav.cta.href.startsWith("http")}>
-        {nav.cta.label}
-      </Button>
+      <PixelButton href={nav.cta.href} label={nav.cta.label} variant="solid" />
       {nav.appCta && (
         <Button href={nav.appCta.href} variant="secondary" rounded="full" size="md" external={true}>
           {nav.appCta.label}
