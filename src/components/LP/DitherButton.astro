@@ -1,0 +1,100 @@
+---
+/**
+ * Dither button: a regular rounded button at rest. On hover (or keyboard focus) a canvas fades in and runs an
+ * ordered-dithering wave (4×4 Bayer matrix thresholded against a slowly turning sine) across the surface, in a
+ * 2px pixel grid. After 21st.dev/@radiumcoders dither-button (hi-res), rebuilt in plain JS and the site's colours.
+ * Variants: "solid" (deep blue, teal dither), "light" (white on dark bands, teal dither), "ghost" (pale, pale-blue dither).
+ * Usage: <DitherButton href="/x" label="Label" variant="solid" arrow />
+ */
+import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
+interface Props { href: string; label: string; variant?: "solid" | "light" | "ghost"; arrow?: boolean; class?: string; [k: string]: any }
+const { href: raw, label, variant = "solid", arrow = false, class: cls = "", ...rest } = Astro.props as Props;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const href = raw.startsWith("/") ? getLocalizedPath(raw, lang) : raw;
+const ext = raw.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {};
+---
+
+<a href={href} {...ext} {...rest} class:list={["dtb", `dtb--${variant}`, cls]} data-dither>
+  <canvas class="dtb_canvas" aria-hidden="true"></canvas>
+  <span class="dtb_label">{label}{arrow && <span class="dtb_arrow" aria-hidden="true"> →</span>}</span>
+</a>
+
+<script>
+  const BAYER = [[16, 8, 14, 6], [5, 12, 2, 10], [13, 4, 15, 7], [1, 9, 3, 11]];
+  const CELL = 2;
+  const rgb = (s: string): [number, number, number] => {
+    const m = s.match(/\d+(?:\.\d+)?/g);
+    return m && m.length >= 3 ? [Number(m[0]), Number(m[1]), Number(m[2])] : [0, 0, 0];
+  };
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function setup(el: HTMLElement) {
+    const canvas = el.querySelector<HTMLCanvasElement>(".dtb_canvas");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    let raf = 0;
+    let running = false;
+    let t0 = 0;
+    let fg: [number, number, number] = [0, 0, 0];
+    let bg: [number, number, number] = [255, 255, 255];
+
+    const resize = () => {
+      const r = el.getBoundingClientRect();
+      const w = Math.max(1, Math.floor(r.width / CELL));
+      const h = Math.max(1, Math.floor(r.height / CELL));
+      if (canvas.width !== w) canvas.width = w;
+      if (canvas.height !== h) canvas.height = h;
+    };
+
+    const draw = (t: number) => {
+      const w = canvas.width, h = canvas.height;
+      const img = ctx.createImageData(w, h);
+      const d = img.data;
+      const angle = Math.sin(t * 0.4545) * 0.112;
+      const sx = -Math.sin(angle), cy = Math.cos(angle);
+      const ox = w / 2, oy = h / 2;
+      for (let y = 0; y < h; y++) {
+        for (let x = 0; x < w; x++) {
+          const X = (x - ox) * CELL, Y = (y - oy) * CELL;
+          const wave = Math.sin((X * sx + Y * cy) * 0.048 - t * 1.412) * 0.5 + 0.5;
+          const on = wave < BAYER[y & 3][x & 3] / 17;
+          const c = on ? fg : bg;
+          const i = (y * w + x) * 4;
+          d[i] = c[0]; d[i + 1] = c[1]; d[i + 2] = c[2]; d[i + 3] = 255;
+        }
+      }
+      ctx.putImageData(img, 0, 0);
+    };
+
+    const loop = (now: number) => {
+      draw((now - t0) / 1000);
+      if (running) raf = requestAnimationFrame(loop);
+    };
+
+    const start = () => {
+      if (running) return;
+      const cs = getComputedStyle(el);
+      fg = rgb(cs.getPropertyValue("--dtb-dither"));
+      bg = rgb(cs.backgroundColor);
+      resize();
+      running = true;
+      t0 = performance.now();
+      if (reduced) { draw(0.6); return; }
+      raf = requestAnimationFrame(loop);
+    };
+    const stop = () => {
+      running = false;
+      cancelAnimationFrame(raf);
+    };
+
+    el.addEventListener("pointerenter", start);
+    el.addEventListener("focus", start);
+    el.addEventListener("pointerleave", stop);
+    el.addEventListener("blur", stop);
+    // Keep drawing a moment after the pointer leaves so the fade-out shows the pattern, not a blank canvas.
+    canvas.addEventListener("transitionend", () => { if (!running) ctx.clearRect(0, 0, canvas.width, canvas.height); });
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-dither]").forEach(setup);
+</script>

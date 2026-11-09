@@ -4,7 +4,7 @@
  * Props are already-formatted strings so the page decides what is live.
  */
 import HalftoneMist from "./HalftoneMist.astro";
-import PixelButton from "../LP/PixelButton.astro";
+import DitherButton from "../LP/DitherButton.astro";
 import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
 
 interface Cta { label: string; href: string }
@@ -53,8 +53,8 @@ const [l1, l2] = p.title.split("|");
     <p class="mt-6 max-w-[36rem] ty-body-1 text-[var(--color-neutral-650)]">{p.subtitle}</p>
 
     <div class="mt-8 flex flex-wrap items-center gap-3">
-      <PixelButton href={p.primary.href} label={p.primary.label} variant="solid" arrow />
-      <PixelButton href={p.secondary.href} label={p.secondary.label} variant="ghost" />
+      <DitherButton href={p.primary.href} label={p.primary.label} variant="solid" arrow />
+      <DitherButton href={p.secondary.href} label={p.secondary.label} variant="ghost" />
     </div>
     <!-- The two ways to get ZCHF, right under the main action: bank transfer or a crypto swap. -->
     <div class="mt-4 flex flex-wrap items-center gap-2 ty-xs text-[var(--color-neutral-600)]">

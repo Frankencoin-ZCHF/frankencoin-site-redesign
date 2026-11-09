@@ -12,7 +12,7 @@ import AudienceDoors from "../components/AudienceDoors/AudienceDoors.astro";
 import MediaCarousel from "../components/MediaCarousel/MediaCarousel.astro";
 import FaqList from "../components/LP/FaqList.astro";
 import StickyCTA from "../components/StickyCTA/StickyCTA.astro";
-import PixelButton from "../components/LP/PixelButton.astro";
+import DitherButton from "../components/LP/DitherButton.astro";
 import { getLanguageFromURL, loadContent, loadGlobalSharedContent, getLocalizedPath } from "../utils/i18n";
 import { getCalcData } from "../utils/calcStats";
 import { getBorrowOptions, getTransparency } from "../utils/liveStats";
@@ -210,7 +210,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
       <h2 class="text-[38px] sm:text-[56px] leading-[1] font-black tracking-[-0.035em] max-w-2xl m-0">{c.final.title}</h2>
       <p class="mt-4 ty-body-1 text-white/85 max-w-lg">{c.final.subtitle}</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <PixelButton href={c.final.primary.href} label={c.final.primary.label} variant="light" arrow />
+        <DitherButton href={c.final.primary.href} label={c.final.primary.label} variant="light" arrow />
         <a href={c.final.secondary.href} class="inline-flex items-center rounded-full border border-white/50 hover:bg-white/10 font-bold ty-body-2 px-7 py-4">{c.final.secondary.label}</a>
       </div>
     </div>
