@@ -56,14 +56,15 @@ const [l1, l2] = p.title.split("|");
       <PixelButton href={p.primary.href} label={p.primary.label} variant="solid" arrow />
       <PixelButton href={p.secondary.href} label={p.secondary.label} variant="ghost" />
     </div>
-    <!-- Ways to get ZCHF, right under the main action: a plain question, then bank transfer, crypto swap, Kraken. -->
-    <div class="mt-7">
-      <p class="m-0 text-[17px] md:text-[18px] font-black tracking-[-0.01em] text-[var(--color-brand-deep-blue)] [text-shadow:0_0_14px_rgba(255,255,255,0.95),0_0_4px_rgba(255,255,255,0.95),0_1px_0_#fff]">{p.routes.label}</p>
-      <div class="mt-3 flex flex-wrap items-center gap-2 ty-xs">
-        {p.routes.items.map((r) => (
-          <a href={r.href} target="_blank" rel="noopener noreferrer" class="rounded-full bg-white border border-[var(--color-gray-20)] px-3 py-1.5 font-semibold text-[var(--color-brand-deep-blue)] hover:border-[var(--color-brand-swiss)] hover:text-[var(--color-brand-swiss)] transition-colors">{r.label} ↗</a>
-        ))}
-      </div>
+    <!-- Ways to get ZCHF, one pill: a solid "No ZCHF yet?" chip, then the three routes as divided links. -->
+    <div class="mt-6 inline-flex max-w-full flex-wrap items-center gap-y-1 self-start rounded-full border border-[var(--color-gray-20)] bg-white/90 backdrop-blur p-1 pr-3 ty-xs">
+      <span class="rounded-full bg-[var(--color-brand-deep-blue)] px-3.5 py-1.5 font-bold text-white whitespace-nowrap">{p.routes.label}</span>
+      {p.routes.items.map((r, i) => (
+        <>
+          {i > 0 && <span class="mx-1 h-4 w-px bg-[var(--color-gray-30)]" aria-hidden="true"></span>}
+          <a href={r.href} target="_blank" rel="noopener noreferrer" class="px-2 py-1.5 font-semibold text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)] whitespace-nowrap transition-colors">{r.label} ↗</a>
+        </>
+      ))}
     </div>
 
     <div class="h-10 shrink-0" aria-hidden="true"></div>
