@@ -32,7 +32,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
   <LPHero title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} image="/images/home/peak-teal-halftone.webp" imageLayout="side" imagePosition="object-[62%_12%]">
     <ul slot="aside" class="m-0 p-0 list-none grid gap-3">
       {c.collateral.items.map((it: any) => (
-        <li class="rounded-3xl border border-[var(--color-gray-20)] bg-white/85 backdrop-blur p-5 md:p-6 grid sm:grid-cols-[1fr_1.6fr] gap-1 sm:gap-6 items-baseline">
+        <li class="rounded-3xl border border-[var(--color-gray-20)] bg-white/85 backdrop-blur p-5 md:p-6 grid sm:grid-cols-[1fr_1.6fr] gap-1 sm:gap-6 sm:items-center">
           <h3 class="text-balance ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</h3>
           <p class="ty-body-3 text-[var(--color-neutral-650)] m-0">{it.description}</p>
         </li>
