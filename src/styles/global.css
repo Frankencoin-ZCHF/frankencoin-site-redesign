@@ -109,3 +109,8 @@
 .glb--dark:hover .glb_lens { background: rgba(255, 255, 255, 0.22); }
 .glb:focus-visible { outline: 2px solid var(--color-brand-swiss); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { .glb, .glb_arrow { transition: none; } .glb:hover { transform: none; } }
+
+/* Hero announcement badge: short fade-and-settle on load, after 21st.dev/@Codehagen hero-badge. */
+@keyframes hero-badge-in { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: none; } }
+.hero-badge { animation: hero-badge-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@media (prefers-reduced-motion: reduce) { .hero-badge { animation: none; } }
