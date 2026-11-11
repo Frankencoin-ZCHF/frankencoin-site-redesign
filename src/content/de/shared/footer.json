@@ -9,6 +9,10 @@
             "href": "/what-is-frankencoin"
           },
           {
+            "label": "Verein",
+            "href": "/association"
+          },
+          {
             "label": "Anwendungsfälle",
             "href": "/use-cases"
           },
