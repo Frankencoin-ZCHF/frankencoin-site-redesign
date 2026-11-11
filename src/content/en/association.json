@@ -131,15 +131,11 @@
   },
   "membership": {
     "title": "What the Association does",
-    "subtitle": "The Frankencoin Association makes Swiss franc money available on-chain and stands up for the stability of the Swiss economy and the franc, at home and globally. Membership is by invitation.",
+    "subtitle": "The Frankencoin Association promotes a stable Swiss franc and a digital Swiss economy, at home and globally. Membership is by invitation.",
     "items": [
       {
-        "title": "Bringing on-chain Swiss francs to Switzerland.",
-        "description": "We work with Swiss banks, exchanges, payment providers and wallets so that ZCHF is available where people already keep their money, with open standards and a public track record instead of promises."
-      },
-      {
-        "title": "Promoting a stable franc, globally.",
-        "description": "We make the case for Swiss franc money on-chain with regulators, banks, exchanges and media, so that the franc keeps its role as a safe haven in the digital economy."
+        "title": "Promoting a stable franc and a digital Swiss economy, globally.",
+        "description": "We make the case for the Swiss franc and the digital Swiss economy with regulators, banks, exchanges and media around the world, so that the franc keeps its role as a safe haven on-chain."
       },
       {
         "title": "Education with government and institutions.",

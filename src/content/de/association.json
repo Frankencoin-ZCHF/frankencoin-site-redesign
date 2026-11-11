@@ -131,15 +131,11 @@
   },
   "membership": {
     "title": "Was der Verein tut",
-    "subtitle": "Der Frankencoin-Verein macht den Schweizer Franken on-chain verfügbar und setzt sich für die Stabilität der Schweizer Wirtschaft und des Frankens ein, im Inland und weltweit. Die Mitgliedschaft erfolgt auf Einladung.",
+    "subtitle": "Der Frankencoin-Verein fördert einen stabilen Schweizer Franken und eine digitale Schweizer Wirtschaft, im Inland und weltweit. Die Mitgliedschaft erfolgt auf Einladung.",
     "items": [
       {
-        "title": "Den Schweizer Franken on-chain in die Schweiz bringen.",
-        "description": "Wir arbeiten mit Schweizer Banken, Börsen, Zahlungsanbietern und Wallets zusammen, damit ZCHF dort verfügbar ist, wo die Menschen ihr Geld bereits halten, mit offenen Standards und einer öffentlichen Bilanz statt Versprechen."
-      },
-      {
-        "title": "Einen stabilen Franken weltweit fördern.",
-        "description": "Wir vertreten den Schweizer Franken on-chain gegenüber Regulatoren, Banken, Börsen und Medien, damit der Franken seine Rolle als sicherer Hafen auch in der digitalen Wirtschaft behält."
+        "title": "Einen stabilen Franken und eine digitale Schweizer Wirtschaft weltweit fördern.",
+        "description": "Wir vertreten den Schweizer Franken und die digitale Schweizer Wirtschaft gegenüber Regulatoren, Banken, Börsen und Medien weltweit, damit der Franken seine Rolle als sicherer Hafen auch on-chain behält."
       },
       {
         "title": "Bildungsarbeit mit Behörden und Institutionen.",
