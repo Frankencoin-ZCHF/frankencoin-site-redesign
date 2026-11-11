@@ -5,7 +5,6 @@ import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
 import FeatureGrid from "../components/LP/FeatureGrid.astro";
-import PixelButton from "../components/LP/PixelButton.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 
 export const prerender = false;
@@ -19,7 +18,7 @@ const linkedin = { target: "_blank", rel: "noopener noreferrer" };
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
-  <LPHero title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} image="/images/home/zurich-halftone.webp" imageHeight="h-[44%] md:h-[62%]" imagePosition="object-[50%_80%]" />
+  <LPHero title={c.hero.title} subtitle={c.hero.subtitle} image="/images/home/zurich-halftone.webp" imageHeight="h-[44%] md:h-[62%]" imagePosition="object-[50%_80%]" />
 
   <LPSection id="why" title={c.why.title} subtitle={c.why.subtitle} split>
     <FeatureGrid items={c.why.items} cols={2} />
@@ -79,6 +78,5 @@ const linkedin = { target: "_blank", rel: "noopener noreferrer" };
     <p class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{c.contact.name}</p>
     <p class="mt-1 ty-body-2 text-[var(--color-neutral-650)] m-0">{c.contact.role}</p>
     <a href={`mailto:${c.contact.email}`} class="mt-3 block ty-body-1 font-bold text-[var(--color-brand-swiss)] hover:underline break-all">{c.contact.email}</a>
-    <div class="mt-8"><PixelButton href={`mailto:${c.contact.email}`} label={c.contact.cta} variant="solid" arrow /></div>
   </LPSection>
 </Base>
