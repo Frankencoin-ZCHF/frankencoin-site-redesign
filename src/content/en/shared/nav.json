@@ -102,24 +102,12 @@
           "href": "/compare"
         },
         {
-          "label": "FAQ",
-          "href": "/faq"
-        },
-        {
-          "label": "Glossary",
-          "href": "/glossary"
-        },
-        {
           "label": "Use cases",
           "href": "/use-cases"
         },
         {
           "label": "News",
           "href": "/news"
-        },
-        {
-          "label": "Press kit",
-          "href": "/press"
         }
       ]
     }
