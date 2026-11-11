@@ -1,0 +1,135 @@
+{
+  "hero": {
+    "title": "The Swiss franc,|on-chain.",
+    "subtitle": "Digital Swiss francs, ZCHF. Save, borrow and pay with a decentralized currency backed by collateral you can see.",
+    "primary": {
+      "label": "Start saving at {rate}",
+      "href": "https://app.frankencoin.com/savings"
+    },
+    "secondary": {
+      "label": "Borrow francs",
+      "href": "/use-cases/borrow"
+    },
+    "ticker": {
+      "rate": "Savings rate",
+      "supply": "In circulation",
+      "collateral": "Collateral per ZCHF",
+      "since": "Live since"
+    },
+    "announcement": {
+      "tag": "New",
+      "label": "Frankencoin Shares are live",
+      "href": "/fcs"
+    },
+    "tickerLinks": {
+      "supply": "https://defillama.com/stablecoin/frankencoin",
+      "collateral": "/transparency",
+      "rate": "/use-cases/save-in-chf"
+    },
+    "routes": {
+      "label": "No ZCHF yet?",
+      "items": [
+        {
+          "label": "Buy by bank transfer, 0% fees",
+          "href": "https://www.mtpelerin.com/buy-zchf-frankencoin"
+        },
+        {
+          "label": "Swap from USDC or ETH",
+          "href": "https://swap.cow.fi/#/1/swap/USDC/ZCHF"
+        },
+        {
+          "label": "Buy on Kraken",
+          "href": "https://www.kraken.com/prices/frankencoin"
+        }
+      ]
+    }
+  },
+  "trust": [
+    "Legal opinions under Swiss law and MiCA",
+    "8 audits by 4 firms",
+    "Live since 2023, no significant depeg",
+    "8 chains via Chainlink CCIP"
+  ],
+  "logos": "Used by",
+  "products": {
+    "title": "One franc. Four ways to use it.",
+    "save": {
+      "label": "Save",
+      "title": "Earn {rate} on Swiss francs",
+      "body": "Deposit ZCHF in the savings module. Interest accrues every block, withdraw any time.",
+      "cta": "Start saving",
+      "href": "/use-cases/save-in-chf",
+      "stat": "per year"
+    },
+    "borrow": {
+      "label": "Borrow",
+      "title": "Francs against BTC, ETH, gold or shares",
+      "body": "Keep your exposure and mint ZCHF at fixed terms. No credit check.",
+      "cta": "See live terms",
+      "href": "/use-cases/borrow",
+      "ltv": "up to {ltv} loan-to-value",
+      "rate": "from {rate} a year"
+    },
+    "invest": {
+      "label": "Invest",
+      "title": "Own a share of the system",
+      "body": "FCS, Frankencoin Shares, is the protocol's equity: a share of the reserve and a vote on how it is run. Its value can rise or fall.",
+      "cta": "Explore FCS",
+      "href": "/fcs",
+      "roe": {
+        "stat": "Protocol return on equity",
+        "all": "All",
+        "since": "Since launch, compound annual rate",
+        "year": "Calendar year {year}",
+        "ytd": "{year} so far, annualized"
+      }
+    },
+    "pay": {
+      "label": "Pay",
+      "title": "Spend it like francs",
+      "body": "At Spar stores, with a GnosisPay card, or by bank transfer through a personal IBAN.",
+      "cta": "See where",
+      "href": "/ecosystem"
+    }
+  },
+  "proof": {
+    "title": "Backed by collateral|you can see.",
+    "subtitle": "Borrowers lock assets in public contracts to mint ZCHF, so every franc is backed by more than a franc of collateral. Weak positions are challenged and auctioned, and borrowers' interest pays savers first.",
+    "supply": "ZCHF in circulation",
+    "collateral": "Collateral value (CHF)",
+    "ratio": "Collateral per ZCHF",
+    "equity": "Protocol equity",
+    "cta": "Open the transparency page",
+    "href": "/transparency",
+    "how": "How it works",
+    "howHref": "/how-it-works",
+    "coins": "Backed by {n} collateral types, every one on-chain"
+  },
+  "doors": {
+    "title": "Pick your path."
+  },
+  "media": {
+    "title": "What people write about Frankencoin."
+  },
+  "faq": {
+    "title": "Short answers.",
+    "more": "All questions",
+    "href": "/faq"
+  },
+  "final": {
+    "title": "Swiss francs. On-chain. Yours.",
+    "subtitle": "Start with any amount. No account with Frankencoin, no lock-up, your own keys.",
+    "primary": {
+      "label": "Start now",
+      "href": "https://app.frankencoin.com/savings"
+    },
+    "secondary": {
+      "label": "Talk to us",
+      "href": "mailto:info@frankencoin.com"
+    }
+  },
+  "dollar": {
+    "label": "See the full comparison, 1971 to today",
+    "href": "/use-cases/save-in-chf#fifty"
+  }
+}

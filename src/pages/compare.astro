@@ -1,0 +1,50 @@
+---
+/* /compare — ZCHF vs issuer-backed CHF stablecoins vs USDC. Copy: content/en/compare.json */
+import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import FeatureGrid from "../components/LP/FeatureGrid.astro";
+import { getLanguageFromURL, loadContent } from "../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("compare", "en");
+const local = await loadContent<any>("compare", lang);
+const c = { ...en, ...local };
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} />
+
+  <LPSection>
+    <div class="overflow-x-auto rounded-3xl border border-[var(--color-gray-20)] bg-white">
+      <table class="w-full min-w-[640px] border-collapse ty-body-3 text-[var(--color-neutral-650)]">
+        <thead>
+          <tr class="bg-[var(--color-gray-10)]">
+            {c.head.map((h: string, i: number) => (
+              <th scope="col" class={`text-left align-bottom p-4 md:p-5 ty-body-2 font-black ${i === 1 ? "text-[#1a9cc8]" : "text-[var(--color-brand-deep-blue)]"}`}>{h}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {c.rows.map((r: string[]) => (
+            <tr class="border-t border-[var(--color-gray-20)] align-top">
+              {r.map((cell, i) => i === 0
+                ? <th scope="row" class="text-left p-4 md:p-5 font-black text-[var(--color-brand-deep-blue)] whitespace-nowrap">{cell}</th>
+                : <td class={`p-4 md:p-5 ${i === 1 ? "bg-[color-mix(in_oklab,#1a9cc8_6%,white)] font-semibold text-[var(--color-brand-deep-blue)]" : ""}`}>{cell}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="ty-xs text-[var(--color-neutral-550)] mt-3">{c.note}</p>
+  </LPSection>
+
+  <LPSection title={c.tradeoff.title} accent split>
+    <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] m-0">{c.tradeoff.body}</p>
+  </LPSection>
+
+  <LPSection title={c.nextHead.title}>
+    <FeatureGrid items={c.next} cols={3} />
+  </LPSection>
+</Base>

@@ -1,195 +1,24 @@
 ---
-import Section from "../components/Layout/Section.astro";
+/* /compliance — Swiss and EU legal classification of ZCHF and FPS. Copy: content/en/compliance.json */
 import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import ProseRows from "../components/LP/ProseRows.astro";
+import DocLinks from "../components/LP/DocLinks.astro";
+import CtaBand from "../components/LP/CtaBand.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
 
-const currentLang = getLanguageFromURL(Astro.url.pathname);
-const compliance = await loadContent("compliance", currentLang);
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("compliance", "en");
+const local = await loadContent<any>("compliance", lang);
+// German copy still has the legacy shape (swiss/eu/keyPoints); only keys present in both are overridden.
+const c = { ...en, intro: local.intro ?? en.intro, rows: local.rows ?? en.rows, documents: local.documents ?? en.documents, cta: local.cta ?? en.cta, heroTitle: local.heroTitle ?? en.heroTitle };
+const docs = c.documents.items;
 ---
 
 <Base>
-  <Section
-    id="compliance-header"
-    eyebrow={compliance.eyebrow}
-    title={compliance.title}
-    variant="plain"
-  >
-    <div class="max-w-4xl mx-auto mb-16 text-center">
-      <p class="ty-body-1 text-[var(--color-brand-titan-gray)] leading-relaxed mb-8">
-        {compliance.intro}
-      </p>
-
-      <!-- Table of Contents -->
-      <div class="w-full flex flex-col items-start bg-[var(--color-gray-10)] rounded-xl p-6">
-        <h3 class="ty-regular font-bold text-[var(--color-brand-deep-blue)] mb-4">{compliance.toc.title}</h3>
-        <nav class="flex flex-col gap-3">
-          {compliance.toc.items.map((item: any) => (
-            <a
-              href={item.href}
-              class="inline-flex items-center gap-2 text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)] ty-body-2 font-semibold transition-colors"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-              {item.label}
-            </a>
-          ))}
-        </nav>
-      </div>
-    </div>
-  </Section>
-
-  <!-- Swiss Regulatory Section -->
-  <Section
-    id="swiss-compliance"
-    variant="accent"
-  >
-    <div class="max-w-5xl mx-auto">
-      <div class="mb-8">
-        <h2 class="ty-big-1 text-[var(--color-brand-deep-blue)] mb-2">{compliance.swiss.title}</h2>
-        <p class="ty-body-1 text-[var(--color-brand-swiss)] font-semibold">{compliance.swiss.subtitle}</p>
-      </div>
-
-      <p class="ty-body-1 text-[var(--color-brand-titan-gray)] mb-8 leading-relaxed">
-        {compliance.swiss.description}
-      </p>
-
-      <div class="grid md:grid-cols-2 gap-6 mb-8">
-        {compliance.swiss.keyPoints.map((point: any) => (
-          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-            <h3 class="ty-big-2 text-[var(--color-brand-deep-blue)] mb-2">{point.title}</h3>
-            <p class="ty-body-2 text-[var(--color-brand-titan-gray)]">{point.description}</p>
-          </div>
-        ))}
-      </div>
-
-      <!-- FPS Section -->
-      <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-8">
-        <h3 class="ty-big-2 text-[var(--color-brand-deep-blue)] mb-2">{compliance.swiss.fpsTitle}</h3>
-        <p class="ty-body-2 text-[var(--color-brand-titan-gray)]">{compliance.swiss.fpsDescription}</p>
-      </div>
-
-      <a
-        href={compliance.swiss.documentHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 bg-[var(--color-brand-deep-blue)] text-white px-6 py-3 rounded-lg ty-regular font-bold hover:bg-[var(--color-brand-swiss)] transition-colors"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-        </svg>
-        {compliance.swiss.documentLabel}
-      </a>
-    </div>
-  </Section>
-
-  <!-- EU MiCA Section -->
-  <Section
-    id="eu-compliance"
-    variant="plain"
-  >
-    <div class="max-w-5xl mx-auto">
-      <div class="mb-8">
-        <h2 class="ty-big-1 text-[var(--color-brand-deep-blue)] mb-2">{compliance.eu.title}</h2>
-        <p class="ty-body-1 text-[var(--color-brand-swiss)] font-semibold">{compliance.eu.subtitle}</p>
-      </div>
-
-      <p class="ty-body-1 text-[var(--color-brand-titan-gray)] mb-8 leading-relaxed">
-        {compliance.eu.description}
-      </p>
-
-      <div class="grid md:grid-cols-2 gap-6 mb-8">
-        {compliance.eu.keyPoints.map((point: any) => (
-          <div class="bg-[var(--color-gray-10)] rounded-xl p-6">
-            <h3 class="ty-big-2 text-[var(--color-brand-deep-blue)] mb-2">{point.title}</h3>
-            <p class="ty-body-2 text-[var(--color-brand-titan-gray)]">{point.description}</p>
-          </div>
-        ))}
-      </div>
-
-{compliance.eu.documents ? (
-        <div class="flex flex-wrap gap-3">
-          {compliance.eu.documents.map((document: any) => (
-            <a
-              href={document.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 bg-[var(--color-brand-deep-blue)] text-white px-6 py-3 rounded-lg ty-regular font-bold hover:bg-[var(--color-brand-swiss)] transition-colors"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              {document.label}
-            </a>
-          ))}
-        </div>
-      ) : compliance.eu.documentHref ? (
-        <a
-          href={compliance.eu.documentHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 bg-[var(--color-brand-deep-blue)] text-white px-6 py-3 rounded-lg ty-regular font-bold hover:bg-[var(--color-brand-swiss)] transition-colors"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-          {compliance.eu.documentLabel}
-        </a>
-      ) : (
-        <p class="ty-body-1 text-[var(--color-brand-titan-gray)] italic">
-          {compliance.eu.documentLabel}
-        </p>
-      )}
-    </div>
-  </Section>
-
-  <!-- Contact Section -->
-  <Section
-    id="compliance-contact"
-    variant="plain"
-  >
-    <div class="max-w-4xl mx-auto">
-      <div class="bg-[var(--color-brand-deep-blue)] rounded-xl p-8 text-white shadow-sm">
-        <h2 class="ty-big-1 mb-4">{compliance.contact.title}</h2>
-        <p class="ty-body-1 leading-relaxed mb-6 text-white/90">
-          {compliance.contact.description}
-        </p>
-        <a
-          href={compliance.contact.ctaHref}
-          class="inline-flex items-center gap-2 bg-white text-[var(--color-brand-deep-blue)] px-6 py-3 rounded-lg ty-regular font-bold hover:bg-[var(--color-gray-10)] transition-colors"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-          {compliance.contact.ctaLabel}
-        </a>
-      </div>
-    </div>
-  </Section>
-
-  <!-- Summary Section -->
-  <Section
-    id="compliance-summary"
-    variant="accent"
-  >
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="ty-big-1 text-[var(--color-brand-deep-blue)] mb-6">{compliance.summary.title}</h2>
-      <p class="ty-body-1 text-[var(--color-brand-titan-gray)] leading-relaxed">
-        {compliance.summary.description}
-      </p>
-    </div>
-  </Section>
-
-  <!-- Disclaimer Section -->
-  <Section
-    id="compliance-disclaimer"
-    variant="plain"
-  >
-    <div class="max-w-4xl mx-auto">
-      <div class="bg-[var(--color-gray-10)] rounded-xl p-6 border-l-4 border-[var(--color-brand-titan-gray)]">
-        <h3 class="ty-regular font-bold text-[var(--color-brand-titan-gray)] mb-2">{compliance.disclaimer.title}</h3>
-        <p class="ty-small text-[var(--color-brand-titan-gray)]">{compliance.disclaimer.text}</p>
-      </div>
-    </div>
-  </Section>
+  <LPHero compact title={c.heroTitle} subtitle={c.intro} primary={docs[0]} secondary={docs[1]} />
+  <LPSection><ProseRows rows={c.rows} /></LPSection>
+  <LPSection id="documents" title={c.documents.title} accent split><DocLinks docs={docs} /></LPSection>
+  <CtaBand {...c.cta} />
 </Base>

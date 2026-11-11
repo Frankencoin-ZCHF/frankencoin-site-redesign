@@ -1,0 +1,455 @@
+{
+ "note": "Annual averages. usdchf: CHF per 1 USD, FRED DEXSZUS (Federal Reserve H.10). usCpi: CPI-U all items, 1982-84=100, FRED CPIAUCSL (BLS). chCpi: Swiss CPI (OECD via FRED CHECPIALLMINMEI), rebased 1971=100; carried forward where the year has no data yet. tbill: 3-month US Treasury bill, %, FRED TB3MS. chf3m: CHF money-market rate, % \u2014 SNB overnight call money (1TGT) 1972-1998 (1971 uses 1972), SARON (SNB zimoma) from 1999. Last row is the current year to date.",
+ "fetched": "2026-10-24",
+ "rows": [
+  {
+   "year": 1971,
+   "usdchf": 4.1171,
+   "usCpi": 40.5,
+   "chCpi": 100.0,
+   "tbill": 4.33,
+   "chf3m": 1.19
+  },
+  {
+   "year": 1972,
+   "usdchf": 3.8186,
+   "usCpi": 41.8,
+   "chCpi": 106.7,
+   "tbill": 4.07,
+   "chf3m": 1.19
+  },
+  {
+   "year": 1973,
+   "usdchf": 3.1688,
+   "usCpi": 44.4,
+   "chCpi": 116.0,
+   "tbill": 7.03,
+   "chf3m": 3.68
+  },
+  {
+   "year": 1974,
+   "usdchf": 2.9805,
+   "usCpi": 49.3,
+   "chCpi": 127.3,
+   "tbill": 7.83,
+   "chf3m": 2.92
+  },
+  {
+   "year": 1975,
+   "usdchf": 2.5839,
+   "usCpi": 53.8,
+   "chCpi": 135.9,
+   "tbill": 5.77,
+   "chf3m": 1.3
+  },
+  {
+   "year": 1976,
+   "usdchf": 2.5002,
+   "usCpi": 56.9,
+   "chCpi": 138.2,
+   "tbill": 4.97,
+   "chf3m": 0.42
+  },
+  {
+   "year": 1977,
+   "usdchf": 2.4065,
+   "usCpi": 60.6,
+   "chCpi": 140.0,
+   "tbill": 5.27,
+   "chf3m": 0.64
+  },
+  {
+   "year": 1978,
+   "usdchf": 1.7907,
+   "usCpi": 65.2,
+   "chCpi": 141.4,
+   "tbill": 7.19,
+   "chf3m": -0.17
+  },
+  {
+   "year": 1979,
+   "usdchf": 1.6644,
+   "usCpi": 72.6,
+   "chCpi": 146.6,
+   "tbill": 10.07,
+   "chf3m": 0.15
+  },
+  {
+   "year": 1980,
+   "usdchf": 1.6772,
+   "usCpi": 82.4,
+   "chCpi": 152.5,
+   "tbill": 11.43,
+   "chf3m": 1.3
+  },
+  {
+   "year": 1981,
+   "usdchf": 1.9675,
+   "usCpi": 90.9,
+   "chCpi": 162.4,
+   "tbill": 14.02,
+   "chf3m": 2.55
+  },
+  {
+   "year": 1982,
+   "usdchf": 2.0319,
+   "usCpi": 96.5,
+   "chCpi": 171.5,
+   "tbill": 10.61,
+   "chf3m": 1.12
+  },
+  {
+   "year": 1983,
+   "usdchf": 2.1007,
+   "usCpi": 99.6,
+   "chCpi": 176.6,
+   "tbill": 8.61,
+   "chf3m": 1.36
+  },
+  {
+   "year": 1984,
+   "usdchf": 2.35,
+   "usCpi": 103.9,
+   "chCpi": 181.8,
+   "tbill": 9.52,
+   "chf3m": 1.57
+  },
+  {
+   "year": 1985,
+   "usdchf": 2.4552,
+   "usCpi": 107.6,
+   "chCpi": 188.0,
+   "tbill": 7.48,
+   "chf3m": 0.72
+  },
+  {
+   "year": 1986,
+   "usdchf": 1.7979,
+   "usCpi": 109.7,
+   "chCpi": 189.4,
+   "tbill": 5.98,
+   "chf3m": 1.08
+  },
+  {
+   "year": 1987,
+   "usdchf": 1.4918,
+   "usCpi": 113.6,
+   "chCpi": 192.2,
+   "tbill": 5.77,
+   "chf3m": 1.64
+  },
+  {
+   "year": 1988,
+   "usdchf": 1.4643,
+   "usCpi": 118.3,
+   "chCpi": 195.8,
+   "tbill": 6.67,
+   "chf3m": 2.57
+  },
+  {
+   "year": 1989,
+   "usdchf": 1.6369,
+   "usCpi": 123.9,
+   "chCpi": 201.9,
+   "tbill": 8.11,
+   "chf3m": 6.83
+  },
+  {
+   "year": 1990,
+   "usdchf": 1.3901,
+   "usCpi": 130.7,
+   "chCpi": 212.9,
+   "tbill": 7.49,
+   "chf3m": 8.24
+  },
+  {
+   "year": 1991,
+   "usdchf": 1.4356,
+   "usCpi": 136.2,
+   "chCpi": 225.3,
+   "tbill": 5.38,
+   "chf3m": 7.71
+  },
+  {
+   "year": 1992,
+   "usdchf": 1.4064,
+   "usCpi": 140.3,
+   "chCpi": 234.4,
+   "tbill": 3.43,
+   "chf3m": 7.7
+  },
+  {
+   "year": 1993,
+   "usdchf": 1.4781,
+   "usCpi": 144.5,
+   "chCpi": 242.1,
+   "tbill": 3.0,
+   "chf3m": 4.98
+  },
+  {
+   "year": 1994,
+   "usdchf": 1.3667,
+   "usCpi": 148.2,
+   "chCpi": 244.2,
+   "tbill": 4.25,
+   "chf3m": 3.91
+  },
+  {
+   "year": 1995,
+   "usdchf": 1.1812,
+   "usCpi": 152.4,
+   "chCpi": 248.6,
+   "tbill": 5.49,
+   "chf3m": 2.76
+  },
+  {
+   "year": 1996,
+   "usdchf": 1.2361,
+   "usCpi": 156.9,
+   "chCpi": 250.6,
+   "tbill": 5.01,
+   "chf3m": 1.69
+  },
+  {
+   "year": 1997,
+   "usdchf": 1.4514,
+   "usCpi": 160.5,
+   "chCpi": 251.9,
+   "tbill": 5.06,
+   "chf3m": 1.24
+  },
+  {
+   "year": 1998,
+   "usdchf": 1.4506,
+   "usCpi": 163.0,
+   "chCpi": 252.0,
+   "tbill": 4.78,
+   "chf3m": 1.22
+  },
+  {
+   "year": 1999,
+   "usdchf": 1.5045,
+   "usCpi": 166.6,
+   "chCpi": 254.0,
+   "tbill": 4.64,
+   "chf3m": 1.25
+  },
+  {
+   "year": 2000,
+   "usdchf": 1.6904,
+   "usCpi": 172.2,
+   "chCpi": 258.0,
+   "tbill": 5.82,
+   "chf3m": 2.75
+  },
+  {
+   "year": 2001,
+   "usdchf": 1.6891,
+   "usCpi": 177.0,
+   "chCpi": 260.5,
+   "tbill": 3.39,
+   "chf3m": 2.78
+  },
+  {
+   "year": 2002,
+   "usdchf": 1.5567,
+   "usCpi": 179.9,
+   "chCpi": 262.2,
+   "tbill": 1.6,
+   "chf3m": 0.88
+  },
+  {
+   "year": 2003,
+   "usdchf": 1.345,
+   "usCpi": 184.0,
+   "chCpi": 263.9,
+   "tbill": 1.01,
+   "chf3m": 0.19
+  },
+  {
+   "year": 2004,
+   "usdchf": 1.2428,
+   "usCpi": 188.9,
+   "chCpi": 266.0,
+   "tbill": 1.37,
+   "chf3m": 0.29
+  },
+  {
+   "year": 2005,
+   "usdchf": 1.2459,
+   "usCpi": 195.3,
+   "chCpi": 269.1,
+   "tbill": 3.15,
+   "chf3m": 0.67
+  },
+  {
+   "year": 2006,
+   "usdchf": 1.2532,
+   "usCpi": 201.6,
+   "chCpi": 271.9,
+   "tbill": 4.73,
+   "chf3m": 1.33
+  },
+  {
+   "year": 2007,
+   "usdchf": 1.1999,
+   "usCpi": 207.3,
+   "chCpi": 273.9,
+   "tbill": 4.35,
+   "chf3m": 2.12
+  },
+  {
+   "year": 2008,
+   "usdchf": 1.0816,
+   "usCpi": 215.3,
+   "chCpi": 280.6,
+   "tbill": 1.36,
+   "chf3m": 1.5
+  },
+  {
+   "year": 2009,
+   "usdchf": 1.086,
+   "usCpi": 214.6,
+   "chCpi": 279.2,
+   "tbill": 0.15,
+   "chf3m": 0.03
+  },
+  {
+   "year": 2010,
+   "usdchf": 1.0432,
+   "usCpi": 218.1,
+   "chCpi": 281.2,
+   "tbill": 0.14,
+   "chf3m": 0.08
+  },
+  {
+   "year": 2011,
+   "usdchf": 0.8862,
+   "usCpi": 224.9,
+   "chCpi": 281.8,
+   "tbill": 0.05,
+   "chf3m": 0.04
+  },
+  {
+   "year": 2012,
+   "usdchf": 0.9377,
+   "usCpi": 229.6,
+   "chCpi": 279.9,
+   "tbill": 0.09,
+   "chf3m": 0.0
+  },
+  {
+   "year": 2013,
+   "usdchf": 0.9269,
+   "usCpi": 233.0,
+   "chCpi": 279.3,
+   "tbill": 0.06,
+   "chf3m": -0.01
+  },
+  {
+   "year": 2014,
+   "usdchf": 0.9147,
+   "usCpi": 236.7,
+   "chCpi": 279.2,
+   "tbill": 0.03,
+   "chf3m": -0.02
+  },
+  {
+   "year": 2015,
+   "usdchf": 0.9628,
+   "usCpi": 237.0,
+   "chCpi": 276.0,
+   "tbill": 0.05,
+   "chf3m": -0.72
+  },
+  {
+   "year": 2016,
+   "usdchf": 0.9848,
+   "usCpi": 240.0,
+   "chCpi": 274.8,
+   "tbill": 0.32,
+   "chf3m": -0.74
+  },
+  {
+   "year": 2017,
+   "usdchf": 0.9842,
+   "usCpi": 245.1,
+   "chCpi": 276.3,
+   "tbill": 0.93,
+   "chf3m": -0.74
+  },
+  {
+   "year": 2018,
+   "usdchf": 0.9784,
+   "usCpi": 251.1,
+   "chCpi": 278.9,
+   "tbill": 1.94,
+   "chf3m": -0.74
+  },
+  {
+   "year": 2019,
+   "usdchf": 0.9937,
+   "usCpi": 255.7,
+   "chCpi": 279.9,
+   "tbill": 2.06,
+   "chf3m": -0.73
+  },
+  {
+   "year": 2020,
+   "usdchf": 0.9389,
+   "usCpi": 258.9,
+   "chCpi": 277.9,
+   "tbill": 0.36,
+   "chf3m": -0.7
+  },
+  {
+   "year": 2021,
+   "usdchf": 0.9144,
+   "usCpi": 271.0,
+   "chCpi": 279.5,
+   "tbill": 0.04,
+   "chf3m": -0.71
+  },
+  {
+   "year": 2022,
+   "usdchf": 0.955,
+   "usCpi": 292.6,
+   "chCpi": 287.4,
+   "tbill": 2.02,
+   "chf3m": -0.15
+  },
+  {
+   "year": 2023,
+   "usdchf": 0.8984,
+   "usCpi": 304.7,
+   "chCpi": 293.5,
+   "tbill": 5.07,
+   "chf3m": 1.51
+  },
+  {
+   "year": 2024,
+   "usdchf": 0.8808,
+   "usCpi": 313.7,
+   "chCpi": 296.6,
+   "tbill": 4.97,
+   "chf3m": 1.22
+  },
+  {
+   "year": 2025,
+   "usdchf": 0.8305,
+   "usCpi": 322.0,
+   "chCpi": 296.9,
+   "tbill": 4.07,
+   "chf3m": 0.09
+  },
+  {
+   "year": 2026,
+   "usdchf": 0.7976,
+   "usCpi": 331.8,
+   "chCpi": 296.9,
+   "tbill": 3.67,
+   "chf3m": -0.06,
+   "partial": true
+  }
+ ]
+}

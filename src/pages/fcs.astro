@@ -143,7 +143,7 @@ const faqJsonLd = {
 Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
 ---
 
-<Base title={c.meta.title} description={c.meta.description} image="/images/fcs/og.png" navLinks={c.nav} footerNote={c.disclaimer}>
+<Base title={c.meta.title} description={c.meta.description} image="/images/fcs/og.png" footerNote={c.disclaimer}>
   <Fragment slot="head">
     <link rel="preload" as="image" type="image/webp" imagesrcset={srcset("mountains-back")} imagesizes={ART_SIZES} fetchpriority="high" />
     <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />

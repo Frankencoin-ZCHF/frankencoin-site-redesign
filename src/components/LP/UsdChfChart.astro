@@ -1,0 +1,31 @@
+---
+/** "What 1 USD buys in CHF" since 1999, from ECB reference rates. */
+import { getUsdChfHistory, sparkPath } from "../../utils/liveStats";
+const { caption } = Astro.props as { caption?: string };
+const fx = await getUsdChfHistory();
+const pts = fx.points;
+const first = pts[0];
+const last = pts[pts.length - 1];
+const chfGain = first && last ? first[1] / last[1] - 1 : null;
+const { line, area } = sparkPath(pts.map((p) => p[1]));
+---
+
+{pts.length > 5 && first && last && (
+  <figure class="m-0 rounded-3xl bg-[var(--color-white)] border border-[var(--color-gray-20)] p-5 sm:p-8">
+    <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-neutral-550)]">Swiss francs per 1 US dollar</p>
+    <div class="flex items-baseline gap-3 flex-wrap mt-1">
+      <span class="text-[44px] font-black tracking-tight text-[var(--color-brand-deep-blue)] leading-none">{last[1].toFixed(2)}</span>
+      <span class="ty-body-3 text-[var(--color-neutral-600)]">today, from {first[1].toFixed(2)} in {Math.floor(first[0])}</span>
+    </div>
+    <svg viewBox="0 0 100 40" preserveAspectRatio="none" class="w-full h-28 mt-4" role="img" aria-label="USD to CHF exchange rate since 1999, falling">
+      <path d={area} fill="rgba(91,184,220,0.18)" />
+      <path d={line} fill="none" stroke="#1a9cc8" stroke-width="1.5" vector-effect="non-scaling-stroke" />
+    </svg>
+    <div class="flex justify-between ty-2xs text-[var(--color-neutral-550)] mt-1"><span>{Math.floor(first[0])}</span><span>{new Date().getFullYear()}</span></div>
+    <figcaption class="ty-body-3 text-[var(--color-neutral-650)] mt-3">
+      {chfGain !== null && <>A dollar buys {Math.round((1 - last[1] / first[1]) * 100)}% fewer francs than in {Math.floor(first[0])}. Measured the other way, the franc gained {Math.round(chfGain * 100)}% against the dollar. </>}
+      {caption}
+      <span class="block ty-2xs text-[var(--color-neutral-550)] mt-1">ECB reference rates via frankfurter.dev. Past moves do not predict future ones.</span>
+    </figcaption>
+  </figure>
+)}

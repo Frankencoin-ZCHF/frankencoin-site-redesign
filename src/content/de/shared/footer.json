@@ -9,12 +9,28 @@
             "href": "/what-is-frankencoin"
           },
           {
+            "label": "Verein",
+            "href": "/association"
+          },
+          {
             "label": "Anwendungsfälle",
             "href": "/use-cases"
           },
           {
             "label": "Governance / FCS",
             "href": "/governance"
+          },
+          {
+            "label": "FAQ",
+            "href": "/faq"
+          },
+          {
+            "label": "Glossar",
+            "href": "/glossary"
+          },
+          {
+            "label": "Pressekit",
+            "href": "/press"
           }
         ],
         "sections": [
@@ -50,7 +66,6 @@
             "label": "Versicherung",
             "href": "/insurance"
           },
-
           {
             "label": "DeFiLlama",
             "href": "https://defillama.com/protocol/frankencoin",
@@ -61,7 +76,7 @@
             "href": "https://www.coingecko.com/en/coins/frankencoin",
             "external": true
           },
-           {
+          {
             "label": "Dune Dashboard",
             "href": "https://dune.com/frankencoin",
             "external": true
@@ -148,6 +163,7 @@
         ]
       }
     ],
-    "copyright": "© {year} Frankencoin Association. Alle Rechte vorbehalten."
+    "copyright": "© {year} Frankencoin Association. Alle Rechte vorbehalten.",
+    "disclaimer": "Die Zahlen auf dieser Website sind Live-Protokolldaten und vergangene Werte. Nichts hier ist eine Anlage-, Rechts- oder Steuerberatung. Vergangene Ergebnisse sagen nichts über künftige aus."
   }
 }

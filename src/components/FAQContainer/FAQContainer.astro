@@ -15,23 +15,29 @@ interface Props {
   };
 }
 
+import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
 const { faqs } = Astro.props;
+const lang = getLanguageFromURL(Astro.url.pathname);
 
-// Convert markdown links to HTML
+// Convert markdown links to HTML. Internal links are localised and open in the same tab; external ones in a new tab.
 function convertMarkdownLinks(text: string): string {
-  // Replace [text](url) with <a href="url">text</a>
-  return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-[var(--color-brand-deep-blue)] hover:underline font-bold" target="_blank" rel="noopener noreferrer">$1</a>');
+  return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label, url) => {
+    const internal = url.startsWith("/");
+    const href = internal ? getLocalizedPath(url, lang) : url;
+    const ext = internal ? "" : ' target="_blank" rel="noopener noreferrer"';
+    return `<a href="${href}" class="text-[var(--color-brand-deep-blue)] hover:underline font-bold"${ext}>${label}</a>`;
+  });
 }
 ---
 
-<div class="space-y-12">
+<div class="divide-y divide-[var(--color-gray-20)]">
   {faqs.categories.map((category) => (
-    <div>
+    <div class="grid lg:grid-cols-[1fr_1.8fr] gap-6 lg:gap-14 py-10 md:py-14 first:pt-0 last:pb-0">
       <!-- Category Header -->
-      <h3 class="ty-big-2 text-[var(--color-brand-deep-blue)] mb-6">{category.category}</h3>
+      <h3 class="text-balance text-[30px] sm:text-[36px] leading-[1.04] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0 lg:sticky lg:top-28">{category.category}</h3>
 
       <!-- Questions for this category -->
-      <div class="divide-y divide-gray-200 border border-gray-200 rounded-3xl px-8 py-4">
+      <div class="divide-y divide-[var(--color-gray-20)] border border-[var(--color-gray-20)] rounded-3xl px-6 md:px-8 py-2 bg-white min-w-0">
         {category.questions.map((faq) => (
           <div x-data="{ open: false }" class="py-5">
             <!-- Header -->

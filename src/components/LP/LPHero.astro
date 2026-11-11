@@ -1,0 +1,61 @@
+---
+/**
+ * Landing-page hero in the home style: white sky, halftone mist, the halftone Alps along the bottom,
+ * mono eyebrow, display headline, pixel CTAs. Optional `aside` slot (figures, cards) on the right.
+ * `title` may contain "|" to start a second, teal line.
+ */
+import HalftoneMist from "../Home/HalftoneMist.astro";
+import PixelButton from "./PixelButton.astro";
+import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
+
+interface Cta { label: string; href: string }
+interface Props { eyebrow?: string; title: string; subtitle: string; primary?: Cta; secondary?: Cta; compact?: boolean; image?: string; imageHeight?: string; imagePosition?: string; /** "band": halftone strip along the bottom (default). "side": the image fills the right half, fading into the white text column. */ imageLayout?: "band" | "side"; /** Extra classes on the section, e.g. a min-height so a band image has room below short copy. */ class?: string }
+const { eyebrow, title, subtitle, primary, secondary, compact = false, image = "/images/home/alps-halftone.webp", imageHeight = "h-[34%] md:h-[46%]", imagePosition = "object-bottom", imageLayout = "band", class: cls = "" } = Astro.props as Props;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const href = (h: string) => (h.startsWith("/") || h.startsWith("#") ? (h.startsWith("#") ? h : getLocalizedPath(h, lang)) : h);
+const ext = (h: string) => (h.startsWith("http") || h.startsWith("mailto:") ? { target: h.startsWith("http") ? "_blank" : undefined, rel: "noopener noreferrer" } : {});
+const hasAside = Astro.slots.has("aside");
+const [l1, l2] = title.split("|");
+---
+
+<section class={`relative isolate overflow-hidden bg-[var(--color-white)] ${compact ? "pt-28 md:pt-32 pb-4 md:pb-6" : "pt-28 md:pt-36 pb-24 md:pb-32"} ${cls}`}>
+  {!compact && imageLayout === "side" && (
+    <>
+      <img src={image} alt="" width="2000" height="1121" fetchpriority="high" class={`absolute -z-10 select-none object-cover ${imagePosition} inset-x-0 bottom-0 h-[40%] w-full lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:w-[58%] opacity-90`} />
+      <div class="absolute inset-x-0 bottom-0 h-[40%] box-content pt-[3px] -z-10 bg-gradient-to-b from-white via-white/50 to-transparent lg:hidden"></div>
+      <div class="absolute inset-y-0 right-0 w-[58%] -z-10 hidden lg:block bg-gradient-to-r from-white via-white/70 to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 h-24 -z-10 hidden lg:block bg-gradient-to-t from-white to-transparent"></div>
+      <HalftoneMist />
+    </>
+  )}
+  {!compact && imageLayout === "band" && (
+    <>
+      <img src={image} alt="" width="2000" height="1121" fetchpriority="high" class={`absolute inset-x-0 bottom-0 w-full ${imageHeight} object-cover ${imagePosition} -z-10 select-none opacity-90`} />
+      <div class={`absolute inset-x-0 bottom-0 ${imageHeight} box-content pt-[3px] -z-10 bg-gradient-to-b from-white via-white/40 to-transparent`}></div>
+      <HalftoneMist />
+    </>
+  )}
+  {compact && <span class="halftone-dots absolute inset-0 -z-10 text-[#5bb8dc]/30 pointer-events-none"></span>}
+
+  <div class="relative mx-auto max-w-7xl px-[var(--spacing-l)]">
+    <div data-hero class={`grid gap-10 lg:gap-14 items-center ${hasAside ? "lg:grid-cols-[1.15fr_1fr]" : ""}`}>
+      <div class="flex flex-col max-w-3xl">
+        <h1 class="text-balance text-[40px] sm:text-[54px] lg:text-[66px] leading-[1] font-black tracking-[-0.035em] text-[var(--color-brand-deep-blue)] m-0">
+          {l1}{l2 && <><br /><span class="text-[#1a9cc8]">{l2}</span></>}
+        </h1>
+        <p class="mt-6 max-w-[38rem] text-pretty ty-body-1 text-[var(--color-neutral-650)]">{subtitle}</p>
+        {(primary || secondary) && (
+          <div class="mt-8 flex flex-wrap gap-3">
+            {primary && (
+              <PixelButton href={primary.href} label={primary.label} variant="solid" arrow />
+            )}
+            {secondary && (
+              <PixelButton href={secondary.href} label={secondary.label} variant="ghost" />
+            )}
+          </div>
+        )}
+      </div>
+      {hasAside && <div class="min-w-0"><slot name="aside" /></div>}
+    </div>
+  </div>
+</section>

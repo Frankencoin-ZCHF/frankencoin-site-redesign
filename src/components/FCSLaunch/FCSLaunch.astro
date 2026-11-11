@@ -1,5 +1,6 @@
 ---
 import Button from "../Button/Button.astro";
+import PixelButton from "../LP/PixelButton.astro";
 import Container from "../Layout/Container.astro";
 import { getLocalizedPath, type Language } from "../../utils/i18n";
 
@@ -27,7 +28,6 @@ const ctaHref = ctaExternal ? content.cta.href : getLocalizedPath(content.cta.hr
       <div class="flex flex-col items-start gap-6 bg-[var(--color-brand-deep-blue)] p-6 text-[var(--color-white)] sm:p-10">
         <div class="flex items-center gap-4">
           <img src="/images/fcs.png" alt="" width="72" height="72" loading="lazy" decoding="async" class="h-18 w-18 rounded-full" />
-          <p class="ty-subtitle ty-white uppercase tracking-wide">{content.eyebrow}</p>
         </div>
         <h2 id="fcs-launch-title" class="ty-large-title ty-white">{content.title}</h2>
         <p class="ty-body-1">{content.description}</p>
@@ -42,9 +42,7 @@ const ctaHref = ctaExternal ? content.cta.href : getLocalizedPath(content.cta.hr
           ))}
         </dl>
         <div class="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-          <Button href={ctaHref} variant="primary" rounded="full" external={ctaExternal}>
-            {content.cta.label}
-          </Button>
+          <PixelButton href={content.cta.href} label={content.cta.label} variant="solid" arrow />
           <Button href={content.swapCta.href} variant="secondary" rounded="full" external={true} withExternalIcon={true}>
             {content.swapCta.label}
           </Button>

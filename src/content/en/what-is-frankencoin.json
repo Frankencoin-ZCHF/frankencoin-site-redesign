@@ -1,44 +1,92 @@
 {
+  "meta": {
+    "title": "What is Frankencoin? A decentralized Swiss franc stablecoin",
+    "description": "Frankencoin (ZCHF) is a Swiss franc stablecoin issued by smart contracts against on-chain collateral, without a bank, an issuer or a price oracle."
+  },
   "header": {
     "image": "/images/Frankencoin-Logo-Compressify.io_1.webp",
     "imageAlt": "Frankencoin logo",
-    "title": "What’s that, Frankencoin?",
-    "subtitle": "And why is it the only stablecoin that does not require an oracle.",
+    "title": "What is|Frankencoin?",
+    "subtitle": "Frankencoin (ZCHF) is a digital Swiss franc. Every ZCHF is minted by a smart contract against collateral worth more than a franc, locked on-chain where anyone can inspect it. No bank holds reserves and no company issues it.",
     "cta": {
-      "label": "Get some Frankencoin",
-      "href": "https://app.frankencoin.com/mint"
+      "label": "Start saving",
+      "href": "https://app.frankencoin.com/savings"
     }
   },
   "features": [
     {
-      "title": "CHF Stablecoin",
-      "image": "/images/Icon-Stability-Compressify.io.webp"
+      "title": "A Swiss franc on-chain",
+      "image": "/images/Icon-Stability-Compressify.io.webp",
+      "description": "ZCHF tracks CHF, so you can hold, pay and save in francs on Ethereum and seven other chains without a bank account."
     },
     {
-      "title": "No Oracles",
-      "image": "/images/Icon-Oraclefree-Compressify.io.webp"
+      "title": "Backing you can check",
+      "image": "/images/Icon-Decentralized-Compressify.io.webp",
+      "description": "Each ZCHF is backed by more than one franc of collateral: BTC, ETH, tokenized gold and shares, all visible on-chain at any time."
     },
     {
-      "title": "Fully decentralized",
-      "image": "/images/Icon-Decentralized-Compressify.io.webp"
+      "title": "No issuer, no freeze",
+      "image": "/images/Icon-Oraclefree-Compressify.io.webp",
+      "description": "Anyone can mint ZCHF against approved collateral. The rules are smart contracts governed by FCS (Frankencoin Shares) holders, and nobody can freeze your balance."
     }
   ],
   "introduction": [
     {
-      "title": "What is Frankencoin?",
-      "description": "Frankencoin (ZCHF) is a decentralized stablecoin pegged to the Swiss franc. Unlike centralized stablecoins such as USDT or USDC, Frankencoin does not rely on a single issuer holding bank reserves. Instead, it uses an over-collateralized system where crypto assets are deposited on-chain to back every ZCHF in circulation. The protocol is fully transparent — all collateral, positions, and system parameters are publicly verifiable on the blockchain."
+      "title": "Why the Swiss franc?",
+      "description": "The franc is one of the most stable currencies in the world, and most of the people and businesses using Frankencoin earn, spend and account in it. ZCHF gives them a franc they can use in DeFi and in payments without converting to a dollar token first.",
+      "cta": {
+        "label": "Save in CHF",
+        "href": "/use-cases/save-in-chf"
+      }
     },
     {
-      "title": "Why the Swiss Franc?",
-      "description": "The Swiss franc is one of the world's most stable and trusted currencies. Over the past 50 years, it has appreciated more than 240% against the US dollar. By bringing the Swiss franc on-chain, Frankencoin provides a stable store of value for DeFi participants who want exposure to CHF rather than USD. This is particularly relevant for European users, Swiss businesses, and anyone seeking a stable non-USD alternative in decentralized finance."
+      "title": "No price oracle",
+      "description": "Most stablecoins and lending protocols rely on an external price feed to value collateral. Frankencoin does not. Anyone who thinks a position is under-collateralized can challenge it, and an open auction sets the price. That removes the price feed as a single point of failure; the system still carries market, liquidity and smart contract risk like any other protocol.",
+      "cta": {
+        "label": "How the auctions work",
+        "href": "/how-it-works"
+      }
+    }
+  ],
+  "figures": {
+    "supply": {
+      "label": "In circulation",
+      "unit": "ZCHF"
+    },
+    "ratio": {
+      "label": "Collateral per ZCHF",
+      "unit": "over-collateralized"
+    },
+    "since": {
+      "label": "Live since",
+      "unit": "on Ethereum"
+    },
+    "types": {
+      "label": "Collateral types",
+      "unit": "on-chain"
+    }
+  },
+  "pillarsHead": {
+    "title": "What that means in practice."
+  },
+  "introHead": {
+    "title": "Two questions people ask next."
+  },
+  "nextHead": {
+    "title": "Where to go from here."
+  },
+  "next": [
+    {
+      "title": "How it works",
+      "description": "Minting, the peg, challenges and auctions, and where the income goes.",
+      "href": "/how-it-works",
+      "cta": "Read"
     },
     {
-      "title": "Oracle-Free Design",
-      "description": "Most stablecoins and lending protocols depend on external price oracles — third-party services that feed market prices to smart contracts. These oracles introduce a point of failure: if manipulated, they can trigger cascading liquidations or enable exploits. Frankencoin eliminates this risk entirely. Instead of relying on oracles, the protocol uses an auction-based mechanism where market participants themselves determine collateral valuations. This design, described in detail in the founding PhD thesis at the University of Zurich, makes Frankencoin uniquely resilient to oracle manipulation attacks."
-    },
-    {
-      "title": "How It Works",
-      "description": "Anyone can mint ZCHF by depositing approved collateral (such as ETH, WBTC, or other ERC-20 tokens) into a position. The collateral must exceed the value of the minted ZCHF, creating an over-collateralization buffer. If collateral values drop below safe levels, the system's automated liquidation mechanism activates. A separate reserve pool, funded by Frankencoin Pool Share (FPS) holders, provides an additional safety layer. The entire system operates without intermediaries, central operators, or trusted third parties."
+      "title": "Explore uses",
+      "description": "Where ZCHF is accepted, how to buy it, and what you can do with it in DeFi and in business.",
+      "href": "/use-cases",
+      "cta": "See use cases"
     }
   ]
 }

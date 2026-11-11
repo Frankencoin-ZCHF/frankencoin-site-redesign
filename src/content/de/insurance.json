@@ -1,64 +1,59 @@
 {
-	"seo": {
-		"title": "Versicherung & Cover — Schützen Sie Ihre ZCHF | Frankencoin",
-		"description": "Optionaler Drittanbieter-Schutz für Frankencoin-Inhaber (ZCHF). Depeg Cover, gezeichnet von Nexus Mutual und erhältlich über OpenCover, zahlt aus, wenn ZCHF an sieben aufeinanderfolgenden Tagen 10% oder mehr unter 1 CHF handelt."
-	},
-	"header": {
-		"eyebrow": "Optionaler Drittanbieter-Schutz",
-		"title": "Versicherung & Cover",
-		"subtitle": "Unabhängige Anbieter bieten neu Onchain-Cover für Frankencoin-Inhaber an. Diese Produkte werden von Dritten bereitgestellt — nicht von der Frankencoin Association — und sind vollständig optional."
-	},
-	"products": [
-		{
-			"badge": "Depeg Cover",
-			"title": "ZCHF Depeg Cover",
-			"provider": "Gezeichnet von Nexus Mutual · Erhältlich über OpenCover",
-			"description": "Depeg Cover schützt ZCHF-Inhaber vor einem anhaltenden Verlust der Bindung. Handelt Frankencoin während sieben aufeinanderfolgenden Tagen mindestens 10% unter seinem Referenzwert von 1 CHF, können versicherte Inhaber einen Anspruch geltend machen.",
-			"highlights": [
-				{ "label": "Underwriter", "value": "Nexus Mutual" },
-				{ "label": "Marktplatz", "value": "OpenCover" },
-				{ "label": "Depeg-Auslöser", "value": "10% unter 1 CHF" },
-				{ "label": "Wartefrist", "value": "7 aufeinanderfolgende Tage" },
-				{ "label": "Anspruchswert", "value": "0.975 CHF pro ZCHF" },
-				{ "label": "Cover-Dauer", "value": "30–180 Tage" }
-			],
-			"covered": {
-				"title": "Was abgedeckt ist",
-				"items": [
-					"Ein anhaltender ZCHF-Depeg — ein Rückgang von 10% oder mehr unter den Referenzwert von 1 CHF, der mindestens sieben aufeinanderfolgende Tage andauert.",
-					"Verluste auf ZCHF, die während der gesamten Laufzeit der Police in einer versicherten Wallet gehalten werden."
-				]
-			},
-			"excluded": {
-				"title": "Was nicht abgedeckt ist",
-				"items": [
-					"Andere Vermögenswerte als ZCHF, der versicherte Token.",
-					"Technische Probleme, die den Depeg nicht selbst verursachen.",
-					"Bugs oder Ereignisse, die vor Beginn des Covers bereits bekannt oder offengelegt waren.",
-					"„Rug Pull“-Szenarien, in denen Protokoll-Kontrolleure Gelder entwenden.",
-					"ZCHF, die weniger als 72 Stunden vor dem Depeg-Ereignis gehalten wurden."
-				]
-			},
-			"howItWorks": {
-				"title": "So erhalten Sie Cover",
-				"steps": [
-					"Öffnen Sie die ZCHF-Cover-Seite auf OpenCover und verbinden Sie Ihre Wallet.",
-					"Wählen Sie, wie viel ZCHF Sie schützen möchten und für wie lange (30 bis 180 Tage).",
-					"Zahlen Sie die Prämie in USDC, ETH oder cbBTC und erhalten Sie ein Onchain-Proof-of-Cover-NFT."
-				]
-			},
-			"cta": {
-				"label": "Auf OpenCover absichern",
-				"href": "https://opencover.com/frankencoin"
-			},
-			"learnMore": {
-				"label": "Abgedeckte Risiken & Ausschlüsse",
-				"href": "https://opencover.com/depeg-cover-covered-risks-and-exclusions/"
-			}
-		}
-	],
-	"disclaimer": {
-		"title": "Haftungsausschluss",
-		"text": "Cover-Produkte werden von unabhängigen Dritten angeboten und werden nicht von der Frankencoin Association ausgegeben, garantiert oder empfohlen. Bedingungen, Verfügbarkeit, Preise und Auszahlungen werden ausschliesslich vom jeweiligen Anbieter und Underwriter festgelegt. Lesen Sie vor dem Kauf stets die vollständigen Cover-Bedingungen. Diese Seite dient nur zur Information und stellt keine Versicherungs-, Finanz- oder Rechtsberatung dar."
-	}
+  "seo": {
+    "title": "Versicherung & Absicherung — Schützen Sie Ihre ZCHF | Frankencoin",
+    "description": "Optionale Absicherung durch Dritte für Frankencoin-Inhaber (ZCHF). Die Depeg-Versicherung, gezeichnet von Nexus Mutual und erhältlich über OpenCover, zahlt aus, wenn ZCHF an sieben aufeinanderfolgenden Tagen 10% oder mehr unter 1 CHF handelt."
+  },
+  "header": {
+    "title": "Absicherung gegen einen ZCHF-Depeg.|Optional, von einem Dritten.",
+    "subtitle": "Die Depeg-Versicherung wird von Nexus Mutual gezeichnet und über OpenCover verkauft. Sie zahlt, wenn ZCHF an sieben aufeinanderfolgenden Tagen mindestens 10% unter 1 CHF handelt. Sie wird nicht vom Frankencoin-Verein ausgegeben."
+  },
+  "products": [
+    {
+      "title": "ZCHF Depeg-Versicherung",
+      "provider": "Gezeichnet von Nexus Mutual · Verkauft über OpenCover",
+      "description": "Die Absicherung zahlt ZCHF-Inhabern, wenn der Token an sieben aufeinanderfolgenden Tagen mindestens 10% unter seinem Referenzwert von 1 CHF handelt. Deckungssumme, Laufzeit und Preis werden beim Kauf festgelegt; die genauen Bedingungen stehen im Cover-Wording von OpenCover.",
+      "highlights": [
+        { "label": "Underwriter", "value": "Nexus Mutual" },
+        { "label": "Verkauft über", "value": "OpenCover" },
+        { "label": "Versichertes Ereignis", "value": "ZCHF an 7 aufeinanderfolgenden Tagen mindestens 10% unter 1 CHF" }
+      ],
+      "covered": {
+        "title": "Was abgedeckt ist",
+        "items": [
+          "Ein anhaltender ZCHF-Depeg: mindestens 10% unter dem Referenzwert von 1 CHF an sieben aufeinanderfolgenden Tagen.",
+          "ZCHF, die zu Beginn des Ereignisses in der versicherten Wallet gehalten werden."
+        ]
+      },
+      "excluded": {
+        "title": "Was nicht abgedeckt ist",
+        "items": [
+          "Andere Vermögenswerte als ZCHF.",
+          "Technische Probleme, die den Depeg nicht selbst verursachen.",
+          "Bugs oder Ereignisse, die vor Beginn der Absicherung bekannt oder offengelegt waren.",
+          "«Rug Pull»-Szenarien, in denen Protokoll-Kontrolleure Gelder im Rahmen ihrer Berechtigungen entnehmen.",
+          "ZCHF, die weniger als 72 Stunden vor dem versicherten Ereignis gehalten wurden (Cover-Wording von OpenCover)."
+        ]
+      },
+      "eligibility": {
+        "title": "Wer kaufen kann",
+        "body": "Alle mit einer Wallet, die ZCHF hält. OpenCover wendet eigene Zulassungsregeln an und kann einzelne Jurisdiktionen ausschliessen; prüfen Sie diese vor der Zahlung."
+      },
+      "howItWorks": {
+        "title": "So kaufen Sie die Absicherung",
+        "steps": [
+          { "title": "OpenCover öffnen", "body": "Öffnen Sie die ZCHF-Cover-Seite auf OpenCover und verbinden Sie die Wallet, die Ihre ZCHF hält." },
+          { "title": "Betrag und Laufzeit wählen", "body": "Legen Sie fest, wie viel ZCHF Sie absichern möchten und für wie lange. Der Preis wird vor der Bestätigung angezeigt." },
+          { "title": "Bezahlen und Nachweis aufbewahren", "body": "Zahlen Sie die Prämie und erhalten Sie einen On-Chain-Nachweis der Absicherung. Behalten Sie die ZCHF in der versicherten Wallet." }
+        ]
+      },
+      "cta": {
+        "label": "Absicherung und Zulassung prüfen",
+        "href": "https://opencover.com/frankencoin"
+      },
+      "learnMore": {
+        "label": "Abgedeckte Risiken und Ausschlüsse",
+        "href": "https://opencover.com/depeg-cover-covered-risks-and-exclusions/"
+      }
+    }
+  ]
 }

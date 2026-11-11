@@ -1,0 +1,82 @@
+---
+/* /association — the Frankencoin Association: why CHF, figures, board and advisers, what it does, contact.
+   Copy: content/en/association.json (same English copy under de/ for now). Photos: public/images/team. */
+import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import FeatureGrid from "../components/LP/FeatureGrid.astro";
+import { getLanguageFromURL, loadContent } from "../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("association", "en");
+const local = await loadContent<any>("association", lang);
+const c = { ...en, ...local };
+
+interface Person { name: string; photo: string; linkedin: string; bio: string }
+const linkedin = { target: "_blank", rel: "noopener noreferrer" };
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero title={c.hero.title} subtitle={c.hero.subtitle} image="/images/home/matterhorn-halftone.webp" imageHeight="h-[48%] md:h-[64%]" imagePosition="object-[50%_0%]" class="min-h-[560px] md:min-h-[680px]" />
+
+  <LPSection id="why" title={c.why.title} subtitle={c.why.subtitle} split>
+    <FeatureGrid items={c.why.items} cols={2} />
+    <p class="mt-6 ty-body-2 text-pretty text-[var(--color-neutral-650)] m-0">{c.why.note}</p>
+  </LPSection>
+
+  <LPSection id="today" title={c.today.title}>
+    <dl class="grid grid-cols-2 lg:grid-cols-3 gap-px overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-20)] m-0">
+      {c.today.items.map((f: { value: string; label: string }) => (
+        <div class="bg-white p-5 md:p-7 min-w-0">
+          <dd class="m-0 text-[26px] sm:text-[34px] font-black tracking-tight text-[var(--color-brand-deep-blue)] leading-none tabular-nums break-words">{f.value}</dd>
+          <dt class="mt-2 ty-body-3 text-[var(--color-neutral-650)]">{f.label}</dt>
+        </div>
+      ))}
+    </dl>
+    <p class="mt-4 ty-xs text-[var(--color-neutral-550)] m-0">{c.today.note}</p>
+  </LPSection>
+
+  <LPSection id="people" title={c.people.title} accent>
+    <h3 class="ty-xs font-mono uppercase tracking-[0.22em] text-[var(--color-neutral-550)] m-0">{c.people.board.title}</h3>
+    <ul class="mt-5 m-0 p-0 list-none grid gap-4 md:grid-cols-3">
+      {c.people.board.items.map((p: Person) => (
+        <li class="rounded-3xl border border-[var(--color-gray-20)] bg-white p-6 md:p-7">
+          <img src={p.photo} alt={p.name} width="96" height="96" loading="lazy" decoding="async" class="h-24 w-24 rounded-full object-cover" />
+          <a href={p.linkedin} {...linkedin} class="mt-5 block ty-title-3 font-black text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)]">{p.name} <span class="ty-body-3 font-bold" aria-hidden="true">↗</span></a>
+          <p class="mt-2 ty-body-3 text-[var(--color-neutral-650)] m-0">{p.bio}</p>
+        </li>
+      ))}
+    </ul>
+
+    <h3 class="mt-12 ty-xs font-mono uppercase tracking-[0.22em] text-[var(--color-neutral-550)] m-0">{c.people.advisers.title}</h3>
+    <ul class="mt-5 m-0 p-0 list-none grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {c.people.advisers.items.map((p: Person) => (
+        <li class="flex items-start gap-4 rounded-3xl border border-[var(--color-gray-20)] bg-white p-5">
+          <img src={p.photo} alt={p.name} width="72" height="72" loading="lazy" decoding="async" class="h-[72px] w-[72px] shrink-0 rounded-full object-cover" />
+          <div class="min-w-0">
+            <a href={p.linkedin} {...linkedin} class="block ty-body-2 font-black text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)]">{p.name} <span class="ty-xs font-bold" aria-hidden="true">↗</span></a>
+            <p class="mt-1 ty-body-3 text-[var(--color-neutral-650)] m-0">{p.bio}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </LPSection>
+
+  <LPSection id="what-we-do" title={c.membership.title} subtitle={c.membership.subtitle} split>
+    <ul class="m-0 p-0 list-none divide-y divide-[var(--color-gray-20)] border-y border-[var(--color-gray-20)]">
+      {c.membership.items.map((it: { title: string; description: string }) => (
+        <li class="grid md:grid-cols-[1fr_1.6fr] gap-2 md:gap-10 py-6 md:py-8">
+          <h3 class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</h3>
+          <p class="ty-body-2 text-pretty text-[var(--color-neutral-650)] m-0">{it.description}</p>
+        </li>
+      ))}
+    </ul>
+  </LPSection>
+
+  <LPSection id="contact" title={c.contact.title} subtitle={c.contact.text} split accent>
+    <p class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{c.contact.name}</p>
+    <p class="mt-1 ty-body-2 text-[var(--color-neutral-650)] m-0">{c.contact.role}</p>
+    <a href={`mailto:${c.contact.email}`} class="mt-3 block ty-body-1 font-bold text-[var(--color-brand-swiss)] hover:underline break-all">{c.contact.email}</a>
+  </LPSection>
+</Base>

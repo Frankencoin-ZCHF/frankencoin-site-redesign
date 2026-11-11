@@ -1,0 +1,98 @@
+---
+/* /security — audits, bug bounty, ratings. Copy: content/en/security.json; ratings from utils/xerberus.ts and utils/pharos.ts */
+import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import FeatureGrid from "../components/LP/FeatureGrid.astro";
+import PixelButton from "../components/LP/PixelButton.astro";
+import { getLanguageFromURL, loadContent } from "../utils/i18n";
+import { fetchXerberusRatings } from "../utils/xerberus";
+import { fetchPharosRating } from "../utils/pharos";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("security", "en");
+const local = await loadContent<any>("security", lang);
+const c = { ...en, ...local }; // no German copy yet; fall back per key
+
+const audits = c.audits.items as { reviewer: string; component: string; date: string; href: string }[];
+const summary = c.summary.map((s: any) => ({ ...s, title: s.title.replace("{n}", String(audits.length)) }));
+
+const xer = await fetchXerberusRatings();
+const byKey = new Map(xer.map((r) => [`${r.type}:${r.id}`, r]));
+const XER = [
+  { key: "protocol:frankencoin", subject: c.ratings.xerberus.subjects.protocol, href: "https://app.xerberus.io/protocol/dendrogram/frankencoin" },
+  { key: "organisation:frankencoin-dao", subject: c.ratings.xerberus.subjects.dao, href: "https://app.xerberus.io/organisation/dendrogram/frankencoin-dao" },
+  { key: "pool:frankencoin-savings-eth", subject: c.ratings.xerberus.subjects.savings, href: "https://app.xerberus.io/pool/dendrogram/frankencoin-savings-eth" },
+];
+const pharos = await fetchPharosRating();
+const pharosHref = "https://pharos.watch/stablecoin/zchf-frankencoin/#report-card";
+const pharosUpdated = pharos?.updatedAt ? new Date(pharos.updatedAt * 1000).toISOString().slice(0, 10) : null;
+
+const rows = [
+  ...XER.map((x) => {
+    const s = byKey.get(x.key)?.score ?? null;
+    return { provider: "Xerberus", subject: x.subject, score: s != null ? String(Math.round(s)) : c.ratings.unavailable, scale: c.ratings.xerberus.scale, href: x.href, label: c.ratings.xerberus.report, note: null as string | null };
+  }),
+  {
+    provider: "Pharos",
+    subject: c.ratings.pharos.subject,
+    score: pharos ? `${pharos.overallGrade}${pharos.overallScore != null ? ` · ${pharos.overallScore}` : ""}` : c.ratings.unavailable,
+    scale: c.ratings.pharos.scale,
+    href: pharosHref,
+    label: c.ratings.pharos.report,
+    note: pharosUpdated ? `${c.ratings.pharos.updated} ${pharosUpdated}` : null,
+  },
+];
+const th = "p-3 font-bold text-[var(--color-brand-deep-blue)]";
+const link = "font-bold text-[var(--color-brand-swiss)] hover:underline whitespace-nowrap";
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={{ label: c.audits.bounty.label, href: c.audits.bounty.href }} secondary={{ label: c.audits.title, href: "#audits" }} />
+  <LPSection><FeatureGrid items={summary} cols={4} /></LPSection>
+
+  <LPSection id="audits" title={c.audits.title} accent>
+    <div class="overflow-x-auto rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-white)]">
+      <table class="w-full ty-body-3 text-left">
+        <thead class="bg-[var(--color-gray-15)]"><tr><th class={th}>{c.audits.cols.reviewer}</th><th class={th}>{c.audits.cols.component}</th><th class={th}>{c.audits.cols.date}</th><th class={`${th} text-right`}>{c.audits.cols.report}</th></tr></thead>
+        <tbody>
+          {audits.map((a) => (
+            <tr class="border-t border-[var(--color-gray-20)]">
+              <td class="p-3 font-bold text-[var(--color-brand-deep-blue)] whitespace-nowrap">{a.reviewer}</td>
+              <td class="p-3">{a.component}</td>
+              <td class="p-3 tabular-nums whitespace-nowrap">{a.date}</td>
+              <td class="p-3 text-right"><a href={a.href} target="_blank" rel="noopener noreferrer" class={link}>{c.audits.reportLabel} ↗</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-4 rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-6 md:p-7">
+      <p class="ty-body-3 text-white/85 m-0 flex-1">{c.audits.bounty.body}</p>
+      <PixelButton href={c.audits.bounty.href} label={`${c.audits.bounty.label} ↗`} variant="light" size="sm" class="shrink-0" />
+    </div>
+  </LPSection>
+
+  <LPSection id="ratings" title={c.ratings.title} subtitle={c.ratings.subtitle}>
+    <div class="overflow-x-auto rounded-3xl border border-[var(--color-gray-20)]">
+      <table class="w-full ty-body-3 text-left">
+        <thead class="bg-[var(--color-gray-15)]"><tr><th class={th}>{c.ratings.cols.provider}</th><th class={th}>{c.ratings.cols.subject}</th><th class={th}>{c.ratings.cols.score}</th><th class={th}>{c.ratings.cols.scale}</th><th class={`${th} text-right`}>{c.ratings.cols.source}</th></tr></thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr class="border-t border-[var(--color-gray-20)]">
+              <td class="p-3 font-bold text-[var(--color-brand-deep-blue)] whitespace-nowrap">{r.provider}</td>
+              <td class="p-3">{r.subject}</td>
+              <td class="p-3 whitespace-nowrap"><span class="text-[22px] font-black tracking-tight text-[var(--color-brand-deep-blue)] tabular-nums">{r.score}</span>{r.note && <span class="block ty-2xs text-[var(--color-neutral-550)]">{r.note}</span>}</td>
+              <td class="p-3 text-[var(--color-neutral-650)]">{r.scale}</td>
+              <td class="p-3 text-right"><a href={r.href} target="_blank" rel="noopener noreferrer" class={link}>{r.label} ↗</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </LPSection>
+
+  <LPSection title={c.related.title} accent><FeatureGrid items={c.related.items} cols={3} /></LPSection>
+</Base>

@@ -1,14 +1,121 @@
 {
-  "brand": { "name": "Frankencoin", "href": "/" },
+  "brand": {
+    "name": "Frankencoin",
+    "href": "/"
+  },
   "links": [
-    { "label": "What is Frankencoin", "href": "/#what-is" },
-    { "label": "Use Cases", "href": "/#core-features" },
-    { "label": "How it Works", "href": "/#how-does-it-work" },
-    { "label": "Compliance & Security", "href": "/#trust-security" },
-    { "label": "Media", "href": "/#in-the-media" },
-    { "label": "FAQs", "href": "/#faq" }
+    {
+      "label": "Save",
+      "href": "/use-cases/save-in-chf"
+    },
+    {
+      "label": "Borrow",
+      "href": "/use-cases/borrow"
+    },
+    {
+      "label": "For",
+      "children": [
+        {
+          "label": "Savers",
+          "href": "/for/savers",
+          "note": "Retail and crypto-native"
+        },
+        {
+          "label": "Treasuries",
+          "href": "/for/treasuries",
+          "note": "Companies, funds, DAOs"
+        },
+        {
+          "label": "Exchanges & wallets",
+          "href": "/for/exchanges-wallets",
+          "note": "List, integrate, earn"
+        },
+        {
+          "label": "Developers",
+          "href": "/for/developers",
+          "note": "Contracts, API, indexer"
+        }
+      ]
+    },
+    {
+      "label": "Integrate",
+      "children": [
+        {
+          "label": "Integration hub",
+          "href": "/integrate",
+          "note": "Payments, wallets, DeFi, issuers"
+        },
+        {
+          "label": "Propose a collateral",
+          "href": "/integrate/collateral",
+          "note": "For token issuers"
+        },
+        {
+          "label": "Referral program",
+          "href": "/referral",
+          "note": "Up to 25% of savers' interest"
+        }
+      ]
+    },
+    {
+      "label": "FCS",
+      "href": "/fcs"
+    },
+    {
+      "label": "Trust",
+      "children": [
+        {
+          "label": "Transparency",
+          "href": "/transparency",
+          "note": "Live supply and collateral"
+        },
+        {
+          "label": "Security",
+          "href": "/security",
+          "note": "Audits, bounty, ratings"
+        },
+        {
+          "label": "Compliance",
+          "href": "/compliance",
+          "note": "Swiss law and MiCA"
+        },
+        {
+          "label": "Insurance",
+          "href": "/insurance",
+          "note": "Optional depeg cover"
+        }
+      ]
+    },
+    {
+      "label": "Learn",
+      "children": [
+        {
+          "label": "What is Frankencoin",
+          "href": "/what-is-frankencoin"
+        },
+        {
+          "label": "How it works",
+          "href": "/how-it-works"
+        },
+        {
+          "label": "Compare",
+          "href": "/compare"
+        },
+        {
+          "label": "Use cases",
+          "href": "/use-cases"
+        },
+        {
+          "label": "News",
+          "href": "/news"
+        }
+      ]
+    }
   ],
-  "cta": { "label": "Launch App", "href": "https://app.frankencoin.com/" },
+  "cta": {
+    "label": "Start saving",
+    "href": "https://app.frankencoin.com/savings"
+  },
   "socials": [
     {
       "name": "Telegram",
@@ -26,7 +133,7 @@
       "width": 30,
       "height": 30
     },
-      {
+    {
       "name": "LinkedIn",
       "href": "https://www.linkedin.com/company/frankencoin/",
       "light_icon": "/images/Social-icons-2_1.svg",
@@ -50,5 +157,9 @@
       "width": 30,
       "height": 30
     }
-  ]
+  ],
+  "appCta": {
+    "label": "App",
+    "href": "https://app.frankencoin.com/"
+  }
 }

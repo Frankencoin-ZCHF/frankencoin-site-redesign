@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "title": "Der Frankencoin-Verein",
+    "description": "Der unabhängige Schweizer Verein hinter ZCHF, dem grössten Schweizer-Franken-Stablecoin. Vorstand, Beirat und Mitgliedschaft."
+  },
+  "hero": {
+    "title": "Der Frankencoin-|Verein",
+    "subtitle": "Der unabhängige Schweizer Verein hinter ZCHF, dem grössten Schweizer-Franken-Stablecoin.",
+    "primary": {
+      "label": "Mitglied werden",
+      "href": "mailto:johannes@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Whitepaper lesen",
+      "href": "https://www.zora.uzh.ch/entities/publication/b1bff836-6852-457d-93e6-496807db37fa"
+    }
+  },
+  "why": {
+    "title": "Warum der Schweizer Franken",
+    "subtitle": "Die Schweiz ist darauf gebaut, ihr Geld sicher und stabil zu halten. Das ist der Wert.",
+    "items": [
+      {
+        "title": "Schuldenbremse.",
+        "description": "In der Verfassung verankert und vom Volk beschlossen. Die Ausgaben folgen den Einnahmen."
+      },
+      {
+        "title": "AAA.",
+        "description": "Bestnote von allen drei grossen Ratingagenturen."
+      },
+      {
+        "title": "Unabhängige Nationalbank.",
+        "description": "Ihr Auftrag ist Preisstabilität, nicht Wahlen."
+      },
+      {
+        "title": "Neutral seit 1815.",
+        "description": "Wenn die Welt unsicher ist, kommt das Kapital hierher."
+      }
+    ],
+    "note": "Seit 1971 hat der Dollar rund 80% seines Werts gegenüber dem Franken verloren. Dennoch macht der Franken etwa 1% des weltweiten Zahlungsverkehrs und nur 0,015% der Stablecoins aus. Die Schweizerische Bankiervereinigung beziffert das Potenzial für CHF-Stablecoins bei heutiger Marktgrösse auf CHF 2,8–3,0 Mrd."
+  },
+  "today": {
+    "title": "Frankencoin heute",
+    "items": [
+      {
+        "value": "34,6 Mio.",
+        "label": "ZCHF im Umlauf, seit 2023 1:1 gebunden"
+      },
+      {
+        "value": "#5",
+        "label": "Grösster Nicht-Dollar-Stablecoin weltweit"
+      },
+      {
+        "value": "#2",
+        "label": "Kreditgeber gegen tokenisierte Aktien on-chain"
+      },
+      {
+        "value": "CHF 51,8 Mio.",
+        "label": "Hinterlegte Sicherheiten"
+      },
+      {
+        "value": "450 Mio.",
+        "label": "ZCHF gehandelt pro Jahr"
+      },
+      {
+        "value": "Kraken, ether.fi",
+        "label": "Gelistet und live, weitere Integrationen folgen"
+      }
+    ],
+    "note": "Zahlen per November 2026."
+  },
+  "people": {
+    "title": "Der exklusivste Kreis der Schweiz",
+    "board": {
+      "title": "Vorstand und Geschäftsführung",
+      "items": [
+        {
+          "name": "Dr. Luzius Meisser",
+          "photo": "/images/team/luzius-meisser.jpg",
+          "linkedin": "https://www.linkedin.com/in/luziusmeisser",
+          "bio": "Erfinder von Frankencoin und Vorstandsmitglied. Ehemaliger Verwaltungsratspräsident von Bitcoin Suisse und Gründer der Bitcoin Association Switzerland."
+        },
+        {
+          "name": "Johannes Kern",
+          "photo": "/images/team/johannes-kern.jpg",
+          "linkedin": "https://www.linkedin.com/in/johanneskern93",
+          "bio": "Geschäftsführer. Ein Jahrzehnt zwischen traditioneller Finanzwelt und Krypto. Brachte Frankencoin zu MiCA, Kraken und zu Schweizer Privatkunden."
+        },
+        {
+          "name": "Jan Hürlimann",
+          "photo": "/images/team/jan-huerlimann.jpg",
+          "linkedin": "https://www.linkedin.com/in/jan-h%C3%BCrlimann-05264610b",
+          "bio": "Vorstandsmitglied. Unternehmer und Investor in Bau, Immobilien und Fintech."
+        }
+      ]
+    },
+    "advisers": {
+      "title": "Beirat",
+      "items": [
+        {
+          "name": "Eric Sarasin",
+          "photo": "/images/team/eric-sarasin.jpg",
+          "linkedin": "https://www.linkedin.com/in/eric-sarasin/",
+          "bio": "28 Jahre bei der Bank Sarasin, zuletzt als stellvertretender CEO."
+        },
+        {
+          "name": "René Keller",
+          "photo": "/images/team/rene-keller.jpg",
+          "linkedin": "https://www.linkedin.com/in/rene-w-keller",
+          "bio": "Ehemaliges Mitglied der FINMA-Geschäftsleitung. Berater bei Bain."
+        },
+        {
+          "name": "Cédric Waldburger",
+          "photo": "/images/team/cedric-waldburger.jpg",
+          "linkedin": "https://www.linkedin.com/in/cedricwaldburger",
+          "bio": "Mitgründer von Dfinity, Gründer von Tomahawk VC."
+        },
+        {
+          "name": "André Scherrer",
+          "photo": "/images/team/andre-scherrer.jpg",
+          "linkedin": "https://www.linkedin.com/in/andr%C3%A9-scherrer-%F0%9F%87%BF%F0%9F%87%A6-85297886",
+          "bio": "COO von Spar Schweiz."
+        },
+        {
+          "name": "Philip Hopf",
+          "photo": "/images/team/philip-hopf.jpg",
+          "linkedin": "https://www.linkedin.com/in/philip-hopf-871b921a8",
+          "bio": "Makro-Investor und eine der führenden deutschsprachigen Finanzstimmen."
+        }
+      ]
+    }
+  },
+  "membership": {
+    "title": "Was der Verein tut",
+    "subtitle": "Der Frankencoin-Verein fördert einen stabilen Schweizer Franken und eine digitale Schweizer Wirtschaft, im Inland und weltweit. Die Mitgliedschaft erfolgt auf Einladung.",
+    "items": [
+      {
+        "title": "Einen stabilen Franken und eine digitale Schweizer Wirtschaft weltweit fördern.",
+        "description": "Wir machen weltweit bekannt, dass Institutionen und gewöhnliche Sparer Zugang zur stabilsten Volkswirtschaft der Welt haben und sogar an ihrer digitalen Zukunft teilhaben können."
+      },
+      {
+        "title": "Bildung.",
+        "description": "Vorträge, Workshops und verständliches Material dazu, wie Stablecoins funktionieren, was Frankencoin unterscheidet und wie man den Schweizer Franken on-chain sicher nutzt."
+      },
+      {
+        "title": "Mitgliederversammlung in Zug.",
+        "description": "Einmal im Jahr, mit Vorstand und Beirat: der Stand des Protokolls, die Agenda und die Menschen dahinter."
+      },
+      {
+        "title": "Private Anlässe und Treffen.",
+        "description": "In den begehrtesten Räumen an den wichtigsten globalen Treffen des Jahres, mit dem Netzwerk des Vereins."
+      },
+      {
+        "title": "Mitglieder im Schweizer Markt unterstützen.",
+        "description": "Kuratierte, geprüfte Kontakte zu führenden Unternehmen, Institutionen und regulatorischer Expertise, mit tatkräftiger Hilfe, daraus dauerhafte Beziehungen zu machen."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakt",
+    "text": "In unsicheren Zeiten flüchtet die Welt in den Schweizer Franken. Gestalten Sie seine digitale Zukunft mit.",
+    "name": "Johannes Kern",
+    "role": "Geschäftsführer",
+    "email": "johannes@frankencoin.com",
+    "cta": "Mitglied werden"
+  }
+}

@@ -3,8 +3,9 @@
  *
  * - FCS price and the reserve pool come from the Frankencoin API (`/ecosystem/fps/info`): FCS is priced
  *   at the FPS valuation, and the pool figure is the protocol's equity.
- * - Protocol ROE (last 12 months) comes from the API daily log, same method as
- *   app.frankencoin.com (EquityFPSDetailsCard).
+ * - Protocol ROE comes from the API daily log, same method as app.frankencoin.com
+ *   (EquityFPSDetailsCard): net income over the window divided by the average equity, annualised
+ *   (compound for the whole history), for All, 1Y, 1Q, 1M and 1W.
  *
  * Any failed read leaves that value null, which the page renders as "—". Results are cached in memory
  * for 5 minutes, matching the page's Cache-Control.
@@ -16,9 +17,18 @@ export interface FcsStats {
   fcsPrice: number | null;
   reservePool: number | null;
   roe12m: number | null;
+  /** Annualised protocol ROE per window; `all` is a compound annual rate since launch. */
+  roe: Record<RoePeriod, number | null>;
 }
 
-const EMPTY: FcsStats = { timestamp: null, fcsPrice: null, reservePool: null, roe12m: null };
+/** "all" (compound since launch), "1y" (trailing twelve months) and one entry per calendar year from 2024. */
+export type RoePeriod = "all" | "1y" | `${number}`;
+const FIRST_FULL_YEAR = 2024; // launch was late October 2023, so 2023 is not a meaningful year
+export const ROE_YEARS: RoePeriod[] = Array.from({ length: new Date().getUTCFullYear() - FIRST_FULL_YEAR + 1 }, (_, i) => String(FIRST_FULL_YEAR + i) as RoePeriod);
+export const ROE_PERIODS: RoePeriod[] = ["all", "1y", ...ROE_YEARS];
+const NO_ROE = Object.fromEntries(ROE_PERIODS.map((k) => [k, null])) as Record<RoePeriod, number | null>;
+
+const EMPTY: FcsStats = { timestamp: null, fcsPrice: null, reservePool: null, roe12m: null, roe: { ...NO_ROE } };
 
 /** Ethereum mainnet. Source: Frankencoin-ZCHF/Frankencoin exports/address.config.ts; FCS verified on Sourcify. */
 export const FCS_ADDRESS = "0xDb861830D9Ae2d1fCF99fA0cfd3973de382B0B5b";
@@ -61,19 +71,41 @@ interface DailyLog {
   totalEquity: string;
 }
 
-/** Trailing-12-month realised earnings divided by average equity. */
+/**
+ * Protocol ROE per window, as the dapp computes it: net income (change in realised inflow − outflow)
+ * divided by the average of the first and last equity of the window, scaled to a year. "all" converts
+ * the cumulative return into a compound annual rate; "1y" is the trailing twelve months; a calendar year
+ * runs from its first daily log to its last (or to the latest log for the current year).
+ */
 async function readRoe(): Promise<Partial<FcsStats>> {
   const { logs } = await getJson<{ logs?: DailyLog[] }>("/analytics/dailyLog/json");
   if (!logs?.length) throw new Error("empty daily log");
   const last = logs[logs.length - 1];
   const lastTs = Number(last.timestamp);
   if (Date.now() / 1000 - lastTs > MAX_LOG_AGE_DAYS * 86400) throw new Error(`daily log stale (${last.date})`);
-  const start = logs.find((l) => Number(l.timestamp) >= lastTs - YEAR_S);
-  if (!start || lastTs - Number(start.timestamp) < YEAR_S - 7 * 86400) throw new Error("less than 12 months of history");
 
+  const nowS = Date.now() / 1000;
   const net = (l: DailyLog) => num(BigInt(l.totalInflow)) - num(BigInt(l.totalOutflow));
-  const avgEquity = (num(BigInt(start.totalEquity)) + num(BigInt(last.totalEquity))) / 2;
-  return { roe12m: avgEquity > 0 ? (net(last) - net(start)) / avgEquity : null };
+  const roe = { ...NO_ROE };
+  for (const period of ROE_PERIODS) {
+    let from = 0, to = Infinity, end = nowS;
+    if (period === "1y") from = nowS - 366 * 86400;
+    else if (period !== "all") {
+      from = Date.UTC(Number(period), 0, 1) / 1000;
+      to = Date.UTC(Number(period) + 1, 0, 1) / 1000;
+    }
+    const slice = logs.filter((l) => Number(l.timestamp) >= from && Number(l.timestamp) < to);
+    if (slice.length < 2) continue;
+    const first = slice[0], final = slice[slice.length - 1];
+    if (to !== Infinity && Number(final.timestamp) < to - 86400 * MAX_LOG_AGE_DAYS) end = Number(final.timestamp); // closed year: ends at its last log
+    else if (to !== Infinity) end = Math.min(nowS, to); // current year
+    const avgEquity = (num(BigInt(first.totalEquity)) + num(BigInt(final.totalEquity))) / 2;
+    const years = (end - Number(first.timestamp)) / YEAR_S;
+    if (avgEquity <= 0 || years <= 0) continue;
+    const cumulative = (net(final) - net(first)) / avgEquity;
+    roe[period] = period === "all" ? Math.pow(1 + cumulative, 1 / years) - 1 : cumulative / years;
+  }
+  return { roe, roe12m: roe["1y"] };
 }
 
 let cache: { at: number; value: FcsStats } | null = null;

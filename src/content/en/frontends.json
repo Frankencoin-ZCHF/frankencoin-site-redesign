@@ -1,30 +1,33 @@
 {
-	"seo": {
-		"title": "Frankencoin Frontends — Independent ZCHF interfaces",
-		"description": "Frankencoin is an open protocol with no official frontend. Browse the independent dapps for minting, saving, and trading ZCHF — each operated by its own maintainers, listed with source code and infrastructure transparency."
-	},
-	"header": {
-		"title": "Frankencoin Frontends",
-		"subtitle": "Frankencoin is an open protocol. Anyone can build and host a frontend to it — there is no official one. Every interface listed below is operated independently by its maintainers."
-	},
-	"warning": {
-		"eyebrow": "Important notice",
-		"title": "Frontends are built by independent third parties and come with no warranty.",
-		"body": "Each frontend is built and hosted independently. Listed for information only — not audited and not warranted. Use at your own risk and verify the source code before connecting a wallet."
-	},
-	"addYours": {
-		"before": "Hosting your own frontend? Add it to ",
-		"linkLabel": "frontends.json",
-		"after": " and open a pull request to get listed."
-	},
-	"labels": {
-		"creator": "Built by",
-		"repo": "Source code",
-		"live": "Open frontend",
-		"features": "Features",
-		"openSource": "Open source",
-		"ownDomain": "Own domain",
-		"selfHostedApi": "Self-hosted API",
-		"selfHostedIndexer": "Self-hosted indexer"
-	}
+  "seo": {
+    "title": "Frankencoin frontends — independent ZCHF interfaces",
+    "description": "Frankencoin is an open protocol. Browse the interfaces for minting, saving and trading ZCHF, each run by its own operator, with source code and hosting details."
+  },
+  "header": {
+    "title": "Frankencoin|frontends",
+    "subtitle": "Frankencoin is an open protocol: anyone can build and host an interface to it. The ones listed here are each run by their own operator; one of them is maintained by the Frankencoin Association."
+  },
+  "note": {
+    "title": "Before you connect a wallet",
+    "body": "Every frontend talks to the same contracts, but it is the operator who hosts the site. Check that the domain in your address bar matches the one listed here, and prefer an operator you know, for example the frontend maintained by the Frankencoin Association. The protocol does not audit or warrant these interfaces."
+  },
+  "associationLabel": "Maintained by the Frankencoin Association",
+  "addYours": {
+    "before": "Hosting your own frontend? Add it to ",
+    "linkLabel": "frontends.json",
+    "after": " and open a pull request to get listed."
+  },
+  "labels": {
+    "frontend": "Frontend",
+    "creator": "Operator",
+    "repo": "Source code",
+    "live": "Open",
+    "features": "Hosting",
+    "openSource": "Open source",
+    "ownDomain": "Own domain",
+    "selfHostedApi": "Own API",
+    "selfHostedIndexer": "Own indexer",
+    "yes": "yes",
+    "no": "no"
+  }
 }

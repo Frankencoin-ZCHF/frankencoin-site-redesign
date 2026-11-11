@@ -18,6 +18,21 @@ export type PharosRating = {
 const STABLECOIN_ID = "zchf-frankencoin";
 const PILLAR_KEYS: PharosPillarKey[] = ["backing", "exit", "control"];
 
+// Snapshot of the ZCHF safety score shown on frankencoin.com on 2026-10-27, used only when no
+// PHAROS_API_KEY is configured (preview deployments).
+const STATIC_RATING: PharosRating = {
+	id: STABLECOIN_ID,
+	overallGrade: 'A',
+	overallScore: 84,
+	methodologyVersion: '10.34',
+	updatedAt: Date.UTC(2026, 9, 27) / 1000,
+	pillars: {
+		backing: { grade: 'B+', score: 79, detail: 'Strong evidence' },
+		exit: { grade: 'A+', score: 99, detail: 'Strong evidence · Current data' },
+		control: { grade: 'B+', score: 75, detail: 'Limited evidence' },
+	},
+};
+
 let _cache: { data: PharosRating; expiresAt: number } | null = null;
 
 export async function fetchPharosRating(): Promise<PharosRating | null> {
@@ -25,7 +40,7 @@ export async function fetchPharosRating(): Promise<PharosRating | null> {
 	if (_cache && now < _cache.expiresAt) return _cache.data;
 
 	const apiKey = import.meta.env.PHAROS_API_KEY as string | undefined;
-	if (!apiKey || apiKey === '...') return null;
+	if (!apiKey || apiKey === '...') return STATIC_RATING;
 
 	const baseUrl = (import.meta.env.PHAROS_API_URL as string | undefined) ?? 'https://api.pharos.watch';
 

@@ -1,146 +1,26 @@
 ---
-import Section from "../components/Layout/Section.astro";
-import SectionHeader from "../components/Layout/SectionHeader.astro";
+/* /governance — how proposals, review and vetoes work. Copy: content/en/governance.json (German file still has the legacy shape; new keys fall back to English) */
 import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import FeatureGrid from "../components/LP/FeatureGrid.astro";
+import ProseRows from "../components/LP/ProseRows.astro";
+import Steps from "../components/Steps/Steps.astro";
+import CtaBand from "../components/LP/CtaBand.astro";
 import { getLanguageFromURL, loadContent } from "../utils/i18n";
-import FlexStack from "../components/Layout/FlexStack.astro";
-import BadgeContainer, {
-  type Option,
-} from "../components/BadgeContainer/BadgeContainer.astro";
-import StatsContainer from "../components/StatsContainer/StatsContainer.astro";
-
-const currentLang = getLanguageFromURL(Astro.url.pathname);
-const governance = await loadContent("governance", currentLang);
 
 export const prerender = false;
-
-async function getFpsInfo() {
-  try {
-    let response = await fetch(
-      "https://api.frankencoin.com/ecosystem/fps/info"
-    );
-    if (!response.ok) throw new Error("Failed to fetch quote");
-    return response.json();
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
-}
-
-const fpsInfo = await getFpsInfo();
-
-function findStat(id: string) {
-  return ((governance.caps ?? []).find((s: any) => s.id === id) || {}) as Option;
-}
-
-function formatAmount(n: number) {
-  if (typeof n !== "number" || Number.isNaN(n)) return "0.00";
-  return n.toFixed(2).replace(/\d{1,3}(?=(\d{3})+(?!\d))/g, "$&'");
-}
-
-const s1 = findStat("fpsPrice");
-const s2 = findStat("fpsSupply");
-const s3 = findStat("fpsMarketCap");
-const s4 = findStat("netIncome");
-const s5 = findStat("totalReserve");
-const s6 = findStat("equityCapital");
-const s7 = findStat("minterReserve");
-
-const caps = fpsInfo
-  ? [
-      {
-        label: s1.label ?? "FPS Price",
-        value: formatAmount(fpsInfo.token.price ?? 0),
-        unit: s1.unit,
-        href: s1.href,
-      },
-      {
-        label: s2.label ?? "FPS Supply",
-        value: formatAmount(fpsInfo.token.totalSupply ?? 0),
-        unit: s2.unit,
-        href: s2.href,
-      },
-      {
-        label: s3.label ?? "FPS Market Cap",
-        value: formatAmount(fpsInfo.token.marketCap ?? 0),
-        unit: s3.unit,
-        href: s3.href,
-      },
-    ]
-  : [];
-
-const { unit } = governance.stats_list.find((s: any) => s.id === "netIncome") || {};
-
-const stats = fpsInfo
-  ? [
-      {
-        label: s4.label ?? "Total Reserve",
-        value: formatAmount(fpsInfo.reserve.balance ?? 0),
-        unit: s4.unit ?? unit,
-        href: s4.href,
-      },
-      {
-        label: s5.label ?? "Equity Capital",
-        value: formatAmount(fpsInfo.reserve.equity ?? 0),
-        unit: s5.unit ?? unit,
-        href: s5.href,
-      },
-      {
-        label: s6.label ?? "Minter Reserve",
-        value: formatAmount(fpsInfo.reserve.minter ?? 0),
-        unit: s6.unit ?? unit,
-        href: s6.href,
-      },
-      {
-        label: s7.label ?? "Net income since 2023",
-        value: formatAmount(
-          (fpsInfo.earnings?.profit ?? 0) - (fpsInfo.earnings?.loss ?? 0)
-        ),
-        unit: s7.unit ?? unit,
-        href: s7.href,
-      },
-    ]
-  : [];
-
-Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=300');
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("governance", "en");
+const local = await loadContent<any>("governance", lang);
+const c = { ...en, ...local };
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
 ---
 
 <Base>
-  <Section variant="accent" align="center" pad="lg" id="governance-header">
-    <SectionHeader
-      title={governance.header.title}
-      subtitle={governance.header.subtitle}
-      image={governance.header.image}
-      imageAlt={governance.header.imageAlt}
-      cta={governance.header.cta}
-      padding="xl"
-      maxWidth="6xl"
-      size="display"
-      align="center"
-    />
-    <FlexStack direction="col" align="center" slot="bottom">
-      <div class="md:max-w-[900px] flex flex-col gap-4">
-        <BadgeContainer options={caps} />
-        <StatsContainer options={stats} />
-      </div>
-    </FlexStack>
-  </Section>
-  <Section id="governance-content" className="md:mt-100 mt-160 mb-10" pad="xxs">
-    <FlexStack direction="col" gap="40px" align="center">
-      {
-        governance.sections.map((section) => (
-          <div class="flex flex-col md:flex-row justify-between">
-            <div class="w-full md:w-1/2">
-              <h1 class="ty-title-1 ty-black">{section.title}</h1>
-            </div>
-            <div class="w-full md:w-1/2">
-              <p
-                class="ty-body-1"
-                set:html={section.description.replace(/\n/g, "<br>")}
-              />
-            </div>
-          </div>
-        ))
-      }
-    </FlexStack>
-  </Section>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} />
+  <LPSection title={c.process.title}><Steps steps={c.process.steps} /></LPSection>
+  <LPSection title={c.covers.title} accent><FeatureGrid items={c.covers.items} cols={3} /></LPSection>
+  <LPSection><ProseRows rows={[c.power, c.fcs]} /></LPSection>
+  <CtaBand {...c.end} />
 </Base>

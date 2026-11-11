@@ -41,3 +41,90 @@
     cursor: pointer;
   }
 }
+
+[x-cloak] {
+  display: none !important;
+}
+
+/* Halftone dot texture for cards and bands (home page). Colour comes from `color`. */
+.halftone-dots {
+  background-image: radial-gradient(currentColor 1.1px, transparent 1.4px);
+  background-size: 9px 9px;
+  -webkit-mask-image: linear-gradient(135deg, transparent 35%, #000 100%);
+  mask-image: linear-gradient(135deg, transparent 35%, #000 100%);
+}
+
+/* Logo marquee (home, below lg): two copies of the row scroll by half their width for a seamless loop. */
+@keyframes logo-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.logo-marquee { animation: logo-marquee 28s linear infinite; }
+.logo-marquee:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .logo-marquee { animation: none; } }
+
+/* Pixel-broke button (components/LP/PixelButton.astro). Colours per variant; the ends are 3×4 pixel grids. */
+.pxb { display: grid; position: relative; isolation: isolate; border-radius: 10px; overflow: clip; text-decoration: none; font-weight: 700; line-height: 1; letter-spacing: -0.01em; white-space: nowrap; -webkit-tap-highlight-color: transparent; user-select: none; }
+.pxb--solid { --pxb-bg: var(--color-brand-deep-blue); --pxb-bg-hover: var(--color-brand-swiss); color: #fff; }
+.pxb--light { --pxb-bg: #fff; --pxb-bg-hover: #5bb8dc; color: var(--color-brand-deep-blue); }
+.pxb--ghost { --pxb-bg: var(--color-gray-20); --pxb-bg-hover: #cfe9f4; color: var(--color-brand-deep-blue); }
+.pxb_bg { grid-area: 1 / 1; display: grid; grid-template-columns: 1fr auto; }
+.pxb_side { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); }
+.pxb_px { aspect-ratio: 1 / 1; width: 100%; height: 100%; background: var(--pxb-bg); box-shadow: 0 0 0 0.5px var(--pxb-bg); transition: opacity 0s ease calc(var(--i) * 40ms), background-color 0.25s, box-shadow 0.25s; }
+.pxb_mid { background: var(--pxb-bg); transition: background-color 0.25s; }
+.pxb_inner { grid-area: 1 / 1; display: grid; padding: 18.5px 2.75rem; font-size: 15px; text-align: center; } /* symmetric so the label is centred; 2.75rem still clears the 39px pixel grid */ /* 15 + 37 = 52px tall, so each pixel square is a whole 13px and no seams show */
+@media (min-width: 768px) { .pxb_inner { padding: 18px 3rem; font-size: 16px; } }
+.pxb--sm .pxb_inner { padding: 13px 2.25rem; font-size: 14px; } /* 40px tall, 10px squares */
+.pxb_text { grid-area: 1 / 1; }
+@media (hover: hover) and (pointer: fine) {
+  .pxb:is(:hover, :focus-visible) .pxb_px, .pxb:is(:hover, :focus-visible) .pxb_mid { background: var(--pxb-bg-hover); }
+  .pxb:is(:hover, :focus-visible) .pxb_px { box-shadow: 0 0 0 0.5px var(--pxb-bg-hover); }
+  .pxb:is(:hover, :focus-visible) .pxb_side--r .pxb_px:is(:first-child, :nth-child(3), :nth-child(5), :nth-child(8), :nth-child(9), :nth-child(10), :nth-child(12)) { opacity: 0; }
+}
+@media (hover: none) or (pointer: coarse) {
+  .pxb_px { transition: opacity 0.2s; }
+  .pxb:active .pxb_side--r .pxb_px:is(:first-child, :nth-child(3), :nth-child(5), :nth-child(8), :nth-child(9), :nth-child(10), :nth-child(12)) { opacity: 0; transition: opacity 0s; }
+}
+.pxb:focus-visible { outline: 2px solid var(--color-brand-swiss); outline-offset: 3px; }
+
+/* Liquid-glass button (components/LP/GlassButton.astro). */
+.glb { position: relative; isolation: isolate; display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 1.75rem; border-radius: 9999px; font-weight: 700; font-size: 15px; line-height: 1.2; white-space: nowrap; text-decoration: none; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); -webkit-tap-highlight-color: transparent; }
+.glb:hover, .glb:focus-visible { transform: scale(1.04); }
+.glb:active { transform: scale(0.98); }
+.glb_defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.glb_lens { position: absolute; inset: 0; z-index: -1; border-radius: inherit; overflow: hidden; backdrop-filter: blur(10px) saturate(1.6); -webkit-backdrop-filter: blur(10px) saturate(1.6); }
+@supports (backdrop-filter: url(#x)) { .glb_lens { backdrop-filter: url(#fc-glass) saturate(1.6); } }
+.glb_rim { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; transition: box-shadow 0.3s; }
+.glb_label { position: relative; display: inline-flex; align-items: center; gap: 0.5rem; }
+.glb_arrow { display: inline-block; transition: transform 0.3s; }
+.glb:hover .glb_arrow { transform: translateX(2px); }
+/* Light-page variants: dark rim highlights, as in the reference */
+.glb--tint { color: #fff; }
+.glb--tint .glb_lens { background: rgba(9, 47, 98, 0.78); }
+.glb--tint .glb_rim { box-shadow: 0 2px 8px rgba(9, 47, 98, 0.25), 0 0 0 0.5px rgba(255,255,255,0.35), inset 3px 3px 0.5px -3px rgba(255,255,255,0.9), inset -3px -3px 0.5px -3px rgba(255,255,255,0.75), inset 1px 1px 1px -0.5px rgba(255,255,255,0.6), inset -1px -1px 1px -0.5px rgba(255,255,255,0.5), inset 0 0 8px 6px rgba(255,255,255,0.08); }
+.glb--tint:hover .glb_lens { background: rgba(26, 156, 200, 0.82); }
+.glb--clear { color: var(--color-brand-deep-blue); }
+.glb--clear .glb_lens { background: rgba(255, 255, 255, 0.32); }
+.glb--clear .glb_rim { box-shadow: 0 0 6px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.08), inset 3px 3px 0.5px -3px rgba(0,0,0,0.9), inset -3px -3px 0.5px -3px rgba(0,0,0,0.85), inset 1px 1px 1px -0.5px rgba(0,0,0,0.6), inset -1px -1px 1px -0.5px rgba(0,0,0,0.6), inset 0 0 6px 6px rgba(0,0,0,0.12), inset 0 0 2px 2px rgba(0,0,0,0.06), 0 0 12px rgba(255,255,255,0.15); }
+.glb--clear:hover .glb_lens { background: rgba(255, 255, 255, 0.5); }
+/* Dark-band variant: white rim highlights */
+.glb--dark { color: #fff; }
+.glb--dark .glb_lens { background: rgba(255, 255, 255, 0.12); }
+.glb--dark .glb_rim { box-shadow: 0 0 8px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.08), inset 3px 3px 0.5px -3.5px rgba(255,255,255,0.09), inset -3px -3px 0.5px -3.5px rgba(255,255,255,0.85), inset 1px 1px 1px -0.5px rgba(255,255,255,0.6), inset -1px -1px 1px -0.5px rgba(255,255,255,0.6), inset 0 0 6px 6px rgba(255,255,255,0.12), inset 0 0 2px 2px rgba(255,255,255,0.06), 0 0 12px rgba(0,0,0,0.15); }
+.glb--dark:hover .glb_lens { background: rgba(255, 255, 255, 0.22); }
+.glb:focus-visible { outline: 2px solid var(--color-brand-swiss); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .glb, .glb_arrow { transition: none; } .glb:hover { transform: none; } }
+
+/* Hero announcement badge: short fade-and-settle on load, after 21st.dev/@Codehagen hero-badge. */
+@keyframes hero-badge-in { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: none; } }
+.hero-badge { animation: hero-badge-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@media (prefers-reduced-motion: reduce) { .hero-badge { animation: none; } }
+
+/* Dither button (see components/LP/DitherButton.astro): plain at rest, Bayer-dither wave on hover. */
+.dtb { position: relative; display: inline-flex; align-items: center; justify-content: center; overflow: hidden; isolation: isolate; border-radius: 10px; padding: 18px 28px; font-size: 15px; font-weight: 700; line-height: 1; letter-spacing: -0.01em; white-space: nowrap; text-decoration: none; transition: transform 0.15s, background-color 0.25s; -webkit-tap-highlight-color: transparent; }
+@media (min-width: 768px) { .dtb { font-size: 16px; padding: 18px 32px; } }
+.dtb--solid { background: var(--color-brand-deep-blue); color: #fff; --dtb-dither: 26 156 200; --dtb-halo: var(--color-brand-deep-blue); }
+.dtb--light { background: #fff; color: var(--color-brand-deep-blue); --dtb-dither: 91 184 220; --dtb-halo: #fff; }
+.dtb--ghost { background: var(--color-gray-20); color: var(--color-brand-deep-blue); --dtb-dither: 185 220 234; --dtb-halo: var(--color-gray-20); }
+.dtb_canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; image-rendering: pixelated; pointer-events: none; transition: opacity 0.35s ease; }
+.dtb:is(:hover, :focus-visible) .dtb_canvas { opacity: 1; }
+.dtb_label { position: relative; z-index: 1; text-shadow: 1px 1px 0 var(--dtb-halo), -1px 1px 0 var(--dtb-halo), 1px -1px 0 var(--dtb-halo), -1px -1px 0 var(--dtb-halo), 0 2px 0 var(--dtb-halo), 0 -2px 0 var(--dtb-halo), 2px 0 0 var(--dtb-halo), -2px 0 0 var(--dtb-halo); }
+.dtb:active { transform: translateY(1px) scale(0.99); }
+.dtb:focus-visible { outline: 2px solid var(--color-brand-swiss); outline-offset: 3px; }

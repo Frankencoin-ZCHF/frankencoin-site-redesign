@@ -1,97 +1,53 @@
 ---
-import Section from "../components/Layout/Section.astro";
-import SectionHeader from "../components/Layout/SectionHeader.astro";
+/* /ecosystem — services built on ZCHF, grouped by task. Copy: content/en/ecosystem.json (the home page reads `tabs` for its logo strip). */
 import Base from "../layouts/Base.astro";
-import CardEcosystem from "../components/Ecosystem/CardEcosystem.astro";
-import { getLanguageFromURL, loadContent } from "../utils/i18n";
-import FlexStack from "../components/Layout/FlexStack.astro";
-import NavLink from "../components/Button/NavLink.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import PixelButton from "../components/LP/PixelButton.astro";
+import { getLanguageFromURL, getLocalizedPath, loadContent } from "../utils/i18n";
 
-const currentLang = getLanguageFromURL(Astro.url.pathname);
-const ecosystem = await loadContent("ecosystem", currentLang);
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("ecosystem", "en");
+const local = await loadContent<any>("ecosystem", lang);
+// German copy predates today's keys: fall back to English per key.
+const c = { ...en, ...local, header: { ...en.header, ...local.header } };
+
+const catOf = (t: any) => t.category ?? t.badge ?? "Other";
+const order: string[] = [...(c.categories ?? [])];
+for (const t of c.tabs) if (!order.includes(catOf(t))) order.push(catOf(t));
+const groups = order.map((name) => ({ name, items: c.tabs.filter((t: any) => catOf(t) === name) })).filter((g) => g.items.length > 0);
+const localHref = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
 ---
 
 <Base>
-  <Section
-    variant="accent"
-    align="left"
-    pad="xs"
-    id="ecosystem-header"
-  >
-      <SectionHeader
-        title={ecosystem.header.title}
-        subtitle={ecosystem.header.subtitle}
-        maxWidth="lg"
-        size="display"
-        align="center"
-        margin="xxl"
-        padding="lg"
-      />
-  </Section>
+  <LPHero compact title={c.header.title} subtitle={c.header.subtitle} />
 
-  <Section
-    variant="plain"
-    align="left"
-    pad="xxs"
-    id="ecosystem-intro"
-  >
-    <Fragment>
-      <p class="ty-body-2 text-[var(--color-gray-60)]">{ecosystem.intro.title}</p>
-      <span class="flex md:flex-row flex-col items-start md:gap-2 gap-0">
-        <p class="ty-body-2 text-[var(--color-gray-60)]">{ecosystem.intro.subtitle}</p>
-
-        <a href={ecosystem.intro.cta.href} target="_blank" class="text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)]" 
-          >{ecosystem.intro.cta.label}</a
-        >
-      </span>
-    </Fragment>
-  </Section>
-
-
-  <div x-data="{ active: 2, activeCategory: 'On-and Offramp' }">
-    <Section id="ecosystem-tabs-menu" pad="none">
-      <div class="tabs-menu flex md:flex-row flex-col md:gap-4 gap-2">
-        {["Show All", ...ecosystem.categories].map((label, i) => (
-          <button
-            type="button"
-            data-index={i}
-            data-category={label}
-            @click="active = $el.dataset.index; activeCategory = $el.dataset.category"
-            :class="active == $el.dataset.index ? 'border border-gray-800 text-gray-900 ' : 'border border-transparent text-gray-600 hover:border-gray-300'"
-            class="px-7 py-2 font-semibold rounded-md transition cursor-pointer"
-          >
-            {label}
-          </button>
+  {groups.map((g, i) => (
+    <LPSection id={g.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")} title={g.name} split accent={i % 2 === 1}>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {g.items.map((t: any) => (
+          <a href={t.href} target="_blank" rel="noopener noreferrer" class="group relative overflow-hidden flex flex-col rounded-3xl border border-[var(--color-gray-20)] bg-white p-6 md:p-7 hover:-translate-y-0.5 hover:shadow-xl transition-all">
+            <span class="halftone-dots absolute inset-0 text-[#5bb8dc]/40 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></span>
+            <div class="relative h-12 flex items-center mb-4">
+              <img src={t.image} alt={t.imageAlt ?? t.name} class="max-h-10 max-w-[160px] object-contain" loading="lazy" />
+            </div>
+            <h3 class="relative text-balance ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{t.name}</h3>
+            <p class="relative mt-2 ty-body-3 text-[var(--color-neutral-650)] flex-1 m-0 [overflow-wrap:anywhere]">{t.description}</p>
+            <p class="relative mt-5 ty-body-3 font-bold text-[var(--color-brand-swiss)] m-0">{t.linkLabel ?? new URL(t.href).hostname} ↗</p>
+          </a>
         ))}
       </div>
-    </Section>
-    <Section
-      variant="plain"
-      align="left"
-      id="ecosystem-tabs"
-      pad="xxs"
-    >
-      <FlexStack direction="col" gap="40px">
-        {
-          ecosystem.tabs.map((tab, index) => (
-            <div 
-              class="ecosystem-card" 
-              data-category={tab.category}
-              x-show="activeCategory === 'Show All' || activeCategory === $el.getAttribute('data-category')"
-              x-transition
-            >
-              <CardEcosystem
-                href={tab.href}
-                image={tab.image}
-                imageAlt={tab.imageAlt}
-                badge={tab.badge}
-                description={tab.description}
-                linkLabel={tab.linkLabel}
-              />
-            </div>
-          ))
-        }
-      </FlexStack>
-    </Section>
-  </div>
+      {i === 0 && c.useCases && (
+        <p class="mt-6 ty-body-3 text-[var(--color-neutral-650)] m-0">{c.useCases.text} <a href={localHref(c.useCases.href)} class="font-bold text-[var(--color-brand-swiss)] hover:underline">{c.useCases.linkLabel} →</a></p>
+      )}
+    </LPSection>
+  ))}
+
+  <LPSection id="submit" title={c.submit.title} split accent={groups.length % 2 === 1}>
+    <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] m-0">{c.submit.text}</p>
+    <div class="mt-6 flex flex-wrap items-center gap-4">
+      <PixelButton href={c.submit.cta.href} label={`${c.submit.cta.label} ↗`} variant="solid" />
+      {c.submit.fileHref && <a href={c.submit.fileHref} target="_blank" rel="noopener noreferrer" class="ty-body-3 font-mono text-[var(--color-brand-deep-blue)] hover:underline">{c.submit.fileLabel}</a>}
+    </div>
+  </LPSection>
 </Base>

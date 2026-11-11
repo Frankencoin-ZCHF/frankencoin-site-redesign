@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "title": "ZCHF compared: decentralized vs issuer-backed CHF stablecoins and USDC",
+    "description": "How Frankencoin (ZCHF) differs from issuer-backed Swiss franc stablecoins and from USDC: currency, backing, issuance and control, savings access, redemption."
+  },
+  "hero": {
+    "title": "How ZCHF|differs.",
+    "subtitle": "Not every Swiss franc stablecoin works the same way. The main difference is whether a company issues it against bank deposits, or a protocol issues it against on-chain collateral."
+  },
+  "head": [
+    "",
+    "ZCHF (Frankencoin)",
+    "Issuer-backed CHF stablecoins",
+    "USDC"
+  ],
+  "rows": [
+    [
+      "Currency",
+      "Swiss franc",
+      "Swiss franc",
+      "US dollar"
+    ],
+    [
+      "Backing",
+      "Over-collateralized BTC, ETH, gold and shares, visible on-chain",
+      "Bank deposits and securities held by the issuer, per its reports",
+      "Cash and US treasuries held by Circle, per its attestations"
+    ],
+    [
+      "Issuance and control",
+      "Minted by anyone against collateral; rules set by FCS (Frankencoin Shares) holders; no freeze function",
+      "Issued by the company, which can block or freeze balances",
+      "Issued by Circle, which can freeze addresses"
+    ],
+    [
+      "Savings access",
+      "Protocol savings rate, set by governance",
+      "None built in",
+      "None built in"
+    ],
+    [
+      "Redemption",
+      "No issuer to redeem with; peg held by collateral and arbitrage",
+      "With the issuer, for eligible customers",
+      "With Circle, for eligible customers"
+    ]
+  ],
+  "note": "The middle column groups several issuer-backed Swiss franc tokens; their reserves, terms and eligibility differ from issuer to issuer.",
+  "tradeoff": {
+    "title": "The trade-off",
+    "body": "An issuer-backed token gives you a company to redeem with and a company that can freeze you. ZCHF gives you neither: nobody can block your balance, and its one-franc value rests on over-collateralization and the market rather than on a redemption promise."
+  },
+  "nextHead": {
+    "title": "See it in use."
+  },
+  "next": [
+    {
+      "title": "Save in CHF",
+      "description": "What the savings rate is, how deposits work and what to expect.",
+      "href": "/use-cases/save-in-chf",
+      "cta": "Save"
+    },
+    {
+      "title": "Borrow",
+      "description": "Mint ZCHF against BTC, ETH, gold or shares.",
+      "href": "/use-cases/borrow",
+      "cta": "Borrow"
+    },
+    {
+      "title": "Transparency",
+      "description": "Live collateral, supply and reserve figures, straight from the chain.",
+      "href": "/transparency",
+      "cta": "Check the backing"
+    }
+  ]
+}

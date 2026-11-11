@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Frankencoin transparency: live supply, collateral and reserve",
+    "description": "Every ZCHF is backed by on-chain collateral. Live supply per chain, collateral per asset and the protocol reserve, straight from the Frankencoin API."
+  },
+  "hero": {
+    "title": "Every franc,|accounted for on-chain.",
+    "subtitle": "Live figures from the Frankencoin API. Every number can be checked on a block explorer."
+  },
+  "figures": {
+    "supply": {
+      "label": "ZCHF in circulation",
+      "unit": "all chains"
+    },
+    "collateral": {
+      "label": "Collateral value",
+      "unit": "CHF"
+    },
+    "ratio": {
+      "label": "Collateral per ZCHF",
+      "unit": "CHF"
+    },
+    "equity": {
+      "label": "Protocol equity",
+      "unit": "ZCHF"
+    }
+  },
+  "chains": {
+    "title": "Supply per chain",
+    "col": "Chain",
+    "val": "ZCHF"
+  },
+  "collateral": {
+    "title": "Collateral per asset",
+    "cols": {
+      "asset": "Asset",
+      "value": "Value (CHF)",
+      "minted": "ZCHF minted",
+      "positions": "Open positions"
+    },
+    "positionsLink": "View positions"
+  },
+  "sources": {
+    "title": "Check it yourself",
+    "items": [
+      { "label": "Positions in the app", "href": "https://app.frankencoin.com/monitoring" },
+      { "label": "Dune", "href": "https://dune.com/frankencoin" },
+      { "label": "DefiLlama", "href": "https://defillama.com/protocol/frankencoin" },
+      { "label": "Raw API data", "href": "https://api.frankencoin.com/ecosystem/frankencoin/info" }
+    ],
+    "methodology": {
+      "label": "How the reserve and these figures work",
+      "href": "https://docs.frankencoin.com/reserve"
+    }
+  },
+  "stamp": "Live from api.frankencoin.com · {time} UTC · refreshed every 5 minutes"
+}

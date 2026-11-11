@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@astrojs/node": "^9.5.1",
 		"@astrojs/sitemap": "^3.6.0",
+		"@astrojs/vercel": "^8.2.11",
 		"@tailwindcss/vite": "^4.1.13",
 		"alpinejs": "^3.14.9",
 		"astro": "^5.13.8",

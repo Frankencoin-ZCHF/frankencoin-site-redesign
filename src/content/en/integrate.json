@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "title": "Integrate Frankencoin: payments, wallets, DeFi and token issuers",
+    "description": "Four ways to plug into the decentralized Swiss franc: accept payments, list and offer savings, use ZCHF in DeFi, or list your token as collateral."
+  },
+  "hero": {
+    "title": "Plug into the Swiss franc|that has no issuer.",
+    "subtitle": "ZCHF is a standard ERC-20 on Ethereum and several other chains. These are the four integrations we see most, each with one place to start.",
+    "primary": {
+      "label": "Talk to the association",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Developer docs",
+      "href": "/for/developers"
+    }
+  },
+  "tracks": {
+    "title": "Pick your track",
+    "items": [
+      {
+        "title": "Payments",
+        "description": "Accept ZCHF in a shop, card programme or payroll. This track leads to the partner list, not to developer resources.",
+        "href": "/ecosystem",
+        "cta": "See payment partners"
+      },
+      {
+        "title": "Wallets and exchanges",
+        "description": "List ZCHF and offer your users a Swiss-franc balance that earns the savings rate.",
+        "href": "/for/exchanges-wallets",
+        "cta": "For exchanges and wallets"
+      },
+      {
+        "title": "DeFi protocols",
+        "description": "Use ZCHF in pools, lending markets and vaults, with public price and supply data.",
+        "href": "/for/developers",
+        "cta": "Contracts and API"
+      },
+      {
+        "title": "Token issuers",
+        "description": "Let your holders borrow francs against your token by proposing it as collateral.",
+        "href": "/integrate/collateral",
+        "cta": "Propose a collateral"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Already integrated",
+    "items": [
+      {
+        "title": "Mt Pelerin",
+        "description": "Buy ZCHF against bank transfer into a self-custodial wallet.",
+        "href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
+        "cta": "mtpelerin.com"
+      },
+      {
+        "title": "DFX",
+        "description": "Swiss on- and off-ramp between bank accounts and ZCHF.",
+        "href": "https://dfx.swiss/",
+        "cta": "dfx.swiss"
+      },
+      {
+        "title": "Ammer.cash",
+        "description": "Payment terminals and checkout that accept ZCHF.",
+        "href": "https://ammer.cash/",
+        "cta": "ammer.cash"
+      },
+      {
+        "title": "Zippy",
+        "description": "Consumer wallet with ZCHF balances and social recovery.",
+        "href": "https://zippy.app/",
+        "cta": "zippy.app"
+      },
+      {
+        "title": "Aktionariat",
+        "description": "Tokenized Swiss company shares traded against ZCHF.",
+        "href": "https://www.aktionariat.com/all-companies",
+        "cta": "aktionariat.com"
+      },
+      {
+        "title": "Uniswap",
+        "description": "ZCHF liquidity pools on Ethereum.",
+        "href": "https://uniswap.org/",
+        "cta": "uniswap.org"
+      }
+    ],
+    "more": {
+      "label": "All partners",
+      "href": "/ecosystem"
+    }
+  },
+  "cta": {
+    "title": "Not sure where you fit?",
+    "body": "Write to the association. One email is enough; grants are available for integrations.",
+    "primary": {
+      "label": "info@frankencoin.com",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Apply for a grant",
+      "href": "https://github.com/Frankencoin-ZCHF/grants"
+    }
+  }
+}

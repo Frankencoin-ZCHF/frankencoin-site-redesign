@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Frankencoin FAQ",
+    "description": "Antworten zu ZCHF, dem Sparzins, Leihen, FCS, Compliance und Risiko."
+  },
+  "hero": {
+    "title": "Fragen,|beantwortet.",
+    "subtitle": "Ihre Frage fehlt? Fragen Sie in der Telegram-Gruppe oder schreiben Sie an info@frankencoin.com."
+  },
+  "nextHead": {
+    "title": "Weiterlesen."
+  },
+  "next": [
+    {
+      "title": "So funktioniert es",
+      "description": "Minten, der Peg, Anfechtungen und Auktionen, und wohin die Einnahmen fliessen.",
+      "href": "/how-it-works",
+      "cta": "Lesen"
+    },
+    {
+      "title": "Glossar",
+      "description": "Die Begriffe auf dieser Website und in der App, je eine Zeile.",
+      "href": "/glossary",
+      "cta": "Öffnen"
+    }
+  ]
+}

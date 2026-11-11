@@ -5,7 +5,7 @@
 	"exchanges": [
 		{
 			"name": "Mt Pelerin",
-			"description": "Regulierter Schweizer Zugang: ZCHF direkt per Banküberweisung über persönliche IBAN kaufen. Vollständig konform und einsteigerfreundlich.",
+			"description": "Regulierter Schweizer Zugang: ZCHF direkt per Banküberweisung über Ihre persönliche IBAN kaufen. Vollständig konform und einsteigerfreundlich.",
 			"type": "On-Ramp",
 			"image": "/images/mt-pelerin-logo.png",
 			"link": "https://www.mtpelerin.com/buy-zchf-frankencoin",
@@ -21,7 +21,7 @@
 		},
 		{
 			"name": "Curve",
-			"description": "Führende dezentrale Börse, optimiert für Stablecoins. ZCHF tauschen mit geringer Slippage und hoher Liquidität auf Ethereum.",
+			"description": "Führende dezentrale Börse, optimiert für Stablecoins. ZCHF mit geringer Slippage und hoher Liquidität auf Ethereum tauschen.",
 			"type": "DEX",
 			"image": "/images/full-curve-dao-logo.jpg",
 			"link": "https://curve.fi/#/ethereum/swap?from=0xdac17f958d2ee523a2206206994597c13d831ec7&to=0xB58E61C3098d85632Df34EecfB899A1Ed80921cB",

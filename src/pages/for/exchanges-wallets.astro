@@ -1,0 +1,40 @@
+---
+/* /for/exchanges-wallets — listings, savings integration, referral. Copy: content/en/exchanges-wallets.json */
+import Base from "../../layouts/Base.astro";
+import LPHero from "../../components/LP/LPHero.astro";
+import LPSection from "../../components/LP/LPSection.astro";
+import FeatureGrid from "../../components/LP/FeatureGrid.astro";
+import CtaBand from "../../components/LP/CtaBand.astro";
+import { getLanguageFromURL, getLocalizedPath, loadContent } from "../../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("exchanges-wallets", "en");
+const local = await loadContent<any>("exchanges-wallets", lang);
+// German copy may lack today's keys: fall back to English per key.
+const c = { ...en, ...local };
+const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+const ext = (h: string) => (h.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} />
+
+  <LPSection title={c.why.title}>
+    <FeatureGrid items={c.why.items} cols={3} />
+    <p class="mt-6 ty-body-3 text-[var(--color-neutral-650)] m-0">{c.why.chains}</p>
+  </LPSection>
+
+  <LPSection title={c.options.title} accent><FeatureGrid items={c.options.items} cols={2} /></LPSection>
+
+  <LPSection title={c.resources.title} split>
+    <ul class="m-0 p-0 list-none flex flex-wrap gap-3">
+      {c.resources.items.map((r: any) => (
+        <li><a href={href(r.href)} {...ext(r.href)} class="inline-flex items-center gap-2 rounded-full border border-[var(--color-gray-30)] text-[var(--color-brand-deep-blue)] hover:border-[var(--color-brand-deep-blue)] font-bold ty-body-3 px-5 py-3 transition-colors">{r.label} <span aria-hidden="true">{r.href.startsWith("http") ? "↗" : "→"}</span></a></li>
+      ))}
+    </ul>
+  </LPSection>
+
+  <CtaBand {...c.cta} />
+</Base>

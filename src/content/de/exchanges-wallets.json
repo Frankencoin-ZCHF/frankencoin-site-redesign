@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Frankencoin für Börsen und Wallets: ZCHF listen, Sparen anbieten, Zinsen teilen",
+    "description": "Listen Sie den dezentralen Schweizer Franken oder bauen Sie das Sparen in Ihre Wallet ein und erhalten Sie einen Anteil der Zinsen Ihrer Nutzer, bezahlt vom Vertrag."
+  },
+  "hero": {
+    "title": "Geben Sie Ihren Nutzern den Schweizer Franken.|Verdienen Sie an ihrem Sparen.",
+    "subtitle": "Listen Sie ZCHF als Standard-Token, oder bauen Sie das Sparen in Ihre Wallet ein und erhalten Sie einen Anteil der Zinsen, die Ihre Nutzer verdienen.",
+    "primary": {
+      "label": "Integration besprechen",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Empfehlungsprogramm",
+      "href": "/referral"
+    }
+  },
+  "why": {
+    "title": "Was Sie erhalten",
+    "items": [
+      {
+        "title": "Zugang zum Schweizer Franken",
+        "description": "Ein dezentraler Schweizer-Franken-Stablecoin, live seit 2023, gedeckt durch Sicherheiten, die Ihre Nutzer on-chain prüfen können."
+      },
+      {
+        "title": "Sparen für Ihre Nutzer",
+        "description": "Einlagen im Sparmodul verdienen den Protokollzins. Die Nutzer behalten die Verwahrung und können jederzeit abheben."
+      },
+      {
+        "title": "Umsatzbeteiligung",
+        "description": "Tragen Sie Ihre Adresse als Empfehlungsgeber ein, wenn Nutzer einzahlen, und erhalten Sie bis zu 25% ihrer Zinsen, bezahlt vom Vertrag. Die Nutzer sehen den Abzug und können den Empfehlungsgeber entfernen.",
+        "href": "/referral",
+        "cta": "So funktioniert die Empfehlung"
+      }
+    ],
+    "chains": "ZCHF ist ein Standard-ERC-20 (18 Dezimalstellen) auf Ethereum, Base, Arbitrum, Optimism, Polygon, Gnosis, Avalanche und Sonic, gebridgt mit Chainlink CCIP."
+  },
+  "options": {
+    "title": "Zwei Wege zur Integration",
+    "items": [
+      {
+        "title": "ZCHF listen",
+        "description": "Fügen Sie den Token Ihrer Börse oder Wallet hinzu. Adressen pro Chain, Logos und Supply-Endpunkte sind öffentlich.",
+        "href": "/token",
+        "cta": "Adressen pro Chain"
+      },
+      {
+        "title": "Sparen integrieren",
+        "description": "Rufen Sie den Sparvertrag mit Ihrer Empfehlungsadresse und Ihrem Anteil auf. Eine Einzahlungstransaktion für den Nutzer; die Zinsen beginnen drei Tage später.",
+        "href": "https://docs.frankencoin.com/",
+        "cta": "Dokumentation lesen"
+      }
+    ]
+  },
+  "resources": {
+    "title": "Ressourcen",
+    "items": [
+      {
+        "label": "Token-Adressen",
+        "href": "/token"
+      },
+      {
+        "label": "API für die Umlaufmenge",
+        "href": "https://api.frankencoin.com/ecosystem/coinmarketcap/totalsupply"
+      },
+      {
+        "label": "API für Protokollzahlen",
+        "href": "https://api.frankencoin.com/ecosystem/frankencoin/info"
+      },
+      {
+        "label": "Logos und Marke",
+        "href": "/press"
+      },
+      {
+        "label": "Entwicklerdokumentation",
+        "href": "https://docs.frankencoin.com/"
+      }
+    ]
+  },
+  "cta": {
+    "title": "ZCHF listen oder integrieren?",
+    "body": "Der Verein unterstützt Listings mit Liquiditätskontakten, Co-Marketing und technischer Hilfe.",
+    "primary": {
+      "label": "Integration besprechen",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Empfehlungsprogramm",
+      "href": "/referral"
+    }
+  }
+}

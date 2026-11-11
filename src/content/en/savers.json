@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "title": "Frankencoin for savers: from a bank account or a crypto wallet",
+    "description": "Save in Swiss francs at the protocol rate. Start from a bank transfer or from USDC, USDT or ETH, and see how saving in ZCHF differs from investing in FCS."
+  },
+  "hero": {
+    "title": "A Swiss-franc account|that lives on-chain.",
+    "subtitle": "Whether you start from a bank account or a crypto wallet, ZCHF deposited in the savings module earns the protocol rate and stays in your own wallet.",
+    "primary": {
+      "label": "Start saving",
+      "href": "https://app.frankencoin.com/savings"
+    },
+    "secondary": {
+      "label": "Save or invest?",
+      "href": "#compare"
+    }
+  },
+  "paths": {
+    "title": "Two ways in",
+    "subtitle": "Either way, interest is paid only on ZCHF you deposit in the savings module, starting three days after the deposit. ZCHF sitting in a wallet earns nothing.",
+    "items": [
+      {
+        "title": "From a bank account",
+        "description": "Send francs or euros by bank transfer to Mt Pelerin and receive ZCHF in your wallet with 0% fees. Then deposit it in the savings module.",
+        "href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
+        "cta": "Buy by bank transfer"
+      },
+      {
+        "title": "From a crypto wallet",
+        "description": "Swap USDC, USDT or ETH into ZCHF on CoW Swap, Curve or Uniswap. Then deposit it in the savings module.",
+        "href": "https://swap.cow.fi/#/1/swap/USDC/ZCHF",
+        "cta": "Swap on CoW"
+      }
+    ]
+  },
+  "compare": {
+    "title": "Save or invest?",
+    "subtitle": "Both start with ZCHF. One keeps you in francs; the other makes you a part-owner of the protocol.",
+    "head": {
+      "save": "Save in ZCHF",
+      "invest": "Invest in FCS (Frankencoin Shares)"
+    },
+    "rows": [
+      {
+        "label": "Purpose",
+        "save": "Keep Swiss francs and earn the savings rate on them.",
+        "invest": "Take a stake in the protocol's equity and governance."
+      },
+      {
+        "label": "How returns arise",
+        "save": "The rate set by governance, paid out of borrowers' interest. It accrues continuously and can change.",
+        "invest": "The reference value follows the equity reserve, which grows with protocol income and shrinks with losses. The market price can differ from it and can fall."
+      },
+      {
+        "label": "Where to start",
+        "save": "Savings module in the app",
+        "saveHref": "https://app.frankencoin.com/savings",
+        "invest": "About FCS",
+        "investHref": "/fcs"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Open your franc account.",
+    "body": "Buy ZCHF by bank transfer or swap, deposit it in savings, withdraw whenever you like.",
+    "primary": {
+      "label": "Start saving",
+      "href": "https://app.frankencoin.com/savings"
+    },
+    "secondary": {
+      "label": "How ZCHF is backed",
+      "href": "/transparency"
+    }
+  },
+  "sticky": {
+    "label": "Start saving",
+    "sub": "Withdraw any time"
+  }
+}

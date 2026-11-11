@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "Frankencoin for treasuries: companies, funds and DAOs",
+    "description": "Hold part of your on-chain reserves in Swiss francs and let idle balances earn the protocol rate. Safe multisig, accounting reports, custody and public legal assessments."
+  },
+  "hero": {
+    "title": "Diversify your treasury|into Swiss francs.",
+    "subtitle": "Hold part of your on-chain reserves in francs rather than only dollars, and let idle balances earn the protocol rate in the savings module.",
+    "primary": {
+      "label": "Discuss your treasury needs",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "See live reserves",
+      "href": "/transparency"
+    }
+  },
+  "why": {
+    "title": "Why treasuries add ZCHF",
+    "items": [
+      {
+        "title": "Currency diversification",
+        "description": "Hold the franc next to USD stablecoins without leaving the chain.",
+        "href": "/use-cases/save-in-chf#fifty",
+        "cta": "Franc vs dollar since 1971"
+      },
+      {
+        "title": "Productive balances",
+        "description": "ZCHF deposited in the savings module earns the protocol rate and can be withdrawn any time. The Savings Vault (svZCHF) gives the same as one tradable token.",
+        "href": "/token#svzchf",
+        "cta": "About svZCHF"
+      },
+      {
+        "title": "No issuer, no bank",
+        "description": "No company can freeze or redeem your balance. ZCHF is backed by over-collateralized positions you can inspect on-chain.",
+        "href": "/transparency",
+        "cta": "Live reserves"
+      }
+    ]
+  },
+  "ops": {
+    "title": "What your team will ask for",
+    "items": [
+      {
+        "title": "Safe multisig",
+        "description": "The app runs inside Safe's interface, so deposits and withdrawals follow your signing policy."
+      },
+      {
+        "title": "Accounting reports",
+        "description": "Yearly reports of interest and holdings per address, ready for your accountant.",
+        "href": "https://app.frankencoin.com/report",
+        "cta": "Open reports"
+      },
+      {
+        "title": "Institutional custody",
+        "description": "Supported by institutional custodians in the ecosystem.",
+        "href": "/ecosystem",
+        "cta": "See custodians"
+      },
+      {
+        "title": "Legal and audits",
+        "description": "Public Swiss and EU (MiCA) legal assessments of how ZCHF is classified, and eight audits by four firms.",
+        "href": "/compliance",
+        "cta": "Read the assessments"
+      }
+    ]
+  },
+  "dao": {
+    "title": "For DAOs",
+    "subtitle": "A ZCHF allocation in savings earns the protocol rate in a second currency. Holding FCS (Frankencoin Shares) adds a vote on new collateral and a stake in the equity reserve, with the price risk that comes with equity."
+  },
+  "cta": {
+    "title": "Planning an allocation?",
+    "body": "The Frankencoin Association walks treasury teams through custody, accounting and liquidity for larger amounts.",
+    "primary": {
+      "label": "Discuss your treasury needs",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "See live reserves",
+      "href": "/transparency"
+    }
+  }
+}

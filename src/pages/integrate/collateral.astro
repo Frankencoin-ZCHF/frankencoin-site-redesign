@@ -1,0 +1,37 @@
+---
+/* /integrate/collateral — how token issuers propose a new collateral. Copy: content/en/collateral.json */
+import Base from "../../layouts/Base.astro";
+import LPHero from "../../components/LP/LPHero.astro";
+import LPSection from "../../components/LP/LPSection.astro";
+import FaqList from "../../components/LP/FaqList.astro";
+import Steps from "../../components/Steps/Steps.astro";
+import { getLanguageFromURL, loadContent } from "../../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("collateral", "en");
+const local = await loadContent<any>("collateral", lang);
+const c = { ...en, ...local }; // no German copy yet; fall back per key
+const g = c.criteria.guidance;
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} />
+  <LPSection title={c.steps.title}><Steps steps={c.steps.items} /></LPSection>
+  <LPSection title={c.criteria.title} subtitle={c.criteria.intro} accent split>
+    <ol class="m-0 p-0 list-none grid gap-3 ty-body-1 text-[var(--color-neutral-650)]">
+      {c.criteria.items.map((it: string, i: number) => (
+        <li class="flex gap-4 rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-white)] px-6 py-4">
+          <span class="font-black text-[#1a9cc8] tabular-nums">{i + 1}</span>
+          <span>{it}</span>
+        </li>
+      ))}
+    </ol>
+    <div class="mt-4 rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-6 md:p-7">
+      <h3 class="ty-title-3 font-black m-0">{g.title}</h3>
+      <p class="mt-2 ty-body-3 text-white/85 m-0">{g.body}</p>
+      <a href={g.cta.href} target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-1 font-bold text-[#5bb8dc] hover:underline">{g.cta.label} ↗</a>
+    </div>
+  </LPSection>
+  <LPSection title="FAQ" split><FaqList items={c.faq} /></LPSection>
+</Base>

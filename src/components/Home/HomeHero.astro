@@ -1,0 +1,93 @@
+---
+/**
+ * Home hero: white sky, halftone mist, the halftone Alps at the bottom, headline and live ticker.
+ * Props are already-formatted strings so the page decides what is live.
+ */
+import HalftoneMist from "./HalftoneMist.astro";
+import PixelButton from "../LP/PixelButton.astro";
+import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
+
+interface Cta { label: string; href: string }
+interface Props {
+  announcement?: { tag: string; label: string; href: string };
+  title: string; // "|" marks the line break
+  subtitle: string;
+  primary: Cta;
+  secondary: Cta;
+  routes: { label: string; items: Cta[] };
+  ticker: { label: string; value: string; href?: string }[];
+}
+const p = Astro.props as Props;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+const ext = (h: string) => (h.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
+const [l1, l2] = p.title.split("|");
+---
+
+<section class="relative isolate overflow-hidden bg-[var(--color-white)] min-h-[92svh] md:min-h-[max(100svh,760px)] flex flex-col">
+  <img
+    src="/images/home/alps-halftone.webp"
+    alt=""
+    width="2000"
+    height="1121"
+    fetchpriority="high"
+    class="absolute inset-x-0 bottom-0 w-full h-[52%] md:h-[54%] object-cover object-bottom -z-10 select-none"
+  />
+  <div class="absolute inset-x-0 bottom-0 h-[calc(52%+3px)] md:h-[calc(54%+3px)] -z-10 bg-gradient-to-b from-white via-white/20 to-transparent"></div>
+  <HalftoneMist />
+
+  <div class="relative mx-auto w-full max-w-7xl px-[var(--spacing-l)] pt-28 md:pt-36 flex-1 flex flex-col" data-hero>
+    <div class="flex items-center justify-between gap-4">
+      {p.announcement ? (
+        <a href={href(p.announcement.href)} class="hero-badge group inline-flex max-w-full items-center gap-2 rounded-full border border-[var(--color-gray-20)] bg-white/90 backdrop-blur pl-3.5 pr-3 py-1.5 text-[14px] font-medium text-[var(--color-brand-deep-blue)] hover:bg-[var(--color-gray-10)] hover:border-[var(--color-brand-deep-blue)]/25 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 text-[var(--color-brand-deep-blue)]/60 transition-[transform,color] duration-300 group-hover:text-[var(--color-brand-swiss)] group-hover:-rotate-6" aria-hidden="true"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+          <span class="truncate"><span class="font-bold">{p.announcement.tag}</span> · {p.announcement.label}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 text-[var(--color-brand-deep-blue)]/60 transition-transform group-hover:translate-x-0.5" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      ) : <span></span>}
+    </div>
+
+    <h1 class="mt-6 md:mt-8 text-[44px] leading-[0.98] sm:text-[64px] lg:text-[88px] font-black tracking-[-0.035em] text-[var(--color-brand-deep-blue)] max-w-4xl">
+      {l1}<br /><span class="text-[#1a9cc8]">{l2}</span>
+    </h1>
+    <p class="mt-6 max-w-[36rem] ty-body-1 text-[var(--color-neutral-650)]">{p.subtitle}</p>
+
+    <div class="mt-8 flex flex-wrap items-center gap-3">
+      <PixelButton href={p.primary.href} label={p.primary.label} variant="solid" arrow />
+      <PixelButton href={p.secondary.href} label={p.secondary.label} variant="ghost" />
+    </div>
+    <!-- Ways to get ZCHF: a light-teal "No ZCHF yet?" chip, then the three routes as divided links.
+         One pill from sm up; on phones a rounded card with the chip on top and the links stacked. -->
+    <div class="mt-6 inline-flex max-w-full flex-col items-start gap-1 self-start rounded-2xl border border-[var(--color-gray-20)] bg-white/90 backdrop-blur p-1.5 ty-xs sm:flex-row sm:flex-wrap sm:items-center sm:gap-0 sm:rounded-full sm:p-1 sm:pr-3">
+      <span class="rounded-full bg-[color-mix(in_oklab,var(--color-brand-swiss)_18%,white)] px-3.5 py-1.5 font-black uppercase tracking-[0.07em] text-[var(--color-brand-deep-blue)] [-webkit-text-stroke:0.5px_currentColor] whitespace-nowrap">{p.routes.label}</span>
+      <div class="flex w-full flex-col sm:contents">
+        {p.routes.items.map((r, i) => (
+          <>
+            {i > 0 && <span class="hidden sm:block mx-1 h-4 w-px bg-[var(--color-gray-30)]" aria-hidden="true"></span>}
+            <a href={r.href} target="_blank" rel="noopener noreferrer" class:list={["px-2.5 py-2 sm:py-1.5 font-semibold text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)] whitespace-nowrap transition-colors", i > 0 && "border-t border-[var(--color-gray-20)] sm:border-0"]}>{r.label} ↗</a>
+          </>
+        ))}
+      </div>
+    </div>
+
+    <div class="h-10 shrink-0" aria-hidden="true"></div>
+    <dl class="mt-auto mb-4 md:mb-10 grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-[0_10px_40px_-15px_rgba(9,47,98,0.35)]">
+      {p.ticker.map((t) => {
+        const inner = (
+          <>
+            <dt class="flex items-center gap-1.5 font-mono text-[9px] md:text-[10px] uppercase tracking-[0.18em] md:tracking-[0.22em] text-[var(--color-neutral-550)] truncate">
+              {t.label}
+              {t.href && <span class="opacity-0 group-hover:opacity-100 transition-opacity text-[var(--color-brand-swiss)]" aria-hidden="true">↗</span>}
+            </dt>
+            <dd class="m-0 mt-0.5 md:mt-1 text-[19px] md:text-[28px] font-black tracking-tight text-[var(--color-brand-deep-blue)] tabular-nums">{t.value}</dd>
+          </>
+        );
+        return t.href ? (
+          <a href={href(t.href)} target={t.href.startsWith("http") ? "_blank" : undefined} rel={t.href.startsWith("http") ? "noopener noreferrer" : undefined} class="group block bg-white/70 hover:bg-white px-3 py-2 md:px-5 md:py-4 transition-colors">{inner}</a>
+        ) : (
+          <div class="bg-white/70 px-3 py-2 md:px-5 md:py-4">{inner}</div>
+        );
+      })}
+    </dl>
+  </div>
+</section>

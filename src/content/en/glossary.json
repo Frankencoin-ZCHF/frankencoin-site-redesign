@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Frankencoin glossary",
+    "description": "Short definitions of ZCHF, FCS, svZCHF, positions, challenges, the savings rate and other Frankencoin terms."
+  },
+  "hero": {
+    "title": "The words,|one line each.",
+    "subtitle": "Terms you will meet on this site and in the app."
+  },
+  "terms": [
+    {
+      "term": "ZCHF",
+      "def": "The Frankencoin token: a digital Swiss franc backed by on-chain collateral worth more than one franc."
+    },
+    {
+      "term": "FCS",
+      "def": "Frankencoin Shares, the share and governance token: a claim on the reserve and a vote with veto rights."
+    },
+    {
+      "term": "FPS",
+      "def": "Frankencoin Pool Shares, the earlier equity token. FCS wraps FPS one-to-one; new participants use FCS."
+    },
+    {
+      "term": "svZCHF",
+      "def": "Savings Vault token: ZCHF deposited in the savings module, held as one token whose value grows with the savings rate."
+    },
+    {
+      "term": "Savings module",
+      "def": "The contract that pays the savings rate on ZCHF deposited into it. ZCHF in a wallet earns nothing by itself."
+    },
+    {
+      "term": "Savings rate",
+      "def": "The yearly rate paid on ZCHF in the savings module. Set and changed through governance; also called the lead rate."
+    },
+    {
+      "term": "Position",
+      "def": "Your loan contract: it holds your collateral and records the ZCHF you minted, with terms fixed when you open it."
+    },
+    {
+      "term": "Collateral",
+      "def": "What you lock in a position to borrow against: BTC, ETH, tokenized gold or shares."
+    },
+    {
+      "term": "Liquidation price",
+      "def": "The collateral price below which your position can be challenged and the collateral auctioned. Keep a buffer above it."
+    },
+    {
+      "term": "Loan-to-value",
+      "def": "How much you borrow relative to your collateral's market value. Lower is safer."
+    },
+    {
+      "term": "Upfront interest",
+      "def": "Interest for the whole term, deducted from the ZCHF you receive when you mint."
+    },
+    {
+      "term": "Retained reserve",
+      "def": "A share of what you mint that stays in the reserve and comes back when you repay."
+    },
+    {
+      "term": "Challenge",
+      "def": "A public claim that a position's collateral is worth less than its liquidation price. It starts an auction that settles the question."
+    },
+    {
+      "term": "Reserve",
+      "def": "ZCHF held by the protocol, funded by interest and FCS purchases. It pays the savings rate and covers shortfalls when an auction does not repay a debt; FCS is a claim on it."
+    },
+    {
+      "term": "Veto",
+      "def": "The right of FCS holders with enough votes to block a proposed collateral or protocol change."
+    },
+    {
+      "term": "CCIP",
+      "def": "Chainlink's cross-chain protocol, used to move ZCHF between the chains it lives on. See [exchanges and wallets](/for/exchanges-wallets)."
+    },
+    {
+      "term": "Peg",
+      "def": "ZCHF trading at one Swiss franc. Held by over-collateralization and arbitrage, not by issuer redemption."
+    }
+  ],
+  "nextHead": {
+    "title": "Read on."
+  },
+  "next": [
+    {
+      "title": "How it works",
+      "description": "Minting, the peg, challenges and auctions, and where the income goes.",
+      "href": "/how-it-works",
+      "cta": "Read"
+    },
+    {
+      "title": "FAQ",
+      "description": "Short answers on basics, mechanics, using ZCHF, compliance and risk.",
+      "href": "/faq",
+      "cta": "Open"
+    }
+  ]
+}

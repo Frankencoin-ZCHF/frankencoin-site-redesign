@@ -1,0 +1,25 @@
+---
+/* /for/treasuries — companies, funds and DAOs. Copy: content/en/treasuries.json */
+import Base from "../../layouts/Base.astro";
+import LPHero from "../../components/LP/LPHero.astro";
+import LPSection from "../../components/LP/LPSection.astro";
+import FeatureGrid from "../../components/LP/FeatureGrid.astro";
+import CtaBand from "../../components/LP/CtaBand.astro";
+import { getLanguageFromURL, loadContent } from "../../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("treasuries", "en");
+const local = await loadContent<any>("treasuries", lang);
+// German copy may lack today's keys: fall back to English per key.
+const c = { ...en, ...local };
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} />
+  <LPSection title={c.why.title}><FeatureGrid items={c.why.items} cols={3} /></LPSection>
+  <LPSection title={c.ops.title} accent><FeatureGrid items={c.ops.items} cols={4} /></LPSection>
+  <LPSection title={c.dao.title} subtitle={c.dao.subtitle} />
+  <CtaBand {...c.cta} />
+</Base>

@@ -1,0 +1,31 @@
+---
+/**
+ * Liquid-glass button: a transparent pill with a glass rim (layered inset shadows), a refracting lens behind it
+ * (SVG displacement backdrop filter, with a plain blur where the browser lacks it) and a slight lift on hover.
+ * After 21st.dev/@designali-in liquid-glass-button, in the site's colours.
+ * Variants: "tint" (deep-blue tinted glass, white text: the primary on light pages), "clear" (clear glass,
+ * deep-blue text), "dark" (clear glass, white text and rim: for dark bands).
+ */
+import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
+interface Props { href: string; label: string; variant?: "tint" | "clear" | "dark"; arrow?: boolean; class?: string; [k: string]: any }
+const { href: raw, label, variant = "tint", arrow = false, class: cls = "", ...rest } = Astro.props as Props;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const href = raw.startsWith("/") ? getLocalizedPath(raw, lang) : raw;
+const ext = raw.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {};
+---
+
+<a href={href} {...ext} {...rest} class:list={["glb", `glb--${variant}`, cls]}>
+  <span class="glb_lens" aria-hidden="true"></span>
+  <span class="glb_rim" aria-hidden="true"></span>
+  <span class="glb_label">{label}{arrow && <span class="glb_arrow" aria-hidden="true">→</span>}</span>
+</a>
+<svg class="glb_defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="fc-glass" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05 0.05" numOctaves="1" seed="1" result="noise" />
+      <feGaussianBlur in="noise" stdDeviation="2" result="softNoise" />
+      <feDisplacementMap in="SourceGraphic" in2="softNoise" scale="42" xChannelSelector="R" yChannelSelector="B" result="bent" />
+      <feGaussianBlur in="bent" stdDeviation="3" />
+    </filter>
+  </defs>
+</svg>

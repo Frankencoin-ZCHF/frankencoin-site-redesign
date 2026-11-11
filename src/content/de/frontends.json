@@ -1,30 +1,33 @@
 {
-	"seo": {
-		"title": "Frankencoin Frontends — Unabhängige ZCHF-Oberflächen",
-		"description": "Frankencoin ist ein offenes Protokoll ohne offizielles Frontend. Hier finden Sie die unabhängigen Dapps zum Prägen, Sparen und Handeln mit ZCHF — jede betrieben von eigenen Maintainern, mit Quellcode und transparenter Infrastruktur."
-	},
-	"header": {
-		"title": "Frankencoin Frontends",
-		"subtitle": "Frankencoin ist ein offenes Protokoll. Jede und jeder kann ein Frontend dafür bauen und betreiben — ein offizielles gibt es nicht. Jede der unten aufgeführten Oberflächen wird unabhängig von ihren Betreibern unterhalten."
-	},
-	"warning": {
-		"eyebrow": "Wichtiger Hinweis",
-		"title": "Frontends werden von unabhängigen Dritten gebaut und ohne Gewährleistung bereitgestellt.",
-		"body": "Jedes Frontend wird unabhängig gebaut und gehostet. Nur als Information aufgeführt — nicht auditiert und ohne Gewährleistung. Nutzung auf eigenes Risiko; prüfen Sie den Quellcode, bevor Sie eine Wallet verbinden."
-	},
-	"addYours": {
-		"before": "Du betreibst dein eigenes Frontend? Füge es zur ",
-		"linkLabel": "frontends.json",
-		"after": " hinzu und eröffne einen Pull Request, um in dieser Liste zu erscheinen."
-	},
-	"labels": {
-		"creator": "Gebaut von",
-		"repo": "Quellcode",
-		"live": "Frontend öffnen",
-		"features": "Eigenschaften",
-		"openSource": "Open Source",
-		"ownDomain": "Eigene Domain",
-		"selfHostedApi": "Eigene API",
-		"selfHostedIndexer": "Eigener Indexer"
-	}
+  "seo": {
+    "title": "Frankencoin Frontends — unabhängige ZCHF-Oberflächen",
+    "description": "Frankencoin ist ein offenes Protokoll. Entdecken Sie die Oberflächen zum Prägen, Sparen und Handeln von ZCHF, jede von einem eigenen Betreiber geführt, mit Quellcode und Angaben zum Hosting."
+  },
+  "header": {
+    "title": "Frankencoin|Frontends",
+    "subtitle": "Frankencoin ist ein offenes Protokoll: Jeder kann eine Oberfläche dafür bauen und betreiben. Die hier aufgeführten werden jeweils von ihrem eigenen Betreiber geführt; eines davon wird von der Frankencoin Association gepflegt."
+  },
+  "note": {
+    "title": "Bevor Sie eine Wallet verbinden",
+    "body": "Jedes Frontend spricht mit denselben Contracts, aber die Website wird vom Betreiber gehostet. Prüfen Sie, ob die Domain in Ihrer Adressleiste mit der hier aufgeführten übereinstimmt, und bevorzugen Sie einen Betreiber, den Sie kennen, zum Beispiel das von der Frankencoin Association gepflegte Frontend. Das Protokoll prüft diese Oberflächen nicht und übernimmt keine Gewähr für sie."
+  },
+  "associationLabel": "Gepflegt von der Frankencoin Association",
+  "addYours": {
+    "before": "Sie betreiben ein eigenes Frontend? Fügen Sie es in ",
+    "linkLabel": "frontends.json",
+    "after": " hinzu und eröffnen Sie einen Pull Request, um aufgeführt zu werden."
+  },
+  "labels": {
+    "frontend": "Frontend",
+    "creator": "Betreiber",
+    "repo": "Quellcode",
+    "live": "Öffnen",
+    "features": "Hosting",
+    "openSource": "Open Source",
+    "ownDomain": "Eigene Domain",
+    "selfHostedApi": "Eigene API",
+    "selfHostedIndexer": "Eigener Indexer",
+    "yes": "ja",
+    "no": "nein"
+  }
 }

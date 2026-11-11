@@ -1,0 +1,135 @@
+{
+  "hero": {
+    "title": "Der Schweizer Franken,|on-chain.",
+    "subtitle": "Digitale Schweizer Franken, ZCHF. Sparen, leihen und zahlen mit einer dezentralen Währung, gedeckt durch Collateral, das Sie sehen können.",
+    "primary": {
+      "label": "Sparen zu {rate} starten",
+      "href": "https://app.frankencoin.com/savings"
+    },
+    "secondary": {
+      "label": "Franken leihen",
+      "href": "/use-cases/borrow"
+    },
+    "ticker": {
+      "rate": "Sparzins",
+      "supply": "Im Umlauf",
+      "collateral": "Collateral pro ZCHF",
+      "since": "Live seit"
+    },
+    "announcement": {
+      "tag": "Neu",
+      "label": "Frankencoin Shares sind jetzt verfügbar",
+      "href": "/fcs"
+    },
+    "tickerLinks": {
+      "supply": "https://defillama.com/stablecoin/frankencoin",
+      "collateral": "/transparency",
+      "rate": "/use-cases/save-in-chf"
+    },
+    "routes": {
+      "label": "Noch keine ZCHF?",
+      "items": [
+        {
+          "label": "Per Banküberweisung kaufen, 0% Gebühren",
+          "href": "https://www.mtpelerin.com/buy-zchf-frankencoin"
+        },
+        {
+          "label": "Aus USDC oder ETH tauschen",
+          "href": "https://swap.cow.fi/#/1/swap/USDC/ZCHF"
+        },
+        {
+          "label": "Auf Kraken kaufen",
+          "href": "https://www.kraken.com/prices/frankencoin"
+        }
+      ]
+    }
+  },
+  "trust": [
+    "Rechtsgutachten nach Schweizer Recht und MiCA",
+    "8 Audits von 4 Firmen",
+    "Live seit 2023, kein signifikanter Depeg",
+    "8 Chains über Chainlink CCIP"
+  ],
+  "logos": "Genutzt von",
+  "products": {
+    "title": "Ein Franken. Vier Arten, ihn zu nutzen.",
+    "save": {
+      "label": "Sparen",
+      "title": "{rate} auf Schweizer Franken verdienen",
+      "body": "Legen Sie ZCHF ins Savings-Modul ein. Der Zins läuft jeden Block auf, abziehen jederzeit.",
+      "cta": "Sparen starten",
+      "href": "/use-cases/save-in-chf",
+      "stat": "pro Jahr"
+    },
+    "borrow": {
+      "label": "Leihen",
+      "title": "Franken gegen BTC, ETH, Gold oder Aktien",
+      "body": "Behalten Sie Ihre Exposure und minten Sie ZCHF zu festen Konditionen. Keine Bonitätsprüfung.",
+      "cta": "Aktuelle Konditionen",
+      "href": "/use-cases/borrow",
+      "ltv": "bis zu {ltv} Loan-to-Value",
+      "rate": "ab {rate} pro Jahr"
+    },
+    "invest": {
+      "label": "Investieren",
+      "title": "Einen Anteil am System besitzen",
+      "body": "FCS, Frankencoin Shares, ist das Eigenkapital des Protokolls: ein Anteil an der Reserve und eine Stimme darüber, wie es geführt wird. Sein Wert kann steigen oder fallen.",
+      "cta": "FCS entdecken",
+      "href": "/fcs",
+      "roe": {
+        "stat": "Eigenkapitalrendite des Protokolls",
+        "all": "Alle",
+        "since": "Seit dem Start, Zinseszins pro Jahr",
+        "year": "Kalenderjahr {year}",
+        "ytd": "{year} bisher, annualisiert"
+      }
+    },
+    "pay": {
+      "label": "Zahlen",
+      "title": "Ausgeben wie Franken",
+      "body": "In Spar-Filialen, mit einer GnosisPay-Karte oder per Banküberweisung über eine persönliche IBAN.",
+      "cta": "Wo genau",
+      "href": "/ecosystem"
+    }
+  },
+  "proof": {
+    "title": "Gedeckt durch Collateral,|das Sie sehen können.",
+    "subtitle": "Kreditnehmer sperren Assets in öffentlichen Contracts, um ZCHF zu minten, sodass jeder Franken durch mehr als einen Franken Collateral gedeckt ist. Schwache Positionen werden angefochten und versteigert, und der Zins der Kreditnehmer bezahlt zuerst die Sparer.",
+    "supply": "ZCHF im Umlauf",
+    "collateral": "Collateral-Wert (CHF)",
+    "ratio": "Collateral pro ZCHF",
+    "equity": "Eigenkapital des Protokolls",
+    "cta": "Transparenzseite öffnen",
+    "href": "/transparency",
+    "how": "So funktioniert es",
+    "howHref": "/how-it-works",
+    "coins": "Gedeckt durch {n} Collateral-Arten, jede davon on-chain"
+  },
+  "doors": {
+    "title": "Wählen Sie Ihren Weg."
+  },
+  "media": {
+    "title": "Was über Frankencoin geschrieben wird."
+  },
+  "faq": {
+    "title": "Kurze Antworten.",
+    "more": "Alle Fragen",
+    "href": "/faq"
+  },
+  "final": {
+    "title": "Schweizer Franken. On-Chain. Ihre.",
+    "subtitle": "Starten Sie mit jedem Betrag. Kein Konto bei Frankencoin, keine Sperrfrist, Ihre eigenen Schlüssel.",
+    "primary": {
+      "label": "Jetzt starten",
+      "href": "https://app.frankencoin.com/savings"
+    },
+    "secondary": {
+      "label": "Sprechen Sie mit uns",
+      "href": "mailto:info@frankencoin.com"
+    }
+  },
+  "dollar": {
+    "label": "Zum vollständigen Vergleich, 1971 bis heute",
+    "href": "/use-cases/save-in-chf#fifty"
+  }
+}

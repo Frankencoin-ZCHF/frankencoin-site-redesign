@@ -1,0 +1,28 @@
+---
+/**
+ * "Pixel broke" button: a plain bar at rest. Its right end is a 3×4 grid of pixel squares; on hover some of them
+ * flick off (staggered) so the end looks broken. Pure CSS, after 21st.dev/@nextjsshop
+ * pixel-broke-button, in the site's colours. Variants: "solid" (deep blue, white text), "light" (white on dark
+ * bands), "ghost" (pale, deep-blue text).
+ *
+ * In use on the home hero and closing band (Nov 2026).
+ * Usage: <PixelButton href="/x" label="Label" variant="solid" arrow />  (size="sm" for the nav: 40px tall, 10px squares)
+ */
+import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
+interface Props { href: string; label: string; variant?: "solid" | "light" | "ghost"; size?: "md" | "sm"; arrow?: boolean; class?: string; [k: string]: any }
+const { href: raw, label, variant = "solid", size = "md", arrow = false, class: cls = "", ...rest } = Astro.props as Props;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const href = raw.startsWith("/") ? getLocalizedPath(raw, lang) : raw;
+const ext = raw.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {};
+// Stagger order for the 12 squares on the right side (0 = first to go), as in the original.
+const right = [3, 0, 0, 0, 4, 0, 0, 2, 1, 3, 0, 0];
+const text = arrow ? `${label} →` : label;
+---
+
+<a href={href} {...ext} {...rest} class:list={["pxb", `pxb--${variant}`, size === "sm" && "pxb--sm", cls]}>
+  <span class="pxb_bg" aria-hidden="true">
+    <span class="pxb_mid"></span>
+    <span class="pxb_side pxb_side--r">{right.map((i) => <span class="pxb_px" style={`--i:${i}`}></span>)}</span>
+  </span>
+  <span class="pxb_inner"><span class="pxb_text">{text}</span></span>
+</a>

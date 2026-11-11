@@ -1,0 +1,25 @@
+---
+/* /integrate — integration hub with four tracks. Copy: content/en/integrate.json */
+import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import FeatureGrid from "../components/LP/FeatureGrid.astro";
+import CtaBand from "../components/LP/CtaBand.astro";
+import { getLanguageFromURL, getLocalizedPath, loadContent } from "../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("integrate", "en");
+const local = await loadContent<any>("integrate", lang);
+const c = { ...en, ...local }; // no German copy yet; fall back per key
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} />
+  <LPSection title={c.tracks.title}><FeatureGrid items={c.tracks.items} cols={4} /></LPSection>
+  <LPSection title={c.projects.title} accent>
+    <FeatureGrid items={c.projects.items} cols={3} />
+    <p class="mt-8 m-0"><a href={getLocalizedPath(c.projects.more.href, lang)} class="font-bold text-[var(--color-brand-swiss)] hover:underline">{c.projects.more.label} →</a></p>
+  </LPSection>
+  <CtaBand {...c.cta} />
+</Base>

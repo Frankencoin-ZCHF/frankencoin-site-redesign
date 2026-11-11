@@ -1,0 +1,47 @@
+---
+/* /for/savers — retail and crypto-native savers. Copy: content/en/savers.json */
+import Base from "../../layouts/Base.astro";
+import LPHero from "../../components/LP/LPHero.astro";
+import LPSection from "../../components/LP/LPSection.astro";
+import FeatureGrid from "../../components/LP/FeatureGrid.astro";
+import StickyCTA from "../../components/StickyCTA/StickyCTA.astro";
+import CtaBand from "../../components/LP/CtaBand.astro";
+import { getLanguageFromURL, getLocalizedPath, loadContent } from "../../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("savers", "en");
+const local = await loadContent<any>("savers", lang);
+// German copy may lack today's keys: fall back to English per key.
+const c = { ...en, ...local };
+const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+const ext = (h: string) => (h.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
+const cell = "p-4 md:p-5 border-t border-[var(--color-gray-20)] align-top";
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} />
+
+  <LPSection title={c.paths.title} subtitle={c.paths.subtitle}><FeatureGrid items={c.paths.items} cols={2} /></LPSection>
+
+  <LPSection id="compare" title={c.compare.title} subtitle={c.compare.subtitle} accent>
+    <div class="overflow-x-auto">
+      <table class="w-full border-separate border-spacing-0 rounded-3xl overflow-hidden border border-[var(--color-gray-20)] bg-white ty-body-3">
+        <thead><tr class="bg-[var(--color-gray-10)]"><th class="p-4 md:p-5"></th><th class="text-left p-4 md:p-5 ty-body-2 font-black text-[var(--color-brand-deep-blue)]">{c.compare.head.save}</th><th class="text-left p-4 md:p-5 ty-body-2 font-black text-[var(--color-brand-deep-blue)]">{c.compare.head.invest}</th></tr></thead>
+        <tbody>
+          {c.compare.rows.map((r: any) => (
+            <tr>
+              <th scope="row" class={`${cell} text-left font-bold text-[var(--color-neutral-600)]`}>{r.label}</th>
+              <td class={cell}>{r.saveHref ? <a href={href(r.saveHref)} {...ext(r.saveHref)} class="font-bold text-[var(--color-brand-swiss)] hover:underline">{r.save} →</a> : r.save}</td>
+              <td class={cell}>{r.investHref ? <a href={href(r.investHref)} {...ext(r.investHref)} class="font-bold text-[var(--color-brand-swiss)] hover:underline">{r.invest} →</a> : r.invest}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </LPSection>
+
+  <CtaBand {...c.cta} />
+  <StickyCTA label={c.sticky.label} sub={c.sticky.sub} href="https://app.frankencoin.com/savings" />
+</Base>

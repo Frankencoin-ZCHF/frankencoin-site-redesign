@@ -1,5 +1,6 @@
 ---
 import Button from "../Button/Button.astro";
+import PixelButton from "../LP/PixelButton.astro";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher.astro";
 import { getLanguageFromURL, loadSharedContent, loadContent } from "../../utils/i18n";
 
@@ -37,7 +38,9 @@ const prefixLanguage = (href: string) => {
 };
 
 // Process all links with language prefix
-const localizedLinks = (Astro.props.links ?? nav.links).map(link => ({ ...link, href: prefixLanguage(link.href) }));
+type NavItem = { label: string; href?: string; children?: NavItem[] };
+const localize = (l: NavItem): NavItem => ({ ...l, href: l.href ? prefixLanguage(l.href) : undefined, children: l.children?.map(localize) });
+const localizedLinks: NavItem[] = (Astro.props.links ?? nav.links).map(localize);
 ---
 
 <div
@@ -46,21 +49,35 @@ const localizedLinks = (Astro.props.links ?? nav.links).map(link => ({ ...link, 
 >
   <nav class="flex flex-col gap-2 px-5 pt-8 pb-6" aria-label="Mobile">
     {
-      localizedLinks.map((l) => (
-        <a
-          href={l.href}
-          class="mobile-nav-link ty-body-1-mobile block rounded-lg px-4 py-3 text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)] active:text-[var(--color-brand-swiss)]"
-        >
-          {l.label}
-        </a>
-      ))
+      localizedLinks.map((l) =>
+        l.children ? (
+          <div class="px-4 pt-3">
+            <p class="ty-xs tracking-wider font-bold text-[var(--color-neutral-550)] mb-1">{l.label.toUpperCase()}</p>
+            <div class="grid grid-cols-2 gap-x-2">
+              {l.children.map((c) => (
+                <a href={c.href} class="mobile-nav-link ty-body-2 block rounded-lg py-2 text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)]">{c.label}</a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a
+            href={l.href}
+            class="mobile-nav-link ty-body-1-mobile block rounded-lg px-4 py-3 text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)] active:text-[var(--color-brand-swiss)]"
+          >
+            {l.label}
+          </a>
+        )
+      )
     }
     <hr class="text-[var(--color-neutral-300)]" />
     <div class="mt-4 flex flex-col gap-4">
       <LanguageSwitcher />
-      <Button href={nav.cta.href} variant="primary" rounded="full" size="md" external={true}>
-        {index.hero.cta.label}
-      </Button>
+      <PixelButton href={nav.cta.href} label={nav.cta.label} variant="solid" />
+      {nav.appCta && (
+        <Button href={nav.appCta.href} variant="secondary" rounded="full" size="md" external={true}>
+          {nav.appCta.label}
+        </Button>
+      )}
     </div>
   </nav>
 </div>

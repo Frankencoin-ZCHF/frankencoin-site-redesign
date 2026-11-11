@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Frankencoin in den Medien",
+    "description": "Artikel, Interviews und Videos über Frankencoin und ZCHF."
+  },
+  "hero": {
+    "title": "Frankencoin|in den Medien",
+    "subtitle": "Berichte, Interviews und Vorträge. Ankündigungen erscheinen zuerst auf X und Telegram."
+  },
+  "follow": [
+    { "label": "X", "href": "https://x.com/frankencoinzchf" },
+    { "label": "Telegram", "href": "https://t.me/frankencoinzchf" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/company/frankencoin/" }
+  ],
+  "filter": {
+    "type": "Typ",
+    "all": "Alle",
+    "article": "Artikel",
+    "video": "Videos",
+    "outlet": "Medium",
+    "allOutlets": "Alle Medien",
+    "sort": "Sortieren",
+    "newest": "Neueste zuerst",
+    "oldest": "Älteste zuerst",
+    "count": "Einträge",
+    "empty": "Zu diesem Filter gibt es keine Einträge."
+  },
+  "press": {
+    "text": "Für Journalisten: Logos, eine zitierfähige Beschreibung und der Pressekontakt finden sich auf der",
+    "linkLabel": "Presseseite",
+    "href": "/press"
+  }
+}

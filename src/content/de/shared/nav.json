@@ -1,14 +1,110 @@
 {
-  "brand": { "name": "Frankencoin", "href": "/" },
+  "brand": {
+    "name": "Frankencoin",
+    "href": "/"
+  },
   "links": [
-    { "label": "Über Frankencoin", "href": "/#what-is" },
-    { "label": "Anwendungen", "href": "/#core-features" },
-    { "label": "Wie's funktioniert", "href": "/#how-does-it-work" },
-    { "label": "Compliance", "href": "/#trust-security" },
-    { "label": "Medien", "href": "/#in-the-media" },
-    { "label": "FAQs", "href": "/#faq" }
+    {
+      "label": "Sparen",
+      "href": "/use-cases/save-in-chf"
+    },
+    {
+      "label": "Leihen",
+      "href": "/use-cases/borrow"
+    },
+    {
+      "label": "Für",
+      "children": [
+        {
+          "label": "Sparer",
+          "href": "/for/savers"
+        },
+        {
+          "label": "Treasuries",
+          "href": "/for/treasuries"
+        },
+        {
+          "label": "Börsen & Wallets",
+          "href": "/for/exchanges-wallets"
+        },
+        {
+          "label": "Entwickler",
+          "href": "/for/developers"
+        }
+      ]
+    },
+    {
+      "label": "Integrieren",
+      "children": [
+        {
+          "label": "Integration",
+          "href": "/integrate"
+        },
+        {
+          "label": "Sicherheit vorschlagen",
+          "href": "/integrate/collateral"
+        },
+        {
+          "label": "Empfehlungsprogramm",
+          "href": "/referral"
+        }
+      ]
+    },
+    {
+      "label": "FCS",
+      "href": "/fcs"
+    },
+    {
+      "label": "Vertrauen",
+      "children": [
+        {
+          "label": "Transparenz",
+          "href": "/transparency"
+        },
+        {
+          "label": "Sicherheit",
+          "href": "/security"
+        },
+        {
+          "label": "Compliance",
+          "href": "/compliance"
+        },
+        {
+          "label": "Versicherung",
+          "href": "/insurance"
+        }
+      ]
+    },
+    {
+      "label": "Lernen",
+      "children": [
+        {
+          "label": "Was ist Frankencoin",
+          "href": "/what-is-frankencoin"
+        },
+        {
+          "label": "So funktioniert es",
+          "href": "/how-it-works"
+        },
+        {
+          "label": "Vergleich",
+          "href": "/compare"
+        },
+        {
+          "label": "Anwendungsfälle",
+          "href": "/use-cases"
+        },
+        {
+          "label": "News",
+          "href": "/news"
+        }
+      ]
+    }
   ],
-  "cta": { "label": "App öffnen", "href": "https://app.frankencoin.com/" },
+  "cta": {
+    "label": "Sparen starten",
+    "href": "https://app.frankencoin.com/savings"
+  },
   "socials": [
     {
       "name": "Telegram",
@@ -26,7 +122,7 @@
       "width": 30,
       "height": 30
     },
-      {
+    {
       "name": "LinkedIn",
       "href": "https://www.linkedin.com/company/frankencoin/",
       "light_icon": "/images/Social-icons-2_1.svg",
@@ -50,5 +146,9 @@
       "width": 30,
       "height": 30
     }
-  ]
+  ],
+  "appCta": {
+    "label": "App",
+    "href": "https://app.frankencoin.com/"
+  }
 }

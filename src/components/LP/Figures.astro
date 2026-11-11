@@ -1,0 +1,15 @@
+---
+/** Live figures as a glass panel (same look as the home hero numbers). */
+interface Fig { label: string; value: string; unit?: string }
+const { items, cols = 2 } = Astro.props as { items: Fig[]; cols?: 2 | 4 };
+---
+
+<dl class={`grid grid-cols-2 ${cols === 4 ? "lg:grid-cols-4" : ""} gap-px overflow-hidden rounded-3xl border border-white/70 bg-[var(--color-gray-20)]/60 backdrop-blur-md shadow-[0_10px_40px_-15px_rgba(9,47,98,0.35)] m-0`}>
+  {items.map((f) => (
+    <div class="bg-white/80 p-4 md:p-6 min-w-0">
+      <dt class="ty-xs text-[var(--color-neutral-550)]">{f.label}</dt>
+      <dd class="m-0 mt-1.5 text-[24px] sm:text-[32px] font-black tracking-tight text-[var(--color-brand-deep-blue)] leading-none tabular-nums break-words">{f.value}</dd>
+      {f.unit && <dd class="m-0 mt-1.5 ty-xs text-[var(--color-neutral-550)]">{f.unit}</dd>}
+    </div>
+  ))}
+</dl>

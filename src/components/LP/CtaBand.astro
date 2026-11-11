@@ -1,0 +1,23 @@
+---
+/** Closing call to action on the dark part of the halftone Alps (same as the home page). */
+import PixelButton from "./PixelButton.astro";
+import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
+interface Cta { label: string; href: string }
+const { title, body, primary, secondary } = Astro.props as { title: string; body?: string; primary: Cta; secondary?: Cta };
+const lang = getLanguageFromURL(Astro.url.pathname);
+const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+const ext = (h: string) => (h.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
+---
+
+<section class="relative isolate overflow-hidden bg-[#0b4a64] text-white">
+  <img src="/images/home/alps-halftone.webp" alt="" loading="lazy" width="2000" height="1121" class="absolute inset-0 -z-10 h-full w-full object-cover object-[50%_85%] opacity-90" />
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#062a3d]/95 via-[#0b4a64]/75 to-[#0b4a64]/20"></div>
+  <div class="mx-auto max-w-7xl px-[var(--spacing-l)] py-20 md:py-28">
+    <h2 class="text-[34px] sm:text-[50px] leading-[1.02] font-black tracking-[-0.035em] max-w-2xl m-0">{title}</h2>
+    {body && <p class="mt-4 ty-body-1 text-white/85 max-w-[34rem]">{body}</p>}
+    <div class="mt-8 flex flex-wrap gap-3">
+      <PixelButton href={primary.href} label={primary.label} variant="light" arrow />
+      {secondary && <a href={href(secondary.href)} {...ext(secondary.href)} class="inline-flex items-center rounded-[10px] border border-white/50 hover:bg-white/10 font-bold ty-body-2 px-7 h-[52px]">{secondary.label}</a>}
+    </div>
+  </div>
+</section>

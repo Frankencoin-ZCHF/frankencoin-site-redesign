@@ -1,0 +1,30 @@
+---
+/**
+ * Compact trust row: one line each for audits, legal, ratings, cover. Replaces the long
+ * audits + two-ratings sections on the home page; the full detail lives on /compliance.
+ * Props: items: { label, value, href }[]
+ */
+import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
+
+interface Item { label: string; value: string; href: string }
+const { items } = Astro.props as { items: Item[] };
+const lang = getLanguageFromURL(Astro.url.pathname);
+const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+---
+
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+  {items.map((it) => {
+    const ext = it.href.startsWith("http");
+    return (
+      <a
+        href={href(it.href)}
+        target={ext ? "_blank" : undefined}
+        rel={ext ? "noopener noreferrer" : undefined}
+        class="group flex flex-col gap-1 rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-white)] px-5 py-4 hover:border-[var(--color-brand-swiss)] transition-colors"
+      >
+        <span class="ty-xs font-bold text-[var(--color-neutral-600)]"><span class="text-[#1a9cc8]">✓</span> {it.label}</span>
+        <span class="ty-body-2 font-bold text-[var(--color-brand-deep-blue)] group-hover:text-[var(--color-brand-swiss)]">{it.value}</span>
+      </a>
+    );
+  })}
+</div>

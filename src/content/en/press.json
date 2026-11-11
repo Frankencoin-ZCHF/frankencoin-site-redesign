@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "Frankencoin press kit",
+    "description": "Logos, brand guidelines, a short description to quote, press releases and the press contact for Frankencoin (ZCHF)."
+  },
+  "hero": {
+    "title": "Press kit",
+    "subtitle": "A description you can quote, logos, the brand guidelines, press releases and who to contact."
+  },
+  "boiler": {
+    "title": "About Frankencoin",
+    "text": "Frankencoin (ZCHF) is a decentralized stablecoin that tracks the Swiss franc. It is issued by smart contracts against on-chain collateral rather than by a company, has been live since 2023 and is available on eight blockchains. Frankencoin Shares (FCS) represent the protocol's equity. The Frankencoin Association in Switzerland supports its development.",
+    "note": "Reuse as is or shorten; please do not describe ZCHF as bank-issued or as backed by bank deposits."
+  },
+  "assets": {
+    "title": "Logos and guidelines",
+    "subtitle": "SVG files. The brand guidelines set colours, clear space and what not to do with the logo.",
+    "items": [
+      { "label": "Frankencoin logo", "note": "Wordmark, colour, for light backgrounds", "file": "/press/frankencoin_logo.svg", "bg": "light" },
+      { "label": "Frankencoin logo, white", "note": "For dark backgrounds", "file": "/press/frankencoin_logo_white.svg", "bg": "dark" },
+      { "label": "Frankencoin logo, mono white", "note": "Single colour, for dark backgrounds", "file": "/press/frankencoin_logo_mono_white.svg", "bg": "dark" },
+      { "label": "ZCHF coin icon", "note": "The stablecoin", "file": "/press/coin_logo_frankencoin.svg", "bg": "light" },
+      { "label": "FCS coin icon", "note": "Frankencoin Shares, the current equity token", "file": "/press/coin_logo_fcs_trans.svg", "bg": "light" },
+      { "label": "FPS coin icon", "note": "Frankencoin Pool Shares, the legacy equity token", "file": "/press/coin_logo_fps.svg", "bg": "light" }
+    ],
+    "guidelines": {
+      "label": "Brand guidelines (PDF)",
+      "file": "/press/frankencoin_brand_guidelines.pdf"
+    }
+  },
+  "releases": {
+    "title": "Press releases",
+    "empty": "No press releases are published here yet. Announcements are posted on X and Telegram; coverage is collected on the news page.",
+    "newsLabel": "News and media coverage",
+    "newsHref": "/news",
+    "_comment": "Each item: { \"date\": \"YYYY-MM-DD\", \"title\": \"...\", \"href\": \"/press/....pdf or URL\", \"summary\": \"one sentence\" }. The list is intentionally empty until the Association publishes releases.",
+    "items": []
+  },
+  "contact": {
+    "title": "Press contact",
+    "text": "For interviews, quotes and background.",
+    "email": "info@frankencoin.com"
+  }
+}

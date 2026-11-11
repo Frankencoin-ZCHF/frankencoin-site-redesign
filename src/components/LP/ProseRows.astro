@@ -1,0 +1,25 @@
+---
+/**
+ * Long-form explainer rows in the landing-page style: title on the left, copy on the right, a hairline
+ * between rows. For pages that are mostly text (What is Frankencoin, Compliance).
+ * Props: rows: { title, body, cta?: { label, href } }[]
+ */
+import { getLanguageFromURL, getLocalizedPath } from "../../utils/i18n";
+interface Row { title: string; body: string; cta?: { label: string; href: string } }
+const { rows } = Astro.props as { rows: Row[] };
+const lang = getLanguageFromURL(Astro.url.pathname);
+const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+const ext = (h: string) => (h.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
+---
+
+<div class="divide-y divide-[var(--color-gray-20)] border-y border-[var(--color-gray-20)]">
+  {rows.map((r) => (
+    <div class="grid md:grid-cols-[1fr_1.6fr] gap-4 md:gap-12 py-8 md:py-12">
+      <h3 class="text-balance text-[24px] sm:text-[28px] leading-[1.1] font-black tracking-[-0.02em] text-[var(--color-brand-deep-blue)] m-0">{r.title}</h3>
+      <div>
+        <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] m-0" set:html={r.body.replace(/\n+/g, "<br><br>")} />
+        {r.cta && <a href={href(r.cta.href)} {...ext(r.cta.href)} class="mt-4 inline-flex items-center gap-1 font-bold text-[var(--color-brand-swiss)] hover:underline">{r.cta.label} →</a>}
+      </div>
+    </div>
+  ))}
+</div>

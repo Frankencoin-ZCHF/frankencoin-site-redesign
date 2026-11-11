@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "Propose your token as Frankencoin collateral",
+    "description": "How token issuers list a new collateral on Frankencoin: proposal fee, initialization period, FCS veto and what makes a good collateral."
+  },
+  "hero": {
+    "title": "Let your holders borrow francs|against your token.",
+    "subtitle": "Anyone can propose a new collateral. A proposal costs 1'000 ZCHF and can be vetoed by Frankencoin Shares (FCS) holders for at least five days; if nobody vetoes, it goes live. Talk to us before you propose.",
+    "primary": {
+      "label": "Talk to us on Telegram",
+      "href": "https://t.me/frankencoinzchf"
+    },
+    "secondary": {
+      "label": "Propose in the app",
+      "href": "https://app.frankencoin.com/mint/create"
+    }
+  },
+  "steps": {
+    "title": "How a proposal works",
+    "items": [
+      {
+        "title": "Discuss first",
+        "body": "Share your token and the terms you have in mind with the community. Proposals that were discussed are far more likely to pass.",
+        "cta": {
+          "label": "Join Telegram",
+          "href": "https://t.me/frankencoinzchf",
+          "external": true
+        }
+      },
+      {
+        "title": "Propose",
+        "body": "Open the first position with your terms in the app. The 1'000 ZCHF proposal fee goes to the reserve and is not refunded.",
+        "cta": {
+          "label": "Open the form",
+          "href": "https://app.frankencoin.com/mint/create",
+          "external": true
+        }
+      },
+      {
+        "title": "Review and veto period",
+        "body": "For at least five days, FCS holders review the proposal and can veto it. If no one does, the collateral is live and others can borrow against it.",
+        "cta": {
+          "label": "See open proposals",
+          "href": "https://app.frankencoin.com/governance",
+          "external": true
+        }
+      }
+    ]
+  },
+  "criteria": {
+    "title": "What reviewers look for",
+    "intro": "Four questions decide most proposals.",
+    "items": [
+      "A liquid market: auctions must be able to sell the token quickly if a position is challenged.",
+      "Conservative terms: a liquidation price well below the market price gives the system room in a crash.",
+      "A transparent issuer: clear legal structure and public information about the asset behind the token.",
+      "A sensible limit: start small; the limit can be raised later with a new proposal."
+    ],
+    "guidance": {
+      "title": "Assessment guidance",
+      "body": "A proposal sets the liquidation price, minting limit, interest, maturity and reserve share. Existing assessments show how the community weighs these parameters and the rights attached to a token; read a few before you choose yours.",
+      "cta": {
+        "label": "Read existing assessments",
+        "href": "https://collateral.frankencoin.com/"
+      }
+    }
+  },
+  "faq": [
+    {
+      "q": "Who can propose?",
+      "a": "Anyone with 1'000 ZCHF for the fee and enough of the token for the initial position. No registration or approval is needed."
+    },
+    {
+      "q": "Who reviews a proposal?",
+      "a": "The community, in public. Discussion happens on [Telegram](https://t.me/frankencoinzchf) and in written assessments on [collateral.frankencoin.com](https://collateral.frankencoin.com/)."
+    },
+    {
+      "q": "Who can veto, and what happens then?",
+      "a": "FCS holders with more than 1% of voting power, including delegated votes. A vetoed proposal is denied and the fee stays in the reserve; you can propose again with different terms."
+    }
+  ]
+}

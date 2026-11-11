@@ -1,13 +1,20 @@
 ---
 import Button from "../Button/Button.astro";
+import PixelButton from "../LP/PixelButton.astro";
 import NavLink from "../Button/NavLink.astro";
 import MobileMenu from "./MobileMenu.astro";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher.astro";
 import { getLanguageFromURL, loadSharedContent } from "../../utils/i18n";
 
+interface NavItem {
+  label: string;
+  href?: string;
+  note?: string;
+  children?: NavItem[];
+}
 interface Props {
   /** Replaces the default menu links (the logo still links home). */
-  links?: { label: string; href: string }[];
+  links?: NavItem[];
 }
 
 const currentLang = getLanguageFromURL(Astro.url.pathname);
@@ -41,7 +48,8 @@ const prefixLanguage = (href: string) => {
 
 // Process all links with language prefix
 const localizedBrand = { ...brand, href: prefixLanguage(brand.href) };
-const localizedLinks = links.map(link => ({ ...link, href: prefixLanguage(link.href) }));
+const localize = (l: NavItem): NavItem => ({ ...l, href: l.href ? prefixLanguage(l.href) : undefined, children: l.children?.map(localize) });
+const localizedLinks: NavItem[] = links.map(localize);
 ---
 
 <header
@@ -69,27 +77,51 @@ const localizedLinks = links.map(link => ({ ...link, href: prefixLanguage(link.h
     <nav
       role="navigation"
       aria-label="Main"
-      class="hidden md:flex items-center gap-[var(--spacing-l)]"
+      class="hidden lg:flex items-center gap-[var(--spacing-s)] xl:gap-[var(--spacing-m)]"
     >
-      {localizedLinks.map((l) => <NavLink href={l.href}>{l.label}</NavLink>)}
+      {localizedLinks.map((l) =>
+        l.children ? (
+          <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" @keydown.escape="open = false">
+            <button type="button" class="inline-flex items-center gap-1 whitespace-nowrap rounded-[var(--radius-button)] px-[var(--spacing-s)] py-[var(--spacing-xs)] text-[var(--font-size-body-2)] text-[var(--color-blue-39)] hover:text-[var(--color-brand-swiss)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-blue-50)]" @click="open = !open" :aria-expanded="open.toString()">
+              {l.label}
+              <svg class="h-3.5 w-3.5 transition-transform" :class="open ? 'rotate-180' : ''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg>
+            </button>
+            <div x-show="open" x-transition.opacity x-cloak class="absolute left-1/2 -translate-x-1/2 top-full pt-2 z-50">
+              <div class="w-72 rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-white)] shadow-lg p-2">
+                {l.children.map((c) => (
+                  <a href={c.href} class="block rounded-xl px-3 py-2.5 hover:bg-[var(--color-gray-10)]">
+                    <span class="block ty-body-3 font-bold text-[var(--color-brand-deep-blue)]">{c.label}</span>
+                    {c.note && <span class="block ty-2xs text-[var(--color-neutral-550)]">{c.note}</span>}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <NavLink href={l.href}>{l.label}</NavLink>
+        )
+      )}
     </nav>
 
     <!-- Right: Language Switcher + CTA + Mobile Menu -->
     <div class="flex items-center gap-[var(--spacing-l)]">
       <!-- Language Switcher (desktop) -->
-      <div class="hidden md:block">
+      <div class="hidden lg:block">
         <LanguageSwitcher />
       </div>
 
-      <!-- CTA (desktop only) -->
-      <div class="hidden lg:block">
-        <Button href={nav.cta.href} variant="primary" rounded="full" size="md" external={true}>
-          {nav.cta.label}
-        </Button>
+      <!-- CTA (desktop only): primary "Start now" + quiet app link -->
+      <div class="hidden lg:flex items-center gap-[var(--spacing-m)]">
+        {nav.appCta && (
+          <a href={nav.appCta.href} target="_blank" rel="noopener noreferrer" class="ty-body-2 font-semibold text-[var(--color-neutral-600)] hover:text-[var(--color-brand-swiss)]">
+            {nav.appCta.label} ↗
+          </a>
+        )}
+        <PixelButton href={nav.cta.href} label={nav.cta.label} variant="solid" size="sm" />
       </div>
 
       <!-- Mobile menu (details/summary accesible) -->
-      <details class="md:hidden relative">
+      <details class="lg:hidden relative">
         <summary
           class="list-none inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-button-6)] text-[var(--color-neutral-650)] hover:cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-blue-50)]"
           aria-label="Open menu"

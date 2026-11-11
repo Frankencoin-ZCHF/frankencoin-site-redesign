@@ -104,17 +104,16 @@ const parseMarkdownLinks = (text: string) => {
 <section id={id} data-has-bg={hasBgImage ? 'true' : 'false'} class={`${pads} ${bg} ${bgImageClasses} section-bg relative overflow-visible z-0 ${margin} ${bottomPosition === 'absolute' ? bottomSpacing : ''} ${className}` } style={sectionStyle}>
   <div class="relative z-10">
  {hasBgImage &&
-    <img src={imgUrl?.mobile} class="md:hidden object-cover w-full h-[300px] " alt="image" />
+    <img src={imgUrl?.mobile} class="md:hidden object-cover w-full h-[160px]" alt="image" />
 }
 
     <Container width={width} id={id}>
     {layout === "default" && (
       <div class={`${textAlign}`}>
 
-        <div class="flex flex-col gap-2 items-center mb-8">
-          {eyebrow && <p class="ty-subtitle">{eyebrow.toUpperCase()}</p>}
-          {title && <h2 class="ty-large-title ">{title}</h2>}
-          {subtitle && <p class="ty-body-1" set:html={parseMarkdownLinks(subtitle)}/>}
+        <div class={`flex flex-col gap-3 mb-10 ${align === "center" ? "items-center" : "items-start"}`}>
+          {title && <h2 class="text-[30px] sm:text-[40px] lg:text-[46px] leading-[1.04] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0">{title}</h2>}
+          {subtitle && <p class="ty-body-1 text-[var(--color-neutral-650)] max-w-3xl" set:html={parseMarkdownLinks(subtitle)}/>}
         </div>
         <slot />
       </div>
@@ -124,10 +123,8 @@ const parseMarkdownLinks = (text: string) => {
       <div class={`flex flex-col ${flexOrder} gap-8 md:gap-12 ${headerPosition}`}>
         <!-- Main Content -->
         <div class={`${mainBasis} space-y-6`}>
-
-          {eyebrow && <p class="ty-subtitle mb-0">{eyebrow.toUpperCase()}</p>}
-          {title && <h2 class="ty-large-title">{title}</h2>}
-          {subtitle && <p class="ty-body-1" set:html={parseMarkdownLinks(subtitle)}/>}
+          {title && <h2 class="text-[30px] sm:text-[40px] lg:text-[46px] leading-[1.04] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0">{title}</h2>}
+          {subtitle && <p class="ty-body-1 text-[var(--color-neutral-650)] max-w-3xl" set:html={parseMarkdownLinks(subtitle)}/>}
           <slot />
         </div>
         
@@ -141,9 +138,8 @@ const parseMarkdownLinks = (text: string) => {
       <div class="space-y-8">
         <!-- Header centrado -->
         <div class="text-center space-y-4">
-          {eyebrow && <p class="ty-subtitle">{eyebrow.toUpperCase()}</p>}
-          {title && <h2 class="ty-large-title">{title}</h2>}
-          {subtitle && <p class="ty-body-1" set:html={parseMarkdownLinks(subtitle)}/>}
+          {title && <h2 class="text-[30px] sm:text-[40px] lg:text-[46px] leading-[1.04] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0">{title}</h2>}
+          {subtitle && <p class="ty-body-1 text-[var(--color-neutral-650)] max-w-3xl" set:html={parseMarkdownLinks(subtitle)}/>}
         </div>
         
         <!-- Aside Content -->

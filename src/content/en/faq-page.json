@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Frankencoin FAQ",
+    "description": "Answers about ZCHF, the savings rate, borrowing, FCS, compliance and risk."
+  },
+  "hero": {
+    "title": "Questions,|answered.",
+    "subtitle": "Can't find yours? Ask in the Telegram group or write to info@frankencoin.com."
+  },
+  "nextHead": {
+    "title": "Read on."
+  },
+  "next": [
+    {
+      "title": "How it works",
+      "description": "Minting, the peg, challenges and auctions, and where the income goes.",
+      "href": "/how-it-works",
+      "cta": "Read"
+    },
+    {
+      "title": "Glossary",
+      "description": "The terms used on this site and in the app, one line each.",
+      "href": "/glossary",
+      "cta": "Open"
+    }
+  ]
+}

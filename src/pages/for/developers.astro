@@ -1,0 +1,40 @@
+---
+/* /for/developers — contracts, API, indexer, MCP, grants. Copy: content/en/developers.json */
+import Base from "../../layouts/Base.astro";
+import LPHero from "../../components/LP/LPHero.astro";
+import LPSection from "../../components/LP/LPSection.astro";
+import FeatureGrid from "../../components/LP/FeatureGrid.astro";
+import { getLanguageFromURL, getLocalizedPath, loadContent } from "../../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("developers", "en");
+const local = await loadContent<any>("developers", lang);
+// German copy may lack today's keys: fall back to English per key.
+const c = { ...en, ...local };
+const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
+const ext = (h: string) => (h.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary}>
+    <div slot="aside" class="rounded-3xl bg-[var(--color-neutral-800)]/95 text-[var(--color-neutral-200)] shadow-[0_20px_60px_-20px_rgba(9,47,98,0.6)] overflow-hidden">
+      <div class="flex items-center gap-2 px-5 py-3 border-b border-white/10 ty-xs font-bold text-[var(--color-neutral-400)]">
+        <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
+        <span class="ml-2">{c.snippet.title}</span>
+      </div>
+      <pre class="m-0 p-5 overflow-x-auto text-[13px] leading-relaxed font-mono"><code>{c.snippet.code}</code></pre>
+      <p class="m-0 px-5 pb-5 ty-body-3 text-[var(--color-neutral-400)]">{c.snippet.note}</p>
+    </div>
+  </LPHero>
+
+  <LPSection title={c.toolsHead.title}><FeatureGrid items={c.tools} /></LPSection>
+
+  <LPSection title={c.more.title} split accent>
+    <ul class="m-0 p-0 list-none grid gap-4">
+      {c.more.items.map((m: any) => (
+        <li class="ty-body-2 text-[var(--color-neutral-650)]">{m.text} <a href={href(m.href)} {...ext(m.href)} class="font-bold text-[var(--color-brand-swiss)] hover:underline whitespace-nowrap">{m.label} →</a></li>
+      ))}
+    </ul>
+  </LPSection>
+</Base>

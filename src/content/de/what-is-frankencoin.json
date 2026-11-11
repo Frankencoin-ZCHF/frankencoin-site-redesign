@@ -1,44 +1,92 @@
 {
+  "meta": {
+    "title": "Was ist Frankencoin? Ein dezentraler Schweizer-Franken-Stablecoin",
+    "description": "Frankencoin (ZCHF) ist ein Schweizer-Franken-Stablecoin, der von Smart Contracts gegen On-Chain-Sicherheiten ausgegeben wird, ohne Bank, Emittenten oder Preisorakel."
+  },
   "header": {
     "image": "/images/Frankencoin-Logo-Compressify.io_1.webp",
     "imageAlt": "Frankencoin Logo",
-    "title": "Was ist Frankencoin?",
-    "subtitle": "Und warum ist es der einzige Stablecoin, der kein Orakel benötigt.",
+    "title": "Was ist|Frankencoin?",
+    "subtitle": "Frankencoin (ZCHF) ist ein digitaler Schweizer Franken. Jeder ZCHF wird von einem Smart Contract gegen Sicherheiten geprägt, die mehr als einen Franken wert sind und on-chain hinterlegt sind, wo jeder sie prüfen kann. Keine Bank hält Reserven, und kein Unternehmen gibt ihn aus.",
     "cta": {
-      "label": "Frankencoin erwerben",
-      "href": "https://app.frankencoin.com/mint"
+      "label": "Jetzt sparen",
+      "href": "https://app.frankencoin.com/savings"
     }
   },
   "features": [
     {
-      "title": "CHF Stablecoin",
-      "image": "/images/Icon-Stability-Compressify.io.webp"
+      "title": "Ein Schweizer Franken on-chain",
+      "image": "/images/Icon-Stability-Compressify.io.webp",
+      "description": "ZCHF folgt dem CHF. Sie können auf Ethereum und sieben weiteren Chains in Franken halten, bezahlen und sparen, ohne Bankkonto."
     },
     {
-      "title": "Keine Orakel",
-      "image": "/images/Icon-Oraclefree-Compressify.io.webp"
+      "title": "Deckung, die Sie prüfen können",
+      "image": "/images/Icon-Decentralized-Compressify.io.webp",
+      "description": "Jeder ZCHF ist mit mehr als einem Franken an Sicherheiten gedeckt: BTC, ETH, tokenisiertes Gold und Aktien, jederzeit on-chain sichtbar."
     },
     {
-      "title": "Vollständig dezentralisiert",
-      "image": "/images/Icon-Decentralized-Compressify.io.webp"
+      "title": "Kein Emittent, kein Einfrieren",
+      "image": "/images/Icon-Oraclefree-Compressify.io.webp",
+      "description": "Jeder kann ZCHF gegen zugelassene Sicherheiten prägen. Die Regeln sind Smart Contracts, die von den Inhabern von FCS (Frankencoin Shares) verwaltet werden, und niemand kann Ihr Guthaben einfrieren."
     }
   ],
   "introduction": [
     {
-      "title": "Was ist Frankencoin?",
-      "description": "Frankencoin (ZCHF) ist ein dezentraler Stablecoin, der an den Schweizer Franken gekoppelt ist. Im Gegensatz zu zentralisierten Stablecoins wie USDT oder USDC ist Frankencoin nicht von einem einzelnen Emittenten mit Bankreserven abhängig. Stattdessen verwendet er ein überbesichertes System, bei dem Krypto-Assets on-chain hinterlegt werden, um jeden ZCHF im Umlauf zu decken. Das Protokoll ist vollständig transparent — alle Sicherheiten, Positionen und Systemparameter sind öffentlich auf der Blockchain überprüfbar."
-    },
-    {
       "title": "Warum der Schweizer Franken?",
-      "description": "Der Schweizer Franken ist eine der stabilsten und vertrauenswürdigsten Währungen der Welt. In den letzten 50 Jahren hat er gegenüber dem US-Dollar um mehr als 240% aufgewertet. Durch die Digitalisierung des Schweizer Frankens on-chain bietet Frankencoin einen stabilen Wertspeicher für DeFi-Teilnehmer, die ein CHF-Engagement statt USD suchen. Dies ist besonders relevant für europäische Nutzer, Schweizer Unternehmen und alle, die eine stabile Nicht-USD-Alternative in der dezentralen Finanzwelt suchen."
+      "description": "Der Franken ist eine der stabilsten Währungen der Welt, und die meisten Menschen und Unternehmen, die Frankencoin nutzen, verdienen, bezahlen und rechnen in Franken. ZCHF gibt ihnen einen Franken, den sie in DeFi und im Zahlungsverkehr nutzen können, ohne zuerst in einen Dollar-Token zu wechseln.",
+      "cta": {
+        "label": "In CHF sparen",
+        "href": "/use-cases/save-in-chf"
+      }
     },
     {
-      "title": "Oracle-freies Design",
-      "description": "Die meisten Stablecoins und Lending-Protokolle sind auf externe Preis-Oracles angewiesen — Drittanbieter-Dienste, die Marktpreise an Smart Contracts übermitteln. Diese Oracles stellen einen Schwachpunkt dar: Werden sie manipuliert, können sie kaskadierende Liquidationen auslösen oder Exploits ermöglichen. Frankencoin eliminiert dieses Risiko vollständig. Anstatt auf Oracles zu vertrauen, nutzt das Protokoll einen auktionsbasierten Mechanismus, bei dem Marktteilnehmer selbst die Bewertung der Sicherheiten bestimmen. Dieses Design, das in der Doktorarbeit an der Universität Zürich detailliert beschrieben wird, macht Frankencoin einzigartig widerstandsfähig gegen Oracle-Manipulationsangriffe."
+      "title": "Kein Preisorakel",
+      "description": "Die meisten Stablecoins und Lending-Protokolle bewerten Sicherheiten über einen externen Preisfeed. Frankencoin nicht. Wer eine Position für unterbesichert hält, kann sie anfechten, und eine offene Auktion legt den Preis fest. Damit entfällt der Preisfeed als zentraler Schwachpunkt; Markt-, Liquiditäts- und Smart-Contract-Risiken trägt das System wie jedes andere Protokoll weiterhin.",
+      "cta": {
+        "label": "So funktionieren die Auktionen",
+        "href": "/how-it-works"
+      }
+    }
+  ],
+  "figures": {
+    "supply": {
+      "label": "Im Umlauf",
+      "unit": "ZCHF"
+    },
+    "ratio": {
+      "label": "Sicherheiten pro ZCHF",
+      "unit": "überbesichert"
+    },
+    "since": {
+      "label": "Live seit",
+      "unit": "auf Ethereum"
+    },
+    "types": {
+      "label": "Arten von Sicherheiten",
+      "unit": "on-chain"
+    }
+  },
+  "pillarsHead": {
+    "title": "Was das in der Praxis bedeutet."
+  },
+  "introHead": {
+    "title": "Zwei Fragen, die als Nächstes kommen."
+  },
+  "nextHead": {
+    "title": "Wie es weitergeht."
+  },
+  "next": [
+    {
+      "title": "So funktioniert es",
+      "description": "Prägen, die Bindung an den Franken, Anfechtungen und Auktionen, und wohin die Erträge fliessen.",
+      "href": "/how-it-works",
+      "cta": "Lesen"
     },
     {
-      "title": "Wie es funktioniert",
-      "description": "Jeder kann ZCHF minten, indem er zugelassene Sicherheiten (wie ETH, WBTC oder andere ERC-20-Tokens) in eine Position einzahlt. Die Sicherheiten müssen den Wert der geminteten ZCHF übersteigen und so einen Überbesicherungspuffer schaffen. Fallen die Sicherheitenwerte unter sichere Niveaus, aktiviert der automatische Liquidationsmechanismus des Systems. Ein separater Reservepool, finanziert von Frankencoin Pool Share (FPS)-Inhabern, bietet eine zusätzliche Sicherheitsebene. Das gesamte System funktioniert ohne Intermediäre, zentrale Betreiber oder vertrauenswürdige Dritte."
+      "title": "Anwendungen entdecken",
+      "description": "Wo ZCHF akzeptiert wird, wie Sie ihn kaufen und was Sie damit in DeFi und im Geschäft tun können.",
+      "href": "/use-cases",
+      "cta": "Anwendungen ansehen"
     }
   ]
 }

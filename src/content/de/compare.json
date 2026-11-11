@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "title": "ZCHF im Vergleich: dezentrale vs. emittentengedeckte CHF-Stablecoins und USDC",
+    "description": "Wie sich Frankencoin (ZCHF) von emittentengedeckten Schweizer-Franken-Stablecoins und von USDC unterscheidet: Währung, Deckung, Ausgabe und Kontrolle, Sparzugang, Rücknahme."
+  },
+  "hero": {
+    "title": "Was ZCHF|unterscheidet.",
+    "subtitle": "Nicht jeder Schweizer-Franken-Stablecoin funktioniert gleich. Der wesentliche Unterschied ist, ob ein Unternehmen ihn gegen Bankeinlagen ausgibt oder ein Protokoll gegen On-Chain-Sicherheiten."
+  },
+  "head": [
+    "",
+    "ZCHF (Frankencoin)",
+    "Emittentengedeckte CHF-Stablecoins",
+    "USDC"
+  ],
+  "rows": [
+    [
+      "Währung",
+      "Schweizer Franken",
+      "Schweizer Franken",
+      "US-Dollar"
+    ],
+    [
+      "Deckung",
+      "Überbesicherte BTC, ETH, Gold und Aktien, on-chain sichtbar",
+      "Bankeinlagen und Wertpapiere beim Emittenten, gemäss dessen Berichten",
+      "Bargeld und US-Staatsanleihen bei Circle, gemäss dessen Bestätigungen"
+    ],
+    [
+      "Ausgabe und Kontrolle",
+      "Von jedem gegen Sicherheiten geprägt; Regeln von den Inhabern von FCS (Frankencoin Shares) festgelegt; keine Einfrier-Funktion",
+      "Vom Unternehmen ausgegeben, das Guthaben sperren oder einfrieren kann",
+      "Von Circle ausgegeben, das Adressen einfrieren kann"
+    ],
+    [
+      "Sparzugang",
+      "Sparzins des Protokolls, von der Governance festgelegt",
+      "Nicht eingebaut",
+      "Nicht eingebaut"
+    ],
+    [
+      "Rücknahme",
+      "Kein Emittent für die Rücknahme; Bindung durch Sicherheiten und Arbitrage gehalten",
+      "Beim Emittenten, für berechtigte Kunden",
+      "Bei Circle, für berechtigte Kunden"
+    ]
+  ],
+  "note": "Die mittlere Spalte fasst mehrere emittentengedeckte Schweizer-Franken-Token zusammen; Reserven, Bedingungen und Berechtigung unterscheiden sich von Emittent zu Emittent.",
+  "tradeoff": {
+    "title": "Der Kompromiss",
+    "body": "Ein emittentengedeckter Token gibt Ihnen ein Unternehmen, bei dem Sie zurücktauschen können, und ein Unternehmen, das Sie einfrieren kann. ZCHF gibt Ihnen weder das eine noch das andere: Niemand kann Ihr Guthaben sperren, und sein Wert von einem Franken beruht auf Überbesicherung und dem Markt statt auf einem Rücknahmeversprechen."
+  },
+  "nextHead": {
+    "title": "Sehen Sie es im Einsatz."
+  },
+  "next": [
+    {
+      "title": "In CHF sparen",
+      "description": "Was der Sparzins ist, wie Einlagen funktionieren und was Sie erwarten können.",
+      "href": "/use-cases/save-in-chf",
+      "cta": "Sparen"
+    },
+    {
+      "title": "Leihen",
+      "description": "ZCHF gegen BTC, ETH, Gold oder Aktien prägen.",
+      "href": "/use-cases/borrow",
+      "cta": "Leihen"
+    },
+    {
+      "title": "Transparenz",
+      "description": "Aktuelle Zahlen zu Sicherheiten, Umlauf und Reserve, direkt von der Chain.",
+      "href": "/transparency",
+      "cta": "Deckung prüfen"
+    }
+  ]
+}

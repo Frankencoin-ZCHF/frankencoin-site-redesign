@@ -1,88 +1,69 @@
 ---
-import Section from "../components/Layout/Section.astro";
-import SectionHeader from "../components/Layout/SectionHeader.astro";
-import FlexStack from "../components/Layout/FlexStack.astro";
+/* /frontends — interfaces to the protocol, each run by its own operator. Copy: content/en/frontends.json; list: content/shared/frontends.json */
 import Base from "../layouts/Base.astro";
-import FrontendCard from "../components/Frontends/FrontendCard.astro";
-import FrontendsWarning from "../components/Frontends/FrontendsWarning.astro";
-import {
-  getLanguageFromURL,
-  loadContent,
-  loadGlobalSharedContent,
-} from "../utils/i18n";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import { getLanguageFromURL, loadContent, loadGlobalSharedContent } from "../utils/i18n";
 
-const currentLang = getLanguageFromURL(Astro.url.pathname);
-const content = await loadContent("frontends", currentLang);
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("frontends", "en");
+const local = await loadContent<any>("frontends", lang);
+// German copy predates today's keys (note, associationLabel, new labels): fall back to English per key.
+const c = { ...en, ...local, header: { ...en.header, ...local.header }, labels: { ...en.labels, ...local.labels } };
 const data = await loadGlobalSharedContent<{ frontends: any[] }>("frontends");
 
-// Shuffle at build time so no frontend gets permanent top-billing.
+// Shuffle at render time so no frontend gets permanent top billing.
 const frontends = [...data.frontends];
 for (let i = frontends.length - 1; i > 0; i--) {
   const j = Math.floor(Math.random() * (i + 1));
   [frontends[i], frontends[j]] = [frontends[j], frontends[i]];
 }
+const display = (url: string) => url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+const featureOrder = ["openSource", "ownDomain", "selfHostedApi", "selfHostedIndexer"] as const;
+const L = c.labels;
 ---
 
-<Base
-  title={content.seo.title}
-  description={content.seo.description}
->
-  <Section
-    variant="accent"
-    align="left"
-    pad="xs"
-    id="frontends-header"
-  >
-    <div class="flex flex-col gap-[var(--spacing-l)] max-w-4xl mx-auto">
-      <SectionHeader
-        title={content.header.title}
-        subtitle={content.header.subtitle}
-        maxWidth="2xl"
-        size="display"
-        align="center"
-        margin="none"
-        padding="md"
-      />
-      <FrontendsWarning
-        eyebrow={content.warning.eyebrow}
-        title={content.warning.title}
-        body={content.warning.body}
-      />
-    </div>
-  </Section>
+<Base title={c.seo.title} description={c.seo.description}>
+  <LPHero compact title={c.header.title} subtitle={c.header.subtitle} />
 
-  <Section
-    variant="plain"
-    align="left"
-    pad="xs"
-    id="frontends-list"
-  >
-    <div class="max-w-4xl mx-auto">
-      <p class="ty-body-2 text-[var(--color-neutral-650)] mb-[var(--spacing-xl)] italic">
-        {content.addYours.before}
-        <a
-          href="https://github.com/Frankencoin-ZCHF/frankencoin-site/tree/main/src/content/shared/frontends.json"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="not-italic text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)] underline font-semibold"
-        >{content.addYours.linkLabel}</a>{content.addYours.after}
-      </p>
-      <FlexStack direction="col" gap="24px">
-        {
-          frontends.map((f) => (
-            <FrontendCard
-              name={f.name}
-              url={f.url}
-              creator={f.creator}
-              creatorUrl={f.creatorUrl}
-              repo={f.repo}
-              notes={f.notes}
-              features={f.features}
-              labels={content.labels}
-            />
-          ))
-        }
-      </FlexStack>
+  <LPSection id="frontends-list">
+    <div class="mb-10 rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] p-6 md:p-7 max-w-3xl">
+      <h2 class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{c.note.title}</h2>
+      <p class="mt-2 ty-body-3 text-[var(--color-neutral-650)] m-0">{c.note.body}</p>
     </div>
-  </Section>
+
+    <div class="overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white" role="table">
+      <div role="row" class="hidden lg:grid lg:grid-cols-[1.6fr_1fr_1.3fr_auto] gap-6 px-6 py-3 border-b border-[var(--color-gray-20)] bg-[var(--color-gray-10)] ty-xs font-bold text-[var(--color-neutral-550)]">
+        <span role="columnheader">{L.frontend}</span><span role="columnheader">{L.creator}</span><span role="columnheader">{L.features}</span><span role="columnheader" class="sr-only">Links</span>
+      </div>
+      {frontends.map((f) => (
+        <div role="row" class="grid lg:grid-cols-[1.6fr_1fr_1.3fr_auto] gap-4 lg:gap-6 px-6 py-5 border-b border-[var(--color-gray-20)] last:border-b-0 items-start">
+          <div role="cell" class="min-w-0">
+            <a href={f.url} target="_blank" rel="noopener noreferrer" class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)] break-all">{display(f.url)}</a>
+            {f.association && <span class="ml-2 inline-block align-middle rounded-full bg-[var(--color-brand-deep-blue)] px-2.5 py-0.5 ty-xs font-bold text-white">{c.associationLabel}</span>}
+            <p class="mt-1.5 ty-body-3 text-[var(--color-neutral-650)] m-0">{f.notes}</p>
+          </div>
+          <div role="cell" class="min-w-0">
+            <span class="lg:hidden ty-xs font-bold text-[var(--color-neutral-550)]">{L.creator}: </span>
+            <a href={f.creatorUrl} target="_blank" rel="noopener noreferrer" class="ty-body-3 font-bold text-[var(--color-brand-deep-blue)] hover:underline">{f.creator}</a>
+          </div>
+          <ul role="cell" class="m-0 p-0 list-none flex flex-wrap gap-1.5">
+            {featureOrder.map((k) => (
+              <li class={`inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 ty-xs font-bold ${f.features?.[k] ? "border-[#5bb8dc]/60 bg-[#5bb8dc]/10 text-[var(--color-brand-deep-blue)]" : "border-[var(--color-gray-20)] text-[var(--color-neutral-550)] line-through decoration-[var(--color-neutral-550)]/50"}`} title={`${L[k]}: ${f.features?.[k] ? L.yes : L.no}`}>
+                {L[k]}
+              </li>
+            ))}
+          </ul>
+          <div role="cell" class="flex flex-wrap gap-2 lg:justify-end">
+            <a href={f.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full bg-[var(--color-brand-deep-blue)] hover:bg-[var(--color-brand-swiss)] text-white font-bold ty-xs px-4 py-2 transition-colors">{L.live} ↗</a>
+            <a href={f.repo} target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full border border-[var(--color-gray-30)] hover:border-[var(--color-brand-deep-blue)] text-[var(--color-brand-deep-blue)] font-bold ty-xs px-4 py-2 transition-colors">{L.repo} ↗</a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-8 ty-body-3 text-[var(--color-neutral-650)] m-0">
+      {c.addYours.before}<a href="https://github.com/Frankencoin-ZCHF/frankencoin-site/tree/main/src/content/shared/frontends.json" target="_blank" rel="noopener noreferrer" class="font-bold text-[var(--color-brand-swiss)] hover:underline">{c.addYours.linkLabel}</a>{c.addYours.after}
+    </p>
+  </LPSection>
 </Base>

@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Frankencoin for exchanges and wallets: list ZCHF, add savings, share the interest",
+    "description": "List the decentralized Swiss franc or add savings to your wallet and receive a share of the interest your users earn, paid by the contract."
+  },
+  "hero": {
+    "title": "Give your users the Swiss franc.|Earn on their savings.",
+    "subtitle": "List ZCHF as a standard token, or add savings to your wallet and receive a share of the interest your users earn.",
+    "primary": {
+      "label": "Discuss an integration",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Referral program",
+      "href": "/referral"
+    }
+  },
+  "why": {
+    "title": "What you get",
+    "items": [
+      {
+        "title": "Swiss franc access",
+        "description": "A decentralized Swiss franc stablecoin, live since 2023, backed by collateral your users can inspect on-chain."
+      },
+      {
+        "title": "Savings for your users",
+        "description": "Deposits in the savings module earn the protocol rate. Users keep custody and can withdraw any time."
+      },
+      {
+        "title": "Revenue sharing",
+        "description": "Set your address as referrer when users deposit and receive up to 25% of their interest, paid by the contract. Users see the deduction and can remove the referrer.",
+        "href": "/referral",
+        "cta": "How referral works"
+      }
+    ],
+    "chains": "ZCHF is a standard ERC-20 (18 decimals) on Ethereum, Base, Arbitrum, Optimism, Polygon, Gnosis, Avalanche and Sonic, bridged with Chainlink CCIP."
+  },
+  "options": {
+    "title": "Two ways to integrate",
+    "items": [
+      {
+        "title": "List ZCHF",
+        "description": "Add the token to your exchange or wallet. Addresses per chain, logos and supply endpoints are public.",
+        "href": "/token",
+        "cta": "Addresses per chain"
+      },
+      {
+        "title": "Integrate savings",
+        "description": "Call the savings contract with your referrer address and share. One deposit transaction for the user; interest starts three days later.",
+        "href": "https://docs.frankencoin.com/",
+        "cta": "Read the docs"
+      }
+    ]
+  },
+  "resources": {
+    "title": "Resources",
+    "items": [
+      {
+        "label": "Token addresses",
+        "href": "/token"
+      },
+      {
+        "label": "Circulating supply API",
+        "href": "https://api.frankencoin.com/ecosystem/coinmarketcap/totalsupply"
+      },
+      {
+        "label": "Protocol figures API",
+        "href": "https://api.frankencoin.com/ecosystem/frankencoin/info"
+      },
+      {
+        "label": "Logos and brand",
+        "href": "/press"
+      },
+      {
+        "label": "Developer docs",
+        "href": "https://docs.frankencoin.com/"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Listing or integrating ZCHF?",
+    "body": "The association supports listings with liquidity introductions, co-marketing and technical help.",
+    "primary": {
+      "label": "Discuss an integration",
+      "href": "mailto:info@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Referral program",
+      "href": "/referral"
+    }
+  }
+}

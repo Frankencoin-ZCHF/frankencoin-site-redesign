@@ -1,102 +1,42 @@
 {
-	"eyebrow": "Rechtliches & Regulatorisches",
-	"title": "Frankencoin Compliance",
-	"intro": "Frankencoin ist vollständig konform mit den Schweizer und EU-Vorschriften. Unabhängige rechtliche Gutachten bestätigen, dass ZCHF ohne Einschränkungen als Payment Token verwendet werden kann; das veröffentlichte ZCHF MiCA White Paper ergänzt die EU-Dokumentation für Admission-to-Trading-Prozesse.",
-	"toc": {
-		"title": "Auf dieser Seite",
-		"items": [
-			{ "label": "Schweizer Regulatorische Klassifizierung", "href": "#swiss-compliance" },
-			{ "label": "EU MiCA-Klassifizierung", "href": "#eu-compliance" },
-			{ "label": "Für regulierte Finanzintermediäre", "href": "#compliance-contact" },
-			{ "label": "Zusammenfassung", "href": "#compliance-summary" }
-		]
-	},
-	"swiss": {
-		"title": "Schweizer Regulatorische Klassifizierung",
-		"subtitle": "Klassifiziert als Payment Token gemäss FINMA-Richtlinien",
-		"description": "Ein Rechtsgutachten von LEXR Law Switzerland AG bestätigt, dass Frankencoin (ZCHF) als Payment Token und Stablecoin gemäss den Richtlinien der Eidgenössischen Finanzmarktaufsicht (FINMA) qualifiziert. Der Token ist nicht als Utility, Asset oder Security Token klassifiziert.",
-		"keyPoints": [
-			{
-				"title": "Payment Token",
-				"description": "Die primäre Funktion von ZCHF ist die eines Zahlungsmittels – konkret ein an den CHF gekoppeltes Tauschmittel."
-			},
-			{
-				"title": "Währungsgebundener Stablecoin",
-				"description": "Da 1 ZCHF an 1 CHF gekoppelt sein soll, qualifiziert er als währungsgebundener Stablecoin gemäss den FINMA-Stablecoin-Richtlinien."
-			},
-			{
-				"title": "Keine Wertpapier-Klassifizierung",
-				"description": "ZCHF stellt keinen rechtlichen Anspruch gegen irgendjemanden dar – es gibt keinen Emittenten ausser dem Smart-Contract-Code, der die Mint-Funktion ausführt."
-			},
-			{
-				"title": "Nutzungsfreiheit",
-				"description": "Die blosse Verwendung von ZCHF als Zahlungsmittel für den Erwerb von Waren oder Dienstleistungen unterliegt generell nicht dem Schweizer Finanzmarktrecht."
-			}
-		],
-		"fpsTitle": "Frankencoin Pool Shares (FPS)",
-		"fpsDescription": "FPS qualifiziert als voll funktionsfähiger Utility Token gemäss FINMA-Richtlinien. Er ermöglicht den Zugang zu den Governance-Funktionen des Frankencoin-Systems (Abstimmung und Veto bei Positionen). Die Nutzung und der Austausch von FPS ist nicht unter dem Schweizer Finanzmarktrecht reguliert.",
-		"documentLabel": "Vollständige Schweizer Rechtsklassifizierung lesen",
-		"documentHref": "/2024-08-14_Frankencoin_Swiss_Regulatory_Classification.pdf"
-	},
-	"eu": {
-		"title": "EU MiCA-Klassifizierung",
-		"subtitle": "Vollständig konformes Crypto-Asset ohne identifizierbaren Emittenten",
-		"description": "Ein Rechtsgutachten von LEXR Germany Rechtsanwalts GmbH bestätigt, dass Frankencoin als Crypto-Asset gemäss der EU-Verordnung über Märkte für Kryptowerte (MiCA) qualifiziert. Aufgrund des dezentralen Designs von ZCHF und des fehlenden identifizierbaren Emittenten gelten die regulatorischen Emittentenpflichten gemäss MiCA Titel II, III und IV nicht. Diese Position wird nun zusätzlich durch das veröffentlichte ZCHF MiCA White Paper gestützt, das ZCHF als dezentrales, überbesichertes Crypto-Asset beschreibt, das durch Smart Contracts statt durch einen zentralen Emittenten geschaffen wird. Das White Paper hält fest, dass ZCHF-Inhaber keinen vertraglichen Rückzahlungsanspruch gegenüber einem Emittenten haben und ZCHF daher am besten als Crypto-Asset einzuordnen ist, das weder ein Asset-Referenced Token noch ein E-Money Token ist. Das ZCHF White Paper erscheint im ESMA Interim MiCA Register für Crypto-Assets ausser ARTs und EMTs.",
-		"keyPoints": [
-			{
-				"title": "Dezentrales Protokoll",
-				"description": "ZCHF wird durch ein dezentrales Protokoll generiert, das nicht zentral von einer juristischen Person, einem Unternehmen oder einer natürlichen Person organisiert oder kontrolliert wird. Es gibt keinen identifizierbaren Emittenten."
-			},
-			{
-				"title": "MiCA-Emittentenpflichten gelten nicht",
-				"description": "Da ZCHF keinen identifizierbaren Emittenten hat, gelten die in MiCA Titel II, III und IV festgelegten Pflichten nicht für ZCHF."
-			},
-			{
-				"title": "Kein EMT oder ART",
-				"description": "Obwohl ZCHF den Schweizer Franken wirtschaftlich abbildet, erhalten Inhaber keinen vertraglichen Rückzahlungsanspruch gegenüber einem Emittenten. Das MiCA White Paper charakterisiert ZCHF daher als Crypto-Asset, das weder ein Asset-Referenced Token noch ein E-Money Token ist."
-			},
-			{
-				"title": "MiCA White Paper veröffentlicht",
-				"description": "Ein MiCA-formatiges White Paper für ZCHF wurde veröffentlicht, um Admission-to-Trading- und Listing-Prozesse zu unterstützen. Es enthält strukturierte Informationen zum Protokoll, zu Risiken, Rechten, zugrunde liegender Technologie und Nachhaltigkeitsangaben."
-			},
-			{
-				"title": "Im ESMA Interim MiCA Register gelistet",
-				"description": "Das ZCHF White Paper erscheint im ESMA Interim MiCA Register unter White Papers für Crypto-Assets ausser ARTs und EMTs. Der Registereintrag nennt MiCA Crypto Alliance Opco Limited, die Malta Financial Services Authority als zuständige Behörde und den 16. Juni 2026 als letztes Aktualisierungsdatum."
-			},
-			{
-				"title": "CASP-Compliance",
-				"description": "Crypto-Asset-Service-Provider, die Dienstleistungen im Zusammenhang mit ZCHF anbieten, unterliegen weiterhin ihren eigenen MiCA-, AML-, Sanktions-, Verbraucherschutz- und jurisdiktionsspezifischen Pflichten. Diese Pflichten gelten für den Service Provider, nicht weil ZCHF einer Emittenten-White-Paper-Pflicht unterliegt."
-			}
-		],
-		"documentLabel": "Vollständiges EU MiCA-Rechtsgutachten lesen",
-		"documentHref": "/20260209 ZCHF MiCA Frankencoin Association Public Summary FINAL.pdf",
-		"documents": [
-			{
-				"label": "EU MiCA-Rechtsgutachten (PDF)",
-				"href": "/20260209 ZCHF MiCA Frankencoin Association Public Summary FINAL.pdf"
-			},
-			{
-				"label": "ZCHF MiCA White Paper",
-				"href": "https://storage.googleapis.com/exponential-science-project1.appspot.com/IXBRL/ZCHF%20-%2029-05-2026/ZCHF-viewer.xhtml#f-fact_9"
-			},
-			{
-				"label": "ESMA Interim MiCA Register",
-				"href": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica#InterimMiCARegister"
-			}
-		]
-	},
-	"contact": {
-		"title": "Compliant Financial Rails bauen",
-		"description": "Die Frankencoin Association arbeitet aktiv mit Regulatoren und Compliance-Spezialisten daran, die Finanzinfrastruktur der Zukunft zu bauen. Arbeiten Sie mit einem regulierten Finanzintermediär in der Schweiz und möchten sehen, wie Ihre Organisation Produkte mit Frankencoin vollständig compliant anbieten kann?",
-		"ctaLabel": "Kontaktieren Sie compliance@frankencoin.com",
-		"ctaHref": "mailto:compliance@frankencoin.com"
-	},
-	"summary": {
-		"title": "Zusammenfassung",
-		"description": "Beide Rechtsgutachten bestätigen, dass Frankencoin frei für Zahlungen und Transaktionen verwendet werden kann und vollständig konform mit den anwendbaren Schweizer und EU-Regulierungen ist. In der Schweiz qualifiziert ZCHF als Payment Token. In der EU stützen das LEXR-Rechtsgutachten und das veröffentlichte MiCA White Paper die Position, dass ZCHF ein Crypto-Asset ohne identifizierbaren Emittenten ist und dass die MiCA-Emittentenpflichten gemäss Titel II, III und IV nicht gelten."
-	},
-	"disclaimer": {
-		"title": "Haftungsausschluss",
-		"text": "Die Informationen auf dieser Seite fassen unabhängige Rechtsgutachten zusammen und stellen keine Rechtsberatung dar. Es besteht weiterhin regulatorische Unsicherheit in Bezug auf dezentrale Finanzanwendungen. Bitte konsultieren Sie die Originaldokumente und suchen Sie professionelle Rechtsberatung für Ihre spezifische Situation."
-	}
+  "heroTitle": "In der Schweiz eingeordnet.|Für die EU dokumentiert.",
+  "intro": "Zwei unabhängige Rechtsgutachten von LEXR beschreiben, wie ZCHF und die Pool-Shares in das Schweizer und das EU-Recht passen. Diese Seite fasst sie zusammen; die Dokumente selbst sind unten verlinkt.",
+  "rows": [
+    {
+      "title": "Schweiz",
+      "body": "Gemäss dem Gutachten von LEXR Law Switzerland AG (August 2024) qualifiziert ZCHF nach den FINMA-Richtlinien als Payment Token und währungsgebundener Stablecoin, nicht als Effekte, und die Verwendung zur Bezahlung von Waren und Dienstleistungen unterliegt generell nicht dem Schweizer Finanzmarktrecht. Dasselbe Gutachten stuft die Pool-Shares (FPS) als Utility Token ein, der Zugang zur Governance gibt.",
+      "cta": { "label": "Schweizer Rechtsklassifizierung (PDF)", "href": "/2024-08-14_Frankencoin_Swiss_Regulatory_Classification.pdf" }
+    },
+    {
+      "title": "Europäische Union",
+      "body": "Gemäss dem Gutachten von LEXR Germany Rechtsanwalts GmbH (Februar 2026) ist ZCHF ein Kryptowert nach MiCA ohne identifizierbaren Emittenten, weshalb die Emittentenpflichten der MiCA-Titel II bis IV nicht auf ihn anwendbar sind. Ein White Paper für ZCHF im MiCA-Format wurde veröffentlicht und erscheint im Interim-MiCA-Register der ESMA. Der Registereintrag erfasst das White Paper; er ist keine Bewilligung oder Empfehlung durch die ESMA oder eine andere Behörde.",
+      "cta": { "label": "EU-MiCA-Rechtsgutachten (PDF)", "href": "/20260209 ZCHF MiCA Frankencoin Association Public Summary FINAL.pdf" }
+    },
+    {
+      "title": "Dienstleister",
+      "body": "Börsen, Verwahrer und andere Anbieter von Kryptowerte-Dienstleistungen, die ZCHF handhaben, unterliegen weiterhin ihren eigenen Bewilligungs-, Geldwäscherei- und Konsumentenschutzpflichten in ihrer Jurisdiktion. Die Gutachten beschreiben den Token, nicht die Pflichten der Unternehmen, die ihn anbieten.",
+      "cta": { "label": "ZCHF-MiCA-White-Paper", "href": "https://storage.googleapis.com/exponential-science-project1.appspot.com/IXBRL/ZCHF%20-%2029-05-2026/ZCHF-viewer.xhtml#f-fact_9" }
+    }
+  ],
+  "documents": {
+    "title": "Dokumente",
+    "items": [
+      { "label": "Schweizer Rechtsklassifizierung (PDF)", "href": "/2024-08-14_Frankencoin_Swiss_Regulatory_Classification.pdf" },
+      { "label": "EU-MiCA-Rechtsgutachten (PDF)", "href": "/20260209 ZCHF MiCA Frankencoin Association Public Summary FINAL.pdf" },
+      { "label": "ZCHF-MiCA-White-Paper", "href": "https://storage.googleapis.com/exponential-science-project1.appspot.com/IXBRL/ZCHF%20-%2029-05-2026/ZCHF-viewer.xhtml#f-fact_9" },
+      { "label": "Interim-MiCA-Register der ESMA", "href": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica#InterimMiCARegister" }
+    ]
+  },
+  "cta": {
+    "title": "Fragen aus Ihrem Compliance-Team?",
+    "body": "Der Frankencoin-Verein arbeitet mit regulierten Intermediären zusammen, die ZCHF-Produkte anbieten möchten.",
+    "primary": {
+      "label": "compliance@frankencoin.com",
+      "href": "mailto:compliance@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Sicherheit und Audits",
+      "href": "/security"
+    }
+  }
 }

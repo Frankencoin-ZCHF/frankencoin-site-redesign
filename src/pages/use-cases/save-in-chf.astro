@@ -1,0 +1,51 @@
+---
+/* /use-cases/save-in-chf — save in Swiss francs at the protocol rate. Copy: content/en/save-in-chf.json */
+import Base from "../../layouts/Base.astro";
+import LPHero from "../../components/LP/LPHero.astro";
+import LPSection from "../../components/LP/LPSection.astro";
+import Figures from "../../components/LP/Figures.astro";
+import FaqList from "../../components/LP/FaqList.astro";
+import WhyNotTbills from "../../components/Home/WhyNotTbills.astro";
+import FrancVsDollar from "../../components/Home/FrancVsDollar.astro";
+import CtaBand from "../../components/LP/CtaBand.astro";
+import TrustStrip from "../../components/TrustStrip/TrustStrip.astro";
+import StickyCTA from "../../components/StickyCTA/StickyCTA.astro";
+import Steps from "../../components/Steps/Steps.astro";
+import { getLanguageFromURL, getLocalizedPath, loadContent } from "../../utils/i18n";
+import { getCalcData } from "../../utils/calcStats";
+import { formatAmount, formatPct } from "../../utils/fcsStats";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("save-in-chf", "en");
+const local = await loadContent<any>("save-in-chf", lang);
+// German copy may lack today's keys: fall back to English per key.
+const c = { ...en, ...local };
+const d = await getCalcData();
+const rate = formatPct(d.current.rate, 2).replace(/\.00%$/, "%");
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero title={c.hero.title.replace("{rate}", rate)} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} image="/images/home/mountain-lake-halftone.webp" imageLayout="side" imagePosition="object-[55%_50%]">
+    <Figures slot="aside" items={[{ ...c.figures.rate, value: rate }, { ...c.figures.saved, value: formatAmount(d.current.totalSavings) }]} />
+  </LPHero>
+
+  <LPSection id="interest" title={c.how.title} split accent>
+    <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] m-0">{c.how.body}</p>
+    <a href={getLocalizedPath(c.how.cta.href, lang)} class="mt-5 inline-flex items-center gap-1 font-bold text-[var(--color-brand-swiss)] hover:underline">{c.how.cta.label} →</a>
+  </LPSection>
+
+  <FrancVsDollar />
+  <WhyNotTbills rate={rate} />
+
+  <LPSection id="start" title={c.steps.title} subtitle={c.steps.subtitle} accent>
+    <Steps steps={c.steps.items} />
+    <p class="mt-6 ty-body-3 text-[var(--color-neutral-650)] m-0">{c.steps.alt.text} <a href={getLocalizedPath(c.steps.alt.href, lang)} class="font-bold text-[var(--color-brand-swiss)] hover:underline">{c.steps.alt.label} →</a></p>
+  </LPSection>
+
+  <LPSection><TrustStrip items={c.trust} /></LPSection>
+  <LPSection title={c.faqHead.title} split accent><FaqList items={c.faq} /></LPSection>
+  <CtaBand {...c.cta} />
+  <StickyCTA label={c.sticky.label} sub={c.sticky.sub} href="https://app.frankencoin.com/savings" />
+</Base>
