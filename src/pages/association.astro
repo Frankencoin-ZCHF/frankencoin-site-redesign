@@ -1,5 +1,5 @@
 ---
-/* /association — the Frankencoin Association: why CHF, the two tokens, figures, board and advisers, membership, contact.
+/* /association — the Frankencoin Association: why CHF, figures, board and advisers, what it does, contact.
    Copy: content/en/association.json (same English copy under de/ for now). Photos: public/images/team. */
 import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
@@ -24,10 +24,6 @@ const linkedin = { target: "_blank", rel: "noopener noreferrer" };
   <LPSection id="why" title={c.why.title} subtitle={c.why.subtitle} split>
     <FeatureGrid items={c.why.items} cols={2} />
     <p class="mt-6 ty-body-2 text-pretty text-[var(--color-neutral-650)] m-0">{c.why.note}</p>
-  </LPSection>
-
-  <LPSection id="tokens" title={c.tokens.title} accent>
-    <FeatureGrid items={c.tokens.items} cols={2} />
   </LPSection>
 
   <LPSection id="today" title={c.today.title}>
@@ -68,7 +64,7 @@ const linkedin = { target: "_blank", rel: "noopener noreferrer" };
     </ul>
   </LPSection>
 
-  <LPSection id="membership" title={c.membership.title} subtitle={c.membership.subtitle} split>
+  <LPSection id="what-we-do" title={c.membership.title} subtitle={c.membership.subtitle} split>
     <ul class="m-0 p-0 list-none divide-y divide-[var(--color-gray-20)] border-y border-[var(--color-gray-20)]">
       {c.membership.items.map((it: { title: string; description: string }) => (
         <li class="grid md:grid-cols-[1fr_1.6fr] gap-2 md:gap-10 py-6 md:py-8">

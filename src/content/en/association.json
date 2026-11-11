@@ -6,36 +6,65 @@
   "hero": {
     "title": "The Frankencoin|Association",
     "subtitle": "The independent Swiss association behind ZCHF, the largest Swiss franc stablecoin.",
-    "primary": { "label": "Become a member", "href": "mailto:johannes@frankencoin.com" },
-    "secondary": { "label": "Read the whitepaper", "href": "https://www.zora.uzh.ch/entities/publication/b1bff836-6852-457d-93e6-496807db37fa" }
+    "primary": {
+      "label": "Become a member",
+      "href": "mailto:johannes@frankencoin.com"
+    },
+    "secondary": {
+      "label": "Read the whitepaper",
+      "href": "https://www.zora.uzh.ch/entities/publication/b1bff836-6852-457d-93e6-496807db37fa"
+    }
   },
   "why": {
     "title": "Why the Swiss franc",
     "subtitle": "Switzerland is built to keep its money safe and stable. That is the asset.",
     "items": [
-      { "title": "Debt brake.", "description": "Written into the constitution and voted by the people. Spending follows revenue." },
-      { "title": "AAA.", "description": "Top rating from all three major agencies." },
-      { "title": "Independent central bank.", "description": "Its mandate is price stability, not elections." },
-      { "title": "Neutral since 1815.", "description": "When the world is uncertain, capital comes here." }
+      {
+        "title": "Debt brake.",
+        "description": "Written into the constitution and voted by the people. Spending follows revenue."
+      },
+      {
+        "title": "AAA.",
+        "description": "Top rating from all three major agencies."
+      },
+      {
+        "title": "Independent central bank.",
+        "description": "Its mandate is price stability, not elections."
+      },
+      {
+        "title": "Neutral since 1815.",
+        "description": "When the world is uncertain, capital comes here."
+      }
     ],
     "note": "Since 1971 the dollar has lost about 80% of its value against the franc. Yet the franc is around 1% of world payments and only 0.015% of stablecoins. The Swiss Bankers Association puts the potential for CHF stablecoins at CHF 2.8–3.0bn at today's market size."
-  },
-  "tokens": {
-    "title": "Two tokens. One system. On-chain.",
-    "items": [
-      { "title": "ZCHF, the money.", "description": "A Swiss franc stablecoin, minted against Bitcoin, Ether, gold and tokenized equities. About 1.5× collateralized. No issuer." },
-      { "title": "FCS, the ownership.", "description": "A share of the protocol's equity. It collects net income, absorbs losses and governs which collateral is accepted." }
-    ]
   },
   "today": {
     "title": "Frankencoin today",
     "items": [
-      { "value": "34.6m", "label": "ZCHF in circulation, pegged 1:1 since 2023" },
-      { "value": "#5", "label": "Largest non-dollar stablecoin worldwide" },
-      { "value": "#2", "label": "Lender against tokenized stocks onchain" },
-      { "value": "CHF 51.8m", "label": "Collateral locked" },
-      { "value": "450m", "label": "ZCHF traded per year" },
-      { "value": "Kraken, ether.fi", "label": "Listed and live, with more integrations on the way" }
+      {
+        "value": "34.6m",
+        "label": "ZCHF in circulation, pegged 1:1 since 2023"
+      },
+      {
+        "value": "#5",
+        "label": "Largest non-dollar stablecoin worldwide"
+      },
+      {
+        "value": "#2",
+        "label": "Lender against tokenized stocks onchain"
+      },
+      {
+        "value": "CHF 51.8m",
+        "label": "Collateral locked"
+      },
+      {
+        "value": "450m",
+        "label": "ZCHF traded per year"
+      },
+      {
+        "value": "Kraken, ether.fi",
+        "label": "Listed and live, with more integrations on the way"
+      }
     ],
     "note": "Figures as of November 2026."
   },
@@ -44,29 +73,90 @@
     "board": {
       "title": "Board and management",
       "items": [
-        { "name": "Dr. Luzius Meisser", "photo": "/images/team/luzius-meisser.jpg", "linkedin": "https://www.linkedin.com/in/luziusmeisser", "bio": "Inventor of Frankencoin and board member. Former chairman of Bitcoin Suisse and founder of the Bitcoin Association Switzerland." },
-        { "name": "Johannes Kern", "photo": "/images/team/johannes-kern.jpg", "linkedin": "https://www.linkedin.com/in/johanneskern93", "bio": "Managing Director. A decade between traditional finance and crypto. Took Frankencoin to MiCA, Kraken and Swiss retail." },
-        { "name": "Jan Hürlimann", "photo": "/images/team/jan-huerlimann.jpg", "linkedin": "https://www.linkedin.com/in/jan-h%C3%BCrlimann-05264610b", "bio": "Board member. Entrepreneur and investor across construction, real estate and fintech." }
+        {
+          "name": "Dr. Luzius Meisser",
+          "photo": "/images/team/luzius-meisser.jpg",
+          "linkedin": "https://www.linkedin.com/in/luziusmeisser",
+          "bio": "Inventor of Frankencoin and board member. Former chairman of Bitcoin Suisse and founder of the Bitcoin Association Switzerland."
+        },
+        {
+          "name": "Johannes Kern",
+          "photo": "/images/team/johannes-kern.jpg",
+          "linkedin": "https://www.linkedin.com/in/johanneskern93",
+          "bio": "Managing Director. A decade between traditional finance and crypto. Took Frankencoin to MiCA, Kraken and Swiss retail."
+        },
+        {
+          "name": "Jan Hürlimann",
+          "photo": "/images/team/jan-huerlimann.jpg",
+          "linkedin": "https://www.linkedin.com/in/jan-h%C3%BCrlimann-05264610b",
+          "bio": "Board member. Entrepreneur and investor across construction, real estate and fintech."
+        }
       ]
     },
     "advisers": {
       "title": "Advisory board",
       "items": [
-        { "name": "Eric Sarasin", "photo": "/images/team/eric-sarasin.jpg", "linkedin": "https://www.linkedin.com/in/eric-sarasin/", "bio": "28 years at Bank Sarasin, last as deputy CEO." },
-        { "name": "René Keller", "photo": "/images/team/rene-keller.jpg", "linkedin": "https://www.linkedin.com/in/rene-w-keller", "bio": "Former member of the FINMA executive board. Adviser at Bain." },
-        { "name": "Cédric Waldburger", "photo": "/images/team/cedric-waldburger.jpg", "linkedin": "https://www.linkedin.com/in/cedricwaldburger", "bio": "Co-founder of Dfinity, founder of Tomahawk VC." },
-        { "name": "André Scherrer", "photo": "/images/team/andre-scherrer.jpg", "linkedin": "https://www.linkedin.com/in/andr%C3%A9-scherrer-%F0%9F%87%BF%F0%9F%87%A6-85297886", "bio": "COO of Spar Switzerland." },
-        { "name": "Philip Hopf", "photo": "/images/team/philip-hopf.jpg", "linkedin": "https://www.linkedin.com/in/philip-hopf-871b921a8", "bio": "Macro investor and leading German-language finance voice." }
+        {
+          "name": "Eric Sarasin",
+          "photo": "/images/team/eric-sarasin.jpg",
+          "linkedin": "https://www.linkedin.com/in/eric-sarasin/",
+          "bio": "28 years at Bank Sarasin, last as deputy CEO."
+        },
+        {
+          "name": "René Keller",
+          "photo": "/images/team/rene-keller.jpg",
+          "linkedin": "https://www.linkedin.com/in/rene-w-keller",
+          "bio": "Former member of the FINMA executive board. Adviser at Bain."
+        },
+        {
+          "name": "Cédric Waldburger",
+          "photo": "/images/team/cedric-waldburger.jpg",
+          "linkedin": "https://www.linkedin.com/in/cedricwaldburger",
+          "bio": "Co-founder of Dfinity, founder of Tomahawk VC."
+        },
+        {
+          "name": "André Scherrer",
+          "photo": "/images/team/andre-scherrer.jpg",
+          "linkedin": "https://www.linkedin.com/in/andr%C3%A9-scherrer-%F0%9F%87%BF%F0%9F%87%A6-85297886",
+          "bio": "COO of Spar Switzerland."
+        },
+        {
+          "name": "Philip Hopf",
+          "photo": "/images/team/philip-hopf.jpg",
+          "linkedin": "https://www.linkedin.com/in/philip-hopf-871b921a8",
+          "bio": "Macro investor and leading German-language finance voice."
+        }
       ]
     }
   },
   "membership": {
-    "title": "A seat inside the Swiss network",
-    "subtitle": "Membership in the Frankencoin Association is by invitation.",
+    "title": "What the Association does",
+    "subtitle": "The Frankencoin Association brings the best financial products to Switzerland and stands up for the stability of the Swiss economy and the franc, at home and globally. Membership is by invitation.",
     "items": [
-      { "title": "Members' meeting in Zug.", "description": "Once a year, with the board and the advisory board." },
-      { "title": "Private events and meetings.", "description": "In the most sought-after rooms at the year's key global gatherings." },
-      { "title": "Introductions and execution.", "description": "Curated, vetted introductions to leading businesses, institutions and regulatory expertise, with hands-on help turning them into lasting relationships." }
+      {
+        "title": "Bringing the best products to Switzerland.",
+        "description": "We identify the strongest stablecoin, DeFi and tokenization projects and help them launch properly in Switzerland: the right partners, the right setup, the right counterparties."
+      },
+      {
+        "title": "Promoting a stable franc, globally.",
+        "description": "We make the case for Swiss franc money on-chain with regulators, banks, exchanges and media, so that the franc keeps its role as a safe haven in the digital economy."
+      },
+      {
+        "title": "Education with government and institutions.",
+        "description": "Briefings and workshops with authorities, parliament, banks and universities on how stablecoins work, what makes Frankencoin different and what sound regulation looks like."
+      },
+      {
+        "title": "Members' meeting in Zug.",
+        "description": "Once a year, with the board and the advisory board: the state of the protocol, the agenda ahead and the people behind it."
+      },
+      {
+        "title": "Private events and meetings.",
+        "description": "In the most sought-after rooms at the year's key global gatherings, with the association's network."
+      },
+      {
+        "title": "Helping members in the Swiss market.",
+        "description": "Curated, vetted introductions to leading businesses, institutions and regulatory expertise, with hands-on help turning them into lasting relationships."
+      }
     ]
   },
   "contact": {
