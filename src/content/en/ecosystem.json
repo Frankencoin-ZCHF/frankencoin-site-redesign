@@ -37,6 +37,15 @@
   ],
   "tabs": [
     {
+      "href": "https://www.kraken.com/buy/zchf",
+      "name": "Kraken",
+      "image": "/images/kraken-logo.png",
+      "imageAlt": "Kraken logo",
+      "category": "Buy and sell ZCHF",
+      "description": "Buy, sell and trade ZCHF on Kraken, with the option to withdraw to your own wallet.",
+      "linkLabel": "kraken.com"
+    },
+    {
       "href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
       "name": "Mt Pelerin",
       "image": "/images/mt-pelerin-logo.png",
@@ -62,6 +71,15 @@
       "category": "Buy and sell ZCHF",
       "description": "Self-custody mobile wallet run by DFX: buy ZCHF by bank transfer, send and receive payments.",
       "linkLabel": "frankencoin.app"
+    },
+    {
+      "href": "https://www.ether.fi/app/cash/bank/chf",
+      "name": "ether.fi",
+      "image": "/images/etherfi-logo.png",
+      "imageAlt": "ether.fi logo",
+      "category": "Pay",
+      "description": "Personal Swiss IBAN for CHF transfers, card spending and borrowing against ZCHF, all in one app.",
+      "linkLabel": "ether.fi"
     },
     {
       "href": "https://presse.spar.ch/de/spar-schweiz/allgemein/neu%3A-jetzt-bei-spar-mit-krypto-waehrung-bezahlen/",
