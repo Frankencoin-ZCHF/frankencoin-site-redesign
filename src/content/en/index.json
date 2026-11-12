@@ -113,7 +113,7 @@
 			{
 				"title": "Pay",
 				"image": "/images/Icon-Payments.svg",
-				"description": "Use Frankencoin for Swiss franc payments—at Spar stores, via debit cards (GnosisPay), or with IBAN integration (Mt Pelerin). Pay bills, receive salary, and make everyday purchases.",
+				"description": "Use Frankencoin for Swiss franc payments—at Spar stores, with the ether.fi card, or with IBAN integration (Mt Pelerin). Pay bills, receive salary, and make everyday purchases.",
 				"examples": [
 					"Retail purchases at Spar",
 					"International transfers",
@@ -549,7 +549,7 @@
 			},
 			{
 				"title": "By card",
-				"description": "Spend ZCHF anywhere Visa works with a GnosisPay card."
+				"description": "Spend ZCHF anywhere Visa works with an ether.fi card."
 			},
 			{
 				"title": "By bank transfer",

@@ -87,7 +87,7 @@
 			{
 				"title": "Payer",
 				"image": "/images/Icon-Payments.svg",
-				"description": "Utilisez Frankencoin pour des paiements en francs suisses – dans les magasins Spar, via des cartes de débit (GnosisPay) ou avec l'intégration IBAN (Mt Pelerin). Payez des factures, recevez votre salaire et effectuez des achats quotidiens.",
+				"description": "Utilisez Frankencoin pour des paiements en francs suisses – dans les magasins Spar, avec la carte ether.fi ou avec l'intégration IBAN (Mt Pelerin). Payez des factures, recevez votre salaire et effectuez des achats quotidiens.",
 				"examples": [
 					"Achats chez Spar",
 					"Transferts internationaux",

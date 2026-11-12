@@ -46,9 +46,9 @@ const compact = (n: number | null) =>
 const maxLtv = borrow.length ? Math.max(...borrow.map((b) => b.ltv)) : null;
 const minRate = borrow.length ? Math.min(...borrow.map((b) => b.interest)) : null;
 // Nine partner wordmarks for the strip (one even desktop row), in this order; own products and icon-only marks are left out.
-const LOGO_PICK = ["Mt Pelerin", "DFX", "Spar", "Zeal", "PrivCart", "Ammer", "Morpho", "Uniswap", "Bitcoin Suisse"];
+const LOGO_PICK = ["Mt Pelerin", "DFX", "Spar", "ether.fi", "PrivCart", "Ammer", "Morpho", "Uniswap", "Bitcoin Suisse"];
 // Optical sizing: wordmarks of very different proportions get their own height so they read as one row.
-const LOGO_SIZE: Record<string, string> = { "Mt Pelerin": "h-9", DFX: "h-7", Spar: "h-6", Zeal: "h-11", PrivCart: "h-6", Ammer: "h-[14px]", Morpho: "h-11", Uniswap: "h-6", "Bitcoin Suisse": "h-9" };
+const LOGO_SIZE: Record<string, string> = { "Mt Pelerin": "h-9", DFX: "h-7", Spar: "h-6", "ether.fi": "h-8", PrivCart: "h-6", Ammer: "h-[14px]", Morpho: "h-11", Uniswap: "h-6", "Bitcoin Suisse": "h-9" };
 const logos = LOGO_PICK.map((n) => { const t = (eco.tabs ?? []).find((x: any) => x.image && x.name.startsWith(n)); return t && { ...t, size: LOGO_SIZE[n] }; }).filter(Boolean);
 
 const doors = index.doors.items.map(({ stat, ...d }: any) => d);

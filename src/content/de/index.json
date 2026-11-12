@@ -113,7 +113,7 @@
 			{
 				"title": "Zahlen",
 				"image": "/images/Icon-Payments.svg",
-				"description": "Nutzen Sie Frankencoin für Schweizer-Franken-Zahlungen – in Spar-Filialen, über Debitkarten (GnosisPay) oder mit IBAN-Integration (Mt Pelerin). Bezahlen Sie Rechnungen, empfangen Sie Gehalt und tätigen Sie alltägliche Einkäufe.",
+				"description": "Nutzen Sie Frankencoin für Schweizer-Franken-Zahlungen – in Spar-Filialen, mit der ether.fi-Karte oder mit IBAN-Integration (Mt Pelerin). Bezahlen Sie Rechnungen, empfangen Sie Gehalt und tätigen Sie alltägliche Einkäufe.",
 				"examples": [
 					"Einkäufe bei Spar",
 					"Internationale Überweisungen",
@@ -549,7 +549,7 @@
 			},
 			{
 				"title": "Mit Karte",
-				"description": "Geben Sie ZCHF überall aus, wo Visa akzeptiert wird, mit einer GnosisPay-Karte."
+				"description": "Geben Sie ZCHF überall aus, wo Visa akzeptiert wird, mit einer ether.fi-Karte."
 			},
 			{
 				"title": "Per Banküberweisung",
