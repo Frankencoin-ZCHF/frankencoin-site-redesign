@@ -40,7 +40,7 @@
 			"description": "Routage de swaps basé sur les intents à travers la liquidité DeFi. Échangez USDC contre ZCHF via des chemins d’exécution optimisés sur Ethereum.",
 			"type": "Agrégateur DEX",
 			"image": "/images/enso-logo.png",
-			"link": "https://happypath.enso.build/?tokenIn=0xa0b86991c6218b36c1d19d4e9eb0ce3606eb48&outChainId=1&chainId=1&tokenOut=0xb58e61c3098d85632df34eecfb899a1ed80921cb",
+			"link": "https://happypath.enso.build/swap?fromChain=1&fromToken=0xdac17f958d2ee523a2206206994597c13d831ec7&toChain=1&toToken=0xb58e61c3098d85632df34eecfb899a1ed80921cb&slippage=25",
 			"linkLabel": "Échanger sur Enso"
 		},
 		{

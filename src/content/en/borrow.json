@@ -120,8 +120,8 @@
       "href": "https://app.frankencoin.com/mint"
     },
     "secondary": {
-      "label": "Ask the association",
-      "href": "mailto:info@frankencoin.com"
+      "label": "How borrowing works",
+      "href": "https://docs.frankencoin.com/positions"
     }
   },
   "sticky": {

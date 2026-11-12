@@ -1,111 +1,102 @@
 {
-	"header": {
-		"title": "Explorez l'écosystème Frankencoin.",
-		"subtitle": "Payez, échangez, empruntez, achetez des actions tokenisées, convertissez en monnaie fiduciaire et bien plus encore avec des outils construits sur le protocole Frankencoin."
-	},
-	"intro": {
-		"title": "Parcourez et recherchez des projets utilisant Frankencoin.",
-		"subtitle": "Vous construisez quelque chose d'intéressant?",
-		"cta": {
-			"label": "Soumettez votre projet.",
-			"href": "https://github.com/Frankencoin-ZCHF/www/issues"
-		}
-	},
-	"categories": [
-		"Tokenization",
-		"On-and Offramp",
-		"DEX",
-		"Wallet"
-	],
-	"tabs": [
-		{
-			"href": "https://www.aktionariat.com/all-companies",
-			"name": "Aktionariat",
-			"image": "/images/aktionariat-Compressify.io_1.webp",
-			"imageAlt": "Aktionariat Logo",
-			"badge": "Tokenization",
-			"category": "Tokenization",
-			"description": "Aktionariat AG est une société suisse basée à Zurich. Son objectif est de permettre aux entreprises suisses de créer un marché pour leurs actions. Étant donné que seule une fraction des entreprises suisses sont cotées en bourse, la vision d'Aktionariat est de changer fondamentalement cette situation en créant des marchés liquides pour des milliers d'entreprises suisses supplémentaires, libérant potentiellement des milliards de valeur économique dormante. Cette stratégie vise à offrir aux entreprises un meilleur accès au capital et à élargir considérablement le spectre d'investissement pour les investisseurs, favorisant l'investissement de valeur à long terme et établissant une culture de finance durable, transparente et décentralisée.",
-			"linkLabel": "aktionariat.com"
-		},
-		{
-			"href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
-			"name": "Mt Pelerin",
-			"image": "/images/mt-pelerin-logo.png",
-			"imageAlt": "Mt Pelerin Logo",
-			"badge": "Prestataire de services",
-			"category": "On-and Offramp",
-			"description": "Avec Mt Pelerin, vous pouvez facilement acheter des ZCHF sans frais directement sur n'importe lequel de vos portefeuilles auto-gardés, les échanger contre des BTC, ETH, stablecoins et bien d'autres, et les retirer sur votre compte bancaire à tout moment, toujours sans frais. Vous pouvez également obtenir un IBAN personnel pour votre portefeuille et l'utiliser pour recevoir des virements bancaires de n'importe qui directement en ZCHF, et envoyer des virements bancaires à n'importe qui en utilisant des ZCHF depuis votre portefeuille.",
-			"linkLabel": "mtpelerin.com"
-		},
-		{
-			"href": "https://dfx.swiss/",
-			"name": "DFX",
-			"image": "/images/Vectors-Wrapper_3.svg",
-			"imageAlt": "DFX Logo",
-			"badge": "Prestataire de services",
-			"category": "On-and Offramp",
-			"description": "DFX est le pont entre le monde bancaire traditionnel et l'espace des cryptomonnaies et permet aux clients privés et professionnels d'acheter et de vendre des cryptomonnaies de la manière la plus pratique possible. Avec DFX Services, il existe de nombreuses façons d'acheter et de vendre des cryptomonnaies via des transactions bancaires et par carte de crédit. Vous pouvez acheter des cryptomonnaies directement dans des portefeuilles populaires tels que Metamask, Rabby Wallet ou plus de 300 portefeuilles utilisant WalletConnect et des portefeuilles matériels tels que BitBox, Ledger et Trezor.",
-			"linkLabel": "dfx.swiss"
-		},
-		{
-			"href": "https://www.stayliquid.co/",
-			"name": "Stay Liquid",
-			"image": "/images/stayliquid.svg",
-			"imageAlt": "Stay Liquid Logo",
-			"badge": "Prestataire de services",
-			"description": "Stay Liquid a développé un nouveau compte d'épargne professionnel alimenté par la DeFi et amélioré par l'IA. Les clients peuvent accéder à des rendements sur leurs actifs inactifs en euros ou en livres sterling, générant plus de 10% de rendement annuel, en utilisant une solution de gestion de portefeuille intelligent exclusivement basée sur des stablecoins. Stay Liquid dispose d'une interface de style 'néobanque' familière pour garantir que les actifs sont sécurisés et que l'intégration est sans effort.",
-			"linkLabel": "stayliquid.co"
-		},
-		{
-			"href": "https://ammer.cash/",
-			"name": "Ammer.cash",
-			"image": "/images/ammer_pay_logo-Compressify.io.webp",
-			"imageAlt": "Ammer Logo",
-			"badge": "Paiement",
-			"category": "On-and Offramp",
-			"description": "Ammer.cash est une plateforme polyvalente conçue pour faciliter les paiements en crypto de manière transparente. Elle permet aux entreprises d'accepter des paiements dans diverses cryptomonnaies via l'application Ammer Pay, qui peut être utilisée comme terminal de point de vente. Le service prend en charge les paiements via les cartes Ammer, les codes QR et les smartphones, réduisant considérablement les frais de transaction par rapport aux méthodes traditionnelles comme Visa et Mastercard.",
-			"linkLabel": "ammer.cash"
-		},
-		{
-			"href": "https://operal.solutions/",
-			"name": "Operal",
-			"image": "/images/OperalLogo-1-Compressify.io.webp",
-			"imageAlt": "Operal Logo",
-			"badge": "Gaming",
-			"category": "On-and Offramp",
-			"description": "Operal AG est une startup suisse travaillant sur la gamification de l'impact. Les clients B2B incluent des fonds de pension, l'Association des banquiers du Liechtenstein et de grandes PME en Suisse. Du côté B2C, Operal propose des jeux mobiles hypercasual avec impact pour le monde entier et s'est forgé une réputation extrêmement élevée en matière d'excellence et d'innovation.",
-			"linkLabel": "operal.solutions"
-		},
-		{
-			"href": "https://zippy.app/",
-			"name": "Zippy",
-			"image": "/images/zippy-1-Compressify.io.webp",
-			"imageAlt": "Operal Logo",
-			"badge": "Gaming",
-			"category": "Wallet",
-			"description": "Zippy est un portefeuille crypto convivial qui met l'accent sur la sécurité et la facilité d'utilisation. Il dispose d'une récupération sociale, vous permettant de restaurer votre portefeuille en utilisant des contacts de confiance. Vous pouvez envoyer et demander des cryptos via vos contacts téléphoniques sans avoir besoin de clés publiques. Le portefeuille prend également en charge l'achat et la vente de cryptos avec des cartes de crédit ou des paiements IBAN et leur conversion en monnaie fiduciaire.",
-			"linkLabel": "zippy.swiss"
-		},
-		{
-			"href": "https://uniswap.org/",
-			"name": "Uniswap",
-			"image": "/images/Uniswap_Logo_and_Wordmark-1-Compressify.io.webp",
-			"imageAlt": "Uniswap Logo",
-			"category": "DEX",
-			"badge": "DEX",
-			"description": "Le protocole Uniswap est un protocole open source pour fournir de la liquidité et échanger des jetons ERC20 sur Ethereum. Il élimine les intermédiaires de confiance et les formes inutiles d'extraction de rente, permettant une activité d'échange sûre, accessible et efficace. Le protocole n'est pas évolutif et est conçu pour résister à la censure.",
-			"linkLabel": "uniswap.org"
-		},
-		{
-			"href": "https://frankencoin.app/",
-			"name": "Frankencoin App",
-			"image": "/images/Frankencoin-App-Logo-Compressify.io.webp",
-			"imageAlt": "Frankencoin App Logo",
-			"badge": "Gaming",
-			"category": "Wallet",
-			"description": "Frankencoin App est un portefeuille auto-gardé alimenté par DFX.swiss. Il permet aux utilisateurs d'acheter facilement des FPS, ZCHF ou d'autres cryptomonnaies par virement bancaire, d'envoyer ou de recevoir des paiements et bien plus encore dans les prochaines mises à jour.",
-			"linkLabel": "frankencoin.app"
-		}
-	]
+  "header": {
+    "title": "Explorez l'écosystème Frankencoin.",
+    "subtitle": "Payez, échangez, empruntez, achetez des actions tokenisées, convertissez en monnaie fiduciaire et bien plus encore avec des outils construits sur le protocole Frankencoin."
+  },
+  "intro": {
+    "title": "Parcourez et recherchez des projets utilisant Frankencoin.",
+    "subtitle": "Vous construisez quelque chose d'intéressant?",
+    "cta": {
+      "label": "Soumettez votre projet.",
+      "href": "https://github.com/Frankencoin-ZCHF/www/issues"
+    }
+  },
+  "categories": [
+    "Tokenization",
+    "On-and Offramp",
+    "DEX",
+    "Wallet"
+  ],
+  "tabs": [
+    {
+      "href": "https://www.aktionariat.com/tokenized-companies",
+      "name": "Aktionariat",
+      "image": "/images/aktionariat-Compressify.io_1.webp",
+      "imageAlt": "Aktionariat Logo",
+      "badge": "Tokenization",
+      "category": "Tokenization",
+      "description": "Aktionariat AG est une société suisse basée à Zurich. Son objectif est de permettre aux entreprises suisses de créer un marché pour leurs actions. Étant donné que seule une fraction des entreprises suisses sont cotées en bourse, la vision d'Aktionariat est de changer fondamentalement cette situation en créant des marchés liquides pour des milliers d'entreprises suisses supplémentaires, libérant potentiellement des milliards de valeur économique dormante. Cette stratégie vise à offrir aux entreprises un meilleur accès au capital et à élargir considérablement le spectre d'investissement pour les investisseurs, favorisant l'investissement de valeur à long terme et établissant une culture de finance durable, transparente et décentralisée.",
+      "linkLabel": "aktionariat.com"
+    },
+    {
+      "href": "https://www.mtpelerin.com/buy-zchf-frankencoin",
+      "name": "Mt Pelerin",
+      "image": "/images/mt-pelerin-logo.png",
+      "imageAlt": "Mt Pelerin Logo",
+      "badge": "Prestataire de services",
+      "category": "On-and Offramp",
+      "description": "Avec Mt Pelerin, vous pouvez facilement acheter des ZCHF sans frais directement sur n'importe lequel de vos portefeuilles auto-gardés, les échanger contre des BTC, ETH, stablecoins et bien d'autres, et les retirer sur votre compte bancaire à tout moment, toujours sans frais. Vous pouvez également obtenir un IBAN personnel pour votre portefeuille et l'utiliser pour recevoir des virements bancaires de n'importe qui directement en ZCHF, et envoyer des virements bancaires à n'importe qui en utilisant des ZCHF depuis votre portefeuille.",
+      "linkLabel": "mtpelerin.com"
+    },
+    {
+      "href": "https://dfx.swiss/",
+      "name": "DFX",
+      "image": "/images/Vectors-Wrapper_3.svg",
+      "imageAlt": "DFX Logo",
+      "badge": "Prestataire de services",
+      "category": "On-and Offramp",
+      "description": "DFX est le pont entre le monde bancaire traditionnel et l'espace des cryptomonnaies et permet aux clients privés et professionnels d'acheter et de vendre des cryptomonnaies de la manière la plus pratique possible. Avec DFX Services, il existe de nombreuses façons d'acheter et de vendre des cryptomonnaies via des transactions bancaires et par carte de crédit. Vous pouvez acheter des cryptomonnaies directement dans des portefeuilles populaires tels que Metamask, Rabby Wallet ou plus de 300 portefeuilles utilisant WalletConnect et des portefeuilles matériels tels que BitBox, Ledger et Trezor.",
+      "linkLabel": "dfx.swiss"
+    },
+    {
+      "href": "https://ammer.cash/",
+      "name": "Ammer.cash",
+      "image": "/images/ammer_pay_logo-Compressify.io.webp",
+      "imageAlt": "Ammer Logo",
+      "badge": "Paiement",
+      "category": "On-and Offramp",
+      "description": "Ammer.cash est une plateforme polyvalente conçue pour faciliter les paiements en crypto de manière transparente. Elle permet aux entreprises d'accepter des paiements dans diverses cryptomonnaies via l'application Ammer Pay, qui peut être utilisée comme terminal de point de vente. Le service prend en charge les paiements via les cartes Ammer, les codes QR et les smartphones, réduisant considérablement les frais de transaction par rapport aux méthodes traditionnelles comme Visa et Mastercard.",
+      "linkLabel": "ammer.cash"
+    },
+    {
+      "href": "https://operal.solutions/",
+      "name": "Operal",
+      "image": "/images/OperalLogo-1-Compressify.io.webp",
+      "imageAlt": "Operal Logo",
+      "badge": "Gaming",
+      "category": "On-and Offramp",
+      "description": "Operal AG est une startup suisse travaillant sur la gamification de l'impact. Les clients B2B incluent des fonds de pension, l'Association des banquiers du Liechtenstein et de grandes PME en Suisse. Du côté B2C, Operal propose des jeux mobiles hypercasual avec impact pour le monde entier et s'est forgé une réputation extrêmement élevée en matière d'excellence et d'innovation.",
+      "linkLabel": "operal.solutions"
+    },
+    {
+      "href": "https://zippy.app/",
+      "name": "Zippy",
+      "image": "/images/zippy-1-Compressify.io.webp",
+      "imageAlt": "Operal Logo",
+      "badge": "Gaming",
+      "category": "Wallet",
+      "description": "Zippy est un portefeuille crypto convivial qui met l'accent sur la sécurité et la facilité d'utilisation. Il dispose d'une récupération sociale, vous permettant de restaurer votre portefeuille en utilisant des contacts de confiance. Vous pouvez envoyer et demander des cryptos via vos contacts téléphoniques sans avoir besoin de clés publiques. Le portefeuille prend également en charge l'achat et la vente de cryptos avec des cartes de crédit ou des paiements IBAN et leur conversion en monnaie fiduciaire.",
+      "linkLabel": "zippy.swiss"
+    },
+    {
+      "href": "https://app.uniswap.org/",
+      "name": "Uniswap",
+      "image": "/images/Uniswap_Logo_and_Wordmark-1-Compressify.io.webp",
+      "imageAlt": "Uniswap Logo",
+      "category": "DEX",
+      "badge": "DEX",
+      "description": "Le protocole Uniswap est un protocole open source pour fournir de la liquidité et échanger des jetons ERC20 sur Ethereum. Il élimine les intermédiaires de confiance et les formes inutiles d'extraction de rente, permettant une activité d'échange sûre, accessible et efficace. Le protocole n'est pas évolutif et est conçu pour résister à la censure.",
+      "linkLabel": "uniswap.org"
+    },
+    {
+      "href": "https://frankencoin.app/",
+      "name": "Frankencoin App",
+      "image": "/images/Frankencoin-App-Logo-Compressify.io.webp",
+      "imageAlt": "Frankencoin App Logo",
+      "badge": "Gaming",
+      "category": "Wallet",
+      "description": "Frankencoin App est un portefeuille auto-gardé alimenté par DFX.swiss. Il permet aux utilisateurs d'acheter facilement des FPS, ZCHF ou d'autres cryptomonnaies par virement bancaire, d'envoyer ou de recevoir des paiements et bien plus encore dans les prochaines mises à jour.",
+      "linkLabel": "frankencoin.app"
+    }
+  ]
 }

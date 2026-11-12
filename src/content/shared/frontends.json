@@ -44,22 +44,8 @@
       }
     },
     {
-      "name": "dasabami.com",
-      "url": "https://www.dasabami.com",
-      "creator": "socraticblock",
-      "creatorUrl": "https://github.com/socraticblock",
-      "repo": "https://github.com/socraticblock/frankencoin-dapp",
-      "notes": "Open-source fork by socraticblock, in development. Currently relies on the canonical API and indexer; the maintainer plans to self-host the Ponder indexer later.",
-      "features": {
-        "openSource": true,
-        "ownDomain": true,
-        "selfHostedApi": false,
-        "selfHostedIndexer": false
-      }
-    },
-    {
       "name": "frankenterminal.app",
-      "url": "https://frankenterminal.app",
+      "url": "https://www.frankenterminal.app/",
       "creator": "xdecentralix",
       "creatorUrl": "https://github.com/xdecentralix",
       "repo": "https://github.com/xdecentralix/frankenterminal-dapp",

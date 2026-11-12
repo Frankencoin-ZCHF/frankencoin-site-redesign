@@ -32,6 +32,10 @@ export function getLocalizedPath(path: string, lang: Language): string {
 	if (lang === defaultLang) {
 		return path;
 	}
+	// Files (PDFs, images) are served from the root for every language
+	if (/\.[a-z0-9]{2,5}(?:[?#]|$)/i.test(path)) {
+		return path;
+	}
 	// Remove leading slash if present
 	const cleanPath = path.startsWith('/') ? path.slice(1) : path;
 	return `/${lang}/${cleanPath}`;

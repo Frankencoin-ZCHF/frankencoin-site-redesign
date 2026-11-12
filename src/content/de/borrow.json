@@ -120,8 +120,8 @@
       "href": "https://app.frankencoin.com/mint"
     },
     "secondary": {
-      "label": "Den Verein fragen",
-      "href": "mailto:info@frankencoin.com"
+      "label": "So funktioniert das Leihen",
+      "href": "https://docs.frankencoin.com/positions"
     }
   },
   "sticky": {
