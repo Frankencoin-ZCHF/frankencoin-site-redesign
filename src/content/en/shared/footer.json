@@ -31,6 +31,10 @@
           {
             "label": "Press kit",
             "href": "/press"
+          },
+          {
+            "label": "Contact",
+            "href": "/contact"
           }
         ],
         "sections": [

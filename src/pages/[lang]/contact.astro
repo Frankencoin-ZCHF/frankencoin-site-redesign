@@ -1,0 +1,14 @@
+---
+import Main from '../contact.astro';
+
+export const prerender = false;
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'de' } },
+    // { params: { lang: 'fr' } }, // French temporarily disabled
+  ];
+}
+---
+
+<Main />

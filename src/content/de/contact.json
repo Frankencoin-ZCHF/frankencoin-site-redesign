@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "title": "Kontakt zum Frankencoin-Verein",
+    "description": "Schreiben Sie dem Frankencoin-Verein zu Integrationen, Listings, Treasury-Fragen, Medienanfragen oder anderem. Eine Nachricht genügt."
+  },
+  "hero": {
+    "title": "Sprechen Sie|mit dem Verein",
+    "subtitle": "Integrationen, Listings, Treasury-Fragen, Medienanfragen. Sagen Sie uns, was Sie bauen, und wir antworten innerhalb weniger Werktage."
+  },
+  "form": {
+    "title": "Nachricht senden",
+    "subtitle": "Das Formular geht an das Postfach des Vereins. Wenn Sie lieber mailen, schreiben Sie direkt an info@frankencoin.com.",
+    "name": "Ihr Name",
+    "email": "E-Mail",
+    "company": "Unternehmen oder Projekt",
+    "companyOptional": "optional",
+    "topic": "Worum geht es?",
+    "topics": [
+      { "value": "integration", "label": "ZCHF integrieren (Zahlungen, Wallet, DeFi, Sicherheiten)" },
+      { "value": "listing", "label": "Listing bei Börse oder Wallet" },
+      { "value": "treasury", "label": "Treasury oder institutionelle Nutzung" },
+      { "value": "media", "label": "Medien und Vorträge" },
+      { "value": "membership", "label": "Der Verein und Mitgliedschaft" },
+      { "value": "other", "label": "Etwas anderes" }
+    ],
+    "message": "Ihre Nachricht",
+    "messagePlaceholder": "Was Sie bauen, was Sie von uns brauchen, und Links.",
+    "consent": "Wir verwenden Ihre Angaben nur, um Ihnen zu antworten. Kein Newsletter, keine Weitergabe.",
+    "submit": "Nachricht senden",
+    "sending": "Wird gesendet…",
+    "success": "Danke. Ihre Nachricht ist angekommen. Wir antworten von info@frankencoin.com.",
+    "errorValidation": "Bitte geben Sie Ihren Namen, eine gültige E-Mail-Adresse und eine Nachricht ein.",
+    "errorServer": "Das Formular konnte gerade nicht gesendet werden. Bitte mailen Sie uns stattdessen:",
+    "emailLabel": "info@frankencoin.com"
+  },
+  "aside": {
+    "title": "Weitere Wege",
+    "items": [
+      { "title": "Entwickler", "text": "Verträge, ABIs und die Dokumentation. Kein Ticket nötig.", "label": "Entwickler-Dokumentation", "href": "/for/developers" },
+      { "title": "Presse", "text": "Boilerplate, Logos und Medienmitteilungen.", "label": "Pressekit", "href": "/press" },
+      { "title": "Grants", "text": "Förderung für Integrationen und Tooling, entschieden von der FCS-Governance.", "label": "Grants auf GitHub", "href": "https://github.com/Frankencoin-ZCHF/grants" },
+      { "title": "Sicherheit", "text": "Einen Fehler gefunden? Nutzen Sie das Bug-Bounty-Programm, nicht dieses Formular.", "label": "Bug Bounty", "href": "/security" }
+    ]
+  }
+}

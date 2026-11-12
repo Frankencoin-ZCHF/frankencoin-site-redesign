@@ -103,6 +103,37 @@ const site = await loadSharedContent("site", currentLang);
       gtag("js", new Date());
       gtag("set", "developer_id.dZGVlNj", true);
       gtag("config", "G-RNM9S018ES");
+
+      // Site events. fcTrack(name, params) is for page scripts (e.g. the contact form); the click listener
+      // reports every button-styled link ("cta_click"), app links ("app_open"), email links ("email_click")
+      // and other outbound links ("outbound_click") with their text and the section they sit in.
+      window.fcTrack = function (name, params) {
+        try { gtag("event", name, params || {}); } catch (e) {}
+      };
+      document.addEventListener(
+        "click",
+        function (e) {
+          var el = e.target && e.target.closest ? e.target.closest("a[href], button") : null;
+          if (!el) return;
+          var href = el.getAttribute("href") || "";
+          var text = (el.innerText || el.getAttribute("aria-label") || "").replace(/\s+/g, " ").trim().slice(0, 80);
+          var section = el.closest("section[id], [data-track], footer, header");
+          var isButton = el.tagName === "BUTTON" || el.classList.contains("pxb") || /(^|\s)(btn|button)(\s|$|-)/.test(el.className || "");
+          var params = {
+            link_text: text,
+            link_url: href,
+            link_location: section ? section.id || section.getAttribute("data-track") || section.tagName.toLowerCase() : "",
+            page_path: location.pathname,
+          };
+          if (isButton) window.fcTrack("cta_click", params);
+          var url;
+          try { url = new URL(href, location.href); } catch (err) { return; }
+          if (url.protocol === "mailto:") window.fcTrack("email_click", params);
+          else if (url.hostname === "app.frankencoin.com") window.fcTrack("app_open", params);
+          else if (/^https?:$/.test(url.protocol) && url.hostname !== location.hostname) window.fcTrack("outbound_click", params);
+        },
+        true,
+      );
     </script>
     <slot name="head" />
   </head>
