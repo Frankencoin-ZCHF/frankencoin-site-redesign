@@ -7,7 +7,7 @@
     "title": "Schliessen Sie sich an den Franken an,|der keinen Emittenten hat.",
     "subtitle": "ZCHF ist ein Standard-ERC-20 auf Ethereum und mehreren weiteren Chains. Dies sind die vier Integrationen, die wir am häufigsten sehen, jede mit einem klaren Einstiegspunkt.",
     "primary": {
-      "label": "Mit dem Verein sprechen",
+      "label": "E-Mail an info@frankencoin.com",
       "href": "mailto:info@frankencoin.com"
     },
     "secondary": {
@@ -74,13 +74,13 @@
       {
         "title": "Aktionariat",
         "description": "Tokenisierte Aktien Schweizer Unternehmen, gehandelt gegen ZCHF.",
-        "href": "https://www.aktionariat.com/all-companies",
+        "href": "https://www.aktionariat.com/tokenized-companies",
         "cta": "aktionariat.com"
       },
       {
         "title": "Uniswap",
         "description": "ZCHF-Liquiditätspools auf Ethereum.",
-        "href": "https://uniswap.org/",
+        "href": "https://app.uniswap.org/",
         "cta": "uniswap.org"
       }
     ],

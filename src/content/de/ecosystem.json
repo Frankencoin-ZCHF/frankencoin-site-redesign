@@ -163,15 +163,6 @@
       "linkLabel": "app.reserve.org"
     },
     {
-      "href": "https://www.stayliquid.co/",
-      "name": "Stay Liquid",
-      "image": "/images/stayliquid.svg",
-      "imageAlt": "Stay Liquid Logo",
-      "category": "Sparen und verdienen",
-      "description": "Geschäftssparkonto auf Basis von Stablecoins, mit einer Oberfläche im Stil einer Neobank.",
-      "linkLabel": "stayliquid.co"
-    },
-    {
       "href": "https://zippy.app/",
       "name": "Zippy",
       "image": "/images/zippy-1-Compressify.io.webp",
@@ -181,7 +172,7 @@
       "linkLabel": "zippy.app"
     },
     {
-      "href": "https://uniswap.org/",
+      "href": "https://app.uniswap.org/",
       "name": "Uniswap",
       "image": "/images/Uniswap_Logo_and_Wordmark-1-Compressify.io.webp",
       "imageAlt": "Uniswap Logo",
@@ -190,7 +181,7 @@
       "linkLabel": "uniswap.org"
     },
     {
-      "href": "https://www.aktionariat.com/all-companies",
+      "href": "https://www.aktionariat.com/tokenized-companies",
       "name": "Aktionariat",
       "image": "/images/aktionariat-Compressify.io_1.webp",
       "imageAlt": "Aktionariat Logo",
