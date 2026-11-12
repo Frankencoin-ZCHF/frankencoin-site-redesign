@@ -2,9 +2,14 @@
 	"name": "frankencoin-site",
 	"type": "module",
 	"version": "0.0.1",
+	"packageManager": "npm@11.9.0",
+	"engines": {
+		"node": "22.x"
+	},
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
+		"start": "node ./dist/server/entry.mjs",
 		"preview": "astro preview",
 		"astro": "astro",
 		"lint:fcs": "node scripts/lint-fcs-copy.mjs && node --test scripts/lint-fcs-copy.test.mjs"

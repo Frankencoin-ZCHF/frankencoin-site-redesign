@@ -4,6 +4,22 @@
 	"intro": "Frankencoin (ZCHF) ist auf verschiedenen Plattformen erhältlich – von regulierten Schweizer Zugängen bis hin zu dezentralen Börsen. Ob per Banküberweisung oder direktem Tausch, es gibt einen bequemen Weg, ZCHF zu erwerben.",
 	"exchanges": [
 		{
+			"name": "Kraken",
+			"description": "ZCHF auf Kraken kaufen, verkaufen und handeln und bei Bedarf in Ihre eigene Wallet auszahlen.",
+			"type": "Börse",
+			"image": "/images/kraken-logo.png",
+			"link": "https://www.kraken.com/buy/zchf",
+			"linkLabel": "Auf Kraken handeln"
+		},
+		{
+			"name": "ether.fi",
+			"description": "CHF an Ihre persönliche Schweizer IBAN in ether.fi überweisen und ZCHF erhalten oder CHF zurück auf ein Schweizer Bankkonto in Ihrem Namen senden.",
+			"type": "On-Ramp & Wallet",
+			"image": "/images/etherfi-logo.png",
+			"link": "https://www.ether.fi/app/cash/bank/chf",
+			"linkLabel": "ZCHF mit ether.fi erhalten"
+		},
+		{
 			"name": "Mt Pelerin",
 			"description": "Regulierter Schweizer Zugang: ZCHF direkt per Banküberweisung über Ihre persönliche IBAN kaufen. Vollständig konform und einsteigerfreundlich.",
 			"type": "On-Ramp",

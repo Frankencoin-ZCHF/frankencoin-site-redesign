@@ -3,8 +3,24 @@
   "title": "Where ZCHF is used today",
   "intro": "Services that take, hold or pay out Frankencoin, grouped by what you want to do. Each card says the concrete route.",
   "filterAll": "All",
-  "categories": ["Payments", "DeFi", "Business"],
+  "categories": ["Buy and sell ZCHF", "Payments", "DeFi", "Business"],
   "cases": [
+    {
+      "title": "Buy and sell ZCHF",
+      "partner": "Kraken",
+      "description": "Buy, sell and trade ZCHF on Kraken, with the option to withdraw to your own wallet.",
+      "category": "Buy and sell ZCHF",
+      "image": "/images/kraken-logo.png",
+      "link": "https://www.kraken.com/buy/zchf"
+    },
+    {
+      "title": "Swiss IBAN and card payments",
+      "partner": "ether.fi",
+      "description": "Fund your personal Swiss IBAN to receive ZCHF in ether.fi, spend it with the card or use it as borrowing collateral. Send CHF back to a Swiss bank account in your own name.",
+      "category": "Payments",
+      "image": "/images/etherfi-logo.png",
+      "link": "https://www.ether.fi/app/cash/bank/chf"
+    },
     {
       "title": "Pay at the till",
       "partner": "Spar Switzerland",
