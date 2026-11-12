@@ -42,7 +42,7 @@
     "title": "Frankencoin today",
     "items": [
       {
-        "value": "34.6m",
+        "metric": "supply",
         "label": "ZCHF in circulation, pegged 1:1 since 2023"
       },
       {
@@ -54,7 +54,7 @@
         "label": "Lender against tokenized stocks onchain"
       },
       {
-        "value": "CHF 51.8m",
+        "metric": "collateralChf",
         "label": "Collateral locked"
       },
       {
@@ -66,7 +66,10 @@
         "label": "Listed and live, with more integrations on the way"
       }
     ],
-    "note": "Figures as of November 2026."
+    "liveNote": "Circulation and collateral from the Frankencoin API · retrieved {time} UTC.",
+    "unavailable": "Circulation and collateral data are temporarily unavailable.",
+    "sourceLabel": "View live figures",
+    "note": "Rankings and annual trading volume: November 2026 snapshot."
   },
   "people": {
     "title": "Switzerland's most exclusive circle",

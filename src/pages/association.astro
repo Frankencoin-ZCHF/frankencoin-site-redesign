@@ -1,17 +1,33 @@
 ---
 /* /association — the Frankencoin Association: why CHF, figures, board and advisers, what it does, contact.
-   Copy: content/en/association.json (same English copy under de/ for now). Photos: public/images/team. */
+   Copy: content/{en,de}/association.json. Photos: public/images/team. */
 import Base from "../layouts/Base.astro";
 import LPHero from "../components/LP/LPHero.astro";
 import LPSection from "../components/LP/LPSection.astro";
 import FeatureGrid from "../components/LP/FeatureGrid.astro";
-import { getLanguageFromURL, loadContent } from "../utils/i18n";
+import { getLanguageFromURL, getLocalizedPath, loadContent } from "../utils/i18n";
+import { getTransparency } from "../utils/liveStats";
+import { formatStamp } from "../utils/fcsStats";
 
 export const prerender = false;
 const lang = getLanguageFromURL(Astro.url.pathname);
 const en = await loadContent<any>("association", "en");
 const local = await loadContent<any>("association", lang);
 const c = { ...en, ...local };
+const data = await getTransparency();
+const compact = new Intl.NumberFormat(lang === "de" ? "de-CH" : "en", { notation: "compact", maximumFractionDigits: 1 });
+interface Figure { metric?: "supply" | "collateralChf"; value?: string; label: string }
+const figures = (c.today.items as Figure[]).map((f) => {
+  if (!f.metric) return f;
+  const n = data[f.metric];
+  const value = n !== null && Number.isFinite(n)
+    ? `${f.metric === "collateralChf" ? "CHF " : ""}${compact.format(n)}`
+    : "—";
+  return { ...f, value };
+});
+const hasLiveData = [data.supply, data.collateralChf].some((n) => n !== null && Number.isFinite(n));
+const liveNote = hasLiveData ? formatStamp(c.today.liveNote, data.updated) : c.today.unavailable;
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
 
 interface Person { name: string; photo: string; linkedin: string; bio: string }
 const linkedin = { target: "_blank", rel: "noopener noreferrer" };
@@ -40,14 +56,15 @@ const linkedin = { target: "_blank", rel: "noopener noreferrer" };
 
   <LPSection id="today" title={c.today.title}>
     <dl class="grid grid-cols-2 lg:grid-cols-3 gap-px overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-20)] m-0">
-      {c.today.items.map((f: { value: string; label: string }) => (
+      {figures.map((f) => (
         <div class="bg-white p-5 md:p-7 min-w-0">
           <dd class="m-0 text-[26px] sm:text-[34px] font-black tracking-tight text-[var(--color-brand-deep-blue)] leading-none tabular-nums break-words">{f.value}</dd>
           <dt class="mt-2 ty-body-3 text-[var(--color-neutral-650)]">{f.label}</dt>
         </div>
       ))}
     </dl>
-    <p class="mt-4 ty-xs text-[var(--color-neutral-550)] m-0">{c.today.note}</p>
+    <p class="mt-4 ty-xs text-[var(--color-neutral-550)] m-0">{liveNote} <a href={getLocalizedPath("/transparency", lang)} class="font-semibold text-[var(--color-brand-swiss)] hover:underline">{c.today.sourceLabel} →</a></p>
+    <p class="mt-1 ty-xs text-[var(--color-neutral-550)] m-0">{c.today.note}</p>
   </LPSection>
 
   <LPSection id="people" title={c.people.title} accent>
