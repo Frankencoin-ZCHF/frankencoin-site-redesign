@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "The Frankencoin Association",
-    "description": "The independent Swiss association behind ZCHF, the largest Swiss franc stablecoin. Board, advisory board and membership."
+    "description": "The Swiss non-profit that promotes Frankencoin and a digital Swiss franc. It does not issue ZCHF and does not control the protocol. Board, advisory board and membership."
   },
   "hero": {
     "title": "The Frankencoin|Association",
-    "subtitle": "The independent Swiss association behind ZCHF, the largest Swiss franc stablecoin.",
+    "subtitle": "A Swiss non-profit that promotes Frankencoin and a digital Swiss franc. The Association does not issue ZCHF and does not control the protocol.",
     "primary": {
       "label": "Become a member",
       "href": "mailto:johannes@frankencoin.com"
@@ -132,6 +132,7 @@
   "membership": {
     "title": "What the Association does",
     "subtitle": "The Frankencoin Association promotes a stable Swiss franc and a digital Swiss economy, at home and globally. Membership is by invitation.",
+    "role": "The Association is not the issuer of ZCHF and does not control the Frankencoin protocol. ZCHF is created by users who lock collateral in autonomous smart contracts on Ethereum. Changes to the protocol are decided by the holders of Frankencoin Shares (FCS) through on-chain governance, open to anyone. The Association holds no custody of user funds.",
     "items": [
       {
         "title": "Promoting a stable franc and a digital Swiss economy, globally.",

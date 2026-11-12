@@ -20,6 +20,18 @@ const linkedin = { target: "_blank", rel: "noopener noreferrer" };
 <Base title={c.meta.title} description={c.meta.description}>
   <LPHero title={c.hero.title} subtitle={c.hero.subtitle} image="/images/home/matterhorn-halftone.webp" imageHeight="h-[48%] md:h-[64%]" imagePosition="object-[50%_0%]" class="min-h-[560px] md:min-h-[680px]" />
 
+  <LPSection id="what-we-do" title={c.membership.title} subtitle={c.membership.subtitle} split>
+    <p class="mb-8 border-l-4 border-[var(--color-brand-swiss)] pl-5 ty-body-1 font-semibold text-pretty text-[var(--color-brand-deep-blue)] m-0">{c.membership.role}</p>
+    <ul class="m-0 p-0 list-none divide-y divide-[var(--color-gray-20)] border-y border-[var(--color-gray-20)]">
+      {c.membership.items.map((it: { title: string; description: string }) => (
+        <li class="grid md:grid-cols-[1fr_1.6fr] gap-2 md:gap-10 py-6 md:py-8">
+          <h3 class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</h3>
+          <p class="ty-body-2 text-pretty text-[var(--color-neutral-650)] m-0">{it.description}</p>
+        </li>
+      ))}
+    </ul>
+  </LPSection>
+
   <LPSection id="why" title={c.why.title} subtitle={c.why.subtitle} split>
     <FeatureGrid items={c.why.items} cols={2} />
     <p class="mt-6 ty-body-2 text-pretty text-[var(--color-neutral-650)] m-0">{c.why.note}</p>
@@ -58,17 +70,6 @@ const linkedin = { target: "_blank", rel: "noopener noreferrer" };
             <a href={p.linkedin} {...linkedin} class="block ty-body-2 font-black text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)]">{p.name} <span class="ty-xs font-bold" aria-hidden="true">↗</span></a>
             <p class="mt-1 ty-body-3 text-[var(--color-neutral-650)] m-0">{p.bio}</p>
           </div>
-        </li>
-      ))}
-    </ul>
-  </LPSection>
-
-  <LPSection id="what-we-do" title={c.membership.title} subtitle={c.membership.subtitle} split>
-    <ul class="m-0 p-0 list-none divide-y divide-[var(--color-gray-20)] border-y border-[var(--color-gray-20)]">
-      {c.membership.items.map((it: { title: string; description: string }) => (
-        <li class="grid md:grid-cols-[1fr_1.6fr] gap-2 md:gap-10 py-6 md:py-8">
-          <h3 class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</h3>
-          <p class="ty-body-2 text-pretty text-[var(--color-neutral-650)] m-0">{it.description}</p>
         </li>
       ))}
     </ul>
