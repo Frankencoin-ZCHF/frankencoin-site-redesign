@@ -29,8 +29,8 @@
           "text": "Wir nutzen Google Analytics 4 (Google Ireland Ltd.), um zu sehen, welche Seiten gelesen und welche Buttons genutzt werden. Wenn Sie im Cookie-Banner zustimmen, setzt Google Cookies (etwa _ga) und wir sehen pseudonyme Nutzungsdaten, darunter eine gekürzte IP-Adresse, Gerät und Land. Ereignisdaten werden zwei Monate aufbewahrt, Nutzerdaten 14 Monate. Lehnen Sie ab, werden keine Statistik-Cookies gesetzt und keine Kennung gespeichert; Google erhält nur aggregierte, cookielose Signale, die sich nicht mit Ihnen verknüpfen lassen. Ihre Wahl können Sie jederzeit unter Cookie-Einstellungen im Footer ändern. Rechtsgrundlage: Ihre Einwilligung. Google kann Daten in den USA unter dem EU-US Data Privacy Framework verarbeiten."
         },
         {
-          "title": "Kontaktformular",
-          "text": "Wenn Sie uns über das Kontaktformular schreiben, erhalten wir Ihren Namen, Ihre E-Mail-Adresse, das genannte Unternehmen oder Projekt, das Thema und Ihre Nachricht sowie die Seite, von der aus Sie geschrieben haben. Die Nachricht wird über den E-Mail-Dienst Resend (Resend, Inc.) in unser Postfach zugestellt. Wir nutzen sie nur, um Ihnen zu antworten, und bewahren sie so lange auf, wie das Gespräch es erfordert. Rechtsgrundlage: Massnahmen auf Ihre Anfrage vor einer möglichen Zusammenarbeit und unser berechtigtes Interesse an der Beantwortung von Anfragen."
+          "title": "E-Mail",
+          "text": "Wenn Sie uns eine E-Mail schreiben, erhalten wir Ihre Adresse, Ihre Nachricht und allfällige Anhänge. Wir nutzen sie nur, um Ihnen zu antworten, und bewahren sie so lange auf, wie das Gespräch es erfordert. E-Mails verarbeitet unser E-Mail-Anbieter in unserem Auftrag. Rechtsgrundlage: Massnahmen auf Ihre Anfrage vor einer möglichen Zusammenarbeit und unser berechtigtes Interesse an der Beantwortung von Anfragen."
         },
         {
           "title": "Protokolldaten",
@@ -46,8 +46,14 @@
       "id": "cookies",
       "title": "Cookies, die wir verwenden",
       "items": [
-        { "title": "fc-consent", "text": "Speichert Ihre Cookie-Wahl im Browser, damit wir nicht erneut fragen. Notwendig, 12 Monate." },
-        { "title": "_ga, _ga_*", "text": "Google Analytics, nur nach Einwilligung. Unterscheidet Besucher und Sitzungen. Bis zu 2 Jahre." }
+        {
+          "title": "fc-consent",
+          "text": "Speichert Ihre Cookie-Wahl im Browser, damit wir nicht erneut fragen. Notwendig, 12 Monate."
+        },
+        {
+          "title": "_ga, _ga_*",
+          "text": "Google Analytics, nur nach Einwilligung. Unterscheidet Besucher und Sitzungen. Bis zu 2 Jahre."
+        }
       ]
     },
     {

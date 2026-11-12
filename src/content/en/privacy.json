@@ -29,8 +29,8 @@
           "text": "We use Google Analytics 4 (Google Ireland Ltd.) to see which pages are read and which buttons are used. If you accept analytics in the cookie banner, Google sets cookies (such as _ga) and we see pseudonymous usage data, including a shortened IP address, device and country. Event data is kept for two months, user data for 14 months. If you decline, no analytics cookies are set and no identifier is stored; Google receives only aggregated, cookieless signals that cannot be linked to you. You can change your choice at any time under Cookie settings in the footer. Legal basis: your consent. Google may process data in the United States under the EU-US Data Privacy Framework."
         },
         {
-          "title": "Contact form",
-          "text": "If you write to us through the contact form, we receive your name, email address, the company or project you name, the topic and your message, together with the page you wrote from. The message is delivered to our inbox through Resend (Resend, Inc.), an email service. We use it only to answer you and keep it as long as the conversation requires. Legal basis: taking steps at your request before a possible cooperation, and our legitimate interest in answering enquiries."
+          "title": "Email",
+          "text": "If you email us, we receive your address, your message and anything you attach. We use it only to answer you and keep it as long as the conversation requires. Mail is handled by our email provider on our behalf. Legal basis: taking steps at your request before a possible cooperation, and our legitimate interest in answering enquiries."
         },
         {
           "title": "Protocol data",
@@ -46,8 +46,14 @@
       "id": "cookies",
       "title": "Cookies we use",
       "items": [
-        { "title": "fc-consent", "text": "Stores your cookie choice in your browser so we do not ask again. Necessary, kept for 12 months." },
-        { "title": "_ga, _ga_*", "text": "Google Analytics, set only after consent. Distinguish visitors and sessions. Kept up to 2 years." }
+        {
+          "title": "fc-consent",
+          "text": "Stores your cookie choice in your browser so we do not ask again. Necessary, kept for 12 months."
+        },
+        {
+          "title": "_ga, _ga_*",
+          "text": "Google Analytics, set only after consent. Distinguish visitors and sessions. Kept up to 2 years."
+        }
       ]
     },
     {

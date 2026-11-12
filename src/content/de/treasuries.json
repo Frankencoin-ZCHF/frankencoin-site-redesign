@@ -7,8 +7,8 @@
     "title": "Diversifizieren Sie Ihre Treasury|in Schweizer Franken.",
     "subtitle": "Halten Sie einen Teil Ihrer On-Chain-Reserven in Franken statt nur in Dollar, und lassen Sie ungenutzte Bestände im Sparmodul den Protokollzins verdienen.",
     "primary": {
-      "label": "Verein kontaktieren",
-      "href": "/contact?topic=treasury"
+      "label": "info@frankencoin.com",
+      "href": "mailto:info@frankencoin.com"
     },
     "secondary": {
       "label": "Aktuelle Reserven ansehen",
@@ -73,8 +73,8 @@
     "title": "Planen Sie eine Allokation?",
     "body": "Die Frankencoin Association begleitet Treasury-Teams bei Verwahrung, Buchhaltung und Liquidität für grössere Beträge.",
     "primary": {
-      "label": "Verein kontaktieren",
-      "href": "/contact?topic=treasury"
+      "label": "info@frankencoin.com",
+      "href": "mailto:info@frankencoin.com"
     },
     "secondary": {
       "label": "Aktuelle Reserven ansehen",
