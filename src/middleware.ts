@@ -1,5 +1,5 @@
 import { defineMiddleware } from "astro:middleware";
-import { getLanguageFromURL } from "./utils/i18n";
+import { defaultLang, getLanguageFromURL, languages } from "./utils/i18n";
 import { previewGate } from "./utils/previewGate";
 
 export const onRequest = defineMiddleware(async (context, next) => {
@@ -12,6 +12,13 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   // Store it in locals so it's available to all pages
   context.locals.lang = lang;
+
+  // The [lang]/*.astro routes render on demand, so Astro's getStaticPaths does not limit them: /anything
+  // would render the English page with status 200. Answer with the real 404 page for unknown languages.
+  if (context.routePattern.startsWith("/[lang]") && !(context.params.lang! in languages && context.params.lang !== defaultLang)) {
+    // A 404 response makes Astro render src/pages/404.astro.
+    return new Response(null, { status: 404 });
+  }
 
   const response = await next();
 
