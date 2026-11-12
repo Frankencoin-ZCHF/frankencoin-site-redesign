@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "Der Frankencoin-Verein",
-    "description": "Der unabhängige Schweizer Verein hinter ZCHF, dem grössten Schweizer-Franken-Stablecoin. Vorstand, Beirat und Mitgliedschaft."
+    "description": "Der Schweizer Verein, der Frankencoin und einen digitalen Schweizer Franken fördert. Er gibt ZCHF nicht heraus und kontrolliert das Protokoll nicht. Vorstand, Beirat und Mitgliedschaft."
   },
   "hero": {
     "title": "Der Frankencoin-|Verein",
-    "subtitle": "Der unabhängige Schweizer Verein hinter ZCHF, dem grössten Schweizer-Franken-Stablecoin.",
+    "subtitle": "Ein Schweizer Verein ohne Erwerbszweck, der Frankencoin und einen digitalen Schweizer Franken fördert. Der Verein gibt ZCHF nicht heraus und kontrolliert das Protokoll nicht.",
     "primary": {
       "label": "Mitglied werden",
       "href": "mailto:johannes@frankencoin.com"
@@ -132,6 +132,12 @@
   "membership": {
     "title": "Was der Verein tut",
     "subtitle": "Der Frankencoin-Verein fördert einen stabilen Schweizer Franken und eine digitale Schweizer Wirtschaft, im Inland und weltweit. Die Mitgliedschaft erfolgt auf Einladung.",
+    "role": "Der Verein ist nicht der Emittent von ZCHF und kontrolliert das Frankencoin-Protokoll nicht. ZCHF wird von Nutzern geschaffen, die Sicherheiten in autonomen Smart Contracts auf Ethereum hinterlegen. Über Änderungen am Protokoll entscheiden die Inhaber von Frankencoin Shares (FCS) in der On-Chain-Governance, die allen offensteht. Der Verein verwahrt keine Kundengelder.",
+    "roleMore": "Unter MiCA ist ZCHF ein Krypto-Asset ohne identifizierbaren Emittenten. Der Verein hat ein White Paper im MiCA-Format für ZCHF veröffentlicht, das im vorläufigen MiCA-Register der ESMA geführt wird.",
+    "roleLink": {
+      "label": "Rechtsgutachten, MiCA-White-Paper und Registereintrag",
+      "href": "/de/compliance"
+    },
     "items": [
       {
         "title": "Einen stabilen Franken und eine digitale Schweizer Wirtschaft weltweit fördern.",
