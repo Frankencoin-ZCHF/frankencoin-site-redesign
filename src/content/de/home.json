@@ -124,8 +124,8 @@
       "href": "https://app.frankencoin.com/savings"
     },
     "secondary": {
-      "label": "Verein kontaktieren",
-      "href": "/contact?topic=other"
+      "label": "info@frankencoin.com",
+      "href": "mailto:info@frankencoin.com"
     }
   },
   "dollar": {

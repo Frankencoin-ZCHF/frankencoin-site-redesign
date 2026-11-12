@@ -7,8 +7,8 @@
     "title": "Schliessen Sie sich an den Franken an,|der keinen Emittenten hat.",
     "subtitle": "ZCHF ist ein Standard-ERC-20 auf Ethereum und mehreren weiteren Chains. Dies sind die vier Integrationen, die wir am häufigsten sehen, jede mit einem klaren Einstiegspunkt.",
     "primary": {
-      "label": "Verein kontaktieren",
-      "href": "/contact?topic=integration"
+      "label": "info@frankencoin.com",
+      "href": "mailto:info@frankencoin.com"
     },
     "secondary": {
       "label": "Entwicklerdokumentation",
@@ -93,8 +93,8 @@
     "title": "Nicht sicher, wo Sie hingehören?",
     "body": "Schreiben Sie dem Verein. Eine E-Mail genügt; für Integrationen stehen Grants zur Verfügung.",
     "primary": {
-      "label": "Verein kontaktieren",
-      "href": "/contact?topic=integration"
+      "label": "info@frankencoin.com",
+      "href": "mailto:info@frankencoin.com"
     },
     "secondary": {
       "label": "Grant beantragen",

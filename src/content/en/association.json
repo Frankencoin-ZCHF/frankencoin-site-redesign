@@ -8,7 +8,7 @@
     "subtitle": "A Swiss non-profit that promotes Frankencoin and a digital Swiss franc. The Association does not issue ZCHF and does not control the protocol.",
     "primary": {
       "label": "Become a member",
-      "href": "mailto:johannes@frankencoin.com"
+      "href": "mailto:hello@frankencoin.com"
     },
     "secondary": {
       "label": "Read the whitepaper",
@@ -166,7 +166,7 @@
     "text": "In uncertain times, the world runs to the Swiss franc. Own its digital future.",
     "name": "Johannes Kern",
     "role": "Managing Director",
-    "email": "johannes@frankencoin.com",
+    "email": "hello@frankencoin.com",
     "cta": "Become a member"
   }
 }

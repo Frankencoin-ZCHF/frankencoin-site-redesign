@@ -8,7 +8,7 @@
     "subtitle": "Ein Schweizer Verein ohne Erwerbszweck, der Frankencoin und einen digitalen Schweizer Franken fördert. Der Verein gibt ZCHF nicht heraus und kontrolliert das Protokoll nicht.",
     "primary": {
       "label": "Mitglied werden",
-      "href": "mailto:johannes@frankencoin.com"
+      "href": "mailto:hello@frankencoin.com"
     },
     "secondary": {
       "label": "Whitepaper lesen",
@@ -166,7 +166,7 @@
     "text": "In unsicheren Zeiten flüchtet die Welt in den Schweizer Franken. Gestalten Sie seine digitale Zukunft mit.",
     "name": "Johannes Kern",
     "role": "Geschäftsführer",
-    "email": "johannes@frankencoin.com",
+    "email": "hello@frankencoin.com",
     "cta": "Mitglied werden"
   }
 }
