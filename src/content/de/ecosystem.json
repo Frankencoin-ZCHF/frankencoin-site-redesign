@@ -78,7 +78,7 @@
       "image": "/images/etherfi-logo.png",
       "imageAlt": "ether.fi Logo",
       "category": "Bezahlen",
-      "description": "Persönliche Schweizer IBAN für CHF-Überweisungen, Kartenzahlungen und Kredite gegen ZCHF, alles in einer App.",
+      "description": "Bezahlen Sie mit ZCHF über die Visa-Karte von ether.fi. Persönliche Schweizer IBAN für CHF-Überweisungen und Kredite gegen ZCHF, alles in einer App.",
       "linkLabel": "ether.fi"
     },
     {
@@ -89,15 +89,6 @@
       "category": "Bezahlen",
       "description": "Mit ZCHF an der Kasse von über 100 Spar-Filialen in der Schweiz bezahlen.",
       "linkLabel": "spar.ch"
-    },
-    {
-      "href": "https://www.zeal.app/",
-      "name": "Zeal mit Gnosis Pay",
-      "image": "/images/zeal.png",
-      "imageAlt": "Zeal Logo",
-      "category": "Bezahlen",
-      "description": "Wallet-App (Zeal) mit Visa-Debitkarte (Gnosis Pay), die aus Ihrem ZCHF-Guthaben bezahlt.",
-      "linkLabel": "zeal.app"
     },
     {
       "href": "https://privcart.com/",

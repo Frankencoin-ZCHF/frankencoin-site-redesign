@@ -87,7 +87,7 @@
     "pay": {
       "label": "Pay",
       "title": "Spend it like francs",
-      "body": "At Spar stores, with a GnosisPay card, or by bank transfer through a personal IBAN.",
+      "body": "At Spar stores, with an ether.fi card, or by bank transfer through a personal IBAN.",
       "cta": "See where",
       "href": "/ecosystem"
     }

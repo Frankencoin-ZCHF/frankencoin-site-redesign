@@ -78,7 +78,7 @@
       "image": "/images/etherfi-logo.png",
       "imageAlt": "ether.fi logo",
       "category": "Pay",
-      "description": "Personal Swiss IBAN for CHF transfers, card spending and borrowing against ZCHF, all in one app.",
+      "description": "Spend ZCHF with the ether.fi Visa card. Personal Swiss IBAN for CHF transfers and borrowing against ZCHF, all in one app.",
       "linkLabel": "ether.fi"
     },
     {
@@ -89,15 +89,6 @@
       "category": "Pay",
       "description": "Pay with ZCHF at the checkout of over 100 Spar stores in Switzerland.",
       "linkLabel": "spar.ch"
-    },
-    {
-      "href": "https://www.zeal.app/",
-      "name": "Zeal with Gnosis Pay",
-      "image": "/images/zeal.png",
-      "imageAlt": "Zeal logo",
-      "category": "Pay",
-      "description": "Wallet app (Zeal) with a Visa debit card (Gnosis Pay) that spends from your ZCHF balance.",
-      "linkLabel": "zeal.app"
     },
     {
       "href": "https://privcart.com/",

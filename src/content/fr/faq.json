@@ -52,7 +52,7 @@
 			"questions": [
 				{
 					"question": "Où puis-je utiliser Frankencoin ?",
-					"answer": "Le ZCHF est accepté dans les [magasins Spar en Suisse](https://presse.spar.ch/de/spar-schweiz/allgemein/neu%3A-jetzt-bei-spar-mit-krypto-waehrung-bezahlen/), intégré avec [GnosisPay](https://zeal.app/) pour les paiements par carte, disponible via les services IBAN de [Mt Pelerin](https://www.mtpelerin.com/) et utilisé dans des systèmes de paie comme [Quitt](https://www.quitt.ch/). Voir plus de [cas d'usage](/#core-features)."
+					"answer": "Le ZCHF est accepté dans les [magasins Spar en Suisse](https://presse.spar.ch/de/spar-schweiz/allgemein/neu%3A-jetzt-bei-spar-mit-krypto-waehrung-bezahlen/), intégré avec [ether.fi](https://www.ether.fi/app/cash/card) pour les paiements par carte, disponible via les services IBAN de [Mt Pelerin](https://www.mtpelerin.com/) et utilisé dans des systèmes de paie comme [Quitt](https://www.quitt.ch/). Voir plus de [cas d'usage](/#core-features)."
 				},
 				{
 					"question": "Comment obtenir des Frankencoin ?",

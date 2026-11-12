@@ -186,7 +186,7 @@ Frankencoin use cases include:
 - Earn: savings module and DeFi usage.
 - Build: integrate ZCHF into wallets, apps, payment flows, financial products, tokenisation and DeFi protocols.
 
-Ecosystem examples include Mt Pelerin, DFX, GnosisPay, Zeal, Spar, Aktionariat, Morpho, Curve, Bitcoin Suisse, Copper and other integrations shown on the website. Check https://frankencoin.com/ecosystem and the MCP/API for current integrations.
+Ecosystem examples include Mt Pelerin, DFX, ether.fi, Spar, Aktionariat, Morpho, Curve, Bitcoin Suisse, Copper and other integrations shown on the website. Check https://frankencoin.com/ecosystem and the MCP/API for current integrations.
 
 ## Source repositories
 - Smart contracts: https://github.com/Frankencoin-ZCHF/Frankencoin
