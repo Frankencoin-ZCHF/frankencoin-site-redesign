@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Datenschutzerklärung",
+    "description": "Wie frankencoin.com mit Personendaten umgeht: Hosting-Logs, Google Analytics mit Einwilligung, Kontaktformular und Ihre Rechte."
+  },
+  "hero": {
+    "title": "Datenschutz-|erklärung",
+    "subtitle": "Was diese Website erhebt, warum, und was Sie dagegen tun können. Stand: 12. November 2026."
+  },
+  "sections": [
+    {
+      "id": "who",
+      "title": "Wer verantwortlich ist",
+      "paragraphs": [
+        "Diese Website, frankencoin.com, wird vom Frankencoin-Verein betrieben, einem Schweizer Verein ohne Erwerbszweck mit Sitz in Zug, Schweiz. Für alles rund um Personendaten schreiben Sie an info@frankencoin.com.",
+        "Der Verein betreibt nur diese Website. Er gibt ZCHF nicht heraus, kontrolliert das Frankencoin-Protokoll nicht und betreibt nicht die App unter app.frankencoin.com, für die eigene Bedingungen gelten. Transaktionen, die Sie on-chain ausführen, sind systembedingt öffentlich und nicht Gegenstand dieser Erklärung."
+      ]
+    },
+    {
+      "id": "what",
+      "title": "Was wir erheben",
+      "items": [
+        {
+          "title": "Server-Logs",
+          "text": "Unser Hosting-Anbieter zeichnet bei jedem Aufruf technische Zugriffsdaten auf: IP-Adresse, Zeitpunkt, aufgerufene Seite, Browsertyp und verweisende Seite. Wir nutzen sie, um die Website sicher zu betreiben. Die Logs werden nach kurzer Zeit gelöscht. Rechtsgrundlage: unser berechtigtes Interesse an einem sicheren Betrieb."
+        },
+        {
+          "title": "Statistik, nur mit Ihrer Einwilligung",
+          "text": "Wir nutzen Google Analytics 4 (Google Ireland Ltd.), um zu sehen, welche Seiten gelesen und welche Buttons genutzt werden. Wenn Sie im Cookie-Banner zustimmen, setzt Google Cookies (etwa _ga) und wir sehen pseudonyme Nutzungsdaten, darunter eine gekürzte IP-Adresse, Gerät und Land. Ereignisdaten werden zwei Monate aufbewahrt, Nutzerdaten 14 Monate. Lehnen Sie ab, werden keine Statistik-Cookies gesetzt und keine Kennung gespeichert; Google erhält nur aggregierte, cookielose Signale, die sich nicht mit Ihnen verknüpfen lassen. Ihre Wahl können Sie jederzeit unter Cookie-Einstellungen im Footer ändern. Rechtsgrundlage: Ihre Einwilligung. Google kann Daten in den USA unter dem EU-US Data Privacy Framework verarbeiten."
+        },
+        {
+          "title": "Kontaktformular",
+          "text": "Wenn Sie uns über das Kontaktformular schreiben, erhalten wir Ihren Namen, Ihre E-Mail-Adresse, das genannte Unternehmen oder Projekt, das Thema und Ihre Nachricht sowie die Seite, von der aus Sie geschrieben haben. Die Nachricht wird über den E-Mail-Dienst Resend (Resend, Inc.) in unser Postfach zugestellt. Wir nutzen sie nur, um Ihnen zu antworten, und bewahren sie so lange auf, wie das Gespräch es erfordert. Rechtsgrundlage: Massnahmen auf Ihre Anfrage vor einer möglichen Zusammenarbeit und unser berechtigtes Interesse an der Beantwortung von Anfragen."
+        },
+        {
+          "title": "Protokolldaten",
+          "text": "Zinssätze, Reserven und Umlauf auf dieser Website stammen von api.frankencoin.com und der öffentlichen Blockchain. Diese Abfragen enthalten über die oben genannten technischen Zugriffsdaten hinaus keine Personendaten."
+        },
+        {
+          "title": "Eingebettete Inhalte",
+          "text": "Die Medienseite kann Videos von YouTube (Google) einbetten. Die Einbettung lädt beim Öffnen dieser Seite, und YouTube kann eigene Cookies setzen, für die Googles Datenschutzerklärung gilt. Links zu anderen Websites, einschliesslich App und Börsen, führen zu Diensten mit eigenen Regeln."
+        }
+      ]
+    },
+    {
+      "id": "cookies",
+      "title": "Cookies, die wir verwenden",
+      "items": [
+        { "title": "fc-consent", "text": "Speichert Ihre Cookie-Wahl im Browser, damit wir nicht erneut fragen. Notwendig, 12 Monate." },
+        { "title": "_ga, _ga_*", "text": "Google Analytics, nur nach Einwilligung. Unterscheidet Besucher und Sitzungen. Bis zu 2 Jahre." }
+      ]
+    },
+    {
+      "id": "rights",
+      "title": "Ihre Rechte",
+      "paragraphs": [
+        "Nach dem Schweizer Datenschutzgesetz und, soweit anwendbar, der EU-Datenschutz-Grundverordnung können Sie Auskunft darüber verlangen, welche Personendaten wir über Sie haben, sie berichtigen oder löschen lassen, einer Verarbeitung auf Basis berechtigter Interessen widersprechen und eine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Schreiben Sie an info@frankencoin.com. Sie können sich auch beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten oder bei der Aufsichtsbehörde Ihres EU-Landes beschweren."
+      ]
+    },
+    {
+      "id": "changes",
+      "title": "Änderungen",
+      "paragraphs": [
+        "Wir aktualisieren diese Erklärung, wenn sich die Website ändert. Das Datum oben zeigt, welche Fassung Sie lesen."
+      ]
+    }
+  ],
+  "settingsLabel": "Cookie-Einstellungen öffnen"
+}

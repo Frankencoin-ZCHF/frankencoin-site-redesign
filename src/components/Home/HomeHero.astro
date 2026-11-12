@@ -75,7 +75,7 @@ const [l1, l2] = p.title.split("|");
       {p.ticker.map((t) => {
         const inner = (
           <>
-            <dt class="flex items-center gap-1.5 font-mono text-[9px] md:text-[10px] uppercase tracking-[0.18em] md:tracking-[0.22em] text-[var(--color-neutral-550)] truncate">
+            <dt class="flex items-center gap-1.5 text-[12px] font-medium text-[var(--color-neutral-550)] truncate">
               {t.label}
               {t.href && <span class="opacity-0 group-hover:opacity-100 transition-opacity text-[var(--color-brand-swiss)]" aria-hidden="true">↗</span>}
             </dt>

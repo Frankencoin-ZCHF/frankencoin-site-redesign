@@ -23,12 +23,12 @@ const overlap = size === "lg" ? "-ml-2 sm:-ml-3 md:-ml-4" : "-ml-2 sm:-ml-2.5";
   <div class="flex items-center">
     {shown.map((c, i) => (
       <span class={`relative ${i ? overlap : ""} ${dim} rounded-full ring-2 sm:ring-4 ring-white bg-[var(--color-gray-10)] shadow-[0_6px_18px_-8px_rgba(9,47,98,0.45)] overflow-hidden grid place-items-center`} style={`z-index:${19 - i}`} title={`${c.name} (${c.symbol})`}>
-        {c.file ? <img src={`/images/coins/${c.file}`} alt={c.symbol} loading="lazy" class="h-full w-full object-cover" /> : <span class="font-mono text-[10px] font-bold text-[var(--color-brand-deep-blue)]">{c.symbol.slice(0, 3)}</span>}
+        {c.file ? <img src={`/images/coins/${c.file}`} alt={c.symbol} loading="lazy" class="h-full w-full object-cover" /> : <span class="text-[10px] font-bold text-[var(--color-brand-deep-blue)]">{c.symbol.slice(0, 3)}</span>}
       </span>
     ))}
     {more > 0 && (
-      <span class={`relative ${overlap} ${dim} rounded-full ring-2 sm:ring-4 ring-white bg-[var(--color-brand-deep-blue)] text-white grid place-items-center font-mono text-[11px] font-bold`} style="z-index:1">+{more}</span>
+      <span class={`relative ${overlap} ${dim} rounded-full ring-2 sm:ring-4 ring-white bg-[var(--color-brand-deep-blue)] text-white grid place-items-center text-[11px] font-bold`} style="z-index:1">+{more}</span>
     )}
   </div>
-  {label && <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-neutral-550)]">{label.replace("{n}", String(coins.length))}</p>}
+  {label && <p class="text-[12px] font-medium text-[var(--color-neutral-550)]">{label.replace("{n}", String(coins.length))}</p>}
 </div>

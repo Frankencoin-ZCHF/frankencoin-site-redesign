@@ -168,6 +168,13 @@
       }
     ],
     "copyright": "© {year} Frankencoin Association. Alle Rechte vorbehalten.",
-    "disclaimer": "Die Zahlen auf dieser Website sind Live-Protokolldaten und vergangene Werte. Nichts hier ist eine Anlage-, Rechts- oder Steuerberatung. Vergangene Ergebnisse sagen nichts über künftige aus."
+    "disclaimer": "Die Zahlen auf dieser Website sind Live-Protokolldaten und vergangene Werte. Nichts hier ist eine Anlage-, Rechts- oder Steuerberatung. Vergangene Ergebnisse sagen nichts über künftige aus.",
+    "legal": {
+      "privacy": {
+        "label": "Datenschutz",
+        "href": "/privacy"
+      },
+      "cookies": "Cookie-Einstellungen"
+    }
   }
 }

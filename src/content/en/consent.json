@@ -1,0 +1,9 @@
+{
+  "title": "Cookies for analytics",
+  "text": "We use Google Analytics to see which pages are read and which buttons are used. It sets cookies only if you agree. Without consent we count visits without cookies and without identifying you.",
+  "accept": "Allow analytics",
+  "decline": "Only necessary",
+  "more": "Privacy policy",
+  "moreHref": "/privacy",
+  "settings": "Cookie settings"
+}
