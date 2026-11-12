@@ -7,8 +7,8 @@
     "title": "Diversify your treasury|into Swiss francs.",
     "subtitle": "Hold part of your on-chain reserves in francs rather than only dollars, and let idle balances earn the protocol rate in the savings module.",
     "primary": {
-      "label": "Email info@frankencoin.com",
-      "href": "mailto:info@frankencoin.com"
+      "label": "Contact the association",
+      "href": "/contact?topic=treasury"
     },
     "secondary": {
       "label": "See live reserves",
@@ -73,8 +73,8 @@
     "title": "Planning an allocation?",
     "body": "The Frankencoin Association walks treasury teams through custody, accounting and liquidity for larger amounts.",
     "primary": {
-      "label": "Email info@frankencoin.com",
-      "href": "mailto:info@frankencoin.com"
+      "label": "Contact the association",
+      "href": "/contact?topic=treasury"
     },
     "secondary": {
       "label": "See live reserves",

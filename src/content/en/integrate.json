@@ -7,8 +7,8 @@
     "title": "Plug into the Swiss franc|that has no issuer.",
     "subtitle": "ZCHF is a standard ERC-20 on Ethereum and several other chains. These are the four integrations we see most, each with one place to start.",
     "primary": {
-      "label": "Email info@frankencoin.com",
-      "href": "mailto:info@frankencoin.com"
+      "label": "Contact the association",
+      "href": "/contact?topic=integration"
     },
     "secondary": {
       "label": "Developer docs",
@@ -93,8 +93,8 @@
     "title": "Not sure where you fit?",
     "body": "Write to the association. One email is enough; grants are available for integrations.",
     "primary": {
-      "label": "info@frankencoin.com",
-      "href": "mailto:info@frankencoin.com"
+      "label": "Contact the association",
+      "href": "/contact?topic=integration"
     },
     "secondary": {
       "label": "Apply for a grant",
