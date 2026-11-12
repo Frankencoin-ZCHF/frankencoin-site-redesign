@@ -22,6 +22,7 @@ const linkedin = { target: "_blank", rel: "noopener noreferrer" };
 
   <LPSection id="what-we-do" title={c.membership.title} subtitle={c.membership.subtitle} split>
     <p class="mb-8 border-l-4 border-[var(--color-brand-swiss)] pl-5 ty-body-1 font-semibold text-pretty text-[var(--color-brand-deep-blue)] m-0">{c.membership.role}</p>
+    <p class="-mt-4 mb-8 pl-5 border-l-4 border-transparent ty-body-2 text-pretty text-[var(--color-neutral-650)] m-0">{c.membership.roleMore} <a href={c.membership.roleLink.href} class="font-semibold text-[var(--color-brand-deep-blue)] underline decoration-[var(--color-brand-swiss)] underline-offset-4 hover:text-[var(--color-brand-swiss)]">{c.membership.roleLink.label} →</a></p>
     <ul class="m-0 p-0 list-none divide-y divide-[var(--color-gray-20)] border-y border-[var(--color-gray-20)]">
       {c.membership.items.map((it: { title: string; description: string }) => (
         <li class="grid md:grid-cols-[1fr_1.6fr] gap-2 md:gap-10 py-6 md:py-8">
