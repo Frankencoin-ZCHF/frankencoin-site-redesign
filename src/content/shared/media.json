@@ -1,6 +1,9 @@
 {
   "_comment": "This file contains media content (articles and videos) and manual metadata overrides. Open Graph data is fetched by default for articles. Only add manual overrides when you need to override specific fields.",
   "articles": [
+    "https://www.tippinpoint.ch/erst-die-blockchain-macht-hayeks-vision-moglich/",
+    "https://www.allnews.ch/content/produits/un-stablecoin-en-francs-suisses-arrive-sur-kraken",
+    "https://drive.google.com/file/d/15Vmha0vSnlxsjrFMCIGfBcWPw9lW7b-W/view",
     "https://www.thenextvertical.com/can-the-swiss-franc-go-on-chain-interview-with-johannes-kern-managing-director-at-frankencoin-association/",
     "https://www.moneytoday.ch/news/internationale-kryptoboerse-listet-ab-sofort-frankencoin",
     "https://www.finews.ch/news/finanzplatz/73899-frankencoin-listing-kraken-kryptoboerse",
@@ -30,6 +33,8 @@
     "https://www.finews.ch/news/finanzplatz/71537-luzius-meisser-stablecoin-frankencoin-sbf-krypto-finig-allunity-finma-sif-bundesrat-micar-tether-bitcoin-finanzsystem-geldschoepfung-smartcontracts-dezentral-staking-lending-gold"
   ],
   "videos": [
+    "https://www.youtube.com/watch?v=564k9sNoM_c",
+    "https://www.youtube.com/watch?v=gDuZ6baS98g",
     "https://www.youtube.com/watch?v=qpSljn2UCBA",
     "https://www.youtube.com/watch?v=ExuQRdgLfLY",
     "https://www.youtube.com/watch?v=9-fBHEPSu7c",
@@ -50,6 +55,27 @@
     "https://youtu.be/YF_a7A7lwoQ"
   ],
   "articleMetadata": {
+    "https://www.tippinpoint.ch/erst-die-blockchain-macht-hayeks-vision-moglich/": {
+      "title": "Erst die Blockchain macht Hayeks-Vision möglich",
+      "description": "Schweizer Unternehmen präsentieren ihre Version von «guten Währungen», 50 Jahre nachdem der österreichische Ökonom die Grundlagen definiert hat.",
+      "image": "https://storage.ghost.io/c/11/7a/117a3396-8af6-43a4-8dc5-f891a0cee13d/content/images/2026/10/Franken_2606177_070613-1.jpg",
+      "siteName": "tippinpoint.ch",
+      "publishedDate": "Oct 30, 2026"
+    },
+    "https://www.allnews.ch/content/produits/un-stablecoin-en-francs-suisses-arrive-sur-kraken": {
+      "title": "Un stablecoin en francs suisses arrive sur Kraken",
+      "description": "«L’infrastructure financière de demain ne doit pas se construire uniquement en dollars», explique Johannes Kern, directeur général de la Frankencoin Association. «Un franc suisse numérique doit en faire partie.»",
+      "image": "https://www.allnews.ch/sites/default/files/styles/large/public/Johannes_Kern.jpg?h=ac301170&itok=ZVYwpIDK",
+      "siteName": "Allnews",
+      "publishedDate": "Oct 8, 2026"
+    },
+    "https://drive.google.com/file/d/15Vmha0vSnlxsjrFMCIGfBcWPw9lW7b-W/view": {
+      "title": "Im Treasury angekommen",
+      "description": "Matthias Nadler, CTO bei Plusplus AG, erläutert, wie Unternehmen Stablecoins im Treasury-Management einsetzen können. Beitrag auf Seite 3 der Verlagsbeilage «Krypto» zur Finanz und Wirtschaft Nr. 81.",
+      "image": "/images/media/fuw-im-treasury-angekommen-20261017.webp",
+      "siteName": "Finanz und Wirtschaft – Verlagsbeilage «Krypto»",
+      "publishedDate": "Oct 17, 2026"
+    },
     "https://www.thenextvertical.com/can-the-swiss-franc-go-on-chain-interview-with-johannes-kern-managing-director-at-frankencoin-association/": {
       "title": "Can the Swiss Franc Go On-Chain?",
       "description": "Johannes Kern turns the usual institutional-crypto debate around: instead of asking how crypto can fit into traditional finance, he argues that decentralized systems should be compelling enough for traditional finance to adopt them.",
@@ -199,6 +225,20 @@
     }
   },
   "videoMetadata": {
+    "https://www.youtube.com/watch?v=564k9sNoM_c": {
+      "title": "Johannes Kern, Frankencoin | Optimistic Governance: Build an Actually Decentralized Stablecoin",
+      "description": "What does it take for a decentralized stablecoin’s governance to resist capture by a small number of voters? In this talk, Johannes Kern (Frankencoin Association) examines how optimistic governance is designed to keep a decentralized stablecoin resilient and accountable.",
+      "author": "Stablecoin Summit",
+      "publishedDate": "Oct 16, 2026",
+      "thumbnail": "/images/video-thumbnails/564k9sNoM_c.jpg"
+    },
+    "https://www.youtube.com/watch?v=gDuZ6baS98g": {
+      "title": "How to Borrow Onchain Against Illiquid RWAs Without Oracles — Paolo DI Stefano | Frankencoin",
+      "description": "Paolo DI Stefano discusses borrowing onchain against illiquid real-world assets without oracles using Frankencoin.",
+      "author": "ETH Belgrade",
+      "publishedDate": "Oct 4, 2026",
+      "thumbnail": "/images/video-thumbnails/gDuZ6baS98g.jpg"
+    },
     "https://www.youtube.com/watch?v=qpSljn2UCBA": {
       "title": "Frankencoin - présentation et épargne",
       "description": "Frankencoin est un stablecoin répliquant la valeur du Franc Suisse sous le ticker ZCHF.",
