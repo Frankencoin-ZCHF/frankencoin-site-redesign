@@ -51,7 +51,7 @@ const linkedin = { target: "_blank", rel: "noopener noreferrer" };
   </LPSection>
 
   <LPSection id="people" title={c.people.title} accent>
-    <h3 class="ty-xs font-mono uppercase tracking-[0.22em] text-[var(--color-neutral-550)] m-0">{c.people.board.title}</h3>
+    <h3 class="ty-xs font-semibold text-[var(--color-neutral-550)] m-0">{c.people.board.title}</h3>
     <ul class="mt-5 m-0 p-0 list-none grid gap-4 md:grid-cols-3">
       {c.people.board.items.map((p: Person) => (
         <li class="rounded-3xl border border-[var(--color-gray-20)] bg-white p-6 md:p-7">
@@ -62,7 +62,7 @@ const linkedin = { target: "_blank", rel: "noopener noreferrer" };
       ))}
     </ul>
 
-    <h3 class="mt-12 ty-xs font-mono uppercase tracking-[0.22em] text-[var(--color-neutral-550)] m-0">{c.people.advisers.title}</h3>
+    <h3 class="mt-12 ty-xs font-semibold text-[var(--color-neutral-550)] m-0">{c.people.advisers.title}</h3>
     <ul class="mt-5 m-0 p-0 list-none grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {c.people.advisers.items.map((p: Person) => (
         <li class="flex items-start gap-4 rounded-3xl border border-[var(--color-gray-20)] bg-white p-5">

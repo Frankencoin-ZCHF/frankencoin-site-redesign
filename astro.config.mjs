@@ -43,7 +43,7 @@ export default defineConfig({
 			filter: (page) => !page.includes('/verify/'),
 			// Server-rendered pages are not discovered automatically.
 			customPages: [
-				...['fcs', 'use-cases/save-in-chf', 'use-cases/borrow', 'for/savers', 'for/treasuries', 'for/exchanges-wallets', 'for/developers', 'integrate', 'integrate/collateral', 'referral', 'transparency', 'security', 'how-it-works', 'faq', 'glossary', 'compare', 'news', 'press', 'association', 'contact'].flatMap((p) => [`https://frankencoin.com/${p}/`, `https://frankencoin.com/de/${p}/`]),
+				...['fcs', 'use-cases/save-in-chf', 'use-cases/borrow', 'for/savers', 'for/treasuries', 'for/exchanges-wallets', 'for/developers', 'integrate', 'integrate/collateral', 'referral', 'transparency', 'security', 'how-it-works', 'faq', 'glossary', 'compare', 'news', 'press', 'association', 'contact', 'privacy'].flatMap((p) => [`https://frankencoin.com/${p}/`, `https://frankencoin.com/de/${p}/`]),
 			],
 		}),
 	],

@@ -136,9 +136,15 @@ const localizedColumns = footer.columns.map((column: Column) => ({
       <SocialLinksBar theme={"light"} />
       <p
         style="color: var(--color-neutral-400);"
-        class="text-[var(--font-size-xs)]"
+        class="text-[var(--font-size-xs)] flex flex-wrap items-center justify-center gap-x-5 gap-y-2"
       >
-        {copyrightText}
+        <span>{copyrightText}</span>
+        {footer.legal && (
+          <>
+            <a href={prefixLanguage(footer.legal.privacy.href)} class="underline underline-offset-4 hover:text-white transition-colors">{footer.legal.privacy.label}</a>
+            <button type="button" onclick="window.fcConsent && window.fcConsent.open()" class="underline underline-offset-4 hover:text-white transition-colors">{footer.legal.cookies}</button>
+          </>
+        )}
       </p>
       {footer.disclaimer && (
         <p style="color: var(--color-neutral-400);" class="max-w-3xl text-center text-[var(--font-size-xs)] leading-relaxed">

@@ -168,6 +168,13 @@
       }
     ],
     "copyright": "© {year} Frankencoin Association. All rights reserved.",
-    "disclaimer": "Figures on this site are live protocol data and past history. Nothing here is investment, legal or tax advice. Past performance does not predict future results."
+    "disclaimer": "Figures on this site are live protocol data and past history. Nothing here is investment, legal or tax advice. Past performance does not predict future results.",
+    "legal": {
+      "privacy": {
+        "label": "Privacy policy",
+        "href": "/privacy"
+      },
+      "cookies": "Cookie settings"
+    }
   }
 }

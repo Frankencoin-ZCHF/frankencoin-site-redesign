@@ -42,18 +42,18 @@ const [l1, l2] = t(c.title).split("|");
 
     <div class="mt-10 grid lg:grid-cols-[1.4fr_1fr] gap-6 items-stretch">
       <figure class="m-0 rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] p-6 md:p-8 flex flex-col">
-        <figcaption class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-neutral-550)]">{c.chartLabel}</figcaption>
+        <figcaption class="text-[12px] font-medium text-[var(--color-neutral-550)]">{c.chartLabel}</figcaption>
         <div class="flex items-baseline gap-3 mt-2">
           <span class="text-[40px] font-black tracking-tight text-[var(--color-brand-deep-blue)] leading-none">{first.usdchf.toFixed(2)}</span>
           <span class="text-[var(--color-neutral-550)]">→</span>
           <span class="text-[40px] font-black tracking-tight text-[#1a9cc8] leading-none">{now.toFixed(2)}</span>
-          <span class="ml-2 rounded-full bg-[#ffe4e4] text-[#b42318] font-mono text-[11px] font-bold px-2.5 py-1">−{pct(loss)}</span>
+          <span class="ml-2 rounded-full bg-[#ffe4e4] text-[#b42318] text-[11px] font-bold px-2.5 py-1">−{pct(loss)}</span>
         </div>
         <svg viewBox="0 0 100 40" preserveAspectRatio="none" class="w-full h-40 md:h-56 mt-5 flex-1" role="img" aria-label={c.chartLabel}>
           <path d={`${line} L100 40 L0 40 Z`} fill="rgba(26,156,200,0.12)" />
           <path d={line} fill="none" stroke="#1a9cc8" stroke-width="1.6" vector-effect="non-scaling-stroke" />
         </svg>
-        <div class="flex justify-between font-mono text-[10px] text-[var(--color-neutral-550)] mt-1"><span>{first.year}</span><span>{new Date().getFullYear()}</span></div>
+        <div class="flex justify-between text-[11px] text-[var(--color-neutral-550)] mt-1"><span>{first.year}</span><span>{new Date().getFullYear()}</span></div>
       </figure>
       <!-- One comparison, not two facts: same money, two outcomes, bars to scale, one line on why. -->
       <div class="rounded-3xl border border-[var(--color-gray-20)] bg-white p-6 md:p-7 flex flex-col gap-5">
@@ -73,7 +73,7 @@ const [l1, l2] = t(c.title).split("|");
           </div>
           <div class="h-3 rounded-full bg-white/15 overflow-hidden"><div class="h-full rounded-full bg-[#7ee2a8]" style="width:100%"></div></div>
           <p class="ty-xs text-white/80 m-0">{t(c.tiles.chf.note)} · <b class="text-[#7ee2a8]">−{pct(1 - chfReal / amount)} {c.tiles.chf.tag}</b></p>
-          <span class="self-start mt-1 rounded-full bg-[#7ee2a8] text-[var(--color-brand-deep-blue)] font-mono text-[11px] font-bold px-2.5 py-1">{t(c.tiles.chf.badge)}</span>
+          <span class="self-start mt-1 rounded-full bg-[#7ee2a8] text-[var(--color-brand-deep-blue)] text-[11px] font-bold px-2.5 py-1">{t(c.tiles.chf.badge)}</span>
         </div>
         <p class="ty-body-3 text-[var(--color-neutral-650)] m-0 border-t border-[var(--color-gray-20)] pt-4">{t(c.tiles.why)}</p>
       </div>

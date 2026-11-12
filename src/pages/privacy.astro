@@ -1,0 +1,36 @@
+---
+/* /privacy — privacy policy and cookie information. Copy: content/{en,de}/privacy.json. The "Open cookie settings" button reopens the consent banner (window.fcConsent.open). */
+import Base from "../layouts/Base.astro";
+import LPHero from "../components/LP/LPHero.astro";
+import LPSection from "../components/LP/LPSection.astro";
+import { getLanguageFromURL, loadContent } from "../utils/i18n";
+
+export const prerender = false;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const en = await loadContent<any>("privacy", "en");
+const local = await loadContent<any>("privacy", lang);
+const c = { ...en, ...local };
+---
+
+<Base title={c.meta.title} description={c.meta.description}>
+  <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} />
+
+  {c.sections.map((s: any, i: number) => (
+    <LPSection id={s.id} title={s.title} split accent={i % 2 === 1}>
+      {s.paragraphs && s.paragraphs.map((p: string) => <p class="ty-body-1 text-pretty text-[var(--color-neutral-700)] m-0 [&+p]:mt-4">{p}</p>)}
+      {s.items && (
+        <dl class="m-0 divide-y divide-[var(--color-gray-20)] border-y border-[var(--color-gray-20)]">
+          {s.items.map((it: any) => (
+            <div class="grid md:grid-cols-[1fr_2.2fr] gap-2 md:gap-10 py-5 md:py-6">
+              <dt class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</dt>
+              <dd class="ty-body-2 text-pretty text-[var(--color-neutral-650)] m-0">{it.text}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+      {s.id === "cookies" && (
+        <button type="button" onclick="window.fcConsent && window.fcConsent.open()" class="mt-6 inline-flex rounded-[10px] border-2 border-[var(--color-brand-deep-blue)] px-6 h-[48px] items-center ty-body-3 font-bold text-[var(--color-brand-deep-blue)] hover:bg-[var(--color-brand-deep-blue)] hover:text-white transition-colors">{c.settingsLabel}</button>
+      )}
+    </LPSection>
+  ))}
+</Base>

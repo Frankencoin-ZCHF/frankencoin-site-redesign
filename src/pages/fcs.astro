@@ -186,7 +186,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
             <img src="/images/fcs/fcs.svg" alt="" width="64" height="64" class="size-16" />
             <span class="fcs-black text-2xl tracking-[0.18em] text-[var(--color-brand-deep-blue)]">{c.hero.brand.name}</span>
             <span aria-hidden="true" class="h-6 w-px bg-[var(--color-brand-deep-blue)]/25"></span>
-            <span class="text-xs font-medium uppercase tracking-[0.28em] text-[#3a5981]">{c.hero.brand.full}</span>
+            <span class="text-xs font-medium text-[#3a5981]">{c.hero.brand.full}</span>
           </div>
           <h1 id="hero-h" class="fcs-display mt-6 max-w-4xl text-balance md:mt-8">{c.hero.headline}</h1>
           <p class="fcs-lead mt-5 max-w-2xl md:mt-6">{c.hero.sub}</p>
@@ -209,7 +209,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
               {
                 figures.map((fig, i) => (
                   <div class={`px-5 py-2.5 md:py-4 ${i > 0 ? "border-t border-white/15 md:border-l md:border-t-0" : ""}`}>
-                    <dt class="text-xs uppercase leading-snug tracking-wide text-[#d9dbe9]">{fig.label}</dt>
+                    <dt class="text-xs leading-snug text-[#d9dbe9]">{fig.label}</dt>
                     <dd class="mt-1 flex items-baseline gap-2">
                       <span class="fcs-black text-2xl tabular-nums" data-stat>{fig.value}</span>
                       <span class="text-xs text-[#d9dbe9]">{fig.unit}</span>
@@ -235,7 +235,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
                 class="relative mt-6 flex max-w-5xl flex-col gap-4 rounded-2xl bg-white p-5 shadow-2xl shadow-[var(--color-brand-deep-blue)]/15 ring-1 ring-[var(--color-neutral-200)] md:flex-row md:items-center md:justify-between md:gap-6"
               >
                 <div class="min-w-0">
-                  <p class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-brand-swiss)]">
+                  <p class="flex items-center gap-2 text-xs font-medium text-[var(--color-brand-swiss)]">
                     <span aria-hidden="true" class="relative flex size-2">
                       <span class="absolute inline-flex size-full rounded-full bg-[var(--color-brand-swiss)] opacity-60 motion-safe:animate-ping"></span>
                       <span class="relative inline-flex size-2 rounded-full bg-[var(--color-brand-swiss)]"></span>
@@ -385,7 +385,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
             {
               proof.map((group) => (
                 <div>
-                  <p class="text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-brand-titan-gray)]">{group.label}</p>
+                  <p class="text-xs font-medium text-[var(--color-brand-titan-gray)]">{group.label}</p>
                   <ul class="mt-2 flex flex-col gap-1.5">
                     {group.items.map((v) => (
                       <li>
