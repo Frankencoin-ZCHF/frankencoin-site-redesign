@@ -230,7 +230,7 @@ The Frankencoin MCP server at [mcp.frankencoin.com](https://mcp.frankencoin.com)
 ### Prerequisites
 
 - Node.js 22 (the production runtime)
-- npm 11.9.0
+- npm bundled with Node.js 22
 
 ### Local Development
 
@@ -263,7 +263,9 @@ HOST=0.0.0.0 PORT=3000 npm start
 
 ### Railway Deployment
 
-Deploy the `main` branch with Railpack. `package.json` selects Node.js 22 and npm 11.9.0; `package-lock.json` is the only dependency lockfile. `railpack.json` runs `npm ci` and starts the standalone Node server with `npm start`. Railpack detects `npm run build` from the build script.
+Deploy the `main` branch with Railpack. `package.json` selects Node.js 22, and Railpack uses its bundled npm; `package-lock.json` is the only dependency lockfile. `railpack.json` runs `npm ci` and starts the standalone Node server with `npm start`. Railpack detects `npm run build` from the build script.
+
+Keep `packageManager` unset: an npm pin in that field enables Railpack's Corepack setup, which this project's custom install step replaces.
 
 In the Railway service settings:
 
