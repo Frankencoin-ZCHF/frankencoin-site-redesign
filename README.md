@@ -81,14 +81,15 @@ The website is designed to be accessible to non-technical audiences, traditional
 
 All commands are run from the root of the project:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `yarn install`             | Installs dependencies                            |
-| `yarn run dev`             | Starts local dev server at `localhost:3000`      |
-| `yarn run build`           | Build production site to `./dist/`               |
-| `yarn run preview`         | Preview production build locally                 |
-| `yarn run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `yarn run astro -- --help` | Get help using the Astro CLI                     |
+| Command | Action |
+| :--- | :--- |
+| `npm ci` | Install the locked dependencies |
+| `npm run dev` | Start the development server at `localhost:3000` |
+| `npm run build` | Build the production site to `./dist/` |
+| `npm start` | Run the production Node server |
+| `npm run preview` | Preview the production build locally |
+| `npm run astro -- ...` | Run Astro CLI commands |
+| `npm run astro -- --help` | Get help using the Astro CLI |
 
 ## 🌍 Internationalization (i18n)
 
@@ -228,21 +229,21 @@ The Frankencoin MCP server at [mcp.frankencoin.com](https://mcp.frankencoin.com)
 
 ### Prerequisites
 
-- Node.js 18+
-- npm or yarn
+- Node.js 22 (the production runtime)
+- npm 11.9.0
 
 ### Local Development
 
 ```bash
 # Clone the repository
-git clone https://github.com/Frankencoin-ZCHF/frankencoin-site.git
-cd frankencoin-site
+git clone https://github.com/Frankencoin-ZCHF/frankencoin-site-redesign.git
+cd frankencoin-site-redesign
 
 # Install dependencies
-yarn install
+npm ci
 
 # Start development server
-yarn run dev
+npm run dev
 ```
 
 The development server will start at `http://localhost:3000` (or the next available port if 3000 is in use).
@@ -250,17 +251,34 @@ The development server will start at `http://localhost:3000` (or the next availa
 ### Building for Production
 
 ```bash
-# Build the site
-yarn run build
+# Install the exact committed dependency versions
+npm ci
 
-# Preview the build
-yarn run preview
+# Build the site
+npm run build
+
+# Start the production server
+HOST=0.0.0.0 PORT=3000 npm start
 ```
+
+### Railway Deployment
+
+Deploy the `main` branch with Railpack. `package.json` selects Node.js 22 and npm 11.9.0; `package-lock.json` is the only dependency lockfile. `railpack.json` runs `npm ci` and starts the standalone Node server with `npm start`. Railpack detects `npm run build` from the build script.
+
+In the Railway service settings:
+
+- Set the source branch to `main`.
+- Clear the previous custom build and start commands so the repository configuration applies, or set them to `npm run build` and `npm start`. Remove any Yarn install override as well.
+- Let Railway supply `PORT`; the server binds to `0.0.0.0` through the Railpack configuration.
+- Set `SITE` to the public site URL. Leave `VERCEL` unset on Railway so Astro builds the Node adapter.
+
+`npm run preview` is for local build inspection. Production uses `npm start`, including the server-rendered routes.
 
 ### Environment Variables
 
 - `SITE`: Base URL for the site (default: `https://frankencoin.com`)
-- `PORT`: Development server port (default: `3000`)
+- `PORT`: HTTP server port (Railway supplies this automatically; use `3000` locally)
+- `HOST`: Production bind address (`0.0.0.0` on Railway)
 
 ## 📝 Content Management
 
@@ -476,7 +494,7 @@ To add a new CTA button:
 - Copy: `src/content/en/fcs.json`, `src/content/de/fcs.json` (French falls back to English)
 - Page: `src/pages/fcs.astro`, styles in `src/styles/fcs.css`, pixel art in `src/components/Fcs/`
 - Live figures: `src/utils/fcsStats.ts` reads FCS price and the reserve pool (`/ecosystem/fps/info`) and protocol ROE (`/analytics/dailyLog/json`) from `api.frankencoin.com`, cached for 5 minutes. Optional env: `FRANKENCOIN_API_URL`
-- Before committing copy changes, run `yarn lint:fcs`. It blocks banned claims and hardcoded market numbers (live numbers must come from chain reads)
+- Before committing copy changes, run `npm run lint:fcs`. It blocks banned claims and hardcoded market numbers (live numbers must come from chain reads)
 - Analytics: outbound clicks send GA events (`cta_get_fcs`, `cta_swap_enso`, `verify_link`, `outbound_etherscan`, `copy_contract`) and pass `utm_*` parameters through to the destination
 
 ### Content Best Practices
