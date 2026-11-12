@@ -59,7 +59,7 @@
       "title": "Erst die Blockchain macht Hayeks-Vision möglich",
       "description": "Schweizer Unternehmen präsentieren ihre Version von «guten Währungen», 50 Jahre nachdem der österreichische Ökonom die Grundlagen definiert hat.",
       "image": "https://storage.ghost.io/c/11/7a/117a3396-8af6-43a4-8dc5-f891a0cee13d/content/images/2026/10/Franken_2606177_070613-1.jpg",
-      "siteName": "tippinpoint.ch",
+      "siteName": "TippinPoint",
       "publishedDate": "Oct 30, 2026"
     },
     "https://www.allnews.ch/content/produits/un-stablecoin-en-francs-suisses-arrive-sur-kraken": {
@@ -101,7 +101,7 @@
       "title": "Kraken nimmt Schweizer Stablecoin ins Angebot auf",
       "description": "Die Kryptoplattform Kraken nimmt den Frankencoin (ZCHF) in ihr Handelsangebot auf. Damit wird die Kryptowährung erstmals über eine grosse internationale Kryptobörse zugänglich.",
       "image": "https://storage.ghost.io/c/11/7a/117a3396-8af6-43a4-8dc5-f891a0cee13d/content/images/2026/10/Coin_Franken_2606173_090615.webp",
-      "siteName": "tippinpoint.ch",
+      "siteName": "TippinPoint",
       "publishedDate": "Oct 8, 2026"
     },
     "https://www.moneytoday.ch/news/frankencoin-will-in-europa-terrain-besetzen": {
@@ -128,7 +128,7 @@
       "title": "Den Zins des Stablecoins entfesseln",
       "description": "Die Schweiz tritt mit Verspätung in den Stablecoin-Markt ein. Die hohen Renditen der Stablecoins fliessen an schlecht regulierte ausländische Firmen. Frankencoin und Plusplus AG wollen das ändern.",
       "image": "https://www.tippinpoint.ch/bilder/artikel/Illustrationen/2026/mid/Stablecoin_260243_210233.jpg",
-      "siteName": "Tippinpoint",
+      "siteName": "TippinPoint",
       "publishedDate": "Feb 13, 2026"
     },
     "https://www.finews.ch/news/finanzplatz/70983-stablecoin-frankencoin-plusplus-finanzprodukte-etp-treasury-liquiditaetsbewirtschaftung-mietkaution-finanzplatz-schweiz": {
@@ -149,13 +149,15 @@
       "title": "Der Franken-Stablecoin wird Zahlungsmittel und macht das Bankkonto überflüssig",
       "description": "Eine Gruppe von Kryptodienstleistern lanciert ein System mit Visakarte, Rendite und Cashback. Das neue Zahlungssystem soll wie die Lösungen von Revolut oder Neon funktionieren.",
       "publishedDate": "Sep 23, 2025",
-      "image": "https://www.tippinpoint.ch/bilder/artikel/Illustrationen/2025/mid/Zahlen_Zahlsystem_Stablecoin_2509266_070910.jpg"
+      "image": "https://www.tippinpoint.ch/bilder/artikel/Illustrationen/2025/mid/Zahlen_Zahlsystem_Stablecoin_2509266_070910.jpg",
+      "siteName": "TippinPoint"
     },
     "https://www.tippinpoint.ch/artikel/77293/bitcoin-suisse-praesident_luzius_meisser_lanciert_mit_dem_frankencoin_einen_alternativen_digitalen_franken_.html": {
       "title": "Bitcoin Suisse-Präsident Luzius Meisser lanciert mit dem Frankencoin einen alternativen digitalen Franken",
       "description": "Der Krypto-Pionier bringt einen Stablecoin heraus, der den Frankenkurs eins-zu-eins abbildet. Dieser hat Ähnlichkeiten zu Pascale Bruderers Swiss Stablecoin. Ist aber trotzdem anders.",
       "publishedDate": "Mar 15, 2024",
-      "image": "https://www.tippinpoint.ch/bilder/artikel/Personen/2023/mid/Luzius_Meisser_2312342_061232.jpg"
+      "image": "https://www.tippinpoint.ch/bilder/artikel/Personen/2023/mid/Luzius_Meisser_2312342_061232.jpg",
+      "siteName": "TippinPoint"
     },
     "https://agefi.com/de/nachrichten/unternehmen/der-erste-stablecoin-in-schweizer-franken-kann-jetzt-als-zahlungsmittel-in-der-schweiz-genutzt-werden": {
       "title": "Der erste Stablecoin in Schweizer Franken kann jetzt als Zahlungsmittel in der Schweiz genutzt werden",
@@ -196,7 +198,8 @@
       "siteName": "BTC-ECHO"
     },
     "https://www.schweizeraktien.net/blog/2024/06/17/aktionariat-ein-neuer-handelsplatz-fuer-aktien-token-und-darin-integriert-der-frankencoin-63687/": {
-      "publishedDate": "Jun 17, 2024"
+      "publishedDate": "Jun 17, 2024",
+      "siteName": "schweizeraktien.net"
     },
     "https://cryptoadventure.com/vitalik-linked-wallet-buys-zchf-why-frankencoin-fits-his-stablecoin-thesis/": {
       "title": "Vitalik-Linked Wallet Buys ZCHF – Why Frankencoin Fits His Stablecoin Thesis",
@@ -222,13 +225,25 @@
       "description": "Johannes Kern, managing director at the Frankencoin Association, on why a Swiss franc stablecoin might just win.",
       "siteName": "CrispyBull",
       "publishedDate": "Jun 5, 2026"
+    },
+    "https://www.finews.ch/news/finanzplatz/68422-frankencoin-mt-pelerin-integration-johannes-kern-arnaud-salomon-zchf-stablecoin": {
+      "siteName": "finews.ch"
+    },
+    "https://www.leaderdigital.ch/specials/investsg-2025-mit-energie-nachhaltigkeit-621/zwischen-bau-immobilien-und-fintech-14153.html": {
+      "siteName": "LEADER"
+    },
+    "https://www.20min.ch/story/tether-und-co-werden-stablecoins-die-naechste-finanzkrise-ausloesen-103387106": {
+      "siteName": "20 Minuten"
+    },
+    "https://www.nzz.ch/wirtschaft/kunden-von-spar-schweiz-koennen-bereits-in-ueber-100-laeden-mit-kryptowaehrungen-bezahlen-ld.1898731": {
+      "siteName": "NZZ"
     }
   },
   "videoMetadata": {
     "https://www.youtube.com/watch?v=564k9sNoM_c": {
       "title": "Johannes Kern, Frankencoin | Optimistic Governance: Build an Actually Decentralized Stablecoin",
       "description": "What does it take for a decentralized stablecoin’s governance to resist capture by a small number of voters? In this talk, Johannes Kern (Frankencoin Association) examines how optimistic governance is designed to keep a decentralized stablecoin resilient and accountable.",
-      "author": "Stablecoin Summit",
+      "author": "Stable Summit",
       "publishedDate": "Oct 16, 2026",
       "thumbnail": "/images/video-thumbnails/564k9sNoM_c.jpg"
     },
