@@ -3,7 +3,6 @@
 import Base from "../../layouts/Base.astro";
 import LPHero from "../../components/LP/LPHero.astro";
 import LPSection from "../../components/LP/LPSection.astro";
-import Figures from "../../components/LP/Figures.astro";
 import FaqList from "../../components/LP/FaqList.astro";
 import WhyNotTbills from "../../components/Home/WhyNotTbills.astro";
 import FrancVsDollar from "../../components/Home/FrancVsDollar.astro";
@@ -28,12 +27,12 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
 
 <Base title={c.meta.title} description={c.meta.description}>
   <LPHero title={c.hero.title.replace("{rate}", rate)} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} image="/images/home/mountain-lake-halftone.webp" imageLayout="side" imagePosition="object-[55%_50%]">
-    <Figures slot="aside" items={[{ ...c.figures.rate, value: rate }, { ...c.figures.saved, value: formatAmount(d.current.totalSavings) }]} />
+    <Fragment slot="note"><span>{c.figures.saved.label}</span><span class="text-[28px] md:text-[32px] leading-none font-black tracking-tight text-[var(--color-brand-deep-blue)] tabular-nums">{formatAmount(d.current.totalSavings)} {c.figures.saved.unit}</span></Fragment>
   </LPHero>
 
   <LPSection id="interest" title={c.how.title} split accent>
     <p class="ty-body-1 text-pretty text-[var(--color-neutral-650)] m-0">{c.how.body}</p>
-    <a href={getLocalizedPath(c.how.cta.href, lang)} class="mt-5 inline-flex items-center gap-1 font-bold text-[var(--color-brand-swiss)] hover:underline">{c.how.cta.label} →</a>
+    <a href={getLocalizedPath(c.how.cta.href, lang)} class="mt-4 inline-flex items-center gap-1 font-bold text-[var(--color-brand-swiss)] hover:underline">{c.how.cta.label} →</a>
   </LPSection>
 
   <FrancVsDollar />

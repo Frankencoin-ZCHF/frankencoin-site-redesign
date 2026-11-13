@@ -189,8 +189,8 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
             <span class="text-xs font-medium text-[#3a5981]">{c.hero.brand.full}</span>
           </div>
           <h1 id="hero-h" class="fcs-display mt-6 max-w-4xl text-balance md:mt-8">{c.hero.headline}</h1>
-          <p class="fcs-lead mt-5 max-w-2xl md:mt-6">{c.hero.sub}</p>
-          <div class="mt-7 flex flex-wrap items-center gap-3 md:mt-8">
+          <p class="fcs-lead mt-4 max-w-2xl md:mt-6">{c.hero.sub}</p>
+          <div class="mt-6 flex flex-wrap items-center gap-3 md:mt-8">
             <a href={links.enso} target="_blank" rel="noopener" data-event="cta_swap_enso" data-location="hero" class="fcs-btn fcs-btn-blue">
               <img src={ENSO_WHITE} alt="" width="18" height="18" class="size-[18px] shrink-0" />
               {c.cta.enso}
@@ -289,7 +289,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
         <ul class="mt-8 grid max-w-5xl gap-4 md:mt-10 md:grid-cols-2 md:gap-6">
           {
             c.what.cards.map((card, i) => (
-              <li class="group flex h-full flex-col rounded-2xl border border-[var(--color-neutral-200)] bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[var(--color-brand-swiss)]/40 hover:shadow-lg hover:shadow-[var(--color-brand-deep-blue)]/10 md:p-7">
+              <li class="group flex h-full flex-col rounded-2xl border border-[var(--color-neutral-200)] bg-white p-6 shadow-sm transition duration-300 hover:border-[var(--color-brand-swiss)]/40 md:p-6">
                 <div class="flex items-center gap-3">
                   <PixelIcon name={whatIcons[i] ?? "pie"} size={32} class="size-8 shrink-0 transition-transform duration-300 group-hover:scale-110" />
                   <h3 class="fcs-black text-2xl leading-tight text-[var(--color-brand-deep-blue)]">{card.title}</h3>
@@ -310,7 +310,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
         <ul class="mt-8 grid max-w-5xl gap-4 md:mt-10 md:grid-cols-2 md:gap-6">
           {
             c.why.cards.map((card, i) => (
-              <li class="group flex h-full flex-col rounded-2xl border border-[var(--color-neutral-200)] bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[var(--color-brand-swiss)]/40 hover:shadow-lg hover:shadow-[var(--color-brand-deep-blue)]/10 md:p-7">
+              <li class="group flex h-full flex-col rounded-2xl border border-[var(--color-neutral-200)] bg-white p-6 shadow-sm transition duration-300 hover:border-[var(--color-brand-swiss)]/40 md:p-6">
                 <div class="flex items-center gap-3">
                   <PixelIcon name={whyIcons[i] ?? "coins"} size={32} class="size-8 shrink-0 transition-transform duration-300 group-hover:scale-110" />
                   <h3 class="fcs-black text-2xl leading-tight text-[var(--color-brand-deep-blue)]">{card.title}</h3>
@@ -381,7 +381,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
         {/* Proof: each claim with its evidence */}
         <div class="mt-10 border-t border-[var(--color-neutral-300)] pt-8">
           <h3 class="fcs-heading text-[var(--color-brand-deep-blue)]">{c.buy.proof.title}</h3>
-          <div class="mt-5 grid gap-6 sm:grid-cols-3">
+          <div class="mt-4 grid gap-6 sm:grid-cols-3">
             {
               proof.map((group) => (
                 <div>
@@ -444,7 +444,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
           }
         </ul>
         {/* Pull quote: the link between ZCHF growth and FCS */}
-        <figure class="relative mt-14 max-w-4xl rounded-2xl border-l-4 border-[var(--color-brand-swiss)] bg-[var(--color-neutral-100)] px-7 pb-7 pt-9 shadow-sm md:mt-16 md:px-10 md:pb-9 md:pt-11">
+        <figure class="relative mt-12 max-w-4xl rounded-2xl border-l-4 border-[var(--color-brand-swiss)] bg-[var(--color-neutral-100)] px-7 pb-7 pt-9 shadow-sm md:mt-16 md:px-10 md:pb-9 md:pt-11">
           <span aria-hidden="true" class="fcs-black absolute -top-6 left-6 text-7xl leading-none text-[var(--color-brand-swiss)] md:left-9">&ldquo;</span>
           <blockquote class="text-balance text-xl font-medium leading-snug text-[var(--color-brand-deep-blue)] md:text-2xl">{c.zchf.emphasis}</blockquote>
         </figure>

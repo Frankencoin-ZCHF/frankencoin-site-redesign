@@ -18,7 +18,7 @@ const ext = (h: string) => (h.startsWith("http") ? { target: "_blank", rel: "noo
 
 <Base title={c.meta.title} description={c.meta.description}>
   <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary}>
-    <div slot="aside" class="rounded-3xl bg-[var(--color-neutral-800)]/95 text-[var(--color-neutral-200)] shadow-[0_20px_60px_-20px_rgba(9,47,98,0.6)] overflow-hidden">
+    <div slot="aside" class="rounded-2xl bg-[var(--color-neutral-800)]/95 text-[var(--color-neutral-200)] shadow-[0_20px_60px_-20px_rgba(9,47,98,0.6)] overflow-hidden">
       <div class="flex items-center gap-2 px-5 py-3 border-b border-white/10 ty-xs font-bold text-[var(--color-neutral-400)]">
         <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
         <span class="ml-2">{c.snippet.title}</span>

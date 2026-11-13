@@ -19,14 +19,14 @@ const fmt = (d: string) => { const t = Date.parse(d); return Number.isNaN(t) ? d
   <LPHero compact title={c.hero.title} subtitle={c.hero.subtitle} />
 
   <LPSection id="about" title={c.boiler.title} split>
-    <blockquote class="m-0 rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] p-6 md:p-7 ty-body-2 text-[var(--color-neutral-700)]">{c.boiler.text}</blockquote>
+    <blockquote class="m-0 rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] p-6 md:p-6 ty-body-2 text-[var(--color-neutral-700)]">{c.boiler.text}</blockquote>
     {c.boiler.note && <p class="mt-4 ty-body-3 text-[var(--color-neutral-550)] m-0">{c.boiler.note}</p>}
   </LPSection>
 
   <LPSection id="logos" title={c.assets.title} subtitle={c.assets.subtitle} accent>
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
       {c.assets.items.map((a: any) => (
-        <a href={a.file} download class="group flex flex-col overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white hover:border-[var(--color-brand-swiss)] transition-colors">
+        <a href={a.file} download class="group flex flex-col overflow-hidden rounded-2xl border border-[var(--color-gray-20)] bg-white hover:border-[var(--color-brand-swiss)] transition-colors">
           <span class={`flex items-center justify-center h-32 p-6 ${a.bg === "dark" ? "bg-[#0e3a72]" : "bg-white"}`}><img src={a.file} alt={a.label} class="max-h-16 max-w-full object-contain" loading="lazy" /></span>
           <span class="flex items-start justify-between gap-3 px-5 py-4 border-t border-[var(--color-gray-20)]">
             <span class="min-w-0">
@@ -43,7 +43,7 @@ const fmt = (d: string) => { const t = Date.parse(d); return Number.isNaN(t) ? d
 
   <LPSection id="press-releases" title={c.releases.title} split>
     {releases.length > 0 ? (
-      <ul class="m-0 p-0 list-none divide-y divide-[var(--color-gray-20)] rounded-3xl border border-[var(--color-gray-20)] bg-white">
+      <ul class="m-0 p-0 list-none divide-y divide-[var(--color-gray-20)] rounded-2xl border border-[var(--color-gray-20)] bg-white">
         {[...releases].sort((a, b) => Date.parse(b.date) - Date.parse(a.date)).map((r) => (
           <li class="p-5 md:p-6">
             <p class="ty-xs font-bold text-[var(--color-neutral-550)] m-0 tabular-nums">{fmt(r.date)}</p>

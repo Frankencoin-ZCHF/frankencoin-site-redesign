@@ -13,7 +13,7 @@ const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
 
 <ol class="grid md:grid-cols-3 gap-4 list-none m-0 p-0">
   {steps.map((s, i) => (
-    <li class="flex flex-col gap-3 rounded-3xl bg-[var(--color-white)] border border-[var(--color-gray-20)] p-6 md:p-7">
+    <li class="flex flex-col gap-3 rounded-2xl bg-[var(--color-white)] border border-[var(--color-gray-20)] p-6 md:p-6">
       <span class="text-[40px] font-black leading-none text-[#5bb8dc]/70">{String(i + 1).padStart(2, "0")}</span>
       <h3 class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{s.title}</h3>
       <p class="ty-body-3 text-[var(--color-neutral-650)] flex-1">{s.body}</p>

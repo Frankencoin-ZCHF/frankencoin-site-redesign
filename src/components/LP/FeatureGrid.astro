@@ -7,7 +7,7 @@ const { items, cols = 3 } = Astro.props as Props;
 const lang = getLanguageFromURL(Astro.url.pathname);
 const href = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) : h);
 const grid = { 2: "sm:grid-cols-2", 3: "sm:grid-cols-2 lg:grid-cols-3", 4: "sm:grid-cols-2 lg:grid-cols-4" }[cols];
-const base = "relative overflow-hidden min-w-0 flex flex-col rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-white)] p-6 md:p-7";
+const base = "relative overflow-hidden min-w-0 flex flex-col rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-white)] p-6 md:p-6";
 ---
 
 <div class={`grid ${grid} gap-4`}>
@@ -17,11 +17,11 @@ const base = "relative overflow-hidden min-w-0 flex flex-col rounded-3xl border 
         {it.href && <span class="halftone-dots absolute inset-0 text-[#5bb8dc]/40 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></span>}
         <h3 class="relative text-balance ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</h3>
         <p class="relative mt-2 ty-body-3 text-[var(--color-neutral-650)] flex-1 [overflow-wrap:anywhere]">{it.description}</p>
-        {it.href && <span class="relative mt-5 ty-body-3 font-bold text-[var(--color-brand-swiss)]">{it.cta ?? "Learn more"} →</span>}
+        {it.href && <span class="relative mt-4 ty-body-3 font-bold text-[var(--color-brand-swiss)]">{it.cta ?? "Learn more"} →</span>}
       </>
     );
     return it.href ? (
-      <a href={href(it.href)} target={it.href.startsWith("http") ? "_blank" : undefined} rel={it.href.startsWith("http") ? "noopener noreferrer" : undefined} class={`group ${base} hover:-translate-y-0.5 hover:shadow-xl transition-all`}>{body}</a>
+      <a href={href(it.href)} target={it.href.startsWith("http") ? "_blank" : undefined} rel={it.href.startsWith("http") ? "noopener noreferrer" : undefined} class={`group ${base} hover:border-[var(--color-brand-deep-blue)]/40 transition-all`}>{body}</a>
     ) : (
       <div class={base}>{body}</div>
     );

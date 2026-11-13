@@ -22,6 +22,8 @@ const options = all.slice(0, 8);
 // Coin logos live in public/images/coins (copied from the dapp); missing ones fall back to initials.
 const coinFiles = new Set(fs.readdirSync(new URL("../../../public/images/coins/", import.meta.url)));
 const coin = (symbol: string) => ["svg", "png"].map((e) => `${symbol.toLowerCase()}.${e}`).find((f) => coinFiles.has(f));
+// Logos shown next to the three asset classes in the hero, in the order of collateral.items.
+const HERO_COINS = [["wbtc", "cbbtc", "weth", "wsteth"], ["xaut", "paxg"], ["realu", "boss", "spyon"]];
 const date = (s: number) => new Date(s * 1000).toLocaleDateString(lang === "de" ? "de-CH" : "en-GB", { month: "short", year: "numeric" });
 const th = "p-4 ty-xs font-bold text-[var(--color-neutral-600)]";
 const def = "underline decoration-dotted decoration-[var(--color-gray-30)] underline-offset-4 cursor-help";
@@ -30,11 +32,19 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
 
 <Base title={c.meta.title} description={c.meta.description}>
   <LPHero title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} image="/images/home/peak-teal-halftone.webp" imageLayout="side" imagePosition="object-[62%_12%]">
-    <ul slot="aside" class="m-0 p-0 list-none grid gap-3">
-      {c.collateral.items.map((it: any) => (
-        <li class="rounded-3xl border border-[var(--color-gray-20)] bg-white/85 backdrop-blur p-5 md:p-6 grid sm:grid-cols-[1fr_1.6fr] gap-1 sm:gap-6 sm:items-center">
-          <h3 class="text-balance ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</h3>
-          <p class="ty-body-3 text-[var(--color-neutral-650)] m-0">{it.description}</p>
+    <!-- One white panel, three rows: what the asset class is, and the logos of collaterals in it. -->
+    <ul slot="aside" class="m-0 p-0 list-none overflow-hidden rounded-2xl border border-[var(--color-gray-20)] bg-white divide-y divide-[var(--color-gray-20)] shadow-[0_8px_24px_-16px_rgba(9,47,98,0.25)]">
+      {c.collateral.items.map((it: any, i: number) => (
+        <li class="flex items-center gap-4 p-4 md:p-6">
+          <div class="min-w-0 flex-1">
+            <h3 class="ty-body-1 font-black text-[var(--color-brand-deep-blue)] m-0">{it.title}</h3>
+            <p class="mt-1 ty-body-3 text-[var(--color-neutral-650)] m-0">{it.description}</p>
+          </div>
+          <div class="flex shrink-0 items-center" aria-hidden="true">
+            {(HERO_COINS[i] ?? []).map((sym, k) => coin(sym) && (
+              <img src={`/images/coins/${coin(sym)}`} alt="" loading="lazy" class:list={["h-8 w-8 md:h-10 md:w-10 rounded-full bg-white ring-2 ring-white object-cover", k > 0 && "-ml-2"]} />
+            ))}
+          </div>
         </li>
       ))}
     </ul>
@@ -45,7 +55,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
       <p class="ty-body-2 text-[var(--color-neutral-550)]">{c.rates.empty} <a class="font-bold text-[var(--color-blue-39)]" href="https://app.frankencoin.com/mint" target="_blank" rel="noopener noreferrer">app.frankencoin.com</a></p>
     ) : (
       <>
-        <div class="hidden md:block overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white">
+        <div class="hidden md:block overflow-hidden rounded-2xl border border-[var(--color-gray-20)] bg-white">
           <table class="w-full ty-body-3">
             <thead class="bg-[var(--color-gray-10)] text-left">
               <tr>
@@ -74,7 +84,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
         </div>
         <div class="md:hidden grid gap-3">
           {options.map((o) => (
-            <a href={o.href} target="_blank" rel="noopener noreferrer" class="rounded-3xl border border-[var(--color-gray-20)] bg-white p-5 flex flex-col gap-2">
+            <a href={o.href} target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-[var(--color-gray-20)] bg-white p-5 flex flex-col gap-2">
               <span class="flex justify-between items-center"><span class="inline-flex items-center gap-2"><span class="h-7 w-7 shrink-0 rounded-full bg-[var(--color-gray-10)] ring-1 ring-[var(--color-gray-20)] overflow-hidden grid place-items-center">{coin(o.symbol) ? <img src={`/images/coins/${coin(o.symbol)}`} alt="" loading="lazy" class="h-full w-full object-cover" /> : <span class="text-[10px] font-bold">{o.symbol.slice(0, 3)}</span>}</span><span class="font-black text-[var(--color-brand-deep-blue)]">{o.symbol}</span></span><span class="ty-xs text-[var(--color-neutral-550)]">{c.rates.cols.maturity} {date(o.maturity)}</span></span>
               <span class="grid grid-cols-2 ty-body-3">
                 <span><span class="block ty-2xs text-[var(--color-neutral-550)]">{c.rates.cols.ltv}</span><b>{formatPct(o.ltv, 0)}</b></span>
@@ -96,7 +106,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
   </LPSection>
 
   <LPSection id="example" title={c.example.title} subtitle={c.example.subtitle} accent>
-    <div class="overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white">
+    <div class="overflow-hidden rounded-2xl border border-[var(--color-gray-20)] bg-white">
       <table class="w-full ty-body-3">
         <tbody>
           {c.example.rows.map((r: any, i: number) => (

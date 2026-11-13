@@ -24,7 +24,7 @@ const label = "ty-xs font-bold text-[var(--color-neutral-600)]";
 
   <LPSection id="link" title={b.title} accent>
     <div
-      class="grid lg:grid-cols-2 gap-6 rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-white)] p-5 sm:p-8"
+      class="grid lg:grid-cols-2 gap-6 rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-white)] p-5 sm:p-8"
       x-data={`{ cfg: ${init}, address: "", fee: 10, saved: 100000, copied: false,
         get valid() { return /^0x[0-9a-fA-F]{40}$/.test(this.address.trim()) },
         get link() { return this.valid ? "https://app.frankencoin.com/savings?referrer=" + this.address.trim() + "&referralFeePPM=" + Math.round(this.fee * 10000) : "" },
@@ -34,7 +34,7 @@ const label = "ty-xs font-bold text-[var(--color-neutral-600)]";
         pct(r) { return new Intl.NumberFormat(this.cfg.locale, { style: "percent", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(r) },
         copy() { navigator.clipboard?.writeText(this.link); this.copied = true; setTimeout(() => this.copied = false, 1500) } }`}
     >
-      <div class="flex flex-col gap-5 min-w-0">
+      <div class="flex flex-col gap-4 min-w-0">
         <label class="flex flex-col gap-2">
           <span class={label}>{b.address}</span>
           <input x-model="address" placeholder="0x…" spellcheck="false" class="w-full min-w-0 rounded-xl border border-[var(--color-gray-20)] px-4 py-3 font-mono ty-body-3 outline-none focus:border-[var(--color-brand-swiss)]" />
@@ -54,14 +54,14 @@ const label = "ty-xs font-bold text-[var(--color-neutral-600)]";
         </div>
       </div>
       <div class="flex flex-col gap-3 min-w-0">
-        <div class="rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-6">
+        <div class="rounded-2xl bg-[var(--color-brand-deep-blue)] text-white p-6">
           <p class="ty-body-3 font-bold m-0">{b.earnTitle}</p>
           <label class="flex items-center gap-2 mt-3 ty-body-3">
             <span>{b.referred}</span>
             <input type="number" min="0" step="1000" x-model.number="saved" class="w-32 rounded-lg bg-white/10 border border-white/30 px-2 py-1 text-white" />
             <span>ZCHF</span>
           </label>
-          <div class="mt-5 grid grid-cols-2 gap-4">
+          <div class="mt-4 grid grid-cols-2 gap-4">
             <div>
               <p class="ty-xs text-white/75 m-0">{b.perYear}</p>
               <p class="text-[32px] sm:text-[36px] font-black leading-none mt-1 m-0 tabular-nums"><span x-text="fmt(earn)"></span> <span class="text-[18px] font-bold">ZCHF</span></p>
@@ -69,7 +69,7 @@ const label = "ty-xs font-bold text-[var(--color-neutral-600)]";
             <div>
               <p class="ty-xs text-white/75 m-0">{b.saverRate}</p>
               <p class="text-[32px] sm:text-[36px] font-black leading-none mt-1 m-0 tabular-nums text-[#5bb8dc]" x-text="pct(saverRate)"></p>
-              <p class="ty-2xs text-white/60 mt-1.5 m-0">{b.grossRate}: <span x-text="pct(cfg.rate)"></span></p>
+              <p class="ty-2xs text-white/60 mt-1 m-0">{b.grossRate}: <span x-text="pct(cfg.rate)"></span></p>
             </div>
           </div>
         </div>
