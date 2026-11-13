@@ -71,6 +71,12 @@
 .pxb_mid { background: var(--pxb-bg); transition: background-color 0.25s; }
 .pxb_inner { grid-area: 1 / 1; display: grid; padding: 18.5px 2.75rem; font-size: 15px; text-align: center; } /* symmetric so the label is centred; 2.75rem still clears the 39px pixel grid */ /* 15 + 37 = 52px tall, so each pixel square is a whole 13px and no seams show */
 @media (min-width: 768px) { .pxb_inner { padding: 18px 3rem; font-size: 16px; } }
+/* Phones: full-width buttons so stacked CTAs line up, and room under the footer for the sticky CTA bar. */
+@media (max-width: 639px) {
+  .pxb:not(.pxb--sm) { width: 100%; }
+  .pxb:not(.pxb--sm) .pxb_inner { padding-inline: 1.25rem; }
+}
+@media (max-width: 767px) { body:has(#sticky-cta) footer { padding-bottom: 88px; } }
 .pxb--sm .pxb_inner { padding: 13px 2.25rem; font-size: 14px; } /* 40px tall, 10px squares */
 .pxb_text { grid-area: 1 / 1; }
 @media (hover: hover) and (pointer: fine) {

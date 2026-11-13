@@ -96,21 +96,21 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
   </section>
 
   <!-- 01 Products bento -->
-  <section class="bg-[var(--color-gray-10)] py-20 md:py-28">
+  <section class="bg-[var(--color-gray-10)] py-14 md:py-28">
     <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
       <SectionHead title={P.title} />
       <div class="grid gap-4 lg:grid-cols-6">
         <!-- Save -->
-        <a href={href(P.save.href)} class="group relative overflow-hidden lg:col-span-4 rounded-3xl bg-white border border-[var(--color-gray-20)] p-7 md:p-10 flex flex-col min-h-[300px] hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <a href={href(P.save.href)} class="group relative overflow-hidden lg:col-span-4 rounded-3xl bg-white border border-[var(--color-gray-20)] p-6 md:p-10 flex flex-col md:min-h-[300px] hover:shadow-xl hover:-translate-y-0.5 transition-all">
           <span class="halftone-dots absolute inset-0 text-[#5bb8dc]/50 pointer-events-none"></span>
           <span class="relative text-[13px] font-semibold text-[#1a9cc8]">{P.save.label}</span>
-          <span class="relative mt-4 text-[64px] md:text-[96px] font-black leading-none tracking-[-0.04em] text-[var(--color-brand-deep-blue)]">{rate}<span class="text-[18px] md:text-[22px] font-bold tracking-normal text-[var(--color-neutral-550)] ml-2">{P.save.stat}</span></span>
+          <span class="relative mt-4 text-[56px] md:text-[96px] font-black leading-none tracking-[-0.04em] text-[var(--color-brand-deep-blue)]">{rate}<span class="text-[18px] md:text-[22px] font-bold tracking-normal text-[var(--color-neutral-550)] ml-2">{P.save.stat}</span></span>
           <span class="relative mt-4 ty-title-2 font-black text-[var(--color-brand-deep-blue)]">{P.save.title.replace("{rate}", rate)}</span>
           <span class="relative mt-2 ty-body-2 text-[var(--color-neutral-650)] max-w-md">{P.save.body}</span>
           <span class="relative mt-auto pt-6 font-bold ty-body-2 text-[var(--color-brand-swiss)]">{P.save.cta} →</span>
         </a>
         <!-- Invest (dark): the whole card links to /fcs (stretched link); the period switch sits above it. -->
-        <div x-data={JSON.stringify({ p: "all", roe: roeCard })} class="group relative overflow-hidden lg:col-span-2 rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-7 md:p-8 flex flex-col min-h-[300px] hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <div x-data={JSON.stringify({ p: "all", roe: roeCard })} class="group relative overflow-hidden lg:col-span-2 rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-6 md:p-8 flex flex-col md:min-h-[300px] hover:shadow-xl hover:-translate-y-0.5 transition-all">
           <span class="halftone-dots absolute inset-0 text-[#1a9cc8]/60 pointer-events-none"></span>
           <span class="relative text-[13px] font-semibold text-[#5bb8dc]">{P.invest.label}</span>
           <span class="relative mt-4 text-[56px] font-black leading-none tracking-[-0.04em] tabular-nums" x-text="roe.value[p]">{roeCard.value.all}</span>
@@ -126,7 +126,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
           <a href={href(P.invest.href)} aria-hidden="true" tabindex="-1" class="absolute inset-0 z-[1]"><span class="sr-only">{P.invest.cta}</span></a>
         </div>
         <!-- Borrow -->
-        <a href={href(P.borrow.href)} class="group relative overflow-hidden lg:col-span-3 rounded-3xl bg-white border border-[var(--color-gray-20)] p-7 md:p-8 flex flex-col min-h-[260px] hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <a href={href(P.borrow.href)} class="group relative overflow-hidden lg:col-span-3 rounded-3xl bg-white border border-[var(--color-gray-20)] p-6 md:p-8 flex flex-col md:min-h-[260px] hover:shadow-xl hover:-translate-y-0.5 transition-all">
           <span class="relative text-[13px] font-semibold text-[#1a9cc8]">{P.borrow.label}</span>
           <span class="relative mt-4 ty-title-2 font-black text-[var(--color-brand-deep-blue)]">{P.borrow.title}</span>
           <span class="relative mt-2 ty-body-3 text-[var(--color-neutral-650)]">{P.borrow.body}</span>
@@ -137,7 +137,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
           <span class="relative mt-auto pt-6 font-bold ty-body-2 text-[var(--color-brand-swiss)]">{P.borrow.cta} →</span>
         </a>
         <!-- Pay -->
-        <a href={href(P.pay.href)} class="group relative overflow-hidden lg:col-span-3 rounded-3xl bg-white border border-[var(--color-gray-20)] p-7 md:p-8 flex flex-col min-h-[260px] hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <a href={href(P.pay.href)} class="group relative overflow-hidden lg:col-span-3 rounded-3xl bg-white border border-[var(--color-gray-20)] p-6 md:p-8 flex flex-col md:min-h-[260px] hover:shadow-xl hover:-translate-y-0.5 transition-all">
           <span class="halftone-dots absolute inset-0 text-[#5bb8dc]/40 pointer-events-none"></span>
           <span class="relative text-[13px] font-semibold text-[#1a9cc8]">{P.pay.label}</span>
           <span class="relative mt-4 ty-title-2 font-black text-[var(--color-brand-deep-blue)]">{P.pay.title}</span>
@@ -152,7 +152,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
   <DollarTruth compact objections={false} more={c.dollar} />
 
   <!-- 02 Backing: live proof and the mechanism in one block -->
-  <section class="bg-[var(--color-white)] py-20 md:py-28">
+  <section class="bg-[var(--color-white)] py-14 md:py-28">
     <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
       <div class="grid lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-end mb-10 md:mb-14">
         <div class="[&>div]:mb-0"><SectionHead title={c.proof.title} subtitle={c.proof.subtitle} /></div>
@@ -179,7 +179,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
   </section>
 
   <!-- 04 Doors -->
-  <section class="bg-[var(--color-white)] py-20 md:py-28">
+  <section class="bg-[var(--color-white)] py-14 md:py-28">
     <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
       <SectionHead title={c.doors.title} />
       <AudienceDoors doors={doors} />
@@ -187,7 +187,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
   </section>
 
   <!-- 05 Media -->
-  <section class="bg-[var(--color-gray-10)] py-20 md:py-24">
+  <section class="bg-[var(--color-gray-10)] py-14 md:py-24">
     <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
       <SectionHead title={c.media.title} />
       <MediaCarousel articles={media.articles} videos={media.videos} />
@@ -204,7 +204,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
   <section class="relative isolate overflow-hidden bg-[#0b4a64] text-white">
     <img src="/images/home/alps-halftone.webp" alt="" loading="lazy" width="2000" height="1121" class="absolute inset-0 -z-10 h-full w-full object-cover object-[50%_85%] opacity-90" />
     <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#062a3d]/95 via-[#0b4a64]/75 to-[#0b4a64]/20"></div>
-    <div class="mx-auto max-w-7xl px-[var(--spacing-l)] py-24 md:py-32">
+    <div class="mx-auto max-w-7xl px-[var(--spacing-l)] py-16 md:py-32">
       <h2 class="text-[38px] sm:text-[56px] leading-[1] font-black tracking-[-0.035em] max-w-2xl m-0">{c.final.title}</h2>
       <p class="mt-4 ty-body-1 text-white/85 max-w-lg">{c.final.subtitle}</p>
       <div class="mt-8 flex flex-wrap gap-3">
