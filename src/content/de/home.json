@@ -87,7 +87,7 @@
     "pay": {
       "label": "Zahlen",
       "title": "Ausgeben wie Franken",
-      "body": "In Spar-Filialen, mit einer GnosisPay-Karte oder per Banküberweisung über eine persönliche IBAN.",
+      "body": "In Spar-Filialen, mit einer ether.fi-Karte oder per Banküberweisung über eine persönliche IBAN.",
       "cta": "Wo genau",
       "href": "/ecosystem"
     }

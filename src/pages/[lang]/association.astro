@@ -2,6 +2,7 @@
 import Main from '../association.astro';
 
 export const prerender = false;
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
 
 export function getStaticPaths() {
   return [
