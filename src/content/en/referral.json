@@ -28,7 +28,7 @@
       },
       {
         "title": "3 · You earn",
-        "description": "Each time their interest is collected, your share goes to your address. No invoices, no payouts to chase."
+        "description": "Each time their interest is collected, your share goes to your address automatically."
       }
     ]
   },
@@ -48,7 +48,7 @@
     "grossRate": "Savings rate before your share"
   },
   "fair": {
-    "title": "Fair by design",
+    "title": "Limits and control",
     "items": [
       {
         "title": "Capped by the contract",

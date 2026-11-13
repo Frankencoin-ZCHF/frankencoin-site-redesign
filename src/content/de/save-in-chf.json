@@ -110,7 +110,7 @@
     }
   ],
   "cta": {
-    "title": "Franken, die Sie fürs Halten bezahlen.",
+    "title": "Schweizer Franken, die Zinsen tragen.",
     "body": "ZCHF einmal hinterlegen, abheben, wann Sie wollen.",
     "primary": {
       "label": "Sparen beginnen",
@@ -150,7 +150,7 @@
     "subtitle": "Treasury Bills sind der klassische sichere Dollar. So entwickelten sich {amount} seit {year}: jedes Quartal in 3-Monats-T-Bills gerollt, gegenüber demselben Geld, in Franken getauscht und zu Schweizer Geldmarktsätzen angelegt.",
     "tbill": {
       "label": "{amount} in T-Bills seit {year}",
-      "note": "Jeder T-Bill-Coupon reinvestiert. Nach US-Inflation trotzdem ein Verlust.",
+      "note": "Zinsen jedes Quartal reinvestiert.",
       "tag": "Kaufkraft"
     },
     "chf": {
@@ -161,12 +161,12 @@
     "need": "Nur um mit der US-Inflation Schritt zu halten, wären nötig: {need}",
     "reasons": [
       {
-        "title": "Die Rendite war real. Der Dollar nicht.",
-        "body": "T-Bills zahlten seit {year} im Schnitt {tbillAvg} pro Jahr. Der Dollar verlor im selben Zeitraum {fxLoss} gegenüber dem Franken, und das frass den ganzen Vorteil auf und mehr."
+        "title": "Die Rendite hat den Währungsverlust nicht ausgeglichen.",
+        "body": "T-Bills zahlten seit {year} im Schnitt {tbillAvg} pro Jahr. Der Dollar verlor im gleichen Zeitraum {fxLoss} gegenüber dem Franken, was die höhere Rendite mehr als aufwog."
       },
       {
         "title": "6% in Dollar sind etwa 3% in Franken",
-        "body": "Der Terminmarkt preist die erwartete Währungsbewegung in die Zinsdifferenz ein, deshalb landen eine hohe Dollarrendite und eine tiefere Frankenrendite meist am selben Ort. Bei ZCHF sind die {rate} in Franken: keine Währung, mit der man sich irren kann."
+        "body": "Der Terminmarkt preist die erwartete Währungsentwicklung in die Zinsdifferenz ein; eine hohe Dollarrendite und eine tiefere Frankenrendite führen deshalb meist zu einem ähnlichen Ergebnis. Bei ZCHF werden die {rate} in Franken bezahlt, ohne Währungsrisiko gegenüber dem Franken."
       },
       {
         "title": "Kein Broker, kein US-Konto, keine Abwicklungstage",

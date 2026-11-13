@@ -4,7 +4,7 @@
     "description": "Sparen Sie in Schweizer Franken zum Protokollzins. Starten Sie per Banküberweisung oder mit USDC, USDT oder ETH, und sehen Sie, wie sich Sparen in ZCHF von Investieren in FCS unterscheidet."
   },
   "hero": {
-    "title": "Ein Frankenkonto,|das on-chain lebt.",
+    "title": "Franken sparen|im eigenen Wallet.",
     "subtitle": "Ob Sie vom Bankkonto oder aus einer Krypto-Wallet starten: Im Sparmodul hinterlegte ZCHF verdienen den Protokollzins und bleiben in Ihrer eigenen Wallet.",
     "primary": {
       "label": "Sparen beginnen",
@@ -61,7 +61,7 @@
     ]
   },
   "cta": {
-    "title": "Eröffnen Sie Ihr Frankenkonto.",
+    "title": "Beginnen Sie, in Franken zu sparen.",
     "body": "ZCHF per Banküberweisung oder Tausch kaufen, im Sparmodul hinterlegen, abheben, wann Sie wollen.",
     "primary": {
       "label": "Sparen beginnen",

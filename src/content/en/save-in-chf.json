@@ -110,7 +110,7 @@
     }
   ],
   "cta": {
-    "title": "Francs that pay you to hold them.",
+    "title": "Swiss francs that earn interest.",
     "body": "Deposit ZCHF once, withdraw whenever you like.",
     "primary": {
       "label": "Start saving",
@@ -150,7 +150,7 @@
     "subtitle": "Treasury bills are the classic safe dollar. Here is what {amount} did since {year}: rolled into 3-month T-bills every quarter, against the same money changed into francs and left at Swiss cash rates.",
     "tbill": {
       "label": "{amount} in T-bills since {year}",
-      "note": "Every T-bill coupon reinvested. Still a loser after US inflation.",
+      "note": "Interest reinvested every quarter.",
       "tag": "buying power"
     },
     "chf": {
@@ -161,12 +161,12 @@
     "need": "Needed just to keep up with US inflation: {need}",
     "reasons": [
       {
-        "title": "The yield was real. The dollar was not.",
-        "body": "T-bills paid {tbillAvg} a year on average since {year}. The dollar lost {fxLoss} against the franc over the same stretch, and that ate the whole advantage and more."
+        "title": "The yield did not offset the currency.",
+        "body": "T-bills paid {tbillAvg} a year on average since {year}. The dollar lost {fxLoss} against the franc over the same period, which more than offset the higher yield."
       },
       {
         "title": "A 6% dollar is roughly a 3% franc",
-        "body": "The forward market prices the expected currency drift into the rate gap, so a high dollar yield and a lower franc yield tend to land in the same place. With ZCHF the {rate} is in francs: no currency to get wrong."
+        "body": "The forward market prices the expected currency drift into the rate gap, so a high dollar yield and a lower franc yield tend to land in the same place. With ZCHF the {rate} is paid in francs, without currency risk against the franc."
       },
       {
         "title": "No broker, no US account, no settlement days",

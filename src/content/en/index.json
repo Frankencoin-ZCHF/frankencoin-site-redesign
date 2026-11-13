@@ -49,7 +49,7 @@
 		},
 		{
 			"id": "compliance",
-			"label": "Fully compliant",
+			"label": "Legal opinions",
 			"value": "Swiss law & MiCAR",
 			"href": "/compliance"
 		}
@@ -435,8 +435,8 @@
 		"subtitle": "Watch our videos to learn more about Frankencoin"
 	},
 	"doors": {
-		"eyebrow": "Who are you?",
-		"title": "Pick your door",
+		"eyebrow": "Who it is for",
+		"title": "Choose your path",
 		"items": [
 			{
 				"eyebrow": "Savers",
@@ -487,7 +487,7 @@
 	"how_simple": {
 		"eyebrow": "How it works",
 		"title": "Three moving parts",
-		"subtitle": "Everything else on this site is detail. This is the system.",
+		"subtitle": "The system in three steps.",
 		"cards": [
 			{
 				"title": "1 · Mint",
@@ -504,8 +504,8 @@
 		]
 	},
 	"trust_strip": {
-		"eyebrow": "Compliant & secure",
-		"title": "Trust, in one row",
+		"eyebrow": "Legally assessed and audited",
+		"title": "Audits, legal opinions and ratings",
 		"items": [
 			{
 				"label": "Audits",

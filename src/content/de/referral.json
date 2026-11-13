@@ -28,7 +28,7 @@
       },
       {
         "title": "3 · Sie verdienen",
-        "description": "Jedes Mal, wenn ihre Zinsen eingesammelt werden, geht Ihr Anteil an Ihre Adresse. Keine Rechnungen, keine Auszahlungen, denen Sie nachrennen müssen."
+        "description": "Jedes Mal, wenn ihr Zins abgeholt wird, geht Ihr Anteil automatisch an Ihre Adresse."
       }
     ]
   },
@@ -48,7 +48,7 @@
     "grossRate": "Sparzins vor Ihrem Anteil"
   },
   "fair": {
-    "title": "Fair von Grund auf",
+    "title": "Grenzen und Kontrolle",
     "items": [
       {
         "title": "Vom Vertrag begrenzt",

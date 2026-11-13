@@ -4,7 +4,7 @@
     "description": "Save in Swiss francs at the protocol rate. Start from a bank transfer or from USDC, USDT or ETH, and see how saving in ZCHF differs from investing in FCS."
   },
   "hero": {
-    "title": "A Swiss-franc account|that lives on-chain.",
+    "title": "Swiss franc savings|in your own wallet.",
     "subtitle": "Whether you start from a bank account or a crypto wallet, ZCHF deposited in the savings module earns the protocol rate and stays in your own wallet.",
     "primary": {
       "label": "Start saving",
@@ -61,7 +61,7 @@
     ]
   },
   "cta": {
-    "title": "Open your franc account.",
+    "title": "Start saving in Swiss francs.",
     "body": "Buy ZCHF by bank transfer or swap, deposit it in savings, withdraw whenever you like.",
     "primary": {
       "label": "Start saving",
