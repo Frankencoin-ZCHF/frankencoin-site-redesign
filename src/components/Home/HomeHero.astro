@@ -32,9 +32,9 @@ const [l1, l2] = p.title.split("|");
     fetchpriority="high"
     class="absolute inset-x-0 bottom-0 w-full h-[52%] md:h-[54%] object-cover object-bottom -z-10 select-none"
   />
-  <div class="absolute inset-x-0 bottom-0 h-[calc(52%+3px)] md:h-[calc(54%+3px)] -z-10 bg-gradient-to-b from-white via-white/20 to-transparent md:from-30% md:via-white/40 md:via-55%"></div>
+  <div class="absolute inset-x-0 bottom-0 h-[calc(52%+3px)] md:h-[calc(54%+3px)] -z-10 bg-gradient-to-b from-white via-white/20 to-transparent"></div>
   <!-- Dark scrim at the foot of the image so the white "ways to get ZCHF" links read on any part of the mountains. -->
-  <div class="absolute inset-x-0 bottom-0 h-[34%] -z-10 md:hidden bg-gradient-to-t from-[#062a3d]/90 via-[#062a3d]/45 to-transparent"></div>
+  <div class="absolute inset-x-0 bottom-0 h-[34%] -z-10 hero-scrim bg-gradient-to-t from-[#062a3d]/90 via-[#062a3d]/45 to-transparent"></div>
   <HalftoneMist />
 
   <div class="relative mx-auto w-full max-w-7xl px-[var(--spacing-l)] pt-28 md:pt-36 flex-1 flex flex-col" data-hero>
@@ -57,11 +57,11 @@ const [l1, l2] = p.title.split("|");
       <PixelButton href={p.primary.href} label={p.primary.label} variant="solid" arrow />
 <a href={href(p.secondary.href)} {...ext(p.secondary.href)} class="inline-flex h-[52px] w-full sm:w-auto items-center justify-center rounded-[10px] border border-[var(--color-gray-30)] bg-white px-8 font-bold text-[15px] md:text-[16px] text-[var(--color-brand-deep-blue)] hover:border-[var(--color-brand-deep-blue)] transition-colors">{p.secondary.label}</a>
     </div>
-    <!-- Ways to get ZCHF: on phones white links at the foot of the hero over the dark part of the mountains; from md up a dark line right under the buttons. -->
-    <p class="mt-auto pt-16 pb-6 md:mt-6 md:pt-0 md:pb-0 flex flex-wrap items-baseline gap-x-4 sm:gap-x-6 gap-y-1 ty-xs md:text-[14px] text-white md:text-[var(--color-neutral-650)] m-0">
-      <span class="font-bold md:text-[var(--color-brand-deep-blue)]">{p.routes.label}</span>
+    <!-- Ways to get ZCHF: white links at the foot of the hero over the dark part of the mountains. On tall desktop windows (see .hero-routes in global.css) they move up under the buttons, where there is white space above the image. -->
+    <p class="hero-routes mt-auto pt-16 pb-6 md:pb-10 flex flex-wrap items-baseline gap-x-4 sm:gap-x-6 gap-y-1 ty-xs text-white m-0">
+      <span class="font-bold">{p.routes.label}</span>
       {p.routes.items.map((r) => (
-        <a href={r.href} target="_blank" rel="noopener noreferrer" class="py-1.5 sm:py-1 font-medium text-white/90 md:text-[var(--color-neutral-650)] underline decoration-white/40 md:decoration-[var(--color-gray-30)] underline-offset-4 hover:text-white md:hover:text-[var(--color-brand-deep-blue)] hover:decoration-white md:hover:decoration-[var(--color-brand-swiss)] transition-colors whitespace-nowrap">{r.label} ↗</a>
+        <a href={r.href} target="_blank" rel="noopener noreferrer" class="py-1.5 sm:py-1 font-medium text-white/90 underline decoration-white/40 underline-offset-4 hover:text-white hover:decoration-white transition-colors whitespace-nowrap">{r.label} ↗</a>
       ))}
     </p>
   </div>
