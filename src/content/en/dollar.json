@@ -1,6 +1,6 @@
 {
   "eyebrow": "The dollar problem, this century",
-  "title": "Your dollars are melting.|Francs are not.",
+  "title": "The dollar loses buying power.|The franc has kept it.",
   "subtitle": "Take {amount} in the year 2000 and leave it alone. Here is what it is worth today, in today’s dollars, and what it still buys.",
   "amount": "Amount in US dollars",
   "since": "If you had it in",
@@ -8,7 +8,7 @@
   "tiles": {
     "cash": {
       "label": "Kept as cash dollars",
-      "how": "No interest. The note just sits there.",
+      "how": "Held as cash, with no interest.",
       "power": "Buys what {then} bought in {year}"
     },
     "tbill": {
@@ -40,11 +40,11 @@
     "items": [
       {
         "q": "“T-bills pay {tbillNow}. Why would I hold francs?”",
-        "a": "Because the yield is paid in a currency that keeps shrinking. From {year}, {amount} in T-bills became {tbillVal} in today’s dollars, which buys what {tbillReal} bought back then. The same money in Swiss franc savings became {chfVal}, which buys what {chfReal} bought. Today ZCHF pays {rate} on top of the franc."
+        "a": "Because the yield is paid in a currency that has kept losing value. From {year}, {amount} in T-bills became {tbillVal} in today’s dollars, which buys what {tbillReal} bought back then. The same money in Swiss franc savings became {chfVal}, which buys what {chfReal} bought. Today ZCHF pays {rate} on top of the franc."
       },
       {
         "q": "“The dollar is the world’s reserve currency. It is safe.”",
-        "a": "Reserve status did not stop the dollar losing {fxLoss} against the franc since 1971, or {usdLoss} of its buying power. The franc is not the reserve currency. It is simply the currency that has lost the least value."
+        "a": "Reserve status did not stop the dollar losing {fxLoss} against the franc since 1971, or {usdLoss} of its buying power. The franc is a much smaller currency, but it has held its value better."
       },
       {
         "q": "“{rate} is low. I can get more elsewhere.”",
@@ -52,7 +52,7 @@
       },
       {
         "q": "“Why not a Swiss bank account?”",
-        "a": "Try opening one from abroad. Swiss banks pay around zero on franc deposits, screen non-residents hard and charge for the privilege. ZCHF needs a wallet, a bank transfer and ten minutes, and pays {rate}."
+        "a": "Swiss banks pay close to zero on franc deposits, and an account is hard to obtain for non-residents. ZCHF needs a wallet and a bank transfer, and pays {rate}."
       },
       {
         "q": "“Is a stablecoin safe?”",
@@ -62,7 +62,7 @@
   },
   "how": {
     "eyebrow": "How to switch",
-    "title": "Ten minutes. Three steps."
+    "title": "Three steps."
   },
   "note": "Annual averages from FRED (Federal Reserve H.10 exchange rates, 3-month Treasury bill TB3MS, BLS CPI-U), the Swiss National Bank (overnight call money to 1998, SARON from 1999) and the OECD Swiss CPI; today's rate from ECB reference rates. T-bill returns ignore taxes and fees. Past moves do not predict future ones. Nothing here is investment advice.",
   "explain": "All three start with the same dollars in {year}. The big number is what they are worth today. The line below says how much of {year}’s buying power is left, after US inflation.",

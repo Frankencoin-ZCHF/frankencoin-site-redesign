@@ -4,7 +4,7 @@
     "description": "Four ways to plug into the decentralized Swiss franc: accept payments, list and offer savings, use ZCHF in DeFi, or list your token as collateral."
   },
   "hero": {
-    "title": "Plug into the Swiss franc|that has no issuer.",
+    "title": "Integrate the|decentralized Swiss franc.",
     "subtitle": "ZCHF is a standard ERC-20 on Ethereum and several other chains. These are the four integrations we see most, each with one place to start.",
     "primary": {
       "label": "info@frankencoin.com",
@@ -91,7 +91,7 @@
   },
   "cta": {
     "title": "Not sure where you fit?",
-    "body": "Write to the association. One email is enough; grants are available for integrations.",
+    "body": "Write to the Association. Grants are available for integrations.",
     "primary": {
       "label": "info@frankencoin.com",
       "href": "mailto:info@frankencoin.com"

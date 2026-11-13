@@ -126,8 +126,8 @@
       { "q": "Werden FCS-Inhaber direkt bezahlt?", "a": "Nein. Es wird nichts ausgeschüttet. Neues Kapital und Einnahmen fliessen in den Pool." },
       { "q": "Kann FCS jederzeit verkauft werden?", "a": "Ja. FCS wird auf Uniswap gehandelt und ist über DEX-Aggregatoren wie Enso erhältlich." },
       {
-        "q": "Wer betreibt Frankencoin?",
-        "a": "Niemand. Frankencoin ist ein dezentrales Protokoll auf Ethereum. Die Frankencoin Association pflegt die Website und die Dokumentation."
+        "q": "Was ist die Frankencoin Association?",
+        "a": "Ein Schweizer Verein ohne Erwerbszweck mit Sitz in Zug. Die Association ist nicht Herausgeberin von ZCHF und kontrolliert das Protokoll nicht. Sie unterstützt Frankencoin bei technischer Entwicklung, Partnerschaften und Listings, rechtlichen und regulatorischen Fragen sowie Aufklärung und dient als Ansprechpartnerin."
       }
     ]
   },

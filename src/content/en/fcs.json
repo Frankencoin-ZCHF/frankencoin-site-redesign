@@ -126,8 +126,8 @@
       { "q": "Do FCS holders get paid directly?", "a": "No. Nothing is distributed. New capital and earnings accrue to the pool." },
       { "q": "Can FCS be sold at any time?", "a": "Yes. FCS trades on Uniswap and is available through DEX aggregators such as Enso." },
       {
-        "q": "Who runs Frankencoin?",
-        "a": "No one. Frankencoin is a decentralized protocol running on Ethereum. The Frankencoin Association maintains the website and documentation."
+        "q": "What is the Frankencoin Association?",
+        "a": "A Swiss non-profit based in Zug. It is not the issuer of ZCHF and does not control the protocol. It supports Frankencoin with technical development, partnerships and listings, legal and regulatory work, and education, and serves as a point of contact."
       }
     ]
   },

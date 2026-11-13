@@ -4,7 +4,7 @@
     "description": "Vier Wege zum dezentralen Schweizer Franken: Zahlungen akzeptieren, listen und Sparen anbieten, ZCHF in DeFi nutzen oder Ihren Token als Sicherheit listen."
   },
   "hero": {
-    "title": "Schliessen Sie sich an den Franken an,|der keinen Emittenten hat.",
+    "title": "Integrieren Sie den|dezentralen Schweizer Franken.",
     "subtitle": "ZCHF ist ein Standard-ERC-20 auf Ethereum und mehreren weiteren Chains. Dies sind die vier Integrationen, die wir am häufigsten sehen, jede mit einem klaren Einstiegspunkt.",
     "primary": {
       "label": "info@frankencoin.com",
@@ -91,7 +91,7 @@
   },
   "cta": {
     "title": "Nicht sicher, wo Sie hingehören?",
-    "body": "Schreiben Sie dem Verein. Eine E-Mail genügt; für Integrationen stehen Grants zur Verfügung.",
+    "body": "Schreiben Sie dem Verein. Für Integrationen stehen Grants zur Verfügung.",
     "primary": {
       "label": "info@frankencoin.com",
       "href": "mailto:info@frankencoin.com"

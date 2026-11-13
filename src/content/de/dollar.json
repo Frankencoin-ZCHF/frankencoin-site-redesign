@@ -1,6 +1,6 @@
 {
   "eyebrow": "Das Dollar-Problem, dieses Jahrhundert",
-  "title": "Ihre Dollars schmelzen.|Franken nicht.",
+  "title": "Der Dollar verliert an Kaufkraft.|Der Franken hat sie gehalten.",
   "subtitle": "Nehmen Sie {amount} im Jahr 2000 und lassen Sie es liegen. Das ist es heute wert, in heutigen Dollars, und das kauft es noch.",
   "amount": "Betrag in US-Dollar",
   "since": "Wenn Sie es hatten in",
@@ -8,7 +8,7 @@
   "tiles": {
     "cash": {
       "label": "Als Bargeld in Dollar gehalten",
-      "how": "Kein Zins. Der Schein liegt einfach da.",
+      "how": "Als Bargeld gehalten, ohne Zins.",
       "power": "Kauft, was {then} im Jahr {year} kaufte"
     },
     "tbill": {
@@ -40,11 +40,11 @@
     "items": [
       {
         "q": "«T-Bills zahlen {tbillNow}. Warum sollte ich Franken halten?»",
-        "a": "Weil der Zins in einer Währung bezahlt wird, die immer weiter schrumpft. Ab {year} wurden aus {amount} in T-Bills {tbillVal} in heutigen Dollars, was kauft, was damals {tbillReal} kaufte. Dasselbe Geld in Schweizer-Franken-Sparguthaben wurde zu {chfVal}, was kauft, was {chfReal} kaufte. Heute zahlt ZCHF {rate} zusätzlich zum Franken."
+        "a": "Weil die Rendite in einer Währung bezahlt wird, die laufend an Wert verloren hat. Seit {year} wurden aus {amount} in T-Bills {tbillVal} in heutigen Dollars; das kauft, was damals {tbillReal} kauften. Dasselbe Geld in Franken gespart wurde zu {chfVal} und kauft, was damals {chfReal} kauften. Heute zahlt ZCHF zusätzlich {rate} auf den Franken."
       },
       {
         "q": "«Der Dollar ist die Weltreservewährung. Er ist sicher.»",
-        "a": "Der Reservestatus hat den Dollar nicht davor bewahrt, seit 1971 {fxLoss} gegenüber dem Franken zu verlieren, oder {usdLoss} seiner Kaufkraft. Der Franken ist nicht die Reservewährung. Er ist einfach die Währung, die am wenigsten Wert verloren hat."
+        "a": "Der Status als Reservewährung hat nicht verhindert, dass der Dollar seit 1971 {fxLoss} gegenüber dem Franken und {usdLoss} seiner Kaufkraft verloren hat. Der Franken ist eine viel kleinere Währung, hat seinen Wert aber besser gehalten."
       },
       {
         "q": "«{rate} ist wenig. Anderswo bekomme ich mehr.»",
@@ -52,7 +52,7 @@
       },
       {
         "q": "«Warum kein Schweizer Bankkonto?»",
-        "a": "Versuchen Sie, eines aus dem Ausland zu eröffnen. Schweizer Banken zahlen auf Franken-Einlagen rund null, prüfen Nicht-Ansässige streng und verlangen Gebühren für das Privileg. ZCHF braucht eine Wallet, eine Banküberweisung und zehn Minuten, und zahlt {rate}."
+        "a": "Schweizer Banken zahlen auf Frankenguthaben nahezu keinen Zins, und für Personen ohne Wohnsitz in der Schweiz ist ein Konto schwer zu bekommen. ZCHF braucht ein Wallet und eine Banküberweisung und zahlt {rate}."
       },
       {
         "q": "«Ist ein Stablecoin sicher?»",
@@ -62,7 +62,7 @@
   },
   "how": {
     "eyebrow": "So wechseln Sie",
-    "title": "Zehn Minuten. Drei Schritte."
+    "title": "Drei Schritte."
   },
   "note": "Jahresdurchschnitte von FRED (Federal Reserve H.10 Wechselkurse, 3-Monats-Treasury-Bill TB3MS, BLS CPI-U), der Schweizerischen Nationalbank (Tagesgeld bis 1998, SARON ab 1999) und dem OECD-Konsumentenpreisindex Schweiz; heutiger Kurs aus den EZB-Referenzkursen. T-Bill-Renditen ohne Steuern und Gebühren. Vergangene Entwicklungen sagen nichts über künftige aus. Nichts hier ist eine Anlageberatung.",
   "explain": "Alle drei starten mit denselben Dollars im Jahr {year}. Die grosse Zahl ist, was sie heute wert sind. Die Zeile darunter sagt, wie viel von der Kaufkraft von {year} nach der US-Inflation übrig ist.",

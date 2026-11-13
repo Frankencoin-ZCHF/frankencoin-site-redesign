@@ -4,7 +4,7 @@
     "description": "Audits von ChainSecurity, Code4rena, Decurity und BlockBite, ein von Compass Security betriebenes Bug-Bounty-Programm und unabhängige Risiko-Ratings von Xerberus und Pharos."
   },
   "hero": {
-    "title": "Auditiert, bewertet|und offen für alle, die einen Fehler finden.",
+    "title": "Auditiert, bewertet|und durch ein Bug-Bounty abgesichert.",
     "subtitle": "Jede Frankencoin-Komponente wird vor dem Start auditiert, ein Bug-Bounty-Programm bezahlt für verantwortungsvolle Offenlegung, und zwei unabhängige Anbieter bewerten das System anhand öffentlicher Daten."
   },
   "summary": [
@@ -48,7 +48,7 @@
       { "reviewer": "BlockBite", "component": "Frankencoin-v1-Verträge", "date": "2023-03", "href": "/AuditReport-Frankencoin.pdf" }
     ],
     "bounty": {
-      "body": "Etwas gefunden, das die Audits übersehen haben? Der Frankencoin-Verein zahlt Prämien für Fehler, welche die Stabilität des Systems betreffen. Das Programm wird von Compass Security betrieben.",
+      "body": "Der Frankencoin-Verein zahlt Prämien für Fehler, die die Stabilität des Systems betreffen. Das Programm wird von Compass Security betrieben.",
       "label": "Bug-Bounty-Programm",
       "href": "https://bugbounty.compass-security.com/service-details.html?id=18"
     }

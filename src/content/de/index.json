@@ -49,7 +49,7 @@
 		},
 		{
 			"id": "compliance",
-			"label": "Vollständig konform",
+			"label": "Rechtsgutachten",
 			"value": "CH-Recht & MiCAR",
 			"href": "/compliance"
 		}
@@ -435,8 +435,8 @@
 		"subtitle": "Schauen Sie unsere Videos, um mehr über Frankencoin zu erfahren"
 	},
 	"doors": {
-		"eyebrow": "Wer sind Sie?",
-		"title": "Wählen Sie Ihre Tür",
+		"eyebrow": "Für wen",
+		"title": "Wählen Sie Ihren Weg",
 		"items": [
 			{
 				"eyebrow": "Sparer",
@@ -487,7 +487,7 @@
 	"how_simple": {
 		"eyebrow": "So funktioniert es",
 		"title": "Drei bewegliche Teile",
-		"subtitle": "Alles andere auf dieser Seite ist Detail. Das ist das System.",
+		"subtitle": "Das System in drei Schritten.",
 		"cards": [
 			{
 				"title": "1 · Minten",
@@ -504,8 +504,8 @@
 		]
 	},
 	"trust_strip": {
-		"eyebrow": "Konform & sicher",
-		"title": "Vertrauen, in einer Zeile",
+		"eyebrow": "Rechtlich beurteilt und auditiert",
+		"title": "Audits, Rechtsgutachten und Ratings",
 		"items": [
 			{
 				"label": "Audits",

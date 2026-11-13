@@ -48,7 +48,7 @@
   "note": "Die mittlere Spalte fasst mehrere emittentengedeckte Schweizer-Franken-Token zusammen; Reserven, Bedingungen und Berechtigung unterscheiden sich von Emittent zu Emittent.",
   "tradeoff": {
     "title": "Der Kompromiss",
-    "body": "Ein emittentengedeckter Token gibt Ihnen ein Unternehmen, bei dem Sie zurücktauschen können, und ein Unternehmen, das Sie einfrieren kann. ZCHF gibt Ihnen weder das eine noch das andere: Niemand kann Ihr Guthaben sperren, und sein Wert von einem Franken beruht auf Überbesicherung und dem Markt statt auf einem Rücknahmeversprechen."
+    "body": "Ein Token mit Emittent gibt Ihnen ein Unternehmen, bei dem Sie einlösen können, und dieses Unternehmen kann Guthaben sperren. ZCHF hat beides nicht: Niemand kann Ihr Guthaben blockieren, und der Wert von einem Franken beruht auf Überbesicherung und dem Markt statt auf einem Einlöseversprechen."
   },
   "nextHead": {
     "title": "Sehen Sie es im Einsatz."

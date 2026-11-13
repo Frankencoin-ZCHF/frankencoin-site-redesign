@@ -48,7 +48,7 @@
   "note": "The middle column groups several issuer-backed Swiss franc tokens; their reserves, terms and eligibility differ from issuer to issuer.",
   "tradeoff": {
     "title": "The trade-off",
-    "body": "An issuer-backed token gives you a company to redeem with and a company that can freeze you. ZCHF gives you neither: nobody can block your balance, and its one-franc value rests on over-collateralization and the market rather than on a redemption promise."
+    "body": "An issuer-backed token gives you a company to redeem with, and that company can freeze balances. ZCHF has neither: nobody can block your balance, and its one-franc value rests on over-collateralization and the market rather than on a redemption promise."
   },
   "nextHead": {
     "title": "See it in use."

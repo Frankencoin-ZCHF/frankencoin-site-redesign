@@ -91,7 +91,7 @@
       },
       {
         "label": "Live since",
-        "value": "2023, no depeg",
+        "value": "2023, no significant depeg",
         "href": "https://defillama.com/stablecoin/frankencoin"
       },
       {
@@ -118,7 +118,7 @@
       },
       {
         "q": "Do I need to know DeFi?",
-        "a": "You need a wallet and some ZCHF. Everything else is one page and one button."
+        "a": "No. You need a wallet and some ZCHF; the app guides you through the deposit."
       }
     ]
   },
