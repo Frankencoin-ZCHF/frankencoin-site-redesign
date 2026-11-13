@@ -24,15 +24,15 @@ const ctaHref = ctaExternal ? content.cta.href : getLocalizedPath(content.cta.hr
 
 <section id="fcs-launch" aria-labelledby="fcs-launch-title" class="py-10 md:py-20">
   <Container width="wide">
-    <div class="overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] lg:grid lg:grid-cols-2">
-      <div class="flex flex-col items-start gap-6 bg-[var(--color-brand-deep-blue)] p-6 text-[var(--color-white)] sm:p-10">
+    <div class="overflow-hidden rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] lg:grid lg:grid-cols-2">
+      <div class="flex flex-col items-start gap-6 bg-[var(--color-brand-deep-blue)] p-6 text-[var(--color-white)] sm:p-8">
         <div class="flex items-center gap-4">
           <img src="/images/fcs.png" alt="" width="72" height="72" loading="lazy" decoding="async" class="h-18 w-18 rounded-full" />
         </div>
         <h2 id="fcs-launch-title" class="ty-large-title ty-white">{content.title}</h2>
         <p class="ty-body-1">{content.description}</p>
       </div>
-      <div class="flex flex-col justify-center gap-8 p-6 sm:p-10">
+      <div class="flex flex-col justify-center gap-8 p-6 sm:p-8">
         <dl class="flex flex-col gap-6">
           {content.features.map((feature) => (
             <div>

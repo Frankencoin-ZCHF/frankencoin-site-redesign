@@ -27,12 +27,12 @@ const L = c.labels;
   <LPHero compact title={c.header.title} subtitle={c.header.subtitle} />
 
   <LPSection id="frontends-list">
-    <div class="mb-10 rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] p-6 md:p-7 max-w-3xl">
+    <div class="mb-10 rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] p-6 md:p-6 max-w-3xl">
       <h2 class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{c.note.title}</h2>
       <p class="mt-2 ty-body-3 text-[var(--color-neutral-650)] m-0">{c.note.body}</p>
     </div>
 
-    <div class="overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white" role="table">
+    <div class="overflow-hidden rounded-2xl border border-[var(--color-gray-20)] bg-white" role="table">
       <div role="row" class="hidden lg:grid lg:grid-cols-[1.6fr_1fr_1.3fr_auto] gap-6 px-6 py-3 border-b border-[var(--color-gray-20)] bg-[var(--color-gray-10)] ty-xs font-bold text-[var(--color-neutral-550)]">
         <span role="columnheader">{L.frontend}</span><span role="columnheader">{L.creator}</span><span role="columnheader">{L.features}</span><span role="columnheader" class="sr-only">Links</span>
       </div>
@@ -41,7 +41,7 @@ const L = c.labels;
           <div role="cell" class="min-w-0">
             <a href={f.url} target="_blank" rel="noopener noreferrer" class="ty-title-3 font-black text-[var(--color-brand-deep-blue)] hover:text-[var(--color-brand-swiss)] break-all">{display(f.url)}</a>
             {f.association && <span class="ml-2 inline-block align-middle rounded-full bg-[var(--color-brand-deep-blue)] px-2.5 py-0.5 ty-xs font-bold text-white">{c.associationLabel}</span>}
-            <p class="mt-1.5 ty-body-3 text-[var(--color-neutral-650)] m-0">{f.notes}</p>
+            <p class="mt-1 ty-body-3 text-[var(--color-neutral-650)] m-0">{f.notes}</p>
           </div>
           <div role="cell" class="min-w-0">
             <span class="lg:hidden ty-xs font-bold text-[var(--color-neutral-550)]">{L.creator}: </span>

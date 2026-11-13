@@ -54,7 +54,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
   <LPSection><FeatureGrid items={summary} cols={4} /></LPSection>
 
   <LPSection id="audits" title={c.audits.title} accent>
-    <div class="overflow-x-auto rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-white)]">
+    <div class="overflow-x-auto rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-white)]">
       <table class="w-full ty-body-3 text-left">
         <thead class="bg-[var(--color-gray-15)]"><tr><th class={th}>{c.audits.cols.reviewer}</th><th class={th}>{c.audits.cols.component}</th><th class={th}>{c.audits.cols.date}</th><th class={`${th} text-right`}>{c.audits.cols.report}</th></tr></thead>
         <tbody>
@@ -69,14 +69,14 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
         </tbody>
       </table>
     </div>
-    <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-4 rounded-3xl bg-[var(--color-brand-deep-blue)] text-white p-6 md:p-7">
+    <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-4 rounded-2xl bg-[var(--color-brand-deep-blue)] text-white p-6 md:p-6">
       <p class="ty-body-3 text-white/85 m-0 flex-1">{c.audits.bounty.body}</p>
       <PixelButton href={c.audits.bounty.href} label={`${c.audits.bounty.label} ↗`} variant="light" size="sm" class="shrink-0" />
     </div>
   </LPSection>
 
   <LPSection id="ratings" title={c.ratings.title} subtitle={c.ratings.subtitle}>
-    <div class="overflow-x-auto rounded-3xl border border-[var(--color-gray-20)]">
+    <div class="overflow-x-auto rounded-2xl border border-[var(--color-gray-20)]">
       <table class="w-full ty-body-3 text-left">
         <thead class="bg-[var(--color-gray-15)]"><tr><th class={th}>{c.ratings.cols.provider}</th><th class={th}>{c.ratings.cols.subject}</th><th class={th}>{c.ratings.cols.score}</th><th class={th}>{c.ratings.cols.scale}</th><th class={`${th} text-right`}>{c.ratings.cols.source}</th></tr></thead>
         <tbody>

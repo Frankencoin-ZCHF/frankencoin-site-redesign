@@ -11,7 +11,7 @@ const { line, area } = sparkPath(pts.map((p) => p[1]));
 ---
 
 {pts.length > 5 && first && last && (
-  <figure class="m-0 rounded-3xl bg-[var(--color-white)] border border-[var(--color-gray-20)] p-5 sm:p-8">
+  <figure class="m-0 rounded-2xl bg-[var(--color-white)] border border-[var(--color-gray-20)] p-5 sm:p-8">
     <p class="text-[12px] font-medium text-[var(--color-neutral-550)]">Swiss francs per 1 US dollar</p>
     <div class="flex items-baseline gap-3 flex-wrap mt-1">
       <span class="text-[44px] font-black tracking-tight text-[var(--color-brand-deep-blue)] leading-none">{last[1].toFixed(2)}</span>

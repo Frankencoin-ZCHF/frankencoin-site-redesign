@@ -106,8 +106,8 @@ const newsHref = currentLang === "de" ? "/de/news" : "/news";
   <div x-ref="track" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-[var(--spacing-l)] px-[var(--spacing-l)] scroll-pl-[var(--spacing-l)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
     {items.map((item) => (
       <article class="snap-start shrink-0 w-[82%] sm:w-[60%] md:w-[calc((100%-3rem)/3)] min-w-0">
-        <a href={item.url} target="_blank" rel="noopener noreferrer" class="group flex h-full flex-col overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white hover:shadow-xl hover:-translate-y-0.5 transition-all">
-          <div class="relative aspect-video overflow-hidden bg-gradient-to-br from-[var(--color-brand-deep-blue)] to-[#1a9cc8]">
+        <a href={item.url} target="_blank" rel="noopener noreferrer" class="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--color-gray-20)] bg-white hover:border-[var(--color-brand-deep-blue)]/40 transition-all">
+          <div class="relative aspect-video overflow-hidden bg-[var(--color-brand-deep-blue)]">
             {item.image && <img src={item.image} alt="" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover" onerror="this.remove()" />}
             {item.type === "video" && (
               <span class="absolute inset-0 flex items-center justify-center" aria-hidden="true">

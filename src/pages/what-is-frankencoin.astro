@@ -34,7 +34,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
   <LPSection title={c.pillarsHead.title}>
     <div class="grid sm:grid-cols-3 gap-4">
       {c.features.map((f: any) => (
-        <div class="rounded-3xl border border-[var(--color-gray-20)] bg-white p-6 md:p-7 flex flex-col gap-4">
+        <div class="rounded-2xl border border-[var(--color-gray-20)] bg-white p-6 md:p-6 flex flex-col gap-4">
           <img src={f.image} alt="" width="48" height="48" class="h-12 w-12" loading="lazy" />
           <h3 class="text-balance ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{f.title}</h3>
           <p class="ty-body-3 text-[var(--color-neutral-650)] m-0">{f.description}</p>

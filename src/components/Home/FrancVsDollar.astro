@@ -33,15 +33,15 @@ const line = pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(2)} ${y.toFixed
 const [l1, l2] = t(c.title).split("|");
 ---
 
-<section id="fifty" class="scroll-mt-24 bg-[var(--color-white)] py-20 md:py-28">
+<section id="fifty" class="scroll-mt-24 bg-[var(--color-white)] py-20 md:py-24">
   <div class="mx-auto max-w-7xl px-[var(--spacing-l)]">
     <h2 class="text-[34px] sm:text-[46px] lg:text-[56px] leading-[1.04] font-black tracking-[-0.03em] text-[var(--color-brand-deep-blue)] m-0">
-      <span class="md:whitespace-nowrap">{l1}</span><br /><span class="text-[#1a9cc8]">{l2}</span>
+      <span class="md:whitespace-nowrap">{l1}</span><br />{l2}
     </h2>
-    <p class="mt-5 text-pretty ty-body-1 text-[var(--color-neutral-650)] max-w-[40rem]">{t(c.subtitle)}</p>
+    <p class="mt-4 text-pretty ty-body-1 text-[var(--color-neutral-650)] max-w-[40rem]">{t(c.subtitle)}</p>
 
     <div class="mt-10 grid lg:grid-cols-[1.4fr_1fr] gap-6 items-stretch">
-      <figure class="m-0 rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] p-6 md:p-8 flex flex-col">
+      <figure class="m-0 rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] p-6 md:p-8 flex flex-col">
         <figcaption class="text-[12px] font-medium text-[var(--color-neutral-550)]">{c.chartLabel}</figcaption>
         <div class="flex items-baseline gap-3 mt-2">
           <span class="text-[40px] font-black tracking-tight text-[var(--color-brand-deep-blue)] leading-none">{first.usdchf.toFixed(2)}</span>
@@ -49,14 +49,14 @@ const [l1, l2] = t(c.title).split("|");
           <span class="text-[40px] font-black tracking-tight text-[#1a9cc8] leading-none">{now.toFixed(2)}</span>
           <span class="ml-2 rounded-full bg-[#ffe4e4] text-[#b42318] text-[11px] font-bold px-2.5 py-1">−{pct(loss)}</span>
         </div>
-        <svg viewBox="0 0 100 40" preserveAspectRatio="none" class="w-full h-40 md:h-56 mt-5 flex-1" role="img" aria-label={c.chartLabel}>
+        <svg viewBox="0 0 100 40" preserveAspectRatio="none" class="w-full h-40 md:h-56 mt-4 flex-1" role="img" aria-label={c.chartLabel}>
           <path d={`${line} L100 40 L0 40 Z`} fill="rgba(26,156,200,0.12)" />
           <path d={line} fill="none" stroke="#1a9cc8" stroke-width="1.6" vector-effect="non-scaling-stroke" />
         </svg>
         <div class="flex justify-between text-[11px] text-[var(--color-neutral-550)] mt-1"><span>{first.year}</span><span>{new Date().getFullYear()}</span></div>
       </figure>
       <!-- One comparison, not two facts: same money, two outcomes, bars to scale, one line on why. -->
-      <div class="rounded-3xl border border-[var(--color-gray-20)] bg-white p-6 md:p-7 flex flex-col gap-5">
+      <div class="rounded-2xl border border-[var(--color-gray-20)] bg-white p-6 md:p-6 flex flex-col gap-4">
         <p class="text-balance text-[20px] sm:text-[22px] font-black tracking-[-0.02em] text-[var(--color-brand-deep-blue)] leading-tight m-0">{t(c.tiles.head)}</p>
         <div class="flex flex-col gap-2">
           <div class="flex items-baseline justify-between gap-3">

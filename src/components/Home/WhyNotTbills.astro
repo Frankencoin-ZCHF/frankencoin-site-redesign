@@ -45,15 +45,15 @@ const bars = [
 ];
 ---
 
-<section class="relative overflow-hidden bg-[var(--color-brand-deep-blue)] text-white py-20 md:py-28">
+<section class="relative overflow-hidden bg-[var(--color-brand-deep-blue)] text-white py-20 md:py-24">
   <div class="halftone-dots absolute inset-0 opacity-[0.12] pointer-events-none" aria-hidden="true"></div>
   <div class="relative mx-auto max-w-7xl px-[var(--spacing-l)]">
     <h2 class="text-balance text-[34px] sm:text-[48px] lg:text-[60px] leading-[1.02] font-black tracking-[-0.03em] m-0 max-w-4xl">
-      {l1}<br /><span class="text-[#5bb8dc]">{l2}</span>
+      {l1}<br />{l2}
     </h2>
-    <p class="mt-5 text-pretty ty-body-1 text-white/75 max-w-[40rem]">{t(c.subtitle)}</p>
+    <p class="mt-4 text-pretty ty-body-1 text-white/75 max-w-[40rem]">{t(c.subtitle)}</p>
 
-    <div class="mt-10 rounded-3xl border border-white/10 bg-[#0e3a72] p-6 md:p-8 grid gap-6">
+    <div class="mt-10 rounded-2xl border border-white/10 bg-[#0e3a72] p-6 md:p-8 grid gap-6">
       {bars.map((b) => (
         <div class="grid md:grid-cols-[minmax(0,1fr)_auto] gap-x-8 gap-y-2 items-end">
           <div class="min-w-0">
@@ -74,7 +74,7 @@ const bars = [
 
     <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {c.reasons.map((r: any, n: number) => (
-        <div class="rounded-3xl border border-white/10 bg-[#0e3a72] p-6 flex flex-col">
+        <div class="rounded-2xl border border-white/10 bg-[#0e3a72] p-6 flex flex-col">
           <p class="ty-body-3 font-bold text-[#5bb8dc]">0{n + 1}</p>
           <h3 class="mt-3 text-balance ty-title-3 font-black m-0">{r.title}</h3>
           <p class="mt-2 ty-body-3 text-white/70 flex-1">{t(r.body)}</p>
@@ -82,6 +82,6 @@ const bars = [
         </div>
       ))}
     </div>
-    <p class="mt-5 ty-2xs text-white/45 max-w-4xl">{c.source}</p>
+    <p class="mt-4 ty-2xs text-white/45 max-w-4xl">{c.source}</p>
   </div>
 </section>

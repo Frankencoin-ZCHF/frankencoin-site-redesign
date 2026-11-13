@@ -26,14 +26,14 @@ const localHref = (h: string) => (h.startsWith("/") ? getLocalizedPath(h, lang) 
     <LPSection id={g.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")} title={g.name} split accent={i % 2 === 1}>
       <div class="grid sm:grid-cols-2 gap-4">
         {g.items.map((t: any) => (
-          <a href={t.href} target="_blank" rel="noopener noreferrer" class="group relative overflow-hidden flex flex-col rounded-3xl border border-[var(--color-gray-20)] bg-white p-6 md:p-7 hover:-translate-y-0.5 hover:shadow-xl transition-all">
+          <a href={t.href} target="_blank" rel="noopener noreferrer" class="group relative overflow-hidden flex flex-col rounded-2xl border border-[var(--color-gray-20)] bg-white p-6 md:p-6 hover:border-[var(--color-brand-deep-blue)]/40 transition-all">
             <span class="halftone-dots absolute inset-0 text-[#5bb8dc]/40 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></span>
             <div class="relative h-12 flex items-center mb-4">
               <img src={t.image} alt={t.imageAlt ?? t.name} class="max-h-10 max-w-[160px] object-contain" loading="lazy" />
             </div>
             <h3 class="relative text-balance ty-title-3 font-black text-[var(--color-brand-deep-blue)] m-0">{t.name}</h3>
             <p class="relative mt-2 ty-body-3 text-[var(--color-neutral-650)] flex-1 m-0 [overflow-wrap:anywhere]">{t.description}</p>
-            <p class="relative mt-5 ty-body-3 font-bold text-[var(--color-brand-swiss)] m-0">{t.linkLabel ?? new URL(t.href).hostname} ↗</p>
+            <p class="relative mt-4 ty-body-3 font-bold text-[var(--color-brand-swiss)] m-0">{t.linkLabel ?? new URL(t.href).hostname} ↗</p>
           </a>
         ))}
       </div>

@@ -27,7 +27,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
 
   <LPSection id="compare" title={c.compare.title} subtitle={c.compare.subtitle} accent>
     <div class="overflow-x-auto">
-      <table class="w-full border-separate border-spacing-0 rounded-3xl overflow-hidden border border-[var(--color-gray-20)] bg-white ty-body-3">
+      <table class="w-full border-separate border-spacing-0 rounded-2xl overflow-hidden border border-[var(--color-gray-20)] bg-white ty-body-3">
         <thead><tr class="bg-[var(--color-gray-10)]"><th class="p-4 md:p-5"></th><th class="text-left p-4 md:p-5 ty-body-2 font-black text-[var(--color-brand-deep-blue)]">{c.compare.head.save}</th><th class="text-left p-4 md:p-5 ty-body-2 font-black text-[var(--color-brand-deep-blue)]">{c.compare.head.invest}</th></tr></thead>
         <tbody>
           {c.compare.rows.map((r: any) => (

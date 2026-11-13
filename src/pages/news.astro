@@ -61,7 +61,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
         x-init="items = JSON.parse($el.dataset.items)"
         data-items={JSON.stringify(items)}
       >
-        <div class="flex flex-wrap items-center gap-x-6 gap-y-4 rounded-3xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] px-5 py-4 mb-8">
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-4 rounded-2xl border border-[var(--color-gray-20)] bg-[var(--color-gray-10)] px-5 py-4 mb-8">
           <div class="flex flex-wrap items-center gap-2" role="group" aria-label={c.filter.type}>
             {[["all", c.filter.all], ["article", c.filter.article], ["video", c.filter.video]].map(([v, label]) => (
               <button type="button" data-v={v} @click="type = $el.dataset.v"
@@ -88,7 +88,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <template x-for="item in list" :key="item.url">
-            <a :href="item.url" target="_blank" rel="noopener noreferrer" class="group flex flex-col overflow-hidden rounded-3xl border border-[var(--color-gray-20)] bg-white hover:-translate-y-0.5 hover:shadow-xl transition-all">
+            <a :href="item.url" target="_blank" rel="noopener noreferrer" class="group flex flex-col overflow-hidden rounded-2xl border border-[var(--color-gray-20)] bg-white hover:border-[var(--color-brand-deep-blue)]/40 transition-all">
               <div class="relative aspect-video bg-[var(--color-gray-10)] overflow-hidden" x-data="{ broken: false }">
                 <template x-if="item.image && !broken">
                   <img :src="item.image" :alt="item.title" class="h-full w-full object-cover" loading="lazy" @error="broken = true" />

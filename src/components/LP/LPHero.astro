@@ -41,19 +41,20 @@ const [l1, l2] = title.split("|");
     <div data-hero class={`grid gap-10 lg:gap-14 items-center ${hasAside ? "lg:grid-cols-[1.15fr_1fr]" : ""}`}>
       <div class="flex flex-col max-w-3xl">
         <h1 class="text-balance text-[40px] sm:text-[54px] lg:text-[66px] leading-[1] font-black tracking-[-0.035em] text-[var(--color-brand-deep-blue)] m-0">
-          {l1}{l2 && <><br /><span class="text-[#1a9cc8]">{l2}</span></>}
+          {l1}{l2 && <><br />{l2}</>}
         </h1>
-        <p class="mt-6 max-w-[38rem] text-pretty ty-body-1 text-[var(--color-neutral-650)]">{subtitle}</p>
+        <p class="mt-4 max-w-[38rem] text-pretty ty-body-1 text-[var(--color-neutral-650)]">{subtitle}</p>
         {(primary || secondary) && (
           <div class="mt-8 flex flex-wrap gap-3">
             {primary && (
               <PixelButton href={primary.href} label={primary.label} variant="solid" arrow />
             )}
             {secondary && (
-              <PixelButton href={secondary.href} label={secondary.label} variant="ghost" />
+              <a href={href(secondary.href)} {...ext(secondary.href)} class="inline-flex h-[52px] w-full sm:w-auto items-center justify-center rounded-[10px] border border-[var(--color-gray-30)] bg-white px-8 font-bold text-[15px] md:text-[16px] text-[var(--color-brand-deep-blue)] hover:border-[var(--color-brand-deep-blue)] transition-colors">{secondary.label}</a>
             )}
           </div>
         )}
+        {Astro.slots.has("note") && <p class="mt-8 flex flex-col gap-2 ty-body-2 text-[var(--color-neutral-650)] m-0"><slot name="note" /></p>}
       </div>
       {hasAside && <div class="min-w-0"><slot name="aside" /></div>}
     </div>
