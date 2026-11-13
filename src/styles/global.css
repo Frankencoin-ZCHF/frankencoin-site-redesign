@@ -134,3 +134,13 @@
 .dtb_label { position: relative; z-index: 1; text-shadow: 1px 1px 0 var(--dtb-halo), -1px 1px 0 var(--dtb-halo), 1px -1px 0 var(--dtb-halo), -1px -1px 0 var(--dtb-halo), 0 2px 0 var(--dtb-halo), 0 -2px 0 var(--dtb-halo), 2px 0 0 var(--dtb-halo), -2px 0 0 var(--dtb-halo); }
 .dtb:active { transform: translateY(1px) scale(0.99); }
 .dtb:focus-visible { outline: 2px solid var(--color-brand-swiss); outline-offset: 3px; }
+
+/* Home hero "ways to get ZCHF" links: at the foot of the image in white by default. On tall desktop windows the
+   text block ends well above the mountains, so the links move up under the buttons in dark text and the foot scrim goes. */
+@media (min-width: 768px) and (min-height: 1100px) {
+  .hero-routes { margin-top: 1.5rem; padding: 0; font-size: 14px; color: var(--color-neutral-650); }
+  .hero-routes span { color: var(--color-brand-deep-blue); }
+  .hero-routes a { color: var(--color-neutral-650) !important; text-decoration-color: var(--color-gray-30) !important; }
+  .hero-routes a:hover { color: var(--color-brand-deep-blue) !important; text-decoration-color: var(--color-brand-swiss) !important; }
+  .hero-scrim { display: none; }
+}
