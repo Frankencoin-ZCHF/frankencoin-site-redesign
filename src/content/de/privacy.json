@@ -29,6 +29,10 @@
           "text": "Wir nutzen Google Analytics 4 (Google Ireland Ltd.), um zu sehen, welche Seiten gelesen und welche Buttons genutzt werden. Wenn Sie im Cookie-Banner zustimmen, setzt Google Cookies (etwa _ga) und wir sehen pseudonyme Nutzungsdaten, darunter eine gekürzte IP-Adresse, Gerät und Land. Ereignisdaten werden zwei Monate aufbewahrt, Nutzerdaten 14 Monate. Lehnen Sie ab, werden keine Statistik-Cookies gesetzt und keine Kennung gespeichert; Google erhält nur aggregierte, cookielose Signale, die sich nicht mit Ihnen verknüpfen lassen. Ihre Wahl können Sie jederzeit unter Cookie-Einstellungen im Footer ändern. Rechtsgrundlage: Ihre Einwilligung. Google kann Daten in den USA unter dem EU-US Data Privacy Framework verarbeiten."
         },
         {
+          "title": "Anonyme Zählung der Seitenaufrufe",
+          "text": "Unabhängig vom Cookie-Banner zählen wir Seitenaufrufe, ohne jemanden zu identifizieren. Bei jedem Seitenaufruf erhält unser eigener Server die Adresse der Seite, die Website, von der Sie kommen, Browsertyp, Sprache und Bildschirmgrösse und leitet diese an eine separate Google-Analytics-Property weiter. Es wird kein Cookie gesetzt, nichts auf Ihrem Gerät gespeichert, keine Kennung vergeben und Ihre IP-Adresse nicht weitergegeben; die Zählung lässt sich daher weder mit Ihnen verknüpfen noch über mehrere Seiten zusammenführen. Rechtsgrundlage: unser berechtigtes Interesse zu wissen, wie viele Personen die Website nutzen."
+        },
+        {
           "title": "E-Mail",
           "text": "Wenn Sie uns eine E-Mail schreiben, erhalten wir Ihre Adresse, Ihre Nachricht und allfällige Anhänge. Wir nutzen sie nur, um Ihnen zu antworten, und bewahren sie so lange auf, wie das Gespräch es erfordert. E-Mails verarbeitet unser E-Mail-Anbieter in unserem Auftrag. Rechtsgrundlage: Massnahmen auf Ihre Anfrage vor einer möglichen Zusammenarbeit und unser berechtigtes Interesse an der Beantwortung von Anfragen."
         },
