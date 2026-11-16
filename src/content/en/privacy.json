@@ -29,6 +29,10 @@
           "text": "We use Google Analytics 4 (Google Ireland Ltd.) to see which pages are read and which buttons are used. If you accept analytics in the cookie banner, Google sets cookies (such as _ga) and we see pseudonymous usage data, including a shortened IP address, device and country. Event data is kept for two months, user data for 14 months. If you decline, no analytics cookies are set and no identifier is stored; Google receives only aggregated, cookieless signals that cannot be linked to you. You can change your choice at any time under Cookie settings in the footer. Legal basis: your consent. Google may process data in the United States under the EU-US Data Privacy Framework."
         },
         {
+          "title": "Anonymous page-view counts",
+          "text": "Independently of the cookie banner, we count page views without identifying anyone. For each page view our own server receives the page address, the website you came from, your browser type, language and screen size, and passes these to a separate Google Analytics property. No cookie is set, nothing is stored on your device, no identifier is assigned and your IP address is not passed on, so the counts cannot be linked to you or combined across pages. Legal basis: our legitimate interest in knowing how many people use the site."
+        },
+        {
           "title": "Email",
           "text": "If you email us, we receive your address, your message and anything you attach. We use it only to answer you and keep it as long as the conversation requires. Mail is handled by our email provider on our behalf. Legal basis: taking steps at your request before a possible cooperation, and our legitimate interest in answering enquiries."
         },

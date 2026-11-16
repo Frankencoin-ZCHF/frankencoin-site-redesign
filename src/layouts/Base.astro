@@ -107,6 +107,25 @@ const site = await loadSharedContent("site", currentLang);
         }
       } catch (e) {}
     </script>
+    <!-- Anonymous page-view count, independent of the cookie banner: one beacon per page view to /api/hit
+         (see pages/api/hit.ts). Stores nothing in the browser and sends no identifier. -->
+    <script is:inline>
+      (function () {
+        try {
+          if (navigator.webdriver) return;
+          var send = function () {
+            var ref = "";
+            try { var u = new URL(document.referrer); if (u.host !== location.host) ref = u.origin + "/"; } catch (e) {}
+            var utm = location.search.slice(1).split("&").filter(function (x) { return /^utm_(source|medium|campaign|content|term)=/.test(x); }).join("&");
+            var body = JSON.stringify({ p: location.pathname, q: utm, r: ref, e: !document.referrer || ref ? 1 : 0, t: document.title, l: navigator.language, w: screen.width + "x" + screen.height });
+            if (navigator.sendBeacon) navigator.sendBeacon("/api/hit", body);
+            else fetch("/api/hit", { method: "POST", body: body, keepalive: true });
+          };
+          if (document.visibilityState === "prerender") document.addEventListener("visibilitychange", send, { once: true });
+          else send();
+        } catch (e) {}
+      })();
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNM9S018ES"></script>
     <script>
       function gtag() {
