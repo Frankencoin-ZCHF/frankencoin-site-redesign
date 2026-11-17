@@ -95,7 +95,8 @@ const sorted = [...articlesWithMetadata, ...normalizedVideos].sort((a, b) => {
   const dateB = new Date(b.publishedDate);
   return dateB.getTime() - dateA.getTime();
 });
-const items = sorted.slice(0, 12);
+// A card still on its placeholder title (source not fetched yet and no manual title) is left out.
+const items = sorted.filter((i) => i.title && i.title !== "Article" && i.title !== "Video").slice(0, 12);
 const t = currentLang === "de" ? { video: "Video", article: "Artikel", prev: "Zurück", next: "Weiter", all: "Alle Beiträge" } : { video: "Video", article: "Article", prev: "Previous", next: "Next", all: "All coverage" };
 const newsHref = currentLang === "de" ? "/de/news" : "/news";
 ---

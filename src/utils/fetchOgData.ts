@@ -1,3 +1,5 @@
+const FETCH_TIMEOUT = 8000;
+
 interface OgData {
   title: string;
   description: string;
@@ -10,6 +12,7 @@ interface OgData {
 async function fetchOgDataUncached(url: string): Promise<OgData | null> {
   try {
     const response = await fetch(url, {
+      signal: AbortSignal.timeout(FETCH_TIMEOUT),
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
@@ -134,18 +137,27 @@ async function fetchOgDataUncached(url: string): Promise<OgData | null> {
   }
 }
 
-/* One-hour in-memory cache per URL (the metadata of a published article does not change), so a page
- * request does not refetch every source. A failed fetch is cached for five minutes to avoid hammering. */
+/* In-memory cache per URL, built so that a page request never waits on a slow publisher site:
+ * - fresh entry (one hour; five minutes after a failure): returned at once;
+ * - stale entry: returned at once, refreshed in the background (a failed refresh keeps the last good data);
+ * - no entry yet (first request after a deploy): wait at most WAIT ms, then return null so the page renders
+ *   with the hand-written metadata from media.json while the fetch finishes in the background.
+ * Each fetch is aborted after FETCH_TIMEOUT ms. */
 const TTL_OK = 60 * 60 * 1000;
 const TTL_FAIL = 5 * 60 * 1000;
+const WAIT = 1200;
 const cache = new Map<string, { at: number; data: OgData | null }>();
 const inflight = new Map<string, Promise<OgData | null>>();
 export async function fetchOgData(url: string): Promise<OgData | null> {
   const hit = cache.get(url);
   if (hit && Date.now() - hit.at < (hit.data ? TTL_OK : TTL_FAIL)) return hit.data;
-  const pending = inflight.get(url);
-  if (pending) return pending;
-  const run = fetchOgDataUncached(url).then((data) => { cache.set(url, { at: Date.now(), data }); inflight.delete(url); return data; });
-  inflight.set(url, run);
-  return run;
+  let run = inflight.get(url);
+  if (!run) {
+    run = fetchOgDataUncached(url)
+      .catch(() => null)
+      .then((data) => { cache.set(url, { at: Date.now(), data: data ?? hit?.data ?? null }); inflight.delete(url); return data; });
+    inflight.set(url, run);
+  }
+  if (hit) return hit.data;
+  return Promise.race([run, new Promise<null>((resolve) => setTimeout(() => resolve(null), WAIT))]);
 }
