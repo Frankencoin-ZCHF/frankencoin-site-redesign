@@ -34,6 +34,8 @@
     "https://www.finews.ch/news/finanzplatz/71537-luzius-meisser-stablecoin-frankencoin-sbf-krypto-finig-allunity-finma-sif-bundesrat-micar-tether-bitcoin-finanzsystem-geldschoepfung-smartcontracts-dezentral-staking-lending-gold"
   ],
   "videos": [
+    "https://x.com/stable_summit/status/2122281608866890113",
+    "https://x.com/stable_summit/status/2122273157931311535",
     "https://www.youtube.com/watch?v=564k9sNoM_c",
     "https://www.youtube.com/watch?v=gDuZ6baS98g",
     "https://www.youtube.com/watch?v=qpSljn2UCBA",
@@ -248,6 +250,20 @@
     }
   },
   "videoMetadata": {
+    "https://x.com/stable_summit/status/2122281608866890113": {
+      "title": "Paolo Di Stefano, Frankencoin | Collateral Risk Management",
+      "description": "Paolo Di Stefano explains Frankencoin's collateral selection, oracle-free liquidations, market and tail risk, and community governance at Stable Summit IV in London on November 13, 2026.",
+      "author": "Stable Summit",
+      "publishedDate": "Nov 16, 2026",
+      "thumbnail": "/images/video-thumbnails/stable-summit-2122281608866890113.jpg"
+    },
+    "https://x.com/stable_summit/status/2122273157931311535": {
+      "title": "Bringing Real-World FX Flows Onchain | Stable Summit IV",
+      "description": "Johannes Kern (Frankencoin Association), Maximilian Roszko (Curve) and Josh Reyes (tGBP), moderated by Lory Kehoe (Aave), discuss onchain FX flows, liquidity costs and dollar routing at Stable Summit IV in London on November 13, 2026.",
+      "author": "Stable Summit",
+      "publishedDate": "Nov 16, 2026",
+      "thumbnail": "/images/video-thumbnails/stable-summit-2122273157931311535.jpg"
+    },
     "https://www.youtube.com/watch?v=564k9sNoM_c": {
       "title": "Johannes Kern, Frankencoin | Optimistic Governance: Build an Actually Decentralized Stablecoin",
       "description": "What does it take for a decentralized stablecoin’s governance to resist capture by a small number of voters? In this talk, Johannes Kern (Frankencoin Association) examines how optimistic governance is designed to keep a decentralized stablecoin resilient and accountable.",
