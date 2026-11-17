@@ -1,7 +1,8 @@
 ---
 /**
- * Cookie banner for Google Consent Mode v2. The consent *default* (everything denied) is set inline in
- * Base.astro before gtag.js loads; this component only shows the choice and updates it.
+ * Cookie banner for Google Consent Mode v2. The consent *default* is set inline in Base.astro before gtag.js
+ * loads (denied for EU/EEA/UK visitors, granted elsewhere); this component only shows the choice and updates it.
+ * It opens by itself only where consent is required (window.fcAsk); everyone can open it from the footer.
  * The choice lives in localStorage "fc-consent" = "granted" | "denied" (12 months). window.fcConsent.open()
  * reopens the banner (footer "Cookie settings", privacy page). Copy: content/{en,de}/consent.json.
  */
@@ -18,7 +19,7 @@ const moreHref = getLocalizedPath(c.moreHref, lang);
     <div class="min-w-0 flex-1">
       <p id="fc-consent-title" class="ty-body-2 font-black text-[var(--color-brand-deep-blue)] m-0">{c.title}</p>
       <p class="mt-1 ty-body-3 text-pretty text-[var(--color-neutral-650)] m-0">
-        {c.text}
+        <span data-consent-text data-optout={c.textOptOut}>{c.text}</span>
         <a href={moreHref} class="font-semibold text-[var(--color-brand-deep-blue)] underline decoration-[var(--color-brand-swiss)] underline-offset-4 hover:text-[var(--color-brand-swiss)]">{c.more}</a>
       </p>
     </div>
@@ -52,13 +53,25 @@ const moreHref = getLocalizedPath(c.moreHref, lang);
     function choose(choice) {
       try { localStorage.setItem(KEY, JSON.stringify({ choice: choice, at: Date.now() })); } catch (e) {}
       apply(choice);
+      // Switching analytics off also removes the Google Analytics cookies that are already there.
+      if (choice !== "granted") {
+        document.cookie.split(";").forEach(function (c) {
+          var n = c.split("=")[0].trim();
+          if (!/^_ga/.test(n)) return;
+          var host = location.hostname.replace(/^www\./, "");
+          ["", "; domain=" + host, "; domain=." + host].forEach(function (d) { document.cookie = n + "=; Max-Age=0; path=/" + d; });
+        });
+      }
       box.hidden = true;
       if (window.fcTrack) window.fcTrack("consent_" + choice, { page_path: location.pathname });
     }
     box.querySelectorAll("[data-consent]").forEach(function (b) {
       b.addEventListener("click", function () { choose(b.getAttribute("data-consent")); });
     });
+    // Outside the EU/EEA/UK analytics is on by default, so the text offers to switch it off instead of asking.
+    var txt = box.querySelector("[data-consent-text]");
+    if (window.fcAsk === false && txt && txt.dataset.optout) txt.textContent = txt.dataset.optout;
     window.fcConsent = { open: function () { box.hidden = false; box.querySelector("[data-consent=granted]").focus(); }, get: read };
-    if (!read()) box.hidden = false;
+    if (!read() && window.fcAsk !== false) box.hidden = false;
   })();
 </script>
