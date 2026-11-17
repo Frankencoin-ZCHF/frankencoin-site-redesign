@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Datenschutzerklärung",
-    "description": "Wie frankencoin.com mit Personendaten umgeht: Hosting-Logs, Google Analytics mit Einwilligung, Kontaktformular und Ihre Rechte."
+    "description": "Wie frankencoin.com mit Personendaten umgeht: Hosting-Logs, Google Analytics, Kontaktformular und Ihre Rechte."
   },
   "hero": {
     "title": "Datenschutzerklärung",
@@ -25,8 +25,8 @@
           "text": "Unser Hosting-Anbieter zeichnet bei jedem Aufruf technische Zugriffsdaten auf: IP-Adresse, Zeitpunkt, aufgerufene Seite, Browsertyp und verweisende Seite. Wir nutzen sie, um die Website sicher zu betreiben. Die Logs werden nach kurzer Zeit gelöscht. Rechtsgrundlage: unser berechtigtes Interesse an einem sicheren Betrieb."
         },
         {
-          "title": "Statistik, nur mit Ihrer Einwilligung",
-          "text": "Wir nutzen Google Analytics 4 (Google Ireland Ltd.), um zu sehen, welche Seiten gelesen und welche Buttons genutzt werden. Wenn Sie im Cookie-Banner zustimmen, setzt Google Cookies (etwa _ga) und wir sehen pseudonyme Nutzungsdaten, darunter eine gekürzte IP-Adresse, Gerät und Land. Ereignisdaten werden zwei Monate aufbewahrt, Nutzerdaten 14 Monate. Lehnen Sie ab, werden keine Statistik-Cookies gesetzt und keine Kennung gespeichert; Google erhält nur aggregierte, cookielose Signale, die sich nicht mit Ihnen verknüpfen lassen. Ihre Wahl können Sie jederzeit unter Cookie-Einstellungen im Footer ändern. Rechtsgrundlage: Ihre Einwilligung. Google kann Daten in den USA unter dem EU-US Data Privacy Framework verarbeiten."
+          "title": "Statistik",
+          "text": "Wir nutzen Google Analytics 4 (Google Ireland Ltd.), um zu sehen, welche Seiten gelesen und welche Buttons genutzt werden. Wenn Sie die Website aus der EU, dem EWR oder dem Vereinigten Königreich besuchen, läuft die Statistik erst, nachdem Sie im Cookie-Banner zugestimmt haben. Andernorts, auch in der Schweiz, ist sie standardmässig aktiv und lässt sich jederzeit unter Cookie-Einstellungen im Footer ausschalten. Ist die Statistik aktiv, setzt Google Cookies (etwa _ga) und wir sehen pseudonyme Nutzungsdaten, darunter eine gekürzte IP-Adresse, Gerät und Land. Ereignisdaten werden zwei Monate aufbewahrt, Nutzerdaten 14 Monate. Lehnen Sie ab oder schalten Sie sie aus, werden keine Statistik-Cookies gesetzt und keine Kennung gespeichert; Google erhält nur aggregierte, cookielose Signale, die sich nicht mit Ihnen verknüpfen lassen. Ihre Wahl können Sie jederzeit unter Cookie-Einstellungen im Footer ändern. Rechtsgrundlage: in der EU, im EWR und im Vereinigten Königreich Ihre Einwilligung; andernorts unser berechtigtes Interesse zu verstehen, wie die Website genutzt wird. Google kann Daten in den USA unter dem EU-US und dem Swiss-US Data Privacy Framework verarbeiten."
         },
         {
           "title": "Anonyme Zählung der Seitenaufrufe",
@@ -56,7 +56,7 @@
         },
         {
           "title": "_ga, _ga_*",
-          "text": "Google Analytics, nur nach Einwilligung. Unterscheidet Besucher und Sitzungen. Bis zu 2 Jahre."
+          "text": "Google Analytics. In der EU, im EWR und im Vereinigten Königreich nur nach Einwilligung; andernorts gesetzt, solange Sie die Statistik nicht ausschalten. Unterscheidet Besucher und Sitzungen. Bis zu 2 Jahre."
         }
       ]
     },

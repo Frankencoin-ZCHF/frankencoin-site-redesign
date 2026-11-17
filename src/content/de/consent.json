@@ -1,6 +1,7 @@
 {
   "title": "Cookies für die Statistik",
   "text": "Wir nutzen Google Analytics, um zu sehen, welche Seiten gelesen werden. Cookies setzen wir nur mit Ihrer Zustimmung.",
+  "textOptOut": "Wir nutzen Google Analytics, um zu sehen, welche Seiten gelesen werden. Sie können es hier jederzeit ausschalten.",
   "accept": "Statistik erlauben",
   "decline": "Nur notwendige",
   "more": "Datenschutz",

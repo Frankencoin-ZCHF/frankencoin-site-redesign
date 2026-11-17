@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Privacy policy",
-    "description": "How frankencoin.com handles personal data: hosting logs, Google Analytics with consent, the contact form and your rights."
+    "description": "How frankencoin.com handles personal data: hosting logs, Google Analytics, the contact form and your rights."
   },
   "hero": {
     "title": "Privacy policy",
@@ -25,8 +25,8 @@
           "text": "Our hosting provider records technical access data for every request: IP address, time, page requested, browser type and the referring page. We use it to keep the site running and secure. Logs are kept for a short period and then deleted. Legal basis: our legitimate interest in operating a secure website."
         },
         {
-          "title": "Analytics, only with your consent",
-          "text": "We use Google Analytics 4 (Google Ireland Ltd.) to see which pages are read and which buttons are used. If you accept analytics in the cookie banner, Google sets cookies (such as _ga) and we see pseudonymous usage data, including a shortened IP address, device and country. Event data is kept for two months, user data for 14 months. If you decline, no analytics cookies are set and no identifier is stored; Google receives only aggregated, cookieless signals that cannot be linked to you. You can change your choice at any time under Cookie settings in the footer. Legal basis: your consent. Google may process data in the United States under the EU-US Data Privacy Framework."
+          "title": "Analytics",
+          "text": "We use Google Analytics 4 (Google Ireland Ltd.) to see which pages are read and which buttons are used. If you visit from the EU, the EEA or the United Kingdom, analytics runs only after you accept it in the cookie banner. Elsewhere, including Switzerland, it is on by default and you can switch it off at any time under Cookie settings in the footer. When analytics is on, Google sets cookies (such as _ga) and we see pseudonymous usage data, including a shortened IP address, device and country. Event data is kept for two months, user data for 14 months. If you decline or switch it off, no analytics cookies are set and no identifier is stored; Google receives only aggregated, cookieless signals that cannot be linked to you. You can change your choice at any time under Cookie settings in the footer. Legal basis: your consent in the EU, the EEA and the United Kingdom; elsewhere our legitimate interest in understanding how the site is used. Google may process data in the United States under the EU-US and Swiss-US Data Privacy Frameworks."
         },
         {
           "title": "Anonymous page-view counts",
@@ -56,7 +56,7 @@
         },
         {
           "title": "_ga, _ga_*",
-          "text": "Google Analytics, set only after consent. Distinguish visitors and sessions. Kept up to 2 years."
+          "text": "Google Analytics. Set only after consent in the EU, EEA and UK; elsewhere set unless you switch analytics off. Distinguish visitors and sessions. Kept up to 2 years."
         }
       ]
     },

@@ -94,18 +94,34 @@ const site = await loadSharedContent("site", currentLang);
       })();
     </script>
 
-    <!-- Google Analytics with Consent Mode v2: everything denied until the visitor accepts in the cookie banner.
-         Must run before gtag.js loads, so it is inline. The stored choice (localStorage "fc-consent") is re-applied here. -->
+    <!-- Google Analytics with Consent Mode v2. Visitors in the EU, EEA or UK are asked first (cookie banner);
+         everywhere else analytics is on by default and can be switched off under "Cookie settings".
+         Two layers decide the region: the browser time zone (also decides whether the banner shows, see
+         CookieBanner.astro) and Google's own IP lookup through the region-specific default, which keeps
+         analytics off for an EU/EEA/UK address even if the time zone says otherwise.
+         Must run before gtag.js loads, so it is inline. A stored choice (localStorage "fc-consent") wins.
+         ?fc-region=eu or ?fc-region=other overrides the time zone for testing. -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
-      gtag("consent", "default", { ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied", analytics_storage: "denied", wait_for_update: 500 });
-      try {
-        var fcc = JSON.parse(localStorage.getItem("fc-consent") || "null");
-        if (fcc && fcc.choice === "granted" && Date.now() - (fcc.at || 0) < 365 * 24 * 60 * 60 * 1000) {
-          gtag("consent", "update", { analytics_storage: "granted" });
-        }
-      } catch (e) {}
+      (function () {
+        var tz = "";
+        try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) {}
+        var ask = !tz || (/^Europe\//.test(tz) && tz !== "Europe/Zurich") ||
+          /^(Atlantic\/(Canary|Madeira|Azores|Reykjavik)|Africa\/Ceuta|Arctic\/Longyearbyen|Asia\/(Nicosia|Famagusta)|America\/(Cayenne|Guadeloupe|Martinique|Marigot|St_Barthelemy)|Indian\/(Reunion|Mayotte))$/.test(tz);
+        var force = /[?&]fc-region=(eu|other)\b/.exec(location.search);
+        if (force) ask = force[1] === "eu";
+        window.fcAsk = ask;
+        var off = { ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied", wait_for_update: 500 };
+        gtag("consent", "default", Object.assign({ analytics_storage: ask ? "denied" : "granted" }, off));
+        gtag("consent", "default", Object.assign({ analytics_storage: "denied", region: ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO","GB"] }, off));
+        try {
+          var fcc = JSON.parse(localStorage.getItem("fc-consent") || "null");
+          if (fcc && fcc.choice && Date.now() - (fcc.at || 0) < 365 * 24 * 60 * 60 * 1000) {
+            gtag("consent", "update", { analytics_storage: fcc.choice === "granted" ? "granted" : "denied" });
+          }
+        } catch (e) {}
+      })();
     </script>
     <!-- Anonymous page-view count, independent of the cookie banner: one beacon per page view to /api/hit
          (see pages/api/hit.ts). Stores nothing in the browser and sends no identifier. -->

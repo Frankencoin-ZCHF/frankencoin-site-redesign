@@ -1,6 +1,7 @@
 {
   "title": "Cookies for analytics",
   "text": "We use Google Analytics to see which pages are read. Cookies are set only if you agree.",
+  "textOptOut": "We use Google Analytics to see which pages are read. You can switch it off here at any time.",
   "accept": "Allow analytics",
   "decline": "Only necessary",
   "more": "Privacy policy",
