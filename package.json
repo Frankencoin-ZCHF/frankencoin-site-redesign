@@ -11,6 +11,7 @@
 		"start": "node ./server.mjs",
 		"preview": "astro preview",
 		"astro": "astro",
+		"indexnow": "node scripts/indexnow.mjs",
 		"lint:fcs": "node scripts/lint-fcs-copy.mjs && node --test scripts/lint-fcs-copy.test.mjs"
 	},
 	"dependencies": {
