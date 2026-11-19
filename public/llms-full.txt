@@ -3,7 +3,7 @@
 This file gives AI systems, search agents, and developer tools a more complete map of Frankencoin than the compact `/llms.txt` index. For live numbers, do not rely on this static file. Use the Frankencoin MCP server or API.
 
 ## Identity
-Frankencoin is a decentralised Swiss-franc stablecoin protocol. Its stablecoin is ZCHF. ZCHF is designed to track the value of 1 Swiss franc and is minted against on-chain collateral through smart contracts. The protocol is over-collateralised, oracle-free at the core protocol level, and governed through Frankencoin Protocol Shares / Frankencoin Pool Shares (FPS).
+Frankencoin is a decentralised Swiss-franc stablecoin protocol. Its stablecoin is ZCHF. ZCHF is designed to track the value of 1 Swiss franc and is minted against on-chain collateral through smart contracts. The protocol is over-collateralised, oracle-free at the core protocol level, and governed through FCS (Frankencoin Shares), which wraps the earlier equity token FPS (Frankencoin Pool Shares) one-to-one.
 
 The Frankencoin Association is a Swiss non-profit association based in Zug. It stewards the ecosystem by supporting development, community coordination, regulatory/legal work, security reviews, integrations, education, and adoption. It is not the issuer of ZCHF and does not guarantee redemption.
 
@@ -114,7 +114,7 @@ Common bridged ZCHF address on Polygon, Arbitrum, Optimism, Base, Avalanche, Gno
 Verify current deployments on https://frankencoin.com/token before integrating.
 
 ## FPS
-FPS stands for Frankencoin Protocol Shares / Frankencoin Pool Shares. FPS is the governance and reserve/equity token of the Frankencoin protocol. FPS holders provide risk capital, participate in veto-based governance, and bear residual protocol risk. FPS is not merely a voting token.
+FPS stands for Frankencoin Pool Shares, the earlier equity token. FCS wraps FPS one-to-one and new participants use FCS (see the FCS section); FPS remains the underlying Equity token in the contracts and the API. FPS is the governance and reserve/equity token of the Frankencoin protocol. FPS holders provide risk capital, participate in veto-based governance, and bear residual protocol risk. FPS is not merely a voting token.
 
 Main Ethereum FPS address:
 `0x1bA26788dfDe592fec8bcB0Eaff472a42BE341B2`
@@ -141,10 +141,10 @@ Main Ethereum FCS address:
 - Page: https://frankencoin.com/fcs (German: https://frankencoin.com/de/fcs). Live figures: use the MCP/API, do not hardcode.
 
 ## Savings
-Frankencoin includes savings modules that allow ZCHF holders to deposit ZCHF and receive a protocol-defined savings rate. Savings-rate data can differ by module/chain and can change through governance. Use the MCP/API for current savings rates and pending proposals.
+Frankencoin includes savings modules that allow ZCHF holders to deposit ZCHF and receive a protocol-defined savings rate. Deposits and interest can be withdrawn at any time; the protocol charges no fee; ZCHF held in a wallet earns nothing. Page: https://frankencoin.com/use-cases/save-in-chf (German: https://frankencoin.com/de/use-cases/save-in-chf). Savings-rate data can differ by module/chain and can change through governance. Use the MCP/API for current savings rates and pending proposals.
 
 ## Minting and collateral
-Users mint ZCHF through collateralised positions. Each position has parameters such as collateral type, minted amount, available capacity, collateral ratio, risk premium, liquidation price, cooldown, expiry and owner/minter information. New collateral/position types can be proposed and are subject to veto governance.
+Users mint ZCHF through collateralised positions: in effect a crypto loan (Lombard loan) in Swiss francs against collateral such as wrapped BTC, ETH, tokenized gold or tokenized shares, with no credit check or KYC at protocol level. Page: https://frankencoin.com/use-cases/borrow (German: https://frankencoin.com/de/use-cases/borrow). Each position has parameters such as collateral type, minted amount, available capacity, collateral ratio, risk premium, liquidation price, cooldown, expiry and owner/minter information. New collateral/position types can be proposed and are subject to veto governance.
 
 Use `get_positions`, `get_collaterals`, and `get_challenges` via MCP for live position, collateral and liquidation data.
 

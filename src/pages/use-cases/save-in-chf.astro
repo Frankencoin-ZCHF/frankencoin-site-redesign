@@ -4,6 +4,7 @@ import Base from "../../layouts/Base.astro";
 import LPHero from "../../components/LP/LPHero.astro";
 import LPSection from "../../components/LP/LPSection.astro";
 import FaqList from "../../components/LP/FaqList.astro";
+import FaqJsonLd from "../../components/LP/FaqJsonLd.astro";
 import WhyNotTbills from "../../components/Home/WhyNotTbills.astro";
 import FrancVsDollar from "../../components/Home/FrancVsDollar.astro";
 import CtaBand from "../../components/LP/CtaBand.astro";
@@ -26,6 +27,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
+  <FaqJsonLd slot="head" items={c.faq} lang={lang} />
   <LPHero title={c.hero.title.replace("{rate}", rate)} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} image="/images/home/mountain-lake-halftone.webp" imageLayout="side" imagePosition="object-[55%_50%]">
     <Fragment slot="note"><span>{c.figures.saved.label}</span><span class="text-[28px] md:text-[32px] leading-none font-black tracking-tight text-[var(--color-brand-deep-blue)] tabular-nums">{formatAmount(d.current.totalSavings)} {c.figures.saved.unit}</span></Fragment>
   </LPHero>
