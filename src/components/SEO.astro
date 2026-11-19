@@ -18,7 +18,7 @@ const {
   title = site.site.title,
   description = site.site.description,
   image = site.site.image,
-  canonical = Astro.url.href,
+  canonical,
   type = "website",
   noindex = false,
   nofollow = false,
@@ -37,9 +37,12 @@ const robotsContent = noindex || nofollow
 // Hreflang tags
 const pathname = Astro.url.pathname;
 const basePath = stripLangFromPath(pathname) || '/';
+// One address per page: frankencoin.com, no trailing slash (server.mjs redirects the other forms), no query string.
 const siteUrl = 'https://frankencoin.com';
-const enUrl = `${siteUrl}${basePath}`;
-const deUrl = `${siteUrl}/de${basePath === '/' ? '/' : basePath}`;
+const noSlash = (p: string) => (p.length > 1 ? p.replace(/\/+$/, '') : p);
+const canonicalUrl = canonical ?? `${siteUrl}${noSlash(pathname)}`;
+const enUrl = `${siteUrl}${noSlash(basePath)}`;
+const deUrl = `${siteUrl}/de${basePath === '/' ? '' : noSlash(basePath)}`;
 ---
 
 <!-- Primary Meta Tags -->
@@ -49,7 +52,7 @@ const deUrl = `${siteUrl}/de${basePath === '/' ? '/' : basePath}`;
 <meta name="keywords" content={site.site.keywords} />
 <meta name="author" content={site.site.author} />
 <meta name="robots" content={robotsContent} />
-<link rel="canonical" href={canonical} />
+<link rel="canonical" href={canonicalUrl} />
 
 <!-- Hreflang Tags -->
 <link rel="alternate" hreflang="en" href={enUrl} />
@@ -58,7 +61,7 @@ const deUrl = `${siteUrl}/de${basePath === '/' ? '/' : basePath}`;
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />
-<meta property="og:url" content={canonical} />
+<meta property="og:url" content={canonicalUrl} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={fullImageUrl} />
@@ -70,7 +73,7 @@ const deUrl = `${siteUrl}/de${basePath === '/' ? '/' : basePath}`;
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:url" content={canonical} />
+<meta name="twitter:url" content={canonicalUrl} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={fullImageUrl} />

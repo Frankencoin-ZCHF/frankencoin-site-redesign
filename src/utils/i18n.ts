@@ -38,7 +38,8 @@ export function getLocalizedPath(path: string, lang: Language): string {
 	}
 	// Remove leading slash if present
 	const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-	return `/${lang}/${cleanPath}`;
+	// No trailing slash: server.mjs redirects /de/ to /de.
+	return cleanPath ? `/${lang}/${cleanPath}` : `/${lang}`;
 }
 
 export function stripLangFromPath(pathname: string): string {
