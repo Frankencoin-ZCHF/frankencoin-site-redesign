@@ -6,6 +6,8 @@ import sitemap from '@astrojs/sitemap';
 import node from '@astrojs/node';
 import vercel from '@astrojs/vercel';
 
+const sitemapSeen = new Set();
+
 // https://astro.build/config
 export default defineConfig({
 	// With a preview password every page must be rendered on request so the middleware can gate it.
@@ -79,9 +81,19 @@ export default defineConfig({
 				},
 			},
 			filter: (page) => !page.includes('/verify/'),
+			// Same address as the canonical tag: no trailing slash (server.mjs redirects /path/ to /path).
+			serialize: (item) => {
+				const strip = (u) => u.replace(/(frankencoin\.com\/.+?)\/+$/, '$1');
+				item.url = strip(item.url);
+				// Prerendered and customPages entries can now be the same URL: keep the first.
+				if (sitemapSeen.has(item.url)) return undefined;
+				sitemapSeen.add(item.url);
+				item.links = item.links?.map((l) => ({ ...l, url: strip(l.url) }));
+				return item;
+			},
 			// Server-rendered pages are not discovered automatically.
 			customPages: [
-				...['fcs', 'use-cases/save-in-chf', 'use-cases/borrow', 'for/savers', 'for/treasuries', 'for/exchanges-wallets', 'for/developers', 'integrate', 'integrate/collateral', 'referral', 'transparency', 'security', 'how-it-works', 'faq', 'glossary', 'compare', 'news', 'press', 'association', 'privacy'].flatMap((p) => [`https://frankencoin.com/${p}/`, `https://frankencoin.com/de/${p}/`]),
+				...['fcs', 'use-cases/save-in-chf', 'use-cases/borrow', 'for/savers', 'for/treasuries', 'for/exchanges-wallets', 'for/developers', 'integrate', 'integrate/collateral', 'referral', 'transparency', 'security', 'how-it-works', 'faq', 'glossary', 'compare', 'news', 'press', 'association', 'privacy'].flatMap((p) => [`https://frankencoin.com/${p}`, `https://frankencoin.com/de/${p}`]),
 			],
 		}),
 	],

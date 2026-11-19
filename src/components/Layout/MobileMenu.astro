@@ -26,10 +26,10 @@ const prefixLanguage = (href: string) => {
   // For other languages, prefix with language code
   // Handle both "/" and "/#section" formats
   if (href === '/') {
-    return `/${currentLang}/`;
+    return `/${currentLang}`;
   }
   if (href.startsWith('/#')) {
-    return `/${currentLang}${href}`;
+    return `/${currentLang}${href.slice(1)}`;
   }
   if (href.startsWith('/')) {
     return `/${currentLang}${href}`;
