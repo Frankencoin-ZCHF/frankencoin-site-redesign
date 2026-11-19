@@ -10,7 +10,7 @@
     {
       "title": "Europäische Union",
       "body": "Gemäss dem Gutachten von LEXR Germany Rechtsanwalts GmbH (Februar 2026) ist ZCHF ein Kryptowert nach der <a href=\"https://www.21analytics.co/glossary/markets-in-crypto-assets-mica/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-[var(--color-brand-swiss)] underline underline-offset-2 hover:no-underline\">EU-Verordnung über Märkte für Kryptowerte (MiCA)</a> ohne identifizierbaren Emittenten, weshalb die Emittentenpflichten der MiCA-Titel II bis IV nicht auf ihn anwendbar sind. Ein White Paper für ZCHF im MiCA-Format wurde veröffentlicht und erscheint im Interim-MiCA-Register der ESMA. Der Registereintrag erfasst das White Paper; er ist keine Bewilligung oder Empfehlung durch die ESMA oder eine andere Behörde. Begriffe: <a href=\"https://www.21analytics.co/glossary/asset-referenced-token-art/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-[var(--color-brand-swiss)] underline underline-offset-2 hover:no-underline\">vermögenswertereferenzierte Token (ART)</a> und <a href=\"https://www.21analytics.co/glossary/electronic-money-token-emt/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-[var(--color-brand-swiss)] underline underline-offset-2 hover:no-underline\">E-Geld-Token (EMT)</a>.",
-      "cta": { "label": "EU-MiCA-Rechtsgutachten (PDF)", "href": "/20260209 ZCHF MiCA Frankencoin Association Public Summary FINAL.pdf" }
+      "cta": { "label": "EU-MiCA-Rechtsgutachten (PDF)", "href": "/20260209%20ZCHF%20MiCA%20Frankencoin%20Association%20Public%20Summary%20FINAL.pdf" }
     },
     {
       "title": "Dienstleister",
@@ -22,7 +22,7 @@
     "title": "Dokumente",
     "items": [
       { "label": "Schweizer Rechtsklassifizierung (PDF)", "href": "/2024-08-14_Frankencoin_Swiss_Regulatory_Classification.pdf" },
-      { "label": "EU-MiCA-Rechtsgutachten (PDF)", "href": "/20260209 ZCHF MiCA Frankencoin Association Public Summary FINAL.pdf" },
+      { "label": "EU-MiCA-Rechtsgutachten (PDF)", "href": "/20260209%20ZCHF%20MiCA%20Frankencoin%20Association%20Public%20Summary%20FINAL.pdf" },
       { "label": "ZCHF-MiCA-White-Paper", "href": "https://storage.googleapis.com/exponential-science-project1.appspot.com/IXBRL/ZCHF%20-%2029-05-2026/ZCHF-viewer.xhtml#f-fact_9" },
       { "label": "Interim-MiCA-Register der ESMA", "href": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica#InterimMiCARegister" }
     ]
