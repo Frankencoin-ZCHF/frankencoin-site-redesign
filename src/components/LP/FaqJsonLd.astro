@@ -1,0 +1,13 @@
+---
+/** FAQ as schema.org structured data, for search engines and AI answers. Markdown links become their plain text. */
+const { items, lang } = Astro.props as { items: { q: string; a: string }[]; lang: string };
+const plain = (t: string) => t.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+const data = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  inLanguage: lang,
+  mainEntity: items.map((i) => ({ "@type": "Question", name: plain(i.q), acceptedAnswer: { "@type": "Answer", text: plain(i.a) } })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(data)} />

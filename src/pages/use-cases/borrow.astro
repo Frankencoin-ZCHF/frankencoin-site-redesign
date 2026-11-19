@@ -4,6 +4,7 @@ import Base from "../../layouts/Base.astro";
 import LPHero from "../../components/LP/LPHero.astro";
 import LPSection from "../../components/LP/LPSection.astro";
 import FaqList from "../../components/LP/FaqList.astro";
+import FaqJsonLd from "../../components/LP/FaqJsonLd.astro";
 import StickyCTA from "../../components/StickyCTA/StickyCTA.astro";
 import CtaBand from "../../components/LP/CtaBand.astro";
 import { getLanguageFromURL, loadContent } from "../../utils/i18n";
@@ -31,6 +32,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300")
 ---
 
 <Base title={c.meta.title} description={c.meta.description}>
+  <FaqJsonLd slot="head" items={c.faq} lang={lang} />
   <LPHero title={c.hero.title} subtitle={c.hero.subtitle} primary={c.hero.primary} secondary={c.hero.secondary} image="/images/home/peak-teal-halftone.webp" imageLayout="side" imagePosition="object-[62%_12%]">
     <!-- One white panel, three rows: what the asset class is, and the logos of collaterals in it. -->
     <ul slot="aside" class="m-0 p-0 list-none overflow-hidden rounded-2xl border border-[var(--color-gray-20)] bg-white divide-y divide-[var(--color-gray-20)] shadow-[0_8px_24px_-16px_rgba(9,47,98,0.25)]">
