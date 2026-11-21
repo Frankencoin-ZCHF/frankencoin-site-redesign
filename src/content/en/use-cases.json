@@ -4,8 +4,16 @@
   "intro": "Services that take, hold or pay out Frankencoin, grouped by what you want to do. Each card says the concrete route.",
   "filterAll": "All",
   "categories": ["Buy and sell ZCHF", "Payments", "DeFi", "Business"],
+  "gettingStarted": {
+    "buy": ["kraken"],
+    "pay": ["etherfi", "mt-pelerin"],
+    "save": ["protocol-savings"],
+    "borrow": ["protocol-borrow"],
+    "invest": ["protocol-fcs"]
+  },
   "cases": [
     {
+      "id": "kraken",
       "title": "Buy and sell ZCHF",
       "partner": "Kraken",
       "description": "Buy, sell and trade ZCHF on Kraken, with the option to withdraw to your own wallet.",
@@ -14,6 +22,7 @@
       "link": "https://www.kraken.com/buy/zchf"
     },
     {
+      "id": "etherfi",
       "title": "Swiss IBAN and card payments",
       "partner": "ether.fi",
       "description": "Fund your personal Swiss IBAN to receive ZCHF in ether.fi, spend it with the card or use it as borrowing collateral. Send CHF back to a Swiss bank account in your own name.",
@@ -22,6 +31,7 @@
       "link": "https://www.ether.fi/app/cash/bank/chf"
     },
     {
+      "id": "spar",
       "title": "Pay at the till",
       "partner": "Spar Switzerland",
       "description": "Pay at the checkout of over 100 Spar stores in Switzerland: the cashier shows a QR code, you confirm from a wallet that holds ZCHF.",
@@ -30,6 +40,7 @@
       "link": "https://presse.spar.ch/de/spar-schweiz/allgemein/neu%3A-jetzt-bei-spar-mit-krypto-waehrung-bezahlen/"
     },
     {
+      "id": "privcart",
       "title": "Online checkout",
       "partner": "PrivCart",
       "description": "Merchants add a crypto checkout to Shopify, WooCommerce, BigCommerce or a custom shop. Customers pay in ZCHF; the merchant withdraws to a wallet they control.",
@@ -38,6 +49,7 @@
       "link": "https://privcart.com/"
     },
     {
+      "id": "mt-pelerin",
       "title": "Buy with a bank transfer, pay bills",
       "partner": "Mt Pelerin",
       "description": "Buy ZCHF by bank transfer to your own wallet, or link the wallet to a personal IBAN to receive transfers and pay Swiss QR bills in ZCHF.",
@@ -46,6 +58,7 @@
       "link": "https://www.mtpelerin.com/buy-zchf-frankencoin"
     },
     {
+      "id": "zeal",
       "title": "Visa card",
       "partner": "Zeal with Gnosis Pay",
       "description": "Zeal is the wallet app, Gnosis Pay issues the Visa debit card. Hold ZCHF in Zeal and spend it anywhere Visa is accepted; the card settles from your ZCHF balance.",
@@ -54,6 +67,7 @@
       "link": "https://www.zeal.app/"
     },
     {
+      "id": "protocol-savings",
       "title": "Protocol savings",
       "partner": "Frankencoin protocol",
       "description": "Deposit ZCHF in the protocol's savings module to earn the rate set by governance. Interest starts after an initial waiting period; you can withdraw at any time.",
@@ -62,6 +76,25 @@
       "link": "https://app.frankencoin.com/savings"
     },
     {
+      "id": "protocol-borrow",
+      "title": "Borrow against collateral",
+      "partner": "Frankencoin protocol",
+      "description": "Lock eligible collateral in a minting position to borrow ZCHF while retaining exposure to the asset.",
+      "category": "DeFi",
+      "image": "/images/Icon-Invest.svg",
+      "link": "https://app.frankencoin.com/mint"
+    },
+    {
+      "id": "protocol-fcs",
+      "title": "Invest in Frankencoin Shares (FCS)",
+      "partner": "Frankencoin protocol",
+      "description": "Hold FCS to participate in governance and share in the reserve’s gains and losses.",
+      "category": "DeFi",
+      "image": "/images/fcs.png",
+      "link": "https://frankencoin.com/fcs"
+    },
+    {
+      "id": "urble",
       "title": "Recurring savings plan",
       "partner": "urble",
       "description": "Set up a recurring savings plan in ZCHF or BTC, for yourself or for someone else. Funds stay in your own wallet and the ZCHF part earns the protocol savings rate.",
@@ -70,6 +103,7 @@
       "link": "https://urble.io/"
     },
     {
+      "id": "rebind",
       "title": "Savings app with IBAN",
       "partner": "Rebind",
       "description": "Fund a personal IBAN by bank transfer or deposit digital assets, allocate to a ZCHF, EUR or USD strategy, and withdraw when you need the money.",
@@ -78,6 +112,7 @@
       "link": "https://rebind.co/"
     },
     {
+      "id": "morpho",
       "title": "Lend or borrow ZCHF",
       "partner": "Morpho",
       "description": "Supply ZCHF to earn interest from borrowers, or borrow ZCHF against crypto collateral, in Morpho's lending markets on Ethereum and Base.",
@@ -86,6 +121,7 @@
       "link": "https://morpho.org/"
     },
     {
+      "id": "curve-llamalend",
       "title": "Borrow crvUSD against svZCHF",
       "partner": "Curve LlamaLend",
       "description": "Deposit savings-vault tokens (svZCHF) as collateral and borrow crvUSD in Curve's isolated Ethereum market. Rates and liquidation terms are set by that market.",
@@ -94,6 +130,7 @@
       "link": "https://www.curve.finance/lend/ethereum/markets/0xFd85e847cDd2549f213E276e4B57B0690169F043"
     },
     {
+      "id": "sagix",
       "title": "Index fund component",
       "partner": "Sagix Club Edelweiss",
       "description": "ZCHF is one of the components of the ixEDEL index fund on Reserve Protocol, alongside gold, Bitcoin and yield-bearing stablecoins.",
@@ -102,6 +139,7 @@
       "link": "https://app.reserve.org/ethereum/index-dtf/0xe4a10951f962e6cb93cb843a4ef05d2f99db1f94/overview"
     },
     {
+      "id": "aktionariat",
       "title": "Tokenized shares",
       "partner": "Aktionariat",
       "description": "Buy and sell tokenized shares of Swiss companies, and take part in their capital raises, with ZCHF as the settlement currency.",
@@ -110,6 +148,7 @@
       "link": "https://www.aktionariat.com/"
     },
     {
+      "id": "quitt",
       "title": "Payroll",
       "partner": "Quitt",
       "description": "Run payroll, social insurance and pension contributions for employees and settle the wages in ZCHF.",
@@ -118,6 +157,7 @@
       "link": "https://www.quitt.ch/"
     },
     {
+      "id": "plusplus",
       "title": "Company treasury and rental deposits",
       "partner": "Plusplus",
       "description": "Treasury products for companies built on ZCHF, including rental deposits held in ZCHF.",
@@ -126,6 +166,7 @@
       "link": "https://www.plusplus.swiss/"
     },
     {
+      "id": "bitcoin-suisse",
       "title": "Custody",
       "partner": "Bitcoin Suisse",
       "description": "Hold ZCHF in custody with Bitcoin Suisse, a Swiss crypto financial services provider, instead of in your own wallet.",
@@ -134,6 +175,7 @@
       "link": "https://www.bitcoinsuisse.com/"
     },
     {
+      "id": "copper",
       "title": "Institutional custody",
       "partner": "Copper",
       "description": "Institutions hold ZCHF in Copper's custody and can deploy it to DeFi from there, next to the rest of their digital assets.",
