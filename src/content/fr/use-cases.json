@@ -64,7 +64,7 @@
 		{
 			"title": "Gestion de trésorerie",
 			"partner": "Plusplus",
-			"description": "Solutions de trésorerie professionnelles incluant la gestion des dépôts de garantie locative en ZCHF",
+			"description": "Solutions de gestion de trésorerie en ZCHF pour les entreprises.",
 			"category": "Business",
 			"image": "/images/logo_plusplus.avif",
 			"link": "https://www.plusplus.swiss/"
@@ -76,22 +76,6 @@
 			"category": "Business",
 			"image": "/images/aktionariat-Compressify.io.webp",
 			"link": "https://www.aktionariat.com/"
-		},
-		{
-			"title": "Paiements par carte",
-			"partner": "GnosisPay",
-			"description": "Utilisez Frankencoin pour les paiements par carte quotidiens – les transactions sont réglées en ZCHF en coulisses",
-			"category": "Payments",
-			"image": "/images/gnosispay.png",
-			"link": "https://zeal.app/"
-		},
-		{
-			"title": "Portefeuille crypto & paiements par carte",
-			"partner": "Zeal",
-			"description": "Portefeuille numérique pour dépenser des ZCHF dans le monde entier avec la carte Gnosis Pay – gagnez des rendements et du cashback sur les achats quotidiens",
-			"category": "Payments",
-			"image": "/images/zeal.png",
-			"link": "https://www.zeal.app/"
 		},
 		{
 			"title": "Prêts décentralisés",
