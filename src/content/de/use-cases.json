@@ -46,14 +46,6 @@
       "link": "https://www.mtpelerin.com/buy-zchf-frankencoin"
     },
     {
-      "title": "Visa-Karte",
-      "partner": "Zeal mit Gnosis Pay",
-      "description": "Zeal ist die Wallet-App, Gnosis Pay gibt die Visa-Debitkarte aus. Halten Sie ZCHF in Zeal und bezahlen Sie überall, wo Visa akzeptiert wird; die Karte wird aus Ihrem ZCHF-Guthaben belastet.",
-      "category": "Zahlungen",
-      "image": "/images/zeal.png",
-      "link": "https://www.zeal.app/"
-    },
-    {
       "title": "Sparen im Protokoll",
       "partner": "Frankencoin-Protokoll",
       "description": "Hinterlegen Sie ZCHF im Sparmodul des Protokolls und erhalten Sie den von der Governance festgelegten Zins. Die Verzinsung beginnt nach einer anfänglichen Wartefrist; Sie können jederzeit abheben.",
@@ -118,9 +110,9 @@
       "link": "https://www.quitt.ch/"
     },
     {
-      "title": "Firmen-Treasury und Mietkautionen",
+      "title": "Firmen-Treasury",
       "partner": "Plusplus",
-      "description": "Treasury-Produkte für Unternehmen auf Basis von ZCHF, einschliesslich Mietkautionen, die in ZCHF gehalten werden.",
+      "description": "Treasury-Produkte auf Basis von ZCHF für Unternehmen.",
       "category": "Unternehmen",
       "image": "/images/logo_plusplus.avif",
       "link": "https://www.plusplus.swiss/"

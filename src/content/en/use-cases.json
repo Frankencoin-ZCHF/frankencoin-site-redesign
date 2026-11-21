@@ -58,15 +58,6 @@
       "link": "https://www.mtpelerin.com/buy-zchf-frankencoin"
     },
     {
-      "id": "zeal",
-      "title": "Visa card",
-      "partner": "Zeal with Gnosis Pay",
-      "description": "Zeal is the wallet app, Gnosis Pay issues the Visa debit card. Hold ZCHF in Zeal and spend it anywhere Visa is accepted; the card settles from your ZCHF balance.",
-      "category": "Payments",
-      "image": "/images/zeal.png",
-      "link": "https://www.zeal.app/"
-    },
-    {
       "id": "protocol-savings",
       "title": "Protocol savings",
       "partner": "Frankencoin protocol",
@@ -158,9 +149,9 @@
     },
     {
       "id": "plusplus",
-      "title": "Company treasury and rental deposits",
+      "title": "Company treasury",
       "partner": "Plusplus",
-      "description": "Treasury products for companies built on ZCHF, including rental deposits held in ZCHF.",
+      "description": "ZCHF treasury products for companies.",
       "category": "Business",
       "image": "/images/logo_plusplus.avif",
       "link": "https://www.plusplus.swiss/"
